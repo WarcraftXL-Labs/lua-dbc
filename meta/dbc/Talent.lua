@@ -1,0 +1,63 @@
+---@meta
+-- Generated LuaLS annotations for Talent.dbc. Do not edit.
+
+---Row representation of Talent.dbc.
+---@class dbc.row.Talent : RowProxy
+---@field ID integer
+---@field TabID integer
+---@field TierID integer
+---@field ColumnIndex integer
+---@field SpellRank integer[]
+---@field PrereqTalent integer[]
+---@field PrereqRank integer[]
+---@field Flags integer
+---@field RequiredSpellID integer
+---@field CategoryMask integer[]
+
+-- Fluent PascalCase Methods for Talent
+---@field GetID fun(self: dbc.row.Talent): integer
+---@field SetID fun(self: dbc.row.Talent, value: integer): dbc.row.Talent
+---@field GetTabID fun(self: dbc.row.Talent): integer
+---@field SetTabID fun(self: dbc.row.Talent, value: integer): dbc.row.Talent
+---@field GetTierID fun(self: dbc.row.Talent): integer
+---@field SetTierID fun(self: dbc.row.Talent, value: integer): dbc.row.Talent
+---@field GetColumnIndex fun(self: dbc.row.Talent): integer
+---@field SetColumnIndex fun(self: dbc.row.Talent, value: integer): dbc.row.Talent
+---@field GetSpellRank fun(self: dbc.row.Talent, index?: integer): integer|integer[]
+---@field SetSpellRank fun(self: dbc.row.Talent, value: integer|integer[], index?: integer): dbc.row.Talent
+---@field GetPrereqTalent fun(self: dbc.row.Talent, index?: integer): integer|integer[]
+---@field SetPrereqTalent fun(self: dbc.row.Talent, value: integer|integer[], index?: integer): dbc.row.Talent
+---@field GetPrereqRank fun(self: dbc.row.Talent, index?: integer): integer|integer[]
+---@field SetPrereqRank fun(self: dbc.row.Talent, value: integer|integer[], index?: integer): dbc.row.Talent
+---@field GetFlags fun(self: dbc.row.Talent): integer
+---@field SetFlags fun(self: dbc.row.Talent, value: integer): dbc.row.Talent
+---@field HasFlags fun(self: dbc.row.Talent, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.Talent, flag: integer): dbc.row.Talent
+---@field RemoveFlags fun(self: dbc.row.Talent, flag: integer): dbc.row.Talent
+---@field GetRequiredSpellID fun(self: dbc.row.Talent): integer
+---@field SetRequiredSpellID fun(self: dbc.row.Talent, value: integer): dbc.row.Talent
+---@field GetCategoryMask fun(self: dbc.row.Talent, index?: integer): integer|integer[]
+---@field SetCategoryMask fun(self: dbc.row.Talent, value: integer|integer[], index?: integer): dbc.row.Talent
+---@field HasCategoryMask fun(self: dbc.row.Talent, flag: integer): boolean
+---@field AddCategoryMask fun(self: dbc.row.Talent, flag: integer): dbc.row.Talent
+---@field RemoveCategoryMask fun(self: dbc.row.Talent, flag: integer): dbc.row.Talent
+
+-- Inferred Cross-Table Relations for Talent
+
+-- Cascading Creation & Relations Engine for Talent
+---@field CreateRelated fun(self: dbc.row.Talent, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.Talent, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.Talent, child_table: string, child_field?: string): any[]
+
+---Typed table handle for Talent.dbc.
+---@class dbc.Table.Talent : DbcTable
+---@field FindById fun(self: dbc.Table.Talent, id: integer): dbc.row.Talent|nil
+---@field GetById fun(self: dbc.Table.Talent, id: integer): dbc.row.Talent|nil
+---@field GetRow fun(self: dbc.Table.Talent, row: integer): dbc.row.Talent
+---@field NewRow fun(self: dbc.Table.Talent, id?: integer): dbc.row.Talent
+---@field Create fun(self: dbc.Table.Talent, id?: integer): dbc.row.Talent
+---@field CreateNext fun(self: dbc.Table.Talent, data?: table): dbc.row.Talent
+---@field CloneRow fun(self: dbc.Table.Talent, source: integer|dbc.row.Talent, new_id?: integer): dbc.row.Talent
+---@field GetAllRows fun(self: dbc.Table.Talent): dbc.row.Talent[]
+---@field Query fun(self: dbc.Table.Talent): dbc.Query<dbc.row.Talent>
+---@field Rows fun(self: dbc.Table.Talent): fun(): integer, dbc.row.Talent

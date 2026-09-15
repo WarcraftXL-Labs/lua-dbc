@@ -1,0 +1,69 @@
+---@meta
+-- Generated LuaLS annotations for Faction.dbc. Do not edit.
+
+---Row representation of Faction.dbc.
+---@class dbc.row.Faction : RowProxy
+---@field ID integer
+---@field ReputationIndex integer
+---@field ReputationRaceMask integer[]
+---@field ReputationClassMask integer[]
+---@field ReputationBase integer[]
+---@field ReputationFlags integer[]
+---@field ParentFactionID integer
+---@field ParentFactionMod number[]
+---@field ParentFactionCap integer[]
+---@field Name string
+---@field Description string
+
+-- Fluent PascalCase Methods for Faction
+---@field GetID fun(self: dbc.row.Faction): integer
+---@field SetID fun(self: dbc.row.Faction, value: integer): dbc.row.Faction
+---@field GetReputationIndex fun(self: dbc.row.Faction): integer
+---@field SetReputationIndex fun(self: dbc.row.Faction, value: integer): dbc.row.Faction
+---@field GetReputationRaceMask fun(self: dbc.row.Faction, index?: integer): integer|integer[]
+---@field SetReputationRaceMask fun(self: dbc.row.Faction, value: integer|integer[], index?: integer): dbc.row.Faction
+---@field HasReputationRaceMask fun(self: dbc.row.Faction, flag: integer): boolean
+---@field AddReputationRaceMask fun(self: dbc.row.Faction, flag: integer): dbc.row.Faction
+---@field RemoveReputationRaceMask fun(self: dbc.row.Faction, flag: integer): dbc.row.Faction
+---@field GetReputationClassMask fun(self: dbc.row.Faction, index?: integer): integer|integer[]
+---@field SetReputationClassMask fun(self: dbc.row.Faction, value: integer|integer[], index?: integer): dbc.row.Faction
+---@field HasReputationClassMask fun(self: dbc.row.Faction, flag: integer): boolean
+---@field AddReputationClassMask fun(self: dbc.row.Faction, flag: integer): dbc.row.Faction
+---@field RemoveReputationClassMask fun(self: dbc.row.Faction, flag: integer): dbc.row.Faction
+---@field GetReputationBase fun(self: dbc.row.Faction, index?: integer): integer|integer[]
+---@field SetReputationBase fun(self: dbc.row.Faction, value: integer|integer[], index?: integer): dbc.row.Faction
+---@field GetReputationFlags fun(self: dbc.row.Faction, index?: integer): integer|integer[]
+---@field SetReputationFlags fun(self: dbc.row.Faction, value: integer|integer[], index?: integer): dbc.row.Faction
+---@field HasReputationFlags fun(self: dbc.row.Faction, flag: integer): boolean
+---@field AddReputationFlags fun(self: dbc.row.Faction, flag: integer): dbc.row.Faction
+---@field RemoveReputationFlags fun(self: dbc.row.Faction, flag: integer): dbc.row.Faction
+---@field GetParentFactionID fun(self: dbc.row.Faction): integer
+---@field SetParentFactionID fun(self: dbc.row.Faction, value: integer): dbc.row.Faction
+---@field GetParentFactionMod fun(self: dbc.row.Faction, index?: integer): number|number[]
+---@field SetParentFactionMod fun(self: dbc.row.Faction, value: number|number[], index?: integer): dbc.row.Faction
+---@field GetParentFactionCap fun(self: dbc.row.Faction, index?: integer): integer|integer[]
+---@field SetParentFactionCap fun(self: dbc.row.Faction, value: integer|integer[], index?: integer): dbc.row.Faction
+---@field GetName fun(self: dbc.row.Faction, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.Faction, value: string, locale?: string|integer): dbc.row.Faction
+---@field GetDescription fun(self: dbc.row.Faction, locale?: string|integer): string
+---@field SetDescription fun(self: dbc.row.Faction, value: string, locale?: string|integer): dbc.row.Faction
+
+-- Inferred Cross-Table Relations for Faction
+
+-- Cascading Creation & Relations Engine for Faction
+---@field CreateRelated fun(self: dbc.row.Faction, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.Faction, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.Faction, child_table: string, child_field?: string): any[]
+
+---Typed table handle for Faction.dbc.
+---@class dbc.Table.Faction : DbcTable
+---@field FindById fun(self: dbc.Table.Faction, id: integer): dbc.row.Faction|nil
+---@field GetById fun(self: dbc.Table.Faction, id: integer): dbc.row.Faction|nil
+---@field GetRow fun(self: dbc.Table.Faction, row: integer): dbc.row.Faction
+---@field NewRow fun(self: dbc.Table.Faction, id?: integer): dbc.row.Faction
+---@field Create fun(self: dbc.Table.Faction, id?: integer): dbc.row.Faction
+---@field CreateNext fun(self: dbc.Table.Faction, data?: table): dbc.row.Faction
+---@field CloneRow fun(self: dbc.Table.Faction, source: integer|dbc.row.Faction, new_id?: integer): dbc.row.Faction
+---@field GetAllRows fun(self: dbc.Table.Faction): dbc.row.Faction[]
+---@field Query fun(self: dbc.Table.Faction): dbc.Query<dbc.row.Faction>
+---@field Rows fun(self: dbc.Table.Faction): fun(): integer, dbc.row.Faction

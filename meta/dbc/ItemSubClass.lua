@@ -1,0 +1,69 @@
+---@meta
+-- Generated LuaLS annotations for ItemSubClass.dbc. Do not edit.
+
+---Row representation of ItemSubClass.dbc.
+---@class dbc.row.ItemSubClass : RowProxy
+---@field ClassID integer
+---@field SubClassID integer
+---@field PrerequisiteProficiency integer
+---@field PostrequisiteProficiency integer
+---@field Flags integer
+---@field DisplayFlags integer
+---@field WeaponParrySeq integer
+---@field WeaponReadySeq integer
+---@field WeaponAttackSeq integer
+---@field WeaponSwingSize integer
+---@field DisplayName string
+---@field VerboseName string
+
+-- Fluent PascalCase Methods for ItemSubClass
+---@field GetClassID fun(self: dbc.row.ItemSubClass): integer
+---@field SetClassID fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetSubClassID fun(self: dbc.row.ItemSubClass): integer
+---@field SetSubClassID fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetPrerequisiteProficiency fun(self: dbc.row.ItemSubClass): integer
+---@field SetPrerequisiteProficiency fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetPostrequisiteProficiency fun(self: dbc.row.ItemSubClass): integer
+---@field SetPostrequisiteProficiency fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetFlags fun(self: dbc.row.ItemSubClass): integer
+---@field SetFlags fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field HasFlags fun(self: dbc.row.ItemSubClass, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.ItemSubClass, flag: integer): dbc.row.ItemSubClass
+---@field RemoveFlags fun(self: dbc.row.ItemSubClass, flag: integer): dbc.row.ItemSubClass
+---@field GetDisplayFlags fun(self: dbc.row.ItemSubClass): integer
+---@field SetDisplayFlags fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field HasDisplayFlags fun(self: dbc.row.ItemSubClass, flag: integer): boolean
+---@field AddDisplayFlags fun(self: dbc.row.ItemSubClass, flag: integer): dbc.row.ItemSubClass
+---@field RemoveDisplayFlags fun(self: dbc.row.ItemSubClass, flag: integer): dbc.row.ItemSubClass
+---@field GetWeaponParrySeq fun(self: dbc.row.ItemSubClass): integer
+---@field SetWeaponParrySeq fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetWeaponReadySeq fun(self: dbc.row.ItemSubClass): integer
+---@field SetWeaponReadySeq fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetWeaponAttackSeq fun(self: dbc.row.ItemSubClass): integer
+---@field SetWeaponAttackSeq fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetWeaponSwingSize fun(self: dbc.row.ItemSubClass): integer
+---@field SetWeaponSwingSize fun(self: dbc.row.ItemSubClass, value: integer): dbc.row.ItemSubClass
+---@field GetDisplayName fun(self: dbc.row.ItemSubClass, locale?: string|integer): string
+---@field SetDisplayName fun(self: dbc.row.ItemSubClass, value: string, locale?: string|integer): dbc.row.ItemSubClass
+---@field GetVerboseName fun(self: dbc.row.ItemSubClass, locale?: string|integer): string
+---@field SetVerboseName fun(self: dbc.row.ItemSubClass, value: string, locale?: string|integer): dbc.row.ItemSubClass
+
+-- Inferred Cross-Table Relations for ItemSubClass
+
+-- Cascading Creation & Relations Engine for ItemSubClass
+---@field CreateRelated fun(self: dbc.row.ItemSubClass, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.ItemSubClass, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.ItemSubClass, child_table: string, child_field?: string): any[]
+
+---Typed table handle for ItemSubClass.dbc.
+---@class dbc.Table.ItemSubClass : DbcTable
+---@field FindById fun(self: dbc.Table.ItemSubClass, id: integer): dbc.row.ItemSubClass|nil
+---@field GetById fun(self: dbc.Table.ItemSubClass, id: integer): dbc.row.ItemSubClass|nil
+---@field GetRow fun(self: dbc.Table.ItemSubClass, row: integer): dbc.row.ItemSubClass
+---@field NewRow fun(self: dbc.Table.ItemSubClass, id?: integer): dbc.row.ItemSubClass
+---@field Create fun(self: dbc.Table.ItemSubClass, id?: integer): dbc.row.ItemSubClass
+---@field CreateNext fun(self: dbc.Table.ItemSubClass, data?: table): dbc.row.ItemSubClass
+---@field CloneRow fun(self: dbc.Table.ItemSubClass, source: integer|dbc.row.ItemSubClass, new_id?: integer): dbc.row.ItemSubClass
+---@field GetAllRows fun(self: dbc.Table.ItemSubClass): dbc.row.ItemSubClass[]
+---@field Query fun(self: dbc.Table.ItemSubClass): dbc.Query<dbc.row.ItemSubClass>
+---@field Rows fun(self: dbc.Table.ItemSubClass): fun(): integer, dbc.row.ItemSubClass

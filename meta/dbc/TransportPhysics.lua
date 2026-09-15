@@ -1,0 +1,60 @@
+---@meta
+-- Generated LuaLS annotations for TransportPhysics.dbc. Do not edit.
+
+---Row representation of TransportPhysics.dbc.
+---@class dbc.row.TransportPhysics : RowProxy
+---@field ID integer
+---@field WaveAmp number
+---@field WaveTimeScale number
+---@field RollAmp number
+---@field RollTimeScale number
+---@field PitchAmp number
+---@field PitchTimeScale number
+---@field MaxBank number
+---@field MaxBankTurnSpeed number
+---@field SpeedDampThresh number
+---@field SpeedDamp number
+
+-- Fluent PascalCase Methods for TransportPhysics
+---@field GetID fun(self: dbc.row.TransportPhysics): integer
+---@field SetID fun(self: dbc.row.TransportPhysics, value: integer): dbc.row.TransportPhysics
+---@field GetWaveAmp fun(self: dbc.row.TransportPhysics): number
+---@field SetWaveAmp fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetWaveTimeScale fun(self: dbc.row.TransportPhysics): number
+---@field SetWaveTimeScale fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetRollAmp fun(self: dbc.row.TransportPhysics): number
+---@field SetRollAmp fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetRollTimeScale fun(self: dbc.row.TransportPhysics): number
+---@field SetRollTimeScale fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetPitchAmp fun(self: dbc.row.TransportPhysics): number
+---@field SetPitchAmp fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetPitchTimeScale fun(self: dbc.row.TransportPhysics): number
+---@field SetPitchTimeScale fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetMaxBank fun(self: dbc.row.TransportPhysics): number
+---@field SetMaxBank fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetMaxBankTurnSpeed fun(self: dbc.row.TransportPhysics): number
+---@field SetMaxBankTurnSpeed fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetSpeedDampThresh fun(self: dbc.row.TransportPhysics): number
+---@field SetSpeedDampThresh fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+---@field GetSpeedDamp fun(self: dbc.row.TransportPhysics): number
+---@field SetSpeedDamp fun(self: dbc.row.TransportPhysics, value: number): dbc.row.TransportPhysics
+
+-- Inferred Cross-Table Relations for TransportPhysics
+
+-- Cascading Creation & Relations Engine for TransportPhysics
+---@field CreateRelated fun(self: dbc.row.TransportPhysics, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.TransportPhysics, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.TransportPhysics, child_table: string, child_field?: string): any[]
+
+---Typed table handle for TransportPhysics.dbc.
+---@class dbc.Table.TransportPhysics : DbcTable
+---@field FindById fun(self: dbc.Table.TransportPhysics, id: integer): dbc.row.TransportPhysics|nil
+---@field GetById fun(self: dbc.Table.TransportPhysics, id: integer): dbc.row.TransportPhysics|nil
+---@field GetRow fun(self: dbc.Table.TransportPhysics, row: integer): dbc.row.TransportPhysics
+---@field NewRow fun(self: dbc.Table.TransportPhysics, id?: integer): dbc.row.TransportPhysics
+---@field Create fun(self: dbc.Table.TransportPhysics, id?: integer): dbc.row.TransportPhysics
+---@field CreateNext fun(self: dbc.Table.TransportPhysics, data?: table): dbc.row.TransportPhysics
+---@field CloneRow fun(self: dbc.Table.TransportPhysics, source: integer|dbc.row.TransportPhysics, new_id?: integer): dbc.row.TransportPhysics
+---@field GetAllRows fun(self: dbc.Table.TransportPhysics): dbc.row.TransportPhysics[]
+---@field Query fun(self: dbc.Table.TransportPhysics): dbc.Query<dbc.row.TransportPhysics>
+---@field Rows fun(self: dbc.Table.TransportPhysics): fun(): integer, dbc.row.TransportPhysics

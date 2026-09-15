@@ -1,0 +1,26 @@
+-- Generated from TSWoW's Map.ts. Do not edit.
+return {
+  name = "Map",
+  record_size = 264,
+  field_count = 66,
+  fields = {
+    { name = "ID", kind = "key", offset = 0, count = 1 },
+    { name = "Directory", kind = "str", offset = 4, count = 1 },
+    { name = "InstanceType", kind = "i32", offset = 8, count = 1 },
+    { name = "Flags", kind = "i32", offset = 12, count = 1 },
+    { name = "PVP", kind = "i32", offset = 16, count = 1 },
+    { name = "MapName", kind = "loc", offset = 20, count = 1 },
+    { name = "AreaTableID", kind = "i32", offset = 88, count = 1 },
+    { name = "MapDescription0", kind = "loc", offset = 92, count = 1 },
+    { name = "MapDescription1", kind = "loc", offset = 160, count = 1 },
+    { name = "LoadingScreenID", kind = "i32", offset = 228, count = 1 },
+    { name = "MinimapIconScale", kind = "f32", offset = 232, count = 1 },
+    { name = "CorpseMapID", kind = "i32", offset = 236, count = 1 },
+    { name = "CorpseX", kind = "f32", offset = 240, count = 1 },
+    { name = "CorpseY", kind = "f32", offset = 244, count = 1 },
+    { name = "TimeOfDayOverride", kind = "i32", offset = 248, count = 1 },
+    { name = "ExpansionID", kind = "i32", offset = 252, count = 1 },
+    { name = "RaidOffset", kind = "i32", offset = 256, count = 1 },
+    { name = "MaxPlayers", kind = "i32", offset = 260, count = 1 },
+  },
+}

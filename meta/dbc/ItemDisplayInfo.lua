@@ -1,0 +1,70 @@
+---@meta
+-- Generated LuaLS annotations for ItemDisplayInfo.dbc. Do not edit.
+
+---Row representation of ItemDisplayInfo.dbc.
+---@class dbc.row.ItemDisplayInfo : RowProxy
+---@field ID integer
+---@field ModelName string[]
+---@field ModelTexture string[]
+---@field InventoryIcon string[]
+---@field GeosetGroup integer[]
+---@field Flags integer
+---@field SpellVisualID integer
+---@field GroupSoundIndex integer
+---@field HelmetGeosetVis integer[]
+---@field Texture string[]
+---@field ItemVisual integer
+---@field ParticleColorID integer
+
+-- Fluent PascalCase Methods for ItemDisplayInfo
+---@field GetID fun(self: dbc.row.ItemDisplayInfo): integer
+---@field SetID fun(self: dbc.row.ItemDisplayInfo, value: integer): dbc.row.ItemDisplayInfo
+---@field GetModelName fun(self: dbc.row.ItemDisplayInfo, index?: integer): string|string[]
+---@field SetModelName fun(self: dbc.row.ItemDisplayInfo, value: string|string[], index?: integer): dbc.row.ItemDisplayInfo
+---@field GetModelTexture fun(self: dbc.row.ItemDisplayInfo, index?: integer): string|string[]
+---@field SetModelTexture fun(self: dbc.row.ItemDisplayInfo, value: string|string[], index?: integer): dbc.row.ItemDisplayInfo
+---@field GetInventoryIcon fun(self: dbc.row.ItemDisplayInfo, index?: integer): string|string[]
+---@field SetInventoryIcon fun(self: dbc.row.ItemDisplayInfo, value: string|string[], index?: integer): dbc.row.ItemDisplayInfo
+---@field GetGeosetGroup fun(self: dbc.row.ItemDisplayInfo, index?: integer): integer|integer[]
+---@field SetGeosetGroup fun(self: dbc.row.ItemDisplayInfo, value: integer|integer[], index?: integer): dbc.row.ItemDisplayInfo
+---@field GetFlags fun(self: dbc.row.ItemDisplayInfo): integer
+---@field SetFlags fun(self: dbc.row.ItemDisplayInfo, value: integer): dbc.row.ItemDisplayInfo
+---@field HasFlags fun(self: dbc.row.ItemDisplayInfo, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.ItemDisplayInfo, flag: integer): dbc.row.ItemDisplayInfo
+---@field RemoveFlags fun(self: dbc.row.ItemDisplayInfo, flag: integer): dbc.row.ItemDisplayInfo
+---@field GetSpellVisualID fun(self: dbc.row.ItemDisplayInfo): integer
+---@field SetSpellVisualID fun(self: dbc.row.ItemDisplayInfo, value: integer): dbc.row.ItemDisplayInfo
+---@field GetGroupSoundIndex fun(self: dbc.row.ItemDisplayInfo): integer
+---@field SetGroupSoundIndex fun(self: dbc.row.ItemDisplayInfo, value: integer): dbc.row.ItemDisplayInfo
+---@field GetHelmetGeosetVis fun(self: dbc.row.ItemDisplayInfo, index?: integer): integer|integer[]
+---@field SetHelmetGeosetVis fun(self: dbc.row.ItemDisplayInfo, value: integer|integer[], index?: integer): dbc.row.ItemDisplayInfo
+---@field GetTexture fun(self: dbc.row.ItemDisplayInfo, index?: integer): string|string[]
+---@field SetTexture fun(self: dbc.row.ItemDisplayInfo, value: string|string[], index?: integer): dbc.row.ItemDisplayInfo
+---@field GetItemVisual fun(self: dbc.row.ItemDisplayInfo): integer
+---@field SetItemVisual fun(self: dbc.row.ItemDisplayInfo, value: integer): dbc.row.ItemDisplayInfo
+---@field GetParticleColorID fun(self: dbc.row.ItemDisplayInfo): integer
+---@field SetParticleColorID fun(self: dbc.row.ItemDisplayInfo, value: integer): dbc.row.ItemDisplayInfo
+
+-- Inferred Cross-Table Relations for ItemDisplayInfo
+---@field GetSpellVisual fun(self: dbc.row.ItemDisplayInfo): dbc.row.SpellVisual|nil
+---@field SetSpellVisual fun(self: dbc.row.ItemDisplayInfo, target: dbc.row.SpellVisual|integer): dbc.row.ItemDisplayInfo
+---@field GetParticleColor fun(self: dbc.row.ItemDisplayInfo): dbc.row.ParticleColor|nil
+---@field SetParticleColor fun(self: dbc.row.ItemDisplayInfo, target: dbc.row.ParticleColor|integer): dbc.row.ItemDisplayInfo
+
+-- Cascading Creation & Relations Engine for ItemDisplayInfo
+---@field CreateRelated fun(self: dbc.row.ItemDisplayInfo, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.ItemDisplayInfo, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.ItemDisplayInfo, child_table: string, child_field?: string): any[]
+
+---Typed table handle for ItemDisplayInfo.dbc.
+---@class dbc.Table.ItemDisplayInfo : DbcTable
+---@field FindById fun(self: dbc.Table.ItemDisplayInfo, id: integer): dbc.row.ItemDisplayInfo|nil
+---@field GetById fun(self: dbc.Table.ItemDisplayInfo, id: integer): dbc.row.ItemDisplayInfo|nil
+---@field GetRow fun(self: dbc.Table.ItemDisplayInfo, row: integer): dbc.row.ItemDisplayInfo
+---@field NewRow fun(self: dbc.Table.ItemDisplayInfo, id?: integer): dbc.row.ItemDisplayInfo
+---@field Create fun(self: dbc.Table.ItemDisplayInfo, id?: integer): dbc.row.ItemDisplayInfo
+---@field CreateNext fun(self: dbc.Table.ItemDisplayInfo, data?: table): dbc.row.ItemDisplayInfo
+---@field CloneRow fun(self: dbc.Table.ItemDisplayInfo, source: integer|dbc.row.ItemDisplayInfo, new_id?: integer): dbc.row.ItemDisplayInfo
+---@field GetAllRows fun(self: dbc.Table.ItemDisplayInfo): dbc.row.ItemDisplayInfo[]
+---@field Query fun(self: dbc.Table.ItemDisplayInfo): dbc.Query<dbc.row.ItemDisplayInfo>
+---@field Rows fun(self: dbc.Table.ItemDisplayInfo): fun(): integer, dbc.row.ItemDisplayInfo

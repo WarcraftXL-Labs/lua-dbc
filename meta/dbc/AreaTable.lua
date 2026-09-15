@@ -1,0 +1,88 @@
+---@meta
+-- Generated LuaLS annotations for AreaTable.dbc. Do not edit.
+
+---Row representation of AreaTable.dbc.
+---@class dbc.row.AreaTable : RowProxy
+---@field ID integer
+---@field MapID integer
+---@field ParentAreaID integer
+---@field ExploreFlag integer
+---@field Flags integer
+---@field SoundProviderPref integer
+---@field SoundProviderPrefUnderwater integer
+---@field AmbienceID integer
+---@field ZoneMusic integer
+---@field IntroSound integer
+---@field ExplorationLevel integer
+---@field AreaName string
+---@field FactionGroupMask integer
+---@field LiquidTypeID integer[]
+---@field MinElevation number
+---@field Ambient_Multiplier number
+---@field Lightid integer
+
+-- Fluent PascalCase Methods for AreaTable
+---@field GetID fun(self: dbc.row.AreaTable): integer
+---@field SetID fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetMapID fun(self: dbc.row.AreaTable): integer
+---@field SetMapID fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetParentAreaID fun(self: dbc.row.AreaTable): integer
+---@field SetParentAreaID fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetExploreFlag fun(self: dbc.row.AreaTable): integer
+---@field SetExploreFlag fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetFlags fun(self: dbc.row.AreaTable): integer
+---@field SetFlags fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field HasFlags fun(self: dbc.row.AreaTable, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.AreaTable, flag: integer): dbc.row.AreaTable
+---@field RemoveFlags fun(self: dbc.row.AreaTable, flag: integer): dbc.row.AreaTable
+---@field GetSoundProviderPref fun(self: dbc.row.AreaTable): integer
+---@field SetSoundProviderPref fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetSoundProviderPrefUnderwater fun(self: dbc.row.AreaTable): integer
+---@field SetSoundProviderPrefUnderwater fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetAmbienceID fun(self: dbc.row.AreaTable): integer
+---@field SetAmbienceID fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetZoneMusic fun(self: dbc.row.AreaTable): integer
+---@field SetZoneMusic fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetIntroSound fun(self: dbc.row.AreaTable): integer
+---@field SetIntroSound fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetExplorationLevel fun(self: dbc.row.AreaTable): integer
+---@field SetExplorationLevel fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field GetAreaName fun(self: dbc.row.AreaTable, locale?: string|integer): string
+---@field SetAreaName fun(self: dbc.row.AreaTable, value: string, locale?: string|integer): dbc.row.AreaTable
+---@field GetFactionGroupMask fun(self: dbc.row.AreaTable): integer
+---@field SetFactionGroupMask fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+---@field HasFactionGroupMask fun(self: dbc.row.AreaTable, flag: integer): boolean
+---@field AddFactionGroupMask fun(self: dbc.row.AreaTable, flag: integer): dbc.row.AreaTable
+---@field RemoveFactionGroupMask fun(self: dbc.row.AreaTable, flag: integer): dbc.row.AreaTable
+---@field GetLiquidTypeID fun(self: dbc.row.AreaTable, index?: integer): integer|integer[]
+---@field SetLiquidTypeID fun(self: dbc.row.AreaTable, value: integer|integer[], index?: integer): dbc.row.AreaTable
+---@field GetMinElevation fun(self: dbc.row.AreaTable): number
+---@field SetMinElevation fun(self: dbc.row.AreaTable, value: number): dbc.row.AreaTable
+---@field GetAmbient_Multiplier fun(self: dbc.row.AreaTable): number
+---@field SetAmbient_Multiplier fun(self: dbc.row.AreaTable, value: number): dbc.row.AreaTable
+---@field GetLightid fun(self: dbc.row.AreaTable): integer
+---@field SetLightid fun(self: dbc.row.AreaTable, value: integer): dbc.row.AreaTable
+
+-- Inferred Cross-Table Relations for AreaTable
+---@field GetMap fun(self: dbc.row.AreaTable): dbc.row.Map|nil
+---@field SetMap fun(self: dbc.row.AreaTable, target: dbc.row.Map|integer): dbc.row.AreaTable
+---@field GetLiquidType fun(self: dbc.row.AreaTable): dbc.row.LiquidType|nil
+---@field SetLiquidType fun(self: dbc.row.AreaTable, target: dbc.row.LiquidType|integer): dbc.row.AreaTable
+
+-- Cascading Creation & Relations Engine for AreaTable
+---@field CreateRelated fun(self: dbc.row.AreaTable, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.AreaTable, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.AreaTable, child_table: string, child_field?: string): any[]
+
+---Typed table handle for AreaTable.dbc.
+---@class dbc.Table.AreaTable : DbcTable
+---@field FindById fun(self: dbc.Table.AreaTable, id: integer): dbc.row.AreaTable|nil
+---@field GetById fun(self: dbc.Table.AreaTable, id: integer): dbc.row.AreaTable|nil
+---@field GetRow fun(self: dbc.Table.AreaTable, row: integer): dbc.row.AreaTable
+---@field NewRow fun(self: dbc.Table.AreaTable, id?: integer): dbc.row.AreaTable
+---@field Create fun(self: dbc.Table.AreaTable, id?: integer): dbc.row.AreaTable
+---@field CreateNext fun(self: dbc.Table.AreaTable, data?: table): dbc.row.AreaTable
+---@field CloneRow fun(self: dbc.Table.AreaTable, source: integer|dbc.row.AreaTable, new_id?: integer): dbc.row.AreaTable
+---@field GetAllRows fun(self: dbc.Table.AreaTable): dbc.row.AreaTable[]
+---@field Query fun(self: dbc.Table.AreaTable): dbc.Query<dbc.row.AreaTable>
+---@field Rows fun(self: dbc.Table.AreaTable): fun(): integer, dbc.row.AreaTable

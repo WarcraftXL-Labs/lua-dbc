@@ -1,0 +1,59 @@
+---@meta
+-- Generated LuaLS annotations for WorldMapTransforms.dbc. Do not edit.
+
+---Row representation of WorldMapTransforms.dbc.
+---@class dbc.row.WorldMapTransforms : RowProxy
+---@field ID integer
+---@field MapID integer
+---@field RegionMinX number
+---@field RegionMinY number
+---@field RegionMaxX number
+---@field RegionMaxY number
+---@field NewMapID integer
+---@field RegionOffsetX number
+---@field RegionOffsetY number
+---@field NewDungeonMapID integer
+
+-- Fluent PascalCase Methods for WorldMapTransforms
+---@field GetID fun(self: dbc.row.WorldMapTransforms): integer
+---@field SetID fun(self: dbc.row.WorldMapTransforms, value: integer): dbc.row.WorldMapTransforms
+---@field GetMapID fun(self: dbc.row.WorldMapTransforms): integer
+---@field SetMapID fun(self: dbc.row.WorldMapTransforms, value: integer): dbc.row.WorldMapTransforms
+---@field GetRegionMinX fun(self: dbc.row.WorldMapTransforms): number
+---@field SetRegionMinX fun(self: dbc.row.WorldMapTransforms, value: number): dbc.row.WorldMapTransforms
+---@field GetRegionMinY fun(self: dbc.row.WorldMapTransforms): number
+---@field SetRegionMinY fun(self: dbc.row.WorldMapTransforms, value: number): dbc.row.WorldMapTransforms
+---@field GetRegionMaxX fun(self: dbc.row.WorldMapTransforms): number
+---@field SetRegionMaxX fun(self: dbc.row.WorldMapTransforms, value: number): dbc.row.WorldMapTransforms
+---@field GetRegionMaxY fun(self: dbc.row.WorldMapTransforms): number
+---@field SetRegionMaxY fun(self: dbc.row.WorldMapTransforms, value: number): dbc.row.WorldMapTransforms
+---@field GetNewMapID fun(self: dbc.row.WorldMapTransforms): integer
+---@field SetNewMapID fun(self: dbc.row.WorldMapTransforms, value: integer): dbc.row.WorldMapTransforms
+---@field GetRegionOffsetX fun(self: dbc.row.WorldMapTransforms): number
+---@field SetRegionOffsetX fun(self: dbc.row.WorldMapTransforms, value: number): dbc.row.WorldMapTransforms
+---@field GetRegionOffsetY fun(self: dbc.row.WorldMapTransforms): number
+---@field SetRegionOffsetY fun(self: dbc.row.WorldMapTransforms, value: number): dbc.row.WorldMapTransforms
+---@field GetNewDungeonMapID fun(self: dbc.row.WorldMapTransforms): integer
+---@field SetNewDungeonMapID fun(self: dbc.row.WorldMapTransforms, value: integer): dbc.row.WorldMapTransforms
+
+-- Inferred Cross-Table Relations for WorldMapTransforms
+---@field GetMap fun(self: dbc.row.WorldMapTransforms): dbc.row.Map|nil
+---@field SetMap fun(self: dbc.row.WorldMapTransforms, target: dbc.row.Map|integer): dbc.row.WorldMapTransforms
+
+-- Cascading Creation & Relations Engine for WorldMapTransforms
+---@field CreateRelated fun(self: dbc.row.WorldMapTransforms, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.WorldMapTransforms, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.WorldMapTransforms, child_table: string, child_field?: string): any[]
+
+---Typed table handle for WorldMapTransforms.dbc.
+---@class dbc.Table.WorldMapTransforms : DbcTable
+---@field FindById fun(self: dbc.Table.WorldMapTransforms, id: integer): dbc.row.WorldMapTransforms|nil
+---@field GetById fun(self: dbc.Table.WorldMapTransforms, id: integer): dbc.row.WorldMapTransforms|nil
+---@field GetRow fun(self: dbc.Table.WorldMapTransforms, row: integer): dbc.row.WorldMapTransforms
+---@field NewRow fun(self: dbc.Table.WorldMapTransforms, id?: integer): dbc.row.WorldMapTransforms
+---@field Create fun(self: dbc.Table.WorldMapTransforms, id?: integer): dbc.row.WorldMapTransforms
+---@field CreateNext fun(self: dbc.Table.WorldMapTransforms, data?: table): dbc.row.WorldMapTransforms
+---@field CloneRow fun(self: dbc.Table.WorldMapTransforms, source: integer|dbc.row.WorldMapTransforms, new_id?: integer): dbc.row.WorldMapTransforms
+---@field GetAllRows fun(self: dbc.Table.WorldMapTransforms): dbc.row.WorldMapTransforms[]
+---@field Query fun(self: dbc.Table.WorldMapTransforms): dbc.Query<dbc.row.WorldMapTransforms>
+---@field Rows fun(self: dbc.Table.WorldMapTransforms): fun(): integer, dbc.row.WorldMapTransforms

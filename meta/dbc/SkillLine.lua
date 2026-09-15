@@ -1,0 +1,53 @@
+---@meta
+-- Generated LuaLS annotations for SkillLine.dbc. Do not edit.
+
+---Row representation of SkillLine.dbc.
+---@class dbc.row.SkillLine : RowProxy
+---@field ID integer
+---@field CategoryID integer
+---@field SkillCostsID integer
+---@field DisplayName string
+---@field Description string
+---@field SpellIconID integer
+---@field AlternateVerb string
+---@field CanLink integer
+
+-- Fluent PascalCase Methods for SkillLine
+---@field GetID fun(self: dbc.row.SkillLine): integer
+---@field SetID fun(self: dbc.row.SkillLine, value: integer): dbc.row.SkillLine
+---@field GetCategoryID fun(self: dbc.row.SkillLine): integer
+---@field SetCategoryID fun(self: dbc.row.SkillLine, value: integer): dbc.row.SkillLine
+---@field GetSkillCostsID fun(self: dbc.row.SkillLine): integer
+---@field SetSkillCostsID fun(self: dbc.row.SkillLine, value: integer): dbc.row.SkillLine
+---@field GetDisplayName fun(self: dbc.row.SkillLine, locale?: string|integer): string
+---@field SetDisplayName fun(self: dbc.row.SkillLine, value: string, locale?: string|integer): dbc.row.SkillLine
+---@field GetDescription fun(self: dbc.row.SkillLine, locale?: string|integer): string
+---@field SetDescription fun(self: dbc.row.SkillLine, value: string, locale?: string|integer): dbc.row.SkillLine
+---@field GetSpellIconID fun(self: dbc.row.SkillLine): integer
+---@field SetSpellIconID fun(self: dbc.row.SkillLine, value: integer): dbc.row.SkillLine
+---@field GetAlternateVerb fun(self: dbc.row.SkillLine, locale?: string|integer): string
+---@field SetAlternateVerb fun(self: dbc.row.SkillLine, value: string, locale?: string|integer): dbc.row.SkillLine
+---@field GetCanLink fun(self: dbc.row.SkillLine): integer
+---@field SetCanLink fun(self: dbc.row.SkillLine, value: integer): dbc.row.SkillLine
+
+-- Inferred Cross-Table Relations for SkillLine
+---@field GetSpellIcon fun(self: dbc.row.SkillLine): dbc.row.SpellIcon|nil
+---@field SetSpellIcon fun(self: dbc.row.SkillLine, target: dbc.row.SpellIcon|integer): dbc.row.SkillLine
+
+-- Cascading Creation & Relations Engine for SkillLine
+---@field CreateRelated fun(self: dbc.row.SkillLine, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SkillLine, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SkillLine, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SkillLine.dbc.
+---@class dbc.Table.SkillLine : DbcTable
+---@field FindById fun(self: dbc.Table.SkillLine, id: integer): dbc.row.SkillLine|nil
+---@field GetById fun(self: dbc.Table.SkillLine, id: integer): dbc.row.SkillLine|nil
+---@field GetRow fun(self: dbc.Table.SkillLine, row: integer): dbc.row.SkillLine
+---@field NewRow fun(self: dbc.Table.SkillLine, id?: integer): dbc.row.SkillLine
+---@field Create fun(self: dbc.Table.SkillLine, id?: integer): dbc.row.SkillLine
+---@field CreateNext fun(self: dbc.Table.SkillLine, data?: table): dbc.row.SkillLine
+---@field CloneRow fun(self: dbc.Table.SkillLine, source: integer|dbc.row.SkillLine, new_id?: integer): dbc.row.SkillLine
+---@field GetAllRows fun(self: dbc.Table.SkillLine): dbc.row.SkillLine[]
+---@field Query fun(self: dbc.Table.SkillLine): dbc.Query<dbc.row.SkillLine>
+---@field Rows fun(self: dbc.Table.SkillLine): fun(): integer, dbc.row.SkillLine

@@ -1,0 +1,78 @@
+---@meta
+-- Generated LuaLS annotations for SoundSamplePreferences.dbc. Do not edit.
+
+---Row representation of SoundSamplePreferences.dbc.
+---@class dbc.row.SoundSamplePreferences : RowProxy
+---@field ID integer
+---@field Field01 integer
+---@field Field02 integer
+---@field Field03 integer
+---@field Field04 integer
+---@field Field05 integer
+---@field Field06 integer
+---@field Field07 integer
+---@field Field08 number
+---@field Field09 number
+---@field Field10 integer
+---@field Field11 integer
+---@field Field12 integer
+---@field Field13 number
+---@field Field14 integer
+---@field Field15 number
+---@field Field16 integer
+
+-- Fluent PascalCase Methods for SoundSamplePreferences
+---@field GetID fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetID fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField01 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField01 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField02 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField02 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField03 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField03 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField04 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField04 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField05 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField05 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField06 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField06 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField07 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField07 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField08 fun(self: dbc.row.SoundSamplePreferences): number
+---@field SetField08 fun(self: dbc.row.SoundSamplePreferences, value: number): dbc.row.SoundSamplePreferences
+---@field GetField09 fun(self: dbc.row.SoundSamplePreferences): number
+---@field SetField09 fun(self: dbc.row.SoundSamplePreferences, value: number): dbc.row.SoundSamplePreferences
+---@field GetField10 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField10 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField11 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField11 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField12 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField12 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField13 fun(self: dbc.row.SoundSamplePreferences): number
+---@field SetField13 fun(self: dbc.row.SoundSamplePreferences, value: number): dbc.row.SoundSamplePreferences
+---@field GetField14 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField14 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+---@field GetField15 fun(self: dbc.row.SoundSamplePreferences): number
+---@field SetField15 fun(self: dbc.row.SoundSamplePreferences, value: number): dbc.row.SoundSamplePreferences
+---@field GetField16 fun(self: dbc.row.SoundSamplePreferences): integer
+---@field SetField16 fun(self: dbc.row.SoundSamplePreferences, value: integer): dbc.row.SoundSamplePreferences
+
+-- Inferred Cross-Table Relations for SoundSamplePreferences
+
+-- Cascading Creation & Relations Engine for SoundSamplePreferences
+---@field CreateRelated fun(self: dbc.row.SoundSamplePreferences, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SoundSamplePreferences, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SoundSamplePreferences, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SoundSamplePreferences.dbc.
+---@class dbc.Table.SoundSamplePreferences : DbcTable
+---@field FindById fun(self: dbc.Table.SoundSamplePreferences, id: integer): dbc.row.SoundSamplePreferences|nil
+---@field GetById fun(self: dbc.Table.SoundSamplePreferences, id: integer): dbc.row.SoundSamplePreferences|nil
+---@field GetRow fun(self: dbc.Table.SoundSamplePreferences, row: integer): dbc.row.SoundSamplePreferences
+---@field NewRow fun(self: dbc.Table.SoundSamplePreferences, id?: integer): dbc.row.SoundSamplePreferences
+---@field Create fun(self: dbc.Table.SoundSamplePreferences, id?: integer): dbc.row.SoundSamplePreferences
+---@field CreateNext fun(self: dbc.Table.SoundSamplePreferences, data?: table): dbc.row.SoundSamplePreferences
+---@field CloneRow fun(self: dbc.Table.SoundSamplePreferences, source: integer|dbc.row.SoundSamplePreferences, new_id?: integer): dbc.row.SoundSamplePreferences
+---@field GetAllRows fun(self: dbc.Table.SoundSamplePreferences): dbc.row.SoundSamplePreferences[]
+---@field Query fun(self: dbc.Table.SoundSamplePreferences): dbc.Query<dbc.row.SoundSamplePreferences>
+---@field Rows fun(self: dbc.Table.SoundSamplePreferences): fun(): integer, dbc.row.SoundSamplePreferences

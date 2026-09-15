@@ -1,0 +1,66 @@
+---@meta
+-- Generated LuaLS annotations for ChrClasses.dbc. Do not edit.
+
+---Row representation of ChrClasses.dbc.
+---@class dbc.row.ChrClasses : RowProxy
+---@field ID integer
+---@field Field01 integer
+---@field DisplayPower integer
+---@field PetNameToken integer
+---@field Name string
+---@field Name_Female string
+---@field Name_Male string
+---@field Filename string
+---@field SpellClassSet integer
+---@field Flags integer
+---@field CinematicSequenceID integer
+---@field Required_Expansion integer
+
+-- Fluent PascalCase Methods for ChrClasses
+---@field GetID fun(self: dbc.row.ChrClasses): integer
+---@field SetID fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+---@field GetField01 fun(self: dbc.row.ChrClasses): integer
+---@field SetField01 fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+---@field GetDisplayPower fun(self: dbc.row.ChrClasses): integer
+---@field SetDisplayPower fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+---@field GetPetNameToken fun(self: dbc.row.ChrClasses): integer
+---@field SetPetNameToken fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+---@field GetName fun(self: dbc.row.ChrClasses, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.ChrClasses, value: string, locale?: string|integer): dbc.row.ChrClasses
+---@field GetName_Female fun(self: dbc.row.ChrClasses, locale?: string|integer): string
+---@field SetName_Female fun(self: dbc.row.ChrClasses, value: string, locale?: string|integer): dbc.row.ChrClasses
+---@field GetName_Male fun(self: dbc.row.ChrClasses, locale?: string|integer): string
+---@field SetName_Male fun(self: dbc.row.ChrClasses, value: string, locale?: string|integer): dbc.row.ChrClasses
+---@field GetFilename fun(self: dbc.row.ChrClasses): string
+---@field SetFilename fun(self: dbc.row.ChrClasses, value: string): dbc.row.ChrClasses
+---@field GetSpellClassSet fun(self: dbc.row.ChrClasses): integer
+---@field SetSpellClassSet fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+---@field GetFlags fun(self: dbc.row.ChrClasses): integer
+---@field SetFlags fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+---@field HasFlags fun(self: dbc.row.ChrClasses, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.ChrClasses, flag: integer): dbc.row.ChrClasses
+---@field RemoveFlags fun(self: dbc.row.ChrClasses, flag: integer): dbc.row.ChrClasses
+---@field GetCinematicSequenceID fun(self: dbc.row.ChrClasses): integer
+---@field SetCinematicSequenceID fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+---@field GetRequired_Expansion fun(self: dbc.row.ChrClasses): integer
+---@field SetRequired_Expansion fun(self: dbc.row.ChrClasses, value: integer): dbc.row.ChrClasses
+
+-- Inferred Cross-Table Relations for ChrClasses
+
+-- Cascading Creation & Relations Engine for ChrClasses
+---@field CreateRelated fun(self: dbc.row.ChrClasses, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.ChrClasses, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.ChrClasses, child_table: string, child_field?: string): any[]
+
+---Typed table handle for ChrClasses.dbc.
+---@class dbc.Table.ChrClasses : DbcTable
+---@field FindById fun(self: dbc.Table.ChrClasses, id: integer): dbc.row.ChrClasses|nil
+---@field GetById fun(self: dbc.Table.ChrClasses, id: integer): dbc.row.ChrClasses|nil
+---@field GetRow fun(self: dbc.Table.ChrClasses, row: integer): dbc.row.ChrClasses
+---@field NewRow fun(self: dbc.Table.ChrClasses, id?: integer): dbc.row.ChrClasses
+---@field Create fun(self: dbc.Table.ChrClasses, id?: integer): dbc.row.ChrClasses
+---@field CreateNext fun(self: dbc.Table.ChrClasses, data?: table): dbc.row.ChrClasses
+---@field CloneRow fun(self: dbc.Table.ChrClasses, source: integer|dbc.row.ChrClasses, new_id?: integer): dbc.row.ChrClasses
+---@field GetAllRows fun(self: dbc.Table.ChrClasses): dbc.row.ChrClasses[]
+---@field Query fun(self: dbc.Table.ChrClasses): dbc.Query<dbc.row.ChrClasses>
+---@field Rows fun(self: dbc.Table.ChrClasses): fun(): integer, dbc.row.ChrClasses

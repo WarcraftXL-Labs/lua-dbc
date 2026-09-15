@@ -1,0 +1,99 @@
+---@meta
+-- Generated LuaLS annotations for ScalingStatValues.dbc. Do not edit.
+
+---Row representation of ScalingStatValues.dbc.
+---@class dbc.row.ScalingStatValues : RowProxy
+---@field ID integer
+---@field Charlevel integer
+---@field ShoulderBudget integer
+---@field TrinketBudget integer
+---@field WeaponBudget1H integer
+---@field RangedBudget integer
+---@field ClothShoulderArmor integer
+---@field LeatherShoulderArmor integer
+---@field MailShoulderArmor integer
+---@field PlateShoulderArmor integer
+---@field WeaponDPS1H integer
+---@field WeaponDPS2H integer
+---@field SpellcasterDPS1H integer
+---@field SpellcasterDPS2H integer
+---@field RangedDPS integer
+---@field WandDPS integer
+---@field SpellPower integer
+---@field PrimaryBudget integer
+---@field TertiaryBudget integer
+---@field ClothCloakArmor integer
+---@field ClothChestArmor integer
+---@field LeatherChestArmor integer
+---@field MailChestArmor integer
+---@field PlateChestArmor integer
+
+-- Fluent PascalCase Methods for ScalingStatValues
+---@field GetID fun(self: dbc.row.ScalingStatValues): integer
+---@field SetID fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetCharlevel fun(self: dbc.row.ScalingStatValues): integer
+---@field SetCharlevel fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetShoulderBudget fun(self: dbc.row.ScalingStatValues): integer
+---@field SetShoulderBudget fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetTrinketBudget fun(self: dbc.row.ScalingStatValues): integer
+---@field SetTrinketBudget fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetWeaponBudget1H fun(self: dbc.row.ScalingStatValues): integer
+---@field SetWeaponBudget1H fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetRangedBudget fun(self: dbc.row.ScalingStatValues): integer
+---@field SetRangedBudget fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetClothShoulderArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetClothShoulderArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetLeatherShoulderArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetLeatherShoulderArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetMailShoulderArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetMailShoulderArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetPlateShoulderArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetPlateShoulderArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetWeaponDPS1H fun(self: dbc.row.ScalingStatValues): integer
+---@field SetWeaponDPS1H fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetWeaponDPS2H fun(self: dbc.row.ScalingStatValues): integer
+---@field SetWeaponDPS2H fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetSpellcasterDPS1H fun(self: dbc.row.ScalingStatValues): integer
+---@field SetSpellcasterDPS1H fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetSpellcasterDPS2H fun(self: dbc.row.ScalingStatValues): integer
+---@field SetSpellcasterDPS2H fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetRangedDPS fun(self: dbc.row.ScalingStatValues): integer
+---@field SetRangedDPS fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetWandDPS fun(self: dbc.row.ScalingStatValues): integer
+---@field SetWandDPS fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetSpellPower fun(self: dbc.row.ScalingStatValues): integer
+---@field SetSpellPower fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetPrimaryBudget fun(self: dbc.row.ScalingStatValues): integer
+---@field SetPrimaryBudget fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetTertiaryBudget fun(self: dbc.row.ScalingStatValues): integer
+---@field SetTertiaryBudget fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetClothCloakArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetClothCloakArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetClothChestArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetClothChestArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetLeatherChestArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetLeatherChestArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetMailChestArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetMailChestArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+---@field GetPlateChestArmor fun(self: dbc.row.ScalingStatValues): integer
+---@field SetPlateChestArmor fun(self: dbc.row.ScalingStatValues, value: integer): dbc.row.ScalingStatValues
+
+-- Inferred Cross-Table Relations for ScalingStatValues
+
+-- Cascading Creation & Relations Engine for ScalingStatValues
+---@field CreateRelated fun(self: dbc.row.ScalingStatValues, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.ScalingStatValues, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.ScalingStatValues, child_table: string, child_field?: string): any[]
+
+---Typed table handle for ScalingStatValues.dbc.
+---@class dbc.Table.ScalingStatValues : DbcTable
+---@field FindById fun(self: dbc.Table.ScalingStatValues, id: integer): dbc.row.ScalingStatValues|nil
+---@field GetById fun(self: dbc.Table.ScalingStatValues, id: integer): dbc.row.ScalingStatValues|nil
+---@field GetRow fun(self: dbc.Table.ScalingStatValues, row: integer): dbc.row.ScalingStatValues
+---@field NewRow fun(self: dbc.Table.ScalingStatValues, id?: integer): dbc.row.ScalingStatValues
+---@field Create fun(self: dbc.Table.ScalingStatValues, id?: integer): dbc.row.ScalingStatValues
+---@field CreateNext fun(self: dbc.Table.ScalingStatValues, data?: table): dbc.row.ScalingStatValues
+---@field CloneRow fun(self: dbc.Table.ScalingStatValues, source: integer|dbc.row.ScalingStatValues, new_id?: integer): dbc.row.ScalingStatValues
+---@field GetAllRows fun(self: dbc.Table.ScalingStatValues): dbc.row.ScalingStatValues[]
+---@field Query fun(self: dbc.Table.ScalingStatValues): dbc.Query<dbc.row.ScalingStatValues>
+---@field Rows fun(self: dbc.Table.ScalingStatValues): fun(): integer, dbc.row.ScalingStatValues

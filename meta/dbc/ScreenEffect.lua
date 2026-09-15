@@ -1,0 +1,54 @@
+---@meta
+-- Generated LuaLS annotations for ScreenEffect.dbc. Do not edit.
+
+---Row representation of ScreenEffect.dbc.
+---@class dbc.row.ScreenEffect : RowProxy
+---@field ID integer
+---@field Name string
+---@field Effect integer
+---@field Param integer[]
+---@field LightParamsID integer
+---@field SoundAmbienceID integer
+---@field ZoneMusicID integer
+
+-- Fluent PascalCase Methods for ScreenEffect
+---@field GetID fun(self: dbc.row.ScreenEffect): integer
+---@field SetID fun(self: dbc.row.ScreenEffect, value: integer): dbc.row.ScreenEffect
+---@field GetName fun(self: dbc.row.ScreenEffect): string
+---@field SetName fun(self: dbc.row.ScreenEffect, value: string): dbc.row.ScreenEffect
+---@field GetEffect fun(self: dbc.row.ScreenEffect): integer
+---@field SetEffect fun(self: dbc.row.ScreenEffect, value: integer): dbc.row.ScreenEffect
+---@field GetParam fun(self: dbc.row.ScreenEffect, index?: integer): integer|integer[]
+---@field SetParam fun(self: dbc.row.ScreenEffect, value: integer|integer[], index?: integer): dbc.row.ScreenEffect
+---@field GetLightParamsID fun(self: dbc.row.ScreenEffect): integer
+---@field SetLightParamsID fun(self: dbc.row.ScreenEffect, value: integer): dbc.row.ScreenEffect
+---@field GetSoundAmbienceID fun(self: dbc.row.ScreenEffect): integer
+---@field SetSoundAmbienceID fun(self: dbc.row.ScreenEffect, value: integer): dbc.row.ScreenEffect
+---@field GetZoneMusicID fun(self: dbc.row.ScreenEffect): integer
+---@field SetZoneMusicID fun(self: dbc.row.ScreenEffect, value: integer): dbc.row.ScreenEffect
+
+-- Inferred Cross-Table Relations for ScreenEffect
+---@field GetLightParams fun(self: dbc.row.ScreenEffect): dbc.row.LightParams|nil
+---@field SetLightParams fun(self: dbc.row.ScreenEffect, target: dbc.row.LightParams|integer): dbc.row.ScreenEffect
+---@field GetSoundAmbience fun(self: dbc.row.ScreenEffect): dbc.row.SoundAmbience|nil
+---@field SetSoundAmbience fun(self: dbc.row.ScreenEffect, target: dbc.row.SoundAmbience|integer): dbc.row.ScreenEffect
+---@field GetZoneMusic fun(self: dbc.row.ScreenEffect): dbc.row.ZoneMusic|nil
+---@field SetZoneMusic fun(self: dbc.row.ScreenEffect, target: dbc.row.ZoneMusic|integer): dbc.row.ScreenEffect
+
+-- Cascading Creation & Relations Engine for ScreenEffect
+---@field CreateRelated fun(self: dbc.row.ScreenEffect, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.ScreenEffect, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.ScreenEffect, child_table: string, child_field?: string): any[]
+
+---Typed table handle for ScreenEffect.dbc.
+---@class dbc.Table.ScreenEffect : DbcTable
+---@field FindById fun(self: dbc.Table.ScreenEffect, id: integer): dbc.row.ScreenEffect|nil
+---@field GetById fun(self: dbc.Table.ScreenEffect, id: integer): dbc.row.ScreenEffect|nil
+---@field GetRow fun(self: dbc.Table.ScreenEffect, row: integer): dbc.row.ScreenEffect
+---@field NewRow fun(self: dbc.Table.ScreenEffect, id?: integer): dbc.row.ScreenEffect
+---@field Create fun(self: dbc.Table.ScreenEffect, id?: integer): dbc.row.ScreenEffect
+---@field CreateNext fun(self: dbc.Table.ScreenEffect, data?: table): dbc.row.ScreenEffect
+---@field CloneRow fun(self: dbc.Table.ScreenEffect, source: integer|dbc.row.ScreenEffect, new_id?: integer): dbc.row.ScreenEffect
+---@field GetAllRows fun(self: dbc.Table.ScreenEffect): dbc.row.ScreenEffect[]
+---@field Query fun(self: dbc.Table.ScreenEffect): dbc.Query<dbc.row.ScreenEffect>
+---@field Rows fun(self: dbc.Table.ScreenEffect): fun(): integer, dbc.row.ScreenEffect

@@ -1,0 +1,25 @@
+-- Generated from TSWoW's AreaTable.ts. Do not edit.
+return {
+  name = "AreaTable",
+  record_size = 144,
+  field_count = 36,
+  fields = {
+    { name = "ID", kind = "key", offset = 0, count = 1 },
+    { name = "MapID", kind = "ptr", offset = 4, count = 1 },
+    { name = "ParentAreaID", kind = "ptr", offset = 8, count = 1 },
+    { name = "ExploreFlag", kind = "i32", offset = 12, count = 1 },
+    { name = "Flags", kind = "flag", offset = 16, count = 1 },
+    { name = "SoundProviderPref", kind = "ptr", offset = 20, count = 1 },
+    { name = "SoundProviderPrefUnderwater", kind = "ptr", offset = 24, count = 1 },
+    { name = "AmbienceID", kind = "ptr", offset = 28, count = 1 },
+    { name = "ZoneMusic", kind = "ptr", offset = 32, count = 1 },
+    { name = "IntroSound", kind = "ptr", offset = 36, count = 1 },
+    { name = "ExplorationLevel", kind = "i32", offset = 40, count = 1 },
+    { name = "AreaName", kind = "loc", offset = 44, count = 1 },
+    { name = "FactionGroupMask", kind = "i32", offset = 112, count = 1 },
+    { name = "LiquidTypeID", kind = "i32", offset = 116, count = 4 },
+    { name = "MinElevation", kind = "f32", offset = 132, count = 1 },
+    { name = "Ambient_Multiplier", kind = "f32", offset = 136, count = 1 },
+    { name = "Lightid", kind = "ptr", offset = 140, count = 1 },
+  },
+}

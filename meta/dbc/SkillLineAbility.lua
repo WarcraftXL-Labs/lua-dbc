@@ -1,0 +1,80 @@
+---@meta
+-- Generated LuaLS annotations for SkillLineAbility.dbc. Do not edit.
+
+---Row representation of SkillLineAbility.dbc.
+---@class dbc.row.SkillLineAbility : RowProxy
+---@field ID integer
+---@field SkillLine integer
+---@field Spell integer
+---@field RaceMask integer
+---@field ClassMask integer
+---@field RaceMaskForbidden integer
+---@field ClassMaskForbidden integer
+---@field MinSkillLineRank integer
+---@field SupercededBySpell integer
+---@field AcquireMethod integer
+---@field TrivialSkillLineRankHigh integer
+---@field TrivialSkillLineRankLow integer
+---@field CharacterPoints integer[]
+
+-- Fluent PascalCase Methods for SkillLineAbility
+---@field GetID fun(self: dbc.row.SkillLineAbility): integer
+---@field SetID fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetSkillLine fun(self: dbc.row.SkillLineAbility): integer
+---@field SetSkillLine fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetSpell fun(self: dbc.row.SkillLineAbility): integer
+---@field SetSpell fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetRaceMask fun(self: dbc.row.SkillLineAbility): integer
+---@field SetRaceMask fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field HasRaceMask fun(self: dbc.row.SkillLineAbility, flag: integer): boolean
+---@field AddRaceMask fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field RemoveRaceMask fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field GetClassMask fun(self: dbc.row.SkillLineAbility): integer
+---@field SetClassMask fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field HasClassMask fun(self: dbc.row.SkillLineAbility, flag: integer): boolean
+---@field AddClassMask fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field RemoveClassMask fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field GetRaceMaskForbidden fun(self: dbc.row.SkillLineAbility): integer
+---@field SetRaceMaskForbidden fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field HasRaceMaskForbidden fun(self: dbc.row.SkillLineAbility, flag: integer): boolean
+---@field AddRaceMaskForbidden fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field RemoveRaceMaskForbidden fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field GetClassMaskForbidden fun(self: dbc.row.SkillLineAbility): integer
+---@field SetClassMaskForbidden fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field HasClassMaskForbidden fun(self: dbc.row.SkillLineAbility, flag: integer): boolean
+---@field AddClassMaskForbidden fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field RemoveClassMaskForbidden fun(self: dbc.row.SkillLineAbility, flag: integer): dbc.row.SkillLineAbility
+---@field GetMinSkillLineRank fun(self: dbc.row.SkillLineAbility): integer
+---@field SetMinSkillLineRank fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetSupercededBySpell fun(self: dbc.row.SkillLineAbility): integer
+---@field SetSupercededBySpell fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetAcquireMethod fun(self: dbc.row.SkillLineAbility): integer
+---@field SetAcquireMethod fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetTrivialSkillLineRankHigh fun(self: dbc.row.SkillLineAbility): integer
+---@field SetTrivialSkillLineRankHigh fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetTrivialSkillLineRankLow fun(self: dbc.row.SkillLineAbility): integer
+---@field SetTrivialSkillLineRankLow fun(self: dbc.row.SkillLineAbility, value: integer): dbc.row.SkillLineAbility
+---@field GetCharacterPoints fun(self: dbc.row.SkillLineAbility, index?: integer): integer|integer[]
+---@field SetCharacterPoints fun(self: dbc.row.SkillLineAbility, value: integer|integer[], index?: integer): dbc.row.SkillLineAbility
+
+-- Inferred Cross-Table Relations for SkillLineAbility
+---@field GetSkillLine fun(self: dbc.row.SkillLineAbility): dbc.row.SkillLine|nil
+---@field SetSkillLine fun(self: dbc.row.SkillLineAbility, target: dbc.row.SkillLine|integer): dbc.row.SkillLineAbility
+
+-- Cascading Creation & Relations Engine for SkillLineAbility
+---@field CreateRelated fun(self: dbc.row.SkillLineAbility, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SkillLineAbility, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SkillLineAbility, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SkillLineAbility.dbc.
+---@class dbc.Table.SkillLineAbility : DbcTable
+---@field FindById fun(self: dbc.Table.SkillLineAbility, id: integer): dbc.row.SkillLineAbility|nil
+---@field GetById fun(self: dbc.Table.SkillLineAbility, id: integer): dbc.row.SkillLineAbility|nil
+---@field GetRow fun(self: dbc.Table.SkillLineAbility, row: integer): dbc.row.SkillLineAbility
+---@field NewRow fun(self: dbc.Table.SkillLineAbility, id?: integer): dbc.row.SkillLineAbility
+---@field Create fun(self: dbc.Table.SkillLineAbility, id?: integer): dbc.row.SkillLineAbility
+---@field CreateNext fun(self: dbc.Table.SkillLineAbility, data?: table): dbc.row.SkillLineAbility
+---@field CloneRow fun(self: dbc.Table.SkillLineAbility, source: integer|dbc.row.SkillLineAbility, new_id?: integer): dbc.row.SkillLineAbility
+---@field GetAllRows fun(self: dbc.Table.SkillLineAbility): dbc.row.SkillLineAbility[]
+---@field Query fun(self: dbc.Table.SkillLineAbility): dbc.Query<dbc.row.SkillLineAbility>
+---@field Rows fun(self: dbc.Table.SkillLineAbility): fun(): integer, dbc.row.SkillLineAbility

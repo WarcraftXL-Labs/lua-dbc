@@ -1,0 +1,51 @@
+---@meta
+-- Generated LuaLS annotations for Emotes.dbc. Do not edit.
+
+---Row representation of Emotes.dbc.
+---@class dbc.row.Emotes : RowProxy
+---@field ID integer
+---@field EmoteSlashCommand string
+---@field AnimID integer
+---@field EmoteFlags integer
+---@field EmoteSpecProc integer
+---@field EmoteSpecProcParam integer
+---@field EventSoundID integer
+
+-- Fluent PascalCase Methods for Emotes
+---@field GetID fun(self: dbc.row.Emotes): integer
+---@field SetID fun(self: dbc.row.Emotes, value: integer): dbc.row.Emotes
+---@field GetEmoteSlashCommand fun(self: dbc.row.Emotes): string
+---@field SetEmoteSlashCommand fun(self: dbc.row.Emotes, value: string): dbc.row.Emotes
+---@field GetAnimID fun(self: dbc.row.Emotes): integer
+---@field SetAnimID fun(self: dbc.row.Emotes, value: integer): dbc.row.Emotes
+---@field GetEmoteFlags fun(self: dbc.row.Emotes): integer
+---@field SetEmoteFlags fun(self: dbc.row.Emotes, value: integer): dbc.row.Emotes
+---@field HasEmoteFlags fun(self: dbc.row.Emotes, flag: integer): boolean
+---@field AddEmoteFlags fun(self: dbc.row.Emotes, flag: integer): dbc.row.Emotes
+---@field RemoveEmoteFlags fun(self: dbc.row.Emotes, flag: integer): dbc.row.Emotes
+---@field GetEmoteSpecProc fun(self: dbc.row.Emotes): integer
+---@field SetEmoteSpecProc fun(self: dbc.row.Emotes, value: integer): dbc.row.Emotes
+---@field GetEmoteSpecProcParam fun(self: dbc.row.Emotes): integer
+---@field SetEmoteSpecProcParam fun(self: dbc.row.Emotes, value: integer): dbc.row.Emotes
+---@field GetEventSoundID fun(self: dbc.row.Emotes): integer
+---@field SetEventSoundID fun(self: dbc.row.Emotes, value: integer): dbc.row.Emotes
+
+-- Inferred Cross-Table Relations for Emotes
+
+-- Cascading Creation & Relations Engine for Emotes
+---@field CreateRelated fun(self: dbc.row.Emotes, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.Emotes, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.Emotes, child_table: string, child_field?: string): any[]
+
+---Typed table handle for Emotes.dbc.
+---@class dbc.Table.Emotes : DbcTable
+---@field FindById fun(self: dbc.Table.Emotes, id: integer): dbc.row.Emotes|nil
+---@field GetById fun(self: dbc.Table.Emotes, id: integer): dbc.row.Emotes|nil
+---@field GetRow fun(self: dbc.Table.Emotes, row: integer): dbc.row.Emotes
+---@field NewRow fun(self: dbc.Table.Emotes, id?: integer): dbc.row.Emotes
+---@field Create fun(self: dbc.Table.Emotes, id?: integer): dbc.row.Emotes
+---@field CreateNext fun(self: dbc.Table.Emotes, data?: table): dbc.row.Emotes
+---@field CloneRow fun(self: dbc.Table.Emotes, source: integer|dbc.row.Emotes, new_id?: integer): dbc.row.Emotes
+---@field GetAllRows fun(self: dbc.Table.Emotes): dbc.row.Emotes[]
+---@field Query fun(self: dbc.Table.Emotes): dbc.Query<dbc.row.Emotes>
+---@field Rows fun(self: dbc.Table.Emotes): fun(): integer, dbc.row.Emotes

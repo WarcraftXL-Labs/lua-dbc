@@ -1,0 +1,56 @@
+---@meta
+-- Generated LuaLS annotations for FactionTemplate.dbc. Do not edit.
+
+---Row representation of FactionTemplate.dbc.
+---@class dbc.row.FactionTemplate : RowProxy
+---@field ID integer
+---@field Faction integer
+---@field Flags integer
+---@field FactionGroup integer
+---@field FriendGroup integer
+---@field EnemyGroup integer
+---@field Enemies integer[]
+---@field Friend integer[]
+
+-- Fluent PascalCase Methods for FactionTemplate
+---@field GetID fun(self: dbc.row.FactionTemplate): integer
+---@field SetID fun(self: dbc.row.FactionTemplate, value: integer): dbc.row.FactionTemplate
+---@field GetFaction fun(self: dbc.row.FactionTemplate): integer
+---@field SetFaction fun(self: dbc.row.FactionTemplate, value: integer): dbc.row.FactionTemplate
+---@field GetFlags fun(self: dbc.row.FactionTemplate): integer
+---@field SetFlags fun(self: dbc.row.FactionTemplate, value: integer): dbc.row.FactionTemplate
+---@field HasFlags fun(self: dbc.row.FactionTemplate, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.FactionTemplate, flag: integer): dbc.row.FactionTemplate
+---@field RemoveFlags fun(self: dbc.row.FactionTemplate, flag: integer): dbc.row.FactionTemplate
+---@field GetFactionGroup fun(self: dbc.row.FactionTemplate): integer
+---@field SetFactionGroup fun(self: dbc.row.FactionTemplate, value: integer): dbc.row.FactionTemplate
+---@field GetFriendGroup fun(self: dbc.row.FactionTemplate): integer
+---@field SetFriendGroup fun(self: dbc.row.FactionTemplate, value: integer): dbc.row.FactionTemplate
+---@field GetEnemyGroup fun(self: dbc.row.FactionTemplate): integer
+---@field SetEnemyGroup fun(self: dbc.row.FactionTemplate, value: integer): dbc.row.FactionTemplate
+---@field GetEnemies fun(self: dbc.row.FactionTemplate, index?: integer): integer|integer[]
+---@field SetEnemies fun(self: dbc.row.FactionTemplate, value: integer|integer[], index?: integer): dbc.row.FactionTemplate
+---@field GetFriend fun(self: dbc.row.FactionTemplate, index?: integer): integer|integer[]
+---@field SetFriend fun(self: dbc.row.FactionTemplate, value: integer|integer[], index?: integer): dbc.row.FactionTemplate
+
+-- Inferred Cross-Table Relations for FactionTemplate
+---@field GetFaction fun(self: dbc.row.FactionTemplate): dbc.row.Faction|nil
+---@field SetFaction fun(self: dbc.row.FactionTemplate, target: dbc.row.Faction|integer): dbc.row.FactionTemplate
+
+-- Cascading Creation & Relations Engine for FactionTemplate
+---@field CreateRelated fun(self: dbc.row.FactionTemplate, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.FactionTemplate, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.FactionTemplate, child_table: string, child_field?: string): any[]
+
+---Typed table handle for FactionTemplate.dbc.
+---@class dbc.Table.FactionTemplate : DbcTable
+---@field FindById fun(self: dbc.Table.FactionTemplate, id: integer): dbc.row.FactionTemplate|nil
+---@field GetById fun(self: dbc.Table.FactionTemplate, id: integer): dbc.row.FactionTemplate|nil
+---@field GetRow fun(self: dbc.Table.FactionTemplate, row: integer): dbc.row.FactionTemplate
+---@field NewRow fun(self: dbc.Table.FactionTemplate, id?: integer): dbc.row.FactionTemplate
+---@field Create fun(self: dbc.Table.FactionTemplate, id?: integer): dbc.row.FactionTemplate
+---@field CreateNext fun(self: dbc.Table.FactionTemplate, data?: table): dbc.row.FactionTemplate
+---@field CloneRow fun(self: dbc.Table.FactionTemplate, source: integer|dbc.row.FactionTemplate, new_id?: integer): dbc.row.FactionTemplate
+---@field GetAllRows fun(self: dbc.Table.FactionTemplate): dbc.row.FactionTemplate[]
+---@field Query fun(self: dbc.Table.FactionTemplate): dbc.Query<dbc.row.FactionTemplate>
+---@field Rows fun(self: dbc.Table.FactionTemplate): fun(): integer, dbc.row.FactionTemplate

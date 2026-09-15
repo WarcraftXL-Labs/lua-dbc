@@ -1,0 +1,68 @@
+---@meta
+-- Generated LuaLS annotations for WMOAreaTable.dbc. Do not edit.
+
+---Row representation of WMOAreaTable.dbc.
+---@class dbc.row.WMOAreaTable : RowProxy
+---@field ID integer
+---@field WMOID integer
+---@field NameSetID integer
+---@field WMOGroupID integer
+---@field SoundProviderPref integer
+---@field SoundProviderPrefUnderwater integer
+---@field AmbienceID integer
+---@field ZoneMusic integer
+---@field IntroSound integer
+---@field Flags integer
+---@field AreaTableID integer
+---@field AreaName string
+
+-- Fluent PascalCase Methods for WMOAreaTable
+---@field GetID fun(self: dbc.row.WMOAreaTable): integer
+---@field SetID fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetWMOID fun(self: dbc.row.WMOAreaTable): integer
+---@field SetWMOID fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetNameSetID fun(self: dbc.row.WMOAreaTable): integer
+---@field SetNameSetID fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetWMOGroupID fun(self: dbc.row.WMOAreaTable): integer
+---@field SetWMOGroupID fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetSoundProviderPref fun(self: dbc.row.WMOAreaTable): integer
+---@field SetSoundProviderPref fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetSoundProviderPrefUnderwater fun(self: dbc.row.WMOAreaTable): integer
+---@field SetSoundProviderPrefUnderwater fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetAmbienceID fun(self: dbc.row.WMOAreaTable): integer
+---@field SetAmbienceID fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetZoneMusic fun(self: dbc.row.WMOAreaTable): integer
+---@field SetZoneMusic fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetIntroSound fun(self: dbc.row.WMOAreaTable): integer
+---@field SetIntroSound fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetFlags fun(self: dbc.row.WMOAreaTable): integer
+---@field SetFlags fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field HasFlags fun(self: dbc.row.WMOAreaTable, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.WMOAreaTable, flag: integer): dbc.row.WMOAreaTable
+---@field RemoveFlags fun(self: dbc.row.WMOAreaTable, flag: integer): dbc.row.WMOAreaTable
+---@field GetAreaTableID fun(self: dbc.row.WMOAreaTable): integer
+---@field SetAreaTableID fun(self: dbc.row.WMOAreaTable, value: integer): dbc.row.WMOAreaTable
+---@field GetAreaName fun(self: dbc.row.WMOAreaTable, locale?: string|integer): string
+---@field SetAreaName fun(self: dbc.row.WMOAreaTable, value: string, locale?: string|integer): dbc.row.WMOAreaTable
+
+-- Inferred Cross-Table Relations for WMOAreaTable
+---@field GetAreaTable fun(self: dbc.row.WMOAreaTable): dbc.row.AreaTable|nil
+---@field SetAreaTable fun(self: dbc.row.WMOAreaTable, target: dbc.row.AreaTable|integer): dbc.row.WMOAreaTable
+
+-- Cascading Creation & Relations Engine for WMOAreaTable
+---@field CreateRelated fun(self: dbc.row.WMOAreaTable, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.WMOAreaTable, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.WMOAreaTable, child_table: string, child_field?: string): any[]
+
+---Typed table handle for WMOAreaTable.dbc.
+---@class dbc.Table.WMOAreaTable : DbcTable
+---@field FindById fun(self: dbc.Table.WMOAreaTable, id: integer): dbc.row.WMOAreaTable|nil
+---@field GetById fun(self: dbc.Table.WMOAreaTable, id: integer): dbc.row.WMOAreaTable|nil
+---@field GetRow fun(self: dbc.Table.WMOAreaTable, row: integer): dbc.row.WMOAreaTable
+---@field NewRow fun(self: dbc.Table.WMOAreaTable, id?: integer): dbc.row.WMOAreaTable
+---@field Create fun(self: dbc.Table.WMOAreaTable, id?: integer): dbc.row.WMOAreaTable
+---@field CreateNext fun(self: dbc.Table.WMOAreaTable, data?: table): dbc.row.WMOAreaTable
+---@field CloneRow fun(self: dbc.Table.WMOAreaTable, source: integer|dbc.row.WMOAreaTable, new_id?: integer): dbc.row.WMOAreaTable
+---@field GetAllRows fun(self: dbc.Table.WMOAreaTable): dbc.row.WMOAreaTable[]
+---@field Query fun(self: dbc.Table.WMOAreaTable): dbc.Query<dbc.row.WMOAreaTable>
+---@field Rows fun(self: dbc.Table.WMOAreaTable): fun(): integer, dbc.row.WMOAreaTable

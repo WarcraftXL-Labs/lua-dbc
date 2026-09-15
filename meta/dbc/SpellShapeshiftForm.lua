@@ -1,0 +1,57 @@
+---@meta
+-- Generated LuaLS annotations for SpellShapeshiftForm.dbc. Do not edit.
+
+---Row representation of SpellShapeshiftForm.dbc.
+---@class dbc.row.SpellShapeshiftForm : RowProxy
+---@field ID integer
+---@field BonusActionBar integer
+---@field Name string
+---@field Flags integer
+---@field CreatureType integer
+---@field AttackIconID integer
+---@field CombatRoundTime integer
+---@field CreatureDisplayID integer[]
+---@field PresetSpellID integer[]
+
+-- Fluent PascalCase Methods for SpellShapeshiftForm
+---@field GetID fun(self: dbc.row.SpellShapeshiftForm): integer
+---@field SetID fun(self: dbc.row.SpellShapeshiftForm, value: integer): dbc.row.SpellShapeshiftForm
+---@field GetBonusActionBar fun(self: dbc.row.SpellShapeshiftForm): integer
+---@field SetBonusActionBar fun(self: dbc.row.SpellShapeshiftForm, value: integer): dbc.row.SpellShapeshiftForm
+---@field GetName fun(self: dbc.row.SpellShapeshiftForm, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.SpellShapeshiftForm, value: string, locale?: string|integer): dbc.row.SpellShapeshiftForm
+---@field GetFlags fun(self: dbc.row.SpellShapeshiftForm): integer
+---@field SetFlags fun(self: dbc.row.SpellShapeshiftForm, value: integer): dbc.row.SpellShapeshiftForm
+---@field HasFlags fun(self: dbc.row.SpellShapeshiftForm, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.SpellShapeshiftForm, flag: integer): dbc.row.SpellShapeshiftForm
+---@field RemoveFlags fun(self: dbc.row.SpellShapeshiftForm, flag: integer): dbc.row.SpellShapeshiftForm
+---@field GetCreatureType fun(self: dbc.row.SpellShapeshiftForm): integer
+---@field SetCreatureType fun(self: dbc.row.SpellShapeshiftForm, value: integer): dbc.row.SpellShapeshiftForm
+---@field GetAttackIconID fun(self: dbc.row.SpellShapeshiftForm): integer
+---@field SetAttackIconID fun(self: dbc.row.SpellShapeshiftForm, value: integer): dbc.row.SpellShapeshiftForm
+---@field GetCombatRoundTime fun(self: dbc.row.SpellShapeshiftForm): integer
+---@field SetCombatRoundTime fun(self: dbc.row.SpellShapeshiftForm, value: integer): dbc.row.SpellShapeshiftForm
+---@field GetCreatureDisplayID fun(self: dbc.row.SpellShapeshiftForm, index?: integer): integer|integer[]
+---@field SetCreatureDisplayID fun(self: dbc.row.SpellShapeshiftForm, value: integer|integer[], index?: integer): dbc.row.SpellShapeshiftForm
+---@field GetPresetSpellID fun(self: dbc.row.SpellShapeshiftForm, index?: integer): integer|integer[]
+---@field SetPresetSpellID fun(self: dbc.row.SpellShapeshiftForm, value: integer|integer[], index?: integer): dbc.row.SpellShapeshiftForm
+
+-- Inferred Cross-Table Relations for SpellShapeshiftForm
+
+-- Cascading Creation & Relations Engine for SpellShapeshiftForm
+---@field CreateRelated fun(self: dbc.row.SpellShapeshiftForm, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SpellShapeshiftForm, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SpellShapeshiftForm, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SpellShapeshiftForm.dbc.
+---@class dbc.Table.SpellShapeshiftForm : DbcTable
+---@field FindById fun(self: dbc.Table.SpellShapeshiftForm, id: integer): dbc.row.SpellShapeshiftForm|nil
+---@field GetById fun(self: dbc.Table.SpellShapeshiftForm, id: integer): dbc.row.SpellShapeshiftForm|nil
+---@field GetRow fun(self: dbc.Table.SpellShapeshiftForm, row: integer): dbc.row.SpellShapeshiftForm
+---@field NewRow fun(self: dbc.Table.SpellShapeshiftForm, id?: integer): dbc.row.SpellShapeshiftForm
+---@field Create fun(self: dbc.Table.SpellShapeshiftForm, id?: integer): dbc.row.SpellShapeshiftForm
+---@field CreateNext fun(self: dbc.Table.SpellShapeshiftForm, data?: table): dbc.row.SpellShapeshiftForm
+---@field CloneRow fun(self: dbc.Table.SpellShapeshiftForm, source: integer|dbc.row.SpellShapeshiftForm, new_id?: integer): dbc.row.SpellShapeshiftForm
+---@field GetAllRows fun(self: dbc.Table.SpellShapeshiftForm): dbc.row.SpellShapeshiftForm[]
+---@field Query fun(self: dbc.Table.SpellShapeshiftForm): dbc.Query<dbc.row.SpellShapeshiftForm>
+---@field Rows fun(self: dbc.Table.SpellShapeshiftForm): fun(): integer, dbc.row.SpellShapeshiftForm

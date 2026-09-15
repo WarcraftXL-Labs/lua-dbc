@@ -1,0 +1,27 @@
+-- Generated from TSWoW's DestructibleModelData.ts. Do not edit.
+return {
+  name = "DestructibleModelData",
+  record_size = 76,
+  field_count = 19,
+  fields = {
+    { name = "ID", kind = "key", offset = 0, count = 1 },
+    { name = "State0Wmo", kind = "i32", offset = 4, count = 1 },
+    { name = "State0DestructionDoodadSet", kind = "i32", offset = 8, count = 1 },
+    { name = "State0ImpactEffectDoodadSet", kind = "i32", offset = 12, count = 1 },
+    { name = "State0AmbientDoodadSet", kind = "i32", offset = 16, count = 1 },
+    { name = "State1Wmo", kind = "i32", offset = 20, count = 1 },
+    { name = "State1DestructionDoodadSet", kind = "i32", offset = 24, count = 1 },
+    { name = "State1ImpactEffectDoodadSet", kind = "i32", offset = 28, count = 1 },
+    { name = "State1AmbientDoodadSet", kind = "i32", offset = 32, count = 1 },
+    { name = "State2Wmo", kind = "i32", offset = 36, count = 1 },
+    { name = "State2DestructionDoodadSet", kind = "i32", offset = 40, count = 1 },
+    { name = "State2ImpactEffectDoodadSet", kind = "i32", offset = 44, count = 1 },
+    { name = "State2AmbientDoodadSet", kind = "i32", offset = 48, count = 1 },
+    { name = "State3Wmo", kind = "i32", offset = 52, count = 1 },
+    { name = "State3DestructionDoodadSet", kind = "i32", offset = 56, count = 1 },
+    { name = "State3ImpactEffectDoodadSet", kind = "i32", offset = 60, count = 1 },
+    { name = "State3AmbientDoodadSet", kind = "i32", offset = 64, count = 1 },
+    { name = "Field17", kind = "i32", offset = 68, count = 1 },
+    { name = "Field18", kind = "i32", offset = 72, count = 1 },
+  },
+}

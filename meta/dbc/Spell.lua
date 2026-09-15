@@ -1,0 +1,423 @@
+---@meta
+-- Generated LuaLS annotations for Spell.dbc. Do not edit.
+
+---Row representation of Spell.dbc.
+---@class dbc.row.Spell : RowProxy
+---@field ID integer
+---@field Category integer
+---@field DispelType integer
+---@field Mechanic integer
+---@field Attributes integer
+---@field AttributesEx integer
+---@field AttributesExB integer
+---@field AttributesExC integer
+---@field AttributesExD integer
+---@field AttributesExE integer
+---@field AttributesExF integer
+---@field AttributesExG integer
+---@field ShapeshiftMask integer
+---@field ShapeshiftExclude integer
+---@field Targets integer
+---@field TargetCreatureType integer
+---@field RequiresSpellFocus integer
+---@field FacingCasterFlags integer
+---@field CasterAuraState integer
+---@field TargetAuraState integer
+---@field ExcludeCasterAuraState integer
+---@field ExcludeTargetAuraState integer
+---@field CasterAuraSpell integer
+---@field TargetAuraSpell integer
+---@field ExcludeCasterAuraSpell integer
+---@field ExcludeTargetAuraSpell integer
+---@field CastingTimeIndex integer
+---@field RecoveryTime integer
+---@field CategoryRecoveryTime integer
+---@field InterruptFlags integer
+---@field AuraInterruptFlags integer
+---@field ChannelInterruptFlags integer
+---@field ProcTypeMask integer
+---@field ProcChance integer
+---@field ProcCharges integer
+---@field MaxLevel integer
+---@field BaseLevel integer
+---@field SpellLevel integer
+---@field DurationIndex integer
+---@field PowerType integer
+---@field ManaCost integer
+---@field ManaCostPerLevel integer
+---@field ManaPerSecond integer
+---@field ManaPerSecondPerLevel integer
+---@field RangeIndex integer
+---@field Speed number
+---@field ModalNextSpell integer
+---@field CumulativeAura integer
+---@field Totem integer[]
+---@field Reagent integer[]
+---@field ReagentCount integer[]
+---@field EquippedItemClass integer
+---@field EquippedItemSubclass integer
+---@field EquippedItemInvTypes integer
+---@field Effect integer[]
+---@field EffectDieSides integer[]
+---@field EffectRealPointsPerLevel number[]
+---@field EffectBasePoints integer[]
+---@field EffectMechanic integer[]
+---@field ImplicitTargetA integer[]
+---@field ImplicitTargetB integer[]
+---@field EffectRadiusIndex integer[]
+---@field EffectAura integer[]
+---@field EffectAuraPeriod integer[]
+---@field EffectMultipleValue number[]
+---@field EffectChainTargets integer[]
+---@field EffectItemType integer[]
+---@field EffectMiscValue integer[]
+---@field EffectMiscValueB integer[]
+---@field EffectTriggerSpell integer[]
+---@field EffectPointsPerCombo number[]
+---@field EffectSpellClassMaskA integer[]
+---@field EffectSpellClassMaskB integer[]
+---@field EffectSpellClassMaskC integer[]
+---@field SpellVisualID integer[]
+---@field SpellIconID integer
+---@field ActiveIconID integer
+---@field SpellPriority integer
+---@field Name string
+---@field NameSubtext string
+---@field Description string
+---@field AuraDescription string
+---@field ManaCostPct integer
+---@field StartRecoveryCategory integer
+---@field StartRecoveryTime integer
+---@field MaxTargetLevel integer
+---@field SpellClassSet integer
+---@field SpellClassMask integer[]
+---@field MaxTargets integer
+---@field DefenseType integer
+---@field PreventionType integer
+---@field StanceBarOrder integer
+---@field EffectChainAmplitude number[]
+---@field MinFactionID integer
+---@field MinReputation integer
+---@field RequiredAuraVision integer
+---@field RequiredTotemCategoryID integer[]
+---@field RequiredAreasID integer
+---@field SchoolMask integer
+---@field RuneCostID integer
+---@field SpellMissileID integer
+---@field PowerDisplayID integer
+---@field Field227 number
+---@field Field228 number
+---@field Field229 number
+---@field SpellDescriptionVariableID integer
+---@field SpellDifficultyID integer
+
+-- Fluent PascalCase Methods for Spell
+---@field GetID fun(self: dbc.row.Spell): integer
+---@field SetID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetCategory fun(self: dbc.row.Spell): integer
+---@field SetCategory fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetDispelType fun(self: dbc.row.Spell): integer
+---@field SetDispelType fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetMechanic fun(self: dbc.row.Spell): integer
+---@field SetMechanic fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetAttributes fun(self: dbc.row.Spell): integer
+---@field SetAttributes fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributes fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributes fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributes fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAttributesEx fun(self: dbc.row.Spell): integer
+---@field SetAttributesEx fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributesEx fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributesEx fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributesEx fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAttributesExB fun(self: dbc.row.Spell): integer
+---@field SetAttributesExB fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributesExB fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributesExB fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributesExB fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAttributesExC fun(self: dbc.row.Spell): integer
+---@field SetAttributesExC fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributesExC fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributesExC fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributesExC fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAttributesExD fun(self: dbc.row.Spell): integer
+---@field SetAttributesExD fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributesExD fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributesExD fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributesExD fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAttributesExE fun(self: dbc.row.Spell): integer
+---@field SetAttributesExE fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributesExE fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributesExE fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributesExE fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAttributesExF fun(self: dbc.row.Spell): integer
+---@field SetAttributesExF fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributesExF fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributesExF fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributesExF fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAttributesExG fun(self: dbc.row.Spell): integer
+---@field SetAttributesExG fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAttributesExG fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAttributesExG fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAttributesExG fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetShapeshiftMask fun(self: dbc.row.Spell): integer
+---@field SetShapeshiftMask fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasShapeshiftMask fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddShapeshiftMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveShapeshiftMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetShapeshiftExclude fun(self: dbc.row.Spell): integer
+---@field SetShapeshiftExclude fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetTargets fun(self: dbc.row.Spell): integer
+---@field SetTargets fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetTargetCreatureType fun(self: dbc.row.Spell): integer
+---@field SetTargetCreatureType fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetRequiresSpellFocus fun(self: dbc.row.Spell): integer
+---@field SetRequiresSpellFocus fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetFacingCasterFlags fun(self: dbc.row.Spell): integer
+---@field SetFacingCasterFlags fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasFacingCasterFlags fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddFacingCasterFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveFacingCasterFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetCasterAuraState fun(self: dbc.row.Spell): integer
+---@field SetCasterAuraState fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetTargetAuraState fun(self: dbc.row.Spell): integer
+---@field SetTargetAuraState fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetExcludeCasterAuraState fun(self: dbc.row.Spell): integer
+---@field SetExcludeCasterAuraState fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetExcludeTargetAuraState fun(self: dbc.row.Spell): integer
+---@field SetExcludeTargetAuraState fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetCasterAuraSpell fun(self: dbc.row.Spell): integer
+---@field SetCasterAuraSpell fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetTargetAuraSpell fun(self: dbc.row.Spell): integer
+---@field SetTargetAuraSpell fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetExcludeCasterAuraSpell fun(self: dbc.row.Spell): integer
+---@field SetExcludeCasterAuraSpell fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetExcludeTargetAuraSpell fun(self: dbc.row.Spell): integer
+---@field SetExcludeTargetAuraSpell fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetCastingTimeIndex fun(self: dbc.row.Spell): integer
+---@field SetCastingTimeIndex fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetRecoveryTime fun(self: dbc.row.Spell): integer
+---@field SetRecoveryTime fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetCategoryRecoveryTime fun(self: dbc.row.Spell): integer
+---@field SetCategoryRecoveryTime fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetInterruptFlags fun(self: dbc.row.Spell): integer
+---@field SetInterruptFlags fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasInterruptFlags fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddInterruptFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveInterruptFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetAuraInterruptFlags fun(self: dbc.row.Spell): integer
+---@field SetAuraInterruptFlags fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasAuraInterruptFlags fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddAuraInterruptFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveAuraInterruptFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetChannelInterruptFlags fun(self: dbc.row.Spell): integer
+---@field SetChannelInterruptFlags fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasChannelInterruptFlags fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddChannelInterruptFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveChannelInterruptFlags fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetProcTypeMask fun(self: dbc.row.Spell): integer
+---@field SetProcTypeMask fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasProcTypeMask fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddProcTypeMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveProcTypeMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetProcChance fun(self: dbc.row.Spell): integer
+---@field SetProcChance fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetProcCharges fun(self: dbc.row.Spell): integer
+---@field SetProcCharges fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetMaxLevel fun(self: dbc.row.Spell): integer
+---@field SetMaxLevel fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetBaseLevel fun(self: dbc.row.Spell): integer
+---@field SetBaseLevel fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSpellLevel fun(self: dbc.row.Spell): integer
+---@field SetSpellLevel fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetDurationIndex fun(self: dbc.row.Spell): integer
+---@field SetDurationIndex fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetPowerType fun(self: dbc.row.Spell): integer
+---@field SetPowerType fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetManaCost fun(self: dbc.row.Spell): integer
+---@field SetManaCost fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetManaCostPerLevel fun(self: dbc.row.Spell): integer
+---@field SetManaCostPerLevel fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetManaPerSecond fun(self: dbc.row.Spell): integer
+---@field SetManaPerSecond fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetManaPerSecondPerLevel fun(self: dbc.row.Spell): integer
+---@field SetManaPerSecondPerLevel fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetRangeIndex fun(self: dbc.row.Spell): integer
+---@field SetRangeIndex fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSpeed fun(self: dbc.row.Spell): number
+---@field SetSpeed fun(self: dbc.row.Spell, value: number): dbc.row.Spell
+---@field GetModalNextSpell fun(self: dbc.row.Spell): integer
+---@field SetModalNextSpell fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetCumulativeAura fun(self: dbc.row.Spell): integer
+---@field SetCumulativeAura fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetTotem fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetTotem fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetReagent fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetReagent fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetReagentCount fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetReagentCount fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEquippedItemClass fun(self: dbc.row.Spell): integer
+---@field SetEquippedItemClass fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetEquippedItemSubclass fun(self: dbc.row.Spell): integer
+---@field SetEquippedItemSubclass fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetEquippedItemInvTypes fun(self: dbc.row.Spell): integer
+---@field SetEquippedItemInvTypes fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetEffect fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffect fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectDieSides fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectDieSides fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectRealPointsPerLevel fun(self: dbc.row.Spell, index?: integer): number|number[]
+---@field SetEffectRealPointsPerLevel fun(self: dbc.row.Spell, value: number|number[], index?: integer): dbc.row.Spell
+---@field GetEffectBasePoints fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectBasePoints fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectMechanic fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectMechanic fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetImplicitTargetA fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetImplicitTargetA fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetImplicitTargetB fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetImplicitTargetB fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectRadiusIndex fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectRadiusIndex fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectAura fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectAura fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectAuraPeriod fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectAuraPeriod fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectMultipleValue fun(self: dbc.row.Spell, index?: integer): number|number[]
+---@field SetEffectMultipleValue fun(self: dbc.row.Spell, value: number|number[], index?: integer): dbc.row.Spell
+---@field GetEffectChainTargets fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectChainTargets fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectItemType fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectItemType fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectMiscValue fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectMiscValue fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectMiscValueB fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectMiscValueB fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectTriggerSpell fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectTriggerSpell fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetEffectPointsPerCombo fun(self: dbc.row.Spell, index?: integer): number|number[]
+---@field SetEffectPointsPerCombo fun(self: dbc.row.Spell, value: number|number[], index?: integer): dbc.row.Spell
+---@field GetEffectSpellClassMaskA fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectSpellClassMaskA fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field HasEffectSpellClassMaskA fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddEffectSpellClassMaskA fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveEffectSpellClassMaskA fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetEffectSpellClassMaskB fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectSpellClassMaskB fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field HasEffectSpellClassMaskB fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddEffectSpellClassMaskB fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveEffectSpellClassMaskB fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetEffectSpellClassMaskC fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetEffectSpellClassMaskC fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field HasEffectSpellClassMaskC fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddEffectSpellClassMaskC fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveEffectSpellClassMaskC fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetSpellVisualID fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetSpellVisualID fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetSpellIconID fun(self: dbc.row.Spell): integer
+---@field SetSpellIconID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetActiveIconID fun(self: dbc.row.Spell): integer
+---@field SetActiveIconID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSpellPriority fun(self: dbc.row.Spell): integer
+---@field SetSpellPriority fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetName fun(self: dbc.row.Spell, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.Spell, value: string, locale?: string|integer): dbc.row.Spell
+---@field GetNameSubtext fun(self: dbc.row.Spell, locale?: string|integer): string
+---@field SetNameSubtext fun(self: dbc.row.Spell, value: string, locale?: string|integer): dbc.row.Spell
+---@field GetDescription fun(self: dbc.row.Spell, locale?: string|integer): string
+---@field SetDescription fun(self: dbc.row.Spell, value: string, locale?: string|integer): dbc.row.Spell
+---@field GetAuraDescription fun(self: dbc.row.Spell, locale?: string|integer): string
+---@field SetAuraDescription fun(self: dbc.row.Spell, value: string, locale?: string|integer): dbc.row.Spell
+---@field GetManaCostPct fun(self: dbc.row.Spell): integer
+---@field SetManaCostPct fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetStartRecoveryCategory fun(self: dbc.row.Spell): integer
+---@field SetStartRecoveryCategory fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetStartRecoveryTime fun(self: dbc.row.Spell): integer
+---@field SetStartRecoveryTime fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetMaxTargetLevel fun(self: dbc.row.Spell): integer
+---@field SetMaxTargetLevel fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSpellClassSet fun(self: dbc.row.Spell): integer
+---@field SetSpellClassSet fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSpellClassMask fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetSpellClassMask fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field HasSpellClassMask fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddSpellClassMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveSpellClassMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetMaxTargets fun(self: dbc.row.Spell): integer
+---@field SetMaxTargets fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetDefenseType fun(self: dbc.row.Spell): integer
+---@field SetDefenseType fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetPreventionType fun(self: dbc.row.Spell): integer
+---@field SetPreventionType fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetStanceBarOrder fun(self: dbc.row.Spell): integer
+---@field SetStanceBarOrder fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetEffectChainAmplitude fun(self: dbc.row.Spell, index?: integer): number|number[]
+---@field SetEffectChainAmplitude fun(self: dbc.row.Spell, value: number|number[], index?: integer): dbc.row.Spell
+---@field GetMinFactionID fun(self: dbc.row.Spell): integer
+---@field SetMinFactionID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetMinReputation fun(self: dbc.row.Spell): integer
+---@field SetMinReputation fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetRequiredAuraVision fun(self: dbc.row.Spell): integer
+---@field SetRequiredAuraVision fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetRequiredTotemCategoryID fun(self: dbc.row.Spell, index?: integer): integer|integer[]
+---@field SetRequiredTotemCategoryID fun(self: dbc.row.Spell, value: integer|integer[], index?: integer): dbc.row.Spell
+---@field GetRequiredAreasID fun(self: dbc.row.Spell): integer
+---@field SetRequiredAreasID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSchoolMask fun(self: dbc.row.Spell): integer
+---@field SetSchoolMask fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field HasSchoolMask fun(self: dbc.row.Spell, flag: integer): boolean
+---@field AddSchoolMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field RemoveSchoolMask fun(self: dbc.row.Spell, flag: integer): dbc.row.Spell
+---@field GetRuneCostID fun(self: dbc.row.Spell): integer
+---@field SetRuneCostID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSpellMissileID fun(self: dbc.row.Spell): integer
+---@field SetSpellMissileID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetPowerDisplayID fun(self: dbc.row.Spell): integer
+---@field SetPowerDisplayID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetField227 fun(self: dbc.row.Spell): number
+---@field SetField227 fun(self: dbc.row.Spell, value: number): dbc.row.Spell
+---@field GetField228 fun(self: dbc.row.Spell): number
+---@field SetField228 fun(self: dbc.row.Spell, value: number): dbc.row.Spell
+---@field GetField229 fun(self: dbc.row.Spell): number
+---@field SetField229 fun(self: dbc.row.Spell, value: number): dbc.row.Spell
+---@field GetSpellDescriptionVariableID fun(self: dbc.row.Spell): integer
+---@field SetSpellDescriptionVariableID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+---@field GetSpellDifficultyID fun(self: dbc.row.Spell): integer
+---@field SetSpellDifficultyID fun(self: dbc.row.Spell, value: integer): dbc.row.Spell
+
+-- Inferred Cross-Table Relations for Spell
+---@field GetSpellCastTimes fun(self: dbc.row.Spell): dbc.row.SpellCastTimes|nil
+---@field SetSpellCastTimes fun(self: dbc.row.Spell, target: dbc.row.SpellCastTimes|integer): dbc.row.Spell
+---@field GetSpellDuration fun(self: dbc.row.Spell): dbc.row.SpellDuration|nil
+---@field SetSpellDuration fun(self: dbc.row.Spell, target: dbc.row.SpellDuration|integer): dbc.row.Spell
+---@field GetSpellRange fun(self: dbc.row.Spell): dbc.row.SpellRange|nil
+---@field SetSpellRange fun(self: dbc.row.Spell, target: dbc.row.SpellRange|integer): dbc.row.Spell
+---@field GetSpellVisual fun(self: dbc.row.Spell): dbc.row.SpellVisual|nil
+---@field SetSpellVisual fun(self: dbc.row.Spell, target: dbc.row.SpellVisual|integer): dbc.row.Spell
+---@field GetSpellIcon fun(self: dbc.row.Spell): dbc.row.SpellIcon|nil
+---@field SetSpellIcon fun(self: dbc.row.Spell, target: dbc.row.SpellIcon|integer): dbc.row.Spell
+---@field GetSpellMissile fun(self: dbc.row.Spell): dbc.row.SpellMissile|nil
+---@field SetSpellMissile fun(self: dbc.row.Spell, target: dbc.row.SpellMissile|integer): dbc.row.Spell
+---@field GetPowerDisplay fun(self: dbc.row.Spell): dbc.row.PowerDisplay|nil
+---@field SetPowerDisplay fun(self: dbc.row.Spell, target: dbc.row.PowerDisplay|integer): dbc.row.Spell
+---@field GetSpellDescriptionVariables fun(self: dbc.row.Spell): dbc.row.SpellDescriptionVariables|nil
+---@field SetSpellDescriptionVariables fun(self: dbc.row.Spell, target: dbc.row.SpellDescriptionVariables|integer): dbc.row.Spell
+---@field GetSpellDifficulty fun(self: dbc.row.Spell): dbc.row.SpellDifficulty|nil
+---@field SetSpellDifficulty fun(self: dbc.row.Spell, target: dbc.row.SpellDifficulty|integer): dbc.row.Spell
+
+-- Cascading Creation & Relations Engine for Spell
+---@field CreateRelated fun(self: dbc.row.Spell, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.Spell, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.Spell, child_table: string, child_field?: string): any[]
+
+---Typed table handle for Spell.dbc.
+---@class dbc.Table.Spell : DbcTable
+---@field FindById fun(self: dbc.Table.Spell, id: integer): dbc.row.Spell|nil
+---@field GetById fun(self: dbc.Table.Spell, id: integer): dbc.row.Spell|nil
+---@field GetRow fun(self: dbc.Table.Spell, row: integer): dbc.row.Spell
+---@field NewRow fun(self: dbc.Table.Spell, id?: integer): dbc.row.Spell
+---@field Create fun(self: dbc.Table.Spell, id?: integer): dbc.row.Spell
+---@field CreateNext fun(self: dbc.Table.Spell, data?: table): dbc.row.Spell
+---@field CloneRow fun(self: dbc.Table.Spell, source: integer|dbc.row.Spell, new_id?: integer): dbc.row.Spell
+---@field GetAllRows fun(self: dbc.Table.Spell): dbc.row.Spell[]
+---@field Query fun(self: dbc.Table.Spell): dbc.Query<dbc.row.Spell>
+---@field Rows fun(self: dbc.Table.Spell): fun(): integer, dbc.row.Spell

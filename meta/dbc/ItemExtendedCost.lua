@@ -1,0 +1,53 @@
+---@meta
+-- Generated LuaLS annotations for ItemExtendedCost.dbc. Do not edit.
+
+---Row representation of ItemExtendedCost.dbc.
+---@class dbc.row.ItemExtendedCost : RowProxy
+---@field ID integer
+---@field HonorPoints integer
+---@field ArenaPoints integer
+---@field ArenaBracket integer
+---@field ItemID integer[]
+---@field ItemCount integer[]
+---@field RequiredArenaRating integer
+---@field ItemPurchaseGroup integer
+
+-- Fluent PascalCase Methods for ItemExtendedCost
+---@field GetID fun(self: dbc.row.ItemExtendedCost): integer
+---@field SetID fun(self: dbc.row.ItemExtendedCost, value: integer): dbc.row.ItemExtendedCost
+---@field GetHonorPoints fun(self: dbc.row.ItemExtendedCost): integer
+---@field SetHonorPoints fun(self: dbc.row.ItemExtendedCost, value: integer): dbc.row.ItemExtendedCost
+---@field GetArenaPoints fun(self: dbc.row.ItemExtendedCost): integer
+---@field SetArenaPoints fun(self: dbc.row.ItemExtendedCost, value: integer): dbc.row.ItemExtendedCost
+---@field GetArenaBracket fun(self: dbc.row.ItemExtendedCost): integer
+---@field SetArenaBracket fun(self: dbc.row.ItemExtendedCost, value: integer): dbc.row.ItemExtendedCost
+---@field GetItemID fun(self: dbc.row.ItemExtendedCost, index?: integer): integer|integer[]
+---@field SetItemID fun(self: dbc.row.ItemExtendedCost, value: integer|integer[], index?: integer): dbc.row.ItemExtendedCost
+---@field GetItemCount fun(self: dbc.row.ItemExtendedCost, index?: integer): integer|integer[]
+---@field SetItemCount fun(self: dbc.row.ItemExtendedCost, value: integer|integer[], index?: integer): dbc.row.ItemExtendedCost
+---@field GetRequiredArenaRating fun(self: dbc.row.ItemExtendedCost): integer
+---@field SetRequiredArenaRating fun(self: dbc.row.ItemExtendedCost, value: integer): dbc.row.ItemExtendedCost
+---@field GetItemPurchaseGroup fun(self: dbc.row.ItemExtendedCost): integer
+---@field SetItemPurchaseGroup fun(self: dbc.row.ItemExtendedCost, value: integer): dbc.row.ItemExtendedCost
+
+-- Inferred Cross-Table Relations for ItemExtendedCost
+---@field GetItem fun(self: dbc.row.ItemExtendedCost): dbc.row.Item|nil
+---@field SetItem fun(self: dbc.row.ItemExtendedCost, target: dbc.row.Item|integer): dbc.row.ItemExtendedCost
+
+-- Cascading Creation & Relations Engine for ItemExtendedCost
+---@field CreateRelated fun(self: dbc.row.ItemExtendedCost, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.ItemExtendedCost, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.ItemExtendedCost, child_table: string, child_field?: string): any[]
+
+---Typed table handle for ItemExtendedCost.dbc.
+---@class dbc.Table.ItemExtendedCost : DbcTable
+---@field FindById fun(self: dbc.Table.ItemExtendedCost, id: integer): dbc.row.ItemExtendedCost|nil
+---@field GetById fun(self: dbc.Table.ItemExtendedCost, id: integer): dbc.row.ItemExtendedCost|nil
+---@field GetRow fun(self: dbc.Table.ItemExtendedCost, row: integer): dbc.row.ItemExtendedCost
+---@field NewRow fun(self: dbc.Table.ItemExtendedCost, id?: integer): dbc.row.ItemExtendedCost
+---@field Create fun(self: dbc.Table.ItemExtendedCost, id?: integer): dbc.row.ItemExtendedCost
+---@field CreateNext fun(self: dbc.Table.ItemExtendedCost, data?: table): dbc.row.ItemExtendedCost
+---@field CloneRow fun(self: dbc.Table.ItemExtendedCost, source: integer|dbc.row.ItemExtendedCost, new_id?: integer): dbc.row.ItemExtendedCost
+---@field GetAllRows fun(self: dbc.Table.ItemExtendedCost): dbc.row.ItemExtendedCost[]
+---@field Query fun(self: dbc.Table.ItemExtendedCost): dbc.Query<dbc.row.ItemExtendedCost>
+---@field Rows fun(self: dbc.Table.ItemExtendedCost): fun(): integer, dbc.row.ItemExtendedCost

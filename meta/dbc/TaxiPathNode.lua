@@ -1,0 +1,65 @@
+---@meta
+-- Generated LuaLS annotations for TaxiPathNode.dbc. Do not edit.
+
+---Row representation of TaxiPathNode.dbc.
+---@class dbc.row.TaxiPathNode : RowProxy
+---@field ID integer
+---@field PathID integer
+---@field NodeIndex integer
+---@field MapID integer
+---@field LocX number
+---@field LocY number
+---@field LocZ number
+---@field Flags integer
+---@field Delay integer
+---@field ArrivalEventID integer
+---@field DepartureEventID integer
+
+-- Fluent PascalCase Methods for TaxiPathNode
+---@field GetID fun(self: dbc.row.TaxiPathNode): integer
+---@field SetID fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+---@field GetPathID fun(self: dbc.row.TaxiPathNode): integer
+---@field SetPathID fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+---@field GetNodeIndex fun(self: dbc.row.TaxiPathNode): integer
+---@field SetNodeIndex fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+---@field GetMapID fun(self: dbc.row.TaxiPathNode): integer
+---@field SetMapID fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+---@field GetLocX fun(self: dbc.row.TaxiPathNode): number
+---@field SetLocX fun(self: dbc.row.TaxiPathNode, value: number): dbc.row.TaxiPathNode
+---@field GetLocY fun(self: dbc.row.TaxiPathNode): number
+---@field SetLocY fun(self: dbc.row.TaxiPathNode, value: number): dbc.row.TaxiPathNode
+---@field GetLocZ fun(self: dbc.row.TaxiPathNode): number
+---@field SetLocZ fun(self: dbc.row.TaxiPathNode, value: number): dbc.row.TaxiPathNode
+---@field GetFlags fun(self: dbc.row.TaxiPathNode): integer
+---@field SetFlags fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+---@field HasFlags fun(self: dbc.row.TaxiPathNode, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.TaxiPathNode, flag: integer): dbc.row.TaxiPathNode
+---@field RemoveFlags fun(self: dbc.row.TaxiPathNode, flag: integer): dbc.row.TaxiPathNode
+---@field GetDelay fun(self: dbc.row.TaxiPathNode): integer
+---@field SetDelay fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+---@field GetArrivalEventID fun(self: dbc.row.TaxiPathNode): integer
+---@field SetArrivalEventID fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+---@field GetDepartureEventID fun(self: dbc.row.TaxiPathNode): integer
+---@field SetDepartureEventID fun(self: dbc.row.TaxiPathNode, value: integer): dbc.row.TaxiPathNode
+
+-- Inferred Cross-Table Relations for TaxiPathNode
+---@field GetMap fun(self: dbc.row.TaxiPathNode): dbc.row.Map|nil
+---@field SetMap fun(self: dbc.row.TaxiPathNode, target: dbc.row.Map|integer): dbc.row.TaxiPathNode
+
+-- Cascading Creation & Relations Engine for TaxiPathNode
+---@field CreateRelated fun(self: dbc.row.TaxiPathNode, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.TaxiPathNode, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.TaxiPathNode, child_table: string, child_field?: string): any[]
+
+---Typed table handle for TaxiPathNode.dbc.
+---@class dbc.Table.TaxiPathNode : DbcTable
+---@field FindById fun(self: dbc.Table.TaxiPathNode, id: integer): dbc.row.TaxiPathNode|nil
+---@field GetById fun(self: dbc.Table.TaxiPathNode, id: integer): dbc.row.TaxiPathNode|nil
+---@field GetRow fun(self: dbc.Table.TaxiPathNode, row: integer): dbc.row.TaxiPathNode
+---@field NewRow fun(self: dbc.Table.TaxiPathNode, id?: integer): dbc.row.TaxiPathNode
+---@field Create fun(self: dbc.Table.TaxiPathNode, id?: integer): dbc.row.TaxiPathNode
+---@field CreateNext fun(self: dbc.Table.TaxiPathNode, data?: table): dbc.row.TaxiPathNode
+---@field CloneRow fun(self: dbc.Table.TaxiPathNode, source: integer|dbc.row.TaxiPathNode, new_id?: integer): dbc.row.TaxiPathNode
+---@field GetAllRows fun(self: dbc.Table.TaxiPathNode): dbc.row.TaxiPathNode[]
+---@field Query fun(self: dbc.Table.TaxiPathNode): dbc.Query<dbc.row.TaxiPathNode>
+---@field Rows fun(self: dbc.Table.TaxiPathNode): fun(): integer, dbc.row.TaxiPathNode

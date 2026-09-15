@@ -1,0 +1,51 @@
+---@meta
+-- Generated LuaLS annotations for Cfg_Categories.dbc. Do not edit.
+
+---Row representation of Cfg_Categories.dbc.
+---@class dbc.row.Cfg_Categories : RowProxy
+---@field ID integer
+---@field LocaleMask integer
+---@field CharsetMask integer
+---@field Flags integer
+---@field Name string
+
+-- Fluent PascalCase Methods for Cfg_Categories
+---@field GetID fun(self: dbc.row.Cfg_Categories): integer
+---@field SetID fun(self: dbc.row.Cfg_Categories, value: integer): dbc.row.Cfg_Categories
+---@field GetLocaleMask fun(self: dbc.row.Cfg_Categories): integer
+---@field SetLocaleMask fun(self: dbc.row.Cfg_Categories, value: integer): dbc.row.Cfg_Categories
+---@field HasLocaleMask fun(self: dbc.row.Cfg_Categories, flag: integer): boolean
+---@field AddLocaleMask fun(self: dbc.row.Cfg_Categories, flag: integer): dbc.row.Cfg_Categories
+---@field RemoveLocaleMask fun(self: dbc.row.Cfg_Categories, flag: integer): dbc.row.Cfg_Categories
+---@field GetCharsetMask fun(self: dbc.row.Cfg_Categories): integer
+---@field SetCharsetMask fun(self: dbc.row.Cfg_Categories, value: integer): dbc.row.Cfg_Categories
+---@field HasCharsetMask fun(self: dbc.row.Cfg_Categories, flag: integer): boolean
+---@field AddCharsetMask fun(self: dbc.row.Cfg_Categories, flag: integer): dbc.row.Cfg_Categories
+---@field RemoveCharsetMask fun(self: dbc.row.Cfg_Categories, flag: integer): dbc.row.Cfg_Categories
+---@field GetFlags fun(self: dbc.row.Cfg_Categories): integer
+---@field SetFlags fun(self: dbc.row.Cfg_Categories, value: integer): dbc.row.Cfg_Categories
+---@field HasFlags fun(self: dbc.row.Cfg_Categories, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.Cfg_Categories, flag: integer): dbc.row.Cfg_Categories
+---@field RemoveFlags fun(self: dbc.row.Cfg_Categories, flag: integer): dbc.row.Cfg_Categories
+---@field GetName fun(self: dbc.row.Cfg_Categories, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.Cfg_Categories, value: string, locale?: string|integer): dbc.row.Cfg_Categories
+
+-- Inferred Cross-Table Relations for Cfg_Categories
+
+-- Cascading Creation & Relations Engine for Cfg_Categories
+---@field CreateRelated fun(self: dbc.row.Cfg_Categories, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.Cfg_Categories, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.Cfg_Categories, child_table: string, child_field?: string): any[]
+
+---Typed table handle for Cfg_Categories.dbc.
+---@class dbc.Table.Cfg_Categories : DbcTable
+---@field FindById fun(self: dbc.Table.Cfg_Categories, id: integer): dbc.row.Cfg_Categories|nil
+---@field GetById fun(self: dbc.Table.Cfg_Categories, id: integer): dbc.row.Cfg_Categories|nil
+---@field GetRow fun(self: dbc.Table.Cfg_Categories, row: integer): dbc.row.Cfg_Categories
+---@field NewRow fun(self: dbc.Table.Cfg_Categories, id?: integer): dbc.row.Cfg_Categories
+---@field Create fun(self: dbc.Table.Cfg_Categories, id?: integer): dbc.row.Cfg_Categories
+---@field CreateNext fun(self: dbc.Table.Cfg_Categories, data?: table): dbc.row.Cfg_Categories
+---@field CloneRow fun(self: dbc.Table.Cfg_Categories, source: integer|dbc.row.Cfg_Categories, new_id?: integer): dbc.row.Cfg_Categories
+---@field GetAllRows fun(self: dbc.Table.Cfg_Categories): dbc.row.Cfg_Categories[]
+---@field Query fun(self: dbc.Table.Cfg_Categories): dbc.Query<dbc.row.Cfg_Categories>
+---@field Rows fun(self: dbc.Table.Cfg_Categories): fun(): integer, dbc.row.Cfg_Categories

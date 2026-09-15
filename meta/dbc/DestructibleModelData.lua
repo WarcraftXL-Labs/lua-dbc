@@ -1,0 +1,84 @@
+---@meta
+-- Generated LuaLS annotations for DestructibleModelData.dbc. Do not edit.
+
+---Row representation of DestructibleModelData.dbc.
+---@class dbc.row.DestructibleModelData : RowProxy
+---@field ID integer
+---@field State0Wmo integer
+---@field State0DestructionDoodadSet integer
+---@field State0ImpactEffectDoodadSet integer
+---@field State0AmbientDoodadSet integer
+---@field State1Wmo integer
+---@field State1DestructionDoodadSet integer
+---@field State1ImpactEffectDoodadSet integer
+---@field State1AmbientDoodadSet integer
+---@field State2Wmo integer
+---@field State2DestructionDoodadSet integer
+---@field State2ImpactEffectDoodadSet integer
+---@field State2AmbientDoodadSet integer
+---@field State3Wmo integer
+---@field State3DestructionDoodadSet integer
+---@field State3ImpactEffectDoodadSet integer
+---@field State3AmbientDoodadSet integer
+---@field Field17 integer
+---@field Field18 integer
+
+-- Fluent PascalCase Methods for DestructibleModelData
+---@field GetID fun(self: dbc.row.DestructibleModelData): integer
+---@field SetID fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState0Wmo fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState0Wmo fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState0DestructionDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState0DestructionDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState0ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState0ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState0AmbientDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState0AmbientDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState1Wmo fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState1Wmo fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState1DestructionDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState1DestructionDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState1ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState1ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState1AmbientDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState1AmbientDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState2Wmo fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState2Wmo fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState2DestructionDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState2DestructionDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState2ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState2ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState2AmbientDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState2AmbientDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState3Wmo fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState3Wmo fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState3DestructionDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState3DestructionDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState3ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState3ImpactEffectDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetState3AmbientDoodadSet fun(self: dbc.row.DestructibleModelData): integer
+---@field SetState3AmbientDoodadSet fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetField17 fun(self: dbc.row.DestructibleModelData): integer
+---@field SetField17 fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+---@field GetField18 fun(self: dbc.row.DestructibleModelData): integer
+---@field SetField18 fun(self: dbc.row.DestructibleModelData, value: integer): dbc.row.DestructibleModelData
+
+-- Inferred Cross-Table Relations for DestructibleModelData
+
+-- Cascading Creation & Relations Engine for DestructibleModelData
+---@field CreateRelated fun(self: dbc.row.DestructibleModelData, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.DestructibleModelData, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.DestructibleModelData, child_table: string, child_field?: string): any[]
+
+---Typed table handle for DestructibleModelData.dbc.
+---@class dbc.Table.DestructibleModelData : DbcTable
+---@field FindById fun(self: dbc.Table.DestructibleModelData, id: integer): dbc.row.DestructibleModelData|nil
+---@field GetById fun(self: dbc.Table.DestructibleModelData, id: integer): dbc.row.DestructibleModelData|nil
+---@field GetRow fun(self: dbc.Table.DestructibleModelData, row: integer): dbc.row.DestructibleModelData
+---@field NewRow fun(self: dbc.Table.DestructibleModelData, id?: integer): dbc.row.DestructibleModelData
+---@field Create fun(self: dbc.Table.DestructibleModelData, id?: integer): dbc.row.DestructibleModelData
+---@field CreateNext fun(self: dbc.Table.DestructibleModelData, data?: table): dbc.row.DestructibleModelData
+---@field CloneRow fun(self: dbc.Table.DestructibleModelData, source: integer|dbc.row.DestructibleModelData, new_id?: integer): dbc.row.DestructibleModelData
+---@field GetAllRows fun(self: dbc.Table.DestructibleModelData): dbc.row.DestructibleModelData[]
+---@field Query fun(self: dbc.Table.DestructibleModelData): dbc.Query<dbc.row.DestructibleModelData>
+---@field Rows fun(self: dbc.Table.DestructibleModelData): fun(): integer, dbc.row.DestructibleModelData

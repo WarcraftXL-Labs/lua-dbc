@@ -1,0 +1,59 @@
+---@meta
+-- Generated LuaLS annotations for WorldStateZoneSounds.dbc. Do not edit.
+
+---Row representation of WorldStateZoneSounds.dbc.
+---@class dbc.row.WorldStateZoneSounds : RowProxy
+---@field WorldStateID integer
+---@field WorldStateValue integer
+---@field AreaID integer
+---@field WMOAreaID integer
+---@field ZoneintroMusicID integer
+---@field ZoneMusicID integer
+---@field SoundAmbienceID integer
+---@field SoundProviderPreferencesID integer
+
+-- Fluent PascalCase Methods for WorldStateZoneSounds
+---@field GetWorldStateID fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetWorldStateID fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+---@field GetWorldStateValue fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetWorldStateValue fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+---@field GetAreaID fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetAreaID fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+---@field GetWMOAreaID fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetWMOAreaID fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+---@field GetZoneintroMusicID fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetZoneintroMusicID fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+---@field GetZoneMusicID fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetZoneMusicID fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+---@field GetSoundAmbienceID fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetSoundAmbienceID fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+---@field GetSoundProviderPreferencesID fun(self: dbc.row.WorldStateZoneSounds): integer
+---@field SetSoundProviderPreferencesID fun(self: dbc.row.WorldStateZoneSounds, value: integer): dbc.row.WorldStateZoneSounds
+
+-- Inferred Cross-Table Relations for WorldStateZoneSounds
+---@field GetAreaTable fun(self: dbc.row.WorldStateZoneSounds): dbc.row.AreaTable|nil
+---@field SetAreaTable fun(self: dbc.row.WorldStateZoneSounds, target: dbc.row.AreaTable|integer): dbc.row.WorldStateZoneSounds
+---@field GetZoneMusic fun(self: dbc.row.WorldStateZoneSounds): dbc.row.ZoneMusic|nil
+---@field SetZoneMusic fun(self: dbc.row.WorldStateZoneSounds, target: dbc.row.ZoneMusic|integer): dbc.row.WorldStateZoneSounds
+---@field GetSoundAmbience fun(self: dbc.row.WorldStateZoneSounds): dbc.row.SoundAmbience|nil
+---@field SetSoundAmbience fun(self: dbc.row.WorldStateZoneSounds, target: dbc.row.SoundAmbience|integer): dbc.row.WorldStateZoneSounds
+---@field GetSoundProviderPreferences fun(self: dbc.row.WorldStateZoneSounds): dbc.row.SoundProviderPreferences|nil
+---@field SetSoundProviderPreferences fun(self: dbc.row.WorldStateZoneSounds, target: dbc.row.SoundProviderPreferences|integer): dbc.row.WorldStateZoneSounds
+
+-- Cascading Creation & Relations Engine for WorldStateZoneSounds
+---@field CreateRelated fun(self: dbc.row.WorldStateZoneSounds, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.WorldStateZoneSounds, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.WorldStateZoneSounds, child_table: string, child_field?: string): any[]
+
+---Typed table handle for WorldStateZoneSounds.dbc.
+---@class dbc.Table.WorldStateZoneSounds : DbcTable
+---@field FindById fun(self: dbc.Table.WorldStateZoneSounds, id: integer): dbc.row.WorldStateZoneSounds|nil
+---@field GetById fun(self: dbc.Table.WorldStateZoneSounds, id: integer): dbc.row.WorldStateZoneSounds|nil
+---@field GetRow fun(self: dbc.Table.WorldStateZoneSounds, row: integer): dbc.row.WorldStateZoneSounds
+---@field NewRow fun(self: dbc.Table.WorldStateZoneSounds, id?: integer): dbc.row.WorldStateZoneSounds
+---@field Create fun(self: dbc.Table.WorldStateZoneSounds, id?: integer): dbc.row.WorldStateZoneSounds
+---@field CreateNext fun(self: dbc.Table.WorldStateZoneSounds, data?: table): dbc.row.WorldStateZoneSounds
+---@field CloneRow fun(self: dbc.Table.WorldStateZoneSounds, source: integer|dbc.row.WorldStateZoneSounds, new_id?: integer): dbc.row.WorldStateZoneSounds
+---@field GetAllRows fun(self: dbc.Table.WorldStateZoneSounds): dbc.row.WorldStateZoneSounds[]
+---@field Query fun(self: dbc.Table.WorldStateZoneSounds): dbc.Query<dbc.row.WorldStateZoneSounds>
+---@field Rows fun(self: dbc.Table.WorldStateZoneSounds): fun(): integer, dbc.row.WorldStateZoneSounds

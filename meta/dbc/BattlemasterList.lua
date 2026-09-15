@@ -1,0 +1,56 @@
+---@meta
+-- Generated LuaLS annotations for BattlemasterList.dbc. Do not edit.
+
+---Row representation of BattlemasterList.dbc.
+---@class dbc.row.BattlemasterList : RowProxy
+---@field ID integer
+---@field MapID integer[]
+---@field InstanceType integer
+---@field GroupsAllowed integer
+---@field Name string
+---@field MaxGroupSize integer
+---@field HolidayWorldState integer
+---@field Minlevel integer
+---@field Maxlevel integer
+
+-- Fluent PascalCase Methods for BattlemasterList
+---@field GetID fun(self: dbc.row.BattlemasterList): integer
+---@field SetID fun(self: dbc.row.BattlemasterList, value: integer): dbc.row.BattlemasterList
+---@field GetMapID fun(self: dbc.row.BattlemasterList, index?: integer): integer|integer[]
+---@field SetMapID fun(self: dbc.row.BattlemasterList, value: integer|integer[], index?: integer): dbc.row.BattlemasterList
+---@field GetInstanceType fun(self: dbc.row.BattlemasterList): integer
+---@field SetInstanceType fun(self: dbc.row.BattlemasterList, value: integer): dbc.row.BattlemasterList
+---@field GetGroupsAllowed fun(self: dbc.row.BattlemasterList): integer
+---@field SetGroupsAllowed fun(self: dbc.row.BattlemasterList, value: integer): dbc.row.BattlemasterList
+---@field GetName fun(self: dbc.row.BattlemasterList, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.BattlemasterList, value: string, locale?: string|integer): dbc.row.BattlemasterList
+---@field GetMaxGroupSize fun(self: dbc.row.BattlemasterList): integer
+---@field SetMaxGroupSize fun(self: dbc.row.BattlemasterList, value: integer): dbc.row.BattlemasterList
+---@field GetHolidayWorldState fun(self: dbc.row.BattlemasterList): integer
+---@field SetHolidayWorldState fun(self: dbc.row.BattlemasterList, value: integer): dbc.row.BattlemasterList
+---@field GetMinlevel fun(self: dbc.row.BattlemasterList): integer
+---@field SetMinlevel fun(self: dbc.row.BattlemasterList, value: integer): dbc.row.BattlemasterList
+---@field GetMaxlevel fun(self: dbc.row.BattlemasterList): integer
+---@field SetMaxlevel fun(self: dbc.row.BattlemasterList, value: integer): dbc.row.BattlemasterList
+
+-- Inferred Cross-Table Relations for BattlemasterList
+---@field GetMap fun(self: dbc.row.BattlemasterList): dbc.row.Map|nil
+---@field SetMap fun(self: dbc.row.BattlemasterList, target: dbc.row.Map|integer): dbc.row.BattlemasterList
+
+-- Cascading Creation & Relations Engine for BattlemasterList
+---@field CreateRelated fun(self: dbc.row.BattlemasterList, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.BattlemasterList, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.BattlemasterList, child_table: string, child_field?: string): any[]
+
+---Typed table handle for BattlemasterList.dbc.
+---@class dbc.Table.BattlemasterList : DbcTable
+---@field FindById fun(self: dbc.Table.BattlemasterList, id: integer): dbc.row.BattlemasterList|nil
+---@field GetById fun(self: dbc.Table.BattlemasterList, id: integer): dbc.row.BattlemasterList|nil
+---@field GetRow fun(self: dbc.Table.BattlemasterList, row: integer): dbc.row.BattlemasterList
+---@field NewRow fun(self: dbc.Table.BattlemasterList, id?: integer): dbc.row.BattlemasterList
+---@field Create fun(self: dbc.Table.BattlemasterList, id?: integer): dbc.row.BattlemasterList
+---@field CreateNext fun(self: dbc.Table.BattlemasterList, data?: table): dbc.row.BattlemasterList
+---@field CloneRow fun(self: dbc.Table.BattlemasterList, source: integer|dbc.row.BattlemasterList, new_id?: integer): dbc.row.BattlemasterList
+---@field GetAllRows fun(self: dbc.Table.BattlemasterList): dbc.row.BattlemasterList[]
+---@field Query fun(self: dbc.Table.BattlemasterList): dbc.Query<dbc.row.BattlemasterList>
+---@field Rows fun(self: dbc.Table.BattlemasterList): fun(): integer, dbc.row.BattlemasterList

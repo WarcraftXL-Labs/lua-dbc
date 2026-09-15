@@ -1,0 +1,129 @@
+---@meta
+-- Generated LuaLS annotations for SpellVisual.dbc. Do not edit.
+
+---Row representation of SpellVisual.dbc.
+---@class dbc.row.SpellVisual : RowProxy
+---@field ID integer
+---@field PrecastKit integer
+---@field CastKit integer
+---@field ImpactKit integer
+---@field StateKit integer
+---@field StateDoneKit integer
+---@field ChannelKit integer
+---@field HasMissile integer
+---@field MissileModel integer
+---@field MissilePathType integer
+---@field MissileDestinationAttachment integer
+---@field MissileSound integer
+---@field AnimEventSoundID integer
+---@field Flags integer
+---@field CasterImpactKit integer
+---@field TargetImpactKit integer
+---@field MissileAttachment integer
+---@field MissileFollowGroundHeight integer
+---@field MissileFollowGroundDropSpeed integer
+---@field MissileFollowGroundApproach integer
+---@field MissileFollowGroundFlags integer
+---@field MissileMotion integer
+---@field MissileTargetingKit integer
+---@field InstantAreaKit integer
+---@field ImpactAreaKit integer
+---@field PersistentAreaKit integer
+---@field MissileCastOffsetX number
+---@field MissileCastOffsetY number
+---@field MissileCastOffsetZ number
+---@field MissileImpactOffsetX number
+---@field MissileImpactOffsetY number
+---@field MissileImpactOffsetZ number
+
+-- Fluent PascalCase Methods for SpellVisual
+---@field GetID fun(self: dbc.row.SpellVisual): integer
+---@field SetID fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetPrecastKit fun(self: dbc.row.SpellVisual): integer
+---@field SetPrecastKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetCastKit fun(self: dbc.row.SpellVisual): integer
+---@field SetCastKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetImpactKit fun(self: dbc.row.SpellVisual): integer
+---@field SetImpactKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetStateKit fun(self: dbc.row.SpellVisual): integer
+---@field SetStateKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetStateDoneKit fun(self: dbc.row.SpellVisual): integer
+---@field SetStateDoneKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetChannelKit fun(self: dbc.row.SpellVisual): integer
+---@field SetChannelKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetHasMissile fun(self: dbc.row.SpellVisual): integer
+---@field SetHasMissile fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileModel fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileModel fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissilePathType fun(self: dbc.row.SpellVisual): integer
+---@field SetMissilePathType fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileDestinationAttachment fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileDestinationAttachment fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileSound fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileSound fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetAnimEventSoundID fun(self: dbc.row.SpellVisual): integer
+---@field SetAnimEventSoundID fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetFlags fun(self: dbc.row.SpellVisual): integer
+---@field SetFlags fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field HasFlags fun(self: dbc.row.SpellVisual, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.SpellVisual, flag: integer): dbc.row.SpellVisual
+---@field RemoveFlags fun(self: dbc.row.SpellVisual, flag: integer): dbc.row.SpellVisual
+---@field GetCasterImpactKit fun(self: dbc.row.SpellVisual): integer
+---@field SetCasterImpactKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetTargetImpactKit fun(self: dbc.row.SpellVisual): integer
+---@field SetTargetImpactKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileAttachment fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileAttachment fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileFollowGroundHeight fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileFollowGroundHeight fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileFollowGroundDropSpeed fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileFollowGroundDropSpeed fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileFollowGroundApproach fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileFollowGroundApproach fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileFollowGroundFlags fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileFollowGroundFlags fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field HasMissileFollowGroundFlags fun(self: dbc.row.SpellVisual, flag: integer): boolean
+---@field AddMissileFollowGroundFlags fun(self: dbc.row.SpellVisual, flag: integer): dbc.row.SpellVisual
+---@field RemoveMissileFollowGroundFlags fun(self: dbc.row.SpellVisual, flag: integer): dbc.row.SpellVisual
+---@field GetMissileMotion fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileMotion fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileTargetingKit fun(self: dbc.row.SpellVisual): integer
+---@field SetMissileTargetingKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetInstantAreaKit fun(self: dbc.row.SpellVisual): integer
+---@field SetInstantAreaKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetImpactAreaKit fun(self: dbc.row.SpellVisual): integer
+---@field SetImpactAreaKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetPersistentAreaKit fun(self: dbc.row.SpellVisual): integer
+---@field SetPersistentAreaKit fun(self: dbc.row.SpellVisual, value: integer): dbc.row.SpellVisual
+---@field GetMissileCastOffsetX fun(self: dbc.row.SpellVisual): number
+---@field SetMissileCastOffsetX fun(self: dbc.row.SpellVisual, value: number): dbc.row.SpellVisual
+---@field GetMissileCastOffsetY fun(self: dbc.row.SpellVisual): number
+---@field SetMissileCastOffsetY fun(self: dbc.row.SpellVisual, value: number): dbc.row.SpellVisual
+---@field GetMissileCastOffsetZ fun(self: dbc.row.SpellVisual): number
+---@field SetMissileCastOffsetZ fun(self: dbc.row.SpellVisual, value: number): dbc.row.SpellVisual
+---@field GetMissileImpactOffsetX fun(self: dbc.row.SpellVisual): number
+---@field SetMissileImpactOffsetX fun(self: dbc.row.SpellVisual, value: number): dbc.row.SpellVisual
+---@field GetMissileImpactOffsetY fun(self: dbc.row.SpellVisual): number
+---@field SetMissileImpactOffsetY fun(self: dbc.row.SpellVisual, value: number): dbc.row.SpellVisual
+---@field GetMissileImpactOffsetZ fun(self: dbc.row.SpellVisual): number
+---@field SetMissileImpactOffsetZ fun(self: dbc.row.SpellVisual, value: number): dbc.row.SpellVisual
+
+-- Inferred Cross-Table Relations for SpellVisual
+
+-- Cascading Creation & Relations Engine for SpellVisual
+---@field CreateRelated fun(self: dbc.row.SpellVisual, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SpellVisual, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SpellVisual, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SpellVisual.dbc.
+---@class dbc.Table.SpellVisual : DbcTable
+---@field FindById fun(self: dbc.Table.SpellVisual, id: integer): dbc.row.SpellVisual|nil
+---@field GetById fun(self: dbc.Table.SpellVisual, id: integer): dbc.row.SpellVisual|nil
+---@field GetRow fun(self: dbc.Table.SpellVisual, row: integer): dbc.row.SpellVisual
+---@field NewRow fun(self: dbc.Table.SpellVisual, id?: integer): dbc.row.SpellVisual
+---@field Create fun(self: dbc.Table.SpellVisual, id?: integer): dbc.row.SpellVisual
+---@field CreateNext fun(self: dbc.Table.SpellVisual, data?: table): dbc.row.SpellVisual
+---@field CloneRow fun(self: dbc.Table.SpellVisual, source: integer|dbc.row.SpellVisual, new_id?: integer): dbc.row.SpellVisual
+---@field GetAllRows fun(self: dbc.Table.SpellVisual): dbc.row.SpellVisual[]
+---@field Query fun(self: dbc.Table.SpellVisual): dbc.Query<dbc.row.SpellVisual>
+---@field Rows fun(self: dbc.Table.SpellVisual): fun(): integer, dbc.row.SpellVisual

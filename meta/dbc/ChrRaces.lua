@@ -1,0 +1,92 @@
+---@meta
+-- Generated LuaLS annotations for ChrRaces.dbc. Do not edit.
+
+---Row representation of ChrRaces.dbc.
+---@class dbc.row.ChrRaces : RowProxy
+---@field ID integer
+---@field Flags integer
+---@field FactionID integer
+---@field ExplorationSoundID integer
+---@field MaleDisplayId integer
+---@field FemaleDisplayId integer
+---@field ClientPrefix string
+---@field BaseLanguage integer
+---@field CreatureType integer
+---@field ResSicknessSpellID integer
+---@field SplashSoundID integer
+---@field ClientFilestring string
+---@field CinematicSequenceID integer
+---@field Alliance integer
+---@field Name string
+---@field Name_Female string
+---@field Name_Male string
+---@field FacialHairCustomization string[]
+---@field HairCustomization string
+---@field Required_Expansion integer
+
+-- Fluent PascalCase Methods for ChrRaces
+---@field GetID fun(self: dbc.row.ChrRaces): integer
+---@field SetID fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetFlags fun(self: dbc.row.ChrRaces): integer
+---@field SetFlags fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field HasFlags fun(self: dbc.row.ChrRaces, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.ChrRaces, flag: integer): dbc.row.ChrRaces
+---@field RemoveFlags fun(self: dbc.row.ChrRaces, flag: integer): dbc.row.ChrRaces
+---@field GetFactionID fun(self: dbc.row.ChrRaces): integer
+---@field SetFactionID fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetExplorationSoundID fun(self: dbc.row.ChrRaces): integer
+---@field SetExplorationSoundID fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetMaleDisplayId fun(self: dbc.row.ChrRaces): integer
+---@field SetMaleDisplayId fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetFemaleDisplayId fun(self: dbc.row.ChrRaces): integer
+---@field SetFemaleDisplayId fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetClientPrefix fun(self: dbc.row.ChrRaces): string
+---@field SetClientPrefix fun(self: dbc.row.ChrRaces, value: string): dbc.row.ChrRaces
+---@field GetBaseLanguage fun(self: dbc.row.ChrRaces): integer
+---@field SetBaseLanguage fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetCreatureType fun(self: dbc.row.ChrRaces): integer
+---@field SetCreatureType fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetResSicknessSpellID fun(self: dbc.row.ChrRaces): integer
+---@field SetResSicknessSpellID fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetSplashSoundID fun(self: dbc.row.ChrRaces): integer
+---@field SetSplashSoundID fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetClientFilestring fun(self: dbc.row.ChrRaces): string
+---@field SetClientFilestring fun(self: dbc.row.ChrRaces, value: string): dbc.row.ChrRaces
+---@field GetCinematicSequenceID fun(self: dbc.row.ChrRaces): integer
+---@field SetCinematicSequenceID fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetAlliance fun(self: dbc.row.ChrRaces): integer
+---@field SetAlliance fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+---@field GetName fun(self: dbc.row.ChrRaces, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.ChrRaces, value: string, locale?: string|integer): dbc.row.ChrRaces
+---@field GetName_Female fun(self: dbc.row.ChrRaces, locale?: string|integer): string
+---@field SetName_Female fun(self: dbc.row.ChrRaces, value: string, locale?: string|integer): dbc.row.ChrRaces
+---@field GetName_Male fun(self: dbc.row.ChrRaces, locale?: string|integer): string
+---@field SetName_Male fun(self: dbc.row.ChrRaces, value: string, locale?: string|integer): dbc.row.ChrRaces
+---@field GetFacialHairCustomization fun(self: dbc.row.ChrRaces, index?: integer): string|string[]
+---@field SetFacialHairCustomization fun(self: dbc.row.ChrRaces, value: string|string[], index?: integer): dbc.row.ChrRaces
+---@field GetHairCustomization fun(self: dbc.row.ChrRaces): string
+---@field SetHairCustomization fun(self: dbc.row.ChrRaces, value: string): dbc.row.ChrRaces
+---@field GetRequired_Expansion fun(self: dbc.row.ChrRaces): integer
+---@field SetRequired_Expansion fun(self: dbc.row.ChrRaces, value: integer): dbc.row.ChrRaces
+
+-- Inferred Cross-Table Relations for ChrRaces
+---@field GetFaction fun(self: dbc.row.ChrRaces): dbc.row.Faction|nil
+---@field SetFaction fun(self: dbc.row.ChrRaces, target: dbc.row.Faction|integer): dbc.row.ChrRaces
+
+-- Cascading Creation & Relations Engine for ChrRaces
+---@field CreateRelated fun(self: dbc.row.ChrRaces, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.ChrRaces, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.ChrRaces, child_table: string, child_field?: string): any[]
+
+---Typed table handle for ChrRaces.dbc.
+---@class dbc.Table.ChrRaces : DbcTable
+---@field FindById fun(self: dbc.Table.ChrRaces, id: integer): dbc.row.ChrRaces|nil
+---@field GetById fun(self: dbc.Table.ChrRaces, id: integer): dbc.row.ChrRaces|nil
+---@field GetRow fun(self: dbc.Table.ChrRaces, row: integer): dbc.row.ChrRaces
+---@field NewRow fun(self: dbc.Table.ChrRaces, id?: integer): dbc.row.ChrRaces
+---@field Create fun(self: dbc.Table.ChrRaces, id?: integer): dbc.row.ChrRaces
+---@field CreateNext fun(self: dbc.Table.ChrRaces, data?: table): dbc.row.ChrRaces
+---@field CloneRow fun(self: dbc.Table.ChrRaces, source: integer|dbc.row.ChrRaces, new_id?: integer): dbc.row.ChrRaces
+---@field GetAllRows fun(self: dbc.Table.ChrRaces): dbc.row.ChrRaces[]
+---@field Query fun(self: dbc.Table.ChrRaces): dbc.Query<dbc.row.ChrRaces>
+---@field Rows fun(self: dbc.Table.ChrRaces): fun(): integer, dbc.row.ChrRaces

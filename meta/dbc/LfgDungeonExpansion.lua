@@ -1,0 +1,51 @@
+---@meta
+-- Generated LuaLS annotations for LfgDungeonExpansion.dbc. Do not edit.
+
+---Row representation of LfgDungeonExpansion.dbc.
+---@class dbc.row.LfgDungeonExpansion : RowProxy
+---@field ID integer
+---@field Lfg_Id integer
+---@field Expansion_Level integer
+---@field Random_Id integer
+---@field Hard_Level_Min integer
+---@field Hard_Level_Max integer
+---@field Target_Level_Min integer
+---@field Target_Level_Max integer
+
+-- Fluent PascalCase Methods for LfgDungeonExpansion
+---@field GetID fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetID fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+---@field GetLfg_Id fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetLfg_Id fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+---@field GetExpansion_Level fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetExpansion_Level fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+---@field GetRandom_Id fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetRandom_Id fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+---@field GetHard_Level_Min fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetHard_Level_Min fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+---@field GetHard_Level_Max fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetHard_Level_Max fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+---@field GetTarget_Level_Min fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetTarget_Level_Min fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+---@field GetTarget_Level_Max fun(self: dbc.row.LfgDungeonExpansion): integer
+---@field SetTarget_Level_Max fun(self: dbc.row.LfgDungeonExpansion, value: integer): dbc.row.LfgDungeonExpansion
+
+-- Inferred Cross-Table Relations for LfgDungeonExpansion
+
+-- Cascading Creation & Relations Engine for LfgDungeonExpansion
+---@field CreateRelated fun(self: dbc.row.LfgDungeonExpansion, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.LfgDungeonExpansion, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.LfgDungeonExpansion, child_table: string, child_field?: string): any[]
+
+---Typed table handle for LfgDungeonExpansion.dbc.
+---@class dbc.Table.LfgDungeonExpansion : DbcTable
+---@field FindById fun(self: dbc.Table.LfgDungeonExpansion, id: integer): dbc.row.LfgDungeonExpansion|nil
+---@field GetById fun(self: dbc.Table.LfgDungeonExpansion, id: integer): dbc.row.LfgDungeonExpansion|nil
+---@field GetRow fun(self: dbc.Table.LfgDungeonExpansion, row: integer): dbc.row.LfgDungeonExpansion
+---@field NewRow fun(self: dbc.Table.LfgDungeonExpansion, id?: integer): dbc.row.LfgDungeonExpansion
+---@field Create fun(self: dbc.Table.LfgDungeonExpansion, id?: integer): dbc.row.LfgDungeonExpansion
+---@field CreateNext fun(self: dbc.Table.LfgDungeonExpansion, data?: table): dbc.row.LfgDungeonExpansion
+---@field CloneRow fun(self: dbc.Table.LfgDungeonExpansion, source: integer|dbc.row.LfgDungeonExpansion, new_id?: integer): dbc.row.LfgDungeonExpansion
+---@field GetAllRows fun(self: dbc.Table.LfgDungeonExpansion): dbc.row.LfgDungeonExpansion[]
+---@field Query fun(self: dbc.Table.LfgDungeonExpansion): dbc.Query<dbc.row.LfgDungeonExpansion>
+---@field Rows fun(self: dbc.Table.LfgDungeonExpansion): fun(): integer, dbc.row.LfgDungeonExpansion

@@ -1,0 +1,78 @@
+---@meta
+-- Generated LuaLS annotations for AreaPOI.dbc. Do not edit.
+
+---Row representation of AreaPOI.dbc.
+---@class dbc.row.AreaPOI : RowProxy
+---@field ID integer
+---@field Importance integer
+---@field Icon integer[]
+---@field FactionID integer
+---@field X number
+---@field Y number
+---@field Z number
+---@field MapID integer
+---@field Flags integer
+---@field AreaID integer
+---@field Name string
+---@field Description string
+---@field WorldStateID integer
+---@field WorldMapLink integer
+
+-- Fluent PascalCase Methods for AreaPOI
+---@field GetID fun(self: dbc.row.AreaPOI): integer
+---@field SetID fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+---@field GetImportance fun(self: dbc.row.AreaPOI): integer
+---@field SetImportance fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+---@field GetIcon fun(self: dbc.row.AreaPOI, index?: integer): integer|integer[]
+---@field SetIcon fun(self: dbc.row.AreaPOI, value: integer|integer[], index?: integer): dbc.row.AreaPOI
+---@field GetFactionID fun(self: dbc.row.AreaPOI): integer
+---@field SetFactionID fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+---@field GetX fun(self: dbc.row.AreaPOI): number
+---@field SetX fun(self: dbc.row.AreaPOI, value: number): dbc.row.AreaPOI
+---@field GetY fun(self: dbc.row.AreaPOI): number
+---@field SetY fun(self: dbc.row.AreaPOI, value: number): dbc.row.AreaPOI
+---@field GetZ fun(self: dbc.row.AreaPOI): number
+---@field SetZ fun(self: dbc.row.AreaPOI, value: number): dbc.row.AreaPOI
+---@field GetMapID fun(self: dbc.row.AreaPOI): integer
+---@field SetMapID fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+---@field GetFlags fun(self: dbc.row.AreaPOI): integer
+---@field SetFlags fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+---@field HasFlags fun(self: dbc.row.AreaPOI, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.AreaPOI, flag: integer): dbc.row.AreaPOI
+---@field RemoveFlags fun(self: dbc.row.AreaPOI, flag: integer): dbc.row.AreaPOI
+---@field GetAreaID fun(self: dbc.row.AreaPOI): integer
+---@field SetAreaID fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+---@field GetName fun(self: dbc.row.AreaPOI, locale?: string|integer): string
+---@field SetName fun(self: dbc.row.AreaPOI, value: string, locale?: string|integer): dbc.row.AreaPOI
+---@field GetDescription fun(self: dbc.row.AreaPOI, locale?: string|integer): string
+---@field SetDescription fun(self: dbc.row.AreaPOI, value: string, locale?: string|integer): dbc.row.AreaPOI
+---@field GetWorldStateID fun(self: dbc.row.AreaPOI): integer
+---@field SetWorldStateID fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+---@field GetWorldMapLink fun(self: dbc.row.AreaPOI): integer
+---@field SetWorldMapLink fun(self: dbc.row.AreaPOI, value: integer): dbc.row.AreaPOI
+
+-- Inferred Cross-Table Relations for AreaPOI
+---@field GetFaction fun(self: dbc.row.AreaPOI): dbc.row.Faction|nil
+---@field SetFaction fun(self: dbc.row.AreaPOI, target: dbc.row.Faction|integer): dbc.row.AreaPOI
+---@field GetMap fun(self: dbc.row.AreaPOI): dbc.row.Map|nil
+---@field SetMap fun(self: dbc.row.AreaPOI, target: dbc.row.Map|integer): dbc.row.AreaPOI
+---@field GetAreaTable fun(self: dbc.row.AreaPOI): dbc.row.AreaTable|nil
+---@field SetAreaTable fun(self: dbc.row.AreaPOI, target: dbc.row.AreaTable|integer): dbc.row.AreaPOI
+
+-- Cascading Creation & Relations Engine for AreaPOI
+---@field CreateRelated fun(self: dbc.row.AreaPOI, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.AreaPOI, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.AreaPOI, child_table: string, child_field?: string): any[]
+
+---Typed table handle for AreaPOI.dbc.
+---@class dbc.Table.AreaPOI : DbcTable
+---@field FindById fun(self: dbc.Table.AreaPOI, id: integer): dbc.row.AreaPOI|nil
+---@field GetById fun(self: dbc.Table.AreaPOI, id: integer): dbc.row.AreaPOI|nil
+---@field GetRow fun(self: dbc.Table.AreaPOI, row: integer): dbc.row.AreaPOI
+---@field NewRow fun(self: dbc.Table.AreaPOI, id?: integer): dbc.row.AreaPOI
+---@field Create fun(self: dbc.Table.AreaPOI, id?: integer): dbc.row.AreaPOI
+---@field CreateNext fun(self: dbc.Table.AreaPOI, data?: table): dbc.row.AreaPOI
+---@field CloneRow fun(self: dbc.Table.AreaPOI, source: integer|dbc.row.AreaPOI, new_id?: integer): dbc.row.AreaPOI
+---@field GetAllRows fun(self: dbc.Table.AreaPOI): dbc.row.AreaPOI[]
+---@field Query fun(self: dbc.Table.AreaPOI): dbc.Query<dbc.row.AreaPOI>
+---@field Rows fun(self: dbc.Table.AreaPOI): fun(): integer, dbc.row.AreaPOI

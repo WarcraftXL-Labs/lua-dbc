@@ -1,0 +1,71 @@
+---@meta
+-- Generated LuaLS annotations for WorldMapContinent.dbc. Do not edit.
+
+---Row representation of WorldMapContinent.dbc.
+---@class dbc.row.WorldMapContinent : RowProxy
+---@field ID integer
+---@field MapID integer
+---@field LeftBoundary integer
+---@field RightBoundary integer
+---@field TopBoundary integer
+---@field BottomBoundary integer
+---@field ContinentOffsetX number
+---@field ContinentOffsetY number
+---@field Scale number
+---@field TaxiMinX number
+---@field TaxiMinY number
+---@field TaxiMaxX number
+---@field TaxiMaxY number
+---@field WorldMapID integer
+
+-- Fluent PascalCase Methods for WorldMapContinent
+---@field GetID fun(self: dbc.row.WorldMapContinent): integer
+---@field SetID fun(self: dbc.row.WorldMapContinent, value: integer): dbc.row.WorldMapContinent
+---@field GetMapID fun(self: dbc.row.WorldMapContinent): integer
+---@field SetMapID fun(self: dbc.row.WorldMapContinent, value: integer): dbc.row.WorldMapContinent
+---@field GetLeftBoundary fun(self: dbc.row.WorldMapContinent): integer
+---@field SetLeftBoundary fun(self: dbc.row.WorldMapContinent, value: integer): dbc.row.WorldMapContinent
+---@field GetRightBoundary fun(self: dbc.row.WorldMapContinent): integer
+---@field SetRightBoundary fun(self: dbc.row.WorldMapContinent, value: integer): dbc.row.WorldMapContinent
+---@field GetTopBoundary fun(self: dbc.row.WorldMapContinent): integer
+---@field SetTopBoundary fun(self: dbc.row.WorldMapContinent, value: integer): dbc.row.WorldMapContinent
+---@field GetBottomBoundary fun(self: dbc.row.WorldMapContinent): integer
+---@field SetBottomBoundary fun(self: dbc.row.WorldMapContinent, value: integer): dbc.row.WorldMapContinent
+---@field GetContinentOffsetX fun(self: dbc.row.WorldMapContinent): number
+---@field SetContinentOffsetX fun(self: dbc.row.WorldMapContinent, value: number): dbc.row.WorldMapContinent
+---@field GetContinentOffsetY fun(self: dbc.row.WorldMapContinent): number
+---@field SetContinentOffsetY fun(self: dbc.row.WorldMapContinent, value: number): dbc.row.WorldMapContinent
+---@field GetScale fun(self: dbc.row.WorldMapContinent): number
+---@field SetScale fun(self: dbc.row.WorldMapContinent, value: number): dbc.row.WorldMapContinent
+---@field GetTaxiMinX fun(self: dbc.row.WorldMapContinent): number
+---@field SetTaxiMinX fun(self: dbc.row.WorldMapContinent, value: number): dbc.row.WorldMapContinent
+---@field GetTaxiMinY fun(self: dbc.row.WorldMapContinent): number
+---@field SetTaxiMinY fun(self: dbc.row.WorldMapContinent, value: number): dbc.row.WorldMapContinent
+---@field GetTaxiMaxX fun(self: dbc.row.WorldMapContinent): number
+---@field SetTaxiMaxX fun(self: dbc.row.WorldMapContinent, value: number): dbc.row.WorldMapContinent
+---@field GetTaxiMaxY fun(self: dbc.row.WorldMapContinent): number
+---@field SetTaxiMaxY fun(self: dbc.row.WorldMapContinent, value: number): dbc.row.WorldMapContinent
+---@field GetWorldMapID fun(self: dbc.row.WorldMapContinent): integer
+---@field SetWorldMapID fun(self: dbc.row.WorldMapContinent, value: integer): dbc.row.WorldMapContinent
+
+-- Inferred Cross-Table Relations for WorldMapContinent
+---@field GetMap fun(self: dbc.row.WorldMapContinent): dbc.row.Map|nil
+---@field SetMap fun(self: dbc.row.WorldMapContinent, target: dbc.row.Map|integer): dbc.row.WorldMapContinent
+
+-- Cascading Creation & Relations Engine for WorldMapContinent
+---@field CreateRelated fun(self: dbc.row.WorldMapContinent, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.WorldMapContinent, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.WorldMapContinent, child_table: string, child_field?: string): any[]
+
+---Typed table handle for WorldMapContinent.dbc.
+---@class dbc.Table.WorldMapContinent : DbcTable
+---@field FindById fun(self: dbc.Table.WorldMapContinent, id: integer): dbc.row.WorldMapContinent|nil
+---@field GetById fun(self: dbc.Table.WorldMapContinent, id: integer): dbc.row.WorldMapContinent|nil
+---@field GetRow fun(self: dbc.Table.WorldMapContinent, row: integer): dbc.row.WorldMapContinent
+---@field NewRow fun(self: dbc.Table.WorldMapContinent, id?: integer): dbc.row.WorldMapContinent
+---@field Create fun(self: dbc.Table.WorldMapContinent, id?: integer): dbc.row.WorldMapContinent
+---@field CreateNext fun(self: dbc.Table.WorldMapContinent, data?: table): dbc.row.WorldMapContinent
+---@field CloneRow fun(self: dbc.Table.WorldMapContinent, source: integer|dbc.row.WorldMapContinent, new_id?: integer): dbc.row.WorldMapContinent
+---@field GetAllRows fun(self: dbc.Table.WorldMapContinent): dbc.row.WorldMapContinent[]
+---@field Query fun(self: dbc.Table.WorldMapContinent): dbc.Query<dbc.row.WorldMapContinent>
+---@field Rows fun(self: dbc.Table.WorldMapContinent): fun(): integer, dbc.row.WorldMapContinent

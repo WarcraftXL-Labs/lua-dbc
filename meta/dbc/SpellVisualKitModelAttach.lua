@@ -1,0 +1,59 @@
+---@meta
+-- Generated LuaLS annotations for SpellVisualKitModelAttach.dbc. Do not edit.
+
+---Row representation of SpellVisualKitModelAttach.dbc.
+---@class dbc.row.SpellVisualKitModelAttach : RowProxy
+---@field ID integer
+---@field ParentSpellVisualKitID integer
+---@field SpellVisualEffectNameID integer
+---@field AttachmentID integer
+---@field OffsetX number
+---@field OffsetY number
+---@field OffsetZ number
+---@field Yaw number
+---@field Pitch number
+---@field Roll number
+
+-- Fluent PascalCase Methods for SpellVisualKitModelAttach
+---@field GetID fun(self: dbc.row.SpellVisualKitModelAttach): integer
+---@field SetID fun(self: dbc.row.SpellVisualKitModelAttach, value: integer): dbc.row.SpellVisualKitModelAttach
+---@field GetParentSpellVisualKitID fun(self: dbc.row.SpellVisualKitModelAttach): integer
+---@field SetParentSpellVisualKitID fun(self: dbc.row.SpellVisualKitModelAttach, value: integer): dbc.row.SpellVisualKitModelAttach
+---@field GetSpellVisualEffectNameID fun(self: dbc.row.SpellVisualKitModelAttach): integer
+---@field SetSpellVisualEffectNameID fun(self: dbc.row.SpellVisualKitModelAttach, value: integer): dbc.row.SpellVisualKitModelAttach
+---@field GetAttachmentID fun(self: dbc.row.SpellVisualKitModelAttach): integer
+---@field SetAttachmentID fun(self: dbc.row.SpellVisualKitModelAttach, value: integer): dbc.row.SpellVisualKitModelAttach
+---@field GetOffsetX fun(self: dbc.row.SpellVisualKitModelAttach): number
+---@field SetOffsetX fun(self: dbc.row.SpellVisualKitModelAttach, value: number): dbc.row.SpellVisualKitModelAttach
+---@field GetOffsetY fun(self: dbc.row.SpellVisualKitModelAttach): number
+---@field SetOffsetY fun(self: dbc.row.SpellVisualKitModelAttach, value: number): dbc.row.SpellVisualKitModelAttach
+---@field GetOffsetZ fun(self: dbc.row.SpellVisualKitModelAttach): number
+---@field SetOffsetZ fun(self: dbc.row.SpellVisualKitModelAttach, value: number): dbc.row.SpellVisualKitModelAttach
+---@field GetYaw fun(self: dbc.row.SpellVisualKitModelAttach): number
+---@field SetYaw fun(self: dbc.row.SpellVisualKitModelAttach, value: number): dbc.row.SpellVisualKitModelAttach
+---@field GetPitch fun(self: dbc.row.SpellVisualKitModelAttach): number
+---@field SetPitch fun(self: dbc.row.SpellVisualKitModelAttach, value: number): dbc.row.SpellVisualKitModelAttach
+---@field GetRoll fun(self: dbc.row.SpellVisualKitModelAttach): number
+---@field SetRoll fun(self: dbc.row.SpellVisualKitModelAttach, value: number): dbc.row.SpellVisualKitModelAttach
+
+-- Inferred Cross-Table Relations for SpellVisualKitModelAttach
+---@field GetSpellVisualEffectName fun(self: dbc.row.SpellVisualKitModelAttach): dbc.row.SpellVisualEffectName|nil
+---@field SetSpellVisualEffectName fun(self: dbc.row.SpellVisualKitModelAttach, target: dbc.row.SpellVisualEffectName|integer): dbc.row.SpellVisualKitModelAttach
+
+-- Cascading Creation & Relations Engine for SpellVisualKitModelAttach
+---@field CreateRelated fun(self: dbc.row.SpellVisualKitModelAttach, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SpellVisualKitModelAttach, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SpellVisualKitModelAttach, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SpellVisualKitModelAttach.dbc.
+---@class dbc.Table.SpellVisualKitModelAttach : DbcTable
+---@field FindById fun(self: dbc.Table.SpellVisualKitModelAttach, id: integer): dbc.row.SpellVisualKitModelAttach|nil
+---@field GetById fun(self: dbc.Table.SpellVisualKitModelAttach, id: integer): dbc.row.SpellVisualKitModelAttach|nil
+---@field GetRow fun(self: dbc.Table.SpellVisualKitModelAttach, row: integer): dbc.row.SpellVisualKitModelAttach
+---@field NewRow fun(self: dbc.Table.SpellVisualKitModelAttach, id?: integer): dbc.row.SpellVisualKitModelAttach
+---@field Create fun(self: dbc.Table.SpellVisualKitModelAttach, id?: integer): dbc.row.SpellVisualKitModelAttach
+---@field CreateNext fun(self: dbc.Table.SpellVisualKitModelAttach, data?: table): dbc.row.SpellVisualKitModelAttach
+---@field CloneRow fun(self: dbc.Table.SpellVisualKitModelAttach, source: integer|dbc.row.SpellVisualKitModelAttach, new_id?: integer): dbc.row.SpellVisualKitModelAttach
+---@field GetAllRows fun(self: dbc.Table.SpellVisualKitModelAttach): dbc.row.SpellVisualKitModelAttach[]
+---@field Query fun(self: dbc.Table.SpellVisualKitModelAttach): dbc.Query<dbc.row.SpellVisualKitModelAttach>
+---@field Rows fun(self: dbc.Table.SpellVisualKitModelAttach): fun(): integer, dbc.row.SpellVisualKitModelAttach

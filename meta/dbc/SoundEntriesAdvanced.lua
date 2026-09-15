@@ -1,0 +1,99 @@
+---@meta
+-- Generated LuaLS annotations for SoundEntriesAdvanced.dbc. Do not edit.
+
+---Row representation of SoundEntriesAdvanced.dbc.
+---@class dbc.row.SoundEntriesAdvanced : RowProxy
+---@field ID integer
+---@field SoundEntryID integer
+---@field InnerRadius2D number
+---@field TimeA integer
+---@field TimeB integer
+---@field TimeC integer
+---@field TimeD integer
+---@field RandomOffsetRange integer
+---@field Usage integer
+---@field TimeintervalMin integer
+---@field TimeintervalMax integer
+---@field VolumeSliderCategory integer
+---@field DuckToSFX number
+---@field DuckToMusic number
+---@field DuckToAmbience number
+---@field InnerRadiusOfInfluence number
+---@field OuterRadiusOfInfluence number
+---@field TimeToDuck integer
+---@field TimeToUnduck integer
+---@field InsideAngle number
+---@field OutsideAngle number
+---@field OutsideVolume number
+---@field OuterRadius2D number
+---@field Name string
+
+-- Fluent PascalCase Methods for SoundEntriesAdvanced
+---@field GetID fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetID fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetSoundEntryID fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetSoundEntryID fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetInnerRadius2D fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetInnerRadius2D fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetTimeA fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeA fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetTimeB fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeB fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetTimeC fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeC fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetTimeD fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeD fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetRandomOffsetRange fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetRandomOffsetRange fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetUsage fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetUsage fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetTimeintervalMin fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeintervalMin fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetTimeintervalMax fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeintervalMax fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetVolumeSliderCategory fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetVolumeSliderCategory fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetDuckToSFX fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetDuckToSFX fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetDuckToMusic fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetDuckToMusic fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetDuckToAmbience fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetDuckToAmbience fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetInnerRadiusOfInfluence fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetInnerRadiusOfInfluence fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetOuterRadiusOfInfluence fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetOuterRadiusOfInfluence fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetTimeToDuck fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeToDuck fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetTimeToUnduck fun(self: dbc.row.SoundEntriesAdvanced): integer
+---@field SetTimeToUnduck fun(self: dbc.row.SoundEntriesAdvanced, value: integer): dbc.row.SoundEntriesAdvanced
+---@field GetInsideAngle fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetInsideAngle fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetOutsideAngle fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetOutsideAngle fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetOutsideVolume fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetOutsideVolume fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetOuterRadius2D fun(self: dbc.row.SoundEntriesAdvanced): number
+---@field SetOuterRadius2D fun(self: dbc.row.SoundEntriesAdvanced, value: number): dbc.row.SoundEntriesAdvanced
+---@field GetName fun(self: dbc.row.SoundEntriesAdvanced): string
+---@field SetName fun(self: dbc.row.SoundEntriesAdvanced, value: string): dbc.row.SoundEntriesAdvanced
+
+-- Inferred Cross-Table Relations for SoundEntriesAdvanced
+
+-- Cascading Creation & Relations Engine for SoundEntriesAdvanced
+---@field CreateRelated fun(self: dbc.row.SoundEntriesAdvanced, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SoundEntriesAdvanced, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SoundEntriesAdvanced, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SoundEntriesAdvanced.dbc.
+---@class dbc.Table.SoundEntriesAdvanced : DbcTable
+---@field FindById fun(self: dbc.Table.SoundEntriesAdvanced, id: integer): dbc.row.SoundEntriesAdvanced|nil
+---@field GetById fun(self: dbc.Table.SoundEntriesAdvanced, id: integer): dbc.row.SoundEntriesAdvanced|nil
+---@field GetRow fun(self: dbc.Table.SoundEntriesAdvanced, row: integer): dbc.row.SoundEntriesAdvanced
+---@field NewRow fun(self: dbc.Table.SoundEntriesAdvanced, id?: integer): dbc.row.SoundEntriesAdvanced
+---@field Create fun(self: dbc.Table.SoundEntriesAdvanced, id?: integer): dbc.row.SoundEntriesAdvanced
+---@field CreateNext fun(self: dbc.Table.SoundEntriesAdvanced, data?: table): dbc.row.SoundEntriesAdvanced
+---@field CloneRow fun(self: dbc.Table.SoundEntriesAdvanced, source: integer|dbc.row.SoundEntriesAdvanced, new_id?: integer): dbc.row.SoundEntriesAdvanced
+---@field GetAllRows fun(self: dbc.Table.SoundEntriesAdvanced): dbc.row.SoundEntriesAdvanced[]
+---@field Query fun(self: dbc.Table.SoundEntriesAdvanced): dbc.Query<dbc.row.SoundEntriesAdvanced>
+---@field Rows fun(self: dbc.Table.SoundEntriesAdvanced): fun(): integer, dbc.row.SoundEntriesAdvanced

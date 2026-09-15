@@ -1,0 +1,60 @@
+---@meta
+-- Generated LuaLS annotations for AnimationData.dbc. Do not edit.
+
+---Row representation of AnimationData.dbc.
+---@class dbc.row.AnimationData : RowProxy
+---@field ID integer
+---@field Name string
+---@field Weaponflags integer
+---@field Bodyflags integer
+---@field Flags integer
+---@field Fallback integer
+---@field BehaviorID integer
+---@field BehaviorTier integer
+
+-- Fluent PascalCase Methods for AnimationData
+---@field GetID fun(self: dbc.row.AnimationData): integer
+---@field SetID fun(self: dbc.row.AnimationData, value: integer): dbc.row.AnimationData
+---@field GetName fun(self: dbc.row.AnimationData): string
+---@field SetName fun(self: dbc.row.AnimationData, value: string): dbc.row.AnimationData
+---@field GetWeaponflags fun(self: dbc.row.AnimationData): integer
+---@field SetWeaponflags fun(self: dbc.row.AnimationData, value: integer): dbc.row.AnimationData
+---@field HasWeaponflags fun(self: dbc.row.AnimationData, flag: integer): boolean
+---@field AddWeaponflags fun(self: dbc.row.AnimationData, flag: integer): dbc.row.AnimationData
+---@field RemoveWeaponflags fun(self: dbc.row.AnimationData, flag: integer): dbc.row.AnimationData
+---@field GetBodyflags fun(self: dbc.row.AnimationData): integer
+---@field SetBodyflags fun(self: dbc.row.AnimationData, value: integer): dbc.row.AnimationData
+---@field HasBodyflags fun(self: dbc.row.AnimationData, flag: integer): boolean
+---@field AddBodyflags fun(self: dbc.row.AnimationData, flag: integer): dbc.row.AnimationData
+---@field RemoveBodyflags fun(self: dbc.row.AnimationData, flag: integer): dbc.row.AnimationData
+---@field GetFlags fun(self: dbc.row.AnimationData): integer
+---@field SetFlags fun(self: dbc.row.AnimationData, value: integer): dbc.row.AnimationData
+---@field HasFlags fun(self: dbc.row.AnimationData, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.AnimationData, flag: integer): dbc.row.AnimationData
+---@field RemoveFlags fun(self: dbc.row.AnimationData, flag: integer): dbc.row.AnimationData
+---@field GetFallback fun(self: dbc.row.AnimationData): integer
+---@field SetFallback fun(self: dbc.row.AnimationData, value: integer): dbc.row.AnimationData
+---@field GetBehaviorID fun(self: dbc.row.AnimationData): integer
+---@field SetBehaviorID fun(self: dbc.row.AnimationData, value: integer): dbc.row.AnimationData
+---@field GetBehaviorTier fun(self: dbc.row.AnimationData): integer
+---@field SetBehaviorTier fun(self: dbc.row.AnimationData, value: integer): dbc.row.AnimationData
+
+-- Inferred Cross-Table Relations for AnimationData
+
+-- Cascading Creation & Relations Engine for AnimationData
+---@field CreateRelated fun(self: dbc.row.AnimationData, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.AnimationData, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.AnimationData, child_table: string, child_field?: string): any[]
+
+---Typed table handle for AnimationData.dbc.
+---@class dbc.Table.AnimationData : DbcTable
+---@field FindById fun(self: dbc.Table.AnimationData, id: integer): dbc.row.AnimationData|nil
+---@field GetById fun(self: dbc.Table.AnimationData, id: integer): dbc.row.AnimationData|nil
+---@field GetRow fun(self: dbc.Table.AnimationData, row: integer): dbc.row.AnimationData
+---@field NewRow fun(self: dbc.Table.AnimationData, id?: integer): dbc.row.AnimationData
+---@field Create fun(self: dbc.Table.AnimationData, id?: integer): dbc.row.AnimationData
+---@field CreateNext fun(self: dbc.Table.AnimationData, data?: table): dbc.row.AnimationData
+---@field CloneRow fun(self: dbc.Table.AnimationData, source: integer|dbc.row.AnimationData, new_id?: integer): dbc.row.AnimationData
+---@field GetAllRows fun(self: dbc.Table.AnimationData): dbc.row.AnimationData[]
+---@field Query fun(self: dbc.Table.AnimationData): dbc.Query<dbc.row.AnimationData>
+---@field Rows fun(self: dbc.Table.AnimationData): fun(): integer, dbc.row.AnimationData

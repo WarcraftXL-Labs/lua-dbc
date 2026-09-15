@@ -1,0 +1,207 @@
+---@meta
+-- Generated LuaLS annotations for VehicleSeat.dbc. Do not edit.
+
+---Row representation of VehicleSeat.dbc.
+---@class dbc.row.VehicleSeat : RowProxy
+---@field ID integer
+---@field Flags integer
+---@field AttachmentID integer
+---@field AttachmentOffsetX number
+---@field AttachmentOffsetY number
+---@field AttachmentOffsetZ number
+---@field EnterPreDelay number
+---@field EnterSpeed number
+---@field EnterGravity number
+---@field EnterMinDuration number
+---@field EnterMaxDuration number
+---@field EnterMinArcHeight number
+---@field EnterMaxArcHeight number
+---@field EnterAnimStart integer
+---@field EnterAnimLoop integer
+---@field RideAnimStart integer
+---@field RideAnimLoop integer
+---@field RideUpperAnimStart integer
+---@field RideUpperAnimLoop integer
+---@field ExitPreDelay number
+---@field ExitSpeed number
+---@field ExitGravity number
+---@field ExitMinDuration number
+---@field ExitMaxDuration number
+---@field ExitMinArcHeight number
+---@field ExitMaxArcHeight number
+---@field ExitAnimStart integer
+---@field ExitAnimLoop integer
+---@field ExitAnimEnd integer
+---@field PassengerYaw number
+---@field PassengerPitch number
+---@field PassengerRoll number
+---@field PassengerAttachmentID integer
+---@field VehicleEnterAnim integer
+---@field VehicleExitAnim integer
+---@field VehicleRideAnimLoop integer
+---@field VehicleEnterAnimBone integer
+---@field VehicleExitAnimBone integer
+---@field VehicleRideAnimLoopBone integer
+---@field VehicleEnterAnimDelay number
+---@field VehicleExitAnimDelay number
+---@field VehicleAbilityDisplay integer
+---@field EnterUISoundID integer
+---@field ExitUISoundID integer
+---@field UiSkin integer
+---@field FlagsB integer
+---@field CameraEnteringDelay number
+---@field CameraEnteringDuration number
+---@field CameraExitingDelay number
+---@field CameraExitingDuration number
+---@field CameraOffsetX number
+---@field CameraOffsetY number
+---@field CameraOffsetZ number
+---@field CameraPosChaseRate number
+---@field CameraFacingChaseRate number
+---@field CameraEnteringZoom number
+---@field CameraSeatZoomMin number
+---@field CameraSeatZoomMax number
+
+-- Fluent PascalCase Methods for VehicleSeat
+---@field GetID fun(self: dbc.row.VehicleSeat): integer
+---@field SetID fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetFlags fun(self: dbc.row.VehicleSeat): integer
+---@field SetFlags fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field HasFlags fun(self: dbc.row.VehicleSeat, flag: integer): boolean
+---@field AddFlags fun(self: dbc.row.VehicleSeat, flag: integer): dbc.row.VehicleSeat
+---@field RemoveFlags fun(self: dbc.row.VehicleSeat, flag: integer): dbc.row.VehicleSeat
+---@field GetAttachmentID fun(self: dbc.row.VehicleSeat): integer
+---@field SetAttachmentID fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetAttachmentOffsetX fun(self: dbc.row.VehicleSeat): number
+---@field SetAttachmentOffsetX fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetAttachmentOffsetY fun(self: dbc.row.VehicleSeat): number
+---@field SetAttachmentOffsetY fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetAttachmentOffsetZ fun(self: dbc.row.VehicleSeat): number
+---@field SetAttachmentOffsetZ fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterPreDelay fun(self: dbc.row.VehicleSeat): number
+---@field SetEnterPreDelay fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterSpeed fun(self: dbc.row.VehicleSeat): number
+---@field SetEnterSpeed fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterGravity fun(self: dbc.row.VehicleSeat): number
+---@field SetEnterGravity fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterMinDuration fun(self: dbc.row.VehicleSeat): number
+---@field SetEnterMinDuration fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterMaxDuration fun(self: dbc.row.VehicleSeat): number
+---@field SetEnterMaxDuration fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterMinArcHeight fun(self: dbc.row.VehicleSeat): number
+---@field SetEnterMinArcHeight fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterMaxArcHeight fun(self: dbc.row.VehicleSeat): number
+---@field SetEnterMaxArcHeight fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetEnterAnimStart fun(self: dbc.row.VehicleSeat): integer
+---@field SetEnterAnimStart fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetEnterAnimLoop fun(self: dbc.row.VehicleSeat): integer
+---@field SetEnterAnimLoop fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetRideAnimStart fun(self: dbc.row.VehicleSeat): integer
+---@field SetRideAnimStart fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetRideAnimLoop fun(self: dbc.row.VehicleSeat): integer
+---@field SetRideAnimLoop fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetRideUpperAnimStart fun(self: dbc.row.VehicleSeat): integer
+---@field SetRideUpperAnimStart fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetRideUpperAnimLoop fun(self: dbc.row.VehicleSeat): integer
+---@field SetRideUpperAnimLoop fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetExitPreDelay fun(self: dbc.row.VehicleSeat): number
+---@field SetExitPreDelay fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetExitSpeed fun(self: dbc.row.VehicleSeat): number
+---@field SetExitSpeed fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetExitGravity fun(self: dbc.row.VehicleSeat): number
+---@field SetExitGravity fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetExitMinDuration fun(self: dbc.row.VehicleSeat): number
+---@field SetExitMinDuration fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetExitMaxDuration fun(self: dbc.row.VehicleSeat): number
+---@field SetExitMaxDuration fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetExitMinArcHeight fun(self: dbc.row.VehicleSeat): number
+---@field SetExitMinArcHeight fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetExitMaxArcHeight fun(self: dbc.row.VehicleSeat): number
+---@field SetExitMaxArcHeight fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetExitAnimStart fun(self: dbc.row.VehicleSeat): integer
+---@field SetExitAnimStart fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetExitAnimLoop fun(self: dbc.row.VehicleSeat): integer
+---@field SetExitAnimLoop fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetExitAnimEnd fun(self: dbc.row.VehicleSeat): integer
+---@field SetExitAnimEnd fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetPassengerYaw fun(self: dbc.row.VehicleSeat): number
+---@field SetPassengerYaw fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetPassengerPitch fun(self: dbc.row.VehicleSeat): number
+---@field SetPassengerPitch fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetPassengerRoll fun(self: dbc.row.VehicleSeat): number
+---@field SetPassengerRoll fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetPassengerAttachmentID fun(self: dbc.row.VehicleSeat): integer
+---@field SetPassengerAttachmentID fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetVehicleEnterAnim fun(self: dbc.row.VehicleSeat): integer
+---@field SetVehicleEnterAnim fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetVehicleExitAnim fun(self: dbc.row.VehicleSeat): integer
+---@field SetVehicleExitAnim fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetVehicleRideAnimLoop fun(self: dbc.row.VehicleSeat): integer
+---@field SetVehicleRideAnimLoop fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetVehicleEnterAnimBone fun(self: dbc.row.VehicleSeat): integer
+---@field SetVehicleEnterAnimBone fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetVehicleExitAnimBone fun(self: dbc.row.VehicleSeat): integer
+---@field SetVehicleExitAnimBone fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetVehicleRideAnimLoopBone fun(self: dbc.row.VehicleSeat): integer
+---@field SetVehicleRideAnimLoopBone fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetVehicleEnterAnimDelay fun(self: dbc.row.VehicleSeat): number
+---@field SetVehicleEnterAnimDelay fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetVehicleExitAnimDelay fun(self: dbc.row.VehicleSeat): number
+---@field SetVehicleExitAnimDelay fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetVehicleAbilityDisplay fun(self: dbc.row.VehicleSeat): integer
+---@field SetVehicleAbilityDisplay fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetEnterUISoundID fun(self: dbc.row.VehicleSeat): integer
+---@field SetEnterUISoundID fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetExitUISoundID fun(self: dbc.row.VehicleSeat): integer
+---@field SetExitUISoundID fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetUiSkin fun(self: dbc.row.VehicleSeat): integer
+---@field SetUiSkin fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field GetFlagsB fun(self: dbc.row.VehicleSeat): integer
+---@field SetFlagsB fun(self: dbc.row.VehicleSeat, value: integer): dbc.row.VehicleSeat
+---@field HasFlagsB fun(self: dbc.row.VehicleSeat, flag: integer): boolean
+---@field AddFlagsB fun(self: dbc.row.VehicleSeat, flag: integer): dbc.row.VehicleSeat
+---@field RemoveFlagsB fun(self: dbc.row.VehicleSeat, flag: integer): dbc.row.VehicleSeat
+---@field GetCameraEnteringDelay fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraEnteringDelay fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraEnteringDuration fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraEnteringDuration fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraExitingDelay fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraExitingDelay fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraExitingDuration fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraExitingDuration fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraOffsetX fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraOffsetX fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraOffsetY fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraOffsetY fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraOffsetZ fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraOffsetZ fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraPosChaseRate fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraPosChaseRate fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraFacingChaseRate fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraFacingChaseRate fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraEnteringZoom fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraEnteringZoom fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraSeatZoomMin fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraSeatZoomMin fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+---@field GetCameraSeatZoomMax fun(self: dbc.row.VehicleSeat): number
+---@field SetCameraSeatZoomMax fun(self: dbc.row.VehicleSeat, value: number): dbc.row.VehicleSeat
+
+-- Inferred Cross-Table Relations for VehicleSeat
+
+-- Cascading Creation & Relations Engine for VehicleSeat
+---@field CreateRelated fun(self: dbc.row.VehicleSeat, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.VehicleSeat, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.VehicleSeat, child_table: string, child_field?: string): any[]
+
+---Typed table handle for VehicleSeat.dbc.
+---@class dbc.Table.VehicleSeat : DbcTable
+---@field FindById fun(self: dbc.Table.VehicleSeat, id: integer): dbc.row.VehicleSeat|nil
+---@field GetById fun(self: dbc.Table.VehicleSeat, id: integer): dbc.row.VehicleSeat|nil
+---@field GetRow fun(self: dbc.Table.VehicleSeat, row: integer): dbc.row.VehicleSeat
+---@field NewRow fun(self: dbc.Table.VehicleSeat, id?: integer): dbc.row.VehicleSeat
+---@field Create fun(self: dbc.Table.VehicleSeat, id?: integer): dbc.row.VehicleSeat
+---@field CreateNext fun(self: dbc.Table.VehicleSeat, data?: table): dbc.row.VehicleSeat
+---@field CloneRow fun(self: dbc.Table.VehicleSeat, source: integer|dbc.row.VehicleSeat, new_id?: integer): dbc.row.VehicleSeat
+---@field GetAllRows fun(self: dbc.Table.VehicleSeat): dbc.row.VehicleSeat[]
+---@field Query fun(self: dbc.Table.VehicleSeat): dbc.Query<dbc.row.VehicleSeat>
+---@field Rows fun(self: dbc.Table.VehicleSeat): fun(): integer, dbc.row.VehicleSeat

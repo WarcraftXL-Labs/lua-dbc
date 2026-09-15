@@ -1,0 +1,25 @@
+-- Generated from TSWoW's LfgDungeons.ts. Do not edit.
+return {
+  name = "LfgDungeons",
+  record_size = 196,
+  field_count = 49,
+  fields = {
+    { name = "ID", kind = "key", offset = 0, count = 1 },
+    { name = "Name", kind = "loc", offset = 4, count = 1 },
+    { name = "MinLevel", kind = "i32", offset = 72, count = 1 },
+    { name = "MaxLevel", kind = "i32", offset = 76, count = 1 },
+    { name = "Target_Level", kind = "i32", offset = 80, count = 1 },
+    { name = "Target_Level_Min", kind = "i32", offset = 84, count = 1 },
+    { name = "Target_Level_Max", kind = "i32", offset = 88, count = 1 },
+    { name = "MapID", kind = "i32", offset = 92, count = 1 },
+    { name = "Difficulty", kind = "i32", offset = 96, count = 1 },
+    { name = "Flags", kind = "i32", offset = 100, count = 1 },
+    { name = "TypeID", kind = "i32", offset = 104, count = 1 },
+    { name = "Faction", kind = "i32", offset = 108, count = 1 },
+    { name = "TextureFilename", kind = "str", offset = 112, count = 1 },
+    { name = "ExpansionLevel", kind = "i32", offset = 116, count = 1 },
+    { name = "Order_Index", kind = "i32", offset = 120, count = 1 },
+    { name = "Group_Id", kind = "i32", offset = 124, count = 1 },
+    { name = "Description", kind = "loc", offset = 128, count = 1 },
+  },
+}

@@ -1,0 +1,61 @@
+---@meta
+-- Generated LuaLS annotations for SoundEmitters.dbc. Do not edit.
+
+---Row representation of SoundEmitters.dbc.
+---@class dbc.row.SoundEmitters : RowProxy
+---@field ID integer
+---@field PositionX number
+---@field PositionY number
+---@field PositionZ number
+---@field DirectionX number
+---@field DirectionY number
+---@field DirectionZ number
+---@field SoundEntriesID integer
+---@field MapID integer
+---@field Name string
+
+-- Fluent PascalCase Methods for SoundEmitters
+---@field GetID fun(self: dbc.row.SoundEmitters): integer
+---@field SetID fun(self: dbc.row.SoundEmitters, value: integer): dbc.row.SoundEmitters
+---@field GetPositionX fun(self: dbc.row.SoundEmitters): number
+---@field SetPositionX fun(self: dbc.row.SoundEmitters, value: number): dbc.row.SoundEmitters
+---@field GetPositionY fun(self: dbc.row.SoundEmitters): number
+---@field SetPositionY fun(self: dbc.row.SoundEmitters, value: number): dbc.row.SoundEmitters
+---@field GetPositionZ fun(self: dbc.row.SoundEmitters): number
+---@field SetPositionZ fun(self: dbc.row.SoundEmitters, value: number): dbc.row.SoundEmitters
+---@field GetDirectionX fun(self: dbc.row.SoundEmitters): number
+---@field SetDirectionX fun(self: dbc.row.SoundEmitters, value: number): dbc.row.SoundEmitters
+---@field GetDirectionY fun(self: dbc.row.SoundEmitters): number
+---@field SetDirectionY fun(self: dbc.row.SoundEmitters, value: number): dbc.row.SoundEmitters
+---@field GetDirectionZ fun(self: dbc.row.SoundEmitters): number
+---@field SetDirectionZ fun(self: dbc.row.SoundEmitters, value: number): dbc.row.SoundEmitters
+---@field GetSoundEntriesID fun(self: dbc.row.SoundEmitters): integer
+---@field SetSoundEntriesID fun(self: dbc.row.SoundEmitters, value: integer): dbc.row.SoundEmitters
+---@field GetMapID fun(self: dbc.row.SoundEmitters): integer
+---@field SetMapID fun(self: dbc.row.SoundEmitters, value: integer): dbc.row.SoundEmitters
+---@field GetName fun(self: dbc.row.SoundEmitters): string
+---@field SetName fun(self: dbc.row.SoundEmitters, value: string): dbc.row.SoundEmitters
+
+-- Inferred Cross-Table Relations for SoundEmitters
+---@field GetSoundEntries fun(self: dbc.row.SoundEmitters): dbc.row.SoundEntries|nil
+---@field SetSoundEntries fun(self: dbc.row.SoundEmitters, target: dbc.row.SoundEntries|integer): dbc.row.SoundEmitters
+---@field GetMap fun(self: dbc.row.SoundEmitters): dbc.row.Map|nil
+---@field SetMap fun(self: dbc.row.SoundEmitters, target: dbc.row.Map|integer): dbc.row.SoundEmitters
+
+-- Cascading Creation & Relations Engine for SoundEmitters
+---@field CreateRelated fun(self: dbc.row.SoundEmitters, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.SoundEmitters, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.SoundEmitters, child_table: string, child_field?: string): any[]
+
+---Typed table handle for SoundEmitters.dbc.
+---@class dbc.Table.SoundEmitters : DbcTable
+---@field FindById fun(self: dbc.Table.SoundEmitters, id: integer): dbc.row.SoundEmitters|nil
+---@field GetById fun(self: dbc.Table.SoundEmitters, id: integer): dbc.row.SoundEmitters|nil
+---@field GetRow fun(self: dbc.Table.SoundEmitters, row: integer): dbc.row.SoundEmitters
+---@field NewRow fun(self: dbc.Table.SoundEmitters, id?: integer): dbc.row.SoundEmitters
+---@field Create fun(self: dbc.Table.SoundEmitters, id?: integer): dbc.row.SoundEmitters
+---@field CreateNext fun(self: dbc.Table.SoundEmitters, data?: table): dbc.row.SoundEmitters
+---@field CloneRow fun(self: dbc.Table.SoundEmitters, source: integer|dbc.row.SoundEmitters, new_id?: integer): dbc.row.SoundEmitters
+---@field GetAllRows fun(self: dbc.Table.SoundEmitters): dbc.row.SoundEmitters[]
+---@field Query fun(self: dbc.Table.SoundEmitters): dbc.Query<dbc.row.SoundEmitters>
+---@field Rows fun(self: dbc.Table.SoundEmitters): fun(): integer, dbc.row.SoundEmitters

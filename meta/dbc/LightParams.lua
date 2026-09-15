@@ -1,0 +1,56 @@
+---@meta
+-- Generated LuaLS annotations for LightParams.dbc. Do not edit.
+
+---Row representation of LightParams.dbc.
+---@class dbc.row.LightParams : RowProxy
+---@field ID integer
+---@field HighlightSky integer
+---@field LightSkyboxID integer
+---@field CloudTypeID integer
+---@field Glow number
+---@field WaterShallowAlpha number
+---@field WaterDeepAlpha number
+---@field OceanShallowAlpha number
+---@field OceanDeepAlpha number
+
+-- Fluent PascalCase Methods for LightParams
+---@field GetID fun(self: dbc.row.LightParams): integer
+---@field SetID fun(self: dbc.row.LightParams, value: integer): dbc.row.LightParams
+---@field GetHighlightSky fun(self: dbc.row.LightParams): integer
+---@field SetHighlightSky fun(self: dbc.row.LightParams, value: integer): dbc.row.LightParams
+---@field GetLightSkyboxID fun(self: dbc.row.LightParams): integer
+---@field SetLightSkyboxID fun(self: dbc.row.LightParams, value: integer): dbc.row.LightParams
+---@field GetCloudTypeID fun(self: dbc.row.LightParams): integer
+---@field SetCloudTypeID fun(self: dbc.row.LightParams, value: integer): dbc.row.LightParams
+---@field GetGlow fun(self: dbc.row.LightParams): number
+---@field SetGlow fun(self: dbc.row.LightParams, value: number): dbc.row.LightParams
+---@field GetWaterShallowAlpha fun(self: dbc.row.LightParams): number
+---@field SetWaterShallowAlpha fun(self: dbc.row.LightParams, value: number): dbc.row.LightParams
+---@field GetWaterDeepAlpha fun(self: dbc.row.LightParams): number
+---@field SetWaterDeepAlpha fun(self: dbc.row.LightParams, value: number): dbc.row.LightParams
+---@field GetOceanShallowAlpha fun(self: dbc.row.LightParams): number
+---@field SetOceanShallowAlpha fun(self: dbc.row.LightParams, value: number): dbc.row.LightParams
+---@field GetOceanDeepAlpha fun(self: dbc.row.LightParams): number
+---@field SetOceanDeepAlpha fun(self: dbc.row.LightParams, value: number): dbc.row.LightParams
+
+-- Inferred Cross-Table Relations for LightParams
+---@field GetLightSkybox fun(self: dbc.row.LightParams): dbc.row.LightSkybox|nil
+---@field SetLightSkybox fun(self: dbc.row.LightParams, target: dbc.row.LightSkybox|integer): dbc.row.LightParams
+
+-- Cascading Creation & Relations Engine for LightParams
+---@field CreateRelated fun(self: dbc.row.LightParams, target: string, data_or_id?: table|integer): any
+---@field GetRelated fun(self: dbc.row.LightParams, target_or_field: string): any
+---@field GetChildren fun(self: dbc.row.LightParams, child_table: string, child_field?: string): any[]
+
+---Typed table handle for LightParams.dbc.
+---@class dbc.Table.LightParams : DbcTable
+---@field FindById fun(self: dbc.Table.LightParams, id: integer): dbc.row.LightParams|nil
+---@field GetById fun(self: dbc.Table.LightParams, id: integer): dbc.row.LightParams|nil
+---@field GetRow fun(self: dbc.Table.LightParams, row: integer): dbc.row.LightParams
+---@field NewRow fun(self: dbc.Table.LightParams, id?: integer): dbc.row.LightParams
+---@field Create fun(self: dbc.Table.LightParams, id?: integer): dbc.row.LightParams
+---@field CreateNext fun(self: dbc.Table.LightParams, data?: table): dbc.row.LightParams
+---@field CloneRow fun(self: dbc.Table.LightParams, source: integer|dbc.row.LightParams, new_id?: integer): dbc.row.LightParams
+---@field GetAllRows fun(self: dbc.Table.LightParams): dbc.row.LightParams[]
+---@field Query fun(self: dbc.Table.LightParams): dbc.Query<dbc.row.LightParams>
+---@field Rows fun(self: dbc.Table.LightParams): fun(): integer, dbc.row.LightParams
