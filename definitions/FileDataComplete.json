@@ -1,0 +1,101 @@
+{
+  "columnDefinitions": {
+    "Filename": {
+      "type": "string",
+      "verified": true
+    },
+    "Filepath": {
+      "type": "string",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 21737,
+            "expansion": 7,
+            "major": 0,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 20810,
+            "expansion": 7,
+            "major": 0,
+            "minor": 1
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 26095,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26175,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26231,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 19445,
+          "expansion": 6,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 28211,
+          "expansion": 1,
+          "major": 13,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Filepath",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Filename",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "EEA700D9",
+        "4D4FD869"
+      ]
+    }
+  ]
+}

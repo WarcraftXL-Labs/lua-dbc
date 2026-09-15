@@ -1,0 +1,903 @@
+{
+  "columnDefinitions": {
+    "Flags": {
+      "type": "int",
+      "verified": true
+    },
+    "FloorIndex": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "MapID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Map",
+      "type": "int",
+      "verified": true
+    },
+    "Max": {
+      "type": "float",
+      "verified": true
+    },
+    "MaxX": {
+      "type": "float",
+      "verified": true
+    },
+    "MaxY": {
+      "type": "float",
+      "verified": true
+    },
+    "Min": {
+      "type": "float",
+      "verified": true
+    },
+    "MinX": {
+      "type": "float",
+      "verified": true
+    },
+    "MinY": {
+      "type": "float",
+      "verified": true
+    },
+    "ParentWorldMapID": {
+      "foreignColumn": "ID",
+      "foreignTable": "WorldMapArea",
+      "type": "int",
+      "verified": true
+    },
+    "RelativeHeightIndex": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 8471,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          },
+          "minBuild": {
+            "build": 8303,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "FloorIndex",
+          "size": 32
+        },
+        {
+          "arrLength": 2,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Min",
+          "size": 32
+        },
+        {
+          "arrLength": 2,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Max",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 15913,
+            "expansion": 5,
+            "major": 0,
+            "minor": 4
+          },
+          "minBuild": {
+            "build": 15464,
+            "expansion": 5,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 15595,
+            "expansion": 4,
+            "major": 3,
+            "minor": 4
+          },
+          "minBuild": {
+            "build": 11792,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 12340,
+            "expansion": 3,
+            "major": 3,
+            "minor": 5
+          },
+          "minBuild": {
+            "build": 8622,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 11792,
+          "expansion": 4,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "FloorIndex",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MinX",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MaxX",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MinY",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MaxY",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ParentWorldMapID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 15929,
+            "expansion": 5,
+            "major": 0,
+            "minor": 4
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "FloorIndex",
+          "size": 32
+        },
+        {
+          "arrLength": 2,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Min",
+          "size": 32
+        },
+        {
+          "arrLength": 2,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Max",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ParentWorldMapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Flags",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 25902,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 25976,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26010,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26032,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26095,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26131,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26141,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26175,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26231,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26287,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26297,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26321,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 25928,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25937,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25944,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25946,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25950,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25961,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25996,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26124,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26365,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26654,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26755,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26822,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26899,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26972,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25079,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25163,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25196,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25208,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25255,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25326,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25383,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25442,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25455,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25477,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25480,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25497,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25516,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25549,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 24473,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24484,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24492,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24500,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24539,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24563,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24608,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24651,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24681,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24692,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24700,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24715,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24727,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24730,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24738,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24744,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24758,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24759,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24781,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24793,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24829,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24834,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24843,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24845,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24852,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24853,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24864,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24878,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24887,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24896,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24904,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24920,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24931,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24956,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24970,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24974,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 25021,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 25195,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 28211,
+          "expansion": 1,
+          "major": 13,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 2,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Min",
+          "size": 32
+        },
+        {
+          "arrLength": 2,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Max",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ParentWorldMapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "FloorIndex",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RelativeHeightIndex",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Flags",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "B5A245F4",
+        "65C8690C"
+      ]
+    }
+  ]
+}

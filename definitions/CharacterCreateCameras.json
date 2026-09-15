@@ -1,0 +1,147 @@
+{
+  "columnDefinitions": {
+    "Camera": {
+      "type": "int",
+      "verified": true
+    },
+    "Height": {
+      "type": "float",
+      "verified": true
+    },
+    "Race": {
+      "type": "int",
+      "verified": true
+    },
+    "Radius": {
+      "type": "float",
+      "verified": true
+    },
+    "Sex": {
+      "type": "int",
+      "verified": true
+    },
+    "Target": {
+      "type": "float",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 5991,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 5610,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 6141,
+            "expansion": 1,
+            "major": 12,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 3980,
+            "expansion": 1,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 3988,
+            "expansion": 0,
+            "major": 12,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3368,
+            "expansion": 0,
+            "major": 5,
+            "minor": 3
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 5875,
+          "expansion": 1,
+          "major": 12,
+          "minor": 1
+        },
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Race",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Sex",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Camera",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Height",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Radius",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Target",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "columnDefinitions": {
+    "DifficultyID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Difficulty",
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": false
+    },
+    "SpellID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Spell",
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DifficultyID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

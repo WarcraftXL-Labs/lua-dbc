@@ -1,0 +1,106 @@
+{
+  "columnDefinitions": {
+    "DLSFile": {
+      "type": "string",
+      "verified": true
+    },
+    "DaySequence": {
+      "type": "string",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "NightSequence": {
+      "type": "string",
+      "verified": true
+    },
+    "Volume": {
+      "type": "float",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 3592,
+            "expansion": 0,
+            "major": 6,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3368,
+            "expansion": 0,
+            "major": 5,
+            "minor": 3
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 3592,
+          "expansion": 0,
+          "major": 6,
+          "minor": 0
+        },
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DaySequence",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "NightSequence",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DLSFile",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Volume",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

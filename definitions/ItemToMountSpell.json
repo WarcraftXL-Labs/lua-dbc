@@ -1,0 +1,63 @@
+{
+  "columnDefinitions": {
+    "ItemID": {
+      "type": "int",
+      "verified": false
+    },
+    "SpellID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Spell",
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 17645,
+            "expansion": 5,
+            "major": 4,
+            "minor": 2
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

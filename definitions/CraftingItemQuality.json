@@ -1,0 +1,65 @@
+{
+  "columnDefinitions": {
+    "CraftingItemID": {
+      "foreignColumn": "ID",
+      "foreignTable": "CraftingItem",
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Item",
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 43342,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "CraftingItemID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "0EADD62B"
+      ]
+    }
+  ]
+}

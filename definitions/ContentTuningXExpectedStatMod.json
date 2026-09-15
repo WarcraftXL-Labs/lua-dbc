@@ -1,0 +1,89 @@
+{
+  "columnDefinitions": {
+    "ContentTuningID": {
+      "foreignColumn": "ID",
+      "foreignTable": "ContentTuning",
+      "type": "int",
+      "verified": false
+    },
+    "ExpectedStatModID": {
+      "foreignColumn": "ID",
+      "foreignTable": "ExpectedStatMod",
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 30080,
+          "expansion": 8,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 30093,
+          "expansion": 8,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 30096,
+          "expansion": 8,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 30108,
+          "expansion": 8,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 30123,
+          "expansion": 8,
+          "major": 2,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ExpectedStatModID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "ContentTuningID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "A87DE567"
+      ]
+    }
+  ]
+}

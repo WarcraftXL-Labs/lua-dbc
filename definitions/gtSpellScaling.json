@@ -1,0 +1,95 @@
+{
+  "columnDefinitions": {
+    "Data": {
+      "type": "float",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 21742,
+            "expansion": 6,
+            "major": 2,
+            "minor": 4
+          },
+          "minBuild": {
+            "build": 18125,
+            "expansion": 6,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 15464,
+            "expansion": 5,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 15595,
+            "expansion": 4,
+            "major": 3,
+            "minor": 4
+          },
+          "minBuild": {
+            "build": 11927,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 11792,
+          "expansion": 4,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Data",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

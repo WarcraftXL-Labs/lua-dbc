@@ -1,0 +1,69 @@
+{
+  "columnDefinitions": {
+    "AnimID": {
+      "foreignColumn": "ID",
+      "foreignTable": "AnimationData",
+      "type": "int",
+      "verified": true
+    },
+    "Name": {
+      "type": "string",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 3592,
+            "expansion": 0,
+            "major": 6,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3368,
+            "expansion": 0,
+            "major": 5,
+            "minor": 3
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 3592,
+          "expansion": 0,
+          "major": 6,
+          "minor": 0
+        },
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AnimID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Name",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

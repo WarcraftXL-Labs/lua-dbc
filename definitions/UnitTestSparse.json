@@ -1,0 +1,61 @@
+{
+  "columnDefinitions": {
+    "Field_0": {
+      "type": "string",
+      "verified": false
+    },
+    "Field_2": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 26231,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_2",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "F1AE2A8F"
+      ]
+    }
+  ]
+}

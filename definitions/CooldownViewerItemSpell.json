@@ -1,0 +1,230 @@
+{
+  "columnDefinitions": {
+    "Field_12_1_0_68209_002": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Item",
+      "type": "int",
+      "verified": false
+    },
+    "OrderIndex": {
+      "comment": "Can also be named Priority depending on what the Client does with this.",
+      "type": "int",
+      "verified": false
+    },
+    "SpellID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Spell",
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 69594,
+          "expansion": 12,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 68209,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68301,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68412,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68569,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68629,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68675,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68745,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68824,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 68914,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69027,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69111,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69189,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69214,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69273,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69283,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69299,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69323,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69382,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69404,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69465,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69497,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69587,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 69814,
+          "expansion": 12,
+          "major": 1,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "OrderIndex",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_12_1_0_68209_002",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "ItemID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "671AF576"
+      ]
+    }
+  ]
+}

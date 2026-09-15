@@ -1,0 +1,80 @@
+{
+  "columnDefinitions": {
+    "File": {
+      "type": "string",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "Type": {
+      "type": "string",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 3988,
+            "expansion": 0,
+            "major": 12,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3807,
+            "expansion": 0,
+            "major": 9,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 3892,
+          "expansion": 0,
+          "major": 10,
+          "minor": 0
+        },
+        {
+          "build": 3807,
+          "expansion": 0,
+          "major": 9,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Type",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "File",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

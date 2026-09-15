@@ -1,0 +1,46 @@
+{
+  "columnDefinitions": {
+    "EnumID": {
+      "type": "int",
+      "verified": true
+    },
+    "Name": {
+      "type": "string",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EnumID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Name",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

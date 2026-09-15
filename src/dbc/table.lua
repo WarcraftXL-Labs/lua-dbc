@@ -1,321 +1,350 @@
 --[[
     table.lua
-    Provides the DbcTable class, wrapping DbcFile with high-level row management,
-    fast O(1) primary key indexing, LINQ querying, row creation from scratch, and cloning.
+    High-level DbcTable wrapper around DbcFile.
+
+    Adds:
+      - O(1) primary-key indexing (with copy-table synthesis)
+      - Cached RowProxy instances
+      - LINQ query entry point
+      - Row creation and cloning
 ]]
 
 local ffi = require("ffi")
 local copy = ffi.copy
 
--- Localized loaders for modules
-local function load_module(name)
-    local ok, mod = pcall(require, "dbc." .. name)
-    if ok then return mod end
-    ok, mod = pcall(require, "src.dbc." .. name)
-    if ok then return mod end
-    return require(name)
-end
+local load = require("dbc._loader")
+local util = load("_util")
 
-local file_mod = load_module("file")
-local proxy_mod = load_module("proxy")
-local query_mod = load_module("query")
-local relations_mod = load_module("relations")
+local file_mod      = load("file")
+local proxy_mod     = load("proxy")
+local query_mod     = load("query")
 
-local READ = file_mod.READ
-local RowProxy = proxy_mod.RowProxy
-local Query = query_mod.Query
-local Relations = relations_mod
+local READ       = file_mod.READ
+local RowProxy   = proxy_mod.RowProxy
+local Query      = query_mod.Query
 
---- Ensures the directory for a file path exists before writing.
---- @param file_path string Target path to create directories for.
 local is_windows = package.config:sub(1, 1) == "\\"
 
+---Ensures the parent directory of a file path exists.
+---@param file_path string
 local function ensure_dir(file_path)
     local dir = string.match(file_path, "^(.*)[/\\][^/\\]+$")
-    if dir and dir ~= "" then
-        if is_windows then
-            local win_dir = dir:gsub("/", "\\")
-            os.execute('if not exist "' .. win_dir .. '" mkdir "' .. win_dir .. '" >nul 2>nul')
-        else
-            os.execute('mkdir -p "' .. dir .. '" 2>/dev/null')
-        end
+    if not dir or dir == "" then return end
+
+    if is_windows then
+        local win_dir = dir:gsub("/", "\\")
+        os.execute('if not exist "' .. win_dir .. '" mkdir "' .. win_dir .. '" >nul 2>nul')
+    else
+        os.execute('mkdir -p "' .. dir .. '" 2>/dev/null')
     end
 end
 
 ---@class DbcTable
----High-level table wrapper providing indexing, querying, and row creation.
----@field _file DbcFile Low-level DBC file instance.
----@field _workspace any Optional associated DbcWorkspace manager.
----@field _session any Backwards compatibility alias for _workspace.
----@field _proxies table<integer, RowProxy> Cache of row proxies indexed by 1-based row index.
----@field _id_map table<integer, integer> Map of primary key ID to 1-based row index.
+---@field _file table Low-level DbcFile driver.
+---@field _workspace table|nil Owning DbcWorkspace, if any.
+---@field _proxies table<integer, RowProxy> Row-indexed proxy cache.
+---@field _id_map table<integer, integer> PK -> 1-based row index.
 local DbcTable = {}
 DbcTable.__index = DbcTable
 
 ---Creates a new DbcTable wrapping an initialized DbcFile.
----@param file DbcFile The underlying DBC file.
----@param workspace any Optional parent DbcWorkspace.
----@return DbcTable table The initialized table instance.
+---@param file table
+---@param workspace table|nil
+---@return DbcTable
 function DbcTable.new(file, workspace)
     local self = setmetatable({}, DbcTable)
     self._file = file
     self._workspace = workspace
-    self._session = workspace
     self._proxies = {}
     self._id_map = {}
 
-    -- Link file back to workspace for reflection relation lookups
+    -- Back-reference used by proxy.lua for relation lookups.
     if workspace then
-        self._file._workspace = workspace
-        self._file._session = workspace
+        file._workspace = workspace
     end
 
     self:RebuildIndex()
     return self
 end
 
----Re-indexes all primary keys in the DBC file into the internal lookup map.
+---(Re)builds the primary-key -> row index map.
+---Uses the fast path when the file exposes a GetRowId method, otherwise
+---reads the ID column at the schema's id_offset for each row.
 function DbcTable:RebuildIndex()
-    self._id_map = {}
+    local id_map = {}
     local count = self._file.record_count
-    if count == 0 then return end
+    if count == 0 then
+        self._id_map = id_map
+        return
+    end
 
-    local id_offset = self._file:GetIdOffset()
-    for row = 1, count do
-        local addr = self._file:GetAddress(row, id_offset)
-        local id = READ.u32(addr)
-        if id ~= 0 or not self._id_map[0] then
-            self._id_map[id] = row
+    if self._file.GetRowId then
+        for row = 1, count do
+            local id = self._file:GetRowId(row)
+            if id ~= 0 or not id_map[0] then
+                id_map[id] = row
+            end
         end
-    end
-end
-
----Returns the underlying DbcFile instance.
----@return DbcFile file
-function DbcTable:GetFile()
-    return self._file
-end
-
----Returns the schema attached to the DBC table.
----@return table schema
-function DbcTable:GetSchema()
-    return self._file.schema
-end
-
----Returns the associated DbcWorkspace, if any.
----@return any workspace
-function DbcTable:GetWorkspace()
-    return self._workspace
-end
-
----Returns the number of records in this table.
----@return integer count
-function DbcTable:Count()
-    return self._file.record_count
-end
-
----Retrieves the maximum primary key (ID) present in the table.
----@return integer max_id
-function DbcTable:GetMaxId()
-    local max_id = 0
-    for id, _ in pairs(self._id_map) do
-        if id > max_id then
-            max_id = id
-        end
-    end
-    return max_id
-end
-
----Computes the next available sequential primary key ID (max_id + 1).
----@return integer next_id
-function DbcTable:GetNextId()
-    return self:GetMaxId() + 1
-end
-
----Retrieves a RowProxy for a specific 1-based row index.
----@param row_index integer 1-based row index.
----@return RowProxy proxy
-function DbcTable:GetRow(row_index)
-    if row_index < 1 or row_index > self._file.record_count then
-        error(string.format("%s: row index %d out of bounds (1..%d)", 
-            self._file.origin, row_index, self._file.record_count))
-    end
-
-    local proxy = self._proxies[row_index]
-    if not proxy then
-        proxy = RowProxy.new(self._file, row_index, self)
-        self._proxies[row_index] = proxy
-    end
-    return proxy
-end
-
----Finds a row by its primary key ID in O(1) time.
----@param id integer Primary key ID.
----@return RowProxy|nil proxy The row proxy if found, otherwise nil.
-function DbcTable:FindById(id)
-    local row_index = self._id_map[id]
-    if not row_index then
-        return nil
-    end
-    return self:GetRow(row_index)
-end
-
----Alias for FindById.
----@param id integer Primary key ID.
----@return RowProxy|nil proxy
-function DbcTable:GetById(id)
-    return self:FindById(id)
-end
-
----Creates a brand-new row from scratch with an optional primary key ID.
----@param id integer|nil Optional primary key to assign to the new row.
----@return RowProxy proxy The newly created row proxy.
-function DbcTable:NewRow(id)
-    local row_index = self._file:AppendRow()
-    local proxy = RowProxy.new(self._file, row_index, self)
-    self._proxies[row_index] = proxy
-
-    if id ~= nil then
-        proxy:SetID(id)
-        self._id_map[id] = row_index
-    end
-
-    return proxy
-end
-
----Alias for NewRow.
----@param id integer|nil Optional primary key to assign.
----@return RowProxy proxy
-function DbcTable:Create(id)
-    return self:NewRow(id)
-end
-
----Creates a brand-new row using the next available primary key ID (max + 1).
----Optionally initializes the fields from a data table.
----@param data table|nil Optional key-value table of field initializers.
----@return RowProxy proxy The newly created row proxy.
-function DbcTable:CreateNext(data)
-    local next_id = self:GetNextId()
-    local proxy = self:NewRow(next_id)
-    if type(data) == "table" then
-        proxy:FromTable(data)
-    end
-    return proxy
-end
-
----Clones an existing row and optionally assigns it a new primary key ID.
----@param row_or_id integer|RowProxy The source row index, ID, or RowProxy instance.
----@param new_id integer|nil Optional new ID for the cloned row.
----@return RowProxy cloned_proxy The newly cloned row proxy.
-function DbcTable:CloneRow(row_or_id, new_id)
-    local src_row_index
-    if type(row_or_id) == "table" and row_or_id.GetIndex then
-        src_row_index = row_or_id:GetIndex()
-    elseif self._id_map[row_or_id] then
-        src_row_index = self._id_map[row_or_id]
-    elseif type(row_or_id) == "number" and row_or_id >= 1 and row_or_id <= self._file.record_count then
-        src_row_index = row_or_id
     else
-        error(string.format("CloneRow: source row %s not found", tostring(row_or_id)))
+        local id_offset = self._file:GetIdOffset()
+        for row = 1, count do
+            local addr = self._file:GetAddress(row, id_offset)
+            local id = READ.u32(addr)
+            if id ~= 0 or not id_map[0] then
+                id_map[id] = row
+            end
+        end
     end
 
-    local new_row_index = self._file:AppendRow()
-    local src_addr = self._file:GetAddress(src_row_index, 0)
-    local dst_addr = self._file:GetAddress(new_row_index, 0)
-    copy(dst_addr, src_addr, self._file.record_size)
-
-    local clone = RowProxy.new(self._file, new_row_index, self)
-    self._proxies[new_row_index] = clone
-
-    if new_id ~= nil then
-        clone:SetID(new_id)
-        self._id_map[new_id] = new_row_index
+    -- Merge copy-table aliases (WDB2, WDB5, WDC*)
+    local copy_table = self._file.copy_table
+    if copy_table then
+        for new_id, source_id in pairs(copy_table) do
+            local source_row = id_map[source_id]
+            if source_row then
+                id_map[new_id] = source_row
+            end
+        end
     end
 
-    return clone
+    self._id_map = id_map
 end
 
----Returns a sequential array of all RowProxy instances in the table.
----@return RowProxy[] rows Array of RowProxy objects.
-function DbcTable:GetAllRows()
+---@return table Underlying DbcFile.
+function DbcTable:GetFile() return self._file end
+
+---@return table|nil Attached schema.
+function DbcTable:GetSchema() return self._file.schema end
+
+---@return table|nil Owning workspace.
+function DbcTable:GetWorkspace() return self._workspace end
+
+---@return integer
+function DbcTable:Count() return self._file.record_count end
+
+---Returns a cached RowProxy for a 1-based row index.
+---@param row integer
+---@return RowProxy
+function DbcTable:GetRowByIndex(row)
+    if row < 1 or row > self._file.record_count then
+        error(string.format("%s: row index %d out of bounds (1..%d)",
+            self._file.origin or "table", row, self._file.record_count))
+    end
+
+    local proxy = self._proxies[row]
+    if not proxy then
+        proxy = RowProxy.new(self._file, row, self)
+        self._proxies[row] = proxy
+    end
+    return proxy
+end
+
+---Fetches a row by primary key, raising if not found.
+---@param id integer
+---@return RowProxy
+function DbcTable:GetRowById(id)
+    local row = self._id_map[id]
+    if not row then
+        error(string.format("%s: row with ID %s does not exist",
+            self._file.origin
+                or (self._file.schema and self._file.schema.name)
+                or "table",
+            tostring(id)))
+    end
+    return self:_wrapCopy(id, row)
+end
+
+---Fetches a row by primary key, returning nil if not found.
+---@param id integer
+---@return RowProxy|nil
+function DbcTable:FindById(id)
+    local row = self._id_map[id]
+    if not row then return nil end
+    return self:_wrapCopy(id, row)
+end
+
+---Wraps a row index in a RowProxy, honoring copy-table ID overrides.
+---@param id integer
+---@param row integer
+---@return RowProxy
+function DbcTable:_wrapCopy(id, row)
+    local copy_table = self._file.copy_table
+    if copy_table and copy_table[id] then
+        local proxy = RowProxy.new(self._file, row, self)
+        proxy._id_override = id
+        return proxy
+    end
+    return self:GetRowByIndex(row)
+end
+
+---Returns rows linked to a foreign parent ID through the binary relation map.
+---@param foreign_id integer
+---@return RowProxy[]
+function DbcTable:GetByRelation(foreign_id)
     local rows = {}
-    local count = self._file.record_count
-    for i = 1, count do
-        rows[i] = self:GetRow(i)
+    if self._file.GetRelationRows then
+        local row_indices = self._file:GetRelationRows(foreign_id)
+        for i = 1, #row_indices do
+            rows[i] = self:GetRowByIndex(row_indices[i])
+        end
     end
     return rows
 end
 
----Initializes a LINQ Query builder over all rows in the table.
----@return dbc.Query<RowProxy> query
-function DbcTable:Query()
-    return Query.new(self)
+---@param id integer
+---@return boolean
+function DbcTable:Has(id)
+    return self._id_map[id] ~= nil
 end
 
----Returns an iterator yielding (id, row_proxy) for every row in the table.
+---@return integer Highest primary key currently in the table (0 if empty).
+function DbcTable:GetMaxID()
+    local max_id = 0
+    for id in pairs(self._id_map) do
+        if id > max_id then max_id = id end
+    end
+    return max_id
+end
+
+---Creates a new row with a given primary key.
+---@param id integer
+---@param data table|nil
+---@return RowProxy
+function DbcTable:Create(id, data)
+    if not id or type(id) ~= "number" then
+        error(string.format("%s: Create requires a valid numeric ID",
+            self._file.origin or "table"))
+    end
+    if self._id_map[id] then
+        error(string.format("%s: row with ID %d already exists",
+            self._file.origin or "table", id))
+    end
+
+    local row_idx = self._file:AppendRow()
+    local proxy = RowProxy.new(self._file, row_idx, self)
+    proxy:SetID(id)
+
+    self._id_map[id] = row_idx
+    self._proxies[row_idx] = proxy
+
+    if data and type(data) == "table" then
+        proxy:Populate(data)
+    end
+    return proxy
+end
+
+---Creates a new row with an auto-incremented primary key.
+---@param data table|nil
+---@return RowProxy
+function DbcTable:CreateNext(data)
+    return self:Create(self:GetMaxID() + 1, data)
+end
+
+---Clones an existing row into a new row with a new ID.
+---@param source_id_or_row integer|RowProxy
+---@param new_id integer
+---@param data_override table|nil
+---@return RowProxy
+function DbcTable:CloneRow(source_id_or_row, new_id, data_override)
+    local src_proxy
+    if type(source_id_or_row) == "number" then
+        src_proxy = self:GetRowById(source_id_or_row)
+    else
+        src_proxy = source_id_or_row
+    end
+
+    if self._id_map[new_id] then
+        error(string.format("%s: row with ID %d already exists",
+            self._file.origin or "table", new_id))
+    end
+
+    local new_row_idx = self._file:AppendRow()
+    copy(
+        self._file:GetAddress(new_row_idx, 0),
+        self._file:GetAddress(src_proxy:GetIndex(), 0),
+        self._file.record_size
+    )
+
+    local clone = RowProxy.new(self._file, new_row_idx, self)
+    clone:SetID(new_id)
+
+    self._id_map[new_id] = new_row_idx
+    self._proxies[new_row_idx] = clone
+
+    if data_override and type(data_override) == "table" then
+        clone:Populate(data_override)
+    end
+    return clone
+end
+
+---@return dbc.Query<RowProxy>
+function DbcTable:Query()
+    local row = 0
+    local count = self._file.record_count
+    local function iterator()
+        row = row + 1
+        if row <= count then
+            return self:GetRowByIndex(row)
+        end
+        return nil
+    end
+    return Query.new(iterator)
+end
+
 ---@return fun(): integer, RowProxy
 function DbcTable:Rows()
-    local index = 0
+    local row = 0
     local count = self._file.record_count
     return function()
-        index = index + 1
-        if index <= count then
-            local proxy = self:GetRow(index)
-            return proxy:GetID(), proxy
+        row = row + 1
+        if row <= count then
+            return row, self:GetRowByIndex(row)
         end
         return nil
     end
 end
 
----Serializes and saves the DBC table to disk.
----If path is not given, uses the workspace output directory or the file origin.
----@param path string|nil Optional destination path. Defaults to workspace output directory or origin.
+---@param fn fun(row: RowProxy, index: integer)
+---@return DbcTable self
+function DbcTable:ForEach(fn)
+    for row = 1, self._file.record_count do
+        fn(self:GetRowByIndex(row), row)
+    end
+    return self
+end
+
+---Saves the table to disk.
+---@param path string|nil
 ---@return integer bytes_written
 function DbcTable:Save(path)
     local target = path
     if not target then
-        if self._workspace and self._workspace.output_dir then
-            local name = (self._file.schema and self._file.schema.name)
-            if not name then
-                name = string.match(self._file.origin or "", "([^/\\]+)%.dbc$") or "output"
-            end
-            target = self._workspace.output_dir .. "/" .. name .. ".dbc"
+        if self._workspace then
+            local schema_name = (self._file.schema and self._file.schema.name) or "Unknown"
+            local ext = (self._file.format == "WDBC" and "dbc") or "db2"
+            target = self._workspace:GetOutputDir() .. "/" .. schema_name .. "." .. ext
         else
             target = self._file.origin
         end
     end
 
-    if not target or target == "<memory>" then
-        error("Cannot save: no output path specified and table is not bound to a workspace with an output directory")
+    if not target or string.match(target, "^<memory") then
+        error("DbcTable:Save called on memory DBC with no target path specified")
     end
 
     ensure_dir(target)
     return self._file:Save(target)
 end
 
----Returns a list of foreign key relationships defined or inferred for this table.
----@return table[] relations
-function DbcTable:GetRelations()
-    local name = self._file.schema and self._file.schema.name
-    if name then
-        return Relations.Get(name)
+---Enables `tbl[id]` -> FindById(id).
+function DbcTable:__index(key)
+    if DbcTable[key] ~= nil then
+        return DbcTable[key]
     end
-    return {}
-end
-
----Returns a list of inbound relationships pointing to this table (children / has_many).
----@return table[] inbounds
-function DbcTable:GetInboundRelations()
-    local name = self._file.schema and self._file.schema.name
-    if name then
-        return Relations.GetInbound(name)
+    if type(key) == "number" then
+        return self:FindById(key)
     end
-    return {}
-end
-
----Metatable metamethods for idiomatic Lua usage.
-DbcTable.__len = function(self)
-    return self:Count()
+    return nil
 end
 
 return {

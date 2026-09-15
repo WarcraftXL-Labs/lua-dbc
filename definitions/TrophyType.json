@@ -1,0 +1,33 @@
+{
+  "columnDefinitions": {
+    "ID": {
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "columnDefinitions": {
+    "Field_5_3_0_16965_001": {
+      "type": "string",
+      "verified": false
+    },
+    "Field_5_3_0_16965_002": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 16965,
+            "expansion": 5,
+            "major": 3,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_5_3_0_16965_001",
+          "size": 32
+        },
+        {
+          "arrLength": 20,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_5_3_0_16965_002",
+          "size": 8
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

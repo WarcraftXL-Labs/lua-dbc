@@ -1,0 +1,1494 @@
+{
+  "columnDefinitions": {
+    "AllowableClass": {
+      "type": "int",
+      "verified": true
+    },
+    "AllowableRace": {
+      "type": "int",
+      "verified": true
+    },
+    "Area": {
+      "type": "int",
+      "verified": true
+    },
+    "ArmorDamageModifier": {
+      "type": "float",
+      "verified": true
+    },
+    "BagFamily": {
+      "type": "int",
+      "verified": true
+    },
+    "Bonding": {
+      "type": "int",
+      "verified": true
+    },
+    "BuyCount": {
+      "type": "int",
+      "verified": true
+    },
+    "BuyPrice": {
+      "type": "int",
+      "verified": true
+    },
+    "Color": {
+      "type": "int",
+      "verified": true
+    },
+    "ContainerSlots": {
+      "type": "int",
+      "verified": true
+    },
+    "Content": {
+      "type": "int",
+      "verified": true
+    },
+    "CurrencySubstitutionCount": {
+      "type": "int",
+      "verified": true
+    },
+    "CurrencySubstitutionID": {
+      "type": "int",
+      "verified": true
+    },
+    "DamageType": {
+      "type": "int",
+      "verified": true
+    },
+    "Delay": {
+      "type": "int",
+      "verified": true
+    },
+    "Description_lang": {
+      "type": "string",
+      "verified": true
+    },
+    "Display1_lang": {
+      "type": "string",
+      "verified": true
+    },
+    "Display2_lang": {
+      "type": "string",
+      "verified": true
+    },
+    "Display3_lang": {
+      "type": "string",
+      "verified": true
+    },
+    "Display_lang": {
+      "type": "string",
+      "verified": true
+    },
+    "DmgVariance": {
+      "type": "float",
+      "verified": true
+    },
+    "Duration": {
+      "type": "int",
+      "verified": true
+    },
+    "Flags": {
+      "type": "int",
+      "verified": true
+    },
+    "GemProperties": {
+      "type": "int",
+      "verified": true
+    },
+    "HolidayID": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "InventoryType": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemLevel": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemLimitCategory": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemNameDescriptionID": {
+      "foreignColumn": "ID",
+      "foreignTable": "ItemNameDescription",
+      "type": "int",
+      "verified": true
+    },
+    "ItemScalingValue": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemSet": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemSocketCostRate": {
+      "type": "float",
+      "verified": true
+    },
+    "ItemStatType": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemStatValue": {
+      "type": "int",
+      "verified": true
+    },
+    "LanguageID": {
+      "type": "int",
+      "verified": true
+    },
+    "LockID": {
+      "type": "int",
+      "verified": true
+    },
+    "Map": {
+      "type": "int",
+      "verified": true
+    },
+    "Material": {
+      "type": "int",
+      "verified": true
+    },
+    "MaxCount": {
+      "type": "int",
+      "verified": true
+    },
+    "PageMaterialID": {
+      "foreignColumn": "ID",
+      "foreignTable": "PageTextMaterial",
+      "type": "int",
+      "verified": true
+    },
+    "PageText": {
+      "type": "int",
+      "verified": true
+    },
+    "PriceRandomValue": {
+      "type": "float",
+      "verified": true
+    },
+    "PriceVariance": {
+      "type": "float",
+      "verified": true
+    },
+    "Quality": {
+      "type": "int",
+      "verified": true
+    },
+    "RandomProperty": {
+      "type": "int",
+      "verified": true
+    },
+    "RandomSuffix": {
+      "type": "int",
+      "verified": true
+    },
+    "RangedModRange": {
+      "type": "float",
+      "verified": true
+    },
+    "RequiredCityRank": {
+      "type": "int",
+      "verified": true
+    },
+    "RequiredHonorRank": {
+      "type": "int",
+      "verified": true
+    },
+    "RequiredLevel": {
+      "type": "int",
+      "verified": true
+    },
+    "RequiredReputationFaction": {
+      "type": "int",
+      "verified": true
+    },
+    "RequiredReputationRank": {
+      "type": "int",
+      "verified": true
+    },
+    "RequiredSkill": {
+      "type": "int",
+      "verified": true
+    },
+    "RequiredSkillRank": {
+      "type": "int",
+      "verified": true
+    },
+    "RequiredSpell": {
+      "type": "int",
+      "verified": true
+    },
+    "ScalingStatDistributionID": {
+      "foreignColumn": "ID",
+      "foreignTable": "ScalingStatDistribution",
+      "type": "int",
+      "verified": true
+    },
+    "SellPrice": {
+      "type": "int",
+      "verified": true
+    },
+    "Sheath": {
+      "type": "int",
+      "verified": true
+    },
+    "SocketBonus": {
+      "type": "int",
+      "verified": true
+    },
+    "SpellCategory": {
+      "type": "int",
+      "verified": true
+    },
+    "SpellCategoryCooldown": {
+      "type": "int",
+      "verified": true
+    },
+    "SpellCharges": {
+      "type": "int",
+      "verified": true
+    },
+    "SpellCooldown": {
+      "type": "int",
+      "verified": true
+    },
+    "SpellID": {
+      "type": "int",
+      "verified": true
+    },
+    "SpellTrigger": {
+      "type": "int",
+      "verified": true
+    },
+    "Stackable": {
+      "type": "int",
+      "verified": true
+    },
+    "StartQuest": {
+      "type": "int",
+      "verified": true
+    },
+    "TotemCategory": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 17898,
+            "expansion": 5,
+            "major": 4,
+            "minor": 7
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Quality",
+          "size": 32
+        },
+        {
+          "arrLength": 3,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Flags",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PriceRandomValue",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PriceVariance",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BuyCount",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BuyPrice",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "SellPrice",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "InventoryType",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AllowableClass",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AllowableRace",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ItemLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RequiredSkill",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RequiredSkillRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RequiredSpell",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RequiredHonorRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RequiredCityRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RequiredReputationFaction",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RequiredReputationRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "MaxCount",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Stackable",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ContainerSlots",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemStatType",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemStatValue",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemScalingValue",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemSocketCostRate",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ScalingStatDistributionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "DamageType",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Delay",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RangedModRange",
+          "size": 32
+        },
+        {
+          "arrLength": 5,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellID",
+          "size": 32
+        },
+        {
+          "arrLength": 5,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellTrigger",
+          "size": 32
+        },
+        {
+          "arrLength": 5,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellCharges",
+          "size": 32
+        },
+        {
+          "arrLength": 5,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellCooldown",
+          "size": 32
+        },
+        {
+          "arrLength": 5,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellCategory",
+          "size": 32
+        },
+        {
+          "arrLength": 5,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellCategoryCooldown",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Bonding",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display1_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display2_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display3_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Description_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "PageText",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LanguageID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "PageMaterialID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "StartQuest",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LockID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Material",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Sheath",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RandomProperty",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "RandomSuffix",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ItemSet",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Area",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Map",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BagFamily",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "TotemCategory",
+          "size": 32
+        },
+        {
+          "arrLength": 3,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Color",
+          "size": 32
+        },
+        {
+          "arrLength": 3,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Content",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SocketBonus",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "GemProperties",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ArmorDamageModifier",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Duration",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ItemLimitCategory",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "HolidayID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DmgVariance",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CurrencySubstitutionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CurrencySubstitutionCount",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Quality",
+          "size": 32
+        },
+        {
+          "arrLength": 3,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Flags",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PriceRandomValue",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PriceVariance",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "BuyCount",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "BuyPrice",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SellPrice",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "InventoryType",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AllowableClass",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AllowableRace",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredSkill",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredSkillRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredSpell",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredHonorRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredCityRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredReputationFaction",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RequiredReputationRank",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MaxCount",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Stackable",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ContainerSlots",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemStatType",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemStatValue",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemScalingValue",
+          "size": 32
+        },
+        {
+          "arrLength": 10,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemSocketCostRate",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ScalingStatDistributionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DamageType",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Delay",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RangedModRange",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Bonding",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display1_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display2_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Display3_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Description_lang",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PageText",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LanguageID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PageMaterialID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "StartQuest",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LockID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Material",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Sheath",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RandomProperty",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RandomSuffix",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemSet",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Area",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Map",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "BagFamily",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TotemCategory",
+          "size": 32
+        },
+        {
+          "arrLength": 3,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Color",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SocketBonus",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "GemProperties",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ArmorDamageModifier",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Duration",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemLimitCategory",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "HolidayID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DmgVariance",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CurrencySubstitutionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CurrencySubstitutionCount",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemNameDescriptionID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

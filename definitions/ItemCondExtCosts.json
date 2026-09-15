@@ -1,0 +1,110 @@
+{
+  "columnDefinitions": {
+    "ArenaSeason": {
+      "type": "int",
+      "verified": false
+    },
+    "CondExtendedCost": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "ItemExtendedCostEntry": {
+      "foreignColumn": "ID",
+      "foreignTable": "ItemExtendedCost",
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 14316,
+            "expansion": 4,
+            "major": 2,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 11792,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 12340,
+            "expansion": 3,
+            "major": 3,
+            "minor": 5
+          },
+          "minBuild": {
+            "build": 8303,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 8606,
+            "expansion": 2,
+            "major": 4,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 7561,
+            "expansion": 2,
+            "major": 3,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CondExtendedCost",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ItemExtendedCostEntry",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ArenaSeason",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "columnDefinitions": {
+    "DifficultyID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Difficulty",
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "MapID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Map",
+      "type": "int",
+      "verified": true
+    },
+    "Raidduration": {
+      "type": "int",
+      "verified": true
+    },
+    "RulesetID": {
+      "type": "int",
+      "verified": true
+    },
+    "SharedLock": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 16309,
+            "expansion": 5,
+            "major": 1,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DifficultyID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RulesetID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SharedLock",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Raidduration",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

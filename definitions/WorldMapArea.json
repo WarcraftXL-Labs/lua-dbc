@@ -1,0 +1,1956 @@
+{
+  "columnDefinitions": {
+    "AreaID": {
+      "foreignColumn": "ID",
+      "foreignTable": "AreaTable",
+      "type": "int",
+      "verified": true
+    },
+    "AreaName": {
+      "type": "string",
+      "verified": true
+    },
+    "BottomBoundary": {
+      "type": "int",
+      "verified": true
+    },
+    "BountyDisplayLocation": {
+      "type": "int",
+      "verified": true
+    },
+    "BountySetID": {
+      "foreignColumn": "ID",
+      "foreignTable": "BountySet",
+      "type": "int",
+      "verified": true
+    },
+    "DefaultDungeonFloor": {
+      "type": "int",
+      "verified": true
+    },
+    "DisplayMapID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Map",
+      "type": "int",
+      "verified": true
+    },
+    "Flags": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "LeftBoundary": {
+      "type": "int",
+      "verified": true
+    },
+    "LevelRangeMax": {
+      "type": "int",
+      "verified": true
+    },
+    "LevelRangeMin": {
+      "type": "int",
+      "verified": true
+    },
+    "LocBottom": {
+      "type": "float",
+      "verified": true
+    },
+    "LocLeft": {
+      "type": "float",
+      "verified": true
+    },
+    "LocRight": {
+      "type": "float",
+      "verified": true
+    },
+    "LocTop": {
+      "type": "float",
+      "verified": true
+    },
+    "MapID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Map",
+      "type": "int",
+      "verified": true
+    },
+    "ParentWorldMapID": {
+      "foreignColumn": "ID",
+      "foreignTable": "WorldMapArea",
+      "type": "int",
+      "verified": true
+    },
+    "RightBoundary": {
+      "type": "int",
+      "verified": true
+    },
+    "TopBoundary": {
+      "type": "int",
+      "verified": true
+    },
+    "VisibilityPlayerConditionID": {
+      "foreignColumn": "ID",
+      "foreignTable": "PlayerCondition",
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LeftBoundary",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RightBoundary",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TopBoundary",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "BottomBoundary",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 6141,
+            "expansion": 1,
+            "major": 12,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 3980,
+            "expansion": 1,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 3988,
+            "expansion": 0,
+            "major": 12,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3494,
+            "expansion": 0,
+            "major": 5,
+            "minor": 5
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 5610,
+          "expansion": 2,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 5991,
+          "expansion": 2,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 8471,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          },
+          "minBuild": {
+            "build": 8303,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 8606,
+            "expansion": 2,
+            "major": 4,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 6022,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 5965,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 5665,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 9947,
+            "expansion": 3,
+            "major": 1,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 8622,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DefaultDungeonFloor",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 12164,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 11792,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 12340,
+            "expansion": 3,
+            "major": 3,
+            "minor": 5
+          },
+          "minBuild": {
+            "build": 10192,
+            "expansion": 3,
+            "major": 2,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 11792,
+          "expansion": 4,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DefaultDungeonFloor",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ParentWorldMapID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 15050,
+            "expansion": 4,
+            "major": 3,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 12232,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DefaultDungeonFloor",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ParentWorldMapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Flags",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 15464,
+            "expansion": 5,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 15595,
+            "expansion": 4,
+            "major": 3,
+            "minor": 4
+          },
+          "minBuild": {
+            "build": 15148,
+            "expansion": 4,
+            "major": 3,
+            "minor": 2
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DefaultDungeonFloor",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ParentWorldMapID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Flags",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LevelRangeMin",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LevelRangeMax",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 24473,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24484,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24492,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24500,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24539,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24563,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24608,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24651,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24681,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24692,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24700,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24715,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24727,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24730,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24738,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24744,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24759,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "AreaID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "DefaultDungeonFloor",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ParentWorldMapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Flags",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LevelRangeMin",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LevelRangeMax",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BountySetID",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BountyDisplayLocation",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "VisibilityPlayerConditionID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "B32332C3"
+      ]
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 25902,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 25976,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26010,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26032,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26095,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26131,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26141,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26175,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26231,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 25928,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25937,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25944,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25946,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25950,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25961,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25996,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26124,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26365,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26654,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26755,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26822,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26899,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26972,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25079,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25163,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25196,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25208,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25255,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25326,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25383,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25442,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25455,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25477,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25480,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25497,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25516,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25549,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 24758,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24781,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24793,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24829,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24834,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24843,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24845,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24852,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24853,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24864,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24878,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24887,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24896,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24904,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24920,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24931,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24956,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24970,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24974,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 25021,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 25195,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 28211,
+          "expansion": 1,
+          "major": 13,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Flags",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "AreaID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "DefaultDungeonFloor",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ParentWorldMapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LevelRangeMin",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LevelRangeMax",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BountySetID",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BountyDisplayLocation",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "VisibilityPlayerConditionID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "C7E90019"
+      ]
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 26287,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26297,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26321,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "AreaName",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocLeft",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocTop",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocRight",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "LocBottom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Flags",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayMapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "AreaID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "DefaultDungeonFloor",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "ParentWorldMapID",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LevelRangeMin",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "LevelRangeMax",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BountySetID",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "BountyDisplayLocation",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "VisibilityPlayerConditionID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "4B66A859"
+      ]
+    }
+  ]
+}

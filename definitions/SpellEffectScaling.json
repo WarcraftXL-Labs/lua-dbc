@@ -1,0 +1,549 @@
+{
+  "columnDefinitions": {
+    "Coefficient": {
+      "type": "float",
+      "verified": true
+    },
+    "Field_5_4_0_17266_004": {
+      "type": "float",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "ResourceCoefficient": {
+      "type": "float",
+      "verified": true
+    },
+    "SpellEffectID": {
+      "foreignColumn": "ID",
+      "foreignTable": "SpellEffect",
+      "type": "int",
+      "verified": true
+    },
+    "Variance": {
+      "type": "float",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 18414,
+            "expansion": 5,
+            "major": 4,
+            "minor": 8
+          },
+          "minBuild": {
+            "build": 17266,
+            "expansion": 5,
+            "major": 4,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Coefficient",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Variance",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ResourceCoefficient",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_5_4_0_17266_004",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellEffectID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 17116,
+            "expansion": 5,
+            "major": 3,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 15464,
+            "expansion": 5,
+            "major": 0,
+            "minor": 1
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Coefficient",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Variance",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ResourceCoefficient",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellEffectID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 25079,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25163,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25196,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25208,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25255,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25326,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25383,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25442,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25455,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25477,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25480,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25497,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25516,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 25549,
+          "expansion": 7,
+          "major": 3,
+          "minor": 2
+        },
+        {
+          "build": 24473,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24484,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24492,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24500,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24539,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24563,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24608,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24651,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24681,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24692,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24700,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24715,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24727,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24730,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24738,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24744,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24758,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24759,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24781,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24793,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24829,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24834,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24843,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24845,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24852,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24853,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24864,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24878,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24887,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24896,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24904,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24920,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24931,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24956,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24970,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 24974,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 25021,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        },
+        {
+          "build": 25195,
+          "expansion": 7,
+          "major": 3,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Coefficient",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Variance",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ResourceCoefficient",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SpellEffectID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "0F1677CB"
+      ]
+    }
+  ]
+}

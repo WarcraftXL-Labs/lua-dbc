@@ -1,0 +1,145 @@
+{
+  "columnDefinitions": {
+    "DisplayID": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "Name": {
+      "type": "string",
+      "verified": true
+    },
+    "OwnerID": {
+      "type": "int",
+      "verified": true
+    },
+    "Pos": {
+      "type": "float",
+      "verified": true
+    },
+    "PropValue": {
+      "type": "int",
+      "verified": true
+    },
+    "Rot": {
+      "type": "float",
+      "verified": true
+    },
+    "Scale": {
+      "type": "float",
+      "verified": true
+    },
+    "TypeID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 15589,
+            "expansion": 5,
+            "major": 0,
+            "minor": 1
+          },
+          "minBuild": {
+            "build": 15464,
+            "expansion": 5,
+            "major": 0,
+            "minor": 1
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "OwnerID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DisplayID",
+          "size": 32
+        },
+        {
+          "arrLength": 3,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Pos",
+          "size": 32
+        },
+        {
+          "arrLength": 4,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Rot",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Scale",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TypeID",
+          "size": 32
+        },
+        {
+          "arrLength": 4,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PropValue",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Name",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

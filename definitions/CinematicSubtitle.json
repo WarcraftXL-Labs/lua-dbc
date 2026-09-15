@@ -1,0 +1,108 @@
+{
+  "columnDefinitions": {
+    "EndTimestamp": {
+      "comment": "milliseconds",
+      "type": "int",
+      "verified": true
+    },
+    "Flags": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "StartTimestamp": {
+      "comment": "milliseconds",
+      "type": "int",
+      "verified": true
+    },
+    "Text_lang": {
+      "type": "locstring",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 3988,
+            "expansion": 0,
+            "major": 12,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3807,
+            "expansion": 0,
+            "major": 9,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 3892,
+          "expansion": 0,
+          "major": 10,
+          "minor": 0
+        },
+        {
+          "build": 3807,
+          "expansion": 0,
+          "major": 9,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Flags",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "StartTimestamp",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EndTimestamp",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Text_lang",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

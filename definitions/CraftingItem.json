@@ -1,0 +1,142 @@
+{
+  "columnDefinitions": {
+    "CraftSkillBonusPercent": {
+      "type": "float",
+      "verified": false
+    },
+    "CraftedItemID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Item",
+      "type": "int",
+      "verified": false
+    },
+    "CraftingDataField_10_0_0_44649_005": {
+      "type": "float",
+      "verified": false
+    },
+    "CraftingDifficulty": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_10_0_0_43342_000": {
+      "comment": "1: use CraftingDifficulty for item id; 2+3: use ItemID.",
+      "type": "int",
+      "verified": false
+    },
+    "Field_10_0_0_43342_006": {
+      "type": "float",
+      "verified": false
+    },
+    "Field_10_0_0_43342_007": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "InspirationSkillBonusPercent": {
+      "type": "float",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 43342,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_10_0_0_43342_000",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CraftedItemID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CraftingDifficulty",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CraftingDataField_10_0_0_44649_005",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "CraftSkillBonusPercent",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "InspirationSkillBonusPercent",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_10_0_0_43342_006",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_10_0_0_43342_007",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "6022D630"
+      ]
+    }
+  ]
+}

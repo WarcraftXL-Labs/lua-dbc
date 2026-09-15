@@ -1,0 +1,87 @@
+{
+  "columnDefinitions": {
+    "EnumID": {
+      "type": "int",
+      "verified": false
+    },
+    "Flags": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "Index": {
+      "type": "int",
+      "verified": false
+    },
+    "Value": {
+      "type": "string",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 38043,
+          "expansion": 2,
+          "major": 5,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Value",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Index",
+          "size": 16
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Flags",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "EnumID",
+          "size": 16
+        }
+      ],
+      "layoutHashes": [
+        "32ACB8A1"
+      ]
+    }
+  ]
+}

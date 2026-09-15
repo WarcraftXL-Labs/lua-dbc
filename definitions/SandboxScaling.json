@@ -1,0 +1,200 @@
+{
+  "columnDefinitions": {
+    "Flags": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "MaxLevel": {
+      "type": "int",
+      "verified": true
+    },
+    "MinLevel": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 25902,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 25976,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26010,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26032,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26095,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26131,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 26141,
+          "expansion": 8,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 25928,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25937,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25944,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25946,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25950,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25961,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 25996,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26124,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26365,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26654,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26755,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26822,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26899,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 26972,
+          "expansion": 7,
+          "major": 3,
+          "minor": 5
+        },
+        {
+          "build": 28211,
+          "expansion": 1,
+          "major": 13,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MinLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "MaxLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Flags",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "5200B7F5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "columnDefinitions": {
+    "Data": {
+      "type": "float",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 12319,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 12232,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Data",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

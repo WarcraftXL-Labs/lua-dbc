@@ -1,250 +1,4152 @@
 ---@meta
--- Auto-generated overloads and table accessors for DbcWorkspace. Do not edit.
+-- Auto-generated overloads and table accessors for multi-version DbcWorkspace. Do not edit.
 
 ---@class DbcWorkspace
----@field Achievement dbc.Table.Achievement
----@field Achievement_Category dbc.Table.Achievement_Category
----@field Achievement_Criteria dbc.Table.Achievement_Criteria
----@field AnimationData dbc.Table.AnimationData
----@field AreaGroup dbc.Table.AreaGroup
----@field AreaPOI dbc.Table.AreaPOI
----@field AreaTable dbc.Table.AreaTable
----@field AreaTrigger dbc.Table.AreaTrigger
----@field AttackAnimKits dbc.Table.AttackAnimKits
----@field AttackAnimTypes dbc.Table.AttackAnimTypes
----@field AuctionHouse dbc.Table.AuctionHouse
----@field BankBagSlotPrices dbc.Table.BankBagSlotPrices
----@field BannedAddOns dbc.Table.BannedAddOns
----@field BarberShopStyle dbc.Table.BarberShopStyle
----@field BattlemasterList dbc.Table.BattlemasterList
----@field CameraShakes dbc.Table.CameraShakes
----@field Cfg_Categories dbc.Table.Cfg_Categories
----@field Cfg_Configs dbc.Table.Cfg_Configs
----@field CharBaseInfo dbc.Table.CharBaseInfo
----@field CharHairGeosets dbc.Table.CharHairGeosets
----@field CharHairTextures dbc.Table.CharHairTextures
----@field CharSections dbc.Table.CharSections
----@field CharStartOutfit dbc.Table.CharStartOutfit
----@field CharTitles dbc.Table.CharTitles
----@field CharacterFacialHairStyles dbc.Table.CharacterFacialHairStyles
----@field ChatChannels dbc.Table.ChatChannels
----@field ChatProfanity dbc.Table.ChatProfanity
----@field ChrClasses dbc.Table.ChrClasses
----@field ChrRaces dbc.Table.ChrRaces
----@field CinematicCamera dbc.Table.CinematicCamera
----@field CinematicSequences dbc.Table.CinematicSequences
----@field CreatureDisplayInfo dbc.Table.CreatureDisplayInfo
----@field CreatureDisplayInfoExtra dbc.Table.CreatureDisplayInfoExtra
----@field CreatureFamily dbc.Table.CreatureFamily
----@field CreatureModelData dbc.Table.CreatureModelData
----@field CreatureMovementInfo dbc.Table.CreatureMovementInfo
----@field CreatureSoundData dbc.Table.CreatureSoundData
----@field CreatureSpellData dbc.Table.CreatureSpellData
----@field CreatureTemplate dbc.Table.CreatureTemplate
----@field CreatureType dbc.Table.CreatureType
----@field CurrencyCategory dbc.Table.CurrencyCategory
----@field CurrencyTypes dbc.Table.CurrencyTypes
----@field DanceMoves dbc.Table.DanceMoves
----@field DeathThudLookups dbc.Table.DeathThudLookups
----@field DeclinedWord dbc.Table.DeclinedWord
----@field DeclinedWordCases dbc.Table.DeclinedWordCases
----@field DestructibleModelData dbc.Table.DestructibleModelData
----@field DungeonEncounter dbc.Table.DungeonEncounter
----@field DungeonMap dbc.Table.DungeonMap
----@field DungeonMapChunk dbc.Table.DungeonMapChunk
----@field DurabilityCosts dbc.Table.DurabilityCosts
----@field DurabilityQuality dbc.Table.DurabilityQuality
----@field Emotes dbc.Table.Emotes
----@field EmotesText dbc.Table.EmotesText
----@field EmotesTextData dbc.Table.EmotesTextData
----@field EmotesTextSound dbc.Table.EmotesTextSound
----@field EnvironmentalDamage dbc.Table.EnvironmentalDamage
----@field Exhaustion dbc.Table.Exhaustion
----@field Faction dbc.Table.Faction
----@field FactionGroup dbc.Table.FactionGroup
----@field FactionTemplate dbc.Table.FactionTemplate
----@field FileData dbc.Table.FileData
----@field FootprintTextures dbc.Table.FootprintTextures
----@field FootstepTerrainLookup dbc.Table.FootstepTerrainLookup
----@field GMSurveyAnswers dbc.Table.GMSurveyAnswers
----@field GMSurveyCurrentSurvey dbc.Table.GMSurveyCurrentSurvey
----@field GMSurveyQuestions dbc.Table.GMSurveyQuestions
----@field GMSurveySurveys dbc.Table.GMSurveySurveys
----@field GMTicketCategory dbc.Table.GMTicketCategory
----@field GameObjectArtKit dbc.Table.GameObjectArtKit
----@field GameObjectDisplayInfo dbc.Table.GameObjectDisplayInfo
----@field GameTables dbc.Table.GameTables
----@field GameTips dbc.Table.GameTips
----@field GemProperties dbc.Table.GemProperties
----@field GlyphProperties dbc.Table.GlyphProperties
----@field GlyphSlot dbc.Table.GlyphSlot
----@field GroundEffectDoodad dbc.Table.GroundEffectDoodad
----@field GroundEffectTexture dbc.Table.GroundEffectTexture
----@field GtBarberShopCostBase dbc.Table.GtBarberShopCostBase
----@field GtChanceToMeleeCrit dbc.Table.GtChanceToMeleeCrit
----@field GtChanceToMeleeCritBase dbc.Table.GtChanceToMeleeCritBase
----@field GtChanceToSpellCrit dbc.Table.GtChanceToSpellCrit
----@field GtChanceToSpellCritBase dbc.Table.GtChanceToSpellCritBase
----@field GtCombatRatings dbc.Table.GtCombatRatings
----@field GtNPCManaCostScaler dbc.Table.GtNPCManaCostScaler
----@field GtOCTClassCombatRatingScalar dbc.Table.GtOCTClassCombatRatingScalar
----@field GtOCTRegenHP dbc.Table.GtOCTRegenHP
----@field GtOCTRegenMP dbc.Table.GtOCTRegenMP
----@field GtRegenHPPerSpt dbc.Table.GtRegenHPPerSpt
----@field GtRegenMPPerSpt dbc.Table.GtRegenMPPerSpt
----@field HelmetGeosetVisData dbc.Table.HelmetGeosetVisData
----@field HolidayDescriptions dbc.Table.HolidayDescriptions
----@field HolidayNames dbc.Table.HolidayNames
----@field Holidays dbc.Table.Holidays
----@field Item dbc.Table.Item
----@field ItemBagFamily dbc.Table.ItemBagFamily
----@field ItemClass dbc.Table.ItemClass
----@field ItemCondExtCosts dbc.Table.ItemCondExtCosts
----@field ItemDisplayInfo dbc.Table.ItemDisplayInfo
----@field ItemExtendedCost dbc.Table.ItemExtendedCost
----@field ItemGroupSounds dbc.Table.ItemGroupSounds
----@field ItemLimitCategory dbc.Table.ItemLimitCategory
----@field ItemPetFood dbc.Table.ItemPetFood
----@field ItemPurchaseGroup dbc.Table.ItemPurchaseGroup
----@field ItemRandomProperties dbc.Table.ItemRandomProperties
----@field ItemRandomSuffix dbc.Table.ItemRandomSuffix
----@field ItemSet dbc.Table.ItemSet
----@field ItemSubClass dbc.Table.ItemSubClass
----@field ItemSubClassMask dbc.Table.ItemSubClassMask
----@field ItemVisualEffects dbc.Table.ItemVisualEffects
----@field ItemVisuals dbc.Table.ItemVisuals
----@field LanguageWords dbc.Table.LanguageWords
----@field Languages dbc.Table.Languages
----@field LfgDungeonExpansion dbc.Table.LfgDungeonExpansion
----@field LfgDungeonGroup dbc.Table.LfgDungeonGroup
----@field LfgDungeons dbc.Table.LfgDungeons
----@field Light dbc.Table.Light
----@field LightParams dbc.Table.LightParams
----@field LightSkybox dbc.Table.LightSkybox
----@field LightfloatBand dbc.Table.LightfloatBand
----@field LightintBand dbc.Table.LightintBand
----@field LiquidMaterial dbc.Table.LiquidMaterial
----@field LiquidType dbc.Table.LiquidType
----@field LoadingScreenTaxiSplines dbc.Table.LoadingScreenTaxiSplines
----@field LoadingScreens dbc.Table.LoadingScreens
----@field Lock dbc.Table.Lock
----@field LockType dbc.Table.LockType
----@field MailTemplate dbc.Table.MailTemplate
----@field Map dbc.Table.Map
----@field MapDifficulty dbc.Table.MapDifficulty
----@field Material dbc.Table.Material
----@field Movie dbc.Table.Movie
----@field MovieFileData dbc.Table.MovieFileData
----@field MovieVariation dbc.Table.MovieVariation
----@field NPCSounds dbc.Table.NPCSounds
----@field NameGen dbc.Table.NameGen
----@field NamesProfanity dbc.Table.NamesProfanity
----@field NamesReserved dbc.Table.NamesReserved
----@field ObjectEffect dbc.Table.ObjectEffect
----@field ObjectEffectGroup dbc.Table.ObjectEffectGroup
----@field ObjectEffectModifier dbc.Table.ObjectEffectModifier
----@field ObjectEffectPackage dbc.Table.ObjectEffectPackage
----@field ObjectEffectPackageElem dbc.Table.ObjectEffectPackageElem
----@field OverrideSpellData dbc.Table.OverrideSpellData
----@field Package dbc.Table.Package
----@field PageTextMaterial dbc.Table.PageTextMaterial
----@field PaperDollItemFrame dbc.Table.PaperDollItemFrame
----@field ParticleColor dbc.Table.ParticleColor
----@field PetPersonality dbc.Table.PetPersonality
----@field PetitionType dbc.Table.PetitionType
----@field PowerDisplay dbc.Table.PowerDisplay
----@field PvpDifficulty dbc.Table.PvpDifficulty
----@field QuestFactionReward dbc.Table.QuestFactionReward
----@field QuestInfo dbc.Table.QuestInfo
----@field QuestSort dbc.Table.QuestSort
----@field QuestXP dbc.Table.QuestXP
----@field RandPropPoints dbc.Table.RandPropPoints
----@field Resistances dbc.Table.Resistances
----@field ScalingStatDistribution dbc.Table.ScalingStatDistribution
----@field ScalingStatValues dbc.Table.ScalingStatValues
----@field ScreenEffect dbc.Table.ScreenEffect
----@field ServerMessages dbc.Table.ServerMessages
----@field SheatheSoundLookups dbc.Table.SheatheSoundLookups
----@field SkillCostsData dbc.Table.SkillCostsData
----@field SkillLine dbc.Table.SkillLine
----@field SkillLineAbility dbc.Table.SkillLineAbility
----@field SkillLineCategory dbc.Table.SkillLineCategory
----@field SkillRaceClassInfo dbc.Table.SkillRaceClassInfo
----@field SkillTiers dbc.Table.SkillTiers
----@field SoundAmbience dbc.Table.SoundAmbience
----@field SoundEmitters dbc.Table.SoundEmitters
----@field SoundEntries dbc.Table.SoundEntries
----@field SoundEntriesAdvanced dbc.Table.SoundEntriesAdvanced
----@field SoundFilter dbc.Table.SoundFilter
----@field SoundFilterElem dbc.Table.SoundFilterElem
----@field SoundProviderPreferences dbc.Table.SoundProviderPreferences
----@field SoundSamplePreferences dbc.Table.SoundSamplePreferences
----@field SoundWaterType dbc.Table.SoundWaterType
----@field SpamMessages dbc.Table.SpamMessages
----@field Spell dbc.Table.Spell
----@field SpellCastTimes dbc.Table.SpellCastTimes
----@field SpellCategory dbc.Table.SpellCategory
----@field SpellChainEffects dbc.Table.SpellChainEffects
----@field SpellDescriptionVariables dbc.Table.SpellDescriptionVariables
----@field SpellDifficulty dbc.Table.SpellDifficulty
----@field SpellDispelType dbc.Table.SpellDispelType
----@field SpellDuration dbc.Table.SpellDuration
----@field SpellEffectCameraShakes dbc.Table.SpellEffectCameraShakes
----@field SpellFocusObject dbc.Table.SpellFocusObject
----@field SpellIcon dbc.Table.SpellIcon
----@field SpellItemEnchantment dbc.Table.SpellItemEnchantment
----@field SpellItemEnchantmentCondition dbc.Table.SpellItemEnchantmentCondition
----@field SpellMechanic dbc.Table.SpellMechanic
----@field SpellMissile dbc.Table.SpellMissile
----@field SpellMissileMotion dbc.Table.SpellMissileMotion
----@field SpellRadius dbc.Table.SpellRadius
----@field SpellRange dbc.Table.SpellRange
----@field SpellRuneCost dbc.Table.SpellRuneCost
----@field SpellShapeshiftForm dbc.Table.SpellShapeshiftForm
----@field SpellVisual dbc.Table.SpellVisual
----@field SpellVisualEffectName dbc.Table.SpellVisualEffectName
----@field SpellVisualKit dbc.Table.SpellVisualKit
----@field SpellVisualKitAreaModel dbc.Table.SpellVisualKitAreaModel
----@field SpellVisualKitModelAttach dbc.Table.SpellVisualKitModelAttach
----@field SpellVisualPrecastTransitions dbc.Table.SpellVisualPrecastTransitions
----@field StableSlotPrices dbc.Table.StableSlotPrices
----@field Startup_strings dbc.Table.Startup_strings
----@field Stationery dbc.Table.Stationery
----@field StringLookups dbc.Table.StringLookups
----@field SummonProperties dbc.Table.SummonProperties
----@field Talent dbc.Table.Talent
----@field TalentTab dbc.Table.TalentTab
----@field TaxiNodes dbc.Table.TaxiNodes
----@field TaxiPath dbc.Table.TaxiPath
----@field TaxiPathNode dbc.Table.TaxiPathNode
----@field TeamContributionPoints dbc.Table.TeamContributionPoints
----@field Terraintype dbc.Table.Terraintype
----@field TerraintypeSounds dbc.Table.TerraintypeSounds
----@field TotemCategory dbc.Table.TotemCategory
----@field TransportAnimation dbc.Table.TransportAnimation
----@field TransportPhysics dbc.Table.TransportPhysics
----@field TransportRotation dbc.Table.TransportRotation
----@field UISoundLookups dbc.Table.UISoundLookups
----@field UnitBlood dbc.Table.UnitBlood
----@field UnitBloodLevels dbc.Table.UnitBloodLevels
----@field Vehicle dbc.Table.Vehicle
----@field VehicleSeat dbc.Table.VehicleSeat
----@field VehicleUIIndSeat dbc.Table.VehicleUIIndSeat
----@field VehicleUIIndicator dbc.Table.VehicleUIIndicator
----@field VideoHardware dbc.Table.VideoHardware
----@field VocalUISounds dbc.Table.VocalUISounds
----@field WMOAreaTable dbc.Table.WMOAreaTable
----@field WeaponImpactSounds dbc.Table.WeaponImpactSounds
----@field WeaponSwingSounds2 dbc.Table.WeaponSwingSounds2
----@field Weather dbc.Table.Weather
----@field WorldChunkSounds dbc.Table.WorldChunkSounds
----@field WorldMapArea dbc.Table.WorldMapArea
----@field WorldMapContinent dbc.Table.WorldMapContinent
----@field WorldMapOverlay dbc.Table.WorldMapOverlay
----@field WorldMapTransforms dbc.Table.WorldMapTransforms
----@field WorldSafelocs dbc.Table.WorldSafelocs
----@field WorldStateUI dbc.Table.WorldStateUI
----@field WorldStateZoneSounds dbc.Table.WorldStateZoneSounds
----@field WowError_Strings dbc.Table.WowError_Strings
----@field ZoneMusic dbc.Table.ZoneMusic
----@field ZoneintroMusicTable dbc.Table.ZoneintroMusicTable
+---@field build? string Configured target client build
+---@field source_dir string Input directory
+---@field output_dir string Output directory
+
+---Workspace for WoW Build 12.1.5.69594 (12.1.5).
+---@class DbcWorkspace_v1215 : DbcWorkspace
+---@field AccountStoreCategory dbc.Table.v1215.AccountStoreCategory
+---@field AccountStoreItem dbc.Table.v1215.AccountStoreItem
+---@field Achievement dbc.Table.v1215.Achievement
+---@field Achievement_Category dbc.Table.v1215.Achievement_Category
+---@field ActionBarGroup dbc.Table.v1215.ActionBarGroup
+---@field ActionBarGroupEntry dbc.Table.v1215.ActionBarGroupEntry
+---@field AdventureJournal dbc.Table.v1215.AdventureJournal
+---@field AdventureJournalItem dbc.Table.v1215.AdventureJournalItem
+---@field AdventureMapPOI dbc.Table.v1215.AdventureMapPOI
+---@field AlliedRace dbc.Table.v1215.AlliedRace
+---@field AltMinimap dbc.Table.v1215.AltMinimap
+---@field AltMinimapFiledata dbc.Table.v1215.AltMinimapFiledata
+---@field AltMinimapWMO dbc.Table.v1215.AltMinimapWMO
+---@field AnimKit dbc.Table.v1215.AnimKit
+---@field AnimKitBoneSet dbc.Table.v1215.AnimKitBoneSet
+---@field AnimKitBoneSetAlias dbc.Table.v1215.AnimKitBoneSetAlias
+---@field AnimKitConfig dbc.Table.v1215.AnimKitConfig
+---@field AnimKitConfigBoneSet dbc.Table.v1215.AnimKitConfigBoneSet
+---@field AnimKitPriority dbc.Table.v1215.AnimKitPriority
+---@field AnimKitReplacement dbc.Table.v1215.AnimKitReplacement
+---@field AnimKitSegment dbc.Table.v1215.AnimKitSegment
+---@field AnimReplacement dbc.Table.v1215.AnimReplacement
+---@field AnimReplacementSet dbc.Table.v1215.AnimReplacementSet
+---@field AnimaCable dbc.Table.v1215.AnimaCable
+---@field AnimaCylinder dbc.Table.v1215.AnimaCylinder
+---@field AnimaMaterial dbc.Table.v1215.AnimaMaterial
+---@field AnimationData dbc.Table.v1215.AnimationData
+---@field AreaConditionalData dbc.Table.v1215.AreaConditionalData
+---@field AreaFarClipOverride dbc.Table.v1215.AreaFarClipOverride
+---@field AreaGroupMember dbc.Table.v1215.AreaGroupMember
+---@field AreaPOI dbc.Table.v1215.AreaPOI
+---@field AreaPOIState dbc.Table.v1215.AreaPOIState
+---@field AreaPOIUiWidgetSet dbc.Table.v1215.AreaPOIUiWidgetSet
+---@field AreaTable dbc.Table.v1215.AreaTable
+---@field AreaTrigger dbc.Table.v1215.AreaTrigger
+---@field AreaTriggerActionSet dbc.Table.v1215.AreaTriggerActionSet
+---@field AreaTriggerBoundedPlane dbc.Table.v1215.AreaTriggerBoundedPlane
+---@field AreaTriggerBox dbc.Table.v1215.AreaTriggerBox
+---@field AreaTriggerCreateProperties dbc.Table.v1215.AreaTriggerCreateProperties
+---@field AreaTriggerCylinder dbc.Table.v1215.AreaTriggerCylinder
+---@field AreaTriggerDisk dbc.Table.v1215.AreaTriggerDisk
+---@field AreaTriggerSphere dbc.Table.v1215.AreaTriggerSphere
+---@field ArenaTrackedItem dbc.Table.v1215.ArenaTrackedItem
+---@field ArmorLocation dbc.Table.v1215.ArmorLocation
+---@field Artifact dbc.Table.v1215.Artifact
+---@field ArtifactAppearance dbc.Table.v1215.ArtifactAppearance
+---@field ArtifactAppearanceSet dbc.Table.v1215.ArtifactAppearanceSet
+---@field ArtifactCategory dbc.Table.v1215.ArtifactCategory
+---@field ArtifactItemToTransmog dbc.Table.v1215.ArtifactItemToTransmog
+---@field ArtifactPower dbc.Table.v1215.ArtifactPower
+---@field ArtifactPowerLink dbc.Table.v1215.ArtifactPowerLink
+---@field ArtifactPowerPicker dbc.Table.v1215.ArtifactPowerPicker
+---@field ArtifactPowerRank dbc.Table.v1215.ArtifactPowerRank
+---@field ArtifactQuestXP dbc.Table.v1215.ArtifactQuestXP
+---@field ArtifactTier dbc.Table.v1215.ArtifactTier
+---@field ArtifactUnlock dbc.Table.v1215.ArtifactUnlock
+---@field AssistedCombat dbc.Table.v1215.AssistedCombat
+---@field AssistedCombatRule dbc.Table.v1215.AssistedCombatRule
+---@field AssistedCombatStep dbc.Table.v1215.AssistedCombatStep
+---@field AuctionHouse dbc.Table.v1215.AuctionHouse
+---@field AuctionHouseCategory dbc.Table.v1215.AuctionHouseCategory
+---@field AzeriteEmpoweredItem dbc.Table.v1215.AzeriteEmpoweredItem
+---@field AzeriteEssence dbc.Table.v1215.AzeriteEssence
+---@field AzeriteEssencePower dbc.Table.v1215.AzeriteEssencePower
+---@field AzeriteItem dbc.Table.v1215.AzeriteItem
+---@field AzeriteItemMilestonePower dbc.Table.v1215.AzeriteItemMilestonePower
+---@field AzeriteKnowledgeMultiplier dbc.Table.v1215.AzeriteKnowledgeMultiplier
+---@field AzeriteLevelInfo dbc.Table.v1215.AzeriteLevelInfo
+---@field AzeritePower dbc.Table.v1215.AzeritePower
+---@field AzeritePowerSetMember dbc.Table.v1215.AzeritePowerSetMember
+---@field AzeriteTierUnlock dbc.Table.v1215.AzeriteTierUnlock
+---@field AzeriteTierUnlockSet dbc.Table.v1215.AzeriteTierUnlockSet
+---@field AzeriteUnlockMapping dbc.Table.v1215.AzeriteUnlockMapping
+---@field BankBagSlotPrices dbc.Table.v1215.BankBagSlotPrices
+---@field BankTab dbc.Table.v1215.BankTab
+---@field BannedAddons dbc.Table.v1215.BannedAddons
+---@field BarberShopStyle dbc.Table.v1215.BarberShopStyle
+---@field BarrageEffect dbc.Table.v1215.BarrageEffect
+---@field BattlePetAbility dbc.Table.v1215.BattlePetAbility
+---@field BattlePetAbilityEffect dbc.Table.v1215.BattlePetAbilityEffect
+---@field BattlePetAbilityState dbc.Table.v1215.BattlePetAbilityState
+---@field BattlePetAbilityTurn dbc.Table.v1215.BattlePetAbilityTurn
+---@field BattlePetBreedQuality dbc.Table.v1215.BattlePetBreedQuality
+---@field BattlePetBreedState dbc.Table.v1215.BattlePetBreedState
+---@field BattlePetDisplayOverride dbc.Table.v1215.BattlePetDisplayOverride
+---@field BattlePetEffectProperties dbc.Table.v1215.BattlePetEffectProperties
+---@field BattlePetNPCTeamMember dbc.Table.v1215.BattlePetNPCTeamMember
+---@field BattlePetSpecies dbc.Table.v1215.BattlePetSpecies
+---@field BattlePetSpeciesState dbc.Table.v1215.BattlePetSpeciesState
+---@field BattlePetSpeciesXAbility dbc.Table.v1215.BattlePetSpeciesXAbility
+---@field BattlePetState dbc.Table.v1215.BattlePetState
+---@field BattlePetVisual dbc.Table.v1215.BattlePetVisual
+---@field BattlemasterList dbc.Table.v1215.BattlemasterList
+---@field BattlemasterListXMap dbc.Table.v1215.BattlemasterListXMap
+---@field BattlepayCurrency dbc.Table.v1215.BattlepayCurrency
+---@field BeamEffect dbc.Table.v1215.BeamEffect
+---@field BoneWindModifierModel dbc.Table.v1215.BoneWindModifierModel
+---@field BoneWindModifiers dbc.Table.v1215.BoneWindModifiers
+---@field BonusRoll dbc.Table.v1215.BonusRoll
+---@field Bounty dbc.Table.v1215.Bounty
+---@field BountySet dbc.Table.v1215.BountySet
+---@field BroadcastText dbc.Table.v1215.BroadcastText
+---@field BroadcastTextDuration dbc.Table.v1215.BroadcastTextDuration
+---@field CameraEffect dbc.Table.v1215.CameraEffect
+---@field CameraEffectEntry dbc.Table.v1215.CameraEffectEntry
+---@field CameraMode dbc.Table.v1215.CameraMode
+---@field Campaign dbc.Table.v1215.Campaign
+---@field CampaignXCondition dbc.Table.v1215.CampaignXCondition
+---@field CampaignXQuestLine dbc.Table.v1215.CampaignXQuestLine
+---@field CastableRaidBuffs dbc.Table.v1215.CastableRaidBuffs
+---@field CatalogShopGameTitleInfo dbc.Table.v1215.CatalogShopGameTitleInfo
+---@field CelestialBody dbc.Table.v1215.CelestialBody
+---@field Cfg_Categories dbc.Table.v1215.Cfg_Categories
+---@field Cfg_Configs dbc.Table.v1215.Cfg_Configs
+---@field Cfg_GameRules dbc.Table.v1215.Cfg_GameRules
+---@field Cfg_Regions dbc.Table.v1215.Cfg_Regions
+---@field Cfg_TimeEventRegionGroup dbc.Table.v1215.Cfg_TimeEventRegionGroup
+---@field ChallengeModeItemBonusOverride dbc.Table.v1215.ChallengeModeItemBonusOverride
+---@field ChallengeModeReward dbc.Table.v1215.ChallengeModeReward
+---@field ChallengeModeXReward dbc.Table.v1215.ChallengeModeXReward
+---@field CharBaseInfo dbc.Table.v1215.CharBaseInfo
+---@field CharBaseSection dbc.Table.v1215.CharBaseSection
+---@field CharComponentTextureLayouts dbc.Table.v1215.CharComponentTextureLayouts
+---@field CharComponentTextureSections dbc.Table.v1215.CharComponentTextureSections
+---@field CharHairGeosets dbc.Table.v1215.CharHairGeosets
+---@field CharSectionCondition dbc.Table.v1215.CharSectionCondition
+---@field CharShipment dbc.Table.v1215.CharShipment
+---@field CharShipmentContainer dbc.Table.v1215.CharShipmentContainer
+---@field CharStartKit dbc.Table.v1215.CharStartKit
+---@field CharTitles dbc.Table.v1215.CharTitles
+---@field CharacterFacialHairStyles dbc.Table.v1215.CharacterFacialHairStyles
+---@field CharacterLoadout dbc.Table.v1215.CharacterLoadout
+---@field CharacterLoadoutItem dbc.Table.v1215.CharacterLoadoutItem
+---@field CharacterLoadoutPet dbc.Table.v1215.CharacterLoadoutPet
+---@field CharacterServiceInfo dbc.Table.v1215.CharacterServiceInfo
+---@field ChatChannels dbc.Table.v1215.ChatChannels
+---@field ChatProfanity dbc.Table.v1215.ChatProfanity
+---@field ChrClassRaceSex dbc.Table.v1215.ChrClassRaceSex
+---@field ChrClassTitle dbc.Table.v1215.ChrClassTitle
+---@field ChrClassUIChrModelInfo dbc.Table.v1215.ChrClassUIChrModelInfo
+---@field ChrClassUIDisplay dbc.Table.v1215.ChrClassUIDisplay
+---@field ChrClassVillain dbc.Table.v1215.ChrClassVillain
+---@field ChrClasses dbc.Table.v1215.ChrClasses
+---@field ChrClassesXPowerTypes dbc.Table.v1215.ChrClassesXPowerTypes
+---@field ChrCreateClassAnimTarget dbc.Table.v1215.ChrCreateClassAnimTarget
+---@field ChrCreateClassAnimTargetInfo dbc.Table.v1215.ChrCreateClassAnimTargetInfo
+---@field ChrCustClientChoiceConversion dbc.Table.v1215.ChrCustClientChoiceConversion
+---@field ChrCustGeoComponentLink dbc.Table.v1215.ChrCustGeoComponentLink
+---@field ChrCustItemGeoModify dbc.Table.v1215.ChrCustItemGeoModify
+---@field ChrCustomization dbc.Table.v1215.ChrCustomization
+---@field ChrCustomizationBoneSet dbc.Table.v1215.ChrCustomizationBoneSet
+---@field ChrCustomizationCategory dbc.Table.v1215.ChrCustomizationCategory
+---@field ChrCustomizationChoice dbc.Table.v1215.ChrCustomizationChoice
+---@field ChrCustomizationCondModel dbc.Table.v1215.ChrCustomizationCondModel
+---@field ChrCustomizationConversion dbc.Table.v1215.ChrCustomizationConversion
+---@field ChrCustomizationDisplayInfo dbc.Table.v1215.ChrCustomizationDisplayInfo
+---@field ChrCustomizationElement dbc.Table.v1215.ChrCustomizationElement
+---@field ChrCustomizationGeoset dbc.Table.v1215.ChrCustomizationGeoset
+---@field ChrCustomizationGlyphPet dbc.Table.v1215.ChrCustomizationGlyphPet
+---@field ChrCustomizationMaterial dbc.Table.v1215.ChrCustomizationMaterial
+---@field ChrCustomizationOption dbc.Table.v1215.ChrCustomizationOption
+---@field ChrCustomizationReq dbc.Table.v1215.ChrCustomizationReq
+---@field ChrCustomizationReqChoice dbc.Table.v1215.ChrCustomizationReqChoice
+---@field ChrCustomizationSkinnedModel dbc.Table.v1215.ChrCustomizationSkinnedModel
+---@field ChrCustomizationVisReq dbc.Table.v1215.ChrCustomizationVisReq
+---@field ChrCustomizationVoice dbc.Table.v1215.ChrCustomizationVoice
+---@field ChrModel dbc.Table.v1215.ChrModel
+---@field ChrModelMaterial dbc.Table.v1215.ChrModelMaterial
+---@field ChrModelTextureLayer dbc.Table.v1215.ChrModelTextureLayer
+---@field ChrRaceRacialAbility dbc.Table.v1215.ChrRaceRacialAbility
+---@field ChrRaceXChrModel dbc.Table.v1215.ChrRaceXChrModel
+---@field ChrRaces dbc.Table.v1215.ChrRaces
+---@field ChrRacesCreateScreenIcon dbc.Table.v1215.ChrRacesCreateScreenIcon
+---@field ChrRacesPing dbc.Table.v1215.ChrRacesPing
+---@field ChrSelectBackgroundCDI dbc.Table.v1215.ChrSelectBackgroundCDI
+---@field ChrSpecialization dbc.Table.v1215.ChrSpecialization
+---@field ChrUpgradeBucket dbc.Table.v1215.ChrUpgradeBucket
+---@field ChrUpgradeBucketSpell dbc.Table.v1215.ChrUpgradeBucketSpell
+---@field ChrUpgradeTier dbc.Table.v1215.ChrUpgradeTier
+---@field CinematicCamera dbc.Table.v1215.CinematicCamera
+---@field CinematicSequences dbc.Table.v1215.CinematicSequences
+---@field ClientSceneEffect dbc.Table.v1215.ClientSceneEffect
+---@field ClientSettings dbc.Table.v1215.ClientSettings
+---@field CloakDampening dbc.Table.v1215.CloakDampening
+---@field CloneEffect dbc.Table.v1215.CloneEffect
+---@field CollectableSourceEncounter dbc.Table.v1215.CollectableSourceEncounter
+---@field CollectableSourceEncounterSparse dbc.Table.v1215.CollectableSourceEncounterSparse
+---@field CollectableSourceInfo dbc.Table.v1215.CollectableSourceInfo
+---@field CollectableSourceQuest dbc.Table.v1215.CollectableSourceQuest
+---@field CollectableSourceQuestSparse dbc.Table.v1215.CollectableSourceQuestSparse
+---@field CollectableSourceVendor dbc.Table.v1215.CollectableSourceVendor
+---@field CollectableSourceVendorSparse dbc.Table.v1215.CollectableSourceVendorSparse
+---@field CombatCondition dbc.Table.v1215.CombatCondition
+---@field CommentatorIndirectSpell dbc.Table.v1215.CommentatorIndirectSpell
+---@field CommentatorStartLocation dbc.Table.v1215.CommentatorStartLocation
+---@field CommentatorTrackedCooldown dbc.Table.v1215.CommentatorTrackedCooldown
+---@field CommunityIcon dbc.Table.v1215.CommunityIcon
+---@field ComponentModelFileData dbc.Table.v1215.ComponentModelFileData
+---@field ComponentTextureFileData dbc.Table.v1215.ComponentTextureFileData
+---@field CompositeSpellsUIRedirect dbc.Table.v1215.CompositeSpellsUIRedirect
+---@field ConditionalChrModel dbc.Table.v1215.ConditionalChrModel
+---@field ConditionalContentTuning dbc.Table.v1215.ConditionalContentTuning
+---@field ConditionalCreatureModelData dbc.Table.v1215.ConditionalCreatureModelData
+---@field ConditionalItemAppearance dbc.Table.v1215.ConditionalItemAppearance
+---@field ConfigurationWarning dbc.Table.v1215.ConfigurationWarning
+---@field ContentPush dbc.Table.v1215.ContentPush
+---@field ContentRestrictionRule dbc.Table.v1215.ContentRestrictionRule
+---@field ContentRestrictionRuleSet dbc.Table.v1215.ContentRestrictionRuleSet
+---@field ContentTuning dbc.Table.v1215.ContentTuning
+---@field ContentTuningXDifficulty dbc.Table.v1215.ContentTuningXDifficulty
+---@field ContentTuningXExpected dbc.Table.v1215.ContentTuningXExpected
+---@field ContentTuningXLabel dbc.Table.v1215.ContentTuningXLabel
+---@field Contribution dbc.Table.v1215.Contribution
+---@field ContributionStyle dbc.Table.v1215.ContributionStyle
+---@field ContributionStyleContainer dbc.Table.v1215.ContributionStyleContainer
+---@field ConversationLine dbc.Table.v1215.ConversationLine
+---@field CooldownSet dbc.Table.v1215.CooldownSet
+---@field CooldownSetLinkedSpell dbc.Table.v1215.CooldownSetLinkedSpell
+---@field CooldownSetSpell dbc.Table.v1215.CooldownSetSpell
+---@field CooldownViewerItemSpell dbc.Table.v1215.CooldownViewerItemSpell
+---@field CorruptionEffects dbc.Table.v1215.CorruptionEffects
+---@field Covenant dbc.Table.v1215.Covenant
+---@field CraftingData dbc.Table.v1215.CraftingData
+---@field CraftingDataEnchantQuality dbc.Table.v1215.CraftingDataEnchantQuality
+---@field CraftingDataItemQuality dbc.Table.v1215.CraftingDataItemQuality
+---@field CraftingDifficulty dbc.Table.v1215.CraftingDifficulty
+---@field CraftingDifficultyQuality dbc.Table.v1215.CraftingDifficultyQuality
+---@field CraftingOrder dbc.Table.v1215.CraftingOrder
+---@field CraftingOrderHouse dbc.Table.v1215.CraftingOrderHouse
+---@field CraftingOrderXLabel dbc.Table.v1215.CraftingOrderXLabel
+---@field CraftingQuality dbc.Table.v1215.CraftingQuality
+---@field CraftingQualityAtlasSet dbc.Table.v1215.CraftingQualityAtlasSet
+---@field CraftingReagentEffect dbc.Table.v1215.CraftingReagentEffect
+---@field CraftingReagentQuality dbc.Table.v1215.CraftingReagentQuality
+---@field CraftingReagentRequirement dbc.Table.v1215.CraftingReagentRequirement
+---@field Creature dbc.Table.v1215.Creature
+---@field CreatureDifficulty dbc.Table.v1215.CreatureDifficulty
+---@field CreatureDifficultyTreasure dbc.Table.v1215.CreatureDifficultyTreasure
+---@field CreatureDispXUiCamera dbc.Table.v1215.CreatureDispXUiCamera
+---@field CreatureDisplayInfo dbc.Table.v1215.CreatureDisplayInfo
+---@field CreatureDisplayInfoCond dbc.Table.v1215.CreatureDisplayInfoCond
+---@field CreatureDisplayInfoCondXChoice dbc.Table.v1215.CreatureDisplayInfoCondXChoice
+---@field CreatureDisplayInfoEvt dbc.Table.v1215.CreatureDisplayInfoEvt
+---@field CreatureDisplayInfoExtra dbc.Table.v1215.CreatureDisplayInfoExtra
+---@field CreatureDisplayInfoGeosetData dbc.Table.v1215.CreatureDisplayInfoGeosetData
+---@field CreatureDisplayInfoOption dbc.Table.v1215.CreatureDisplayInfoOption
+---@field CreatureDisplayInfoTrn dbc.Table.v1215.CreatureDisplayInfoTrn
+---@field CreatureDisplayXUIModelScene dbc.Table.v1215.CreatureDisplayXUIModelScene
+---@field CreatureFamily dbc.Table.v1215.CreatureFamily
+---@field CreatureFamilyXUIModelScene dbc.Table.v1215.CreatureFamilyXUIModelScene
+---@field CreatureImmunities dbc.Table.v1215.CreatureImmunities
+---@field CreatureLabel dbc.Table.v1215.CreatureLabel
+---@field CreatureModelData dbc.Table.v1215.CreatureModelData
+---@field CreatureMovementInfo dbc.Table.v1215.CreatureMovementInfo
+---@field CreatureSoundData dbc.Table.v1215.CreatureSoundData
+---@field CreatureSoundFidget dbc.Table.v1215.CreatureSoundFidget
+---@field CreatureType dbc.Table.v1215.CreatureType
+---@field CreatureXContribution dbc.Table.v1215.CreatureXContribution
+---@field CreatureXDisplayInfo dbc.Table.v1215.CreatureXDisplayInfo
+---@field CreatureXUiWidgetSet dbc.Table.v1215.CreatureXUiWidgetSet
+---@field Criteria dbc.Table.v1215.Criteria
+---@field CriteriaTree dbc.Table.v1215.CriteriaTree
+---@field CriteriaTreeXEffect dbc.Table.v1215.CriteriaTreeXEffect
+---@field CurrencyCategory dbc.Table.v1215.CurrencyCategory
+---@field CurrencyContainer dbc.Table.v1215.CurrencyContainer
+---@field CurrencyTypes dbc.Table.v1215.CurrencyTypes
+---@field Curve dbc.Table.v1215.Curve
+---@field CurvePoint dbc.Table.v1215.CurvePoint
+---@field DBData_M2Light dbc.Table.v1215.DBData_M2Light
+---@field DamageMeterOverride dbc.Table.v1215.DamageMeterOverride
+---@field DataTagGroup dbc.Table.v1215.DataTagGroup
+---@field DataTagGroupXDataTag dbc.Table.v1215.DataTagGroupXDataTag
+---@field DataTagInfo dbc.Table.v1215.DataTagInfo
+---@field DataTagXHouseDecorRecord dbc.Table.v1215.DataTagXHouseDecorRecord
+---@field DataTagXRecord dbc.Table.v1215.DataTagXRecord
+---@field DeathThudLookups dbc.Table.v1215.DeathThudLookups
+---@field DecalProperties dbc.Table.v1215.DecalProperties
+---@field DeclinedWord dbc.Table.v1215.DeclinedWord
+---@field DeclinedWordCases dbc.Table.v1215.DeclinedWordCases
+---@field DecorCategory dbc.Table.v1215.DecorCategory
+---@field DecorDyeSlot dbc.Table.v1215.DecorDyeSlot
+---@field DecorSubcategory dbc.Table.v1215.DecorSubcategory
+---@field DecorXDecorSubcategory dbc.Table.v1215.DecorXDecorSubcategory
+---@field DelvesSeason dbc.Table.v1215.DelvesSeason
+---@field DelvesSeasonXSpell dbc.Table.v1215.DelvesSeasonXSpell
+---@field DestructibleModelData dbc.Table.v1215.DestructibleModelData
+---@field Difficulty dbc.Table.v1215.Difficulty
+---@field DisplaySeason dbc.Table.v1215.DisplaySeason
+---@field DissolveEffect dbc.Table.v1215.DissolveEffect
+---@field DriveCapability dbc.Table.v1215.DriveCapability
+---@field DriveCapabilityTier dbc.Table.v1215.DriveCapabilityTier
+---@field DungeonEncounter dbc.Table.v1215.DungeonEncounter
+---@field DurabilityCosts dbc.Table.v1215.DurabilityCosts
+---@field DurabilityQuality dbc.Table.v1215.DurabilityQuality
+---@field DyeColor dbc.Table.v1215.DyeColor
+---@field DyeColorCategory dbc.Table.v1215.DyeColorCategory
+---@field EdgeGlowEffect dbc.Table.v1215.EdgeGlowEffect
+---@field Emotes dbc.Table.v1215.Emotes
+---@field EmotesText dbc.Table.v1215.EmotesText
+---@field EmotesTextData dbc.Table.v1215.EmotesTextData
+---@field EmotesTextSound dbc.Table.v1215.EmotesTextSound
+---@field EncounterEvent dbc.Table.v1215.EncounterEvent
+---@field EntryNode dbc.Table.v1215.EntryNode
+---@field EntryTemplate dbc.Table.v1215.EntryTemplate
+---@field EnvironmentalDamage dbc.Table.v1215.EnvironmentalDamage
+---@field EventSchedulerCategory dbc.Table.v1215.EventSchedulerCategory
+---@field EventSchedulerEvent dbc.Table.v1215.EventSchedulerEvent
+---@field Exhaustion dbc.Table.v1215.Exhaustion
+---@field ExpectedStat dbc.Table.v1215.ExpectedStat
+---@field ExpectedStatMod dbc.Table.v1215.ExpectedStatMod
+---@field ExteriorComponent dbc.Table.v1215.ExteriorComponent
+---@field ExteriorComponentExitPoint dbc.Table.v1215.ExteriorComponentExitPoint
+---@field ExteriorComponentGroup dbc.Table.v1215.ExteriorComponentGroup
+---@field ExteriorComponentGroupXHook dbc.Table.v1215.ExteriorComponentGroupXHook
+---@field ExteriorComponentHook dbc.Table.v1215.ExteriorComponentHook
+---@field ExteriorComponentType dbc.Table.v1215.ExteriorComponentType
+---@field ExteriorComponentXGroup dbc.Table.v1215.ExteriorComponentXGroup
+---@field ExtraAbilityInfo dbc.Table.v1215.ExtraAbilityInfo
+---@field Faction dbc.Table.v1215.Faction
+---@field FactionGroup dbc.Table.v1215.FactionGroup
+---@field FactionTemplate dbc.Table.v1215.FactionTemplate
+---@field FlightCapability dbc.Table.v1215.FlightCapability
+---@field FlightCapabilityXGlideEvent dbc.Table.v1215.FlightCapabilityXGlideEvent
+---@field FootprintTextures dbc.Table.v1215.FootprintTextures
+---@field FootstepTerrainLookup dbc.Table.v1215.FootstepTerrainLookup
+---@field FriendshipRepReaction dbc.Table.v1215.FriendshipRepReaction
+---@field FriendshipReputation dbc.Table.v1215.FriendshipReputation
+---@field FullScreenEffect dbc.Table.v1215.FullScreenEffect
+---@field GMSurveyAnswers dbc.Table.v1215.GMSurveyAnswers
+---@field GMSurveyCurrentSurvey dbc.Table.v1215.GMSurveyCurrentSurvey
+---@field GMSurveyQuestions dbc.Table.v1215.GMSurveyQuestions
+---@field GMSurveySurveys dbc.Table.v1215.GMSurveySurveys
+---@field GameClockDebug dbc.Table.v1215.GameClockDebug
+---@field GameMode dbc.Table.v1215.GameMode
+---@field GameObjectAnimGroupMember dbc.Table.v1215.GameObjectAnimGroupMember
+---@field GameObjectArtKit dbc.Table.v1215.GameObjectArtKit
+---@field GameObjectDiffAnimMap dbc.Table.v1215.GameObjectDiffAnimMap
+---@field GameObjectDisplayCondition dbc.Table.v1215.GameObjectDisplayCondition
+---@field GameObjectDisplayInfo dbc.Table.v1215.GameObjectDisplayInfo
+---@field GameObjectDisplayInfoXSoundKit dbc.Table.v1215.GameObjectDisplayInfoXSoundKit
+---@field GameObjectLabel dbc.Table.v1215.GameObjectLabel
+---@field GameObjects dbc.Table.v1215.GameObjects
+---@field GameParameter dbc.Table.v1215.GameParameter
+---@field GameTips dbc.Table.v1215.GameTips
+---@field GarrAbility dbc.Table.v1215.GarrAbility
+---@field GarrAbilityCategory dbc.Table.v1215.GarrAbilityCategory
+---@field GarrAbilityEffect dbc.Table.v1215.GarrAbilityEffect
+---@field GarrAutoCombatant dbc.Table.v1215.GarrAutoCombatant
+---@field GarrAutoSpell dbc.Table.v1215.GarrAutoSpell
+---@field GarrAutoSpellEffect dbc.Table.v1215.GarrAutoSpellEffect
+---@field GarrBuilding dbc.Table.v1215.GarrBuilding
+---@field GarrBuildingDoodadSet dbc.Table.v1215.GarrBuildingDoodadSet
+---@field GarrBuildingPlotInst dbc.Table.v1215.GarrBuildingPlotInst
+---@field GarrClassSpec dbc.Table.v1215.GarrClassSpec
+---@field GarrClassSpecPlayerCond dbc.Table.v1215.GarrClassSpecPlayerCond
+---@field GarrEncounter dbc.Table.v1215.GarrEncounter
+---@field GarrEncounterSetXEncounter dbc.Table.v1215.GarrEncounterSetXEncounter
+---@field GarrEncounterXMechanic dbc.Table.v1215.GarrEncounterXMechanic
+---@field GarrFollItemSetMember dbc.Table.v1215.GarrFollItemSetMember
+---@field GarrFollSupportSpell dbc.Table.v1215.GarrFollSupportSpell
+---@field GarrFollower dbc.Table.v1215.GarrFollower
+---@field GarrFollowerLevelXP dbc.Table.v1215.GarrFollowerLevelXP
+---@field GarrFollowerQuality dbc.Table.v1215.GarrFollowerQuality
+---@field GarrFollowerSetXFollower dbc.Table.v1215.GarrFollowerSetXFollower
+---@field GarrFollowerType dbc.Table.v1215.GarrFollowerType
+---@field GarrFollowerUICreature dbc.Table.v1215.GarrFollowerUICreature
+---@field GarrFollowerXAbility dbc.Table.v1215.GarrFollowerXAbility
+---@field GarrItemLevelUpgradeData dbc.Table.v1215.GarrItemLevelUpgradeData
+---@field GarrMechanic dbc.Table.v1215.GarrMechanic
+---@field GarrMechanicSetXMechanic dbc.Table.v1215.GarrMechanicSetXMechanic
+---@field GarrMechanicType dbc.Table.v1215.GarrMechanicType
+---@field GarrMission dbc.Table.v1215.GarrMission
+---@field GarrMissionSet dbc.Table.v1215.GarrMissionSet
+---@field GarrMissionTexture dbc.Table.v1215.GarrMissionTexture
+---@field GarrMissionType dbc.Table.v1215.GarrMissionType
+---@field GarrMissionXEncounter dbc.Table.v1215.GarrMissionXEncounter
+---@field GarrMissionXFollower dbc.Table.v1215.GarrMissionXFollower
+---@field GarrMssnBonusAbility dbc.Table.v1215.GarrMssnBonusAbility
+---@field GarrPlot dbc.Table.v1215.GarrPlot
+---@field GarrPlotBuilding dbc.Table.v1215.GarrPlotBuilding
+---@field GarrPlotInstance dbc.Table.v1215.GarrPlotInstance
+---@field GarrPlotUICategory dbc.Table.v1215.GarrPlotUICategory
+---@field GarrSiteLevel dbc.Table.v1215.GarrSiteLevel
+---@field GarrSiteLevelPlotInst dbc.Table.v1215.GarrSiteLevelPlotInst
+---@field GarrSpecialization dbc.Table.v1215.GarrSpecialization
+---@field GarrString dbc.Table.v1215.GarrString
+---@field GarrTalTreeXGarrTalResearch dbc.Table.v1215.GarrTalTreeXGarrTalResearch
+---@field GarrTalent dbc.Table.v1215.GarrTalent
+---@field GarrTalentCost dbc.Table.v1215.GarrTalentCost
+---@field GarrTalentMapPOI dbc.Table.v1215.GarrTalentMapPOI
+---@field GarrTalentRank dbc.Table.v1215.GarrTalentRank
+---@field GarrTalentRankGroupEntry dbc.Table.v1215.GarrTalentRankGroupEntry
+---@field GarrTalentRankGroupResearchMod dbc.Table.v1215.GarrTalentRankGroupResearchMod
+---@field GarrTalentResearch dbc.Table.v1215.GarrTalentResearch
+---@field GarrTalentSocketProperties dbc.Table.v1215.GarrTalentSocketProperties
+---@field GarrTalentTree dbc.Table.v1215.GarrTalentTree
+---@field GarrType dbc.Table.v1215.GarrType
+---@field GarrUiAnimClassInfo dbc.Table.v1215.GarrUiAnimClassInfo
+---@field GarrUiAnimRaceInfo dbc.Table.v1215.GarrUiAnimRaceInfo
+---@field GemProperties dbc.Table.v1215.GemProperties
+---@field GlideEvent dbc.Table.v1215.GlideEvent
+---@field GlideEventBlendTimes dbc.Table.v1215.GlideEventBlendTimes
+---@field GlobalColor dbc.Table.v1215.GlobalColor
+---@field GlobalCurve dbc.Table.v1215.GlobalCurve
+---@field GlobalGameContentTuning dbc.Table.v1215.GlobalGameContentTuning
+---@field GlobalPlayerCondition dbc.Table.v1215.GlobalPlayerCondition
+---@field GlobalPlayerConditionSet dbc.Table.v1215.GlobalPlayerConditionSet
+---@field GlobalStrings dbc.Table.v1215.GlobalStrings
+---@field GlyphBindableSpell dbc.Table.v1215.GlyphBindableSpell
+---@field GlyphExclusiveCategory dbc.Table.v1215.GlyphExclusiveCategory
+---@field GlyphProperties dbc.Table.v1215.GlyphProperties
+---@field GlyphRequiredSpec dbc.Table.v1215.GlyphRequiredSpec
+---@field GossipNPCOption dbc.Table.v1215.GossipNPCOption
+---@field GossipNPCOptionDisplayInfo dbc.Table.v1215.GossipNPCOptionDisplayInfo
+---@field GossipOptionXUIWidgetSet dbc.Table.v1215.GossipOptionXUIWidgetSet
+---@field GossipUIDisplayInfoCondition dbc.Table.v1215.GossipUIDisplayInfoCondition
+---@field GossipXGarrTalentTrees dbc.Table.v1215.GossipXGarrTalentTrees
+---@field GossipXUIDisplayInfo dbc.Table.v1215.GossipXUIDisplayInfo
+---@field GradientEffect dbc.Table.v1215.GradientEffect
+---@field GroundEffectDoodad dbc.Table.v1215.GroundEffectDoodad
+---@field GroundEffectTexture dbc.Table.v1215.GroundEffectTexture
+---@field GroupFinderActivity dbc.Table.v1215.GroupFinderActivity
+---@field GroupFinderActivityGrp dbc.Table.v1215.GroupFinderActivityGrp
+---@field GroupFinderActivityXPvpBracket dbc.Table.v1215.GroupFinderActivityXPvpBracket
+---@field GroupFinderCategory dbc.Table.v1215.GroupFinderCategory
+---@field GuildColorBackground dbc.Table.v1215.GuildColorBackground
+---@field GuildColorBorder dbc.Table.v1215.GuildColorBorder
+---@field GuildColorEmblem dbc.Table.v1215.GuildColorEmblem
+---@field GuildEmblem dbc.Table.v1215.GuildEmblem
+---@field GuildPerkSpells dbc.Table.v1215.GuildPerkSpells
+---@field GuildShirtBackground dbc.Table.v1215.GuildShirtBackground
+---@field GuildShirtBorder dbc.Table.v1215.GuildShirtBorder
+---@field GuildTabardBackground dbc.Table.v1215.GuildTabardBackground
+---@field GuildTabardBorder dbc.Table.v1215.GuildTabardBorder
+---@field GuildTabardEmblem dbc.Table.v1215.GuildTabardEmblem
+---@field Heirloom dbc.Table.v1215.Heirloom
+---@field HelmetAnimScaling dbc.Table.v1215.HelmetAnimScaling
+---@field HelmetGeosetData dbc.Table.v1215.HelmetGeosetData
+---@field HighlightColor dbc.Table.v1215.HighlightColor
+---@field HolidayDescriptions dbc.Table.v1215.HolidayDescriptions
+---@field HolidayNames dbc.Table.v1215.HolidayNames
+---@field HolidayXTimeEvent dbc.Table.v1215.HolidayXTimeEvent
+---@field Holidays dbc.Table.v1215.Holidays
+---@field Hotfixes dbc.Table.v1215.Hotfixes
+---@field House dbc.Table.v1215.House
+---@field HouseDecor dbc.Table.v1215.HouseDecor
+---@field HouseDecorMaterial dbc.Table.v1215.HouseDecorMaterial
+---@field HouseDecorThemeSet dbc.Table.v1215.HouseDecorThemeSet
+---@field HouseExteriorWmoData dbc.Table.v1215.HouseExteriorWmoData
+---@field HouseLevelData dbc.Table.v1215.HouseLevelData
+---@field HouseLevelRewardInfo dbc.Table.v1215.HouseLevelRewardInfo
+---@field HouseRoom dbc.Table.v1215.HouseRoom
+---@field HouseTheme dbc.Table.v1215.HouseTheme
+---@field ImportPriceArmor dbc.Table.v1215.ImportPriceArmor
+---@field ImportPriceQuality dbc.Table.v1215.ImportPriceQuality
+---@field ImportPriceShield dbc.Table.v1215.ImportPriceShield
+---@field ImportPriceWeapon dbc.Table.v1215.ImportPriceWeapon
+---@field InitiativeCycle dbc.Table.v1215.InitiativeCycle
+---@field InitiativeCyclePriority dbc.Table.v1215.InitiativeCyclePriority
+---@field InitiativeMilestone dbc.Table.v1215.InitiativeMilestone
+---@field InitiativeReward dbc.Table.v1215.InitiativeReward
+---@field InitiativeRewardXMilestone dbc.Table.v1215.InitiativeRewardXMilestone
+---@field InitiativeTask dbc.Table.v1215.InitiativeTask
+---@field InitiativeXTask dbc.Table.v1215.InitiativeXTask
+---@field InvasionClientData dbc.Table.v1215.InvasionClientData
+---@field Item dbc.Table.v1215.Item
+---@field ItemAppearance dbc.Table.v1215.ItemAppearance
+---@field ItemAppearanceXUiCamera dbc.Table.v1215.ItemAppearanceXUiCamera
+---@field ItemArmorQuality dbc.Table.v1215.ItemArmorQuality
+---@field ItemArmorShield dbc.Table.v1215.ItemArmorShield
+---@field ItemArmorTotal dbc.Table.v1215.ItemArmorTotal
+---@field ItemBagFamily dbc.Table.v1215.ItemBagFamily
+---@field ItemBonus dbc.Table.v1215.ItemBonus
+---@field ItemBonusList dbc.Table.v1215.ItemBonusList
+---@field ItemBonusListGroup dbc.Table.v1215.ItemBonusListGroup
+---@field ItemBonusListGroupEntry dbc.Table.v1215.ItemBonusListGroupEntry
+---@field ItemBonusListLevelDelta dbc.Table.v1215.ItemBonusListLevelDelta
+---@field ItemBonusListWarforgeLevelDelta dbc.Table.v1215.ItemBonusListWarforgeLevelDelta
+---@field ItemBonusSeason dbc.Table.v1215.ItemBonusSeason
+---@field ItemBonusSeasonBonusListGroup dbc.Table.v1215.ItemBonusSeasonBonusListGroup
+---@field ItemBonusSeasonUpgradeCost dbc.Table.v1215.ItemBonusSeasonUpgradeCost
+---@field ItemBonusSequenceSpell dbc.Table.v1215.ItemBonusSequenceSpell
+---@field ItemBonusTree dbc.Table.v1215.ItemBonusTree
+---@field ItemBonusTreeGroupEntry dbc.Table.v1215.ItemBonusTreeGroupEntry
+---@field ItemBonusTreeNode dbc.Table.v1215.ItemBonusTreeNode
+---@field ItemChildEquipment dbc.Table.v1215.ItemChildEquipment
+---@field ItemClass dbc.Table.v1215.ItemClass
+---@field ItemCondition dbc.Table.v1215.ItemCondition
+---@field ItemContextPickerEntry dbc.Table.v1215.ItemContextPickerEntry
+---@field ItemConversion dbc.Table.v1215.ItemConversion
+---@field ItemConversionEntry dbc.Table.v1215.ItemConversionEntry
+---@field ItemCreationContext dbc.Table.v1215.ItemCreationContext
+---@field ItemCreationContextGroup dbc.Table.v1215.ItemCreationContextGroup
+---@field ItemCurrencyCost dbc.Table.v1215.ItemCurrencyCost
+---@field ItemCurrencyValue dbc.Table.v1215.ItemCurrencyValue
+---@field ItemDamageAmmo dbc.Table.v1215.ItemDamageAmmo
+---@field ItemDamageOneHand dbc.Table.v1215.ItemDamageOneHand
+---@field ItemDamageOneHandCaster dbc.Table.v1215.ItemDamageOneHandCaster
+---@field ItemDamageTwoHand dbc.Table.v1215.ItemDamageTwoHand
+---@field ItemDamageTwoHandCaster dbc.Table.v1215.ItemDamageTwoHandCaster
+---@field ItemDisenchantLoot dbc.Table.v1215.ItemDisenchantLoot
+---@field ItemDisplayInfo dbc.Table.v1215.ItemDisplayInfo
+---@field ItemDisplayInfoMaterialRes dbc.Table.v1215.ItemDisplayInfoMaterialRes
+---@field ItemDisplayInfoModelMatRes dbc.Table.v1215.ItemDisplayInfoModelMatRes
+---@field ItemEffect dbc.Table.v1215.ItemEffect
+---@field ItemExtendedCost dbc.Table.v1215.ItemExtendedCost
+---@field ItemFixup dbc.Table.v1215.ItemFixup
+---@field ItemFixupAction dbc.Table.v1215.ItemFixupAction
+---@field ItemGroupIlvlScalingEntry dbc.Table.v1215.ItemGroupIlvlScalingEntry
+---@field ItemGroupSounds dbc.Table.v1215.ItemGroupSounds
+---@field ItemLevelSelector dbc.Table.v1215.ItemLevelSelector
+---@field ItemLevelSelectorQuality dbc.Table.v1215.ItemLevelSelectorQuality
+---@field ItemLevelSelectorQualitySet dbc.Table.v1215.ItemLevelSelectorQualitySet
+---@field ItemLevelWatermark dbc.Table.v1215.ItemLevelWatermark
+---@field ItemLimitCategory dbc.Table.v1215.ItemLimitCategory
+---@field ItemLimitCategoryCondition dbc.Table.v1215.ItemLimitCategoryCondition
+---@field ItemLogicalCost dbc.Table.v1215.ItemLogicalCost
+---@field ItemLogicalCostGroup dbc.Table.v1215.ItemLogicalCostGroup
+---@field ItemModifiedAppearance dbc.Table.v1215.ItemModifiedAppearance
+---@field ItemModifiedAppearanceExtra dbc.Table.v1215.ItemModifiedAppearanceExtra
+---@field ItemNameDescription dbc.Table.v1215.ItemNameDescription
+---@field ItemNameSlotOverride dbc.Table.v1215.ItemNameSlotOverride
+---@field ItemOffsetCurve dbc.Table.v1215.ItemOffsetCurve
+---@field ItemPetFood dbc.Table.v1215.ItemPetFood
+---@field ItemPriceBase dbc.Table.v1215.ItemPriceBase
+---@field ItemRangedDisplayInfo dbc.Table.v1215.ItemRangedDisplayInfo
+---@field ItemRecraft dbc.Table.v1215.ItemRecraft
+---@field ItemReforge dbc.Table.v1215.ItemReforge
+---@field ItemSalvage dbc.Table.v1215.ItemSalvage
+---@field ItemSalvageLoot dbc.Table.v1215.ItemSalvageLoot
+---@field ItemScalingConfig dbc.Table.v1215.ItemScalingConfig
+---@field ItemSearchName dbc.Table.v1215.ItemSearchName
+---@field ItemSet dbc.Table.v1215.ItemSet
+---@field ItemSetSpell dbc.Table.v1215.ItemSetSpell
+---@field ItemSparse dbc.Table.v1215.ItemSparse
+---@field ItemSpec dbc.Table.v1215.ItemSpec
+---@field ItemSpecOverride dbc.Table.v1215.ItemSpecOverride
+---@field ItemSquishEra dbc.Table.v1215.ItemSquishEra
+---@field ItemSubClass dbc.Table.v1215.ItemSubClass
+---@field ItemSubClassMask dbc.Table.v1215.ItemSubClassMask
+---@field ItemVisuals dbc.Table.v1215.ItemVisuals
+---@field ItemVisualsXEffect dbc.Table.v1215.ItemVisualsXEffect
+---@field ItemXBonusTree dbc.Table.v1215.ItemXBonusTree
+---@field ItemXItemEffect dbc.Table.v1215.ItemXItemEffect
+---@field ItemXTraitSystem dbc.Table.v1215.ItemXTraitSystem
+---@field JournalEncounter dbc.Table.v1215.JournalEncounter
+---@field JournalEncounterCreature dbc.Table.v1215.JournalEncounterCreature
+---@field JournalEncounterItem dbc.Table.v1215.JournalEncounterItem
+---@field JournalEncounterSection dbc.Table.v1215.JournalEncounterSection
+---@field JournalEncounterXDifficulty dbc.Table.v1215.JournalEncounterXDifficulty
+---@field JournalEncounterXMapLoc dbc.Table.v1215.JournalEncounterXMapLoc
+---@field JournalInstance dbc.Table.v1215.JournalInstance
+---@field JournalInstanceEntrance dbc.Table.v1215.JournalInstanceEntrance
+---@field JournalInstanceQueueLoc dbc.Table.v1215.JournalInstanceQueueLoc
+---@field JournalItemXDifficulty dbc.Table.v1215.JournalItemXDifficulty
+---@field JournalSectionXDifficulty dbc.Table.v1215.JournalSectionXDifficulty
+---@field JournalTier dbc.Table.v1215.JournalTier
+---@field JournalTierXInstance dbc.Table.v1215.JournalTierXInstance
+---@field Keychain dbc.Table.v1215.Keychain
+---@field KeystoneAffix dbc.Table.v1215.KeystoneAffix
+---@field LFGDungeonGroup dbc.Table.v1215.LFGDungeonGroup
+---@field LFGDungeons dbc.Table.v1215.LFGDungeons
+---@field LFGRoleRequirement dbc.Table.v1215.LFGRoleRequirement
+---@field LabelXContentRestrictRuleSet dbc.Table.v1215.LabelXContentRestrictRuleSet
+---@field LanguageWords dbc.Table.v1215.LanguageWords
+---@field Languages dbc.Table.v1215.Languages
+---@field LfgDungeonsGroupingMap dbc.Table.v1215.LfgDungeonsGroupingMap
+---@field Light dbc.Table.v1215.Light
+---@field LightData dbc.Table.v1215.LightData
+---@field LightParams dbc.Table.v1215.LightParams
+---@field LightParamsLightShaft dbc.Table.v1215.LightParamsLightShaft
+---@field LightShaft dbc.Table.v1215.LightShaft
+---@field LightSkybox dbc.Table.v1215.LightSkybox
+---@field LightWorldShadow dbc.Table.v1215.LightWorldShadow
+---@field Lightning dbc.Table.v1215.Lightning
+---@field Link dbc.Table.v1215.Link
+---@field LiquidMaterial dbc.Table.v1215.LiquidMaterial
+---@field LiquidObject dbc.Table.v1215.LiquidObject
+---@field LiquidType dbc.Table.v1215.LiquidType
+---@field LiquidTypeXTexture dbc.Table.v1215.LiquidTypeXTexture
+---@field LivingWorldObjectTemplate dbc.Table.v1215.LivingWorldObjectTemplate
+---@field LoadingScreenSkin dbc.Table.v1215.LoadingScreenSkin
+---@field LoadingScreenTaxiSplines dbc.Table.v1215.LoadingScreenTaxiSplines
+---@field LoadingScreens dbc.Table.v1215.LoadingScreens
+---@field Locale dbc.Table.v1215.Locale
+---@field Location dbc.Table.v1215.Location
+---@field Lock dbc.Table.v1215.Lock
+---@field LockType dbc.Table.v1215.LockType
+---@field LookAtController dbc.Table.v1215.LookAtController
+---@field LoreText dbc.Table.v1215.LoreText
+---@field LoreTextPublic dbc.Table.v1215.LoreTextPublic
+---@field MCRCurrency dbc.Table.v1215.MCRCurrency
+---@field MCRSlotXMCRCategory dbc.Table.v1215.MCRSlotXMCRCategory
+---@field MailTemplate dbc.Table.v1215.MailTemplate
+---@field ManagedWorldState dbc.Table.v1215.ManagedWorldState
+---@field ManagedWorldStateBuff dbc.Table.v1215.ManagedWorldStateBuff
+---@field ManagedWorldStateInput dbc.Table.v1215.ManagedWorldStateInput
+---@field ManifestInterfaceActionIcon dbc.Table.v1215.ManifestInterfaceActionIcon
+---@field ManifestInterfaceData dbc.Table.v1215.ManifestInterfaceData
+---@field ManifestInterfaceItemIcon dbc.Table.v1215.ManifestInterfaceItemIcon
+---@field Map dbc.Table.v1215.Map
+---@field MapCelestialBody dbc.Table.v1215.MapCelestialBody
+---@field MapChallengeMode dbc.Table.v1215.MapChallengeMode
+---@field MapChallengeModeAffixCriteria dbc.Table.v1215.MapChallengeModeAffixCriteria
+---@field MapDifficulty dbc.Table.v1215.MapDifficulty
+---@field MapDifficultyRedirect dbc.Table.v1215.MapDifficultyRedirect
+---@field MapDifficultyXCondition dbc.Table.v1215.MapDifficultyXCondition
+---@field MapLoadingScreen dbc.Table.v1215.MapLoadingScreen
+---@field MapRenderScale dbc.Table.v1215.MapRenderScale
+---@field MarketingPromotionsXLocale dbc.Table.v1215.MarketingPromotionsXLocale
+---@field Material dbc.Table.v1215.Material
+---@field MawPower dbc.Table.v1215.MawPower
+---@field MawPowerRarity dbc.Table.v1215.MawPowerRarity
+---@field MinorTalent dbc.Table.v1215.MinorTalent
+---@field MissileTargeting dbc.Table.v1215.MissileTargeting
+---@field ModelAnimCloakDampening dbc.Table.v1215.ModelAnimCloakDampening
+---@field ModelFileData dbc.Table.v1215.ModelFileData
+---@field ModelRibbonQuality dbc.Table.v1215.ModelRibbonQuality
+---@field ModelSoundAnimEntry dbc.Table.v1215.ModelSoundAnimEntry
+---@field ModelSoundEntry dbc.Table.v1215.ModelSoundEntry
+---@field ModifiedCraftingCategory dbc.Table.v1215.ModifiedCraftingCategory
+---@field ModifiedCraftingItem dbc.Table.v1215.ModifiedCraftingItem
+---@field ModifiedCraftingReagentItem dbc.Table.v1215.ModifiedCraftingReagentItem
+---@field ModifiedCraftingReagentSlot dbc.Table.v1215.ModifiedCraftingReagentSlot
+---@field ModifiedCraftingSpellSlot dbc.Table.v1215.ModifiedCraftingSpellSlot
+---@field ModifierTree dbc.Table.v1215.ModifierTree
+---@field Mount dbc.Table.v1215.Mount
+---@field MountCapability dbc.Table.v1215.MountCapability
+---@field MountEquipment dbc.Table.v1215.MountEquipment
+---@field MountType dbc.Table.v1215.MountType
+---@field MountTypeXCapability dbc.Table.v1215.MountTypeXCapability
+---@field MountXDisplay dbc.Table.v1215.MountXDisplay
+---@field MountXSpellVisualKitPicker dbc.Table.v1215.MountXSpellVisualKitPicker
+---@field Movie dbc.Table.v1215.Movie
+---@field MovieFileData dbc.Table.v1215.MovieFileData
+---@field MovieVariation dbc.Table.v1215.MovieVariation
+---@field MultiStateProperties dbc.Table.v1215.MultiStateProperties
+---@field MultiTransitionProperties dbc.Table.v1215.MultiTransitionProperties
+---@field MusicOverride dbc.Table.v1215.MusicOverride
+---@field MythicPlusSeason dbc.Table.v1215.MythicPlusSeason
+---@field MythicPlusSeasonKeyFloor dbc.Table.v1215.MythicPlusSeasonKeyFloor
+---@field MythicPlusSeasonRewardLevels dbc.Table.v1215.MythicPlusSeasonRewardLevels
+---@field MythicPlusSeasonTrackedAffix dbc.Table.v1215.MythicPlusSeasonTrackedAffix
+---@field MythicPlusSeasonTrackedMap dbc.Table.v1215.MythicPlusSeasonTrackedMap
+---@field NPCCraftingOrderCustomer dbc.Table.v1215.NPCCraftingOrderCustomer
+---@field NPCCraftingOrderCustomerXLabel dbc.Table.v1215.NPCCraftingOrderCustomerXLabel
+---@field NPCCraftingOrderSet dbc.Table.v1215.NPCCraftingOrderSet
+---@field NPCCraftingOrderSetXCraftOrder dbc.Table.v1215.NPCCraftingOrderSetXCraftOrder
+---@field NPCCraftingOrderSetXCustomer dbc.Table.v1215.NPCCraftingOrderSetXCustomer
+---@field NPCCraftingOrderSetXTreasure dbc.Table.v1215.NPCCraftingOrderSetXTreasure
+---@field NPCModelItemSlotDisplayInfo dbc.Table.v1215.NPCModelItemSlotDisplayInfo
+---@field NPCSounds dbc.Table.v1215.NPCSounds
+---@field NameGen dbc.Table.v1215.NameGen
+---@field NamesProfanity dbc.Table.v1215.NamesProfanity
+---@field NamesReserved dbc.Table.v1215.NamesReserved
+---@field NamesReservedLocale dbc.Table.v1215.NamesReservedLocale
+---@field NeighborhoodInitiative dbc.Table.v1215.NeighborhoodInitiative
+---@field NeighborhoodMap dbc.Table.v1215.NeighborhoodMap
+---@field NeighborhoodNameGen dbc.Table.v1215.NeighborhoodNameGen
+---@field NeighborhoodPlot dbc.Table.v1215.NeighborhoodPlot
+---@field Node dbc.Table.v1215.Node
+---@field NodeGraphParam dbc.Table.v1215.NodeGraphParam
+---@field NodeGraphParamValue dbc.Table.v1215.NodeGraphParamValue
+---@field NodeTemplate dbc.Table.v1215.NodeTemplate
+---@field NodeTemplateXPinTemplate dbc.Table.v1215.NodeTemplateXPinTemplate
+---@field NumTalentsAtLevel dbc.Table.v1215.NumTalentsAtLevel
+---@field ObjectEffect dbc.Table.v1215.ObjectEffect
+---@field ObjectEffectModifier dbc.Table.v1215.ObjectEffectModifier
+---@field ObjectEffectPackageElem dbc.Table.v1215.ObjectEffectPackageElem
+---@field Occluder dbc.Table.v1215.Occluder
+---@field OccluderCurtain dbc.Table.v1215.OccluderCurtain
+---@field OccluderLocation dbc.Table.v1215.OccluderLocation
+---@field OccluderNode dbc.Table.v1215.OccluderNode
+---@field OutlineEffect dbc.Table.v1215.OutlineEffect
+---@field OverrideSpellData dbc.Table.v1215.OverrideSpellData
+---@field PVPBracketTypes dbc.Table.v1215.PVPBracketTypes
+---@field PVPDifficulty dbc.Table.v1215.PVPDifficulty
+---@field PVPScoreboardCellInfo dbc.Table.v1215.PVPScoreboardCellInfo
+---@field PVPScoreboardColumnHeader dbc.Table.v1215.PVPScoreboardColumnHeader
+---@field PVPScoreboardLayout dbc.Table.v1215.PVPScoreboardLayout
+---@field PVPStat dbc.Table.v1215.PVPStat
+---@field PageTextMaterial dbc.Table.v1215.PageTextMaterial
+---@field PaperDollItemFrame dbc.Table.v1215.PaperDollItemFrame
+---@field ParagonReputation dbc.Table.v1215.ParagonReputation
+---@field ParticleColor dbc.Table.v1215.ParticleColor
+---@field Particulate dbc.Table.v1215.Particulate
+---@field ParticulateSound dbc.Table.v1215.ParticulateSound
+---@field Path dbc.Table.v1215.Path
+---@field PathEdge dbc.Table.v1215.PathEdge
+---@field PathNode dbc.Table.v1215.PathNode
+---@field PathNodeProperty dbc.Table.v1215.PathNodeProperty
+---@field PathProperty dbc.Table.v1215.PathProperty
+---@field PerksActivity dbc.Table.v1215.PerksActivity
+---@field PerksActivityCondition dbc.Table.v1215.PerksActivityCondition
+---@field PerksActivityTag dbc.Table.v1215.PerksActivityTag
+---@field PerksActivityThreshold dbc.Table.v1215.PerksActivityThreshold
+---@field PerksActivityThresholdGroup dbc.Table.v1215.PerksActivityThresholdGroup
+---@field PerksActivityXHolidays dbc.Table.v1215.PerksActivityXHolidays
+---@field PerksActivityXInterval dbc.Table.v1215.PerksActivityXInterval
+---@field PerksActivityXTag dbc.Table.v1215.PerksActivityXTag
+---@field PerksUITheme dbc.Table.v1215.PerksUITheme
+---@field PerksVendorCategory dbc.Table.v1215.PerksVendorCategory
+---@field PerksVendorItem dbc.Table.v1215.PerksVendorItem
+---@field PerksVendorItemUIGroup dbc.Table.v1215.PerksVendorItemUIGroup
+---@field PerksVendorItemUIInfo dbc.Table.v1215.PerksVendorItemUIInfo
+---@field PerksVendorItemXInterval dbc.Table.v1215.PerksVendorItemXInterval
+---@field Phase dbc.Table.v1215.Phase
+---@field PhaseShiftZoneSounds dbc.Table.v1215.PhaseShiftZoneSounds
+---@field PhaseXPhaseGroup dbc.Table.v1215.PhaseXPhaseGroup
+---@field Pin dbc.Table.v1215.Pin
+---@field PinTemplate dbc.Table.v1215.PinTemplate
+---@field PingType dbc.Table.v1215.PingType
+---@field PlayerCompanionInfo dbc.Table.v1215.PlayerCompanionInfo
+---@field PlayerCondition dbc.Table.v1215.PlayerCondition
+---@field PlayerDataElementAccount dbc.Table.v1215.PlayerDataElementAccount
+---@field PlayerDataElementCharacter dbc.Table.v1215.PlayerDataElementCharacter
+---@field PlayerDataFlagAccount dbc.Table.v1215.PlayerDataFlagAccount
+---@field PlayerDataFlagCharacter dbc.Table.v1215.PlayerDataFlagCharacter
+---@field PlayerInteractionInfo dbc.Table.v1215.PlayerInteractionInfo
+---@field PointLightConditionMap dbc.Table.v1215.PointLightConditionMap
+---@field Positioner dbc.Table.v1215.Positioner
+---@field PositionerState dbc.Table.v1215.PositionerState
+---@field PositionerStateEntry dbc.Table.v1215.PositionerStateEntry
+---@field PowerDisplay dbc.Table.v1215.PowerDisplay
+---@field PowerType dbc.Table.v1215.PowerType
+---@field PrestigeLevelInfo dbc.Table.v1215.PrestigeLevelInfo
+---@field ProfTraitPathNode dbc.Table.v1215.ProfTraitPathNode
+---@field ProfTraitPerkNode dbc.Table.v1215.ProfTraitPerkNode
+---@field ProfTraitTree dbc.Table.v1215.ProfTraitTree
+---@field ProfTraitTreeHighlight dbc.Table.v1215.ProfTraitTreeHighlight
+---@field Profession dbc.Table.v1215.Profession
+---@field ProfessionEffect dbc.Table.v1215.ProfessionEffect
+---@field ProfessionEffectType dbc.Table.v1215.ProfessionEffectType
+---@field ProfessionExpansion dbc.Table.v1215.ProfessionExpansion
+---@field ProfessionPropPoints dbc.Table.v1215.ProfessionPropPoints
+---@field ProfessionRating dbc.Table.v1215.ProfessionRating
+---@field ProfessionTrait dbc.Table.v1215.ProfessionTrait
+---@field ProfessionTraitXEffect dbc.Table.v1215.ProfessionTraitXEffect
+---@field ProfessionTraitXLabel dbc.Table.v1215.ProfessionTraitXLabel
+---@field ProfessionXRating dbc.Table.v1215.ProfessionXRating
+---@field PvpBrawl dbc.Table.v1215.PvpBrawl
+---@field PvpRating dbc.Table.v1215.PvpRating
+---@field PvpScalingEffect dbc.Table.v1215.PvpScalingEffect
+---@field PvpScalingEffectType dbc.Table.v1215.PvpScalingEffectType
+---@field PvpSeason dbc.Table.v1215.PvpSeason
+---@field PvpSeasonRewardLevels dbc.Table.v1215.PvpSeasonRewardLevels
+---@field PvpTalent dbc.Table.v1215.PvpTalent
+---@field PvpTalentCategory dbc.Table.v1215.PvpTalentCategory
+---@field PvpTalentSlotUnlock dbc.Table.v1215.PvpTalentSlotUnlock
+---@field PvpTier dbc.Table.v1215.PvpTier
+---@field QuestDrivenScenario dbc.Table.v1215.QuestDrivenScenario
+---@field QuestFactionReward dbc.Table.v1215.QuestFactionReward
+---@field QuestFeedbackEffect dbc.Table.v1215.QuestFeedbackEffect
+---@field QuestHub dbc.Table.v1215.QuestHub
+---@field QuestInfo dbc.Table.v1215.QuestInfo
+---@field QuestLabel dbc.Table.v1215.QuestLabel
+---@field QuestLine dbc.Table.v1215.QuestLine
+---@field QuestLineXQuest dbc.Table.v1215.QuestLineXQuest
+---@field QuestMoneyReward dbc.Table.v1215.QuestMoneyReward
+---@field QuestObjective dbc.Table.v1215.QuestObjective
+---@field QuestPOIBlob dbc.Table.v1215.QuestPOIBlob
+---@field QuestPOIPoint dbc.Table.v1215.QuestPOIPoint
+---@field QuestPackageItem dbc.Table.v1215.QuestPackageItem
+---@field QuestSort dbc.Table.v1215.QuestSort
+---@field QuestV2 dbc.Table.v1215.QuestV2
+---@field QuestV2CliTask dbc.Table.v1215.QuestV2CliTask
+---@field QuestXGroupActivity dbc.Table.v1215.QuestXGroupActivity
+---@field QuestXP dbc.Table.v1215.QuestXP
+---@field QuestXUIQuestDetailsTheme dbc.Table.v1215.QuestXUIQuestDetailsTheme
+---@field QuestXUiWidgetSet dbc.Table.v1215.QuestXUiWidgetSet
+---@field RTPC dbc.Table.v1215.RTPC
+---@field RTPCData dbc.Table.v1215.RTPCData
+---@field RafActivity dbc.Table.v1215.RafActivity
+---@field RandPropPoints dbc.Table.v1215.RandPropPoints
+---@field RecipeProgressionGroupEntry dbc.Table.v1215.RecipeProgressionGroupEntry
+---@field RelicSlotTierRequirement dbc.Table.v1215.RelicSlotTierRequirement
+---@field RelicTalent dbc.Table.v1215.RelicTalent
+---@field RenownRewards dbc.Table.v1215.RenownRewards
+---@field RenownRewardsPlunderstorm dbc.Table.v1215.RenownRewardsPlunderstorm
+---@field ResearchBranch dbc.Table.v1215.ResearchBranch
+---@field ResearchField dbc.Table.v1215.ResearchField
+---@field ResearchProject dbc.Table.v1215.ResearchProject
+---@field ResearchSite dbc.Table.v1215.ResearchSite
+---@field Resistances dbc.Table.v1215.Resistances
+---@field RetroactiveDecorReward dbc.Table.v1215.RetroactiveDecorReward
+---@field RetroactiveDecorRewardCriteria dbc.Table.v1215.RetroactiveDecorRewardCriteria
+---@field RewardPack dbc.Table.v1215.RewardPack
+---@field RewardPackXCurrencyType dbc.Table.v1215.RewardPackXCurrencyType
+---@field RewardPackXItem dbc.Table.v1215.RewardPackXItem
+---@field RibbonQuality dbc.Table.v1215.RibbonQuality
+---@field RolodexType dbc.Table.v1215.RolodexType
+---@field RoomComponent dbc.Table.v1215.RoomComponent
+---@field RoomComponentOption dbc.Table.v1215.RoomComponentOption
+---@field RoomComponentOptionTexture dbc.Table.v1215.RoomComponentOptionTexture
+---@field RoomComponentTexture dbc.Table.v1215.RoomComponentTexture
+---@field RoomGridLine dbc.Table.v1215.RoomGridLine
+---@field RoomWmoData dbc.Table.v1215.RoomWmoData
+---@field RopeEffect dbc.Table.v1215.RopeEffect
+---@field RuneforgeLegendaryAbility dbc.Table.v1215.RuneforgeLegendaryAbility
+---@field SDReplacementModel dbc.Table.v1215.SDReplacementModel
+---@field SSAOSettings dbc.Table.v1215.SSAOSettings
+---@field Scenario dbc.Table.v1215.Scenario
+---@field ScenarioEventEntry dbc.Table.v1215.ScenarioEventEntry
+---@field ScenarioStep dbc.Table.v1215.ScenarioStep
+---@field SceneScript dbc.Table.v1215.SceneScript
+---@field SceneScriptGlobalText dbc.Table.v1215.SceneScriptGlobalText
+---@field SceneScriptPackage dbc.Table.v1215.SceneScriptPackage
+---@field SceneScriptPackageMember dbc.Table.v1215.SceneScriptPackageMember
+---@field SceneScriptText dbc.Table.v1215.SceneScriptText
+---@field ScheduledInterval dbc.Table.v1215.ScheduledInterval
+---@field ScreenEffect dbc.Table.v1215.ScreenEffect
+---@field ScreenEffectType dbc.Table.v1215.ScreenEffectType
+---@field ScreenLocation dbc.Table.v1215.ScreenLocation
+---@field SeamlessSite dbc.Table.v1215.SeamlessSite
+---@field ServerMessages dbc.Table.v1215.ServerMessages
+---@field ShadowyEffect dbc.Table.v1215.ShadowyEffect
+---@field SharedString dbc.Table.v1215.SharedString
+---@field SiegeableProperties dbc.Table.v1215.SiegeableProperties
+---@field SkillLine dbc.Table.v1215.SkillLine
+---@field SkillLineAbility dbc.Table.v1215.SkillLineAbility
+---@field SkillLineXTraitTree dbc.Table.v1215.SkillLineXTraitTree
+---@field SkillRaceClassInfo dbc.Table.v1215.SkillRaceClassInfo
+---@field SkySceneXPlayerCondition dbc.Table.v1215.SkySceneXPlayerCondition
+---@field Soulbind dbc.Table.v1215.Soulbind
+---@field SoulbindConduit dbc.Table.v1215.SoulbindConduit
+---@field SoulbindConduitEnhancedSocket dbc.Table.v1215.SoulbindConduitEnhancedSocket
+---@field SoulbindConduitItem dbc.Table.v1215.SoulbindConduitItem
+---@field SoulbindConduitRank dbc.Table.v1215.SoulbindConduitRank
+---@field SoulbindConduitRankProperties dbc.Table.v1215.SoulbindConduitRankProperties
+---@field SoulbindUIDisplayInfo dbc.Table.v1215.SoulbindUIDisplayInfo
+---@field SoundAmbience dbc.Table.v1215.SoundAmbience
+---@field SoundAmbienceFlavor dbc.Table.v1215.SoundAmbienceFlavor
+---@field SoundBus dbc.Table.v1215.SoundBus
+---@field SoundBusOverride dbc.Table.v1215.SoundBusOverride
+---@field SoundEmitterPillPoints dbc.Table.v1215.SoundEmitterPillPoints
+---@field SoundEmitters dbc.Table.v1215.SoundEmitters
+---@field SoundEnvelope dbc.Table.v1215.SoundEnvelope
+---@field SoundFilter dbc.Table.v1215.SoundFilter
+---@field SoundFilterElem dbc.Table.v1215.SoundFilterElem
+---@field SoundKit dbc.Table.v1215.SoundKit
+---@field SoundKitAdvanced dbc.Table.v1215.SoundKitAdvanced
+---@field SoundKitChild dbc.Table.v1215.SoundKitChild
+---@field SoundKitEntry dbc.Table.v1215.SoundKitEntry
+---@field SoundKitFallback dbc.Table.v1215.SoundKitFallback
+---@field SoundMixGroup dbc.Table.v1215.SoundMixGroup
+---@field SoundOverride dbc.Table.v1215.SoundOverride
+---@field SoundParameter dbc.Table.v1215.SoundParameter
+---@field SoundProviderPreferences dbc.Table.v1215.SoundProviderPreferences
+---@field SoundWaterfallEmitter dbc.Table.v1215.SoundWaterfallEmitter
+---@field SourceInfo dbc.Table.v1215.SourceInfo
+---@field SpamMessages dbc.Table.v1215.SpamMessages
+---@field SpecSetMember dbc.Table.v1215.SpecSetMember
+---@field SpecializationSpells dbc.Table.v1215.SpecializationSpells
+---@field SpecializationSpellsDisplay dbc.Table.v1215.SpecializationSpellsDisplay
+---@field Spell dbc.Table.v1215.Spell
+---@field SpellActionBarPref dbc.Table.v1215.SpellActionBarPref
+---@field SpellActivationOverlay dbc.Table.v1215.SpellActivationOverlay
+---@field SpellAuraNames dbc.Table.v1215.SpellAuraNames
+---@field SpellAuraOptions dbc.Table.v1215.SpellAuraOptions
+---@field SpellAuraRestrictions dbc.Table.v1215.SpellAuraRestrictions
+---@field SpellAuraVisXChrSpec dbc.Table.v1215.SpellAuraVisXChrSpec
+---@field SpellAuraVisibility dbc.Table.v1215.SpellAuraVisibility
+---@field SpellCastTimes dbc.Table.v1215.SpellCastTimes
+---@field SpellCastingRequirements dbc.Table.v1215.SpellCastingRequirements
+---@field SpellCategories dbc.Table.v1215.SpellCategories
+---@field SpellCategory dbc.Table.v1215.SpellCategory
+---@field SpellChainEffects dbc.Table.v1215.SpellChainEffects
+---@field SpellClassOptions dbc.Table.v1215.SpellClassOptions
+---@field SpellClutterAreaEffectCounts dbc.Table.v1215.SpellClutterAreaEffectCounts
+---@field SpellClutterFrameRates dbc.Table.v1215.SpellClutterFrameRates
+---@field SpellClutterImpactModelCounts dbc.Table.v1215.SpellClutterImpactModelCounts
+---@field SpellClutterKitDistances dbc.Table.v1215.SpellClutterKitDistances
+---@field SpellClutterMissileDist dbc.Table.v1215.SpellClutterMissileDist
+---@field SpellClutterWeaponTrailDist dbc.Table.v1215.SpellClutterWeaponTrailDist
+---@field SpellCooldowns dbc.Table.v1215.SpellCooldowns
+---@field SpellDescriptionVariables dbc.Table.v1215.SpellDescriptionVariables
+---@field SpellDiminish dbc.Table.v1215.SpellDiminish
+---@field SpellDispelType dbc.Table.v1215.SpellDispelType
+---@field SpellDuration dbc.Table.v1215.SpellDuration
+---@field SpellEffect dbc.Table.v1215.SpellEffect
+---@field SpellEffectAutoDescription dbc.Table.v1215.SpellEffectAutoDescription
+---@field SpellEffectEmission dbc.Table.v1215.SpellEffectEmission
+---@field SpellEffectNames dbc.Table.v1215.SpellEffectNames
+---@field SpellEmpower dbc.Table.v1215.SpellEmpower
+---@field SpellEmpowerStage dbc.Table.v1215.SpellEmpowerStage
+---@field SpellEquippedItems dbc.Table.v1215.SpellEquippedItems
+---@field SpellFlyout dbc.Table.v1215.SpellFlyout
+---@field SpellFlyoutItem dbc.Table.v1215.SpellFlyoutItem
+---@field SpellFocusObject dbc.Table.v1215.SpellFocusObject
+---@field SpellInterrupts dbc.Table.v1215.SpellInterrupts
+---@field SpellItemEnchantment dbc.Table.v1215.SpellItemEnchantment
+---@field SpellItemEnchantmentCondition dbc.Table.v1215.SpellItemEnchantmentCondition
+---@field SpellKeyboundOverride dbc.Table.v1215.SpellKeyboundOverride
+---@field SpellLabel dbc.Table.v1215.SpellLabel
+---@field SpellLearnSpell dbc.Table.v1215.SpellLearnSpell
+---@field SpellLevels dbc.Table.v1215.SpellLevels
+---@field SpellMechanic dbc.Table.v1215.SpellMechanic
+---@field SpellMisc dbc.Table.v1215.SpellMisc
+---@field SpellMissile dbc.Table.v1215.SpellMissile
+---@field SpellMissileMotion dbc.Table.v1215.SpellMissileMotion
+---@field SpellName dbc.Table.v1215.SpellName
+---@field SpellOverrideName dbc.Table.v1215.SpellOverrideName
+---@field SpellPower dbc.Table.v1215.SpellPower
+---@field SpellPowerDifficulty dbc.Table.v1215.SpellPowerDifficulty
+---@field SpellProceduralEffect dbc.Table.v1215.SpellProceduralEffect
+---@field SpellProcsPerMinute dbc.Table.v1215.SpellProcsPerMinute
+---@field SpellProcsPerMinuteMod dbc.Table.v1215.SpellProcsPerMinuteMod
+---@field SpellRadius dbc.Table.v1215.SpellRadius
+---@field SpellRange dbc.Table.v1215.SpellRange
+---@field SpellReagents dbc.Table.v1215.SpellReagents
+---@field SpellReagentsCurrency dbc.Table.v1215.SpellReagentsCurrency
+---@field SpellReplacement dbc.Table.v1215.SpellReplacement
+---@field SpellScaling dbc.Table.v1215.SpellScaling
+---@field SpellScript dbc.Table.v1215.SpellScript
+---@field SpellScriptText dbc.Table.v1215.SpellScriptText
+---@field SpellShapeshift dbc.Table.v1215.SpellShapeshift
+---@field SpellShapeshiftForm dbc.Table.v1215.SpellShapeshiftForm
+---@field SpellSpecialUnitEffect dbc.Table.v1215.SpellSpecialUnitEffect
+---@field SpellTargetRestrictions dbc.Table.v1215.SpellTargetRestrictions
+---@field SpellTgtFilterRuleNode dbc.Table.v1215.SpellTgtFilterRuleNode
+---@field SpellTgtFilterRuleSetNode dbc.Table.v1215.SpellTgtFilterRuleSetNode
+---@field SpellTgtFilterRuleTemplate dbc.Table.v1215.SpellTgtFilterRuleTemplate
+---@field SpellTgtGatherNode dbc.Table.v1215.SpellTgtGatherNode
+---@field SpellTgtGatherTemplate dbc.Table.v1215.SpellTgtGatherTemplate
+---@field SpellTotems dbc.Table.v1215.SpellTotems
+---@field SpellVisual dbc.Table.v1215.SpellVisual
+---@field SpellVisualAnim dbc.Table.v1215.SpellVisualAnim
+---@field SpellVisualColorEffect dbc.Table.v1215.SpellVisualColorEffect
+---@field SpellVisualEffectName dbc.Table.v1215.SpellVisualEffectName
+---@field SpellVisualEvent dbc.Table.v1215.SpellVisualEvent
+---@field SpellVisualKit dbc.Table.v1215.SpellVisualKit
+---@field SpellVisualKitAreaModel dbc.Table.v1215.SpellVisualKitAreaModel
+---@field SpellVisualKitDecalAttach dbc.Table.v1215.SpellVisualKitDecalAttach
+---@field SpellVisualKitEffect dbc.Table.v1215.SpellVisualKitEffect
+---@field SpellVisualKitModelAttach dbc.Table.v1215.SpellVisualKitModelAttach
+---@field SpellVisualKitPicker dbc.Table.v1215.SpellVisualKitPicker
+---@field SpellVisualKitPickerEntry dbc.Table.v1215.SpellVisualKitPickerEntry
+---@field SpellVisualMissile dbc.Table.v1215.SpellVisualMissile
+---@field SpellVisualScreenEffect dbc.Table.v1215.SpellVisualScreenEffect
+---@field SpellXDescriptionVariables dbc.Table.v1215.SpellXDescriptionVariables
+---@field SpellXSpellVisual dbc.Table.v1215.SpellXSpellVisual
+---@field SpotLightConditionMap dbc.Table.v1215.SpotLightConditionMap
+---@field StartupFiles dbc.Table.v1215.StartupFiles
+---@field Stationery dbc.Table.v1215.Stationery
+---@field SubgraphNode dbc.Table.v1215.SubgraphNode
+---@field SummonProperties dbc.Table.v1215.SummonProperties
+---@field TactKey dbc.Table.v1215.TactKey
+---@field TactKeyLookup dbc.Table.v1215.TactKeyLookup
+---@field Talent dbc.Table.v1215.Talent
+---@field TalentTab dbc.Table.v1215.TalentTab
+---@field TalentTreePrimarySpells dbc.Table.v1215.TalentTreePrimarySpells
+---@field TaxiNodes dbc.Table.v1215.TaxiNodes
+---@field TaxiPath dbc.Table.v1215.TaxiPath
+---@field TaxiPathNode dbc.Table.v1215.TaxiPathNode
+---@field TerrainColorGradingRamp dbc.Table.v1215.TerrainColorGradingRamp
+---@field TerrainMaterial dbc.Table.v1215.TerrainMaterial
+---@field TerrainType dbc.Table.v1215.TerrainType
+---@field TerrainTypeSounds dbc.Table.v1215.TerrainTypeSounds
+---@field TextureBlendSet dbc.Table.v1215.TextureBlendSet
+---@field TextureFileData dbc.Table.v1215.TextureFileData
+---@field TierTransition dbc.Table.v1215.TierTransition
+---@field TieredEntrance dbc.Table.v1215.TieredEntrance
+---@field TimeEventData dbc.Table.v1215.TimeEventData
+---@field TotemCategory dbc.Table.v1215.TotemCategory
+---@field Toy dbc.Table.v1215.Toy
+---@field TradeSkillCategory dbc.Table.v1215.TradeSkillCategory
+---@field TradeSkillItem dbc.Table.v1215.TradeSkillItem
+---@field TraitCond dbc.Table.v1215.TraitCond
+---@field TraitCondAccountElement dbc.Table.v1215.TraitCondAccountElement
+---@field TraitCost dbc.Table.v1215.TraitCost
+---@field TraitCurrency dbc.Table.v1215.TraitCurrency
+---@field TraitCurrencySource dbc.Table.v1215.TraitCurrencySource
+---@field TraitDefinition dbc.Table.v1215.TraitDefinition
+---@field TraitDefinitionEffectPoints dbc.Table.v1215.TraitDefinitionEffectPoints
+---@field TraitEdge dbc.Table.v1215.TraitEdge
+---@field TraitNode dbc.Table.v1215.TraitNode
+---@field TraitNodeEntry dbc.Table.v1215.TraitNodeEntry
+---@field TraitNodeEntryXTraitCond dbc.Table.v1215.TraitNodeEntryXTraitCond
+---@field TraitNodeEntryXTraitCost dbc.Table.v1215.TraitNodeEntryXTraitCost
+---@field TraitNodeGroup dbc.Table.v1215.TraitNodeGroup
+---@field TraitNodeGroupXTraitCond dbc.Table.v1215.TraitNodeGroupXTraitCond
+---@field TraitNodeGroupXTraitCost dbc.Table.v1215.TraitNodeGroupXTraitCost
+---@field TraitNodeGroupXTraitNode dbc.Table.v1215.TraitNodeGroupXTraitNode
+---@field TraitNodeXTraitCond dbc.Table.v1215.TraitNodeXTraitCond
+---@field TraitNodeXTraitCost dbc.Table.v1215.TraitNodeXTraitCost
+---@field TraitNodeXTraitNodeEntry dbc.Table.v1215.TraitNodeXTraitNodeEntry
+---@field TraitSubTree dbc.Table.v1215.TraitSubTree
+---@field TraitSystem dbc.Table.v1215.TraitSystem
+---@field TraitTree dbc.Table.v1215.TraitTree
+---@field TraitTreeLoadout dbc.Table.v1215.TraitTreeLoadout
+---@field TraitTreeLoadoutEntry dbc.Table.v1215.TraitTreeLoadoutEntry
+---@field TraitTreeXTraitCost dbc.Table.v1215.TraitTreeXTraitCost
+---@field TraitTreeXTraitCurrency dbc.Table.v1215.TraitTreeXTraitCurrency
+---@field TransformMatrix dbc.Table.v1215.TransformMatrix
+---@field TransmogDefaultLevel dbc.Table.v1215.TransmogDefaultLevel
+---@field TransmogHoliday dbc.Table.v1215.TransmogHoliday
+---@field TransmogIllusion dbc.Table.v1215.TransmogIllusion
+---@field TransmogOutfitEntry dbc.Table.v1215.TransmogOutfitEntry
+---@field TransmogOutfitSlotInfo dbc.Table.v1215.TransmogOutfitSlotInfo
+---@field TransmogOutfitSlotOption dbc.Table.v1215.TransmogOutfitSlotOption
+---@field TransmogSet dbc.Table.v1215.TransmogSet
+---@field TransmogSetGroup dbc.Table.v1215.TransmogSetGroup
+---@field TransmogSetItem dbc.Table.v1215.TransmogSetItem
+---@field TransmogSituation dbc.Table.v1215.TransmogSituation
+---@field TransmogSituationGroup dbc.Table.v1215.TransmogSituationGroup
+---@field TransmogSituationTrigger dbc.Table.v1215.TransmogSituationTrigger
+---@field TransportAnimation dbc.Table.v1215.TransportAnimation
+---@field TransportPhysics dbc.Table.v1215.TransportPhysics
+---@field TransportRotation dbc.Table.v1215.TransportRotation
+---@field Trophy dbc.Table.v1215.Trophy
+---@field UIArrowCallout dbc.Table.v1215.UIArrowCallout
+---@field UIButton dbc.Table.v1215.UIButton
+---@field UIChromieTimeExpansionInfo dbc.Table.v1215.UIChromieTimeExpansionInfo
+---@field UICinematicIntroInfo dbc.Table.v1215.UICinematicIntroInfo
+---@field UICovenantAbility dbc.Table.v1215.UICovenantAbility
+---@field UICovenantHighlight dbc.Table.v1215.UICovenantHighlight
+---@field UICovenantPreview dbc.Table.v1215.UICovenantPreview
+---@field UIDeadlyDebuff dbc.Table.v1215.UIDeadlyDebuff
+---@field UIDungeonScoreRarity dbc.Table.v1215.UIDungeonScoreRarity
+---@field UIEventToast dbc.Table.v1215.UIEventToast
+---@field UIExpansionDisplayInfo dbc.Table.v1215.UIExpansionDisplayInfo
+---@field UIExpansionDisplayInfoIcon dbc.Table.v1215.UIExpansionDisplayInfoIcon
+---@field UIGenericWidgetDisplay dbc.Table.v1215.UIGenericWidgetDisplay
+---@field UIMapPinInfo dbc.Table.v1215.UIMapPinInfo
+---@field UIModifiedInstance dbc.Table.v1215.UIModifiedInstance
+---@field UIScenarioDisplayInfo dbc.Table.v1215.UIScenarioDisplayInfo
+---@field UIScriptedAnimationEffect dbc.Table.v1215.UIScriptedAnimationEffect
+---@field UISplashScreen dbc.Table.v1215.UISplashScreen
+---@field UiCamFbackTalkingHeadChrRace dbc.Table.v1215.UiCamFbackTalkingHeadChrRace
+---@field UiCamFbackTransmogChrRace dbc.Table.v1215.UiCamFbackTransmogChrRace
+---@field UiCamFbackTransmogWeapon dbc.Table.v1215.UiCamFbackTransmogWeapon
+---@field UiCamera dbc.Table.v1215.UiCamera
+---@field UiCameraType dbc.Table.v1215.UiCameraType
+---@field UiCanvas dbc.Table.v1215.UiCanvas
+---@field UiCovenantDisplayInfo dbc.Table.v1215.UiCovenantDisplayInfo
+---@field UiItemInteraction dbc.Table.v1215.UiItemInteraction
+---@field UiMap dbc.Table.v1215.UiMap
+---@field UiMapArt dbc.Table.v1215.UiMapArt
+---@field UiMapArtStyleLayer dbc.Table.v1215.UiMapArtStyleLayer
+---@field UiMapArtTile dbc.Table.v1215.UiMapArtTile
+---@field UiMapAssignment dbc.Table.v1215.UiMapAssignment
+---@field UiMapFogOfWar dbc.Table.v1215.UiMapFogOfWar
+---@field UiMapFogOfWarVisualization dbc.Table.v1215.UiMapFogOfWarVisualization
+---@field UiMapGroup dbc.Table.v1215.UiMapGroup
+---@field UiMapGroupMember dbc.Table.v1215.UiMapGroupMember
+---@field UiMapLink dbc.Table.v1215.UiMapLink
+---@field UiMapXMapArt dbc.Table.v1215.UiMapXMapArt
+---@field UiModelScene dbc.Table.v1215.UiModelScene
+---@field UiModelSceneActor dbc.Table.v1215.UiModelSceneActor
+---@field UiModelSceneActorDisplay dbc.Table.v1215.UiModelSceneActorDisplay
+---@field UiModelSceneCamera dbc.Table.v1215.UiModelSceneCamera
+---@field UiPartyPose dbc.Table.v1215.UiPartyPose
+---@field UiQuestDetailsTheme dbc.Table.v1215.UiQuestDetailsTheme
+---@field UiTextureAtlas dbc.Table.v1215.UiTextureAtlas
+---@field UiTextureAtlasElement dbc.Table.v1215.UiTextureAtlasElement
+---@field UiTextureAtlasElementSliceData dbc.Table.v1215.UiTextureAtlasElementSliceData
+---@field UiTextureAtlasMember dbc.Table.v1215.UiTextureAtlasMember
+---@field UiTextureKit dbc.Table.v1215.UiTextureKit
+---@field UiWeeklyReward dbc.Table.v1215.UiWeeklyReward
+---@field UiWidget dbc.Table.v1215.UiWidget
+---@field UiWidgetConstantSource dbc.Table.v1215.UiWidgetConstantSource
+---@field UiWidgetDataSource dbc.Table.v1215.UiWidgetDataSource
+---@field UiWidgetMap dbc.Table.v1215.UiWidgetMap
+---@field UiWidgetSet dbc.Table.v1215.UiWidgetSet
+---@field UiWidgetStringSource dbc.Table.v1215.UiWidgetStringSource
+---@field UiWidgetVisTypeDataReq dbc.Table.v1215.UiWidgetVisTypeDataReq
+---@field UiWidgetVisualization dbc.Table.v1215.UiWidgetVisualization
+---@field UiWidgetXWidgetSet dbc.Table.v1215.UiWidgetXWidgetSet
+---@field UnitBlood dbc.Table.v1215.UnitBlood
+---@field UnitBloodLevels dbc.Table.v1215.UnitBloodLevels
+---@field UnitCondition dbc.Table.v1215.UnitCondition
+---@field UnitPowerBar dbc.Table.v1215.UnitPowerBar
+---@field Vehicle dbc.Table.v1215.Vehicle
+---@field VehiclePOIType dbc.Table.v1215.VehiclePOIType
+---@field VehicleSeat dbc.Table.v1215.VehicleSeat
+---@field VehicleUIIndSeat dbc.Table.v1215.VehicleUIIndSeat
+---@field VehicleUIIndicator dbc.Table.v1215.VehicleUIIndicator
+---@field Vignette dbc.Table.v1215.Vignette
+---@field VignetteUiWidgetSet dbc.Table.v1215.VignetteUiWidgetSet
+---@field VirtualAttachment dbc.Table.v1215.VirtualAttachment
+---@field VirtualAttachmentCustomization dbc.Table.v1215.VirtualAttachmentCustomization
+---@field VocalUISounds dbc.Table.v1215.VocalUISounds
+---@field VoiceOverPriority dbc.Table.v1215.VoiceOverPriority
+---@field VolumeFogCondition dbc.Table.v1215.VolumeFogCondition
+---@field WMOAreaTable dbc.Table.v1215.WMOAreaTable
+---@field WMOMinimapTexture dbc.Table.v1215.WMOMinimapTexture
+---@field WarbandPlacementDisplayInfo dbc.Table.v1215.WarbandPlacementDisplayInfo
+---@field WarbandScene dbc.Table.v1215.WarbandScene
+---@field WarbandSceneAnimChrSpec dbc.Table.v1215.WarbandSceneAnimChrSpec
+---@field WarbandSceneAnimation dbc.Table.v1215.WarbandSceneAnimation
+---@field WarbandScenePlacement dbc.Table.v1215.WarbandScenePlacement
+---@field WarbandScenePlacementFilterReq dbc.Table.v1215.WarbandScenePlacementFilterReq
+---@field WarbandScenePlacementOption dbc.Table.v1215.WarbandScenePlacementOption
+---@field WarbandScenePlcmntAnimOverride dbc.Table.v1215.WarbandScenePlcmntAnimOverride
+---@field WarbandSceneSourceInfo dbc.Table.v1215.WarbandSceneSourceInfo
+---@field WaterfallData dbc.Table.v1215.WaterfallData
+---@field WaypointEdge dbc.Table.v1215.WaypointEdge
+---@field WaypointMapVolume dbc.Table.v1215.WaypointMapVolume
+---@field WaypointNode dbc.Table.v1215.WaypointNode
+---@field WaypointSafeLocs dbc.Table.v1215.WaypointSafeLocs
+---@field WbAccessControlList dbc.Table.v1215.WbAccessControlList
+---@field WeaponImpactSounds dbc.Table.v1215.WeaponImpactSounds
+---@field WeaponSwingSounds2 dbc.Table.v1215.WeaponSwingSounds2
+---@field WeaponTrail dbc.Table.v1215.WeaponTrail
+---@field WeaponTrailModelDef dbc.Table.v1215.WeaponTrailModelDef
+---@field WeaponTrailParam dbc.Table.v1215.WeaponTrailParam
+---@field Weather dbc.Table.v1215.Weather
+---@field WeatherXParticulate dbc.Table.v1215.WeatherXParticulate
+---@field WeeklyRewardChestActivityTier dbc.Table.v1215.WeeklyRewardChestActivityTier
+---@field WeeklyRewardChestThreshold dbc.Table.v1215.WeeklyRewardChestThreshold
+---@field WindSettings dbc.Table.v1215.WindSettings
+---@field WmoMaxScale dbc.Table.v1215.WmoMaxScale
+---@field WorldBossLockout dbc.Table.v1215.WorldBossLockout
+---@field WorldChunkSounds dbc.Table.v1215.WorldChunkSounds
+---@field WorldEffect dbc.Table.v1215.WorldEffect
+---@field WorldElapsedTimer dbc.Table.v1215.WorldElapsedTimer
+---@field WorldLayerMapSet dbc.Table.v1215.WorldLayerMapSet
+---@field WorldMapOverlay dbc.Table.v1215.WorldMapOverlay
+---@field WorldMapOverlayTile dbc.Table.v1215.WorldMapOverlayTile
+---@field WorldShadow dbc.Table.v1215.WorldShadow
+---@field WorldStateExpression dbc.Table.v1215.WorldStateExpression
+---@field WorldStateZoneSounds dbc.Table.v1215.WorldStateZoneSounds
+---@field World_PVP_Area dbc.Table.v1215.World_PVP_Area
+---@field ZoneIntroMusicTable dbc.Table.v1215.ZoneIntroMusicTable
+---@field ZoneLight dbc.Table.v1215.ZoneLight
+---@field ZoneLightPoint dbc.Table.v1215.ZoneLightPoint
+---@field ZoneMusic dbc.Table.v1215.ZoneMusic
+---@field ZoneStory dbc.Table.v1215.ZoneStory
+
+---@overload fun(self: DbcWorkspace_v1215, name: '"AccountStoreCategory"'): dbc.Table.v1215.AccountStoreCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"AccountStoreItem"'): dbc.Table.v1215.AccountStoreItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"Achievement"'): dbc.Table.v1215.Achievement
+---@overload fun(self: DbcWorkspace_v1215, name: '"Achievement_Category"'): dbc.Table.v1215.Achievement_Category
+---@overload fun(self: DbcWorkspace_v1215, name: '"ActionBarGroup"'): dbc.Table.v1215.ActionBarGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ActionBarGroupEntry"'): dbc.Table.v1215.ActionBarGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"AdventureJournal"'): dbc.Table.v1215.AdventureJournal
+---@overload fun(self: DbcWorkspace_v1215, name: '"AdventureJournalItem"'): dbc.Table.v1215.AdventureJournalItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"AdventureMapPOI"'): dbc.Table.v1215.AdventureMapPOI
+---@overload fun(self: DbcWorkspace_v1215, name: '"AlliedRace"'): dbc.Table.v1215.AlliedRace
+---@overload fun(self: DbcWorkspace_v1215, name: '"AltMinimap"'): dbc.Table.v1215.AltMinimap
+---@overload fun(self: DbcWorkspace_v1215, name: '"AltMinimapFiledata"'): dbc.Table.v1215.AltMinimapFiledata
+---@overload fun(self: DbcWorkspace_v1215, name: '"AltMinimapWMO"'): dbc.Table.v1215.AltMinimapWMO
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKit"'): dbc.Table.v1215.AnimKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitBoneSet"'): dbc.Table.v1215.AnimKitBoneSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitBoneSetAlias"'): dbc.Table.v1215.AnimKitBoneSetAlias
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitConfig"'): dbc.Table.v1215.AnimKitConfig
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitConfigBoneSet"'): dbc.Table.v1215.AnimKitConfigBoneSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitPriority"'): dbc.Table.v1215.AnimKitPriority
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitReplacement"'): dbc.Table.v1215.AnimKitReplacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitSegment"'): dbc.Table.v1215.AnimKitSegment
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimReplacement"'): dbc.Table.v1215.AnimReplacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimReplacementSet"'): dbc.Table.v1215.AnimReplacementSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimaCable"'): dbc.Table.v1215.AnimaCable
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimaCylinder"'): dbc.Table.v1215.AnimaCylinder
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimaMaterial"'): dbc.Table.v1215.AnimaMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimationData"'): dbc.Table.v1215.AnimationData
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaConditionalData"'): dbc.Table.v1215.AreaConditionalData
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaFarClipOverride"'): dbc.Table.v1215.AreaFarClipOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaGroupMember"'): dbc.Table.v1215.AreaGroupMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaPOI"'): dbc.Table.v1215.AreaPOI
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaPOIState"'): dbc.Table.v1215.AreaPOIState
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaPOIUiWidgetSet"'): dbc.Table.v1215.AreaPOIUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTable"'): dbc.Table.v1215.AreaTable
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTrigger"'): dbc.Table.v1215.AreaTrigger
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerActionSet"'): dbc.Table.v1215.AreaTriggerActionSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerBoundedPlane"'): dbc.Table.v1215.AreaTriggerBoundedPlane
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerBox"'): dbc.Table.v1215.AreaTriggerBox
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerCreateProperties"'): dbc.Table.v1215.AreaTriggerCreateProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerCylinder"'): dbc.Table.v1215.AreaTriggerCylinder
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerDisk"'): dbc.Table.v1215.AreaTriggerDisk
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerSphere"'): dbc.Table.v1215.AreaTriggerSphere
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArenaTrackedItem"'): dbc.Table.v1215.ArenaTrackedItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArmorLocation"'): dbc.Table.v1215.ArmorLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"Artifact"'): dbc.Table.v1215.Artifact
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactAppearance"'): dbc.Table.v1215.ArtifactAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactAppearanceSet"'): dbc.Table.v1215.ArtifactAppearanceSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactCategory"'): dbc.Table.v1215.ArtifactCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactItemToTransmog"'): dbc.Table.v1215.ArtifactItemToTransmog
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPower"'): dbc.Table.v1215.ArtifactPower
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPowerLink"'): dbc.Table.v1215.ArtifactPowerLink
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPowerPicker"'): dbc.Table.v1215.ArtifactPowerPicker
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPowerRank"'): dbc.Table.v1215.ArtifactPowerRank
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactQuestXP"'): dbc.Table.v1215.ArtifactQuestXP
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactTier"'): dbc.Table.v1215.ArtifactTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactUnlock"'): dbc.Table.v1215.ArtifactUnlock
+---@overload fun(self: DbcWorkspace_v1215, name: '"AssistedCombat"'): dbc.Table.v1215.AssistedCombat
+---@overload fun(self: DbcWorkspace_v1215, name: '"AssistedCombatRule"'): dbc.Table.v1215.AssistedCombatRule
+---@overload fun(self: DbcWorkspace_v1215, name: '"AssistedCombatStep"'): dbc.Table.v1215.AssistedCombatStep
+---@overload fun(self: DbcWorkspace_v1215, name: '"AuctionHouse"'): dbc.Table.v1215.AuctionHouse
+---@overload fun(self: DbcWorkspace_v1215, name: '"AuctionHouseCategory"'): dbc.Table.v1215.AuctionHouseCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteEmpoweredItem"'): dbc.Table.v1215.AzeriteEmpoweredItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteEssence"'): dbc.Table.v1215.AzeriteEssence
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteEssencePower"'): dbc.Table.v1215.AzeriteEssencePower
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteItem"'): dbc.Table.v1215.AzeriteItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteItemMilestonePower"'): dbc.Table.v1215.AzeriteItemMilestonePower
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteKnowledgeMultiplier"'): dbc.Table.v1215.AzeriteKnowledgeMultiplier
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteLevelInfo"'): dbc.Table.v1215.AzeriteLevelInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeritePower"'): dbc.Table.v1215.AzeritePower
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeritePowerSetMember"'): dbc.Table.v1215.AzeritePowerSetMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteTierUnlock"'): dbc.Table.v1215.AzeriteTierUnlock
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteTierUnlockSet"'): dbc.Table.v1215.AzeriteTierUnlockSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteUnlockMapping"'): dbc.Table.v1215.AzeriteUnlockMapping
+---@overload fun(self: DbcWorkspace_v1215, name: '"BankBagSlotPrices"'): dbc.Table.v1215.BankBagSlotPrices
+---@overload fun(self: DbcWorkspace_v1215, name: '"BankTab"'): dbc.Table.v1215.BankTab
+---@overload fun(self: DbcWorkspace_v1215, name: '"BannedAddons"'): dbc.Table.v1215.BannedAddons
+---@overload fun(self: DbcWorkspace_v1215, name: '"BarberShopStyle"'): dbc.Table.v1215.BarberShopStyle
+---@overload fun(self: DbcWorkspace_v1215, name: '"BarrageEffect"'): dbc.Table.v1215.BarrageEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbility"'): dbc.Table.v1215.BattlePetAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbilityEffect"'): dbc.Table.v1215.BattlePetAbilityEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbilityState"'): dbc.Table.v1215.BattlePetAbilityState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbilityTurn"'): dbc.Table.v1215.BattlePetAbilityTurn
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetBreedQuality"'): dbc.Table.v1215.BattlePetBreedQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetBreedState"'): dbc.Table.v1215.BattlePetBreedState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetDisplayOverride"'): dbc.Table.v1215.BattlePetDisplayOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetEffectProperties"'): dbc.Table.v1215.BattlePetEffectProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetNPCTeamMember"'): dbc.Table.v1215.BattlePetNPCTeamMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetSpecies"'): dbc.Table.v1215.BattlePetSpecies
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetSpeciesState"'): dbc.Table.v1215.BattlePetSpeciesState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetSpeciesXAbility"'): dbc.Table.v1215.BattlePetSpeciesXAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetState"'): dbc.Table.v1215.BattlePetState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetVisual"'): dbc.Table.v1215.BattlePetVisual
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlemasterList"'): dbc.Table.v1215.BattlemasterList
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlemasterListXMap"'): dbc.Table.v1215.BattlemasterListXMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlepayCurrency"'): dbc.Table.v1215.BattlepayCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"BeamEffect"'): dbc.Table.v1215.BeamEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"BoneWindModifierModel"'): dbc.Table.v1215.BoneWindModifierModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"BoneWindModifiers"'): dbc.Table.v1215.BoneWindModifiers
+---@overload fun(self: DbcWorkspace_v1215, name: '"BonusRoll"'): dbc.Table.v1215.BonusRoll
+---@overload fun(self: DbcWorkspace_v1215, name: '"Bounty"'): dbc.Table.v1215.Bounty
+---@overload fun(self: DbcWorkspace_v1215, name: '"BountySet"'): dbc.Table.v1215.BountySet
+---@overload fun(self: DbcWorkspace_v1215, name: '"BroadcastText"'): dbc.Table.v1215.BroadcastText
+---@overload fun(self: DbcWorkspace_v1215, name: '"BroadcastTextDuration"'): dbc.Table.v1215.BroadcastTextDuration
+---@overload fun(self: DbcWorkspace_v1215, name: '"CameraEffect"'): dbc.Table.v1215.CameraEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CameraEffectEntry"'): dbc.Table.v1215.CameraEffectEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"CameraMode"'): dbc.Table.v1215.CameraMode
+---@overload fun(self: DbcWorkspace_v1215, name: '"Campaign"'): dbc.Table.v1215.Campaign
+---@overload fun(self: DbcWorkspace_v1215, name: '"CampaignXCondition"'): dbc.Table.v1215.CampaignXCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"CampaignXQuestLine"'): dbc.Table.v1215.CampaignXQuestLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"CastableRaidBuffs"'): dbc.Table.v1215.CastableRaidBuffs
+---@overload fun(self: DbcWorkspace_v1215, name: '"CatalogShopGameTitleInfo"'): dbc.Table.v1215.CatalogShopGameTitleInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CelestialBody"'): dbc.Table.v1215.CelestialBody
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_Categories"'): dbc.Table.v1215.Cfg_Categories
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_Configs"'): dbc.Table.v1215.Cfg_Configs
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_GameRules"'): dbc.Table.v1215.Cfg_GameRules
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_Regions"'): dbc.Table.v1215.Cfg_Regions
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_TimeEventRegionGroup"'): dbc.Table.v1215.Cfg_TimeEventRegionGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChallengeModeItemBonusOverride"'): dbc.Table.v1215.ChallengeModeItemBonusOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChallengeModeReward"'): dbc.Table.v1215.ChallengeModeReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChallengeModeXReward"'): dbc.Table.v1215.ChallengeModeXReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharBaseInfo"'): dbc.Table.v1215.CharBaseInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharBaseSection"'): dbc.Table.v1215.CharBaseSection
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharComponentTextureLayouts"'): dbc.Table.v1215.CharComponentTextureLayouts
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharComponentTextureSections"'): dbc.Table.v1215.CharComponentTextureSections
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharHairGeosets"'): dbc.Table.v1215.CharHairGeosets
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharSectionCondition"'): dbc.Table.v1215.CharSectionCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharShipment"'): dbc.Table.v1215.CharShipment
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharShipmentContainer"'): dbc.Table.v1215.CharShipmentContainer
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharStartKit"'): dbc.Table.v1215.CharStartKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharTitles"'): dbc.Table.v1215.CharTitles
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterFacialHairStyles"'): dbc.Table.v1215.CharacterFacialHairStyles
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterLoadout"'): dbc.Table.v1215.CharacterLoadout
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterLoadoutItem"'): dbc.Table.v1215.CharacterLoadoutItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterLoadoutPet"'): dbc.Table.v1215.CharacterLoadoutPet
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterServiceInfo"'): dbc.Table.v1215.CharacterServiceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChatChannels"'): dbc.Table.v1215.ChatChannels
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChatProfanity"'): dbc.Table.v1215.ChatProfanity
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassRaceSex"'): dbc.Table.v1215.ChrClassRaceSex
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassTitle"'): dbc.Table.v1215.ChrClassTitle
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassUIChrModelInfo"'): dbc.Table.v1215.ChrClassUIChrModelInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassUIDisplay"'): dbc.Table.v1215.ChrClassUIDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassVillain"'): dbc.Table.v1215.ChrClassVillain
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClasses"'): dbc.Table.v1215.ChrClasses
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassesXPowerTypes"'): dbc.Table.v1215.ChrClassesXPowerTypes
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCreateClassAnimTarget"'): dbc.Table.v1215.ChrCreateClassAnimTarget
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCreateClassAnimTargetInfo"'): dbc.Table.v1215.ChrCreateClassAnimTargetInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustClientChoiceConversion"'): dbc.Table.v1215.ChrCustClientChoiceConversion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustGeoComponentLink"'): dbc.Table.v1215.ChrCustGeoComponentLink
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustItemGeoModify"'): dbc.Table.v1215.ChrCustItemGeoModify
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomization"'): dbc.Table.v1215.ChrCustomization
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationBoneSet"'): dbc.Table.v1215.ChrCustomizationBoneSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationCategory"'): dbc.Table.v1215.ChrCustomizationCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationChoice"'): dbc.Table.v1215.ChrCustomizationChoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationCondModel"'): dbc.Table.v1215.ChrCustomizationCondModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationConversion"'): dbc.Table.v1215.ChrCustomizationConversion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationDisplayInfo"'): dbc.Table.v1215.ChrCustomizationDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationElement"'): dbc.Table.v1215.ChrCustomizationElement
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationGeoset"'): dbc.Table.v1215.ChrCustomizationGeoset
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationGlyphPet"'): dbc.Table.v1215.ChrCustomizationGlyphPet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationMaterial"'): dbc.Table.v1215.ChrCustomizationMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationOption"'): dbc.Table.v1215.ChrCustomizationOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationReq"'): dbc.Table.v1215.ChrCustomizationReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationReqChoice"'): dbc.Table.v1215.ChrCustomizationReqChoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationSkinnedModel"'): dbc.Table.v1215.ChrCustomizationSkinnedModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationVisReq"'): dbc.Table.v1215.ChrCustomizationVisReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationVoice"'): dbc.Table.v1215.ChrCustomizationVoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrModel"'): dbc.Table.v1215.ChrModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrModelMaterial"'): dbc.Table.v1215.ChrModelMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrModelTextureLayer"'): dbc.Table.v1215.ChrModelTextureLayer
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRaceRacialAbility"'): dbc.Table.v1215.ChrRaceRacialAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRaceXChrModel"'): dbc.Table.v1215.ChrRaceXChrModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRaces"'): dbc.Table.v1215.ChrRaces
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRacesCreateScreenIcon"'): dbc.Table.v1215.ChrRacesCreateScreenIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRacesPing"'): dbc.Table.v1215.ChrRacesPing
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrSelectBackgroundCDI"'): dbc.Table.v1215.ChrSelectBackgroundCDI
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrSpecialization"'): dbc.Table.v1215.ChrSpecialization
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrUpgradeBucket"'): dbc.Table.v1215.ChrUpgradeBucket
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrUpgradeBucketSpell"'): dbc.Table.v1215.ChrUpgradeBucketSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrUpgradeTier"'): dbc.Table.v1215.ChrUpgradeTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"CinematicCamera"'): dbc.Table.v1215.CinematicCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"CinematicSequences"'): dbc.Table.v1215.CinematicSequences
+---@overload fun(self: DbcWorkspace_v1215, name: '"ClientSceneEffect"'): dbc.Table.v1215.ClientSceneEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ClientSettings"'): dbc.Table.v1215.ClientSettings
+---@overload fun(self: DbcWorkspace_v1215, name: '"CloakDampening"'): dbc.Table.v1215.CloakDampening
+---@overload fun(self: DbcWorkspace_v1215, name: '"CloneEffect"'): dbc.Table.v1215.CloneEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceEncounter"'): dbc.Table.v1215.CollectableSourceEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceEncounterSparse"'): dbc.Table.v1215.CollectableSourceEncounterSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceInfo"'): dbc.Table.v1215.CollectableSourceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceQuest"'): dbc.Table.v1215.CollectableSourceQuest
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceQuestSparse"'): dbc.Table.v1215.CollectableSourceQuestSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceVendor"'): dbc.Table.v1215.CollectableSourceVendor
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceVendorSparse"'): dbc.Table.v1215.CollectableSourceVendorSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CombatCondition"'): dbc.Table.v1215.CombatCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommentatorIndirectSpell"'): dbc.Table.v1215.CommentatorIndirectSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommentatorStartLocation"'): dbc.Table.v1215.CommentatorStartLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommentatorTrackedCooldown"'): dbc.Table.v1215.CommentatorTrackedCooldown
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommunityIcon"'): dbc.Table.v1215.CommunityIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"ComponentModelFileData"'): dbc.Table.v1215.ComponentModelFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ComponentTextureFileData"'): dbc.Table.v1215.ComponentTextureFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CompositeSpellsUIRedirect"'): dbc.Table.v1215.CompositeSpellsUIRedirect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalChrModel"'): dbc.Table.v1215.ConditionalChrModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalContentTuning"'): dbc.Table.v1215.ConditionalContentTuning
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalCreatureModelData"'): dbc.Table.v1215.ConditionalCreatureModelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalItemAppearance"'): dbc.Table.v1215.ConditionalItemAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConfigurationWarning"'): dbc.Table.v1215.ConfigurationWarning
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentPush"'): dbc.Table.v1215.ContentPush
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentRestrictionRule"'): dbc.Table.v1215.ContentRestrictionRule
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentRestrictionRuleSet"'): dbc.Table.v1215.ContentRestrictionRuleSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuning"'): dbc.Table.v1215.ContentTuning
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuningXDifficulty"'): dbc.Table.v1215.ContentTuningXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuningXExpected"'): dbc.Table.v1215.ContentTuningXExpected
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuningXLabel"'): dbc.Table.v1215.ContentTuningXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"Contribution"'): dbc.Table.v1215.Contribution
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContributionStyle"'): dbc.Table.v1215.ContributionStyle
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContributionStyleContainer"'): dbc.Table.v1215.ContributionStyleContainer
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConversationLine"'): dbc.Table.v1215.ConversationLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownSet"'): dbc.Table.v1215.CooldownSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownSetLinkedSpell"'): dbc.Table.v1215.CooldownSetLinkedSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownSetSpell"'): dbc.Table.v1215.CooldownSetSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownViewerItemSpell"'): dbc.Table.v1215.CooldownViewerItemSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CorruptionEffects"'): dbc.Table.v1215.CorruptionEffects
+---@overload fun(self: DbcWorkspace_v1215, name: '"Covenant"'): dbc.Table.v1215.Covenant
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingData"'): dbc.Table.v1215.CraftingData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDataEnchantQuality"'): dbc.Table.v1215.CraftingDataEnchantQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDataItemQuality"'): dbc.Table.v1215.CraftingDataItemQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDifficulty"'): dbc.Table.v1215.CraftingDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDifficultyQuality"'): dbc.Table.v1215.CraftingDifficultyQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingOrder"'): dbc.Table.v1215.CraftingOrder
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingOrderHouse"'): dbc.Table.v1215.CraftingOrderHouse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingOrderXLabel"'): dbc.Table.v1215.CraftingOrderXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingQuality"'): dbc.Table.v1215.CraftingQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingQualityAtlasSet"'): dbc.Table.v1215.CraftingQualityAtlasSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingReagentEffect"'): dbc.Table.v1215.CraftingReagentEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingReagentQuality"'): dbc.Table.v1215.CraftingReagentQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingReagentRequirement"'): dbc.Table.v1215.CraftingReagentRequirement
+---@overload fun(self: DbcWorkspace_v1215, name: '"Creature"'): dbc.Table.v1215.Creature
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDifficulty"'): dbc.Table.v1215.CreatureDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDifficultyTreasure"'): dbc.Table.v1215.CreatureDifficultyTreasure
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDispXUiCamera"'): dbc.Table.v1215.CreatureDispXUiCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfo"'): dbc.Table.v1215.CreatureDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoCond"'): dbc.Table.v1215.CreatureDisplayInfoCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoCondXChoice"'): dbc.Table.v1215.CreatureDisplayInfoCondXChoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoEvt"'): dbc.Table.v1215.CreatureDisplayInfoEvt
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoExtra"'): dbc.Table.v1215.CreatureDisplayInfoExtra
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoGeosetData"'): dbc.Table.v1215.CreatureDisplayInfoGeosetData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoOption"'): dbc.Table.v1215.CreatureDisplayInfoOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoTrn"'): dbc.Table.v1215.CreatureDisplayInfoTrn
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayXUIModelScene"'): dbc.Table.v1215.CreatureDisplayXUIModelScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureFamily"'): dbc.Table.v1215.CreatureFamily
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureFamilyXUIModelScene"'): dbc.Table.v1215.CreatureFamilyXUIModelScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureImmunities"'): dbc.Table.v1215.CreatureImmunities
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureLabel"'): dbc.Table.v1215.CreatureLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureModelData"'): dbc.Table.v1215.CreatureModelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureMovementInfo"'): dbc.Table.v1215.CreatureMovementInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureSoundData"'): dbc.Table.v1215.CreatureSoundData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureSoundFidget"'): dbc.Table.v1215.CreatureSoundFidget
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureType"'): dbc.Table.v1215.CreatureType
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureXContribution"'): dbc.Table.v1215.CreatureXContribution
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureXDisplayInfo"'): dbc.Table.v1215.CreatureXDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureXUiWidgetSet"'): dbc.Table.v1215.CreatureXUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"Criteria"'): dbc.Table.v1215.Criteria
+---@overload fun(self: DbcWorkspace_v1215, name: '"CriteriaTree"'): dbc.Table.v1215.CriteriaTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"CriteriaTreeXEffect"'): dbc.Table.v1215.CriteriaTreeXEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurrencyCategory"'): dbc.Table.v1215.CurrencyCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurrencyContainer"'): dbc.Table.v1215.CurrencyContainer
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurrencyTypes"'): dbc.Table.v1215.CurrencyTypes
+---@overload fun(self: DbcWorkspace_v1215, name: '"Curve"'): dbc.Table.v1215.Curve
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurvePoint"'): dbc.Table.v1215.CurvePoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"DBData_M2Light"'): dbc.Table.v1215.DBData_M2Light
+---@overload fun(self: DbcWorkspace_v1215, name: '"DamageMeterOverride"'): dbc.Table.v1215.DamageMeterOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagGroup"'): dbc.Table.v1215.DataTagGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagGroupXDataTag"'): dbc.Table.v1215.DataTagGroupXDataTag
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagInfo"'): dbc.Table.v1215.DataTagInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagXHouseDecorRecord"'): dbc.Table.v1215.DataTagXHouseDecorRecord
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagXRecord"'): dbc.Table.v1215.DataTagXRecord
+---@overload fun(self: DbcWorkspace_v1215, name: '"DeathThudLookups"'): dbc.Table.v1215.DeathThudLookups
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecalProperties"'): dbc.Table.v1215.DecalProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"DeclinedWord"'): dbc.Table.v1215.DeclinedWord
+---@overload fun(self: DbcWorkspace_v1215, name: '"DeclinedWordCases"'): dbc.Table.v1215.DeclinedWordCases
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorCategory"'): dbc.Table.v1215.DecorCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorDyeSlot"'): dbc.Table.v1215.DecorDyeSlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorSubcategory"'): dbc.Table.v1215.DecorSubcategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorXDecorSubcategory"'): dbc.Table.v1215.DecorXDecorSubcategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"DelvesSeason"'): dbc.Table.v1215.DelvesSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"DelvesSeasonXSpell"'): dbc.Table.v1215.DelvesSeasonXSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"DestructibleModelData"'): dbc.Table.v1215.DestructibleModelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"Difficulty"'): dbc.Table.v1215.Difficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"DisplaySeason"'): dbc.Table.v1215.DisplaySeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"DissolveEffect"'): dbc.Table.v1215.DissolveEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"DriveCapability"'): dbc.Table.v1215.DriveCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"DriveCapabilityTier"'): dbc.Table.v1215.DriveCapabilityTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"DungeonEncounter"'): dbc.Table.v1215.DungeonEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"DurabilityCosts"'): dbc.Table.v1215.DurabilityCosts
+---@overload fun(self: DbcWorkspace_v1215, name: '"DurabilityQuality"'): dbc.Table.v1215.DurabilityQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"DyeColor"'): dbc.Table.v1215.DyeColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"DyeColorCategory"'): dbc.Table.v1215.DyeColorCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"EdgeGlowEffect"'): dbc.Table.v1215.EdgeGlowEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"Emotes"'): dbc.Table.v1215.Emotes
+---@overload fun(self: DbcWorkspace_v1215, name: '"EmotesText"'): dbc.Table.v1215.EmotesText
+---@overload fun(self: DbcWorkspace_v1215, name: '"EmotesTextData"'): dbc.Table.v1215.EmotesTextData
+---@overload fun(self: DbcWorkspace_v1215, name: '"EmotesTextSound"'): dbc.Table.v1215.EmotesTextSound
+---@overload fun(self: DbcWorkspace_v1215, name: '"EncounterEvent"'): dbc.Table.v1215.EncounterEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"EntryNode"'): dbc.Table.v1215.EntryNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"EntryTemplate"'): dbc.Table.v1215.EntryTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"EnvironmentalDamage"'): dbc.Table.v1215.EnvironmentalDamage
+---@overload fun(self: DbcWorkspace_v1215, name: '"EventSchedulerCategory"'): dbc.Table.v1215.EventSchedulerCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"EventSchedulerEvent"'): dbc.Table.v1215.EventSchedulerEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"Exhaustion"'): dbc.Table.v1215.Exhaustion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExpectedStat"'): dbc.Table.v1215.ExpectedStat
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExpectedStatMod"'): dbc.Table.v1215.ExpectedStatMod
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponent"'): dbc.Table.v1215.ExteriorComponent
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentExitPoint"'): dbc.Table.v1215.ExteriorComponentExitPoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentGroup"'): dbc.Table.v1215.ExteriorComponentGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentGroupXHook"'): dbc.Table.v1215.ExteriorComponentGroupXHook
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentHook"'): dbc.Table.v1215.ExteriorComponentHook
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentType"'): dbc.Table.v1215.ExteriorComponentType
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentXGroup"'): dbc.Table.v1215.ExteriorComponentXGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExtraAbilityInfo"'): dbc.Table.v1215.ExtraAbilityInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"Faction"'): dbc.Table.v1215.Faction
+---@overload fun(self: DbcWorkspace_v1215, name: '"FactionGroup"'): dbc.Table.v1215.FactionGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"FactionTemplate"'): dbc.Table.v1215.FactionTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"FlightCapability"'): dbc.Table.v1215.FlightCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"FlightCapabilityXGlideEvent"'): dbc.Table.v1215.FlightCapabilityXGlideEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"FootprintTextures"'): dbc.Table.v1215.FootprintTextures
+---@overload fun(self: DbcWorkspace_v1215, name: '"FootstepTerrainLookup"'): dbc.Table.v1215.FootstepTerrainLookup
+---@overload fun(self: DbcWorkspace_v1215, name: '"FriendshipRepReaction"'): dbc.Table.v1215.FriendshipRepReaction
+---@overload fun(self: DbcWorkspace_v1215, name: '"FriendshipReputation"'): dbc.Table.v1215.FriendshipReputation
+---@overload fun(self: DbcWorkspace_v1215, name: '"FullScreenEffect"'): dbc.Table.v1215.FullScreenEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveyAnswers"'): dbc.Table.v1215.GMSurveyAnswers
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveyCurrentSurvey"'): dbc.Table.v1215.GMSurveyCurrentSurvey
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveyQuestions"'): dbc.Table.v1215.GMSurveyQuestions
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveySurveys"'): dbc.Table.v1215.GMSurveySurveys
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameClockDebug"'): dbc.Table.v1215.GameClockDebug
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameMode"'): dbc.Table.v1215.GameMode
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectAnimGroupMember"'): dbc.Table.v1215.GameObjectAnimGroupMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectArtKit"'): dbc.Table.v1215.GameObjectArtKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDiffAnimMap"'): dbc.Table.v1215.GameObjectDiffAnimMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDisplayCondition"'): dbc.Table.v1215.GameObjectDisplayCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDisplayInfo"'): dbc.Table.v1215.GameObjectDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDisplayInfoXSoundKit"'): dbc.Table.v1215.GameObjectDisplayInfoXSoundKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectLabel"'): dbc.Table.v1215.GameObjectLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjects"'): dbc.Table.v1215.GameObjects
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameParameter"'): dbc.Table.v1215.GameParameter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameTips"'): dbc.Table.v1215.GameTips
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAbility"'): dbc.Table.v1215.GarrAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAbilityCategory"'): dbc.Table.v1215.GarrAbilityCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAbilityEffect"'): dbc.Table.v1215.GarrAbilityEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAutoCombatant"'): dbc.Table.v1215.GarrAutoCombatant
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAutoSpell"'): dbc.Table.v1215.GarrAutoSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAutoSpellEffect"'): dbc.Table.v1215.GarrAutoSpellEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrBuilding"'): dbc.Table.v1215.GarrBuilding
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrBuildingDoodadSet"'): dbc.Table.v1215.GarrBuildingDoodadSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrBuildingPlotInst"'): dbc.Table.v1215.GarrBuildingPlotInst
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrClassSpec"'): dbc.Table.v1215.GarrClassSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrClassSpecPlayerCond"'): dbc.Table.v1215.GarrClassSpecPlayerCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrEncounter"'): dbc.Table.v1215.GarrEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrEncounterSetXEncounter"'): dbc.Table.v1215.GarrEncounterSetXEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrEncounterXMechanic"'): dbc.Table.v1215.GarrEncounterXMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollItemSetMember"'): dbc.Table.v1215.GarrFollItemSetMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollSupportSpell"'): dbc.Table.v1215.GarrFollSupportSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollower"'): dbc.Table.v1215.GarrFollower
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerLevelXP"'): dbc.Table.v1215.GarrFollowerLevelXP
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerQuality"'): dbc.Table.v1215.GarrFollowerQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerSetXFollower"'): dbc.Table.v1215.GarrFollowerSetXFollower
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerType"'): dbc.Table.v1215.GarrFollowerType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerUICreature"'): dbc.Table.v1215.GarrFollowerUICreature
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerXAbility"'): dbc.Table.v1215.GarrFollowerXAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrItemLevelUpgradeData"'): dbc.Table.v1215.GarrItemLevelUpgradeData
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMechanic"'): dbc.Table.v1215.GarrMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMechanicSetXMechanic"'): dbc.Table.v1215.GarrMechanicSetXMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMechanicType"'): dbc.Table.v1215.GarrMechanicType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMission"'): dbc.Table.v1215.GarrMission
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionSet"'): dbc.Table.v1215.GarrMissionSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionTexture"'): dbc.Table.v1215.GarrMissionTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionType"'): dbc.Table.v1215.GarrMissionType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionXEncounter"'): dbc.Table.v1215.GarrMissionXEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionXFollower"'): dbc.Table.v1215.GarrMissionXFollower
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMssnBonusAbility"'): dbc.Table.v1215.GarrMssnBonusAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlot"'): dbc.Table.v1215.GarrPlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlotBuilding"'): dbc.Table.v1215.GarrPlotBuilding
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlotInstance"'): dbc.Table.v1215.GarrPlotInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlotUICategory"'): dbc.Table.v1215.GarrPlotUICategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrSiteLevel"'): dbc.Table.v1215.GarrSiteLevel
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrSiteLevelPlotInst"'): dbc.Table.v1215.GarrSiteLevelPlotInst
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrSpecialization"'): dbc.Table.v1215.GarrSpecialization
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrString"'): dbc.Table.v1215.GarrString
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalTreeXGarrTalResearch"'): dbc.Table.v1215.GarrTalTreeXGarrTalResearch
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalent"'): dbc.Table.v1215.GarrTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentCost"'): dbc.Table.v1215.GarrTalentCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentMapPOI"'): dbc.Table.v1215.GarrTalentMapPOI
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentRank"'): dbc.Table.v1215.GarrTalentRank
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentRankGroupEntry"'): dbc.Table.v1215.GarrTalentRankGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentRankGroupResearchMod"'): dbc.Table.v1215.GarrTalentRankGroupResearchMod
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentResearch"'): dbc.Table.v1215.GarrTalentResearch
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentSocketProperties"'): dbc.Table.v1215.GarrTalentSocketProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentTree"'): dbc.Table.v1215.GarrTalentTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrType"'): dbc.Table.v1215.GarrType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrUiAnimClassInfo"'): dbc.Table.v1215.GarrUiAnimClassInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrUiAnimRaceInfo"'): dbc.Table.v1215.GarrUiAnimRaceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GemProperties"'): dbc.Table.v1215.GemProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlideEvent"'): dbc.Table.v1215.GlideEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlideEventBlendTimes"'): dbc.Table.v1215.GlideEventBlendTimes
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalColor"'): dbc.Table.v1215.GlobalColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalCurve"'): dbc.Table.v1215.GlobalCurve
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalGameContentTuning"'): dbc.Table.v1215.GlobalGameContentTuning
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalPlayerCondition"'): dbc.Table.v1215.GlobalPlayerCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalPlayerConditionSet"'): dbc.Table.v1215.GlobalPlayerConditionSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalStrings"'): dbc.Table.v1215.GlobalStrings
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphBindableSpell"'): dbc.Table.v1215.GlyphBindableSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphExclusiveCategory"'): dbc.Table.v1215.GlyphExclusiveCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphProperties"'): dbc.Table.v1215.GlyphProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphRequiredSpec"'): dbc.Table.v1215.GlyphRequiredSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipNPCOption"'): dbc.Table.v1215.GossipNPCOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipNPCOptionDisplayInfo"'): dbc.Table.v1215.GossipNPCOptionDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipOptionXUIWidgetSet"'): dbc.Table.v1215.GossipOptionXUIWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipUIDisplayInfoCondition"'): dbc.Table.v1215.GossipUIDisplayInfoCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipXGarrTalentTrees"'): dbc.Table.v1215.GossipXGarrTalentTrees
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipXUIDisplayInfo"'): dbc.Table.v1215.GossipXUIDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GradientEffect"'): dbc.Table.v1215.GradientEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroundEffectDoodad"'): dbc.Table.v1215.GroundEffectDoodad
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroundEffectTexture"'): dbc.Table.v1215.GroundEffectTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderActivity"'): dbc.Table.v1215.GroupFinderActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderActivityGrp"'): dbc.Table.v1215.GroupFinderActivityGrp
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderActivityXPvpBracket"'): dbc.Table.v1215.GroupFinderActivityXPvpBracket
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderCategory"'): dbc.Table.v1215.GroupFinderCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildColorBackground"'): dbc.Table.v1215.GuildColorBackground
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildColorBorder"'): dbc.Table.v1215.GuildColorBorder
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildColorEmblem"'): dbc.Table.v1215.GuildColorEmblem
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildEmblem"'): dbc.Table.v1215.GuildEmblem
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildPerkSpells"'): dbc.Table.v1215.GuildPerkSpells
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildShirtBackground"'): dbc.Table.v1215.GuildShirtBackground
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildShirtBorder"'): dbc.Table.v1215.GuildShirtBorder
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildTabardBackground"'): dbc.Table.v1215.GuildTabardBackground
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildTabardBorder"'): dbc.Table.v1215.GuildTabardBorder
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildTabardEmblem"'): dbc.Table.v1215.GuildTabardEmblem
+---@overload fun(self: DbcWorkspace_v1215, name: '"Heirloom"'): dbc.Table.v1215.Heirloom
+---@overload fun(self: DbcWorkspace_v1215, name: '"HelmetAnimScaling"'): dbc.Table.v1215.HelmetAnimScaling
+---@overload fun(self: DbcWorkspace_v1215, name: '"HelmetGeosetData"'): dbc.Table.v1215.HelmetGeosetData
+---@overload fun(self: DbcWorkspace_v1215, name: '"HighlightColor"'): dbc.Table.v1215.HighlightColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"HolidayDescriptions"'): dbc.Table.v1215.HolidayDescriptions
+---@overload fun(self: DbcWorkspace_v1215, name: '"HolidayNames"'): dbc.Table.v1215.HolidayNames
+---@overload fun(self: DbcWorkspace_v1215, name: '"HolidayXTimeEvent"'): dbc.Table.v1215.HolidayXTimeEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"Holidays"'): dbc.Table.v1215.Holidays
+---@overload fun(self: DbcWorkspace_v1215, name: '"Hotfixes"'): dbc.Table.v1215.Hotfixes
+---@overload fun(self: DbcWorkspace_v1215, name: '"House"'): dbc.Table.v1215.House
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseDecor"'): dbc.Table.v1215.HouseDecor
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseDecorMaterial"'): dbc.Table.v1215.HouseDecorMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseDecorThemeSet"'): dbc.Table.v1215.HouseDecorThemeSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseExteriorWmoData"'): dbc.Table.v1215.HouseExteriorWmoData
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseLevelData"'): dbc.Table.v1215.HouseLevelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseLevelRewardInfo"'): dbc.Table.v1215.HouseLevelRewardInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseRoom"'): dbc.Table.v1215.HouseRoom
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseTheme"'): dbc.Table.v1215.HouseTheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceArmor"'): dbc.Table.v1215.ImportPriceArmor
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceQuality"'): dbc.Table.v1215.ImportPriceQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceShield"'): dbc.Table.v1215.ImportPriceShield
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceWeapon"'): dbc.Table.v1215.ImportPriceWeapon
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeCycle"'): dbc.Table.v1215.InitiativeCycle
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeCyclePriority"'): dbc.Table.v1215.InitiativeCyclePriority
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeMilestone"'): dbc.Table.v1215.InitiativeMilestone
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeReward"'): dbc.Table.v1215.InitiativeReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeRewardXMilestone"'): dbc.Table.v1215.InitiativeRewardXMilestone
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeTask"'): dbc.Table.v1215.InitiativeTask
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeXTask"'): dbc.Table.v1215.InitiativeXTask
+---@overload fun(self: DbcWorkspace_v1215, name: '"InvasionClientData"'): dbc.Table.v1215.InvasionClientData
+---@overload fun(self: DbcWorkspace_v1215, name: '"Item"'): dbc.Table.v1215.Item
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemAppearance"'): dbc.Table.v1215.ItemAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemAppearanceXUiCamera"'): dbc.Table.v1215.ItemAppearanceXUiCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemArmorQuality"'): dbc.Table.v1215.ItemArmorQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemArmorShield"'): dbc.Table.v1215.ItemArmorShield
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemArmorTotal"'): dbc.Table.v1215.ItemArmorTotal
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBagFamily"'): dbc.Table.v1215.ItemBagFamily
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonus"'): dbc.Table.v1215.ItemBonus
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusList"'): dbc.Table.v1215.ItemBonusList
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListGroup"'): dbc.Table.v1215.ItemBonusListGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListGroupEntry"'): dbc.Table.v1215.ItemBonusListGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListLevelDelta"'): dbc.Table.v1215.ItemBonusListLevelDelta
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListWarforgeLevelDelta"'): dbc.Table.v1215.ItemBonusListWarforgeLevelDelta
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSeason"'): dbc.Table.v1215.ItemBonusSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSeasonBonusListGroup"'): dbc.Table.v1215.ItemBonusSeasonBonusListGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSeasonUpgradeCost"'): dbc.Table.v1215.ItemBonusSeasonUpgradeCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSequenceSpell"'): dbc.Table.v1215.ItemBonusSequenceSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusTree"'): dbc.Table.v1215.ItemBonusTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusTreeGroupEntry"'): dbc.Table.v1215.ItemBonusTreeGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusTreeNode"'): dbc.Table.v1215.ItemBonusTreeNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemChildEquipment"'): dbc.Table.v1215.ItemChildEquipment
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemClass"'): dbc.Table.v1215.ItemClass
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCondition"'): dbc.Table.v1215.ItemCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemContextPickerEntry"'): dbc.Table.v1215.ItemContextPickerEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemConversion"'): dbc.Table.v1215.ItemConversion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemConversionEntry"'): dbc.Table.v1215.ItemConversionEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCreationContext"'): dbc.Table.v1215.ItemCreationContext
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCreationContextGroup"'): dbc.Table.v1215.ItemCreationContextGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCurrencyCost"'): dbc.Table.v1215.ItemCurrencyCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCurrencyValue"'): dbc.Table.v1215.ItemCurrencyValue
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageAmmo"'): dbc.Table.v1215.ItemDamageAmmo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageOneHand"'): dbc.Table.v1215.ItemDamageOneHand
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageOneHandCaster"'): dbc.Table.v1215.ItemDamageOneHandCaster
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageTwoHand"'): dbc.Table.v1215.ItemDamageTwoHand
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageTwoHandCaster"'): dbc.Table.v1215.ItemDamageTwoHandCaster
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisenchantLoot"'): dbc.Table.v1215.ItemDisenchantLoot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisplayInfo"'): dbc.Table.v1215.ItemDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisplayInfoMaterialRes"'): dbc.Table.v1215.ItemDisplayInfoMaterialRes
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisplayInfoModelMatRes"'): dbc.Table.v1215.ItemDisplayInfoModelMatRes
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemEffect"'): dbc.Table.v1215.ItemEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemExtendedCost"'): dbc.Table.v1215.ItemExtendedCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemFixup"'): dbc.Table.v1215.ItemFixup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemFixupAction"'): dbc.Table.v1215.ItemFixupAction
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemGroupIlvlScalingEntry"'): dbc.Table.v1215.ItemGroupIlvlScalingEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemGroupSounds"'): dbc.Table.v1215.ItemGroupSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelSelector"'): dbc.Table.v1215.ItemLevelSelector
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelSelectorQuality"'): dbc.Table.v1215.ItemLevelSelectorQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelSelectorQualitySet"'): dbc.Table.v1215.ItemLevelSelectorQualitySet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelWatermark"'): dbc.Table.v1215.ItemLevelWatermark
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLimitCategory"'): dbc.Table.v1215.ItemLimitCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLimitCategoryCondition"'): dbc.Table.v1215.ItemLimitCategoryCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLogicalCost"'): dbc.Table.v1215.ItemLogicalCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLogicalCostGroup"'): dbc.Table.v1215.ItemLogicalCostGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemModifiedAppearance"'): dbc.Table.v1215.ItemModifiedAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemModifiedAppearanceExtra"'): dbc.Table.v1215.ItemModifiedAppearanceExtra
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemNameDescription"'): dbc.Table.v1215.ItemNameDescription
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemNameSlotOverride"'): dbc.Table.v1215.ItemNameSlotOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemOffsetCurve"'): dbc.Table.v1215.ItemOffsetCurve
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemPetFood"'): dbc.Table.v1215.ItemPetFood
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemPriceBase"'): dbc.Table.v1215.ItemPriceBase
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemRangedDisplayInfo"'): dbc.Table.v1215.ItemRangedDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemRecraft"'): dbc.Table.v1215.ItemRecraft
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemReforge"'): dbc.Table.v1215.ItemReforge
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSalvage"'): dbc.Table.v1215.ItemSalvage
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSalvageLoot"'): dbc.Table.v1215.ItemSalvageLoot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemScalingConfig"'): dbc.Table.v1215.ItemScalingConfig
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSearchName"'): dbc.Table.v1215.ItemSearchName
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSet"'): dbc.Table.v1215.ItemSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSetSpell"'): dbc.Table.v1215.ItemSetSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSparse"'): dbc.Table.v1215.ItemSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSpec"'): dbc.Table.v1215.ItemSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSpecOverride"'): dbc.Table.v1215.ItemSpecOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSquishEra"'): dbc.Table.v1215.ItemSquishEra
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSubClass"'): dbc.Table.v1215.ItemSubClass
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSubClassMask"'): dbc.Table.v1215.ItemSubClassMask
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemVisuals"'): dbc.Table.v1215.ItemVisuals
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemVisualsXEffect"'): dbc.Table.v1215.ItemVisualsXEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemXBonusTree"'): dbc.Table.v1215.ItemXBonusTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemXItemEffect"'): dbc.Table.v1215.ItemXItemEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemXTraitSystem"'): dbc.Table.v1215.ItemXTraitSystem
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounter"'): dbc.Table.v1215.JournalEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterCreature"'): dbc.Table.v1215.JournalEncounterCreature
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterItem"'): dbc.Table.v1215.JournalEncounterItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterSection"'): dbc.Table.v1215.JournalEncounterSection
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterXDifficulty"'): dbc.Table.v1215.JournalEncounterXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterXMapLoc"'): dbc.Table.v1215.JournalEncounterXMapLoc
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalInstance"'): dbc.Table.v1215.JournalInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalInstanceEntrance"'): dbc.Table.v1215.JournalInstanceEntrance
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalInstanceQueueLoc"'): dbc.Table.v1215.JournalInstanceQueueLoc
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalItemXDifficulty"'): dbc.Table.v1215.JournalItemXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalSectionXDifficulty"'): dbc.Table.v1215.JournalSectionXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalTier"'): dbc.Table.v1215.JournalTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalTierXInstance"'): dbc.Table.v1215.JournalTierXInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"Keychain"'): dbc.Table.v1215.Keychain
+---@overload fun(self: DbcWorkspace_v1215, name: '"KeystoneAffix"'): dbc.Table.v1215.KeystoneAffix
+---@overload fun(self: DbcWorkspace_v1215, name: '"LFGDungeonGroup"'): dbc.Table.v1215.LFGDungeonGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"LFGDungeons"'): dbc.Table.v1215.LFGDungeons
+---@overload fun(self: DbcWorkspace_v1215, name: '"LFGRoleRequirement"'): dbc.Table.v1215.LFGRoleRequirement
+---@overload fun(self: DbcWorkspace_v1215, name: '"LabelXContentRestrictRuleSet"'): dbc.Table.v1215.LabelXContentRestrictRuleSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"LanguageWords"'): dbc.Table.v1215.LanguageWords
+---@overload fun(self: DbcWorkspace_v1215, name: '"Languages"'): dbc.Table.v1215.Languages
+---@overload fun(self: DbcWorkspace_v1215, name: '"LfgDungeonsGroupingMap"'): dbc.Table.v1215.LfgDungeonsGroupingMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"Light"'): dbc.Table.v1215.Light
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightData"'): dbc.Table.v1215.LightData
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightParams"'): dbc.Table.v1215.LightParams
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightParamsLightShaft"'): dbc.Table.v1215.LightParamsLightShaft
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightShaft"'): dbc.Table.v1215.LightShaft
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightSkybox"'): dbc.Table.v1215.LightSkybox
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightWorldShadow"'): dbc.Table.v1215.LightWorldShadow
+---@overload fun(self: DbcWorkspace_v1215, name: '"Lightning"'): dbc.Table.v1215.Lightning
+---@overload fun(self: DbcWorkspace_v1215, name: '"Link"'): dbc.Table.v1215.Link
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidMaterial"'): dbc.Table.v1215.LiquidMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidObject"'): dbc.Table.v1215.LiquidObject
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidType"'): dbc.Table.v1215.LiquidType
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidTypeXTexture"'): dbc.Table.v1215.LiquidTypeXTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"LivingWorldObjectTemplate"'): dbc.Table.v1215.LivingWorldObjectTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoadingScreenSkin"'): dbc.Table.v1215.LoadingScreenSkin
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoadingScreenTaxiSplines"'): dbc.Table.v1215.LoadingScreenTaxiSplines
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoadingScreens"'): dbc.Table.v1215.LoadingScreens
+---@overload fun(self: DbcWorkspace_v1215, name: '"Locale"'): dbc.Table.v1215.Locale
+---@overload fun(self: DbcWorkspace_v1215, name: '"Location"'): dbc.Table.v1215.Location
+---@overload fun(self: DbcWorkspace_v1215, name: '"Lock"'): dbc.Table.v1215.Lock
+---@overload fun(self: DbcWorkspace_v1215, name: '"LockType"'): dbc.Table.v1215.LockType
+---@overload fun(self: DbcWorkspace_v1215, name: '"LookAtController"'): dbc.Table.v1215.LookAtController
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoreText"'): dbc.Table.v1215.LoreText
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoreTextPublic"'): dbc.Table.v1215.LoreTextPublic
+---@overload fun(self: DbcWorkspace_v1215, name: '"MCRCurrency"'): dbc.Table.v1215.MCRCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"MCRSlotXMCRCategory"'): dbc.Table.v1215.MCRSlotXMCRCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"MailTemplate"'): dbc.Table.v1215.MailTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManagedWorldState"'): dbc.Table.v1215.ManagedWorldState
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManagedWorldStateBuff"'): dbc.Table.v1215.ManagedWorldStateBuff
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManagedWorldStateInput"'): dbc.Table.v1215.ManagedWorldStateInput
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManifestInterfaceActionIcon"'): dbc.Table.v1215.ManifestInterfaceActionIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManifestInterfaceData"'): dbc.Table.v1215.ManifestInterfaceData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManifestInterfaceItemIcon"'): dbc.Table.v1215.ManifestInterfaceItemIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"Map"'): dbc.Table.v1215.Map
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapCelestialBody"'): dbc.Table.v1215.MapCelestialBody
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapChallengeMode"'): dbc.Table.v1215.MapChallengeMode
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapChallengeModeAffixCriteria"'): dbc.Table.v1215.MapChallengeModeAffixCriteria
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapDifficulty"'): dbc.Table.v1215.MapDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapDifficultyRedirect"'): dbc.Table.v1215.MapDifficultyRedirect
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapDifficultyXCondition"'): dbc.Table.v1215.MapDifficultyXCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapLoadingScreen"'): dbc.Table.v1215.MapLoadingScreen
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapRenderScale"'): dbc.Table.v1215.MapRenderScale
+---@overload fun(self: DbcWorkspace_v1215, name: '"MarketingPromotionsXLocale"'): dbc.Table.v1215.MarketingPromotionsXLocale
+---@overload fun(self: DbcWorkspace_v1215, name: '"Material"'): dbc.Table.v1215.Material
+---@overload fun(self: DbcWorkspace_v1215, name: '"MawPower"'): dbc.Table.v1215.MawPower
+---@overload fun(self: DbcWorkspace_v1215, name: '"MawPowerRarity"'): dbc.Table.v1215.MawPowerRarity
+---@overload fun(self: DbcWorkspace_v1215, name: '"MinorTalent"'): dbc.Table.v1215.MinorTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"MissileTargeting"'): dbc.Table.v1215.MissileTargeting
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelAnimCloakDampening"'): dbc.Table.v1215.ModelAnimCloakDampening
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelFileData"'): dbc.Table.v1215.ModelFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelRibbonQuality"'): dbc.Table.v1215.ModelRibbonQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelSoundAnimEntry"'): dbc.Table.v1215.ModelSoundAnimEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelSoundEntry"'): dbc.Table.v1215.ModelSoundEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingCategory"'): dbc.Table.v1215.ModifiedCraftingCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingItem"'): dbc.Table.v1215.ModifiedCraftingItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingReagentItem"'): dbc.Table.v1215.ModifiedCraftingReagentItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingReagentSlot"'): dbc.Table.v1215.ModifiedCraftingReagentSlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingSpellSlot"'): dbc.Table.v1215.ModifiedCraftingSpellSlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifierTree"'): dbc.Table.v1215.ModifierTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"Mount"'): dbc.Table.v1215.Mount
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountCapability"'): dbc.Table.v1215.MountCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountEquipment"'): dbc.Table.v1215.MountEquipment
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountType"'): dbc.Table.v1215.MountType
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountTypeXCapability"'): dbc.Table.v1215.MountTypeXCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountXDisplay"'): dbc.Table.v1215.MountXDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountXSpellVisualKitPicker"'): dbc.Table.v1215.MountXSpellVisualKitPicker
+---@overload fun(self: DbcWorkspace_v1215, name: '"Movie"'): dbc.Table.v1215.Movie
+---@overload fun(self: DbcWorkspace_v1215, name: '"MovieFileData"'): dbc.Table.v1215.MovieFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"MovieVariation"'): dbc.Table.v1215.MovieVariation
+---@overload fun(self: DbcWorkspace_v1215, name: '"MultiStateProperties"'): dbc.Table.v1215.MultiStateProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"MultiTransitionProperties"'): dbc.Table.v1215.MultiTransitionProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"MusicOverride"'): dbc.Table.v1215.MusicOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeason"'): dbc.Table.v1215.MythicPlusSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonKeyFloor"'): dbc.Table.v1215.MythicPlusSeasonKeyFloor
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonRewardLevels"'): dbc.Table.v1215.MythicPlusSeasonRewardLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonTrackedAffix"'): dbc.Table.v1215.MythicPlusSeasonTrackedAffix
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonTrackedMap"'): dbc.Table.v1215.MythicPlusSeasonTrackedMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderCustomer"'): dbc.Table.v1215.NPCCraftingOrderCustomer
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderCustomerXLabel"'): dbc.Table.v1215.NPCCraftingOrderCustomerXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSet"'): dbc.Table.v1215.NPCCraftingOrderSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSetXCraftOrder"'): dbc.Table.v1215.NPCCraftingOrderSetXCraftOrder
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSetXCustomer"'): dbc.Table.v1215.NPCCraftingOrderSetXCustomer
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSetXTreasure"'): dbc.Table.v1215.NPCCraftingOrderSetXTreasure
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCModelItemSlotDisplayInfo"'): dbc.Table.v1215.NPCModelItemSlotDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCSounds"'): dbc.Table.v1215.NPCSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"NameGen"'): dbc.Table.v1215.NameGen
+---@overload fun(self: DbcWorkspace_v1215, name: '"NamesProfanity"'): dbc.Table.v1215.NamesProfanity
+---@overload fun(self: DbcWorkspace_v1215, name: '"NamesReserved"'): dbc.Table.v1215.NamesReserved
+---@overload fun(self: DbcWorkspace_v1215, name: '"NamesReservedLocale"'): dbc.Table.v1215.NamesReservedLocale
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodInitiative"'): dbc.Table.v1215.NeighborhoodInitiative
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodMap"'): dbc.Table.v1215.NeighborhoodMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodNameGen"'): dbc.Table.v1215.NeighborhoodNameGen
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodPlot"'): dbc.Table.v1215.NeighborhoodPlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"Node"'): dbc.Table.v1215.Node
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeGraphParam"'): dbc.Table.v1215.NodeGraphParam
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeGraphParamValue"'): dbc.Table.v1215.NodeGraphParamValue
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeTemplate"'): dbc.Table.v1215.NodeTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeTemplateXPinTemplate"'): dbc.Table.v1215.NodeTemplateXPinTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"NumTalentsAtLevel"'): dbc.Table.v1215.NumTalentsAtLevel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ObjectEffect"'): dbc.Table.v1215.ObjectEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ObjectEffectModifier"'): dbc.Table.v1215.ObjectEffectModifier
+---@overload fun(self: DbcWorkspace_v1215, name: '"ObjectEffectPackageElem"'): dbc.Table.v1215.ObjectEffectPackageElem
+---@overload fun(self: DbcWorkspace_v1215, name: '"Occluder"'): dbc.Table.v1215.Occluder
+---@overload fun(self: DbcWorkspace_v1215, name: '"OccluderCurtain"'): dbc.Table.v1215.OccluderCurtain
+---@overload fun(self: DbcWorkspace_v1215, name: '"OccluderLocation"'): dbc.Table.v1215.OccluderLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"OccluderNode"'): dbc.Table.v1215.OccluderNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"OutlineEffect"'): dbc.Table.v1215.OutlineEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"OverrideSpellData"'): dbc.Table.v1215.OverrideSpellData
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPBracketTypes"'): dbc.Table.v1215.PVPBracketTypes
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPDifficulty"'): dbc.Table.v1215.PVPDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPScoreboardCellInfo"'): dbc.Table.v1215.PVPScoreboardCellInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPScoreboardColumnHeader"'): dbc.Table.v1215.PVPScoreboardColumnHeader
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPScoreboardLayout"'): dbc.Table.v1215.PVPScoreboardLayout
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPStat"'): dbc.Table.v1215.PVPStat
+---@overload fun(self: DbcWorkspace_v1215, name: '"PageTextMaterial"'): dbc.Table.v1215.PageTextMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"PaperDollItemFrame"'): dbc.Table.v1215.PaperDollItemFrame
+---@overload fun(self: DbcWorkspace_v1215, name: '"ParagonReputation"'): dbc.Table.v1215.ParagonReputation
+---@overload fun(self: DbcWorkspace_v1215, name: '"ParticleColor"'): dbc.Table.v1215.ParticleColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"Particulate"'): dbc.Table.v1215.Particulate
+---@overload fun(self: DbcWorkspace_v1215, name: '"ParticulateSound"'): dbc.Table.v1215.ParticulateSound
+---@overload fun(self: DbcWorkspace_v1215, name: '"Path"'): dbc.Table.v1215.Path
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathEdge"'): dbc.Table.v1215.PathEdge
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathNode"'): dbc.Table.v1215.PathNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathNodeProperty"'): dbc.Table.v1215.PathNodeProperty
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathProperty"'): dbc.Table.v1215.PathProperty
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivity"'): dbc.Table.v1215.PerksActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityCondition"'): dbc.Table.v1215.PerksActivityCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityTag"'): dbc.Table.v1215.PerksActivityTag
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityThreshold"'): dbc.Table.v1215.PerksActivityThreshold
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityThresholdGroup"'): dbc.Table.v1215.PerksActivityThresholdGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityXHolidays"'): dbc.Table.v1215.PerksActivityXHolidays
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityXInterval"'): dbc.Table.v1215.PerksActivityXInterval
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityXTag"'): dbc.Table.v1215.PerksActivityXTag
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksUITheme"'): dbc.Table.v1215.PerksUITheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorCategory"'): dbc.Table.v1215.PerksVendorCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItem"'): dbc.Table.v1215.PerksVendorItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItemUIGroup"'): dbc.Table.v1215.PerksVendorItemUIGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItemUIInfo"'): dbc.Table.v1215.PerksVendorItemUIInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItemXInterval"'): dbc.Table.v1215.PerksVendorItemXInterval
+---@overload fun(self: DbcWorkspace_v1215, name: '"Phase"'): dbc.Table.v1215.Phase
+---@overload fun(self: DbcWorkspace_v1215, name: '"PhaseShiftZoneSounds"'): dbc.Table.v1215.PhaseShiftZoneSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"PhaseXPhaseGroup"'): dbc.Table.v1215.PhaseXPhaseGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"Pin"'): dbc.Table.v1215.Pin
+---@overload fun(self: DbcWorkspace_v1215, name: '"PinTemplate"'): dbc.Table.v1215.PinTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"PingType"'): dbc.Table.v1215.PingType
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerCompanionInfo"'): dbc.Table.v1215.PlayerCompanionInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerCondition"'): dbc.Table.v1215.PlayerCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataElementAccount"'): dbc.Table.v1215.PlayerDataElementAccount
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataElementCharacter"'): dbc.Table.v1215.PlayerDataElementCharacter
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataFlagAccount"'): dbc.Table.v1215.PlayerDataFlagAccount
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataFlagCharacter"'): dbc.Table.v1215.PlayerDataFlagCharacter
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerInteractionInfo"'): dbc.Table.v1215.PlayerInteractionInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PointLightConditionMap"'): dbc.Table.v1215.PointLightConditionMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"Positioner"'): dbc.Table.v1215.Positioner
+---@overload fun(self: DbcWorkspace_v1215, name: '"PositionerState"'): dbc.Table.v1215.PositionerState
+---@overload fun(self: DbcWorkspace_v1215, name: '"PositionerStateEntry"'): dbc.Table.v1215.PositionerStateEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"PowerDisplay"'): dbc.Table.v1215.PowerDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"PowerType"'): dbc.Table.v1215.PowerType
+---@overload fun(self: DbcWorkspace_v1215, name: '"PrestigeLevelInfo"'): dbc.Table.v1215.PrestigeLevelInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitPathNode"'): dbc.Table.v1215.ProfTraitPathNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitPerkNode"'): dbc.Table.v1215.ProfTraitPerkNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitTree"'): dbc.Table.v1215.ProfTraitTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitTreeHighlight"'): dbc.Table.v1215.ProfTraitTreeHighlight
+---@overload fun(self: DbcWorkspace_v1215, name: '"Profession"'): dbc.Table.v1215.Profession
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionEffect"'): dbc.Table.v1215.ProfessionEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionEffectType"'): dbc.Table.v1215.ProfessionEffectType
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionExpansion"'): dbc.Table.v1215.ProfessionExpansion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionPropPoints"'): dbc.Table.v1215.ProfessionPropPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionRating"'): dbc.Table.v1215.ProfessionRating
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionTrait"'): dbc.Table.v1215.ProfessionTrait
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionTraitXEffect"'): dbc.Table.v1215.ProfessionTraitXEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionTraitXLabel"'): dbc.Table.v1215.ProfessionTraitXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionXRating"'): dbc.Table.v1215.ProfessionXRating
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpBrawl"'): dbc.Table.v1215.PvpBrawl
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpRating"'): dbc.Table.v1215.PvpRating
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpScalingEffect"'): dbc.Table.v1215.PvpScalingEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpScalingEffectType"'): dbc.Table.v1215.PvpScalingEffectType
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpSeason"'): dbc.Table.v1215.PvpSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpSeasonRewardLevels"'): dbc.Table.v1215.PvpSeasonRewardLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTalent"'): dbc.Table.v1215.PvpTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTalentCategory"'): dbc.Table.v1215.PvpTalentCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTalentSlotUnlock"'): dbc.Table.v1215.PvpTalentSlotUnlock
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTier"'): dbc.Table.v1215.PvpTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestDrivenScenario"'): dbc.Table.v1215.QuestDrivenScenario
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestFactionReward"'): dbc.Table.v1215.QuestFactionReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestFeedbackEffect"'): dbc.Table.v1215.QuestFeedbackEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestHub"'): dbc.Table.v1215.QuestHub
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestInfo"'): dbc.Table.v1215.QuestInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestLabel"'): dbc.Table.v1215.QuestLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestLine"'): dbc.Table.v1215.QuestLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestLineXQuest"'): dbc.Table.v1215.QuestLineXQuest
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestMoneyReward"'): dbc.Table.v1215.QuestMoneyReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestObjective"'): dbc.Table.v1215.QuestObjective
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestPOIBlob"'): dbc.Table.v1215.QuestPOIBlob
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestPOIPoint"'): dbc.Table.v1215.QuestPOIPoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestPackageItem"'): dbc.Table.v1215.QuestPackageItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestSort"'): dbc.Table.v1215.QuestSort
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestV2"'): dbc.Table.v1215.QuestV2
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestV2CliTask"'): dbc.Table.v1215.QuestV2CliTask
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXGroupActivity"'): dbc.Table.v1215.QuestXGroupActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXP"'): dbc.Table.v1215.QuestXP
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXUIQuestDetailsTheme"'): dbc.Table.v1215.QuestXUIQuestDetailsTheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXUiWidgetSet"'): dbc.Table.v1215.QuestXUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"RTPC"'): dbc.Table.v1215.RTPC
+---@overload fun(self: DbcWorkspace_v1215, name: '"RTPCData"'): dbc.Table.v1215.RTPCData
+---@overload fun(self: DbcWorkspace_v1215, name: '"RafActivity"'): dbc.Table.v1215.RafActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"RandPropPoints"'): dbc.Table.v1215.RandPropPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"RecipeProgressionGroupEntry"'): dbc.Table.v1215.RecipeProgressionGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"RelicSlotTierRequirement"'): dbc.Table.v1215.RelicSlotTierRequirement
+---@overload fun(self: DbcWorkspace_v1215, name: '"RelicTalent"'): dbc.Table.v1215.RelicTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"RenownRewards"'): dbc.Table.v1215.RenownRewards
+---@overload fun(self: DbcWorkspace_v1215, name: '"RenownRewardsPlunderstorm"'): dbc.Table.v1215.RenownRewardsPlunderstorm
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchBranch"'): dbc.Table.v1215.ResearchBranch
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchField"'): dbc.Table.v1215.ResearchField
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchProject"'): dbc.Table.v1215.ResearchProject
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchSite"'): dbc.Table.v1215.ResearchSite
+---@overload fun(self: DbcWorkspace_v1215, name: '"Resistances"'): dbc.Table.v1215.Resistances
+---@overload fun(self: DbcWorkspace_v1215, name: '"RetroactiveDecorReward"'): dbc.Table.v1215.RetroactiveDecorReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"RetroactiveDecorRewardCriteria"'): dbc.Table.v1215.RetroactiveDecorRewardCriteria
+---@overload fun(self: DbcWorkspace_v1215, name: '"RewardPack"'): dbc.Table.v1215.RewardPack
+---@overload fun(self: DbcWorkspace_v1215, name: '"RewardPackXCurrencyType"'): dbc.Table.v1215.RewardPackXCurrencyType
+---@overload fun(self: DbcWorkspace_v1215, name: '"RewardPackXItem"'): dbc.Table.v1215.RewardPackXItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"RibbonQuality"'): dbc.Table.v1215.RibbonQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"RolodexType"'): dbc.Table.v1215.RolodexType
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponent"'): dbc.Table.v1215.RoomComponent
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponentOption"'): dbc.Table.v1215.RoomComponentOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponentOptionTexture"'): dbc.Table.v1215.RoomComponentOptionTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponentTexture"'): dbc.Table.v1215.RoomComponentTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomGridLine"'): dbc.Table.v1215.RoomGridLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomWmoData"'): dbc.Table.v1215.RoomWmoData
+---@overload fun(self: DbcWorkspace_v1215, name: '"RopeEffect"'): dbc.Table.v1215.RopeEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"RuneforgeLegendaryAbility"'): dbc.Table.v1215.RuneforgeLegendaryAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"SDReplacementModel"'): dbc.Table.v1215.SDReplacementModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"SSAOSettings"'): dbc.Table.v1215.SSAOSettings
+---@overload fun(self: DbcWorkspace_v1215, name: '"Scenario"'): dbc.Table.v1215.Scenario
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScenarioEventEntry"'): dbc.Table.v1215.ScenarioEventEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScenarioStep"'): dbc.Table.v1215.ScenarioStep
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScript"'): dbc.Table.v1215.SceneScript
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptGlobalText"'): dbc.Table.v1215.SceneScriptGlobalText
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptPackage"'): dbc.Table.v1215.SceneScriptPackage
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptPackageMember"'): dbc.Table.v1215.SceneScriptPackageMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptText"'): dbc.Table.v1215.SceneScriptText
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScheduledInterval"'): dbc.Table.v1215.ScheduledInterval
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScreenEffect"'): dbc.Table.v1215.ScreenEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScreenEffectType"'): dbc.Table.v1215.ScreenEffectType
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScreenLocation"'): dbc.Table.v1215.ScreenLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"SeamlessSite"'): dbc.Table.v1215.SeamlessSite
+---@overload fun(self: DbcWorkspace_v1215, name: '"ServerMessages"'): dbc.Table.v1215.ServerMessages
+---@overload fun(self: DbcWorkspace_v1215, name: '"ShadowyEffect"'): dbc.Table.v1215.ShadowyEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SharedString"'): dbc.Table.v1215.SharedString
+---@overload fun(self: DbcWorkspace_v1215, name: '"SiegeableProperties"'): dbc.Table.v1215.SiegeableProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillLine"'): dbc.Table.v1215.SkillLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillLineAbility"'): dbc.Table.v1215.SkillLineAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillLineXTraitTree"'): dbc.Table.v1215.SkillLineXTraitTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillRaceClassInfo"'): dbc.Table.v1215.SkillRaceClassInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkySceneXPlayerCondition"'): dbc.Table.v1215.SkySceneXPlayerCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"Soulbind"'): dbc.Table.v1215.Soulbind
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduit"'): dbc.Table.v1215.SoulbindConduit
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitEnhancedSocket"'): dbc.Table.v1215.SoulbindConduitEnhancedSocket
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitItem"'): dbc.Table.v1215.SoulbindConduitItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitRank"'): dbc.Table.v1215.SoulbindConduitRank
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitRankProperties"'): dbc.Table.v1215.SoulbindConduitRankProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindUIDisplayInfo"'): dbc.Table.v1215.SoulbindUIDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundAmbience"'): dbc.Table.v1215.SoundAmbience
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundAmbienceFlavor"'): dbc.Table.v1215.SoundAmbienceFlavor
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundBus"'): dbc.Table.v1215.SoundBus
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundBusOverride"'): dbc.Table.v1215.SoundBusOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundEmitterPillPoints"'): dbc.Table.v1215.SoundEmitterPillPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundEmitters"'): dbc.Table.v1215.SoundEmitters
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundEnvelope"'): dbc.Table.v1215.SoundEnvelope
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundFilter"'): dbc.Table.v1215.SoundFilter
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundFilterElem"'): dbc.Table.v1215.SoundFilterElem
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKit"'): dbc.Table.v1215.SoundKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitAdvanced"'): dbc.Table.v1215.SoundKitAdvanced
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitChild"'): dbc.Table.v1215.SoundKitChild
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitEntry"'): dbc.Table.v1215.SoundKitEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitFallback"'): dbc.Table.v1215.SoundKitFallback
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundMixGroup"'): dbc.Table.v1215.SoundMixGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundOverride"'): dbc.Table.v1215.SoundOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundParameter"'): dbc.Table.v1215.SoundParameter
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundProviderPreferences"'): dbc.Table.v1215.SoundProviderPreferences
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundWaterfallEmitter"'): dbc.Table.v1215.SoundWaterfallEmitter
+---@overload fun(self: DbcWorkspace_v1215, name: '"SourceInfo"'): dbc.Table.v1215.SourceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpamMessages"'): dbc.Table.v1215.SpamMessages
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpecSetMember"'): dbc.Table.v1215.SpecSetMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpecializationSpells"'): dbc.Table.v1215.SpecializationSpells
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpecializationSpellsDisplay"'): dbc.Table.v1215.SpecializationSpellsDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"Spell"'): dbc.Table.v1215.Spell
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellActionBarPref"'): dbc.Table.v1215.SpellActionBarPref
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellActivationOverlay"'): dbc.Table.v1215.SpellActivationOverlay
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraNames"'): dbc.Table.v1215.SpellAuraNames
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraOptions"'): dbc.Table.v1215.SpellAuraOptions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraRestrictions"'): dbc.Table.v1215.SpellAuraRestrictions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraVisXChrSpec"'): dbc.Table.v1215.SpellAuraVisXChrSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraVisibility"'): dbc.Table.v1215.SpellAuraVisibility
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCastTimes"'): dbc.Table.v1215.SpellCastTimes
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCastingRequirements"'): dbc.Table.v1215.SpellCastingRequirements
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCategories"'): dbc.Table.v1215.SpellCategories
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCategory"'): dbc.Table.v1215.SpellCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellChainEffects"'): dbc.Table.v1215.SpellChainEffects
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClassOptions"'): dbc.Table.v1215.SpellClassOptions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterAreaEffectCounts"'): dbc.Table.v1215.SpellClutterAreaEffectCounts
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterFrameRates"'): dbc.Table.v1215.SpellClutterFrameRates
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterImpactModelCounts"'): dbc.Table.v1215.SpellClutterImpactModelCounts
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterKitDistances"'): dbc.Table.v1215.SpellClutterKitDistances
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterMissileDist"'): dbc.Table.v1215.SpellClutterMissileDist
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterWeaponTrailDist"'): dbc.Table.v1215.SpellClutterWeaponTrailDist
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCooldowns"'): dbc.Table.v1215.SpellCooldowns
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDescriptionVariables"'): dbc.Table.v1215.SpellDescriptionVariables
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDiminish"'): dbc.Table.v1215.SpellDiminish
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDispelType"'): dbc.Table.v1215.SpellDispelType
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDuration"'): dbc.Table.v1215.SpellDuration
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffect"'): dbc.Table.v1215.SpellEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffectAutoDescription"'): dbc.Table.v1215.SpellEffectAutoDescription
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffectEmission"'): dbc.Table.v1215.SpellEffectEmission
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffectNames"'): dbc.Table.v1215.SpellEffectNames
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEmpower"'): dbc.Table.v1215.SpellEmpower
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEmpowerStage"'): dbc.Table.v1215.SpellEmpowerStage
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEquippedItems"'): dbc.Table.v1215.SpellEquippedItems
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellFlyout"'): dbc.Table.v1215.SpellFlyout
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellFlyoutItem"'): dbc.Table.v1215.SpellFlyoutItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellFocusObject"'): dbc.Table.v1215.SpellFocusObject
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellInterrupts"'): dbc.Table.v1215.SpellInterrupts
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellItemEnchantment"'): dbc.Table.v1215.SpellItemEnchantment
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellItemEnchantmentCondition"'): dbc.Table.v1215.SpellItemEnchantmentCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellKeyboundOverride"'): dbc.Table.v1215.SpellKeyboundOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellLabel"'): dbc.Table.v1215.SpellLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellLearnSpell"'): dbc.Table.v1215.SpellLearnSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellLevels"'): dbc.Table.v1215.SpellLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMechanic"'): dbc.Table.v1215.SpellMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMisc"'): dbc.Table.v1215.SpellMisc
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMissile"'): dbc.Table.v1215.SpellMissile
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMissileMotion"'): dbc.Table.v1215.SpellMissileMotion
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellName"'): dbc.Table.v1215.SpellName
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellOverrideName"'): dbc.Table.v1215.SpellOverrideName
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellPower"'): dbc.Table.v1215.SpellPower
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellPowerDifficulty"'): dbc.Table.v1215.SpellPowerDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellProceduralEffect"'): dbc.Table.v1215.SpellProceduralEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellProcsPerMinute"'): dbc.Table.v1215.SpellProcsPerMinute
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellProcsPerMinuteMod"'): dbc.Table.v1215.SpellProcsPerMinuteMod
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellRadius"'): dbc.Table.v1215.SpellRadius
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellRange"'): dbc.Table.v1215.SpellRange
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellReagents"'): dbc.Table.v1215.SpellReagents
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellReagentsCurrency"'): dbc.Table.v1215.SpellReagentsCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellReplacement"'): dbc.Table.v1215.SpellReplacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellScaling"'): dbc.Table.v1215.SpellScaling
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellScript"'): dbc.Table.v1215.SpellScript
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellScriptText"'): dbc.Table.v1215.SpellScriptText
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellShapeshift"'): dbc.Table.v1215.SpellShapeshift
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellShapeshiftForm"'): dbc.Table.v1215.SpellShapeshiftForm
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellSpecialUnitEffect"'): dbc.Table.v1215.SpellSpecialUnitEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTargetRestrictions"'): dbc.Table.v1215.SpellTargetRestrictions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtFilterRuleNode"'): dbc.Table.v1215.SpellTgtFilterRuleNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtFilterRuleSetNode"'): dbc.Table.v1215.SpellTgtFilterRuleSetNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtFilterRuleTemplate"'): dbc.Table.v1215.SpellTgtFilterRuleTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtGatherNode"'): dbc.Table.v1215.SpellTgtGatherNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtGatherTemplate"'): dbc.Table.v1215.SpellTgtGatherTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTotems"'): dbc.Table.v1215.SpellTotems
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisual"'): dbc.Table.v1215.SpellVisual
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualAnim"'): dbc.Table.v1215.SpellVisualAnim
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualColorEffect"'): dbc.Table.v1215.SpellVisualColorEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualEffectName"'): dbc.Table.v1215.SpellVisualEffectName
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualEvent"'): dbc.Table.v1215.SpellVisualEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKit"'): dbc.Table.v1215.SpellVisualKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitAreaModel"'): dbc.Table.v1215.SpellVisualKitAreaModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitDecalAttach"'): dbc.Table.v1215.SpellVisualKitDecalAttach
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitEffect"'): dbc.Table.v1215.SpellVisualKitEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitModelAttach"'): dbc.Table.v1215.SpellVisualKitModelAttach
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitPicker"'): dbc.Table.v1215.SpellVisualKitPicker
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitPickerEntry"'): dbc.Table.v1215.SpellVisualKitPickerEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualMissile"'): dbc.Table.v1215.SpellVisualMissile
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualScreenEffect"'): dbc.Table.v1215.SpellVisualScreenEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellXDescriptionVariables"'): dbc.Table.v1215.SpellXDescriptionVariables
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellXSpellVisual"'): dbc.Table.v1215.SpellXSpellVisual
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpotLightConditionMap"'): dbc.Table.v1215.SpotLightConditionMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"StartupFiles"'): dbc.Table.v1215.StartupFiles
+---@overload fun(self: DbcWorkspace_v1215, name: '"Stationery"'): dbc.Table.v1215.Stationery
+---@overload fun(self: DbcWorkspace_v1215, name: '"SubgraphNode"'): dbc.Table.v1215.SubgraphNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SummonProperties"'): dbc.Table.v1215.SummonProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"TactKey"'): dbc.Table.v1215.TactKey
+---@overload fun(self: DbcWorkspace_v1215, name: '"TactKeyLookup"'): dbc.Table.v1215.TactKeyLookup
+---@overload fun(self: DbcWorkspace_v1215, name: '"Talent"'): dbc.Table.v1215.Talent
+---@overload fun(self: DbcWorkspace_v1215, name: '"TalentTab"'): dbc.Table.v1215.TalentTab
+---@overload fun(self: DbcWorkspace_v1215, name: '"TalentTreePrimarySpells"'): dbc.Table.v1215.TalentTreePrimarySpells
+---@overload fun(self: DbcWorkspace_v1215, name: '"TaxiNodes"'): dbc.Table.v1215.TaxiNodes
+---@overload fun(self: DbcWorkspace_v1215, name: '"TaxiPath"'): dbc.Table.v1215.TaxiPath
+---@overload fun(self: DbcWorkspace_v1215, name: '"TaxiPathNode"'): dbc.Table.v1215.TaxiPathNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainColorGradingRamp"'): dbc.Table.v1215.TerrainColorGradingRamp
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainMaterial"'): dbc.Table.v1215.TerrainMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainType"'): dbc.Table.v1215.TerrainType
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainTypeSounds"'): dbc.Table.v1215.TerrainTypeSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"TextureBlendSet"'): dbc.Table.v1215.TextureBlendSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"TextureFileData"'): dbc.Table.v1215.TextureFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"TierTransition"'): dbc.Table.v1215.TierTransition
+---@overload fun(self: DbcWorkspace_v1215, name: '"TieredEntrance"'): dbc.Table.v1215.TieredEntrance
+---@overload fun(self: DbcWorkspace_v1215, name: '"TimeEventData"'): dbc.Table.v1215.TimeEventData
+---@overload fun(self: DbcWorkspace_v1215, name: '"TotemCategory"'): dbc.Table.v1215.TotemCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"Toy"'): dbc.Table.v1215.Toy
+---@overload fun(self: DbcWorkspace_v1215, name: '"TradeSkillCategory"'): dbc.Table.v1215.TradeSkillCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"TradeSkillItem"'): dbc.Table.v1215.TradeSkillItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCond"'): dbc.Table.v1215.TraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCondAccountElement"'): dbc.Table.v1215.TraitCondAccountElement
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCost"'): dbc.Table.v1215.TraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCurrency"'): dbc.Table.v1215.TraitCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCurrencySource"'): dbc.Table.v1215.TraitCurrencySource
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitDefinition"'): dbc.Table.v1215.TraitDefinition
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitDefinitionEffectPoints"'): dbc.Table.v1215.TraitDefinitionEffectPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitEdge"'): dbc.Table.v1215.TraitEdge
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNode"'): dbc.Table.v1215.TraitNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeEntry"'): dbc.Table.v1215.TraitNodeEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeEntryXTraitCond"'): dbc.Table.v1215.TraitNodeEntryXTraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeEntryXTraitCost"'): dbc.Table.v1215.TraitNodeEntryXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroup"'): dbc.Table.v1215.TraitNodeGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroupXTraitCond"'): dbc.Table.v1215.TraitNodeGroupXTraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroupXTraitCost"'): dbc.Table.v1215.TraitNodeGroupXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroupXTraitNode"'): dbc.Table.v1215.TraitNodeGroupXTraitNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeXTraitCond"'): dbc.Table.v1215.TraitNodeXTraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeXTraitCost"'): dbc.Table.v1215.TraitNodeXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeXTraitNodeEntry"'): dbc.Table.v1215.TraitNodeXTraitNodeEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitSubTree"'): dbc.Table.v1215.TraitSubTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitSystem"'): dbc.Table.v1215.TraitSystem
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTree"'): dbc.Table.v1215.TraitTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeLoadout"'): dbc.Table.v1215.TraitTreeLoadout
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeLoadoutEntry"'): dbc.Table.v1215.TraitTreeLoadoutEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeXTraitCost"'): dbc.Table.v1215.TraitTreeXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeXTraitCurrency"'): dbc.Table.v1215.TraitTreeXTraitCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransformMatrix"'): dbc.Table.v1215.TransformMatrix
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogDefaultLevel"'): dbc.Table.v1215.TransmogDefaultLevel
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogHoliday"'): dbc.Table.v1215.TransmogHoliday
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogIllusion"'): dbc.Table.v1215.TransmogIllusion
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogOutfitEntry"'): dbc.Table.v1215.TransmogOutfitEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogOutfitSlotInfo"'): dbc.Table.v1215.TransmogOutfitSlotInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogOutfitSlotOption"'): dbc.Table.v1215.TransmogOutfitSlotOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSet"'): dbc.Table.v1215.TransmogSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSetGroup"'): dbc.Table.v1215.TransmogSetGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSetItem"'): dbc.Table.v1215.TransmogSetItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSituation"'): dbc.Table.v1215.TransmogSituation
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSituationGroup"'): dbc.Table.v1215.TransmogSituationGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSituationTrigger"'): dbc.Table.v1215.TransmogSituationTrigger
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransportAnimation"'): dbc.Table.v1215.TransportAnimation
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransportPhysics"'): dbc.Table.v1215.TransportPhysics
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransportRotation"'): dbc.Table.v1215.TransportRotation
+---@overload fun(self: DbcWorkspace_v1215, name: '"Trophy"'): dbc.Table.v1215.Trophy
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIArrowCallout"'): dbc.Table.v1215.UIArrowCallout
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIButton"'): dbc.Table.v1215.UIButton
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIChromieTimeExpansionInfo"'): dbc.Table.v1215.UIChromieTimeExpansionInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICinematicIntroInfo"'): dbc.Table.v1215.UICinematicIntroInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICovenantAbility"'): dbc.Table.v1215.UICovenantAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICovenantHighlight"'): dbc.Table.v1215.UICovenantHighlight
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICovenantPreview"'): dbc.Table.v1215.UICovenantPreview
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIDeadlyDebuff"'): dbc.Table.v1215.UIDeadlyDebuff
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIDungeonScoreRarity"'): dbc.Table.v1215.UIDungeonScoreRarity
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIEventToast"'): dbc.Table.v1215.UIEventToast
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIExpansionDisplayInfo"'): dbc.Table.v1215.UIExpansionDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIExpansionDisplayInfoIcon"'): dbc.Table.v1215.UIExpansionDisplayInfoIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIGenericWidgetDisplay"'): dbc.Table.v1215.UIGenericWidgetDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIMapPinInfo"'): dbc.Table.v1215.UIMapPinInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIModifiedInstance"'): dbc.Table.v1215.UIModifiedInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIScenarioDisplayInfo"'): dbc.Table.v1215.UIScenarioDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIScriptedAnimationEffect"'): dbc.Table.v1215.UIScriptedAnimationEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"UISplashScreen"'): dbc.Table.v1215.UISplashScreen
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamFbackTalkingHeadChrRace"'): dbc.Table.v1215.UiCamFbackTalkingHeadChrRace
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamFbackTransmogChrRace"'): dbc.Table.v1215.UiCamFbackTransmogChrRace
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamFbackTransmogWeapon"'): dbc.Table.v1215.UiCamFbackTransmogWeapon
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamera"'): dbc.Table.v1215.UiCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCameraType"'): dbc.Table.v1215.UiCameraType
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCanvas"'): dbc.Table.v1215.UiCanvas
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCovenantDisplayInfo"'): dbc.Table.v1215.UiCovenantDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiItemInteraction"'): dbc.Table.v1215.UiItemInteraction
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMap"'): dbc.Table.v1215.UiMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapArt"'): dbc.Table.v1215.UiMapArt
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapArtStyleLayer"'): dbc.Table.v1215.UiMapArtStyleLayer
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapArtTile"'): dbc.Table.v1215.UiMapArtTile
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapAssignment"'): dbc.Table.v1215.UiMapAssignment
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapFogOfWar"'): dbc.Table.v1215.UiMapFogOfWar
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapFogOfWarVisualization"'): dbc.Table.v1215.UiMapFogOfWarVisualization
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapGroup"'): dbc.Table.v1215.UiMapGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapGroupMember"'): dbc.Table.v1215.UiMapGroupMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapLink"'): dbc.Table.v1215.UiMapLink
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapXMapArt"'): dbc.Table.v1215.UiMapXMapArt
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelScene"'): dbc.Table.v1215.UiModelScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelSceneActor"'): dbc.Table.v1215.UiModelSceneActor
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelSceneActorDisplay"'): dbc.Table.v1215.UiModelSceneActorDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelSceneCamera"'): dbc.Table.v1215.UiModelSceneCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiPartyPose"'): dbc.Table.v1215.UiPartyPose
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiQuestDetailsTheme"'): dbc.Table.v1215.UiQuestDetailsTheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlas"'): dbc.Table.v1215.UiTextureAtlas
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlasElement"'): dbc.Table.v1215.UiTextureAtlasElement
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlasElementSliceData"'): dbc.Table.v1215.UiTextureAtlasElementSliceData
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlasMember"'): dbc.Table.v1215.UiTextureAtlasMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureKit"'): dbc.Table.v1215.UiTextureKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWeeklyReward"'): dbc.Table.v1215.UiWeeklyReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidget"'): dbc.Table.v1215.UiWidget
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetConstantSource"'): dbc.Table.v1215.UiWidgetConstantSource
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetDataSource"'): dbc.Table.v1215.UiWidgetDataSource
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetMap"'): dbc.Table.v1215.UiWidgetMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetSet"'): dbc.Table.v1215.UiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetStringSource"'): dbc.Table.v1215.UiWidgetStringSource
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetVisTypeDataReq"'): dbc.Table.v1215.UiWidgetVisTypeDataReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetVisualization"'): dbc.Table.v1215.UiWidgetVisualization
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetXWidgetSet"'): dbc.Table.v1215.UiWidgetXWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitBlood"'): dbc.Table.v1215.UnitBlood
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitBloodLevels"'): dbc.Table.v1215.UnitBloodLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitCondition"'): dbc.Table.v1215.UnitCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitPowerBar"'): dbc.Table.v1215.UnitPowerBar
+---@overload fun(self: DbcWorkspace_v1215, name: '"Vehicle"'): dbc.Table.v1215.Vehicle
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehiclePOIType"'): dbc.Table.v1215.VehiclePOIType
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehicleSeat"'): dbc.Table.v1215.VehicleSeat
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehicleUIIndSeat"'): dbc.Table.v1215.VehicleUIIndSeat
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehicleUIIndicator"'): dbc.Table.v1215.VehicleUIIndicator
+---@overload fun(self: DbcWorkspace_v1215, name: '"Vignette"'): dbc.Table.v1215.Vignette
+---@overload fun(self: DbcWorkspace_v1215, name: '"VignetteUiWidgetSet"'): dbc.Table.v1215.VignetteUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"VirtualAttachment"'): dbc.Table.v1215.VirtualAttachment
+---@overload fun(self: DbcWorkspace_v1215, name: '"VirtualAttachmentCustomization"'): dbc.Table.v1215.VirtualAttachmentCustomization
+---@overload fun(self: DbcWorkspace_v1215, name: '"VocalUISounds"'): dbc.Table.v1215.VocalUISounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"VoiceOverPriority"'): dbc.Table.v1215.VoiceOverPriority
+---@overload fun(self: DbcWorkspace_v1215, name: '"VolumeFogCondition"'): dbc.Table.v1215.VolumeFogCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"WMOAreaTable"'): dbc.Table.v1215.WMOAreaTable
+---@overload fun(self: DbcWorkspace_v1215, name: '"WMOMinimapTexture"'): dbc.Table.v1215.WMOMinimapTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandPlacementDisplayInfo"'): dbc.Table.v1215.WarbandPlacementDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScene"'): dbc.Table.v1215.WarbandScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandSceneAnimChrSpec"'): dbc.Table.v1215.WarbandSceneAnimChrSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandSceneAnimation"'): dbc.Table.v1215.WarbandSceneAnimation
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlacement"'): dbc.Table.v1215.WarbandScenePlacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlacementFilterReq"'): dbc.Table.v1215.WarbandScenePlacementFilterReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlacementOption"'): dbc.Table.v1215.WarbandScenePlacementOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlcmntAnimOverride"'): dbc.Table.v1215.WarbandScenePlcmntAnimOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandSceneSourceInfo"'): dbc.Table.v1215.WarbandSceneSourceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaterfallData"'): dbc.Table.v1215.WaterfallData
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointEdge"'): dbc.Table.v1215.WaypointEdge
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointMapVolume"'): dbc.Table.v1215.WaypointMapVolume
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointNode"'): dbc.Table.v1215.WaypointNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointSafeLocs"'): dbc.Table.v1215.WaypointSafeLocs
+---@overload fun(self: DbcWorkspace_v1215, name: '"WbAccessControlList"'): dbc.Table.v1215.WbAccessControlList
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponImpactSounds"'): dbc.Table.v1215.WeaponImpactSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponSwingSounds2"'): dbc.Table.v1215.WeaponSwingSounds2
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponTrail"'): dbc.Table.v1215.WeaponTrail
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponTrailModelDef"'): dbc.Table.v1215.WeaponTrailModelDef
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponTrailParam"'): dbc.Table.v1215.WeaponTrailParam
+---@overload fun(self: DbcWorkspace_v1215, name: '"Weather"'): dbc.Table.v1215.Weather
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeatherXParticulate"'): dbc.Table.v1215.WeatherXParticulate
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeeklyRewardChestActivityTier"'): dbc.Table.v1215.WeeklyRewardChestActivityTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeeklyRewardChestThreshold"'): dbc.Table.v1215.WeeklyRewardChestThreshold
+---@overload fun(self: DbcWorkspace_v1215, name: '"WindSettings"'): dbc.Table.v1215.WindSettings
+---@overload fun(self: DbcWorkspace_v1215, name: '"WmoMaxScale"'): dbc.Table.v1215.WmoMaxScale
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldBossLockout"'): dbc.Table.v1215.WorldBossLockout
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldChunkSounds"'): dbc.Table.v1215.WorldChunkSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldEffect"'): dbc.Table.v1215.WorldEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldElapsedTimer"'): dbc.Table.v1215.WorldElapsedTimer
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldLayerMapSet"'): dbc.Table.v1215.WorldLayerMapSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldMapOverlay"'): dbc.Table.v1215.WorldMapOverlay
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldMapOverlayTile"'): dbc.Table.v1215.WorldMapOverlayTile
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldShadow"'): dbc.Table.v1215.WorldShadow
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldStateExpression"'): dbc.Table.v1215.WorldStateExpression
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldStateZoneSounds"'): dbc.Table.v1215.WorldStateZoneSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"World_PVP_Area"'): dbc.Table.v1215.World_PVP_Area
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneIntroMusicTable"'): dbc.Table.v1215.ZoneIntroMusicTable
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneLight"'): dbc.Table.v1215.ZoneLight
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneLightPoint"'): dbc.Table.v1215.ZoneLightPoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneMusic"'): dbc.Table.v1215.ZoneMusic
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneStory"'): dbc.Table.v1215.ZoneStory
+function DbcWorkspace_v1215:Open(name) end
+
+---@overload fun(self: DbcWorkspace_v1215, name: '"AccountStoreCategory"'): dbc.Table.v1215.AccountStoreCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"AccountStoreItem"'): dbc.Table.v1215.AccountStoreItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"Achievement"'): dbc.Table.v1215.Achievement
+---@overload fun(self: DbcWorkspace_v1215, name: '"Achievement_Category"'): dbc.Table.v1215.Achievement_Category
+---@overload fun(self: DbcWorkspace_v1215, name: '"ActionBarGroup"'): dbc.Table.v1215.ActionBarGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ActionBarGroupEntry"'): dbc.Table.v1215.ActionBarGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"AdventureJournal"'): dbc.Table.v1215.AdventureJournal
+---@overload fun(self: DbcWorkspace_v1215, name: '"AdventureJournalItem"'): dbc.Table.v1215.AdventureJournalItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"AdventureMapPOI"'): dbc.Table.v1215.AdventureMapPOI
+---@overload fun(self: DbcWorkspace_v1215, name: '"AlliedRace"'): dbc.Table.v1215.AlliedRace
+---@overload fun(self: DbcWorkspace_v1215, name: '"AltMinimap"'): dbc.Table.v1215.AltMinimap
+---@overload fun(self: DbcWorkspace_v1215, name: '"AltMinimapFiledata"'): dbc.Table.v1215.AltMinimapFiledata
+---@overload fun(self: DbcWorkspace_v1215, name: '"AltMinimapWMO"'): dbc.Table.v1215.AltMinimapWMO
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKit"'): dbc.Table.v1215.AnimKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitBoneSet"'): dbc.Table.v1215.AnimKitBoneSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitBoneSetAlias"'): dbc.Table.v1215.AnimKitBoneSetAlias
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitConfig"'): dbc.Table.v1215.AnimKitConfig
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitConfigBoneSet"'): dbc.Table.v1215.AnimKitConfigBoneSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitPriority"'): dbc.Table.v1215.AnimKitPriority
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitReplacement"'): dbc.Table.v1215.AnimKitReplacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimKitSegment"'): dbc.Table.v1215.AnimKitSegment
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimReplacement"'): dbc.Table.v1215.AnimReplacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimReplacementSet"'): dbc.Table.v1215.AnimReplacementSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimaCable"'): dbc.Table.v1215.AnimaCable
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimaCylinder"'): dbc.Table.v1215.AnimaCylinder
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimaMaterial"'): dbc.Table.v1215.AnimaMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"AnimationData"'): dbc.Table.v1215.AnimationData
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaConditionalData"'): dbc.Table.v1215.AreaConditionalData
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaFarClipOverride"'): dbc.Table.v1215.AreaFarClipOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaGroupMember"'): dbc.Table.v1215.AreaGroupMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaPOI"'): dbc.Table.v1215.AreaPOI
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaPOIState"'): dbc.Table.v1215.AreaPOIState
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaPOIUiWidgetSet"'): dbc.Table.v1215.AreaPOIUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTable"'): dbc.Table.v1215.AreaTable
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTrigger"'): dbc.Table.v1215.AreaTrigger
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerActionSet"'): dbc.Table.v1215.AreaTriggerActionSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerBoundedPlane"'): dbc.Table.v1215.AreaTriggerBoundedPlane
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerBox"'): dbc.Table.v1215.AreaTriggerBox
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerCreateProperties"'): dbc.Table.v1215.AreaTriggerCreateProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerCylinder"'): dbc.Table.v1215.AreaTriggerCylinder
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerDisk"'): dbc.Table.v1215.AreaTriggerDisk
+---@overload fun(self: DbcWorkspace_v1215, name: '"AreaTriggerSphere"'): dbc.Table.v1215.AreaTriggerSphere
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArenaTrackedItem"'): dbc.Table.v1215.ArenaTrackedItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArmorLocation"'): dbc.Table.v1215.ArmorLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"Artifact"'): dbc.Table.v1215.Artifact
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactAppearance"'): dbc.Table.v1215.ArtifactAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactAppearanceSet"'): dbc.Table.v1215.ArtifactAppearanceSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactCategory"'): dbc.Table.v1215.ArtifactCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactItemToTransmog"'): dbc.Table.v1215.ArtifactItemToTransmog
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPower"'): dbc.Table.v1215.ArtifactPower
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPowerLink"'): dbc.Table.v1215.ArtifactPowerLink
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPowerPicker"'): dbc.Table.v1215.ArtifactPowerPicker
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactPowerRank"'): dbc.Table.v1215.ArtifactPowerRank
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactQuestXP"'): dbc.Table.v1215.ArtifactQuestXP
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactTier"'): dbc.Table.v1215.ArtifactTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"ArtifactUnlock"'): dbc.Table.v1215.ArtifactUnlock
+---@overload fun(self: DbcWorkspace_v1215, name: '"AssistedCombat"'): dbc.Table.v1215.AssistedCombat
+---@overload fun(self: DbcWorkspace_v1215, name: '"AssistedCombatRule"'): dbc.Table.v1215.AssistedCombatRule
+---@overload fun(self: DbcWorkspace_v1215, name: '"AssistedCombatStep"'): dbc.Table.v1215.AssistedCombatStep
+---@overload fun(self: DbcWorkspace_v1215, name: '"AuctionHouse"'): dbc.Table.v1215.AuctionHouse
+---@overload fun(self: DbcWorkspace_v1215, name: '"AuctionHouseCategory"'): dbc.Table.v1215.AuctionHouseCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteEmpoweredItem"'): dbc.Table.v1215.AzeriteEmpoweredItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteEssence"'): dbc.Table.v1215.AzeriteEssence
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteEssencePower"'): dbc.Table.v1215.AzeriteEssencePower
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteItem"'): dbc.Table.v1215.AzeriteItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteItemMilestonePower"'): dbc.Table.v1215.AzeriteItemMilestonePower
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteKnowledgeMultiplier"'): dbc.Table.v1215.AzeriteKnowledgeMultiplier
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteLevelInfo"'): dbc.Table.v1215.AzeriteLevelInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeritePower"'): dbc.Table.v1215.AzeritePower
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeritePowerSetMember"'): dbc.Table.v1215.AzeritePowerSetMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteTierUnlock"'): dbc.Table.v1215.AzeriteTierUnlock
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteTierUnlockSet"'): dbc.Table.v1215.AzeriteTierUnlockSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"AzeriteUnlockMapping"'): dbc.Table.v1215.AzeriteUnlockMapping
+---@overload fun(self: DbcWorkspace_v1215, name: '"BankBagSlotPrices"'): dbc.Table.v1215.BankBagSlotPrices
+---@overload fun(self: DbcWorkspace_v1215, name: '"BankTab"'): dbc.Table.v1215.BankTab
+---@overload fun(self: DbcWorkspace_v1215, name: '"BannedAddons"'): dbc.Table.v1215.BannedAddons
+---@overload fun(self: DbcWorkspace_v1215, name: '"BarberShopStyle"'): dbc.Table.v1215.BarberShopStyle
+---@overload fun(self: DbcWorkspace_v1215, name: '"BarrageEffect"'): dbc.Table.v1215.BarrageEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbility"'): dbc.Table.v1215.BattlePetAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbilityEffect"'): dbc.Table.v1215.BattlePetAbilityEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbilityState"'): dbc.Table.v1215.BattlePetAbilityState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetAbilityTurn"'): dbc.Table.v1215.BattlePetAbilityTurn
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetBreedQuality"'): dbc.Table.v1215.BattlePetBreedQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetBreedState"'): dbc.Table.v1215.BattlePetBreedState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetDisplayOverride"'): dbc.Table.v1215.BattlePetDisplayOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetEffectProperties"'): dbc.Table.v1215.BattlePetEffectProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetNPCTeamMember"'): dbc.Table.v1215.BattlePetNPCTeamMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetSpecies"'): dbc.Table.v1215.BattlePetSpecies
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetSpeciesState"'): dbc.Table.v1215.BattlePetSpeciesState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetSpeciesXAbility"'): dbc.Table.v1215.BattlePetSpeciesXAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetState"'): dbc.Table.v1215.BattlePetState
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlePetVisual"'): dbc.Table.v1215.BattlePetVisual
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlemasterList"'): dbc.Table.v1215.BattlemasterList
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlemasterListXMap"'): dbc.Table.v1215.BattlemasterListXMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"BattlepayCurrency"'): dbc.Table.v1215.BattlepayCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"BeamEffect"'): dbc.Table.v1215.BeamEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"BoneWindModifierModel"'): dbc.Table.v1215.BoneWindModifierModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"BoneWindModifiers"'): dbc.Table.v1215.BoneWindModifiers
+---@overload fun(self: DbcWorkspace_v1215, name: '"BonusRoll"'): dbc.Table.v1215.BonusRoll
+---@overload fun(self: DbcWorkspace_v1215, name: '"Bounty"'): dbc.Table.v1215.Bounty
+---@overload fun(self: DbcWorkspace_v1215, name: '"BountySet"'): dbc.Table.v1215.BountySet
+---@overload fun(self: DbcWorkspace_v1215, name: '"BroadcastText"'): dbc.Table.v1215.BroadcastText
+---@overload fun(self: DbcWorkspace_v1215, name: '"BroadcastTextDuration"'): dbc.Table.v1215.BroadcastTextDuration
+---@overload fun(self: DbcWorkspace_v1215, name: '"CameraEffect"'): dbc.Table.v1215.CameraEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CameraEffectEntry"'): dbc.Table.v1215.CameraEffectEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"CameraMode"'): dbc.Table.v1215.CameraMode
+---@overload fun(self: DbcWorkspace_v1215, name: '"Campaign"'): dbc.Table.v1215.Campaign
+---@overload fun(self: DbcWorkspace_v1215, name: '"CampaignXCondition"'): dbc.Table.v1215.CampaignXCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"CampaignXQuestLine"'): dbc.Table.v1215.CampaignXQuestLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"CastableRaidBuffs"'): dbc.Table.v1215.CastableRaidBuffs
+---@overload fun(self: DbcWorkspace_v1215, name: '"CatalogShopGameTitleInfo"'): dbc.Table.v1215.CatalogShopGameTitleInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CelestialBody"'): dbc.Table.v1215.CelestialBody
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_Categories"'): dbc.Table.v1215.Cfg_Categories
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_Configs"'): dbc.Table.v1215.Cfg_Configs
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_GameRules"'): dbc.Table.v1215.Cfg_GameRules
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_Regions"'): dbc.Table.v1215.Cfg_Regions
+---@overload fun(self: DbcWorkspace_v1215, name: '"Cfg_TimeEventRegionGroup"'): dbc.Table.v1215.Cfg_TimeEventRegionGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChallengeModeItemBonusOverride"'): dbc.Table.v1215.ChallengeModeItemBonusOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChallengeModeReward"'): dbc.Table.v1215.ChallengeModeReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChallengeModeXReward"'): dbc.Table.v1215.ChallengeModeXReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharBaseInfo"'): dbc.Table.v1215.CharBaseInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharBaseSection"'): dbc.Table.v1215.CharBaseSection
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharComponentTextureLayouts"'): dbc.Table.v1215.CharComponentTextureLayouts
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharComponentTextureSections"'): dbc.Table.v1215.CharComponentTextureSections
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharHairGeosets"'): dbc.Table.v1215.CharHairGeosets
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharSectionCondition"'): dbc.Table.v1215.CharSectionCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharShipment"'): dbc.Table.v1215.CharShipment
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharShipmentContainer"'): dbc.Table.v1215.CharShipmentContainer
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharStartKit"'): dbc.Table.v1215.CharStartKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharTitles"'): dbc.Table.v1215.CharTitles
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterFacialHairStyles"'): dbc.Table.v1215.CharacterFacialHairStyles
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterLoadout"'): dbc.Table.v1215.CharacterLoadout
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterLoadoutItem"'): dbc.Table.v1215.CharacterLoadoutItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterLoadoutPet"'): dbc.Table.v1215.CharacterLoadoutPet
+---@overload fun(self: DbcWorkspace_v1215, name: '"CharacterServiceInfo"'): dbc.Table.v1215.CharacterServiceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChatChannels"'): dbc.Table.v1215.ChatChannels
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChatProfanity"'): dbc.Table.v1215.ChatProfanity
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassRaceSex"'): dbc.Table.v1215.ChrClassRaceSex
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassTitle"'): dbc.Table.v1215.ChrClassTitle
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassUIChrModelInfo"'): dbc.Table.v1215.ChrClassUIChrModelInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassUIDisplay"'): dbc.Table.v1215.ChrClassUIDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassVillain"'): dbc.Table.v1215.ChrClassVillain
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClasses"'): dbc.Table.v1215.ChrClasses
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrClassesXPowerTypes"'): dbc.Table.v1215.ChrClassesXPowerTypes
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCreateClassAnimTarget"'): dbc.Table.v1215.ChrCreateClassAnimTarget
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCreateClassAnimTargetInfo"'): dbc.Table.v1215.ChrCreateClassAnimTargetInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustClientChoiceConversion"'): dbc.Table.v1215.ChrCustClientChoiceConversion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustGeoComponentLink"'): dbc.Table.v1215.ChrCustGeoComponentLink
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustItemGeoModify"'): dbc.Table.v1215.ChrCustItemGeoModify
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomization"'): dbc.Table.v1215.ChrCustomization
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationBoneSet"'): dbc.Table.v1215.ChrCustomizationBoneSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationCategory"'): dbc.Table.v1215.ChrCustomizationCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationChoice"'): dbc.Table.v1215.ChrCustomizationChoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationCondModel"'): dbc.Table.v1215.ChrCustomizationCondModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationConversion"'): dbc.Table.v1215.ChrCustomizationConversion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationDisplayInfo"'): dbc.Table.v1215.ChrCustomizationDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationElement"'): dbc.Table.v1215.ChrCustomizationElement
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationGeoset"'): dbc.Table.v1215.ChrCustomizationGeoset
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationGlyphPet"'): dbc.Table.v1215.ChrCustomizationGlyphPet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationMaterial"'): dbc.Table.v1215.ChrCustomizationMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationOption"'): dbc.Table.v1215.ChrCustomizationOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationReq"'): dbc.Table.v1215.ChrCustomizationReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationReqChoice"'): dbc.Table.v1215.ChrCustomizationReqChoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationSkinnedModel"'): dbc.Table.v1215.ChrCustomizationSkinnedModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationVisReq"'): dbc.Table.v1215.ChrCustomizationVisReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrCustomizationVoice"'): dbc.Table.v1215.ChrCustomizationVoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrModel"'): dbc.Table.v1215.ChrModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrModelMaterial"'): dbc.Table.v1215.ChrModelMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrModelTextureLayer"'): dbc.Table.v1215.ChrModelTextureLayer
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRaceRacialAbility"'): dbc.Table.v1215.ChrRaceRacialAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRaceXChrModel"'): dbc.Table.v1215.ChrRaceXChrModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRaces"'): dbc.Table.v1215.ChrRaces
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRacesCreateScreenIcon"'): dbc.Table.v1215.ChrRacesCreateScreenIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrRacesPing"'): dbc.Table.v1215.ChrRacesPing
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrSelectBackgroundCDI"'): dbc.Table.v1215.ChrSelectBackgroundCDI
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrSpecialization"'): dbc.Table.v1215.ChrSpecialization
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrUpgradeBucket"'): dbc.Table.v1215.ChrUpgradeBucket
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrUpgradeBucketSpell"'): dbc.Table.v1215.ChrUpgradeBucketSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"ChrUpgradeTier"'): dbc.Table.v1215.ChrUpgradeTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"CinematicCamera"'): dbc.Table.v1215.CinematicCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"CinematicSequences"'): dbc.Table.v1215.CinematicSequences
+---@overload fun(self: DbcWorkspace_v1215, name: '"ClientSceneEffect"'): dbc.Table.v1215.ClientSceneEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ClientSettings"'): dbc.Table.v1215.ClientSettings
+---@overload fun(self: DbcWorkspace_v1215, name: '"CloakDampening"'): dbc.Table.v1215.CloakDampening
+---@overload fun(self: DbcWorkspace_v1215, name: '"CloneEffect"'): dbc.Table.v1215.CloneEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceEncounter"'): dbc.Table.v1215.CollectableSourceEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceEncounterSparse"'): dbc.Table.v1215.CollectableSourceEncounterSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceInfo"'): dbc.Table.v1215.CollectableSourceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceQuest"'): dbc.Table.v1215.CollectableSourceQuest
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceQuestSparse"'): dbc.Table.v1215.CollectableSourceQuestSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceVendor"'): dbc.Table.v1215.CollectableSourceVendor
+---@overload fun(self: DbcWorkspace_v1215, name: '"CollectableSourceVendorSparse"'): dbc.Table.v1215.CollectableSourceVendorSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CombatCondition"'): dbc.Table.v1215.CombatCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommentatorIndirectSpell"'): dbc.Table.v1215.CommentatorIndirectSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommentatorStartLocation"'): dbc.Table.v1215.CommentatorStartLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommentatorTrackedCooldown"'): dbc.Table.v1215.CommentatorTrackedCooldown
+---@overload fun(self: DbcWorkspace_v1215, name: '"CommunityIcon"'): dbc.Table.v1215.CommunityIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"ComponentModelFileData"'): dbc.Table.v1215.ComponentModelFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ComponentTextureFileData"'): dbc.Table.v1215.ComponentTextureFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CompositeSpellsUIRedirect"'): dbc.Table.v1215.CompositeSpellsUIRedirect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalChrModel"'): dbc.Table.v1215.ConditionalChrModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalContentTuning"'): dbc.Table.v1215.ConditionalContentTuning
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalCreatureModelData"'): dbc.Table.v1215.ConditionalCreatureModelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConditionalItemAppearance"'): dbc.Table.v1215.ConditionalItemAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConfigurationWarning"'): dbc.Table.v1215.ConfigurationWarning
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentPush"'): dbc.Table.v1215.ContentPush
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentRestrictionRule"'): dbc.Table.v1215.ContentRestrictionRule
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentRestrictionRuleSet"'): dbc.Table.v1215.ContentRestrictionRuleSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuning"'): dbc.Table.v1215.ContentTuning
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuningXDifficulty"'): dbc.Table.v1215.ContentTuningXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuningXExpected"'): dbc.Table.v1215.ContentTuningXExpected
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContentTuningXLabel"'): dbc.Table.v1215.ContentTuningXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"Contribution"'): dbc.Table.v1215.Contribution
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContributionStyle"'): dbc.Table.v1215.ContributionStyle
+---@overload fun(self: DbcWorkspace_v1215, name: '"ContributionStyleContainer"'): dbc.Table.v1215.ContributionStyleContainer
+---@overload fun(self: DbcWorkspace_v1215, name: '"ConversationLine"'): dbc.Table.v1215.ConversationLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownSet"'): dbc.Table.v1215.CooldownSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownSetLinkedSpell"'): dbc.Table.v1215.CooldownSetLinkedSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownSetSpell"'): dbc.Table.v1215.CooldownSetSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CooldownViewerItemSpell"'): dbc.Table.v1215.CooldownViewerItemSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"CorruptionEffects"'): dbc.Table.v1215.CorruptionEffects
+---@overload fun(self: DbcWorkspace_v1215, name: '"Covenant"'): dbc.Table.v1215.Covenant
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingData"'): dbc.Table.v1215.CraftingData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDataEnchantQuality"'): dbc.Table.v1215.CraftingDataEnchantQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDataItemQuality"'): dbc.Table.v1215.CraftingDataItemQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDifficulty"'): dbc.Table.v1215.CraftingDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingDifficultyQuality"'): dbc.Table.v1215.CraftingDifficultyQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingOrder"'): dbc.Table.v1215.CraftingOrder
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingOrderHouse"'): dbc.Table.v1215.CraftingOrderHouse
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingOrderXLabel"'): dbc.Table.v1215.CraftingOrderXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingQuality"'): dbc.Table.v1215.CraftingQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingQualityAtlasSet"'): dbc.Table.v1215.CraftingQualityAtlasSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingReagentEffect"'): dbc.Table.v1215.CraftingReagentEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingReagentQuality"'): dbc.Table.v1215.CraftingReagentQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"CraftingReagentRequirement"'): dbc.Table.v1215.CraftingReagentRequirement
+---@overload fun(self: DbcWorkspace_v1215, name: '"Creature"'): dbc.Table.v1215.Creature
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDifficulty"'): dbc.Table.v1215.CreatureDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDifficultyTreasure"'): dbc.Table.v1215.CreatureDifficultyTreasure
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDispXUiCamera"'): dbc.Table.v1215.CreatureDispXUiCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfo"'): dbc.Table.v1215.CreatureDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoCond"'): dbc.Table.v1215.CreatureDisplayInfoCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoCondXChoice"'): dbc.Table.v1215.CreatureDisplayInfoCondXChoice
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoEvt"'): dbc.Table.v1215.CreatureDisplayInfoEvt
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoExtra"'): dbc.Table.v1215.CreatureDisplayInfoExtra
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoGeosetData"'): dbc.Table.v1215.CreatureDisplayInfoGeosetData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoOption"'): dbc.Table.v1215.CreatureDisplayInfoOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayInfoTrn"'): dbc.Table.v1215.CreatureDisplayInfoTrn
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureDisplayXUIModelScene"'): dbc.Table.v1215.CreatureDisplayXUIModelScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureFamily"'): dbc.Table.v1215.CreatureFamily
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureFamilyXUIModelScene"'): dbc.Table.v1215.CreatureFamilyXUIModelScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureImmunities"'): dbc.Table.v1215.CreatureImmunities
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureLabel"'): dbc.Table.v1215.CreatureLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureModelData"'): dbc.Table.v1215.CreatureModelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureMovementInfo"'): dbc.Table.v1215.CreatureMovementInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureSoundData"'): dbc.Table.v1215.CreatureSoundData
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureSoundFidget"'): dbc.Table.v1215.CreatureSoundFidget
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureType"'): dbc.Table.v1215.CreatureType
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureXContribution"'): dbc.Table.v1215.CreatureXContribution
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureXDisplayInfo"'): dbc.Table.v1215.CreatureXDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"CreatureXUiWidgetSet"'): dbc.Table.v1215.CreatureXUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"Criteria"'): dbc.Table.v1215.Criteria
+---@overload fun(self: DbcWorkspace_v1215, name: '"CriteriaTree"'): dbc.Table.v1215.CriteriaTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"CriteriaTreeXEffect"'): dbc.Table.v1215.CriteriaTreeXEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurrencyCategory"'): dbc.Table.v1215.CurrencyCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurrencyContainer"'): dbc.Table.v1215.CurrencyContainer
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurrencyTypes"'): dbc.Table.v1215.CurrencyTypes
+---@overload fun(self: DbcWorkspace_v1215, name: '"Curve"'): dbc.Table.v1215.Curve
+---@overload fun(self: DbcWorkspace_v1215, name: '"CurvePoint"'): dbc.Table.v1215.CurvePoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"DBData_M2Light"'): dbc.Table.v1215.DBData_M2Light
+---@overload fun(self: DbcWorkspace_v1215, name: '"DamageMeterOverride"'): dbc.Table.v1215.DamageMeterOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagGroup"'): dbc.Table.v1215.DataTagGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagGroupXDataTag"'): dbc.Table.v1215.DataTagGroupXDataTag
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagInfo"'): dbc.Table.v1215.DataTagInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagXHouseDecorRecord"'): dbc.Table.v1215.DataTagXHouseDecorRecord
+---@overload fun(self: DbcWorkspace_v1215, name: '"DataTagXRecord"'): dbc.Table.v1215.DataTagXRecord
+---@overload fun(self: DbcWorkspace_v1215, name: '"DeathThudLookups"'): dbc.Table.v1215.DeathThudLookups
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecalProperties"'): dbc.Table.v1215.DecalProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"DeclinedWord"'): dbc.Table.v1215.DeclinedWord
+---@overload fun(self: DbcWorkspace_v1215, name: '"DeclinedWordCases"'): dbc.Table.v1215.DeclinedWordCases
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorCategory"'): dbc.Table.v1215.DecorCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorDyeSlot"'): dbc.Table.v1215.DecorDyeSlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorSubcategory"'): dbc.Table.v1215.DecorSubcategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"DecorXDecorSubcategory"'): dbc.Table.v1215.DecorXDecorSubcategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"DelvesSeason"'): dbc.Table.v1215.DelvesSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"DelvesSeasonXSpell"'): dbc.Table.v1215.DelvesSeasonXSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"DestructibleModelData"'): dbc.Table.v1215.DestructibleModelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"Difficulty"'): dbc.Table.v1215.Difficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"DisplaySeason"'): dbc.Table.v1215.DisplaySeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"DissolveEffect"'): dbc.Table.v1215.DissolveEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"DriveCapability"'): dbc.Table.v1215.DriveCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"DriveCapabilityTier"'): dbc.Table.v1215.DriveCapabilityTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"DungeonEncounter"'): dbc.Table.v1215.DungeonEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"DurabilityCosts"'): dbc.Table.v1215.DurabilityCosts
+---@overload fun(self: DbcWorkspace_v1215, name: '"DurabilityQuality"'): dbc.Table.v1215.DurabilityQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"DyeColor"'): dbc.Table.v1215.DyeColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"DyeColorCategory"'): dbc.Table.v1215.DyeColorCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"EdgeGlowEffect"'): dbc.Table.v1215.EdgeGlowEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"Emotes"'): dbc.Table.v1215.Emotes
+---@overload fun(self: DbcWorkspace_v1215, name: '"EmotesText"'): dbc.Table.v1215.EmotesText
+---@overload fun(self: DbcWorkspace_v1215, name: '"EmotesTextData"'): dbc.Table.v1215.EmotesTextData
+---@overload fun(self: DbcWorkspace_v1215, name: '"EmotesTextSound"'): dbc.Table.v1215.EmotesTextSound
+---@overload fun(self: DbcWorkspace_v1215, name: '"EncounterEvent"'): dbc.Table.v1215.EncounterEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"EntryNode"'): dbc.Table.v1215.EntryNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"EntryTemplate"'): dbc.Table.v1215.EntryTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"EnvironmentalDamage"'): dbc.Table.v1215.EnvironmentalDamage
+---@overload fun(self: DbcWorkspace_v1215, name: '"EventSchedulerCategory"'): dbc.Table.v1215.EventSchedulerCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"EventSchedulerEvent"'): dbc.Table.v1215.EventSchedulerEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"Exhaustion"'): dbc.Table.v1215.Exhaustion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExpectedStat"'): dbc.Table.v1215.ExpectedStat
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExpectedStatMod"'): dbc.Table.v1215.ExpectedStatMod
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponent"'): dbc.Table.v1215.ExteriorComponent
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentExitPoint"'): dbc.Table.v1215.ExteriorComponentExitPoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentGroup"'): dbc.Table.v1215.ExteriorComponentGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentGroupXHook"'): dbc.Table.v1215.ExteriorComponentGroupXHook
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentHook"'): dbc.Table.v1215.ExteriorComponentHook
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentType"'): dbc.Table.v1215.ExteriorComponentType
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExteriorComponentXGroup"'): dbc.Table.v1215.ExteriorComponentXGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ExtraAbilityInfo"'): dbc.Table.v1215.ExtraAbilityInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"Faction"'): dbc.Table.v1215.Faction
+---@overload fun(self: DbcWorkspace_v1215, name: '"FactionGroup"'): dbc.Table.v1215.FactionGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"FactionTemplate"'): dbc.Table.v1215.FactionTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"FlightCapability"'): dbc.Table.v1215.FlightCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"FlightCapabilityXGlideEvent"'): dbc.Table.v1215.FlightCapabilityXGlideEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"FootprintTextures"'): dbc.Table.v1215.FootprintTextures
+---@overload fun(self: DbcWorkspace_v1215, name: '"FootstepTerrainLookup"'): dbc.Table.v1215.FootstepTerrainLookup
+---@overload fun(self: DbcWorkspace_v1215, name: '"FriendshipRepReaction"'): dbc.Table.v1215.FriendshipRepReaction
+---@overload fun(self: DbcWorkspace_v1215, name: '"FriendshipReputation"'): dbc.Table.v1215.FriendshipReputation
+---@overload fun(self: DbcWorkspace_v1215, name: '"FullScreenEffect"'): dbc.Table.v1215.FullScreenEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveyAnswers"'): dbc.Table.v1215.GMSurveyAnswers
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveyCurrentSurvey"'): dbc.Table.v1215.GMSurveyCurrentSurvey
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveyQuestions"'): dbc.Table.v1215.GMSurveyQuestions
+---@overload fun(self: DbcWorkspace_v1215, name: '"GMSurveySurveys"'): dbc.Table.v1215.GMSurveySurveys
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameClockDebug"'): dbc.Table.v1215.GameClockDebug
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameMode"'): dbc.Table.v1215.GameMode
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectAnimGroupMember"'): dbc.Table.v1215.GameObjectAnimGroupMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectArtKit"'): dbc.Table.v1215.GameObjectArtKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDiffAnimMap"'): dbc.Table.v1215.GameObjectDiffAnimMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDisplayCondition"'): dbc.Table.v1215.GameObjectDisplayCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDisplayInfo"'): dbc.Table.v1215.GameObjectDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectDisplayInfoXSoundKit"'): dbc.Table.v1215.GameObjectDisplayInfoXSoundKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjectLabel"'): dbc.Table.v1215.GameObjectLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameObjects"'): dbc.Table.v1215.GameObjects
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameParameter"'): dbc.Table.v1215.GameParameter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GameTips"'): dbc.Table.v1215.GameTips
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAbility"'): dbc.Table.v1215.GarrAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAbilityCategory"'): dbc.Table.v1215.GarrAbilityCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAbilityEffect"'): dbc.Table.v1215.GarrAbilityEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAutoCombatant"'): dbc.Table.v1215.GarrAutoCombatant
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAutoSpell"'): dbc.Table.v1215.GarrAutoSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrAutoSpellEffect"'): dbc.Table.v1215.GarrAutoSpellEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrBuilding"'): dbc.Table.v1215.GarrBuilding
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrBuildingDoodadSet"'): dbc.Table.v1215.GarrBuildingDoodadSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrBuildingPlotInst"'): dbc.Table.v1215.GarrBuildingPlotInst
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrClassSpec"'): dbc.Table.v1215.GarrClassSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrClassSpecPlayerCond"'): dbc.Table.v1215.GarrClassSpecPlayerCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrEncounter"'): dbc.Table.v1215.GarrEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrEncounterSetXEncounter"'): dbc.Table.v1215.GarrEncounterSetXEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrEncounterXMechanic"'): dbc.Table.v1215.GarrEncounterXMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollItemSetMember"'): dbc.Table.v1215.GarrFollItemSetMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollSupportSpell"'): dbc.Table.v1215.GarrFollSupportSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollower"'): dbc.Table.v1215.GarrFollower
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerLevelXP"'): dbc.Table.v1215.GarrFollowerLevelXP
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerQuality"'): dbc.Table.v1215.GarrFollowerQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerSetXFollower"'): dbc.Table.v1215.GarrFollowerSetXFollower
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerType"'): dbc.Table.v1215.GarrFollowerType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerUICreature"'): dbc.Table.v1215.GarrFollowerUICreature
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrFollowerXAbility"'): dbc.Table.v1215.GarrFollowerXAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrItemLevelUpgradeData"'): dbc.Table.v1215.GarrItemLevelUpgradeData
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMechanic"'): dbc.Table.v1215.GarrMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMechanicSetXMechanic"'): dbc.Table.v1215.GarrMechanicSetXMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMechanicType"'): dbc.Table.v1215.GarrMechanicType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMission"'): dbc.Table.v1215.GarrMission
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionSet"'): dbc.Table.v1215.GarrMissionSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionTexture"'): dbc.Table.v1215.GarrMissionTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionType"'): dbc.Table.v1215.GarrMissionType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionXEncounter"'): dbc.Table.v1215.GarrMissionXEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMissionXFollower"'): dbc.Table.v1215.GarrMissionXFollower
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrMssnBonusAbility"'): dbc.Table.v1215.GarrMssnBonusAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlot"'): dbc.Table.v1215.GarrPlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlotBuilding"'): dbc.Table.v1215.GarrPlotBuilding
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlotInstance"'): dbc.Table.v1215.GarrPlotInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrPlotUICategory"'): dbc.Table.v1215.GarrPlotUICategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrSiteLevel"'): dbc.Table.v1215.GarrSiteLevel
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrSiteLevelPlotInst"'): dbc.Table.v1215.GarrSiteLevelPlotInst
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrSpecialization"'): dbc.Table.v1215.GarrSpecialization
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrString"'): dbc.Table.v1215.GarrString
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalTreeXGarrTalResearch"'): dbc.Table.v1215.GarrTalTreeXGarrTalResearch
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalent"'): dbc.Table.v1215.GarrTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentCost"'): dbc.Table.v1215.GarrTalentCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentMapPOI"'): dbc.Table.v1215.GarrTalentMapPOI
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentRank"'): dbc.Table.v1215.GarrTalentRank
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentRankGroupEntry"'): dbc.Table.v1215.GarrTalentRankGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentRankGroupResearchMod"'): dbc.Table.v1215.GarrTalentRankGroupResearchMod
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentResearch"'): dbc.Table.v1215.GarrTalentResearch
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentSocketProperties"'): dbc.Table.v1215.GarrTalentSocketProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrTalentTree"'): dbc.Table.v1215.GarrTalentTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrType"'): dbc.Table.v1215.GarrType
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrUiAnimClassInfo"'): dbc.Table.v1215.GarrUiAnimClassInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GarrUiAnimRaceInfo"'): dbc.Table.v1215.GarrUiAnimRaceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GemProperties"'): dbc.Table.v1215.GemProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlideEvent"'): dbc.Table.v1215.GlideEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlideEventBlendTimes"'): dbc.Table.v1215.GlideEventBlendTimes
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalColor"'): dbc.Table.v1215.GlobalColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalCurve"'): dbc.Table.v1215.GlobalCurve
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalGameContentTuning"'): dbc.Table.v1215.GlobalGameContentTuning
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalPlayerCondition"'): dbc.Table.v1215.GlobalPlayerCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalPlayerConditionSet"'): dbc.Table.v1215.GlobalPlayerConditionSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlobalStrings"'): dbc.Table.v1215.GlobalStrings
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphBindableSpell"'): dbc.Table.v1215.GlyphBindableSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphExclusiveCategory"'): dbc.Table.v1215.GlyphExclusiveCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphProperties"'): dbc.Table.v1215.GlyphProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"GlyphRequiredSpec"'): dbc.Table.v1215.GlyphRequiredSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipNPCOption"'): dbc.Table.v1215.GossipNPCOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipNPCOptionDisplayInfo"'): dbc.Table.v1215.GossipNPCOptionDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipOptionXUIWidgetSet"'): dbc.Table.v1215.GossipOptionXUIWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipUIDisplayInfoCondition"'): dbc.Table.v1215.GossipUIDisplayInfoCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipXGarrTalentTrees"'): dbc.Table.v1215.GossipXGarrTalentTrees
+---@overload fun(self: DbcWorkspace_v1215, name: '"GossipXUIDisplayInfo"'): dbc.Table.v1215.GossipXUIDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"GradientEffect"'): dbc.Table.v1215.GradientEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroundEffectDoodad"'): dbc.Table.v1215.GroundEffectDoodad
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroundEffectTexture"'): dbc.Table.v1215.GroundEffectTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderActivity"'): dbc.Table.v1215.GroupFinderActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderActivityGrp"'): dbc.Table.v1215.GroupFinderActivityGrp
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderActivityXPvpBracket"'): dbc.Table.v1215.GroupFinderActivityXPvpBracket
+---@overload fun(self: DbcWorkspace_v1215, name: '"GroupFinderCategory"'): dbc.Table.v1215.GroupFinderCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildColorBackground"'): dbc.Table.v1215.GuildColorBackground
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildColorBorder"'): dbc.Table.v1215.GuildColorBorder
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildColorEmblem"'): dbc.Table.v1215.GuildColorEmblem
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildEmblem"'): dbc.Table.v1215.GuildEmblem
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildPerkSpells"'): dbc.Table.v1215.GuildPerkSpells
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildShirtBackground"'): dbc.Table.v1215.GuildShirtBackground
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildShirtBorder"'): dbc.Table.v1215.GuildShirtBorder
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildTabardBackground"'): dbc.Table.v1215.GuildTabardBackground
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildTabardBorder"'): dbc.Table.v1215.GuildTabardBorder
+---@overload fun(self: DbcWorkspace_v1215, name: '"GuildTabardEmblem"'): dbc.Table.v1215.GuildTabardEmblem
+---@overload fun(self: DbcWorkspace_v1215, name: '"Heirloom"'): dbc.Table.v1215.Heirloom
+---@overload fun(self: DbcWorkspace_v1215, name: '"HelmetAnimScaling"'): dbc.Table.v1215.HelmetAnimScaling
+---@overload fun(self: DbcWorkspace_v1215, name: '"HelmetGeosetData"'): dbc.Table.v1215.HelmetGeosetData
+---@overload fun(self: DbcWorkspace_v1215, name: '"HighlightColor"'): dbc.Table.v1215.HighlightColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"HolidayDescriptions"'): dbc.Table.v1215.HolidayDescriptions
+---@overload fun(self: DbcWorkspace_v1215, name: '"HolidayNames"'): dbc.Table.v1215.HolidayNames
+---@overload fun(self: DbcWorkspace_v1215, name: '"HolidayXTimeEvent"'): dbc.Table.v1215.HolidayXTimeEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"Holidays"'): dbc.Table.v1215.Holidays
+---@overload fun(self: DbcWorkspace_v1215, name: '"Hotfixes"'): dbc.Table.v1215.Hotfixes
+---@overload fun(self: DbcWorkspace_v1215, name: '"House"'): dbc.Table.v1215.House
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseDecor"'): dbc.Table.v1215.HouseDecor
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseDecorMaterial"'): dbc.Table.v1215.HouseDecorMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseDecorThemeSet"'): dbc.Table.v1215.HouseDecorThemeSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseExteriorWmoData"'): dbc.Table.v1215.HouseExteriorWmoData
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseLevelData"'): dbc.Table.v1215.HouseLevelData
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseLevelRewardInfo"'): dbc.Table.v1215.HouseLevelRewardInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseRoom"'): dbc.Table.v1215.HouseRoom
+---@overload fun(self: DbcWorkspace_v1215, name: '"HouseTheme"'): dbc.Table.v1215.HouseTheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceArmor"'): dbc.Table.v1215.ImportPriceArmor
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceQuality"'): dbc.Table.v1215.ImportPriceQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceShield"'): dbc.Table.v1215.ImportPriceShield
+---@overload fun(self: DbcWorkspace_v1215, name: '"ImportPriceWeapon"'): dbc.Table.v1215.ImportPriceWeapon
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeCycle"'): dbc.Table.v1215.InitiativeCycle
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeCyclePriority"'): dbc.Table.v1215.InitiativeCyclePriority
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeMilestone"'): dbc.Table.v1215.InitiativeMilestone
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeReward"'): dbc.Table.v1215.InitiativeReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeRewardXMilestone"'): dbc.Table.v1215.InitiativeRewardXMilestone
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeTask"'): dbc.Table.v1215.InitiativeTask
+---@overload fun(self: DbcWorkspace_v1215, name: '"InitiativeXTask"'): dbc.Table.v1215.InitiativeXTask
+---@overload fun(self: DbcWorkspace_v1215, name: '"InvasionClientData"'): dbc.Table.v1215.InvasionClientData
+---@overload fun(self: DbcWorkspace_v1215, name: '"Item"'): dbc.Table.v1215.Item
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemAppearance"'): dbc.Table.v1215.ItemAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemAppearanceXUiCamera"'): dbc.Table.v1215.ItemAppearanceXUiCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemArmorQuality"'): dbc.Table.v1215.ItemArmorQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemArmorShield"'): dbc.Table.v1215.ItemArmorShield
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemArmorTotal"'): dbc.Table.v1215.ItemArmorTotal
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBagFamily"'): dbc.Table.v1215.ItemBagFamily
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonus"'): dbc.Table.v1215.ItemBonus
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusList"'): dbc.Table.v1215.ItemBonusList
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListGroup"'): dbc.Table.v1215.ItemBonusListGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListGroupEntry"'): dbc.Table.v1215.ItemBonusListGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListLevelDelta"'): dbc.Table.v1215.ItemBonusListLevelDelta
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusListWarforgeLevelDelta"'): dbc.Table.v1215.ItemBonusListWarforgeLevelDelta
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSeason"'): dbc.Table.v1215.ItemBonusSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSeasonBonusListGroup"'): dbc.Table.v1215.ItemBonusSeasonBonusListGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSeasonUpgradeCost"'): dbc.Table.v1215.ItemBonusSeasonUpgradeCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusSequenceSpell"'): dbc.Table.v1215.ItemBonusSequenceSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusTree"'): dbc.Table.v1215.ItemBonusTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusTreeGroupEntry"'): dbc.Table.v1215.ItemBonusTreeGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemBonusTreeNode"'): dbc.Table.v1215.ItemBonusTreeNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemChildEquipment"'): dbc.Table.v1215.ItemChildEquipment
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemClass"'): dbc.Table.v1215.ItemClass
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCondition"'): dbc.Table.v1215.ItemCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemContextPickerEntry"'): dbc.Table.v1215.ItemContextPickerEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemConversion"'): dbc.Table.v1215.ItemConversion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemConversionEntry"'): dbc.Table.v1215.ItemConversionEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCreationContext"'): dbc.Table.v1215.ItemCreationContext
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCreationContextGroup"'): dbc.Table.v1215.ItemCreationContextGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCurrencyCost"'): dbc.Table.v1215.ItemCurrencyCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemCurrencyValue"'): dbc.Table.v1215.ItemCurrencyValue
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageAmmo"'): dbc.Table.v1215.ItemDamageAmmo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageOneHand"'): dbc.Table.v1215.ItemDamageOneHand
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageOneHandCaster"'): dbc.Table.v1215.ItemDamageOneHandCaster
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageTwoHand"'): dbc.Table.v1215.ItemDamageTwoHand
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDamageTwoHandCaster"'): dbc.Table.v1215.ItemDamageTwoHandCaster
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisenchantLoot"'): dbc.Table.v1215.ItemDisenchantLoot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisplayInfo"'): dbc.Table.v1215.ItemDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisplayInfoMaterialRes"'): dbc.Table.v1215.ItemDisplayInfoMaterialRes
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemDisplayInfoModelMatRes"'): dbc.Table.v1215.ItemDisplayInfoModelMatRes
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemEffect"'): dbc.Table.v1215.ItemEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemExtendedCost"'): dbc.Table.v1215.ItemExtendedCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemFixup"'): dbc.Table.v1215.ItemFixup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemFixupAction"'): dbc.Table.v1215.ItemFixupAction
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemGroupIlvlScalingEntry"'): dbc.Table.v1215.ItemGroupIlvlScalingEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemGroupSounds"'): dbc.Table.v1215.ItemGroupSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelSelector"'): dbc.Table.v1215.ItemLevelSelector
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelSelectorQuality"'): dbc.Table.v1215.ItemLevelSelectorQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelSelectorQualitySet"'): dbc.Table.v1215.ItemLevelSelectorQualitySet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLevelWatermark"'): dbc.Table.v1215.ItemLevelWatermark
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLimitCategory"'): dbc.Table.v1215.ItemLimitCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLimitCategoryCondition"'): dbc.Table.v1215.ItemLimitCategoryCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLogicalCost"'): dbc.Table.v1215.ItemLogicalCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemLogicalCostGroup"'): dbc.Table.v1215.ItemLogicalCostGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemModifiedAppearance"'): dbc.Table.v1215.ItemModifiedAppearance
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemModifiedAppearanceExtra"'): dbc.Table.v1215.ItemModifiedAppearanceExtra
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemNameDescription"'): dbc.Table.v1215.ItemNameDescription
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemNameSlotOverride"'): dbc.Table.v1215.ItemNameSlotOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemOffsetCurve"'): dbc.Table.v1215.ItemOffsetCurve
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemPetFood"'): dbc.Table.v1215.ItemPetFood
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemPriceBase"'): dbc.Table.v1215.ItemPriceBase
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemRangedDisplayInfo"'): dbc.Table.v1215.ItemRangedDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemRecraft"'): dbc.Table.v1215.ItemRecraft
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemReforge"'): dbc.Table.v1215.ItemReforge
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSalvage"'): dbc.Table.v1215.ItemSalvage
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSalvageLoot"'): dbc.Table.v1215.ItemSalvageLoot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemScalingConfig"'): dbc.Table.v1215.ItemScalingConfig
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSearchName"'): dbc.Table.v1215.ItemSearchName
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSet"'): dbc.Table.v1215.ItemSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSetSpell"'): dbc.Table.v1215.ItemSetSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSparse"'): dbc.Table.v1215.ItemSparse
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSpec"'): dbc.Table.v1215.ItemSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSpecOverride"'): dbc.Table.v1215.ItemSpecOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSquishEra"'): dbc.Table.v1215.ItemSquishEra
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSubClass"'): dbc.Table.v1215.ItemSubClass
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemSubClassMask"'): dbc.Table.v1215.ItemSubClassMask
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemVisuals"'): dbc.Table.v1215.ItemVisuals
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemVisualsXEffect"'): dbc.Table.v1215.ItemVisualsXEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemXBonusTree"'): dbc.Table.v1215.ItemXBonusTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemXItemEffect"'): dbc.Table.v1215.ItemXItemEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ItemXTraitSystem"'): dbc.Table.v1215.ItemXTraitSystem
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounter"'): dbc.Table.v1215.JournalEncounter
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterCreature"'): dbc.Table.v1215.JournalEncounterCreature
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterItem"'): dbc.Table.v1215.JournalEncounterItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterSection"'): dbc.Table.v1215.JournalEncounterSection
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterXDifficulty"'): dbc.Table.v1215.JournalEncounterXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalEncounterXMapLoc"'): dbc.Table.v1215.JournalEncounterXMapLoc
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalInstance"'): dbc.Table.v1215.JournalInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalInstanceEntrance"'): dbc.Table.v1215.JournalInstanceEntrance
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalInstanceQueueLoc"'): dbc.Table.v1215.JournalInstanceQueueLoc
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalItemXDifficulty"'): dbc.Table.v1215.JournalItemXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalSectionXDifficulty"'): dbc.Table.v1215.JournalSectionXDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalTier"'): dbc.Table.v1215.JournalTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"JournalTierXInstance"'): dbc.Table.v1215.JournalTierXInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"Keychain"'): dbc.Table.v1215.Keychain
+---@overload fun(self: DbcWorkspace_v1215, name: '"KeystoneAffix"'): dbc.Table.v1215.KeystoneAffix
+---@overload fun(self: DbcWorkspace_v1215, name: '"LFGDungeonGroup"'): dbc.Table.v1215.LFGDungeonGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"LFGDungeons"'): dbc.Table.v1215.LFGDungeons
+---@overload fun(self: DbcWorkspace_v1215, name: '"LFGRoleRequirement"'): dbc.Table.v1215.LFGRoleRequirement
+---@overload fun(self: DbcWorkspace_v1215, name: '"LabelXContentRestrictRuleSet"'): dbc.Table.v1215.LabelXContentRestrictRuleSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"LanguageWords"'): dbc.Table.v1215.LanguageWords
+---@overload fun(self: DbcWorkspace_v1215, name: '"Languages"'): dbc.Table.v1215.Languages
+---@overload fun(self: DbcWorkspace_v1215, name: '"LfgDungeonsGroupingMap"'): dbc.Table.v1215.LfgDungeonsGroupingMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"Light"'): dbc.Table.v1215.Light
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightData"'): dbc.Table.v1215.LightData
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightParams"'): dbc.Table.v1215.LightParams
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightParamsLightShaft"'): dbc.Table.v1215.LightParamsLightShaft
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightShaft"'): dbc.Table.v1215.LightShaft
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightSkybox"'): dbc.Table.v1215.LightSkybox
+---@overload fun(self: DbcWorkspace_v1215, name: '"LightWorldShadow"'): dbc.Table.v1215.LightWorldShadow
+---@overload fun(self: DbcWorkspace_v1215, name: '"Lightning"'): dbc.Table.v1215.Lightning
+---@overload fun(self: DbcWorkspace_v1215, name: '"Link"'): dbc.Table.v1215.Link
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidMaterial"'): dbc.Table.v1215.LiquidMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidObject"'): dbc.Table.v1215.LiquidObject
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidType"'): dbc.Table.v1215.LiquidType
+---@overload fun(self: DbcWorkspace_v1215, name: '"LiquidTypeXTexture"'): dbc.Table.v1215.LiquidTypeXTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"LivingWorldObjectTemplate"'): dbc.Table.v1215.LivingWorldObjectTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoadingScreenSkin"'): dbc.Table.v1215.LoadingScreenSkin
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoadingScreenTaxiSplines"'): dbc.Table.v1215.LoadingScreenTaxiSplines
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoadingScreens"'): dbc.Table.v1215.LoadingScreens
+---@overload fun(self: DbcWorkspace_v1215, name: '"Locale"'): dbc.Table.v1215.Locale
+---@overload fun(self: DbcWorkspace_v1215, name: '"Location"'): dbc.Table.v1215.Location
+---@overload fun(self: DbcWorkspace_v1215, name: '"Lock"'): dbc.Table.v1215.Lock
+---@overload fun(self: DbcWorkspace_v1215, name: '"LockType"'): dbc.Table.v1215.LockType
+---@overload fun(self: DbcWorkspace_v1215, name: '"LookAtController"'): dbc.Table.v1215.LookAtController
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoreText"'): dbc.Table.v1215.LoreText
+---@overload fun(self: DbcWorkspace_v1215, name: '"LoreTextPublic"'): dbc.Table.v1215.LoreTextPublic
+---@overload fun(self: DbcWorkspace_v1215, name: '"MCRCurrency"'): dbc.Table.v1215.MCRCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"MCRSlotXMCRCategory"'): dbc.Table.v1215.MCRSlotXMCRCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"MailTemplate"'): dbc.Table.v1215.MailTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManagedWorldState"'): dbc.Table.v1215.ManagedWorldState
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManagedWorldStateBuff"'): dbc.Table.v1215.ManagedWorldStateBuff
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManagedWorldStateInput"'): dbc.Table.v1215.ManagedWorldStateInput
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManifestInterfaceActionIcon"'): dbc.Table.v1215.ManifestInterfaceActionIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManifestInterfaceData"'): dbc.Table.v1215.ManifestInterfaceData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ManifestInterfaceItemIcon"'): dbc.Table.v1215.ManifestInterfaceItemIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"Map"'): dbc.Table.v1215.Map
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapCelestialBody"'): dbc.Table.v1215.MapCelestialBody
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapChallengeMode"'): dbc.Table.v1215.MapChallengeMode
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapChallengeModeAffixCriteria"'): dbc.Table.v1215.MapChallengeModeAffixCriteria
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapDifficulty"'): dbc.Table.v1215.MapDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapDifficultyRedirect"'): dbc.Table.v1215.MapDifficultyRedirect
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapDifficultyXCondition"'): dbc.Table.v1215.MapDifficultyXCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapLoadingScreen"'): dbc.Table.v1215.MapLoadingScreen
+---@overload fun(self: DbcWorkspace_v1215, name: '"MapRenderScale"'): dbc.Table.v1215.MapRenderScale
+---@overload fun(self: DbcWorkspace_v1215, name: '"MarketingPromotionsXLocale"'): dbc.Table.v1215.MarketingPromotionsXLocale
+---@overload fun(self: DbcWorkspace_v1215, name: '"Material"'): dbc.Table.v1215.Material
+---@overload fun(self: DbcWorkspace_v1215, name: '"MawPower"'): dbc.Table.v1215.MawPower
+---@overload fun(self: DbcWorkspace_v1215, name: '"MawPowerRarity"'): dbc.Table.v1215.MawPowerRarity
+---@overload fun(self: DbcWorkspace_v1215, name: '"MinorTalent"'): dbc.Table.v1215.MinorTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"MissileTargeting"'): dbc.Table.v1215.MissileTargeting
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelAnimCloakDampening"'): dbc.Table.v1215.ModelAnimCloakDampening
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelFileData"'): dbc.Table.v1215.ModelFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelRibbonQuality"'): dbc.Table.v1215.ModelRibbonQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelSoundAnimEntry"'): dbc.Table.v1215.ModelSoundAnimEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModelSoundEntry"'): dbc.Table.v1215.ModelSoundEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingCategory"'): dbc.Table.v1215.ModifiedCraftingCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingItem"'): dbc.Table.v1215.ModifiedCraftingItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingReagentItem"'): dbc.Table.v1215.ModifiedCraftingReagentItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingReagentSlot"'): dbc.Table.v1215.ModifiedCraftingReagentSlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifiedCraftingSpellSlot"'): dbc.Table.v1215.ModifiedCraftingSpellSlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"ModifierTree"'): dbc.Table.v1215.ModifierTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"Mount"'): dbc.Table.v1215.Mount
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountCapability"'): dbc.Table.v1215.MountCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountEquipment"'): dbc.Table.v1215.MountEquipment
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountType"'): dbc.Table.v1215.MountType
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountTypeXCapability"'): dbc.Table.v1215.MountTypeXCapability
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountXDisplay"'): dbc.Table.v1215.MountXDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"MountXSpellVisualKitPicker"'): dbc.Table.v1215.MountXSpellVisualKitPicker
+---@overload fun(self: DbcWorkspace_v1215, name: '"Movie"'): dbc.Table.v1215.Movie
+---@overload fun(self: DbcWorkspace_v1215, name: '"MovieFileData"'): dbc.Table.v1215.MovieFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"MovieVariation"'): dbc.Table.v1215.MovieVariation
+---@overload fun(self: DbcWorkspace_v1215, name: '"MultiStateProperties"'): dbc.Table.v1215.MultiStateProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"MultiTransitionProperties"'): dbc.Table.v1215.MultiTransitionProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"MusicOverride"'): dbc.Table.v1215.MusicOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeason"'): dbc.Table.v1215.MythicPlusSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonKeyFloor"'): dbc.Table.v1215.MythicPlusSeasonKeyFloor
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonRewardLevels"'): dbc.Table.v1215.MythicPlusSeasonRewardLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonTrackedAffix"'): dbc.Table.v1215.MythicPlusSeasonTrackedAffix
+---@overload fun(self: DbcWorkspace_v1215, name: '"MythicPlusSeasonTrackedMap"'): dbc.Table.v1215.MythicPlusSeasonTrackedMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderCustomer"'): dbc.Table.v1215.NPCCraftingOrderCustomer
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderCustomerXLabel"'): dbc.Table.v1215.NPCCraftingOrderCustomerXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSet"'): dbc.Table.v1215.NPCCraftingOrderSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSetXCraftOrder"'): dbc.Table.v1215.NPCCraftingOrderSetXCraftOrder
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSetXCustomer"'): dbc.Table.v1215.NPCCraftingOrderSetXCustomer
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCCraftingOrderSetXTreasure"'): dbc.Table.v1215.NPCCraftingOrderSetXTreasure
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCModelItemSlotDisplayInfo"'): dbc.Table.v1215.NPCModelItemSlotDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"NPCSounds"'): dbc.Table.v1215.NPCSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"NameGen"'): dbc.Table.v1215.NameGen
+---@overload fun(self: DbcWorkspace_v1215, name: '"NamesProfanity"'): dbc.Table.v1215.NamesProfanity
+---@overload fun(self: DbcWorkspace_v1215, name: '"NamesReserved"'): dbc.Table.v1215.NamesReserved
+---@overload fun(self: DbcWorkspace_v1215, name: '"NamesReservedLocale"'): dbc.Table.v1215.NamesReservedLocale
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodInitiative"'): dbc.Table.v1215.NeighborhoodInitiative
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodMap"'): dbc.Table.v1215.NeighborhoodMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodNameGen"'): dbc.Table.v1215.NeighborhoodNameGen
+---@overload fun(self: DbcWorkspace_v1215, name: '"NeighborhoodPlot"'): dbc.Table.v1215.NeighborhoodPlot
+---@overload fun(self: DbcWorkspace_v1215, name: '"Node"'): dbc.Table.v1215.Node
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeGraphParam"'): dbc.Table.v1215.NodeGraphParam
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeGraphParamValue"'): dbc.Table.v1215.NodeGraphParamValue
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeTemplate"'): dbc.Table.v1215.NodeTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"NodeTemplateXPinTemplate"'): dbc.Table.v1215.NodeTemplateXPinTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"NumTalentsAtLevel"'): dbc.Table.v1215.NumTalentsAtLevel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ObjectEffect"'): dbc.Table.v1215.ObjectEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ObjectEffectModifier"'): dbc.Table.v1215.ObjectEffectModifier
+---@overload fun(self: DbcWorkspace_v1215, name: '"ObjectEffectPackageElem"'): dbc.Table.v1215.ObjectEffectPackageElem
+---@overload fun(self: DbcWorkspace_v1215, name: '"Occluder"'): dbc.Table.v1215.Occluder
+---@overload fun(self: DbcWorkspace_v1215, name: '"OccluderCurtain"'): dbc.Table.v1215.OccluderCurtain
+---@overload fun(self: DbcWorkspace_v1215, name: '"OccluderLocation"'): dbc.Table.v1215.OccluderLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"OccluderNode"'): dbc.Table.v1215.OccluderNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"OutlineEffect"'): dbc.Table.v1215.OutlineEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"OverrideSpellData"'): dbc.Table.v1215.OverrideSpellData
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPBracketTypes"'): dbc.Table.v1215.PVPBracketTypes
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPDifficulty"'): dbc.Table.v1215.PVPDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPScoreboardCellInfo"'): dbc.Table.v1215.PVPScoreboardCellInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPScoreboardColumnHeader"'): dbc.Table.v1215.PVPScoreboardColumnHeader
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPScoreboardLayout"'): dbc.Table.v1215.PVPScoreboardLayout
+---@overload fun(self: DbcWorkspace_v1215, name: '"PVPStat"'): dbc.Table.v1215.PVPStat
+---@overload fun(self: DbcWorkspace_v1215, name: '"PageTextMaterial"'): dbc.Table.v1215.PageTextMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"PaperDollItemFrame"'): dbc.Table.v1215.PaperDollItemFrame
+---@overload fun(self: DbcWorkspace_v1215, name: '"ParagonReputation"'): dbc.Table.v1215.ParagonReputation
+---@overload fun(self: DbcWorkspace_v1215, name: '"ParticleColor"'): dbc.Table.v1215.ParticleColor
+---@overload fun(self: DbcWorkspace_v1215, name: '"Particulate"'): dbc.Table.v1215.Particulate
+---@overload fun(self: DbcWorkspace_v1215, name: '"ParticulateSound"'): dbc.Table.v1215.ParticulateSound
+---@overload fun(self: DbcWorkspace_v1215, name: '"Path"'): dbc.Table.v1215.Path
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathEdge"'): dbc.Table.v1215.PathEdge
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathNode"'): dbc.Table.v1215.PathNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathNodeProperty"'): dbc.Table.v1215.PathNodeProperty
+---@overload fun(self: DbcWorkspace_v1215, name: '"PathProperty"'): dbc.Table.v1215.PathProperty
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivity"'): dbc.Table.v1215.PerksActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityCondition"'): dbc.Table.v1215.PerksActivityCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityTag"'): dbc.Table.v1215.PerksActivityTag
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityThreshold"'): dbc.Table.v1215.PerksActivityThreshold
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityThresholdGroup"'): dbc.Table.v1215.PerksActivityThresholdGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityXHolidays"'): dbc.Table.v1215.PerksActivityXHolidays
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityXInterval"'): dbc.Table.v1215.PerksActivityXInterval
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksActivityXTag"'): dbc.Table.v1215.PerksActivityXTag
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksUITheme"'): dbc.Table.v1215.PerksUITheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorCategory"'): dbc.Table.v1215.PerksVendorCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItem"'): dbc.Table.v1215.PerksVendorItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItemUIGroup"'): dbc.Table.v1215.PerksVendorItemUIGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItemUIInfo"'): dbc.Table.v1215.PerksVendorItemUIInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PerksVendorItemXInterval"'): dbc.Table.v1215.PerksVendorItemXInterval
+---@overload fun(self: DbcWorkspace_v1215, name: '"Phase"'): dbc.Table.v1215.Phase
+---@overload fun(self: DbcWorkspace_v1215, name: '"PhaseShiftZoneSounds"'): dbc.Table.v1215.PhaseShiftZoneSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"PhaseXPhaseGroup"'): dbc.Table.v1215.PhaseXPhaseGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"Pin"'): dbc.Table.v1215.Pin
+---@overload fun(self: DbcWorkspace_v1215, name: '"PinTemplate"'): dbc.Table.v1215.PinTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"PingType"'): dbc.Table.v1215.PingType
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerCompanionInfo"'): dbc.Table.v1215.PlayerCompanionInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerCondition"'): dbc.Table.v1215.PlayerCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataElementAccount"'): dbc.Table.v1215.PlayerDataElementAccount
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataElementCharacter"'): dbc.Table.v1215.PlayerDataElementCharacter
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataFlagAccount"'): dbc.Table.v1215.PlayerDataFlagAccount
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerDataFlagCharacter"'): dbc.Table.v1215.PlayerDataFlagCharacter
+---@overload fun(self: DbcWorkspace_v1215, name: '"PlayerInteractionInfo"'): dbc.Table.v1215.PlayerInteractionInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"PointLightConditionMap"'): dbc.Table.v1215.PointLightConditionMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"Positioner"'): dbc.Table.v1215.Positioner
+---@overload fun(self: DbcWorkspace_v1215, name: '"PositionerState"'): dbc.Table.v1215.PositionerState
+---@overload fun(self: DbcWorkspace_v1215, name: '"PositionerStateEntry"'): dbc.Table.v1215.PositionerStateEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"PowerDisplay"'): dbc.Table.v1215.PowerDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"PowerType"'): dbc.Table.v1215.PowerType
+---@overload fun(self: DbcWorkspace_v1215, name: '"PrestigeLevelInfo"'): dbc.Table.v1215.PrestigeLevelInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitPathNode"'): dbc.Table.v1215.ProfTraitPathNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitPerkNode"'): dbc.Table.v1215.ProfTraitPerkNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitTree"'): dbc.Table.v1215.ProfTraitTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfTraitTreeHighlight"'): dbc.Table.v1215.ProfTraitTreeHighlight
+---@overload fun(self: DbcWorkspace_v1215, name: '"Profession"'): dbc.Table.v1215.Profession
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionEffect"'): dbc.Table.v1215.ProfessionEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionEffectType"'): dbc.Table.v1215.ProfessionEffectType
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionExpansion"'): dbc.Table.v1215.ProfessionExpansion
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionPropPoints"'): dbc.Table.v1215.ProfessionPropPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionRating"'): dbc.Table.v1215.ProfessionRating
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionTrait"'): dbc.Table.v1215.ProfessionTrait
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionTraitXEffect"'): dbc.Table.v1215.ProfessionTraitXEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionTraitXLabel"'): dbc.Table.v1215.ProfessionTraitXLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"ProfessionXRating"'): dbc.Table.v1215.ProfessionXRating
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpBrawl"'): dbc.Table.v1215.PvpBrawl
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpRating"'): dbc.Table.v1215.PvpRating
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpScalingEffect"'): dbc.Table.v1215.PvpScalingEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpScalingEffectType"'): dbc.Table.v1215.PvpScalingEffectType
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpSeason"'): dbc.Table.v1215.PvpSeason
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpSeasonRewardLevels"'): dbc.Table.v1215.PvpSeasonRewardLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTalent"'): dbc.Table.v1215.PvpTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTalentCategory"'): dbc.Table.v1215.PvpTalentCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTalentSlotUnlock"'): dbc.Table.v1215.PvpTalentSlotUnlock
+---@overload fun(self: DbcWorkspace_v1215, name: '"PvpTier"'): dbc.Table.v1215.PvpTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestDrivenScenario"'): dbc.Table.v1215.QuestDrivenScenario
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestFactionReward"'): dbc.Table.v1215.QuestFactionReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestFeedbackEffect"'): dbc.Table.v1215.QuestFeedbackEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestHub"'): dbc.Table.v1215.QuestHub
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestInfo"'): dbc.Table.v1215.QuestInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestLabel"'): dbc.Table.v1215.QuestLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestLine"'): dbc.Table.v1215.QuestLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestLineXQuest"'): dbc.Table.v1215.QuestLineXQuest
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestMoneyReward"'): dbc.Table.v1215.QuestMoneyReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestObjective"'): dbc.Table.v1215.QuestObjective
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestPOIBlob"'): dbc.Table.v1215.QuestPOIBlob
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestPOIPoint"'): dbc.Table.v1215.QuestPOIPoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestPackageItem"'): dbc.Table.v1215.QuestPackageItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestSort"'): dbc.Table.v1215.QuestSort
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestV2"'): dbc.Table.v1215.QuestV2
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestV2CliTask"'): dbc.Table.v1215.QuestV2CliTask
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXGroupActivity"'): dbc.Table.v1215.QuestXGroupActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXP"'): dbc.Table.v1215.QuestXP
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXUIQuestDetailsTheme"'): dbc.Table.v1215.QuestXUIQuestDetailsTheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"QuestXUiWidgetSet"'): dbc.Table.v1215.QuestXUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"RTPC"'): dbc.Table.v1215.RTPC
+---@overload fun(self: DbcWorkspace_v1215, name: '"RTPCData"'): dbc.Table.v1215.RTPCData
+---@overload fun(self: DbcWorkspace_v1215, name: '"RafActivity"'): dbc.Table.v1215.RafActivity
+---@overload fun(self: DbcWorkspace_v1215, name: '"RandPropPoints"'): dbc.Table.v1215.RandPropPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"RecipeProgressionGroupEntry"'): dbc.Table.v1215.RecipeProgressionGroupEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"RelicSlotTierRequirement"'): dbc.Table.v1215.RelicSlotTierRequirement
+---@overload fun(self: DbcWorkspace_v1215, name: '"RelicTalent"'): dbc.Table.v1215.RelicTalent
+---@overload fun(self: DbcWorkspace_v1215, name: '"RenownRewards"'): dbc.Table.v1215.RenownRewards
+---@overload fun(self: DbcWorkspace_v1215, name: '"RenownRewardsPlunderstorm"'): dbc.Table.v1215.RenownRewardsPlunderstorm
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchBranch"'): dbc.Table.v1215.ResearchBranch
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchField"'): dbc.Table.v1215.ResearchField
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchProject"'): dbc.Table.v1215.ResearchProject
+---@overload fun(self: DbcWorkspace_v1215, name: '"ResearchSite"'): dbc.Table.v1215.ResearchSite
+---@overload fun(self: DbcWorkspace_v1215, name: '"Resistances"'): dbc.Table.v1215.Resistances
+---@overload fun(self: DbcWorkspace_v1215, name: '"RetroactiveDecorReward"'): dbc.Table.v1215.RetroactiveDecorReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"RetroactiveDecorRewardCriteria"'): dbc.Table.v1215.RetroactiveDecorRewardCriteria
+---@overload fun(self: DbcWorkspace_v1215, name: '"RewardPack"'): dbc.Table.v1215.RewardPack
+---@overload fun(self: DbcWorkspace_v1215, name: '"RewardPackXCurrencyType"'): dbc.Table.v1215.RewardPackXCurrencyType
+---@overload fun(self: DbcWorkspace_v1215, name: '"RewardPackXItem"'): dbc.Table.v1215.RewardPackXItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"RibbonQuality"'): dbc.Table.v1215.RibbonQuality
+---@overload fun(self: DbcWorkspace_v1215, name: '"RolodexType"'): dbc.Table.v1215.RolodexType
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponent"'): dbc.Table.v1215.RoomComponent
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponentOption"'): dbc.Table.v1215.RoomComponentOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponentOptionTexture"'): dbc.Table.v1215.RoomComponentOptionTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomComponentTexture"'): dbc.Table.v1215.RoomComponentTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomGridLine"'): dbc.Table.v1215.RoomGridLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"RoomWmoData"'): dbc.Table.v1215.RoomWmoData
+---@overload fun(self: DbcWorkspace_v1215, name: '"RopeEffect"'): dbc.Table.v1215.RopeEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"RuneforgeLegendaryAbility"'): dbc.Table.v1215.RuneforgeLegendaryAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"SDReplacementModel"'): dbc.Table.v1215.SDReplacementModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"SSAOSettings"'): dbc.Table.v1215.SSAOSettings
+---@overload fun(self: DbcWorkspace_v1215, name: '"Scenario"'): dbc.Table.v1215.Scenario
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScenarioEventEntry"'): dbc.Table.v1215.ScenarioEventEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScenarioStep"'): dbc.Table.v1215.ScenarioStep
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScript"'): dbc.Table.v1215.SceneScript
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptGlobalText"'): dbc.Table.v1215.SceneScriptGlobalText
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptPackage"'): dbc.Table.v1215.SceneScriptPackage
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptPackageMember"'): dbc.Table.v1215.SceneScriptPackageMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"SceneScriptText"'): dbc.Table.v1215.SceneScriptText
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScheduledInterval"'): dbc.Table.v1215.ScheduledInterval
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScreenEffect"'): dbc.Table.v1215.ScreenEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScreenEffectType"'): dbc.Table.v1215.ScreenEffectType
+---@overload fun(self: DbcWorkspace_v1215, name: '"ScreenLocation"'): dbc.Table.v1215.ScreenLocation
+---@overload fun(self: DbcWorkspace_v1215, name: '"SeamlessSite"'): dbc.Table.v1215.SeamlessSite
+---@overload fun(self: DbcWorkspace_v1215, name: '"ServerMessages"'): dbc.Table.v1215.ServerMessages
+---@overload fun(self: DbcWorkspace_v1215, name: '"ShadowyEffect"'): dbc.Table.v1215.ShadowyEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SharedString"'): dbc.Table.v1215.SharedString
+---@overload fun(self: DbcWorkspace_v1215, name: '"SiegeableProperties"'): dbc.Table.v1215.SiegeableProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillLine"'): dbc.Table.v1215.SkillLine
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillLineAbility"'): dbc.Table.v1215.SkillLineAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillLineXTraitTree"'): dbc.Table.v1215.SkillLineXTraitTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkillRaceClassInfo"'): dbc.Table.v1215.SkillRaceClassInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"SkySceneXPlayerCondition"'): dbc.Table.v1215.SkySceneXPlayerCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"Soulbind"'): dbc.Table.v1215.Soulbind
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduit"'): dbc.Table.v1215.SoulbindConduit
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitEnhancedSocket"'): dbc.Table.v1215.SoulbindConduitEnhancedSocket
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitItem"'): dbc.Table.v1215.SoulbindConduitItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitRank"'): dbc.Table.v1215.SoulbindConduitRank
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindConduitRankProperties"'): dbc.Table.v1215.SoulbindConduitRankProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoulbindUIDisplayInfo"'): dbc.Table.v1215.SoulbindUIDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundAmbience"'): dbc.Table.v1215.SoundAmbience
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundAmbienceFlavor"'): dbc.Table.v1215.SoundAmbienceFlavor
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundBus"'): dbc.Table.v1215.SoundBus
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundBusOverride"'): dbc.Table.v1215.SoundBusOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundEmitterPillPoints"'): dbc.Table.v1215.SoundEmitterPillPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundEmitters"'): dbc.Table.v1215.SoundEmitters
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundEnvelope"'): dbc.Table.v1215.SoundEnvelope
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundFilter"'): dbc.Table.v1215.SoundFilter
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundFilterElem"'): dbc.Table.v1215.SoundFilterElem
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKit"'): dbc.Table.v1215.SoundKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitAdvanced"'): dbc.Table.v1215.SoundKitAdvanced
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitChild"'): dbc.Table.v1215.SoundKitChild
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitEntry"'): dbc.Table.v1215.SoundKitEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundKitFallback"'): dbc.Table.v1215.SoundKitFallback
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundMixGroup"'): dbc.Table.v1215.SoundMixGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundOverride"'): dbc.Table.v1215.SoundOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundParameter"'): dbc.Table.v1215.SoundParameter
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundProviderPreferences"'): dbc.Table.v1215.SoundProviderPreferences
+---@overload fun(self: DbcWorkspace_v1215, name: '"SoundWaterfallEmitter"'): dbc.Table.v1215.SoundWaterfallEmitter
+---@overload fun(self: DbcWorkspace_v1215, name: '"SourceInfo"'): dbc.Table.v1215.SourceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpamMessages"'): dbc.Table.v1215.SpamMessages
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpecSetMember"'): dbc.Table.v1215.SpecSetMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpecializationSpells"'): dbc.Table.v1215.SpecializationSpells
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpecializationSpellsDisplay"'): dbc.Table.v1215.SpecializationSpellsDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"Spell"'): dbc.Table.v1215.Spell
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellActionBarPref"'): dbc.Table.v1215.SpellActionBarPref
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellActivationOverlay"'): dbc.Table.v1215.SpellActivationOverlay
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraNames"'): dbc.Table.v1215.SpellAuraNames
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraOptions"'): dbc.Table.v1215.SpellAuraOptions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraRestrictions"'): dbc.Table.v1215.SpellAuraRestrictions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraVisXChrSpec"'): dbc.Table.v1215.SpellAuraVisXChrSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellAuraVisibility"'): dbc.Table.v1215.SpellAuraVisibility
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCastTimes"'): dbc.Table.v1215.SpellCastTimes
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCastingRequirements"'): dbc.Table.v1215.SpellCastingRequirements
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCategories"'): dbc.Table.v1215.SpellCategories
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCategory"'): dbc.Table.v1215.SpellCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellChainEffects"'): dbc.Table.v1215.SpellChainEffects
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClassOptions"'): dbc.Table.v1215.SpellClassOptions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterAreaEffectCounts"'): dbc.Table.v1215.SpellClutterAreaEffectCounts
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterFrameRates"'): dbc.Table.v1215.SpellClutterFrameRates
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterImpactModelCounts"'): dbc.Table.v1215.SpellClutterImpactModelCounts
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterKitDistances"'): dbc.Table.v1215.SpellClutterKitDistances
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterMissileDist"'): dbc.Table.v1215.SpellClutterMissileDist
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellClutterWeaponTrailDist"'): dbc.Table.v1215.SpellClutterWeaponTrailDist
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellCooldowns"'): dbc.Table.v1215.SpellCooldowns
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDescriptionVariables"'): dbc.Table.v1215.SpellDescriptionVariables
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDiminish"'): dbc.Table.v1215.SpellDiminish
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDispelType"'): dbc.Table.v1215.SpellDispelType
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellDuration"'): dbc.Table.v1215.SpellDuration
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffect"'): dbc.Table.v1215.SpellEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffectAutoDescription"'): dbc.Table.v1215.SpellEffectAutoDescription
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffectEmission"'): dbc.Table.v1215.SpellEffectEmission
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEffectNames"'): dbc.Table.v1215.SpellEffectNames
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEmpower"'): dbc.Table.v1215.SpellEmpower
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEmpowerStage"'): dbc.Table.v1215.SpellEmpowerStage
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellEquippedItems"'): dbc.Table.v1215.SpellEquippedItems
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellFlyout"'): dbc.Table.v1215.SpellFlyout
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellFlyoutItem"'): dbc.Table.v1215.SpellFlyoutItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellFocusObject"'): dbc.Table.v1215.SpellFocusObject
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellInterrupts"'): dbc.Table.v1215.SpellInterrupts
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellItemEnchantment"'): dbc.Table.v1215.SpellItemEnchantment
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellItemEnchantmentCondition"'): dbc.Table.v1215.SpellItemEnchantmentCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellKeyboundOverride"'): dbc.Table.v1215.SpellKeyboundOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellLabel"'): dbc.Table.v1215.SpellLabel
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellLearnSpell"'): dbc.Table.v1215.SpellLearnSpell
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellLevels"'): dbc.Table.v1215.SpellLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMechanic"'): dbc.Table.v1215.SpellMechanic
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMisc"'): dbc.Table.v1215.SpellMisc
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMissile"'): dbc.Table.v1215.SpellMissile
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellMissileMotion"'): dbc.Table.v1215.SpellMissileMotion
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellName"'): dbc.Table.v1215.SpellName
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellOverrideName"'): dbc.Table.v1215.SpellOverrideName
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellPower"'): dbc.Table.v1215.SpellPower
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellPowerDifficulty"'): dbc.Table.v1215.SpellPowerDifficulty
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellProceduralEffect"'): dbc.Table.v1215.SpellProceduralEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellProcsPerMinute"'): dbc.Table.v1215.SpellProcsPerMinute
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellProcsPerMinuteMod"'): dbc.Table.v1215.SpellProcsPerMinuteMod
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellRadius"'): dbc.Table.v1215.SpellRadius
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellRange"'): dbc.Table.v1215.SpellRange
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellReagents"'): dbc.Table.v1215.SpellReagents
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellReagentsCurrency"'): dbc.Table.v1215.SpellReagentsCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellReplacement"'): dbc.Table.v1215.SpellReplacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellScaling"'): dbc.Table.v1215.SpellScaling
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellScript"'): dbc.Table.v1215.SpellScript
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellScriptText"'): dbc.Table.v1215.SpellScriptText
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellShapeshift"'): dbc.Table.v1215.SpellShapeshift
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellShapeshiftForm"'): dbc.Table.v1215.SpellShapeshiftForm
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellSpecialUnitEffect"'): dbc.Table.v1215.SpellSpecialUnitEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTargetRestrictions"'): dbc.Table.v1215.SpellTargetRestrictions
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtFilterRuleNode"'): dbc.Table.v1215.SpellTgtFilterRuleNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtFilterRuleSetNode"'): dbc.Table.v1215.SpellTgtFilterRuleSetNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtFilterRuleTemplate"'): dbc.Table.v1215.SpellTgtFilterRuleTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtGatherNode"'): dbc.Table.v1215.SpellTgtGatherNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTgtGatherTemplate"'): dbc.Table.v1215.SpellTgtGatherTemplate
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellTotems"'): dbc.Table.v1215.SpellTotems
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisual"'): dbc.Table.v1215.SpellVisual
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualAnim"'): dbc.Table.v1215.SpellVisualAnim
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualColorEffect"'): dbc.Table.v1215.SpellVisualColorEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualEffectName"'): dbc.Table.v1215.SpellVisualEffectName
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualEvent"'): dbc.Table.v1215.SpellVisualEvent
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKit"'): dbc.Table.v1215.SpellVisualKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitAreaModel"'): dbc.Table.v1215.SpellVisualKitAreaModel
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitDecalAttach"'): dbc.Table.v1215.SpellVisualKitDecalAttach
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitEffect"'): dbc.Table.v1215.SpellVisualKitEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitModelAttach"'): dbc.Table.v1215.SpellVisualKitModelAttach
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitPicker"'): dbc.Table.v1215.SpellVisualKitPicker
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualKitPickerEntry"'): dbc.Table.v1215.SpellVisualKitPickerEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualMissile"'): dbc.Table.v1215.SpellVisualMissile
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellVisualScreenEffect"'): dbc.Table.v1215.SpellVisualScreenEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellXDescriptionVariables"'): dbc.Table.v1215.SpellXDescriptionVariables
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpellXSpellVisual"'): dbc.Table.v1215.SpellXSpellVisual
+---@overload fun(self: DbcWorkspace_v1215, name: '"SpotLightConditionMap"'): dbc.Table.v1215.SpotLightConditionMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"StartupFiles"'): dbc.Table.v1215.StartupFiles
+---@overload fun(self: DbcWorkspace_v1215, name: '"Stationery"'): dbc.Table.v1215.Stationery
+---@overload fun(self: DbcWorkspace_v1215, name: '"SubgraphNode"'): dbc.Table.v1215.SubgraphNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"SummonProperties"'): dbc.Table.v1215.SummonProperties
+---@overload fun(self: DbcWorkspace_v1215, name: '"TactKey"'): dbc.Table.v1215.TactKey
+---@overload fun(self: DbcWorkspace_v1215, name: '"TactKeyLookup"'): dbc.Table.v1215.TactKeyLookup
+---@overload fun(self: DbcWorkspace_v1215, name: '"Talent"'): dbc.Table.v1215.Talent
+---@overload fun(self: DbcWorkspace_v1215, name: '"TalentTab"'): dbc.Table.v1215.TalentTab
+---@overload fun(self: DbcWorkspace_v1215, name: '"TalentTreePrimarySpells"'): dbc.Table.v1215.TalentTreePrimarySpells
+---@overload fun(self: DbcWorkspace_v1215, name: '"TaxiNodes"'): dbc.Table.v1215.TaxiNodes
+---@overload fun(self: DbcWorkspace_v1215, name: '"TaxiPath"'): dbc.Table.v1215.TaxiPath
+---@overload fun(self: DbcWorkspace_v1215, name: '"TaxiPathNode"'): dbc.Table.v1215.TaxiPathNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainColorGradingRamp"'): dbc.Table.v1215.TerrainColorGradingRamp
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainMaterial"'): dbc.Table.v1215.TerrainMaterial
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainType"'): dbc.Table.v1215.TerrainType
+---@overload fun(self: DbcWorkspace_v1215, name: '"TerrainTypeSounds"'): dbc.Table.v1215.TerrainTypeSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"TextureBlendSet"'): dbc.Table.v1215.TextureBlendSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"TextureFileData"'): dbc.Table.v1215.TextureFileData
+---@overload fun(self: DbcWorkspace_v1215, name: '"TierTransition"'): dbc.Table.v1215.TierTransition
+---@overload fun(self: DbcWorkspace_v1215, name: '"TieredEntrance"'): dbc.Table.v1215.TieredEntrance
+---@overload fun(self: DbcWorkspace_v1215, name: '"TimeEventData"'): dbc.Table.v1215.TimeEventData
+---@overload fun(self: DbcWorkspace_v1215, name: '"TotemCategory"'): dbc.Table.v1215.TotemCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"Toy"'): dbc.Table.v1215.Toy
+---@overload fun(self: DbcWorkspace_v1215, name: '"TradeSkillCategory"'): dbc.Table.v1215.TradeSkillCategory
+---@overload fun(self: DbcWorkspace_v1215, name: '"TradeSkillItem"'): dbc.Table.v1215.TradeSkillItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCond"'): dbc.Table.v1215.TraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCondAccountElement"'): dbc.Table.v1215.TraitCondAccountElement
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCost"'): dbc.Table.v1215.TraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCurrency"'): dbc.Table.v1215.TraitCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitCurrencySource"'): dbc.Table.v1215.TraitCurrencySource
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitDefinition"'): dbc.Table.v1215.TraitDefinition
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitDefinitionEffectPoints"'): dbc.Table.v1215.TraitDefinitionEffectPoints
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitEdge"'): dbc.Table.v1215.TraitEdge
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNode"'): dbc.Table.v1215.TraitNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeEntry"'): dbc.Table.v1215.TraitNodeEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeEntryXTraitCond"'): dbc.Table.v1215.TraitNodeEntryXTraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeEntryXTraitCost"'): dbc.Table.v1215.TraitNodeEntryXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroup"'): dbc.Table.v1215.TraitNodeGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroupXTraitCond"'): dbc.Table.v1215.TraitNodeGroupXTraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroupXTraitCost"'): dbc.Table.v1215.TraitNodeGroupXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeGroupXTraitNode"'): dbc.Table.v1215.TraitNodeGroupXTraitNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeXTraitCond"'): dbc.Table.v1215.TraitNodeXTraitCond
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeXTraitCost"'): dbc.Table.v1215.TraitNodeXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitNodeXTraitNodeEntry"'): dbc.Table.v1215.TraitNodeXTraitNodeEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitSubTree"'): dbc.Table.v1215.TraitSubTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitSystem"'): dbc.Table.v1215.TraitSystem
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTree"'): dbc.Table.v1215.TraitTree
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeLoadout"'): dbc.Table.v1215.TraitTreeLoadout
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeLoadoutEntry"'): dbc.Table.v1215.TraitTreeLoadoutEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeXTraitCost"'): dbc.Table.v1215.TraitTreeXTraitCost
+---@overload fun(self: DbcWorkspace_v1215, name: '"TraitTreeXTraitCurrency"'): dbc.Table.v1215.TraitTreeXTraitCurrency
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransformMatrix"'): dbc.Table.v1215.TransformMatrix
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogDefaultLevel"'): dbc.Table.v1215.TransmogDefaultLevel
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogHoliday"'): dbc.Table.v1215.TransmogHoliday
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogIllusion"'): dbc.Table.v1215.TransmogIllusion
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogOutfitEntry"'): dbc.Table.v1215.TransmogOutfitEntry
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogOutfitSlotInfo"'): dbc.Table.v1215.TransmogOutfitSlotInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogOutfitSlotOption"'): dbc.Table.v1215.TransmogOutfitSlotOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSet"'): dbc.Table.v1215.TransmogSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSetGroup"'): dbc.Table.v1215.TransmogSetGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSetItem"'): dbc.Table.v1215.TransmogSetItem
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSituation"'): dbc.Table.v1215.TransmogSituation
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSituationGroup"'): dbc.Table.v1215.TransmogSituationGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransmogSituationTrigger"'): dbc.Table.v1215.TransmogSituationTrigger
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransportAnimation"'): dbc.Table.v1215.TransportAnimation
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransportPhysics"'): dbc.Table.v1215.TransportPhysics
+---@overload fun(self: DbcWorkspace_v1215, name: '"TransportRotation"'): dbc.Table.v1215.TransportRotation
+---@overload fun(self: DbcWorkspace_v1215, name: '"Trophy"'): dbc.Table.v1215.Trophy
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIArrowCallout"'): dbc.Table.v1215.UIArrowCallout
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIButton"'): dbc.Table.v1215.UIButton
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIChromieTimeExpansionInfo"'): dbc.Table.v1215.UIChromieTimeExpansionInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICinematicIntroInfo"'): dbc.Table.v1215.UICinematicIntroInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICovenantAbility"'): dbc.Table.v1215.UICovenantAbility
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICovenantHighlight"'): dbc.Table.v1215.UICovenantHighlight
+---@overload fun(self: DbcWorkspace_v1215, name: '"UICovenantPreview"'): dbc.Table.v1215.UICovenantPreview
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIDeadlyDebuff"'): dbc.Table.v1215.UIDeadlyDebuff
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIDungeonScoreRarity"'): dbc.Table.v1215.UIDungeonScoreRarity
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIEventToast"'): dbc.Table.v1215.UIEventToast
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIExpansionDisplayInfo"'): dbc.Table.v1215.UIExpansionDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIExpansionDisplayInfoIcon"'): dbc.Table.v1215.UIExpansionDisplayInfoIcon
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIGenericWidgetDisplay"'): dbc.Table.v1215.UIGenericWidgetDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIMapPinInfo"'): dbc.Table.v1215.UIMapPinInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIModifiedInstance"'): dbc.Table.v1215.UIModifiedInstance
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIScenarioDisplayInfo"'): dbc.Table.v1215.UIScenarioDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UIScriptedAnimationEffect"'): dbc.Table.v1215.UIScriptedAnimationEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"UISplashScreen"'): dbc.Table.v1215.UISplashScreen
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamFbackTalkingHeadChrRace"'): dbc.Table.v1215.UiCamFbackTalkingHeadChrRace
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamFbackTransmogChrRace"'): dbc.Table.v1215.UiCamFbackTransmogChrRace
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamFbackTransmogWeapon"'): dbc.Table.v1215.UiCamFbackTransmogWeapon
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCamera"'): dbc.Table.v1215.UiCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCameraType"'): dbc.Table.v1215.UiCameraType
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCanvas"'): dbc.Table.v1215.UiCanvas
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiCovenantDisplayInfo"'): dbc.Table.v1215.UiCovenantDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiItemInteraction"'): dbc.Table.v1215.UiItemInteraction
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMap"'): dbc.Table.v1215.UiMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapArt"'): dbc.Table.v1215.UiMapArt
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapArtStyleLayer"'): dbc.Table.v1215.UiMapArtStyleLayer
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapArtTile"'): dbc.Table.v1215.UiMapArtTile
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapAssignment"'): dbc.Table.v1215.UiMapAssignment
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapFogOfWar"'): dbc.Table.v1215.UiMapFogOfWar
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapFogOfWarVisualization"'): dbc.Table.v1215.UiMapFogOfWarVisualization
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapGroup"'): dbc.Table.v1215.UiMapGroup
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapGroupMember"'): dbc.Table.v1215.UiMapGroupMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapLink"'): dbc.Table.v1215.UiMapLink
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiMapXMapArt"'): dbc.Table.v1215.UiMapXMapArt
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelScene"'): dbc.Table.v1215.UiModelScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelSceneActor"'): dbc.Table.v1215.UiModelSceneActor
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelSceneActorDisplay"'): dbc.Table.v1215.UiModelSceneActorDisplay
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiModelSceneCamera"'): dbc.Table.v1215.UiModelSceneCamera
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiPartyPose"'): dbc.Table.v1215.UiPartyPose
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiQuestDetailsTheme"'): dbc.Table.v1215.UiQuestDetailsTheme
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlas"'): dbc.Table.v1215.UiTextureAtlas
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlasElement"'): dbc.Table.v1215.UiTextureAtlasElement
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlasElementSliceData"'): dbc.Table.v1215.UiTextureAtlasElementSliceData
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureAtlasMember"'): dbc.Table.v1215.UiTextureAtlasMember
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiTextureKit"'): dbc.Table.v1215.UiTextureKit
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWeeklyReward"'): dbc.Table.v1215.UiWeeklyReward
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidget"'): dbc.Table.v1215.UiWidget
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetConstantSource"'): dbc.Table.v1215.UiWidgetConstantSource
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetDataSource"'): dbc.Table.v1215.UiWidgetDataSource
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetMap"'): dbc.Table.v1215.UiWidgetMap
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetSet"'): dbc.Table.v1215.UiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetStringSource"'): dbc.Table.v1215.UiWidgetStringSource
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetVisTypeDataReq"'): dbc.Table.v1215.UiWidgetVisTypeDataReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetVisualization"'): dbc.Table.v1215.UiWidgetVisualization
+---@overload fun(self: DbcWorkspace_v1215, name: '"UiWidgetXWidgetSet"'): dbc.Table.v1215.UiWidgetXWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitBlood"'): dbc.Table.v1215.UnitBlood
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitBloodLevels"'): dbc.Table.v1215.UnitBloodLevels
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitCondition"'): dbc.Table.v1215.UnitCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"UnitPowerBar"'): dbc.Table.v1215.UnitPowerBar
+---@overload fun(self: DbcWorkspace_v1215, name: '"Vehicle"'): dbc.Table.v1215.Vehicle
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehiclePOIType"'): dbc.Table.v1215.VehiclePOIType
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehicleSeat"'): dbc.Table.v1215.VehicleSeat
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehicleUIIndSeat"'): dbc.Table.v1215.VehicleUIIndSeat
+---@overload fun(self: DbcWorkspace_v1215, name: '"VehicleUIIndicator"'): dbc.Table.v1215.VehicleUIIndicator
+---@overload fun(self: DbcWorkspace_v1215, name: '"Vignette"'): dbc.Table.v1215.Vignette
+---@overload fun(self: DbcWorkspace_v1215, name: '"VignetteUiWidgetSet"'): dbc.Table.v1215.VignetteUiWidgetSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"VirtualAttachment"'): dbc.Table.v1215.VirtualAttachment
+---@overload fun(self: DbcWorkspace_v1215, name: '"VirtualAttachmentCustomization"'): dbc.Table.v1215.VirtualAttachmentCustomization
+---@overload fun(self: DbcWorkspace_v1215, name: '"VocalUISounds"'): dbc.Table.v1215.VocalUISounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"VoiceOverPriority"'): dbc.Table.v1215.VoiceOverPriority
+---@overload fun(self: DbcWorkspace_v1215, name: '"VolumeFogCondition"'): dbc.Table.v1215.VolumeFogCondition
+---@overload fun(self: DbcWorkspace_v1215, name: '"WMOAreaTable"'): dbc.Table.v1215.WMOAreaTable
+---@overload fun(self: DbcWorkspace_v1215, name: '"WMOMinimapTexture"'): dbc.Table.v1215.WMOMinimapTexture
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandPlacementDisplayInfo"'): dbc.Table.v1215.WarbandPlacementDisplayInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScene"'): dbc.Table.v1215.WarbandScene
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandSceneAnimChrSpec"'): dbc.Table.v1215.WarbandSceneAnimChrSpec
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandSceneAnimation"'): dbc.Table.v1215.WarbandSceneAnimation
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlacement"'): dbc.Table.v1215.WarbandScenePlacement
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlacementFilterReq"'): dbc.Table.v1215.WarbandScenePlacementFilterReq
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlacementOption"'): dbc.Table.v1215.WarbandScenePlacementOption
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandScenePlcmntAnimOverride"'): dbc.Table.v1215.WarbandScenePlcmntAnimOverride
+---@overload fun(self: DbcWorkspace_v1215, name: '"WarbandSceneSourceInfo"'): dbc.Table.v1215.WarbandSceneSourceInfo
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaterfallData"'): dbc.Table.v1215.WaterfallData
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointEdge"'): dbc.Table.v1215.WaypointEdge
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointMapVolume"'): dbc.Table.v1215.WaypointMapVolume
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointNode"'): dbc.Table.v1215.WaypointNode
+---@overload fun(self: DbcWorkspace_v1215, name: '"WaypointSafeLocs"'): dbc.Table.v1215.WaypointSafeLocs
+---@overload fun(self: DbcWorkspace_v1215, name: '"WbAccessControlList"'): dbc.Table.v1215.WbAccessControlList
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponImpactSounds"'): dbc.Table.v1215.WeaponImpactSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponSwingSounds2"'): dbc.Table.v1215.WeaponSwingSounds2
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponTrail"'): dbc.Table.v1215.WeaponTrail
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponTrailModelDef"'): dbc.Table.v1215.WeaponTrailModelDef
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeaponTrailParam"'): dbc.Table.v1215.WeaponTrailParam
+---@overload fun(self: DbcWorkspace_v1215, name: '"Weather"'): dbc.Table.v1215.Weather
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeatherXParticulate"'): dbc.Table.v1215.WeatherXParticulate
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeeklyRewardChestActivityTier"'): dbc.Table.v1215.WeeklyRewardChestActivityTier
+---@overload fun(self: DbcWorkspace_v1215, name: '"WeeklyRewardChestThreshold"'): dbc.Table.v1215.WeeklyRewardChestThreshold
+---@overload fun(self: DbcWorkspace_v1215, name: '"WindSettings"'): dbc.Table.v1215.WindSettings
+---@overload fun(self: DbcWorkspace_v1215, name: '"WmoMaxScale"'): dbc.Table.v1215.WmoMaxScale
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldBossLockout"'): dbc.Table.v1215.WorldBossLockout
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldChunkSounds"'): dbc.Table.v1215.WorldChunkSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldEffect"'): dbc.Table.v1215.WorldEffect
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldElapsedTimer"'): dbc.Table.v1215.WorldElapsedTimer
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldLayerMapSet"'): dbc.Table.v1215.WorldLayerMapSet
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldMapOverlay"'): dbc.Table.v1215.WorldMapOverlay
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldMapOverlayTile"'): dbc.Table.v1215.WorldMapOverlayTile
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldShadow"'): dbc.Table.v1215.WorldShadow
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldStateExpression"'): dbc.Table.v1215.WorldStateExpression
+---@overload fun(self: DbcWorkspace_v1215, name: '"WorldStateZoneSounds"'): dbc.Table.v1215.WorldStateZoneSounds
+---@overload fun(self: DbcWorkspace_v1215, name: '"World_PVP_Area"'): dbc.Table.v1215.World_PVP_Area
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneIntroMusicTable"'): dbc.Table.v1215.ZoneIntroMusicTable
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneLight"'): dbc.Table.v1215.ZoneLight
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneLightPoint"'): dbc.Table.v1215.ZoneLightPoint
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneMusic"'): dbc.Table.v1215.ZoneMusic
+---@overload fun(self: DbcWorkspace_v1215, name: '"ZoneStory"'): dbc.Table.v1215.ZoneStory
+function DbcWorkspace_v1215:Create(name) end
+
+---Workspace for WoW Build 3.3.5.12340 (3.3.5).
+---@class DbcWorkspace_v335 : DbcWorkspace
+---@field Achievement dbc.Table.v335.Achievement
+---@field Achievement_Category dbc.Table.v335.Achievement_Category
+---@field Achievement_Criteria dbc.Table.v335.Achievement_Criteria
+---@field AnimationData dbc.Table.v335.AnimationData
+---@field AreaGroup dbc.Table.v335.AreaGroup
+---@field AreaPOI dbc.Table.v335.AreaPOI
+---@field AreaTable dbc.Table.v335.AreaTable
+---@field AreaTrigger dbc.Table.v335.AreaTrigger
+---@field AttackAnimKits dbc.Table.v335.AttackAnimKits
+---@field AttackAnimTypes dbc.Table.v335.AttackAnimTypes
+---@field AuctionHouse dbc.Table.v335.AuctionHouse
+---@field BankBagSlotPrices dbc.Table.v335.BankBagSlotPrices
+---@field BannedAddons dbc.Table.v335.BannedAddons
+---@field BarberShopStyle dbc.Table.v335.BarberShopStyle
+---@field BattlemasterList dbc.Table.v335.BattlemasterList
+---@field CameraShakes dbc.Table.v335.CameraShakes
+---@field Cfg_Categories dbc.Table.v335.Cfg_Categories
+---@field Cfg_Configs dbc.Table.v335.Cfg_Configs
+---@field CharBaseInfo dbc.Table.v335.CharBaseInfo
+---@field CharHairGeosets dbc.Table.v335.CharHairGeosets
+---@field CharHairTextures dbc.Table.v335.CharHairTextures
+---@field CharSections dbc.Table.v335.CharSections
+---@field CharStartOutfit dbc.Table.v335.CharStartOutfit
+---@field CharTitles dbc.Table.v335.CharTitles
+---@field CharVariations dbc.Table.v335.CharVariations
+---@field CharacterFacialHairStyles dbc.Table.v335.CharacterFacialHairStyles
+---@field ChatChannels dbc.Table.v335.ChatChannels
+---@field ChatProfanity dbc.Table.v335.ChatProfanity
+---@field ChrClasses dbc.Table.v335.ChrClasses
+---@field ChrRaces dbc.Table.v335.ChrRaces
+---@field CinematicCamera dbc.Table.v335.CinematicCamera
+---@field CinematicSequences dbc.Table.v335.CinematicSequences
+---@field CreatureDisplayInfo dbc.Table.v335.CreatureDisplayInfo
+---@field CreatureDisplayInfoExtra dbc.Table.v335.CreatureDisplayInfoExtra
+---@field CreatureFamily dbc.Table.v335.CreatureFamily
+---@field CreatureModelData dbc.Table.v335.CreatureModelData
+---@field CreatureMovementInfo dbc.Table.v335.CreatureMovementInfo
+---@field CreatureSoundData dbc.Table.v335.CreatureSoundData
+---@field CreatureSpellData dbc.Table.v335.CreatureSpellData
+---@field CreatureType dbc.Table.v335.CreatureType
+---@field CurrencyCategory dbc.Table.v335.CurrencyCategory
+---@field CurrencyTypes dbc.Table.v335.CurrencyTypes
+---@field DanceMoves dbc.Table.v335.DanceMoves
+---@field DeathThudLookups dbc.Table.v335.DeathThudLookups
+---@field DeclinedWord dbc.Table.v335.DeclinedWord
+---@field DeclinedWordCases dbc.Table.v335.DeclinedWordCases
+---@field DestructibleModelData dbc.Table.v335.DestructibleModelData
+---@field DungeonEncounter dbc.Table.v335.DungeonEncounter
+---@field DungeonMap dbc.Table.v335.DungeonMap
+---@field DungeonMapChunk dbc.Table.v335.DungeonMapChunk
+---@field DurabilityCosts dbc.Table.v335.DurabilityCosts
+---@field DurabilityQuality dbc.Table.v335.DurabilityQuality
+---@field Emotes dbc.Table.v335.Emotes
+---@field EmotesText dbc.Table.v335.EmotesText
+---@field EmotesTextData dbc.Table.v335.EmotesTextData
+---@field EmotesTextSound dbc.Table.v335.EmotesTextSound
+---@field EnvironmentalDamage dbc.Table.v335.EnvironmentalDamage
+---@field Exhaustion dbc.Table.v335.Exhaustion
+---@field Faction dbc.Table.v335.Faction
+---@field FactionGroup dbc.Table.v335.FactionGroup
+---@field FactionTemplate dbc.Table.v335.FactionTemplate
+---@field FileData dbc.Table.v335.FileData
+---@field FootprintTextures dbc.Table.v335.FootprintTextures
+---@field FootstepTerrainLookup dbc.Table.v335.FootstepTerrainLookup
+---@field GMSurveyAnswers dbc.Table.v335.GMSurveyAnswers
+---@field GMSurveyCurrentSurvey dbc.Table.v335.GMSurveyCurrentSurvey
+---@field GMSurveyQuestions dbc.Table.v335.GMSurveyQuestions
+---@field GMSurveySurveys dbc.Table.v335.GMSurveySurveys
+---@field GMTicketCategory dbc.Table.v335.GMTicketCategory
+---@field GameObjectArtKit dbc.Table.v335.GameObjectArtKit
+---@field GameObjectDisplayInfo dbc.Table.v335.GameObjectDisplayInfo
+---@field GameTables dbc.Table.v335.GameTables
+---@field GameTips dbc.Table.v335.GameTips
+---@field GemProperties dbc.Table.v335.GemProperties
+---@field GlyphProperties dbc.Table.v335.GlyphProperties
+---@field GlyphSlot dbc.Table.v335.GlyphSlot
+---@field GroundEffectDoodad dbc.Table.v335.GroundEffectDoodad
+---@field GroundEffectTexture dbc.Table.v335.GroundEffectTexture
+---@field HelmetGeosetVisData dbc.Table.v335.HelmetGeosetVisData
+---@field HolidayDescriptions dbc.Table.v335.HolidayDescriptions
+---@field HolidayNames dbc.Table.v335.HolidayNames
+---@field Holidays dbc.Table.v335.Holidays
+---@field Item dbc.Table.v335.Item
+---@field ItemBagFamily dbc.Table.v335.ItemBagFamily
+---@field ItemClass dbc.Table.v335.ItemClass
+---@field ItemCondExtCosts dbc.Table.v335.ItemCondExtCosts
+---@field ItemDisplayInfo dbc.Table.v335.ItemDisplayInfo
+---@field ItemExtendedCost dbc.Table.v335.ItemExtendedCost
+---@field ItemGroupSounds dbc.Table.v335.ItemGroupSounds
+---@field ItemLimitCategory dbc.Table.v335.ItemLimitCategory
+---@field ItemPetFood dbc.Table.v335.ItemPetFood
+---@field ItemPurchaseGroup dbc.Table.v335.ItemPurchaseGroup
+---@field ItemRandomProperties dbc.Table.v335.ItemRandomProperties
+---@field ItemRandomSuffix dbc.Table.v335.ItemRandomSuffix
+---@field ItemSet dbc.Table.v335.ItemSet
+---@field ItemSubClass dbc.Table.v335.ItemSubClass
+---@field ItemSubClassMask dbc.Table.v335.ItemSubClassMask
+---@field ItemVisualEffects dbc.Table.v335.ItemVisualEffects
+---@field ItemVisuals dbc.Table.v335.ItemVisuals
+---@field LFGDungeonExpansion dbc.Table.v335.LFGDungeonExpansion
+---@field LFGDungeonGroup dbc.Table.v335.LFGDungeonGroup
+---@field LFGDungeons dbc.Table.v335.LFGDungeons
+---@field LanguageWords dbc.Table.v335.LanguageWords
+---@field Languages dbc.Table.v335.Languages
+---@field Light dbc.Table.v335.Light
+---@field LightFloatBand dbc.Table.v335.LightFloatBand
+---@field LightIntBand dbc.Table.v335.LightIntBand
+---@field LightParams dbc.Table.v335.LightParams
+---@field LightSkybox dbc.Table.v335.LightSkybox
+---@field LiquidMaterial dbc.Table.v335.LiquidMaterial
+---@field LiquidType dbc.Table.v335.LiquidType
+---@field LoadingScreenTaxiSplines dbc.Table.v335.LoadingScreenTaxiSplines
+---@field LoadingScreens dbc.Table.v335.LoadingScreens
+---@field Lock dbc.Table.v335.Lock
+---@field LockType dbc.Table.v335.LockType
+---@field MailTemplate dbc.Table.v335.MailTemplate
+---@field Map dbc.Table.v335.Map
+---@field MapDifficulty dbc.Table.v335.MapDifficulty
+---@field Material dbc.Table.v335.Material
+---@field Movie dbc.Table.v335.Movie
+---@field MovieFileData dbc.Table.v335.MovieFileData
+---@field MovieVariation dbc.Table.v335.MovieVariation
+---@field NPCSounds dbc.Table.v335.NPCSounds
+---@field NameGen dbc.Table.v335.NameGen
+---@field NamesProfanity dbc.Table.v335.NamesProfanity
+---@field NamesReserved dbc.Table.v335.NamesReserved
+---@field ObjectEffect dbc.Table.v335.ObjectEffect
+---@field ObjectEffectGroup dbc.Table.v335.ObjectEffectGroup
+---@field ObjectEffectModifier dbc.Table.v335.ObjectEffectModifier
+---@field ObjectEffectPackage dbc.Table.v335.ObjectEffectPackage
+---@field ObjectEffectPackageElem dbc.Table.v335.ObjectEffectPackageElem
+---@field OverrideSpellData dbc.Table.v335.OverrideSpellData
+---@field PVPDifficulty dbc.Table.v335.PVPDifficulty
+---@field Package dbc.Table.v335.Package
+---@field PageTextMaterial dbc.Table.v335.PageTextMaterial
+---@field PaperDollItemFrame dbc.Table.v335.PaperDollItemFrame
+---@field ParticleColor dbc.Table.v335.ParticleColor
+---@field PetPersonality dbc.Table.v335.PetPersonality
+---@field PetitionType dbc.Table.v335.PetitionType
+---@field PowerDisplay dbc.Table.v335.PowerDisplay
+---@field QuestFactionReward dbc.Table.v335.QuestFactionReward
+---@field QuestInfo dbc.Table.v335.QuestInfo
+---@field QuestSort dbc.Table.v335.QuestSort
+---@field QuestXP dbc.Table.v335.QuestXP
+---@field RandPropPoints dbc.Table.v335.RandPropPoints
+---@field Resistances dbc.Table.v335.Resistances
+---@field ScalingStatDistribution dbc.Table.v335.ScalingStatDistribution
+---@field ScalingStatValues dbc.Table.v335.ScalingStatValues
+---@field ScreenEffect dbc.Table.v335.ScreenEffect
+---@field ServerMessages dbc.Table.v335.ServerMessages
+---@field SheatheSoundLookups dbc.Table.v335.SheatheSoundLookups
+---@field SkillCostsData dbc.Table.v335.SkillCostsData
+---@field SkillLine dbc.Table.v335.SkillLine
+---@field SkillLineAbility dbc.Table.v335.SkillLineAbility
+---@field SkillLineCategory dbc.Table.v335.SkillLineCategory
+---@field SkillRaceClassInfo dbc.Table.v335.SkillRaceClassInfo
+---@field SkillTiers dbc.Table.v335.SkillTiers
+---@field SoundAmbience dbc.Table.v335.SoundAmbience
+---@field SoundEmitters dbc.Table.v335.SoundEmitters
+---@field SoundEntries dbc.Table.v335.SoundEntries
+---@field SoundEntriesAdvanced dbc.Table.v335.SoundEntriesAdvanced
+---@field SoundFilter dbc.Table.v335.SoundFilter
+---@field SoundFilterElem dbc.Table.v335.SoundFilterElem
+---@field SoundProviderPreferences dbc.Table.v335.SoundProviderPreferences
+---@field SoundSamplePreferences dbc.Table.v335.SoundSamplePreferences
+---@field SoundWaterType dbc.Table.v335.SoundWaterType
+---@field SpamMessages dbc.Table.v335.SpamMessages
+---@field Spell dbc.Table.v335.Spell
+---@field SpellCastTimes dbc.Table.v335.SpellCastTimes
+---@field SpellCategory dbc.Table.v335.SpellCategory
+---@field SpellChainEffects dbc.Table.v335.SpellChainEffects
+---@field SpellDescriptionVariables dbc.Table.v335.SpellDescriptionVariables
+---@field SpellDifficulty dbc.Table.v335.SpellDifficulty
+---@field SpellDispelType dbc.Table.v335.SpellDispelType
+---@field SpellDuration dbc.Table.v335.SpellDuration
+---@field SpellEffectCameraShakes dbc.Table.v335.SpellEffectCameraShakes
+---@field SpellFocusObject dbc.Table.v335.SpellFocusObject
+---@field SpellIcon dbc.Table.v335.SpellIcon
+---@field SpellItemEnchantment dbc.Table.v335.SpellItemEnchantment
+---@field SpellItemEnchantmentCondition dbc.Table.v335.SpellItemEnchantmentCondition
+---@field SpellMechanic dbc.Table.v335.SpellMechanic
+---@field SpellMissile dbc.Table.v335.SpellMissile
+---@field SpellMissileMotion dbc.Table.v335.SpellMissileMotion
+---@field SpellRadius dbc.Table.v335.SpellRadius
+---@field SpellRange dbc.Table.v335.SpellRange
+---@field SpellRuneCost dbc.Table.v335.SpellRuneCost
+---@field SpellShapeshiftForm dbc.Table.v335.SpellShapeshiftForm
+---@field SpellVisual dbc.Table.v335.SpellVisual
+---@field SpellVisualEffectName dbc.Table.v335.SpellVisualEffectName
+---@field SpellVisualKit dbc.Table.v335.SpellVisualKit
+---@field SpellVisualKitAreaModel dbc.Table.v335.SpellVisualKitAreaModel
+---@field SpellVisualKitModelAttach dbc.Table.v335.SpellVisualKitModelAttach
+---@field SpellVisualPrecastTransitions dbc.Table.v335.SpellVisualPrecastTransitions
+---@field StableSlotPrices dbc.Table.v335.StableSlotPrices
+---@field Startup_Strings dbc.Table.v335.Startup_Strings
+---@field Stationery dbc.Table.v335.Stationery
+---@field StringLookups dbc.Table.v335.StringLookups
+---@field SummonProperties dbc.Table.v335.SummonProperties
+---@field Talent dbc.Table.v335.Talent
+---@field TalentTab dbc.Table.v335.TalentTab
+---@field TaxiNodes dbc.Table.v335.TaxiNodes
+---@field TaxiPath dbc.Table.v335.TaxiPath
+---@field TaxiPathNode dbc.Table.v335.TaxiPathNode
+---@field TeamContributionPoints dbc.Table.v335.TeamContributionPoints
+---@field TerrainType dbc.Table.v335.TerrainType
+---@field TerrainTypeSounds dbc.Table.v335.TerrainTypeSounds
+---@field TotemCategory dbc.Table.v335.TotemCategory
+---@field TransportAnimation dbc.Table.v335.TransportAnimation
+---@field TransportPhysics dbc.Table.v335.TransportPhysics
+---@field TransportRotation dbc.Table.v335.TransportRotation
+---@field UISoundLookups dbc.Table.v335.UISoundLookups
+---@field UnitBlood dbc.Table.v335.UnitBlood
+---@field UnitBloodLevels dbc.Table.v335.UnitBloodLevels
+---@field Vehicle dbc.Table.v335.Vehicle
+---@field VehicleSeat dbc.Table.v335.VehicleSeat
+---@field VehicleUIIndSeat dbc.Table.v335.VehicleUIIndSeat
+---@field VehicleUIIndicator dbc.Table.v335.VehicleUIIndicator
+---@field VideoHardware dbc.Table.v335.VideoHardware
+---@field VocalUISounds dbc.Table.v335.VocalUISounds
+---@field WMOAreaTable dbc.Table.v335.WMOAreaTable
+---@field WeaponImpactSounds dbc.Table.v335.WeaponImpactSounds
+---@field WeaponSwingSounds2 dbc.Table.v335.WeaponSwingSounds2
+---@field Weather dbc.Table.v335.Weather
+---@field WorldChunkSounds dbc.Table.v335.WorldChunkSounds
+---@field WorldMapArea dbc.Table.v335.WorldMapArea
+---@field WorldMapContinent dbc.Table.v335.WorldMapContinent
+---@field WorldMapOverlay dbc.Table.v335.WorldMapOverlay
+---@field WorldMapTransforms dbc.Table.v335.WorldMapTransforms
+---@field WorldSafeLocs dbc.Table.v335.WorldSafeLocs
+---@field WorldStateUI dbc.Table.v335.WorldStateUI
+---@field WorldStateZoneSounds dbc.Table.v335.WorldStateZoneSounds
+---@field WowError_Strings dbc.Table.v335.WowError_Strings
+---@field ZoneIntroMusicTable dbc.Table.v335.ZoneIntroMusicTable
+---@field ZoneMusic dbc.Table.v335.ZoneMusic
+---@field gtBarberShopCostBase dbc.Table.v335.gtBarberShopCostBase
+---@field gtChanceToMeleeCrit dbc.Table.v335.gtChanceToMeleeCrit
+---@field gtChanceToMeleeCritBase dbc.Table.v335.gtChanceToMeleeCritBase
+---@field gtChanceToSpellCrit dbc.Table.v335.gtChanceToSpellCrit
+---@field gtChanceToSpellCritBase dbc.Table.v335.gtChanceToSpellCritBase
+---@field gtCombatRatings dbc.Table.v335.gtCombatRatings
+---@field gtNPCManaCostScaler dbc.Table.v335.gtNPCManaCostScaler
+---@field gtOCTClassCombatRatingScalar dbc.Table.v335.gtOCTClassCombatRatingScalar
+---@field gtOCTRegenHP dbc.Table.v335.gtOCTRegenHP
+---@field gtOCTRegenMP dbc.Table.v335.gtOCTRegenMP
+---@field gtRegenHPPerSpt dbc.Table.v335.gtRegenHPPerSpt
+---@field gtRegenMPPerSpt dbc.Table.v335.gtRegenMPPerSpt
+
+---@overload fun(self: DbcWorkspace_v335, name: '"Achievement"'): dbc.Table.v335.Achievement
+---@overload fun(self: DbcWorkspace_v335, name: '"Achievement_Category"'): dbc.Table.v335.Achievement_Category
+---@overload fun(self: DbcWorkspace_v335, name: '"Achievement_Criteria"'): dbc.Table.v335.Achievement_Criteria
+---@overload fun(self: DbcWorkspace_v335, name: '"AnimationData"'): dbc.Table.v335.AnimationData
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaGroup"'): dbc.Table.v335.AreaGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaPOI"'): dbc.Table.v335.AreaPOI
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaTable"'): dbc.Table.v335.AreaTable
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaTrigger"'): dbc.Table.v335.AreaTrigger
+---@overload fun(self: DbcWorkspace_v335, name: '"AttackAnimKits"'): dbc.Table.v335.AttackAnimKits
+---@overload fun(self: DbcWorkspace_v335, name: '"AttackAnimTypes"'): dbc.Table.v335.AttackAnimTypes
+---@overload fun(self: DbcWorkspace_v335, name: '"AuctionHouse"'): dbc.Table.v335.AuctionHouse
+---@overload fun(self: DbcWorkspace_v335, name: '"BankBagSlotPrices"'): dbc.Table.v335.BankBagSlotPrices
+---@overload fun(self: DbcWorkspace_v335, name: '"BannedAddons"'): dbc.Table.v335.BannedAddons
+---@overload fun(self: DbcWorkspace_v335, name: '"BarberShopStyle"'): dbc.Table.v335.BarberShopStyle
+---@overload fun(self: DbcWorkspace_v335, name: '"BattlemasterList"'): dbc.Table.v335.BattlemasterList
+---@overload fun(self: DbcWorkspace_v335, name: '"CameraShakes"'): dbc.Table.v335.CameraShakes
+---@overload fun(self: DbcWorkspace_v335, name: '"Cfg_Categories"'): dbc.Table.v335.Cfg_Categories
+---@overload fun(self: DbcWorkspace_v335, name: '"Cfg_Configs"'): dbc.Table.v335.Cfg_Configs
+---@overload fun(self: DbcWorkspace_v335, name: '"CharBaseInfo"'): dbc.Table.v335.CharBaseInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"CharHairGeosets"'): dbc.Table.v335.CharHairGeosets
+---@overload fun(self: DbcWorkspace_v335, name: '"CharHairTextures"'): dbc.Table.v335.CharHairTextures
+---@overload fun(self: DbcWorkspace_v335, name: '"CharSections"'): dbc.Table.v335.CharSections
+---@overload fun(self: DbcWorkspace_v335, name: '"CharStartOutfit"'): dbc.Table.v335.CharStartOutfit
+---@overload fun(self: DbcWorkspace_v335, name: '"CharTitles"'): dbc.Table.v335.CharTitles
+---@overload fun(self: DbcWorkspace_v335, name: '"CharVariations"'): dbc.Table.v335.CharVariations
+---@overload fun(self: DbcWorkspace_v335, name: '"CharacterFacialHairStyles"'): dbc.Table.v335.CharacterFacialHairStyles
+---@overload fun(self: DbcWorkspace_v335, name: '"ChatChannels"'): dbc.Table.v335.ChatChannels
+---@overload fun(self: DbcWorkspace_v335, name: '"ChatProfanity"'): dbc.Table.v335.ChatProfanity
+---@overload fun(self: DbcWorkspace_v335, name: '"ChrClasses"'): dbc.Table.v335.ChrClasses
+---@overload fun(self: DbcWorkspace_v335, name: '"ChrRaces"'): dbc.Table.v335.ChrRaces
+---@overload fun(self: DbcWorkspace_v335, name: '"CinematicCamera"'): dbc.Table.v335.CinematicCamera
+---@overload fun(self: DbcWorkspace_v335, name: '"CinematicSequences"'): dbc.Table.v335.CinematicSequences
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureDisplayInfo"'): dbc.Table.v335.CreatureDisplayInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureDisplayInfoExtra"'): dbc.Table.v335.CreatureDisplayInfoExtra
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureFamily"'): dbc.Table.v335.CreatureFamily
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureModelData"'): dbc.Table.v335.CreatureModelData
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureMovementInfo"'): dbc.Table.v335.CreatureMovementInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureSoundData"'): dbc.Table.v335.CreatureSoundData
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureSpellData"'): dbc.Table.v335.CreatureSpellData
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureType"'): dbc.Table.v335.CreatureType
+---@overload fun(self: DbcWorkspace_v335, name: '"CurrencyCategory"'): dbc.Table.v335.CurrencyCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"CurrencyTypes"'): dbc.Table.v335.CurrencyTypes
+---@overload fun(self: DbcWorkspace_v335, name: '"DanceMoves"'): dbc.Table.v335.DanceMoves
+---@overload fun(self: DbcWorkspace_v335, name: '"DeathThudLookups"'): dbc.Table.v335.DeathThudLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"DeclinedWord"'): dbc.Table.v335.DeclinedWord
+---@overload fun(self: DbcWorkspace_v335, name: '"DeclinedWordCases"'): dbc.Table.v335.DeclinedWordCases
+---@overload fun(self: DbcWorkspace_v335, name: '"DestructibleModelData"'): dbc.Table.v335.DestructibleModelData
+---@overload fun(self: DbcWorkspace_v335, name: '"DungeonEncounter"'): dbc.Table.v335.DungeonEncounter
+---@overload fun(self: DbcWorkspace_v335, name: '"DungeonMap"'): dbc.Table.v335.DungeonMap
+---@overload fun(self: DbcWorkspace_v335, name: '"DungeonMapChunk"'): dbc.Table.v335.DungeonMapChunk
+---@overload fun(self: DbcWorkspace_v335, name: '"DurabilityCosts"'): dbc.Table.v335.DurabilityCosts
+---@overload fun(self: DbcWorkspace_v335, name: '"DurabilityQuality"'): dbc.Table.v335.DurabilityQuality
+---@overload fun(self: DbcWorkspace_v335, name: '"Emotes"'): dbc.Table.v335.Emotes
+---@overload fun(self: DbcWorkspace_v335, name: '"EmotesText"'): dbc.Table.v335.EmotesText
+---@overload fun(self: DbcWorkspace_v335, name: '"EmotesTextData"'): dbc.Table.v335.EmotesTextData
+---@overload fun(self: DbcWorkspace_v335, name: '"EmotesTextSound"'): dbc.Table.v335.EmotesTextSound
+---@overload fun(self: DbcWorkspace_v335, name: '"EnvironmentalDamage"'): dbc.Table.v335.EnvironmentalDamage
+---@overload fun(self: DbcWorkspace_v335, name: '"Exhaustion"'): dbc.Table.v335.Exhaustion
+---@overload fun(self: DbcWorkspace_v335, name: '"Faction"'): dbc.Table.v335.Faction
+---@overload fun(self: DbcWorkspace_v335, name: '"FactionGroup"'): dbc.Table.v335.FactionGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"FactionTemplate"'): dbc.Table.v335.FactionTemplate
+---@overload fun(self: DbcWorkspace_v335, name: '"FileData"'): dbc.Table.v335.FileData
+---@overload fun(self: DbcWorkspace_v335, name: '"FootprintTextures"'): dbc.Table.v335.FootprintTextures
+---@overload fun(self: DbcWorkspace_v335, name: '"FootstepTerrainLookup"'): dbc.Table.v335.FootstepTerrainLookup
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveyAnswers"'): dbc.Table.v335.GMSurveyAnswers
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveyCurrentSurvey"'): dbc.Table.v335.GMSurveyCurrentSurvey
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveyQuestions"'): dbc.Table.v335.GMSurveyQuestions
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveySurveys"'): dbc.Table.v335.GMSurveySurveys
+---@overload fun(self: DbcWorkspace_v335, name: '"GMTicketCategory"'): dbc.Table.v335.GMTicketCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"GameObjectArtKit"'): dbc.Table.v335.GameObjectArtKit
+---@overload fun(self: DbcWorkspace_v335, name: '"GameObjectDisplayInfo"'): dbc.Table.v335.GameObjectDisplayInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"GameTables"'): dbc.Table.v335.GameTables
+---@overload fun(self: DbcWorkspace_v335, name: '"GameTips"'): dbc.Table.v335.GameTips
+---@overload fun(self: DbcWorkspace_v335, name: '"GemProperties"'): dbc.Table.v335.GemProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"GlyphProperties"'): dbc.Table.v335.GlyphProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"GlyphSlot"'): dbc.Table.v335.GlyphSlot
+---@overload fun(self: DbcWorkspace_v335, name: '"GroundEffectDoodad"'): dbc.Table.v335.GroundEffectDoodad
+---@overload fun(self: DbcWorkspace_v335, name: '"GroundEffectTexture"'): dbc.Table.v335.GroundEffectTexture
+---@overload fun(self: DbcWorkspace_v335, name: '"HelmetGeosetVisData"'): dbc.Table.v335.HelmetGeosetVisData
+---@overload fun(self: DbcWorkspace_v335, name: '"HolidayDescriptions"'): dbc.Table.v335.HolidayDescriptions
+---@overload fun(self: DbcWorkspace_v335, name: '"HolidayNames"'): dbc.Table.v335.HolidayNames
+---@overload fun(self: DbcWorkspace_v335, name: '"Holidays"'): dbc.Table.v335.Holidays
+---@overload fun(self: DbcWorkspace_v335, name: '"Item"'): dbc.Table.v335.Item
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemBagFamily"'): dbc.Table.v335.ItemBagFamily
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemClass"'): dbc.Table.v335.ItemClass
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemCondExtCosts"'): dbc.Table.v335.ItemCondExtCosts
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemDisplayInfo"'): dbc.Table.v335.ItemDisplayInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemExtendedCost"'): dbc.Table.v335.ItemExtendedCost
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemGroupSounds"'): dbc.Table.v335.ItemGroupSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemLimitCategory"'): dbc.Table.v335.ItemLimitCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemPetFood"'): dbc.Table.v335.ItemPetFood
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemPurchaseGroup"'): dbc.Table.v335.ItemPurchaseGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemRandomProperties"'): dbc.Table.v335.ItemRandomProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemRandomSuffix"'): dbc.Table.v335.ItemRandomSuffix
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemSet"'): dbc.Table.v335.ItemSet
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemSubClass"'): dbc.Table.v335.ItemSubClass
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemSubClassMask"'): dbc.Table.v335.ItemSubClassMask
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemVisualEffects"'): dbc.Table.v335.ItemVisualEffects
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemVisuals"'): dbc.Table.v335.ItemVisuals
+---@overload fun(self: DbcWorkspace_v335, name: '"LFGDungeonExpansion"'): dbc.Table.v335.LFGDungeonExpansion
+---@overload fun(self: DbcWorkspace_v335, name: '"LFGDungeonGroup"'): dbc.Table.v335.LFGDungeonGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"LFGDungeons"'): dbc.Table.v335.LFGDungeons
+---@overload fun(self: DbcWorkspace_v335, name: '"LanguageWords"'): dbc.Table.v335.LanguageWords
+---@overload fun(self: DbcWorkspace_v335, name: '"Languages"'): dbc.Table.v335.Languages
+---@overload fun(self: DbcWorkspace_v335, name: '"Light"'): dbc.Table.v335.Light
+---@overload fun(self: DbcWorkspace_v335, name: '"LightFloatBand"'): dbc.Table.v335.LightFloatBand
+---@overload fun(self: DbcWorkspace_v335, name: '"LightIntBand"'): dbc.Table.v335.LightIntBand
+---@overload fun(self: DbcWorkspace_v335, name: '"LightParams"'): dbc.Table.v335.LightParams
+---@overload fun(self: DbcWorkspace_v335, name: '"LightSkybox"'): dbc.Table.v335.LightSkybox
+---@overload fun(self: DbcWorkspace_v335, name: '"LiquidMaterial"'): dbc.Table.v335.LiquidMaterial
+---@overload fun(self: DbcWorkspace_v335, name: '"LiquidType"'): dbc.Table.v335.LiquidType
+---@overload fun(self: DbcWorkspace_v335, name: '"LoadingScreenTaxiSplines"'): dbc.Table.v335.LoadingScreenTaxiSplines
+---@overload fun(self: DbcWorkspace_v335, name: '"LoadingScreens"'): dbc.Table.v335.LoadingScreens
+---@overload fun(self: DbcWorkspace_v335, name: '"Lock"'): dbc.Table.v335.Lock
+---@overload fun(self: DbcWorkspace_v335, name: '"LockType"'): dbc.Table.v335.LockType
+---@overload fun(self: DbcWorkspace_v335, name: '"MailTemplate"'): dbc.Table.v335.MailTemplate
+---@overload fun(self: DbcWorkspace_v335, name: '"Map"'): dbc.Table.v335.Map
+---@overload fun(self: DbcWorkspace_v335, name: '"MapDifficulty"'): dbc.Table.v335.MapDifficulty
+---@overload fun(self: DbcWorkspace_v335, name: '"Material"'): dbc.Table.v335.Material
+---@overload fun(self: DbcWorkspace_v335, name: '"Movie"'): dbc.Table.v335.Movie
+---@overload fun(self: DbcWorkspace_v335, name: '"MovieFileData"'): dbc.Table.v335.MovieFileData
+---@overload fun(self: DbcWorkspace_v335, name: '"MovieVariation"'): dbc.Table.v335.MovieVariation
+---@overload fun(self: DbcWorkspace_v335, name: '"NPCSounds"'): dbc.Table.v335.NPCSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"NameGen"'): dbc.Table.v335.NameGen
+---@overload fun(self: DbcWorkspace_v335, name: '"NamesProfanity"'): dbc.Table.v335.NamesProfanity
+---@overload fun(self: DbcWorkspace_v335, name: '"NamesReserved"'): dbc.Table.v335.NamesReserved
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffect"'): dbc.Table.v335.ObjectEffect
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectGroup"'): dbc.Table.v335.ObjectEffectGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectModifier"'): dbc.Table.v335.ObjectEffectModifier
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectPackage"'): dbc.Table.v335.ObjectEffectPackage
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectPackageElem"'): dbc.Table.v335.ObjectEffectPackageElem
+---@overload fun(self: DbcWorkspace_v335, name: '"OverrideSpellData"'): dbc.Table.v335.OverrideSpellData
+---@overload fun(self: DbcWorkspace_v335, name: '"PVPDifficulty"'): dbc.Table.v335.PVPDifficulty
+---@overload fun(self: DbcWorkspace_v335, name: '"Package"'): dbc.Table.v335.Package
+---@overload fun(self: DbcWorkspace_v335, name: '"PageTextMaterial"'): dbc.Table.v335.PageTextMaterial
+---@overload fun(self: DbcWorkspace_v335, name: '"PaperDollItemFrame"'): dbc.Table.v335.PaperDollItemFrame
+---@overload fun(self: DbcWorkspace_v335, name: '"ParticleColor"'): dbc.Table.v335.ParticleColor
+---@overload fun(self: DbcWorkspace_v335, name: '"PetPersonality"'): dbc.Table.v335.PetPersonality
+---@overload fun(self: DbcWorkspace_v335, name: '"PetitionType"'): dbc.Table.v335.PetitionType
+---@overload fun(self: DbcWorkspace_v335, name: '"PowerDisplay"'): dbc.Table.v335.PowerDisplay
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestFactionReward"'): dbc.Table.v335.QuestFactionReward
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestInfo"'): dbc.Table.v335.QuestInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestSort"'): dbc.Table.v335.QuestSort
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestXP"'): dbc.Table.v335.QuestXP
+---@overload fun(self: DbcWorkspace_v335, name: '"RandPropPoints"'): dbc.Table.v335.RandPropPoints
+---@overload fun(self: DbcWorkspace_v335, name: '"Resistances"'): dbc.Table.v335.Resistances
+---@overload fun(self: DbcWorkspace_v335, name: '"ScalingStatDistribution"'): dbc.Table.v335.ScalingStatDistribution
+---@overload fun(self: DbcWorkspace_v335, name: '"ScalingStatValues"'): dbc.Table.v335.ScalingStatValues
+---@overload fun(self: DbcWorkspace_v335, name: '"ScreenEffect"'): dbc.Table.v335.ScreenEffect
+---@overload fun(self: DbcWorkspace_v335, name: '"ServerMessages"'): dbc.Table.v335.ServerMessages
+---@overload fun(self: DbcWorkspace_v335, name: '"SheatheSoundLookups"'): dbc.Table.v335.SheatheSoundLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillCostsData"'): dbc.Table.v335.SkillCostsData
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillLine"'): dbc.Table.v335.SkillLine
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillLineAbility"'): dbc.Table.v335.SkillLineAbility
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillLineCategory"'): dbc.Table.v335.SkillLineCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillRaceClassInfo"'): dbc.Table.v335.SkillRaceClassInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillTiers"'): dbc.Table.v335.SkillTiers
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundAmbience"'): dbc.Table.v335.SoundAmbience
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundEmitters"'): dbc.Table.v335.SoundEmitters
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundEntries"'): dbc.Table.v335.SoundEntries
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundEntriesAdvanced"'): dbc.Table.v335.SoundEntriesAdvanced
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundFilter"'): dbc.Table.v335.SoundFilter
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundFilterElem"'): dbc.Table.v335.SoundFilterElem
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundProviderPreferences"'): dbc.Table.v335.SoundProviderPreferences
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundSamplePreferences"'): dbc.Table.v335.SoundSamplePreferences
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundWaterType"'): dbc.Table.v335.SoundWaterType
+---@overload fun(self: DbcWorkspace_v335, name: '"SpamMessages"'): dbc.Table.v335.SpamMessages
+---@overload fun(self: DbcWorkspace_v335, name: '"Spell"'): dbc.Table.v335.Spell
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellCastTimes"'): dbc.Table.v335.SpellCastTimes
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellCategory"'): dbc.Table.v335.SpellCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellChainEffects"'): dbc.Table.v335.SpellChainEffects
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDescriptionVariables"'): dbc.Table.v335.SpellDescriptionVariables
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDifficulty"'): dbc.Table.v335.SpellDifficulty
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDispelType"'): dbc.Table.v335.SpellDispelType
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDuration"'): dbc.Table.v335.SpellDuration
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellEffectCameraShakes"'): dbc.Table.v335.SpellEffectCameraShakes
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellFocusObject"'): dbc.Table.v335.SpellFocusObject
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellIcon"'): dbc.Table.v335.SpellIcon
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellItemEnchantment"'): dbc.Table.v335.SpellItemEnchantment
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellItemEnchantmentCondition"'): dbc.Table.v335.SpellItemEnchantmentCondition
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellMechanic"'): dbc.Table.v335.SpellMechanic
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellMissile"'): dbc.Table.v335.SpellMissile
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellMissileMotion"'): dbc.Table.v335.SpellMissileMotion
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellRadius"'): dbc.Table.v335.SpellRadius
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellRange"'): dbc.Table.v335.SpellRange
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellRuneCost"'): dbc.Table.v335.SpellRuneCost
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellShapeshiftForm"'): dbc.Table.v335.SpellShapeshiftForm
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisual"'): dbc.Table.v335.SpellVisual
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualEffectName"'): dbc.Table.v335.SpellVisualEffectName
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualKit"'): dbc.Table.v335.SpellVisualKit
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualKitAreaModel"'): dbc.Table.v335.SpellVisualKitAreaModel
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualKitModelAttach"'): dbc.Table.v335.SpellVisualKitModelAttach
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualPrecastTransitions"'): dbc.Table.v335.SpellVisualPrecastTransitions
+---@overload fun(self: DbcWorkspace_v335, name: '"StableSlotPrices"'): dbc.Table.v335.StableSlotPrices
+---@overload fun(self: DbcWorkspace_v335, name: '"Startup_Strings"'): dbc.Table.v335.Startup_Strings
+---@overload fun(self: DbcWorkspace_v335, name: '"Stationery"'): dbc.Table.v335.Stationery
+---@overload fun(self: DbcWorkspace_v335, name: '"StringLookups"'): dbc.Table.v335.StringLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"SummonProperties"'): dbc.Table.v335.SummonProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"Talent"'): dbc.Table.v335.Talent
+---@overload fun(self: DbcWorkspace_v335, name: '"TalentTab"'): dbc.Table.v335.TalentTab
+---@overload fun(self: DbcWorkspace_v335, name: '"TaxiNodes"'): dbc.Table.v335.TaxiNodes
+---@overload fun(self: DbcWorkspace_v335, name: '"TaxiPath"'): dbc.Table.v335.TaxiPath
+---@overload fun(self: DbcWorkspace_v335, name: '"TaxiPathNode"'): dbc.Table.v335.TaxiPathNode
+---@overload fun(self: DbcWorkspace_v335, name: '"TeamContributionPoints"'): dbc.Table.v335.TeamContributionPoints
+---@overload fun(self: DbcWorkspace_v335, name: '"TerrainType"'): dbc.Table.v335.TerrainType
+---@overload fun(self: DbcWorkspace_v335, name: '"TerrainTypeSounds"'): dbc.Table.v335.TerrainTypeSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"TotemCategory"'): dbc.Table.v335.TotemCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"TransportAnimation"'): dbc.Table.v335.TransportAnimation
+---@overload fun(self: DbcWorkspace_v335, name: '"TransportPhysics"'): dbc.Table.v335.TransportPhysics
+---@overload fun(self: DbcWorkspace_v335, name: '"TransportRotation"'): dbc.Table.v335.TransportRotation
+---@overload fun(self: DbcWorkspace_v335, name: '"UISoundLookups"'): dbc.Table.v335.UISoundLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"UnitBlood"'): dbc.Table.v335.UnitBlood
+---@overload fun(self: DbcWorkspace_v335, name: '"UnitBloodLevels"'): dbc.Table.v335.UnitBloodLevels
+---@overload fun(self: DbcWorkspace_v335, name: '"Vehicle"'): dbc.Table.v335.Vehicle
+---@overload fun(self: DbcWorkspace_v335, name: '"VehicleSeat"'): dbc.Table.v335.VehicleSeat
+---@overload fun(self: DbcWorkspace_v335, name: '"VehicleUIIndSeat"'): dbc.Table.v335.VehicleUIIndSeat
+---@overload fun(self: DbcWorkspace_v335, name: '"VehicleUIIndicator"'): dbc.Table.v335.VehicleUIIndicator
+---@overload fun(self: DbcWorkspace_v335, name: '"VideoHardware"'): dbc.Table.v335.VideoHardware
+---@overload fun(self: DbcWorkspace_v335, name: '"VocalUISounds"'): dbc.Table.v335.VocalUISounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WMOAreaTable"'): dbc.Table.v335.WMOAreaTable
+---@overload fun(self: DbcWorkspace_v335, name: '"WeaponImpactSounds"'): dbc.Table.v335.WeaponImpactSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WeaponSwingSounds2"'): dbc.Table.v335.WeaponSwingSounds2
+---@overload fun(self: DbcWorkspace_v335, name: '"Weather"'): dbc.Table.v335.Weather
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldChunkSounds"'): dbc.Table.v335.WorldChunkSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapArea"'): dbc.Table.v335.WorldMapArea
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapContinent"'): dbc.Table.v335.WorldMapContinent
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapOverlay"'): dbc.Table.v335.WorldMapOverlay
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapTransforms"'): dbc.Table.v335.WorldMapTransforms
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldSafeLocs"'): dbc.Table.v335.WorldSafeLocs
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldStateUI"'): dbc.Table.v335.WorldStateUI
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldStateZoneSounds"'): dbc.Table.v335.WorldStateZoneSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WowError_Strings"'): dbc.Table.v335.WowError_Strings
+---@overload fun(self: DbcWorkspace_v335, name: '"ZoneIntroMusicTable"'): dbc.Table.v335.ZoneIntroMusicTable
+---@overload fun(self: DbcWorkspace_v335, name: '"ZoneMusic"'): dbc.Table.v335.ZoneMusic
+---@overload fun(self: DbcWorkspace_v335, name: '"gtBarberShopCostBase"'): dbc.Table.v335.gtBarberShopCostBase
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToMeleeCrit"'): dbc.Table.v335.gtChanceToMeleeCrit
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToMeleeCritBase"'): dbc.Table.v335.gtChanceToMeleeCritBase
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToSpellCrit"'): dbc.Table.v335.gtChanceToSpellCrit
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToSpellCritBase"'): dbc.Table.v335.gtChanceToSpellCritBase
+---@overload fun(self: DbcWorkspace_v335, name: '"gtCombatRatings"'): dbc.Table.v335.gtCombatRatings
+---@overload fun(self: DbcWorkspace_v335, name: '"gtNPCManaCostScaler"'): dbc.Table.v335.gtNPCManaCostScaler
+---@overload fun(self: DbcWorkspace_v335, name: '"gtOCTClassCombatRatingScalar"'): dbc.Table.v335.gtOCTClassCombatRatingScalar
+---@overload fun(self: DbcWorkspace_v335, name: '"gtOCTRegenHP"'): dbc.Table.v335.gtOCTRegenHP
+---@overload fun(self: DbcWorkspace_v335, name: '"gtOCTRegenMP"'): dbc.Table.v335.gtOCTRegenMP
+---@overload fun(self: DbcWorkspace_v335, name: '"gtRegenHPPerSpt"'): dbc.Table.v335.gtRegenHPPerSpt
+---@overload fun(self: DbcWorkspace_v335, name: '"gtRegenMPPerSpt"'): dbc.Table.v335.gtRegenMPPerSpt
+function DbcWorkspace_v335:Open(name) end
+
+---@overload fun(self: DbcWorkspace_v335, name: '"Achievement"'): dbc.Table.v335.Achievement
+---@overload fun(self: DbcWorkspace_v335, name: '"Achievement_Category"'): dbc.Table.v335.Achievement_Category
+---@overload fun(self: DbcWorkspace_v335, name: '"Achievement_Criteria"'): dbc.Table.v335.Achievement_Criteria
+---@overload fun(self: DbcWorkspace_v335, name: '"AnimationData"'): dbc.Table.v335.AnimationData
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaGroup"'): dbc.Table.v335.AreaGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaPOI"'): dbc.Table.v335.AreaPOI
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaTable"'): dbc.Table.v335.AreaTable
+---@overload fun(self: DbcWorkspace_v335, name: '"AreaTrigger"'): dbc.Table.v335.AreaTrigger
+---@overload fun(self: DbcWorkspace_v335, name: '"AttackAnimKits"'): dbc.Table.v335.AttackAnimKits
+---@overload fun(self: DbcWorkspace_v335, name: '"AttackAnimTypes"'): dbc.Table.v335.AttackAnimTypes
+---@overload fun(self: DbcWorkspace_v335, name: '"AuctionHouse"'): dbc.Table.v335.AuctionHouse
+---@overload fun(self: DbcWorkspace_v335, name: '"BankBagSlotPrices"'): dbc.Table.v335.BankBagSlotPrices
+---@overload fun(self: DbcWorkspace_v335, name: '"BannedAddons"'): dbc.Table.v335.BannedAddons
+---@overload fun(self: DbcWorkspace_v335, name: '"BarberShopStyle"'): dbc.Table.v335.BarberShopStyle
+---@overload fun(self: DbcWorkspace_v335, name: '"BattlemasterList"'): dbc.Table.v335.BattlemasterList
+---@overload fun(self: DbcWorkspace_v335, name: '"CameraShakes"'): dbc.Table.v335.CameraShakes
+---@overload fun(self: DbcWorkspace_v335, name: '"Cfg_Categories"'): dbc.Table.v335.Cfg_Categories
+---@overload fun(self: DbcWorkspace_v335, name: '"Cfg_Configs"'): dbc.Table.v335.Cfg_Configs
+---@overload fun(self: DbcWorkspace_v335, name: '"CharBaseInfo"'): dbc.Table.v335.CharBaseInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"CharHairGeosets"'): dbc.Table.v335.CharHairGeosets
+---@overload fun(self: DbcWorkspace_v335, name: '"CharHairTextures"'): dbc.Table.v335.CharHairTextures
+---@overload fun(self: DbcWorkspace_v335, name: '"CharSections"'): dbc.Table.v335.CharSections
+---@overload fun(self: DbcWorkspace_v335, name: '"CharStartOutfit"'): dbc.Table.v335.CharStartOutfit
+---@overload fun(self: DbcWorkspace_v335, name: '"CharTitles"'): dbc.Table.v335.CharTitles
+---@overload fun(self: DbcWorkspace_v335, name: '"CharVariations"'): dbc.Table.v335.CharVariations
+---@overload fun(self: DbcWorkspace_v335, name: '"CharacterFacialHairStyles"'): dbc.Table.v335.CharacterFacialHairStyles
+---@overload fun(self: DbcWorkspace_v335, name: '"ChatChannels"'): dbc.Table.v335.ChatChannels
+---@overload fun(self: DbcWorkspace_v335, name: '"ChatProfanity"'): dbc.Table.v335.ChatProfanity
+---@overload fun(self: DbcWorkspace_v335, name: '"ChrClasses"'): dbc.Table.v335.ChrClasses
+---@overload fun(self: DbcWorkspace_v335, name: '"ChrRaces"'): dbc.Table.v335.ChrRaces
+---@overload fun(self: DbcWorkspace_v335, name: '"CinematicCamera"'): dbc.Table.v335.CinematicCamera
+---@overload fun(self: DbcWorkspace_v335, name: '"CinematicSequences"'): dbc.Table.v335.CinematicSequences
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureDisplayInfo"'): dbc.Table.v335.CreatureDisplayInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureDisplayInfoExtra"'): dbc.Table.v335.CreatureDisplayInfoExtra
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureFamily"'): dbc.Table.v335.CreatureFamily
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureModelData"'): dbc.Table.v335.CreatureModelData
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureMovementInfo"'): dbc.Table.v335.CreatureMovementInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureSoundData"'): dbc.Table.v335.CreatureSoundData
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureSpellData"'): dbc.Table.v335.CreatureSpellData
+---@overload fun(self: DbcWorkspace_v335, name: '"CreatureType"'): dbc.Table.v335.CreatureType
+---@overload fun(self: DbcWorkspace_v335, name: '"CurrencyCategory"'): dbc.Table.v335.CurrencyCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"CurrencyTypes"'): dbc.Table.v335.CurrencyTypes
+---@overload fun(self: DbcWorkspace_v335, name: '"DanceMoves"'): dbc.Table.v335.DanceMoves
+---@overload fun(self: DbcWorkspace_v335, name: '"DeathThudLookups"'): dbc.Table.v335.DeathThudLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"DeclinedWord"'): dbc.Table.v335.DeclinedWord
+---@overload fun(self: DbcWorkspace_v335, name: '"DeclinedWordCases"'): dbc.Table.v335.DeclinedWordCases
+---@overload fun(self: DbcWorkspace_v335, name: '"DestructibleModelData"'): dbc.Table.v335.DestructibleModelData
+---@overload fun(self: DbcWorkspace_v335, name: '"DungeonEncounter"'): dbc.Table.v335.DungeonEncounter
+---@overload fun(self: DbcWorkspace_v335, name: '"DungeonMap"'): dbc.Table.v335.DungeonMap
+---@overload fun(self: DbcWorkspace_v335, name: '"DungeonMapChunk"'): dbc.Table.v335.DungeonMapChunk
+---@overload fun(self: DbcWorkspace_v335, name: '"DurabilityCosts"'): dbc.Table.v335.DurabilityCosts
+---@overload fun(self: DbcWorkspace_v335, name: '"DurabilityQuality"'): dbc.Table.v335.DurabilityQuality
+---@overload fun(self: DbcWorkspace_v335, name: '"Emotes"'): dbc.Table.v335.Emotes
+---@overload fun(self: DbcWorkspace_v335, name: '"EmotesText"'): dbc.Table.v335.EmotesText
+---@overload fun(self: DbcWorkspace_v335, name: '"EmotesTextData"'): dbc.Table.v335.EmotesTextData
+---@overload fun(self: DbcWorkspace_v335, name: '"EmotesTextSound"'): dbc.Table.v335.EmotesTextSound
+---@overload fun(self: DbcWorkspace_v335, name: '"EnvironmentalDamage"'): dbc.Table.v335.EnvironmentalDamage
+---@overload fun(self: DbcWorkspace_v335, name: '"Exhaustion"'): dbc.Table.v335.Exhaustion
+---@overload fun(self: DbcWorkspace_v335, name: '"Faction"'): dbc.Table.v335.Faction
+---@overload fun(self: DbcWorkspace_v335, name: '"FactionGroup"'): dbc.Table.v335.FactionGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"FactionTemplate"'): dbc.Table.v335.FactionTemplate
+---@overload fun(self: DbcWorkspace_v335, name: '"FileData"'): dbc.Table.v335.FileData
+---@overload fun(self: DbcWorkspace_v335, name: '"FootprintTextures"'): dbc.Table.v335.FootprintTextures
+---@overload fun(self: DbcWorkspace_v335, name: '"FootstepTerrainLookup"'): dbc.Table.v335.FootstepTerrainLookup
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveyAnswers"'): dbc.Table.v335.GMSurveyAnswers
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveyCurrentSurvey"'): dbc.Table.v335.GMSurveyCurrentSurvey
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveyQuestions"'): dbc.Table.v335.GMSurveyQuestions
+---@overload fun(self: DbcWorkspace_v335, name: '"GMSurveySurveys"'): dbc.Table.v335.GMSurveySurveys
+---@overload fun(self: DbcWorkspace_v335, name: '"GMTicketCategory"'): dbc.Table.v335.GMTicketCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"GameObjectArtKit"'): dbc.Table.v335.GameObjectArtKit
+---@overload fun(self: DbcWorkspace_v335, name: '"GameObjectDisplayInfo"'): dbc.Table.v335.GameObjectDisplayInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"GameTables"'): dbc.Table.v335.GameTables
+---@overload fun(self: DbcWorkspace_v335, name: '"GameTips"'): dbc.Table.v335.GameTips
+---@overload fun(self: DbcWorkspace_v335, name: '"GemProperties"'): dbc.Table.v335.GemProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"GlyphProperties"'): dbc.Table.v335.GlyphProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"GlyphSlot"'): dbc.Table.v335.GlyphSlot
+---@overload fun(self: DbcWorkspace_v335, name: '"GroundEffectDoodad"'): dbc.Table.v335.GroundEffectDoodad
+---@overload fun(self: DbcWorkspace_v335, name: '"GroundEffectTexture"'): dbc.Table.v335.GroundEffectTexture
+---@overload fun(self: DbcWorkspace_v335, name: '"HelmetGeosetVisData"'): dbc.Table.v335.HelmetGeosetVisData
+---@overload fun(self: DbcWorkspace_v335, name: '"HolidayDescriptions"'): dbc.Table.v335.HolidayDescriptions
+---@overload fun(self: DbcWorkspace_v335, name: '"HolidayNames"'): dbc.Table.v335.HolidayNames
+---@overload fun(self: DbcWorkspace_v335, name: '"Holidays"'): dbc.Table.v335.Holidays
+---@overload fun(self: DbcWorkspace_v335, name: '"Item"'): dbc.Table.v335.Item
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemBagFamily"'): dbc.Table.v335.ItemBagFamily
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemClass"'): dbc.Table.v335.ItemClass
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemCondExtCosts"'): dbc.Table.v335.ItemCondExtCosts
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemDisplayInfo"'): dbc.Table.v335.ItemDisplayInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemExtendedCost"'): dbc.Table.v335.ItemExtendedCost
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemGroupSounds"'): dbc.Table.v335.ItemGroupSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemLimitCategory"'): dbc.Table.v335.ItemLimitCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemPetFood"'): dbc.Table.v335.ItemPetFood
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemPurchaseGroup"'): dbc.Table.v335.ItemPurchaseGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemRandomProperties"'): dbc.Table.v335.ItemRandomProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemRandomSuffix"'): dbc.Table.v335.ItemRandomSuffix
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemSet"'): dbc.Table.v335.ItemSet
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemSubClass"'): dbc.Table.v335.ItemSubClass
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemSubClassMask"'): dbc.Table.v335.ItemSubClassMask
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemVisualEffects"'): dbc.Table.v335.ItemVisualEffects
+---@overload fun(self: DbcWorkspace_v335, name: '"ItemVisuals"'): dbc.Table.v335.ItemVisuals
+---@overload fun(self: DbcWorkspace_v335, name: '"LFGDungeonExpansion"'): dbc.Table.v335.LFGDungeonExpansion
+---@overload fun(self: DbcWorkspace_v335, name: '"LFGDungeonGroup"'): dbc.Table.v335.LFGDungeonGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"LFGDungeons"'): dbc.Table.v335.LFGDungeons
+---@overload fun(self: DbcWorkspace_v335, name: '"LanguageWords"'): dbc.Table.v335.LanguageWords
+---@overload fun(self: DbcWorkspace_v335, name: '"Languages"'): dbc.Table.v335.Languages
+---@overload fun(self: DbcWorkspace_v335, name: '"Light"'): dbc.Table.v335.Light
+---@overload fun(self: DbcWorkspace_v335, name: '"LightFloatBand"'): dbc.Table.v335.LightFloatBand
+---@overload fun(self: DbcWorkspace_v335, name: '"LightIntBand"'): dbc.Table.v335.LightIntBand
+---@overload fun(self: DbcWorkspace_v335, name: '"LightParams"'): dbc.Table.v335.LightParams
+---@overload fun(self: DbcWorkspace_v335, name: '"LightSkybox"'): dbc.Table.v335.LightSkybox
+---@overload fun(self: DbcWorkspace_v335, name: '"LiquidMaterial"'): dbc.Table.v335.LiquidMaterial
+---@overload fun(self: DbcWorkspace_v335, name: '"LiquidType"'): dbc.Table.v335.LiquidType
+---@overload fun(self: DbcWorkspace_v335, name: '"LoadingScreenTaxiSplines"'): dbc.Table.v335.LoadingScreenTaxiSplines
+---@overload fun(self: DbcWorkspace_v335, name: '"LoadingScreens"'): dbc.Table.v335.LoadingScreens
+---@overload fun(self: DbcWorkspace_v335, name: '"Lock"'): dbc.Table.v335.Lock
+---@overload fun(self: DbcWorkspace_v335, name: '"LockType"'): dbc.Table.v335.LockType
+---@overload fun(self: DbcWorkspace_v335, name: '"MailTemplate"'): dbc.Table.v335.MailTemplate
+---@overload fun(self: DbcWorkspace_v335, name: '"Map"'): dbc.Table.v335.Map
+---@overload fun(self: DbcWorkspace_v335, name: '"MapDifficulty"'): dbc.Table.v335.MapDifficulty
+---@overload fun(self: DbcWorkspace_v335, name: '"Material"'): dbc.Table.v335.Material
+---@overload fun(self: DbcWorkspace_v335, name: '"Movie"'): dbc.Table.v335.Movie
+---@overload fun(self: DbcWorkspace_v335, name: '"MovieFileData"'): dbc.Table.v335.MovieFileData
+---@overload fun(self: DbcWorkspace_v335, name: '"MovieVariation"'): dbc.Table.v335.MovieVariation
+---@overload fun(self: DbcWorkspace_v335, name: '"NPCSounds"'): dbc.Table.v335.NPCSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"NameGen"'): dbc.Table.v335.NameGen
+---@overload fun(self: DbcWorkspace_v335, name: '"NamesProfanity"'): dbc.Table.v335.NamesProfanity
+---@overload fun(self: DbcWorkspace_v335, name: '"NamesReserved"'): dbc.Table.v335.NamesReserved
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffect"'): dbc.Table.v335.ObjectEffect
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectGroup"'): dbc.Table.v335.ObjectEffectGroup
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectModifier"'): dbc.Table.v335.ObjectEffectModifier
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectPackage"'): dbc.Table.v335.ObjectEffectPackage
+---@overload fun(self: DbcWorkspace_v335, name: '"ObjectEffectPackageElem"'): dbc.Table.v335.ObjectEffectPackageElem
+---@overload fun(self: DbcWorkspace_v335, name: '"OverrideSpellData"'): dbc.Table.v335.OverrideSpellData
+---@overload fun(self: DbcWorkspace_v335, name: '"PVPDifficulty"'): dbc.Table.v335.PVPDifficulty
+---@overload fun(self: DbcWorkspace_v335, name: '"Package"'): dbc.Table.v335.Package
+---@overload fun(self: DbcWorkspace_v335, name: '"PageTextMaterial"'): dbc.Table.v335.PageTextMaterial
+---@overload fun(self: DbcWorkspace_v335, name: '"PaperDollItemFrame"'): dbc.Table.v335.PaperDollItemFrame
+---@overload fun(self: DbcWorkspace_v335, name: '"ParticleColor"'): dbc.Table.v335.ParticleColor
+---@overload fun(self: DbcWorkspace_v335, name: '"PetPersonality"'): dbc.Table.v335.PetPersonality
+---@overload fun(self: DbcWorkspace_v335, name: '"PetitionType"'): dbc.Table.v335.PetitionType
+---@overload fun(self: DbcWorkspace_v335, name: '"PowerDisplay"'): dbc.Table.v335.PowerDisplay
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestFactionReward"'): dbc.Table.v335.QuestFactionReward
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestInfo"'): dbc.Table.v335.QuestInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestSort"'): dbc.Table.v335.QuestSort
+---@overload fun(self: DbcWorkspace_v335, name: '"QuestXP"'): dbc.Table.v335.QuestXP
+---@overload fun(self: DbcWorkspace_v335, name: '"RandPropPoints"'): dbc.Table.v335.RandPropPoints
+---@overload fun(self: DbcWorkspace_v335, name: '"Resistances"'): dbc.Table.v335.Resistances
+---@overload fun(self: DbcWorkspace_v335, name: '"ScalingStatDistribution"'): dbc.Table.v335.ScalingStatDistribution
+---@overload fun(self: DbcWorkspace_v335, name: '"ScalingStatValues"'): dbc.Table.v335.ScalingStatValues
+---@overload fun(self: DbcWorkspace_v335, name: '"ScreenEffect"'): dbc.Table.v335.ScreenEffect
+---@overload fun(self: DbcWorkspace_v335, name: '"ServerMessages"'): dbc.Table.v335.ServerMessages
+---@overload fun(self: DbcWorkspace_v335, name: '"SheatheSoundLookups"'): dbc.Table.v335.SheatheSoundLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillCostsData"'): dbc.Table.v335.SkillCostsData
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillLine"'): dbc.Table.v335.SkillLine
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillLineAbility"'): dbc.Table.v335.SkillLineAbility
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillLineCategory"'): dbc.Table.v335.SkillLineCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillRaceClassInfo"'): dbc.Table.v335.SkillRaceClassInfo
+---@overload fun(self: DbcWorkspace_v335, name: '"SkillTiers"'): dbc.Table.v335.SkillTiers
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundAmbience"'): dbc.Table.v335.SoundAmbience
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundEmitters"'): dbc.Table.v335.SoundEmitters
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundEntries"'): dbc.Table.v335.SoundEntries
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundEntriesAdvanced"'): dbc.Table.v335.SoundEntriesAdvanced
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundFilter"'): dbc.Table.v335.SoundFilter
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundFilterElem"'): dbc.Table.v335.SoundFilterElem
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundProviderPreferences"'): dbc.Table.v335.SoundProviderPreferences
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundSamplePreferences"'): dbc.Table.v335.SoundSamplePreferences
+---@overload fun(self: DbcWorkspace_v335, name: '"SoundWaterType"'): dbc.Table.v335.SoundWaterType
+---@overload fun(self: DbcWorkspace_v335, name: '"SpamMessages"'): dbc.Table.v335.SpamMessages
+---@overload fun(self: DbcWorkspace_v335, name: '"Spell"'): dbc.Table.v335.Spell
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellCastTimes"'): dbc.Table.v335.SpellCastTimes
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellCategory"'): dbc.Table.v335.SpellCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellChainEffects"'): dbc.Table.v335.SpellChainEffects
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDescriptionVariables"'): dbc.Table.v335.SpellDescriptionVariables
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDifficulty"'): dbc.Table.v335.SpellDifficulty
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDispelType"'): dbc.Table.v335.SpellDispelType
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellDuration"'): dbc.Table.v335.SpellDuration
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellEffectCameraShakes"'): dbc.Table.v335.SpellEffectCameraShakes
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellFocusObject"'): dbc.Table.v335.SpellFocusObject
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellIcon"'): dbc.Table.v335.SpellIcon
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellItemEnchantment"'): dbc.Table.v335.SpellItemEnchantment
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellItemEnchantmentCondition"'): dbc.Table.v335.SpellItemEnchantmentCondition
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellMechanic"'): dbc.Table.v335.SpellMechanic
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellMissile"'): dbc.Table.v335.SpellMissile
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellMissileMotion"'): dbc.Table.v335.SpellMissileMotion
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellRadius"'): dbc.Table.v335.SpellRadius
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellRange"'): dbc.Table.v335.SpellRange
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellRuneCost"'): dbc.Table.v335.SpellRuneCost
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellShapeshiftForm"'): dbc.Table.v335.SpellShapeshiftForm
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisual"'): dbc.Table.v335.SpellVisual
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualEffectName"'): dbc.Table.v335.SpellVisualEffectName
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualKit"'): dbc.Table.v335.SpellVisualKit
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualKitAreaModel"'): dbc.Table.v335.SpellVisualKitAreaModel
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualKitModelAttach"'): dbc.Table.v335.SpellVisualKitModelAttach
+---@overload fun(self: DbcWorkspace_v335, name: '"SpellVisualPrecastTransitions"'): dbc.Table.v335.SpellVisualPrecastTransitions
+---@overload fun(self: DbcWorkspace_v335, name: '"StableSlotPrices"'): dbc.Table.v335.StableSlotPrices
+---@overload fun(self: DbcWorkspace_v335, name: '"Startup_Strings"'): dbc.Table.v335.Startup_Strings
+---@overload fun(self: DbcWorkspace_v335, name: '"Stationery"'): dbc.Table.v335.Stationery
+---@overload fun(self: DbcWorkspace_v335, name: '"StringLookups"'): dbc.Table.v335.StringLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"SummonProperties"'): dbc.Table.v335.SummonProperties
+---@overload fun(self: DbcWorkspace_v335, name: '"Talent"'): dbc.Table.v335.Talent
+---@overload fun(self: DbcWorkspace_v335, name: '"TalentTab"'): dbc.Table.v335.TalentTab
+---@overload fun(self: DbcWorkspace_v335, name: '"TaxiNodes"'): dbc.Table.v335.TaxiNodes
+---@overload fun(self: DbcWorkspace_v335, name: '"TaxiPath"'): dbc.Table.v335.TaxiPath
+---@overload fun(self: DbcWorkspace_v335, name: '"TaxiPathNode"'): dbc.Table.v335.TaxiPathNode
+---@overload fun(self: DbcWorkspace_v335, name: '"TeamContributionPoints"'): dbc.Table.v335.TeamContributionPoints
+---@overload fun(self: DbcWorkspace_v335, name: '"TerrainType"'): dbc.Table.v335.TerrainType
+---@overload fun(self: DbcWorkspace_v335, name: '"TerrainTypeSounds"'): dbc.Table.v335.TerrainTypeSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"TotemCategory"'): dbc.Table.v335.TotemCategory
+---@overload fun(self: DbcWorkspace_v335, name: '"TransportAnimation"'): dbc.Table.v335.TransportAnimation
+---@overload fun(self: DbcWorkspace_v335, name: '"TransportPhysics"'): dbc.Table.v335.TransportPhysics
+---@overload fun(self: DbcWorkspace_v335, name: '"TransportRotation"'): dbc.Table.v335.TransportRotation
+---@overload fun(self: DbcWorkspace_v335, name: '"UISoundLookups"'): dbc.Table.v335.UISoundLookups
+---@overload fun(self: DbcWorkspace_v335, name: '"UnitBlood"'): dbc.Table.v335.UnitBlood
+---@overload fun(self: DbcWorkspace_v335, name: '"UnitBloodLevels"'): dbc.Table.v335.UnitBloodLevels
+---@overload fun(self: DbcWorkspace_v335, name: '"Vehicle"'): dbc.Table.v335.Vehicle
+---@overload fun(self: DbcWorkspace_v335, name: '"VehicleSeat"'): dbc.Table.v335.VehicleSeat
+---@overload fun(self: DbcWorkspace_v335, name: '"VehicleUIIndSeat"'): dbc.Table.v335.VehicleUIIndSeat
+---@overload fun(self: DbcWorkspace_v335, name: '"VehicleUIIndicator"'): dbc.Table.v335.VehicleUIIndicator
+---@overload fun(self: DbcWorkspace_v335, name: '"VideoHardware"'): dbc.Table.v335.VideoHardware
+---@overload fun(self: DbcWorkspace_v335, name: '"VocalUISounds"'): dbc.Table.v335.VocalUISounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WMOAreaTable"'): dbc.Table.v335.WMOAreaTable
+---@overload fun(self: DbcWorkspace_v335, name: '"WeaponImpactSounds"'): dbc.Table.v335.WeaponImpactSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WeaponSwingSounds2"'): dbc.Table.v335.WeaponSwingSounds2
+---@overload fun(self: DbcWorkspace_v335, name: '"Weather"'): dbc.Table.v335.Weather
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldChunkSounds"'): dbc.Table.v335.WorldChunkSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapArea"'): dbc.Table.v335.WorldMapArea
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapContinent"'): dbc.Table.v335.WorldMapContinent
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapOverlay"'): dbc.Table.v335.WorldMapOverlay
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldMapTransforms"'): dbc.Table.v335.WorldMapTransforms
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldSafeLocs"'): dbc.Table.v335.WorldSafeLocs
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldStateUI"'): dbc.Table.v335.WorldStateUI
+---@overload fun(self: DbcWorkspace_v335, name: '"WorldStateZoneSounds"'): dbc.Table.v335.WorldStateZoneSounds
+---@overload fun(self: DbcWorkspace_v335, name: '"WowError_Strings"'): dbc.Table.v335.WowError_Strings
+---@overload fun(self: DbcWorkspace_v335, name: '"ZoneIntroMusicTable"'): dbc.Table.v335.ZoneIntroMusicTable
+---@overload fun(self: DbcWorkspace_v335, name: '"ZoneMusic"'): dbc.Table.v335.ZoneMusic
+---@overload fun(self: DbcWorkspace_v335, name: '"gtBarberShopCostBase"'): dbc.Table.v335.gtBarberShopCostBase
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToMeleeCrit"'): dbc.Table.v335.gtChanceToMeleeCrit
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToMeleeCritBase"'): dbc.Table.v335.gtChanceToMeleeCritBase
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToSpellCrit"'): dbc.Table.v335.gtChanceToSpellCrit
+---@overload fun(self: DbcWorkspace_v335, name: '"gtChanceToSpellCritBase"'): dbc.Table.v335.gtChanceToSpellCritBase
+---@overload fun(self: DbcWorkspace_v335, name: '"gtCombatRatings"'): dbc.Table.v335.gtCombatRatings
+---@overload fun(self: DbcWorkspace_v335, name: '"gtNPCManaCostScaler"'): dbc.Table.v335.gtNPCManaCostScaler
+---@overload fun(self: DbcWorkspace_v335, name: '"gtOCTClassCombatRatingScalar"'): dbc.Table.v335.gtOCTClassCombatRatingScalar
+---@overload fun(self: DbcWorkspace_v335, name: '"gtOCTRegenHP"'): dbc.Table.v335.gtOCTRegenHP
+---@overload fun(self: DbcWorkspace_v335, name: '"gtOCTRegenMP"'): dbc.Table.v335.gtOCTRegenMP
+---@overload fun(self: DbcWorkspace_v335, name: '"gtRegenHPPerSpt"'): dbc.Table.v335.gtRegenHPPerSpt
+---@overload fun(self: DbcWorkspace_v335, name: '"gtRegenMPPerSpt"'): dbc.Table.v335.gtRegenMPPerSpt
+function DbcWorkspace_v335:Create(name) end
+
+---@class dbc
+---@overload fun(options: { build: '"12.1.5.69594"'|'"12.1.5"', source?: string, out?: string }): DbcWorkspace_v1215
+---@overload fun(build_or_source: '"12.1.5.69594"'|'"12.1.5"'): DbcWorkspace_v1215
+---@overload fun(options: { build: '"3.3.5.12340"'|'"3.3.5"', source?: string, out?: string }): DbcWorkspace_v335
+---@overload fun(build_or_source: '"3.3.5.12340"'|'"3.3.5"'): DbcWorkspace_v335
+function dbc.Workspace(options_or_source, output_dir) end
+
+return {}

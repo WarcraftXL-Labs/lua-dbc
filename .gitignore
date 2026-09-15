@@ -39,3 +39,15 @@ luac.out
 *.x86_64
 *.hex
 
+# Build cache
+.cache/
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# LuaRocks local
+luarocks/
+*.rock

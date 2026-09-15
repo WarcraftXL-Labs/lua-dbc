@@ -1,0 +1,68 @@
+---@meta
+-- Generated LuaLS annotations for LivingWorldObjectTemplate (Build 12.1.5.69594 [v1215]). Do not edit.
+
+---Row representation of LivingWorldObjectTemplate in build 12.1.5.69594.
+---@class dbc.row.v1215.LivingWorldObjectTemplate : RowProxy
+---@field ID integer
+---@field WorldStateExpressionID integer
+
+local row = {}
+
+---Gets the value of field 'ID'.
+---@return integer value
+function row:GetID() end
+
+---Sets the value of field 'ID'.
+---@param value integer
+---@return dbc.row.v1215.LivingWorldObjectTemplate self
+function row:SetID(value) end
+
+---Gets the value of field 'WorldStateExpressionID'.
+---@return integer value
+function row:GetWorldStateExpressionID() end
+
+---Sets the value of field 'WorldStateExpressionID'.
+---@param value integer
+---@return dbc.row.v1215.LivingWorldObjectTemplate self
+function row:SetWorldStateExpressionID(value) end
+
+---Navigates foreign relationship to 'WorldStateExpression' via 'WorldStateExpressionID'.
+---@return dbc.row.v1215.WorldStateExpression|nil
+function row:GetWorldStateExpression() end
+
+---Creates a related 'WorldStateExpression' row and automatically links 'WorldStateExpressionID'.
+---@param data? table
+---@return dbc.row.v1215.WorldStateExpression
+function row:CreateRelated(data) end
+
+---Table container for LivingWorldObjectTemplate (Build 12.1.5.69594).
+---@class dbc.Table.v1215.LivingWorldObjectTemplate : DbcTable
+---@field [integer] dbc.row.v1215.LivingWorldObjectTemplate
+local tbl = {}
+
+---Creates and appends a new row to the table.
+---@param id? integer Primary key
+---@param data? table Optional initial values
+---@return dbc.row.v1215.LivingWorldObjectTemplate
+function tbl:Create(id, data) end
+
+---Finds a row by primary key (nil if not found).
+---@param id integer
+---@return dbc.row.v1215.LivingWorldObjectTemplate|nil
+function tbl:FindById(id) end
+
+---Gets a row by primary key (throws if not found).
+---@param id integer
+---@return dbc.row.v1215.LivingWorldObjectTemplate
+function tbl:GetRowById(id) end
+
+---Creates a LINQ query over rows in this table.
+---@return dbc.Query<dbc.row.v1215.LivingWorldObjectTemplate>
+function tbl:Query() end
+
+---Returns all rows related to a foreign ID via the relationship block.
+---@param foreign_id integer
+---@return dbc.row.v1215.LivingWorldObjectTemplate[]
+function tbl:GetByRelation(foreign_id) end
+
+return {}

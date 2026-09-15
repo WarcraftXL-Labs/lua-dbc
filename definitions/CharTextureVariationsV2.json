@@ -1,0 +1,148 @@
+{
+  "columnDefinitions": {
+    "ColorID": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "IsNPC": {
+      "type": "int",
+      "verified": true
+    },
+    "RaceID": {
+      "foreignColumn": "ID",
+      "foreignTable": "ChrRaces",
+      "type": "int",
+      "verified": true
+    },
+    "SectionID": {
+      "comment": "CHARTEXTURESECTIONID",
+      "type": "int",
+      "verified": true
+    },
+    "SexID": {
+      "type": "int",
+      "verified": true
+    },
+    "TextureName": {
+      "type": "string",
+      "verified": true
+    },
+    "VariationID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 3494,
+            "expansion": 0,
+            "major": 5,
+            "minor": 5
+          },
+          "minBuild": {
+            "build": 3368,
+            "expansion": 0,
+            "major": 5,
+            "minor": 3
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 3494,
+          "expansion": 0,
+          "major": 5,
+          "minor": 5
+        },
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "RaceID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SexID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SectionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "VariationID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ColorID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "IsNPC",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TextureName",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

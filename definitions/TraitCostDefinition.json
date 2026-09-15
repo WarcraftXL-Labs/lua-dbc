@@ -1,0 +1,309 @@
+{
+  "columnDefinitions": {
+    "DefinitionType": {
+      "comment": "0: PrimaryCurrency, 1: SecondaryCurrency, 2: Item, 3: Gold",
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": false
+    },
+    "TraitCostID": {
+      "foreignColumn": "ID",
+      "foreignTable": "TraitCost",
+      "type": "int",
+      "verified": false
+    },
+    "TraitCurrencyID": {
+      "foreignColumn": "ID",
+      "foreignTable": "TraitCurrency",
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 43342,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TraitCostID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DefinitionType",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TraitCurrencyID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "2AEE735E"
+      ]
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 44167,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44351,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44402,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44475,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DefinitionType",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TraitCurrencyID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "TraitCostID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "BEF74473"
+      ]
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 44559,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44592,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44622,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44645,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44649,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44691,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44707,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44795,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44840,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44876,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44895,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44933,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 44999,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 45025,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 45093,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 45141,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 45193,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 45232,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 45335,
+          "expansion": 10,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "TraitCostID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "DefinitionType",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TraitCurrencyID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "B11D3E67"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "columnDefinitions": {
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "TorsoTexture": {
+      "type": "string",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 2,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "TorsoTexture",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

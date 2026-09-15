@@ -1,0 +1,124 @@
+{
+  "columnDefinitions": {
+    "Field_6_0_1_18179_001": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_6_0_1_18179_002": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_6_0_1_18179_003": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_6_0_1_18179_004": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_6_0_1_18179_006": {
+      "type": "string",
+      "verified": false
+    },
+    "Field_6_0_1_18179_007": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": false
+    },
+    "Padding_6_0_1_18179_005": {
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 18179,
+          "expansion": 6,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_6_0_1_18179_001",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_6_0_1_18179_002",
+          "size": 64
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_6_0_1_18179_003",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_6_0_1_18179_004",
+          "size": 8
+        },
+        {
+          "arrLength": 3,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Padding_6_0_1_18179_005",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_6_0_1_18179_006",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_6_0_1_18179_007",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

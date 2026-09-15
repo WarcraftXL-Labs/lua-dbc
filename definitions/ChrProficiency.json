@@ -1,0 +1,106 @@
+{
+  "columnDefinitions": {
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "Proficiency_acquireMethod": {
+      "type": "int",
+      "verified": true
+    },
+    "Proficiency_itemClass": {
+      "type": "int",
+      "verified": true
+    },
+    "Proficiency_itemSubClassMask": {
+      "type": "int",
+      "verified": true
+    },
+    "Proficiency_minLevel": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 3592,
+            "expansion": 0,
+            "major": 6,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3368,
+            "expansion": 0,
+            "major": 5,
+            "minor": 3
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 3592,
+          "expansion": 0,
+          "major": 6,
+          "minor": 0
+        },
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 16,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Proficiency_minLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 16,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Proficiency_acquireMethod",
+          "size": 32
+        },
+        {
+          "arrLength": 16,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Proficiency_itemClass",
+          "size": 32
+        },
+        {
+          "arrLength": 16,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Proficiency_itemSubClassMask",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

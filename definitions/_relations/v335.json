@@ -1,0 +1,3577 @@
+{
+  "build": "3.3.5.12340",
+  "inbound": {
+    "Achievement": [
+      {
+        "field": "Supercedes",
+        "source_table": "Achievement",
+        "target_field": "ID"
+      },
+      {
+        "field": "Shares_criteria",
+        "source_table": "Achievement",
+        "target_field": "ID"
+      },
+      {
+        "field": "Achievement_ID",
+        "source_table": "Achievement_Criteria",
+        "target_field": "ID"
+      }
+    ],
+    "Achievement_Category": [
+      {
+        "field": "Category",
+        "source_table": "Achievement",
+        "target_field": "ID"
+      },
+      {
+        "field": "Parent",
+        "source_table": "Achievement_Category",
+        "target_field": "ID"
+      }
+    ],
+    "AnimationData": [
+      {
+        "field": "Fallback",
+        "source_table": "AnimationData",
+        "target_field": "ID"
+      },
+      {
+        "field": "BehaviorID",
+        "source_table": "AnimationData",
+        "target_field": "ID"
+      },
+      {
+        "field": "AnimID",
+        "source_table": "Emotes",
+        "target_field": "ID"
+      },
+      {
+        "field": "StartAnimID",
+        "source_table": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "AnimID",
+        "source_table": "SpellVisualKit",
+        "target_field": "ID"
+      }
+    ],
+    "AreaGroup": [
+      {
+        "field": "NextAreaID",
+        "source_table": "AreaGroup",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredAreasID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "AreaTable": [
+      {
+        "field": "AreaID",
+        "source_table": "AreaGroup",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "source_table": "AreaPOI",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParentAreaID",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaTableID",
+        "source_table": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaTableID",
+        "source_table": "WMOAreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "source_table": "WorldMapArea",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "source_table": "WorldMapOverlay",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "source_table": "WorldStateUI",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "source_table": "WorldStateZoneSounds",
+        "target_field": "ID"
+      }
+    ],
+    "AttackAnimTypes": [
+      {
+        "field": "AnimTypeID",
+        "source_table": "AttackAnimKits",
+        "target_field": "AnimID"
+      }
+    ],
+    "ChrClasses": [
+      {
+        "field": "ClassID",
+        "source_table": "CharBaseInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "ClassID",
+        "source_table": "CharStartOutfit",
+        "target_field": "ID"
+      }
+    ],
+    "ChrRaces": [
+      {
+        "field": "Race",
+        "source_table": "BarberShopStyle",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "CharBaseInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "CharHairGeosets",
+        "target_field": "ID"
+      },
+      {
+        "field": "Field_0_5_3_3368_001_race",
+        "source_table": "CharHairTextures",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "CharSections",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "CharStartOutfit",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "CharVariations",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "CharacterFacialHairStyles",
+        "target_field": "ID"
+      },
+      {
+        "field": "DisplayRaceID",
+        "source_table": "CreatureDisplayInfoExtra",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "EmotesTextSound",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "NameGen",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "source_table": "VocalUISounds",
+        "target_field": "ID"
+      }
+    ],
+    "CinematicCamera": [
+      {
+        "field": "Camera",
+        "source_table": "CinematicSequences",
+        "target_field": "ID"
+      }
+    ],
+    "CinematicSequences": [
+      {
+        "field": "CinematicSequenceID",
+        "source_table": "ChrClasses",
+        "target_field": "ID"
+      },
+      {
+        "field": "CinematicSequenceID",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "Creature": [
+      {
+        "field": "MountCreatureID",
+        "source_table": "TaxiNodes",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureDisplayInfo": [
+      {
+        "field": "MaleDisplayID",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "FemaleDisplayID",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "CreatureDisplayID",
+        "source_table": "SpellShapeshiftForm",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureDisplayInfoExtra": [
+      {
+        "field": "ExtendedDisplayInfoID",
+        "source_table": "CreatureDisplayInfo",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureModelData": [
+      {
+        "field": "ModelID",
+        "source_table": "CreatureDisplayInfo",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureSoundData": [
+      {
+        "field": "SoundID",
+        "source_table": "CreatureDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "CreatureModelData",
+        "target_field": "ID"
+      },
+      {
+        "field": "CreatureSoundDataIDPet",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureType": [
+      {
+        "field": "CreatureType",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "CreatureType",
+        "source_table": "SpellShapeshiftForm",
+        "target_field": "ID"
+      }
+    ],
+    "CurrencyCategory": [
+      {
+        "field": "CategoryID",
+        "source_table": "CurrencyTypes",
+        "target_field": "ID"
+      }
+    ],
+    "DeclinedWord": [
+      {
+        "field": "DeclinedWordID",
+        "source_table": "DeclinedWordCases",
+        "target_field": "ID"
+      }
+    ],
+    "DungeonMap": [
+      {
+        "field": "DungeonMapID",
+        "source_table": "DungeonMapChunk",
+        "target_field": "ID"
+      },
+      {
+        "field": "NewDungeonMapID",
+        "source_table": "WorldMapTransforms",
+        "target_field": "ID"
+      }
+    ],
+    "Emotes": [
+      {
+        "field": "EmoteID",
+        "source_table": "EmotesText",
+        "target_field": "ID"
+      }
+    ],
+    "EmotesText": [
+      {
+        "field": "EmotesTextID",
+        "source_table": "EmotesTextSound",
+        "target_field": "ID"
+      }
+    ],
+    "EmotesTextData": [
+      {
+        "field": "EmoteText",
+        "source_table": "EmotesText",
+        "target_field": "ID"
+      }
+    ],
+    "Faction": [
+      {
+        "field": "FactionID",
+        "source_table": "AuctionHouse",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParentFactionID",
+        "source_table": "Faction",
+        "target_field": "ID"
+      },
+      {
+        "field": "Faction",
+        "source_table": "FactionTemplate",
+        "target_field": "ID"
+      },
+      {
+        "field": "Enemies",
+        "source_table": "FactionTemplate",
+        "target_field": "ID"
+      },
+      {
+        "field": "Friend",
+        "source_table": "FactionTemplate",
+        "target_field": "ID"
+      },
+      {
+        "field": "Faction",
+        "source_table": "LFGDungeons",
+        "target_field": "ID"
+      },
+      {
+        "field": "MinFactionID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "FactionGroup": [
+      {
+        "field": "FactionGroup",
+        "source_table": "FactionTemplate",
+        "target_field": "ID"
+      }
+    ],
+    "FactionTemplate": [
+      {
+        "field": "FactionID",
+        "source_table": "AreaPOI",
+        "target_field": "ID"
+      },
+      {
+        "field": "FactionID",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "Faction",
+        "source_table": "SummonProperties",
+        "target_field": "ID"
+      }
+    ],
+    "FileData": [
+      {
+        "field": "FileDataID",
+        "source_table": "MovieFileData",
+        "target_field": "ID"
+      },
+      {
+        "field": "FileDataID",
+        "source_table": "MovieVariation",
+        "target_field": "ID"
+      }
+    ],
+    "FootprintTextures": [
+      {
+        "field": "FootprintTextureID",
+        "source_table": "CreatureModelData",
+        "target_field": "ID"
+      }
+    ],
+    "FootstepTerrainLookup": [
+      {
+        "field": "SoundFootstepID",
+        "source_table": "CreatureSoundData",
+        "target_field": "CreatureFootstepID"
+      }
+    ],
+    "GMSurveyQuestions": [
+      {
+        "field": "GMSurveyQuestionID",
+        "source_table": "GMSurveyAnswers",
+        "target_field": "ID"
+      },
+      {
+        "field": "Q",
+        "source_table": "GMSurveySurveys",
+        "target_field": "ID"
+      }
+    ],
+    "GMSurveySurveys": [
+      {
+        "field": "GMSURVEY_ID",
+        "source_table": "GMSurveyCurrentSurvey",
+        "target_field": "ID"
+      }
+    ],
+    "GameObjectDisplayInfo": [
+      {
+        "field": "State1WMO",
+        "source_table": "DestructibleModelData",
+        "target_field": "ID"
+      },
+      {
+        "field": "State2WMO",
+        "source_table": "DestructibleModelData",
+        "target_field": "ID"
+      },
+      {
+        "field": "State3WMO",
+        "source_table": "DestructibleModelData",
+        "target_field": "ID"
+      }
+    ],
+    "GameObjects": [
+      {
+        "field": "GameObjectsID",
+        "source_table": "TransportRotation",
+        "target_field": "ID"
+      }
+    ],
+    "HolidayDescriptions": [
+      {
+        "field": "HolidayDescriptionID",
+        "source_table": "Holidays",
+        "target_field": "ID"
+      }
+    ],
+    "HolidayNames": [
+      {
+        "field": "HolidayNameID",
+        "source_table": "Holidays",
+        "target_field": "ID"
+      }
+    ],
+    "Item": [
+      {
+        "field": "ItemID",
+        "source_table": "CharStartOutfit",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemID",
+        "source_table": "CurrencyTypes",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemID",
+        "source_table": "ItemExtendedCost",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemID",
+        "source_table": "ItemPurchaseGroup",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemID",
+        "source_table": "ItemSet",
+        "target_field": "ID"
+      },
+      {
+        "field": "Reagent",
+        "source_table": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemID",
+        "source_table": "Stationery",
+        "target_field": "ID"
+      }
+    ],
+    "ItemClass": [
+      {
+        "field": "ClassID",
+        "source_table": "Item",
+        "target_field": "ClassID"
+      },
+      {
+        "field": "ClassID",
+        "source_table": "ItemSubClass",
+        "target_field": "ClassID"
+      },
+      {
+        "field": "ClassID",
+        "source_table": "ItemSubClassMask",
+        "target_field": "ClassID"
+      }
+    ],
+    "ItemDisplayInfo": [
+      {
+        "field": "DisplayItemID",
+        "source_table": "CharStartOutfit",
+        "target_field": "ID"
+      },
+      {
+        "field": "NPCItemDisplay",
+        "source_table": "CreatureDisplayInfoExtra",
+        "target_field": "ID"
+      }
+    ],
+    "ItemExtendedCost": [
+      {
+        "field": "ItemExtendedCostEntry",
+        "source_table": "ItemCondExtCosts",
+        "target_field": "ID"
+      }
+    ],
+    "ItemPurchaseGroup": [
+      {
+        "field": "ItemPurchaseGroup",
+        "source_table": "ItemExtendedCost",
+        "target_field": "ID"
+      }
+    ],
+    "ItemSubClass": [
+      {
+        "field": "ClassID",
+        "source_table": "SheatheSoundLookups",
+        "target_field": "ClassID"
+      },
+      {
+        "field": "SubclassID",
+        "source_table": "SheatheSoundLookups",
+        "target_field": "SubClassID"
+      }
+    ],
+    "ItemVisuals": [
+      {
+        "field": "ItemVisual",
+        "source_table": "SpellItemEnchantment",
+        "target_field": "ID"
+      }
+    ],
+    "Languages": [
+      {
+        "field": "BaseLanguage",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "LanguageID",
+        "source_table": "LanguageWords",
+        "target_field": "ID"
+      }
+    ],
+    "Light": [
+      {
+        "field": "LightID",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "LightID",
+        "source_table": "LiquidType",
+        "target_field": "ID"
+      }
+    ],
+    "LightParams": [
+      {
+        "field": "LightParamsID",
+        "source_table": "Light",
+        "target_field": "ID"
+      },
+      {
+        "field": "LightParamsID",
+        "source_table": "ScreenEffect",
+        "target_field": "ID"
+      }
+    ],
+    "LightSkybox": [
+      {
+        "field": "LightSkyboxID",
+        "source_table": "LightParams",
+        "target_field": "ID"
+      }
+    ],
+    "LiquidMaterial": [
+      {
+        "field": "MaterialID",
+        "source_table": "LiquidType",
+        "target_field": "ID"
+      }
+    ],
+    "LiquidType": [
+      {
+        "field": "LiquidTypeID",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      }
+    ],
+    "LoadingScreens": [
+      {
+        "field": "LoadingScreenID",
+        "source_table": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "Lock": [
+      {
+        "field": "LockID",
+        "source_table": "DanceMoves",
+        "target_field": "ID"
+      }
+    ],
+    "Map": [
+      {
+        "field": "Instance_ID",
+        "source_table": "Achievement",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "source_table": "AreaPOI",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "source_table": "AreaTrigger",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "BattlemasterList",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "DungeonEncounter",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "DungeonMap",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "DungeonMapChunk",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "LFGDungeons",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "source_table": "Light",
+        "target_field": "ID"
+      },
+      {
+        "field": "CorpseMapID",
+        "source_table": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "MapDifficulty",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "PVPDifficulty",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "SoundEmitters",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "source_table": "TaxiNodes",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "source_table": "TaxiPathNode",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "WorldMapArea",
+        "target_field": "ID"
+      },
+      {
+        "field": "DisplayMapID",
+        "source_table": "WorldMapArea",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "WorldMapContinent",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "WorldMapTransforms",
+        "target_field": "ID"
+      },
+      {
+        "field": "NewMapID",
+        "source_table": "WorldMapTransforms",
+        "target_field": "ID"
+      },
+      {
+        "field": "Continent",
+        "source_table": "WorldSafeLocs",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "source_table": "WorldStateUI",
+        "target_field": "ID"
+      }
+    ],
+    "Material": [
+      {
+        "field": "FoleyMaterialID",
+        "source_table": "CreatureModelData",
+        "target_field": "ID"
+      },
+      {
+        "field": "Material",
+        "source_table": "Item",
+        "target_field": "ID"
+      },
+      {
+        "field": "Material",
+        "source_table": "SheatheSoundLookups",
+        "target_field": "ID"
+      }
+    ],
+    "Movie": [
+      {
+        "field": "MovieID",
+        "source_table": "MovieVariation",
+        "target_field": "ID"
+      }
+    ],
+    "NPCSounds": [
+      {
+        "field": "NPCSoundID",
+        "source_table": "CreatureDisplayInfo",
+        "target_field": "ID"
+      }
+    ],
+    "ObjectEffectGroup": [
+      {
+        "field": "ObjectEffectGroupID",
+        "source_table": "ObjectEffect",
+        "target_field": "ID"
+      },
+      {
+        "field": "ObjectEffectGroupID",
+        "source_table": "ObjectEffectPackageElem",
+        "target_field": "ID"
+      }
+    ],
+    "ObjectEffectModifier": [
+      {
+        "field": "ObjectEffectModifierID",
+        "source_table": "ObjectEffect",
+        "target_field": "ID"
+      }
+    ],
+    "ObjectEffectPackage": [
+      {
+        "field": "ObjectEffectPackageID",
+        "source_table": "CreatureDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "ObjectEffectPackageID",
+        "source_table": "GameObjectDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "ObjectEffectPackageID",
+        "source_table": "ObjectEffectPackageElem",
+        "target_field": "ID"
+      }
+    ],
+    "ParticleColor": [
+      {
+        "field": "ParticleColorID",
+        "source_table": "CreatureDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParticleColorID",
+        "source_table": "ItemDisplayInfo",
+        "target_field": "ID"
+      }
+    ],
+    "PowerDisplay": [
+      {
+        "field": "PowerDisplayID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "PowerDisplayID",
+        "source_table": "Vehicle",
+        "target_field": "ID"
+      }
+    ],
+    "PowerType": [
+      {
+        "field": "DisplayPower",
+        "source_table": "ChrClasses",
+        "target_field": "PowerTypeEnum"
+      }
+    ],
+    "SkillLine": [
+      {
+        "field": "SkillLine",
+        "source_table": "CreatureFamily",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredSkill",
+        "source_table": "ItemSet",
+        "target_field": "ID"
+      },
+      {
+        "field": "SkillLine",
+        "source_table": "SkillLineAbility",
+        "target_field": "ID"
+      },
+      {
+        "field": "SkillID",
+        "source_table": "SkillRaceClassInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredSkillID",
+        "source_table": "SpellItemEnchantment",
+        "target_field": "ID"
+      }
+    ],
+    "SkillLineCategory": [
+      {
+        "field": "CategoryID",
+        "source_table": "SkillLine",
+        "target_field": "ID"
+      }
+    ],
+    "SkillTiers": [
+      {
+        "field": "SkillTierID",
+        "source_table": "SkillRaceClassInfo",
+        "target_field": "ID"
+      }
+    ],
+    "SoundAmbience": [
+      {
+        "field": "AmbienceID",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAmbienceID",
+        "source_table": "ScreenEffect",
+        "target_field": "ID"
+      },
+      {
+        "field": "AmbienceID",
+        "source_table": "WMOAreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAmbienceID",
+        "source_table": "WorldChunkSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAmbienceID",
+        "source_table": "WorldStateZoneSounds",
+        "target_field": "ID"
+      }
+    ],
+    "SoundEntries": [
+      {
+        "field": "ExplorationSoundID",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "SplashSoundID",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "CinematicCamera",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "CinematicSequences",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundExertionID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundExertionCriticalID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundInjuryID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundInjuryCriticalID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundDeathID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundStunID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundStandID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAggroID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundWingFlapID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundWingGlideID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAlertID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundFidget",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "CustomAttack",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "LoopSoundID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundJumpStartID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundJumpEndID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundPetAttackID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundPetOrderID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundPetDismissID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "BirthSoundID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellCastDirectedSoundID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SubmergeSoundID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SubmergedSoundID",
+        "source_table": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundEntryID",
+        "source_table": "DeathThudLookups",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundEntryIDWater",
+        "source_table": "DeathThudLookups",
+        "target_field": "ID"
+      },
+      {
+        "field": "EventSoundID",
+        "source_table": "Emotes",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "EmotesTextSound",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "FootstepTerrainLookup",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundIDSplash",
+        "source_table": "FootstepTerrainLookup",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "LiquidType",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundEntryID",
+        "source_table": "SoundEntriesAdvanced",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "SoundWaterType",
+        "target_field": "ID"
+      },
+      {
+        "field": "AnimEventSoundID",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "UISoundLookups",
+        "target_field": "ID"
+      },
+      {
+        "field": "EnterUISoundID",
+        "source_table": "VehicleSeat",
+        "target_field": "ID"
+      },
+      {
+        "field": "ImpactSoundID",
+        "source_table": "WeaponImpactSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "CritImpactSoundID",
+        "source_table": "WeaponImpactSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "WeaponSwingSounds2",
+        "target_field": "ID"
+      },
+      {
+        "field": "AmbienceID",
+        "source_table": "Weather",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "ZoneIntroMusicTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "Sounds",
+        "source_table": "ZoneMusic",
+        "target_field": "ID"
+      }
+    ],
+    "SoundEntriesAdvanced": [
+      {
+        "field": "SoundEntryAdvancedID",
+        "source_table": "SoundEmitters",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundEntriesAdvancedID",
+        "source_table": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "SoundFilter": [
+      {
+        "field": "SoundFilterID",
+        "source_table": "SoundFilterElem",
+        "target_field": "ID"
+      }
+    ],
+    "SoundKit": [
+      {
+        "field": "FoleySoundID",
+        "source_table": "Material",
+        "target_field": "ID"
+      },
+      {
+        "field": "SheatheSoundID",
+        "source_table": "Material",
+        "target_field": "ID"
+      },
+      {
+        "field": "UnsheatheSoundID",
+        "source_table": "Material",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "NPCSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectRecID",
+        "source_table": "ObjectEffect",
+        "target_field": "ID"
+      },
+      {
+        "field": "FizzleSoundID",
+        "source_table": "Resistances",
+        "target_field": "ID"
+      },
+      {
+        "field": "AmbienceID",
+        "source_table": "SoundAmbience",
+        "target_field": "ID"
+      },
+      {
+        "field": "NormalSoundID",
+        "source_table": "VocalUISounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "PissedSoundID",
+        "source_table": "VocalUISounds",
+        "target_field": "ID"
+      }
+    ],
+    "SoundProviderPreferences": [
+      {
+        "field": "SoundProviderPref",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPrefUnderwater",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPref",
+        "source_table": "WMOAreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPrefUnderwater",
+        "source_table": "WMOAreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPreferencesID",
+        "source_table": "WorldChunkSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPreferencesID",
+        "source_table": "WorldStateZoneSounds",
+        "target_field": "ID"
+      }
+    ],
+    "Spell": [
+      {
+        "field": "ResSicknessSpellID",
+        "source_table": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "Spells",
+        "source_table": "CreatureSpellData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellID",
+        "source_table": "GlyphProperties",
+        "target_field": "ID"
+      },
+      {
+        "field": "SetSpellID",
+        "source_table": "ItemSet",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellID",
+        "source_table": "LiquidType",
+        "target_field": "ID"
+      },
+      {
+        "field": "Spells",
+        "source_table": "OverrideSpellData",
+        "target_field": "ID"
+      },
+      {
+        "field": "Spell",
+        "source_table": "SkillLineAbility",
+        "target_field": "ID"
+      },
+      {
+        "field": "SupercededBySpell",
+        "source_table": "SkillLineAbility",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectTriggerSpell",
+        "source_table": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "DifficultySpellID",
+        "source_table": "SpellDifficulty",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectArg",
+        "source_table": "SpellItemEnchantment",
+        "target_field": "ID"
+      },
+      {
+        "field": "PresetSpellID",
+        "source_table": "SpellShapeshiftForm",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellRank",
+        "source_table": "Talent",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredSpellID",
+        "source_table": "Talent",
+        "target_field": "ID"
+      }
+    ],
+    "SpellCastTimes": [
+      {
+        "field": "CastingTimeIndex",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellCategory": [
+      {
+        "field": "Category",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellDescriptionVariables": [
+      {
+        "field": "DescriptionVariablesID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellDispelType": [
+      {
+        "field": "DispelType",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellDuration": [
+      {
+        "field": "DurationIndex",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellEffectCameraShakes": [
+      {
+        "field": "ShakeID",
+        "source_table": "SpellVisualKit",
+        "target_field": "ID"
+      }
+    ],
+    "SpellFocusObject": [
+      {
+        "field": "RequiresSpellFocus",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellIcon": [
+      {
+        "field": "IconID",
+        "source_table": "Achievement",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "source_table": "DungeonEncounter",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "source_table": "GlyphProperties",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "source_table": "SkillLine",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "ActiveIconID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "AttackIconID",
+        "source_table": "SpellShapeshiftForm",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "source_table": "TalentTab",
+        "target_field": "ID"
+      }
+    ],
+    "SpellItemEnchantment": [
+      {
+        "field": "Enchant_ID",
+        "source_table": "GemProperties",
+        "target_field": "ID"
+      },
+      {
+        "field": "Enchantment",
+        "source_table": "ItemRandomProperties",
+        "target_field": "ID"
+      },
+      {
+        "field": "Enchantment",
+        "source_table": "ItemRandomSuffix",
+        "target_field": "ID"
+      }
+    ],
+    "SpellItemEnchantmentCondition": [
+      {
+        "field": "Condition_ID",
+        "source_table": "SpellItemEnchantment",
+        "target_field": "ID"
+      }
+    ],
+    "SpellMechanic": [
+      {
+        "field": "Mechanic",
+        "source_table": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectMechanic",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellMissile": [
+      {
+        "field": "SpellMissileID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellRadius": [
+      {
+        "field": "EffectRadiusIndex",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellRuneCost": [
+      {
+        "field": "RuneCostID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellVisual": [
+      {
+        "field": "SpellVisualID",
+        "source_table": "ItemDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellVisualID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellVisualEffectName": [
+      {
+        "field": "CreatureFootstepID",
+        "source_table": "FootstepTerrainLookup",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellVisualEffectNameID",
+        "source_table": "SpellVisualKitModelAttach",
+        "target_field": "ID"
+      }
+    ],
+    "SpellVisualKit": [
+      {
+        "field": "VisualkitID",
+        "source_table": "EnvironmentalDamage",
+        "target_field": "ID"
+      },
+      {
+        "field": "PrecastKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "CastKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "ImpactKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "StateKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "StateDoneKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "ChannelKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "CasterImpactKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "TargetImpactKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "MissileTargetingKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "InstantAreaKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "ImpactAreaKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "PersistentAreaKit",
+        "source_table": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParentSpellVisualKitID",
+        "source_table": "SpellVisualKitModelAttach",
+        "target_field": "ID"
+      }
+    ],
+    "Talent": [
+      {
+        "field": "PrereqTalent",
+        "source_table": "Talent",
+        "target_field": "ID"
+      }
+    ],
+    "TalentTab": [
+      {
+        "field": "TabID",
+        "source_table": "Talent",
+        "target_field": "ID"
+      }
+    ],
+    "TaxiNodes": [
+      {
+        "field": "FromTaxiNode",
+        "source_table": "TaxiPath",
+        "target_field": "ID"
+      },
+      {
+        "field": "ToTaxiNode",
+        "source_table": "TaxiPath",
+        "target_field": "ID"
+      }
+    ],
+    "TaxiPath": [
+      {
+        "field": "PathID",
+        "source_table": "LoadingScreenTaxiSplines",
+        "target_field": "ID"
+      },
+      {
+        "field": "PathID",
+        "source_table": "TaxiPathNode",
+        "target_field": "ID"
+      }
+    ],
+    "TerrainTypeSounds": [
+      {
+        "field": "TerrainTypeSoundID",
+        "source_table": "DeathThudLookups",
+        "target_field": "ID"
+      },
+      {
+        "field": "TerrainSoundID",
+        "source_table": "FootstepTerrainLookup",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "source_table": "TerrainType",
+        "target_field": "ID"
+      }
+    ],
+    "TotemCategory": [
+      {
+        "field": "RequiredTotemCategoryID",
+        "source_table": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "UnitBlood": [
+      {
+        "field": "BloodID",
+        "source_table": "CreatureDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "BloodID",
+        "source_table": "CreatureModelData",
+        "target_field": "ID"
+      }
+    ],
+    "VehicleSeat": [
+      {
+        "field": "SeatID",
+        "source_table": "Vehicle",
+        "target_field": "ID"
+      }
+    ],
+    "VehicleUIIndicator": [
+      {
+        "field": "VehicleUIIndicatorID",
+        "source_table": "Vehicle",
+        "target_field": "ID"
+      },
+      {
+        "field": "VehicleUIIndicatorID",
+        "source_table": "VehicleUIIndSeat",
+        "target_field": "ID"
+      }
+    ],
+    "WMOAreaTable": [
+      {
+        "field": "WMOGroupID",
+        "source_table": "DungeonMapChunk",
+        "target_field": "WMOGroupID"
+      },
+      {
+        "field": "WMOAreaID",
+        "source_table": "WorldStateZoneSounds",
+        "target_field": "ID"
+      }
+    ],
+    "WorldMapArea": [
+      {
+        "field": "ParentWorldMapID",
+        "source_table": "DungeonMap",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParentWorldMapID",
+        "source_table": "WorldMapArea",
+        "target_field": "ID"
+      },
+      {
+        "field": "WorldMapID",
+        "source_table": "WorldMapContinent",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapAreaID",
+        "source_table": "WorldMapOverlay",
+        "target_field": "ID"
+      }
+    ],
+    "WorldState": [
+      {
+        "field": "WorldStateID",
+        "source_table": "AreaPOI",
+        "target_field": "ID"
+      },
+      {
+        "field": "HolidayWorldState",
+        "source_table": "BattlemasterList",
+        "target_field": "ID"
+      },
+      {
+        "field": "WorldStateID",
+        "source_table": "WorldStateZoneSounds",
+        "target_field": "ID"
+      }
+    ],
+    "ZoneIntroMusicTable": [
+      {
+        "field": "IntroSound",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "IntroSound",
+        "source_table": "WMOAreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneIntroMusicID",
+        "source_table": "WorldStateZoneSounds",
+        "target_field": "ID"
+      }
+    ],
+    "ZoneMusic": [
+      {
+        "field": "ZoneMusic",
+        "source_table": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusicID",
+        "source_table": "ScreenEffect",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusic",
+        "source_table": "WMOAreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusicID",
+        "source_table": "WorldChunkSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusicID",
+        "source_table": "WorldStateZoneSounds",
+        "target_field": "ID"
+      }
+    ]
+  },
+  "outbound": {
+    "Achievement": [
+      {
+        "field": "Instance_ID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "Supercedes",
+        "target": "Achievement",
+        "target_field": "ID"
+      },
+      {
+        "field": "Category",
+        "target": "Achievement_Category",
+        "target_field": "ID"
+      },
+      {
+        "field": "IconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      },
+      {
+        "field": "Shares_criteria",
+        "target": "Achievement",
+        "target_field": "ID"
+      }
+    ],
+    "Achievement_Category": [
+      {
+        "field": "Parent",
+        "target": "Achievement_Category",
+        "target_field": "ID"
+      }
+    ],
+    "Achievement_Criteria": [
+      {
+        "field": "Achievement_ID",
+        "target": "Achievement",
+        "target_field": "ID"
+      }
+    ],
+    "AnimationData": [
+      {
+        "field": "Fallback",
+        "target": "AnimationData",
+        "target_field": "ID"
+      },
+      {
+        "field": "BehaviorID",
+        "target": "AnimationData",
+        "target_field": "ID"
+      }
+    ],
+    "AreaGroup": [
+      {
+        "field": "AreaID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "NextAreaID",
+        "target": "AreaGroup",
+        "target_field": "ID"
+      }
+    ],
+    "AreaPOI": [
+      {
+        "field": "FactionID",
+        "target": "FactionTemplate",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "WorldStateID",
+        "target": "WorldState",
+        "target_field": "ID"
+      }
+    ],
+    "AreaTable": [
+      {
+        "field": "ContinentID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParentAreaID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPref",
+        "target": "SoundProviderPreferences",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPrefUnderwater",
+        "target": "SoundProviderPreferences",
+        "target_field": "ID"
+      },
+      {
+        "field": "AmbienceID",
+        "target": "SoundAmbience",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusic",
+        "target": "ZoneMusic",
+        "target_field": "ID"
+      },
+      {
+        "field": "IntroSound",
+        "target": "ZoneIntroMusicTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "LiquidTypeID",
+        "target": "LiquidType",
+        "target_field": "ID"
+      },
+      {
+        "field": "LightID",
+        "target": "Light",
+        "target_field": "ID"
+      }
+    ],
+    "AreaTrigger": [
+      {
+        "field": "ContinentID",
+        "target": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "AttackAnimKits": [
+      {
+        "field": "AnimTypeID",
+        "target": "AttackAnimTypes",
+        "target_field": "AnimID"
+      }
+    ],
+    "AuctionHouse": [
+      {
+        "field": "FactionID",
+        "target": "Faction",
+        "target_field": "ID"
+      }
+    ],
+    "BarberShopStyle": [
+      {
+        "field": "Race",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "BattlemasterList": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "HolidayWorldState",
+        "target": "WorldState",
+        "target_field": "ID"
+      }
+    ],
+    "CharBaseInfo": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "ClassID",
+        "target": "ChrClasses",
+        "target_field": "ID"
+      }
+    ],
+    "CharHairGeosets": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "CharHairTextures": [
+      {
+        "field": "Field_0_5_3_3368_001_race",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "CharSections": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "CharStartOutfit": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "ClassID",
+        "target": "ChrClasses",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemID",
+        "target": "Item",
+        "target_field": "ID"
+      },
+      {
+        "field": "DisplayItemID",
+        "target": "ItemDisplayInfo",
+        "target_field": "ID"
+      }
+    ],
+    "CharVariations": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "CharacterFacialHairStyles": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "ChrClasses": [
+      {
+        "field": "DisplayPower",
+        "target": "PowerType",
+        "target_field": "PowerTypeEnum"
+      },
+      {
+        "field": "CinematicSequenceID",
+        "target": "CinematicSequences",
+        "target_field": "ID"
+      }
+    ],
+    "ChrRaces": [
+      {
+        "field": "FactionID",
+        "target": "FactionTemplate",
+        "target_field": "ID"
+      },
+      {
+        "field": "ExplorationSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "MaleDisplayID",
+        "target": "CreatureDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "FemaleDisplayID",
+        "target": "CreatureDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "BaseLanguage",
+        "target": "Languages",
+        "target_field": "ID"
+      },
+      {
+        "field": "CreatureType",
+        "target": "CreatureType",
+        "target_field": "ID"
+      },
+      {
+        "field": "ResSicknessSpellID",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "SplashSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "CinematicSequenceID",
+        "target": "CinematicSequences",
+        "target_field": "ID"
+      }
+    ],
+    "CinematicCamera": [
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "CinematicSequences": [
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "Camera",
+        "target": "CinematicCamera",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureDisplayInfo": [
+      {
+        "field": "ModelID",
+        "target": "CreatureModelData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "target": "CreatureSoundData",
+        "target_field": "ID"
+      },
+      {
+        "field": "ExtendedDisplayInfoID",
+        "target": "CreatureDisplayInfoExtra",
+        "target_field": "ID"
+      },
+      {
+        "field": "BloodID",
+        "target": "UnitBlood",
+        "target_field": "ID"
+      },
+      {
+        "field": "NPCSoundID",
+        "target": "NPCSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParticleColorID",
+        "target": "ParticleColor",
+        "target_field": "ID"
+      },
+      {
+        "field": "ObjectEffectPackageID",
+        "target": "ObjectEffectPackage",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureDisplayInfoExtra": [
+      {
+        "field": "DisplayRaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "NPCItemDisplay",
+        "target": "ItemDisplayInfo",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureFamily": [
+      {
+        "field": "SkillLine",
+        "target": "SkillLine",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureModelData": [
+      {
+        "field": "BloodID",
+        "target": "UnitBlood",
+        "target_field": "ID"
+      },
+      {
+        "field": "FootprintTextureID",
+        "target": "FootprintTextures",
+        "target_field": "ID"
+      },
+      {
+        "field": "FoleyMaterialID",
+        "target": "Material",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "target": "CreatureSoundData",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureSoundData": [
+      {
+        "field": "SoundExertionID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundExertionCriticalID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundInjuryID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundInjuryCriticalID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundDeathID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundStunID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundStandID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundFootstepID",
+        "target": "FootstepTerrainLookup",
+        "target_field": "CreatureFootstepID"
+      },
+      {
+        "field": "SoundAggroID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundWingFlapID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundWingGlideID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAlertID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundFidget",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "CustomAttack",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "LoopSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundJumpStartID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundJumpEndID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundPetAttackID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundPetOrderID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundPetDismissID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "BirthSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellCastDirectedSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SubmergeSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SubmergedSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "CreatureSoundDataIDPet",
+        "target": "CreatureSoundData",
+        "target_field": "ID"
+      }
+    ],
+    "CreatureSpellData": [
+      {
+        "field": "Spells",
+        "target": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "CurrencyTypes": [
+      {
+        "field": "ItemID",
+        "target": "Item",
+        "target_field": "ID"
+      },
+      {
+        "field": "CategoryID",
+        "target": "CurrencyCategory",
+        "target_field": "ID"
+      }
+    ],
+    "DanceMoves": [
+      {
+        "field": "LockID",
+        "target": "Lock",
+        "target_field": "ID"
+      }
+    ],
+    "DeathThudLookups": [
+      {
+        "field": "TerrainTypeSoundID",
+        "target": "TerrainTypeSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundEntryID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundEntryIDWater",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "DeclinedWordCases": [
+      {
+        "field": "DeclinedWordID",
+        "target": "DeclinedWord",
+        "target_field": "ID"
+      }
+    ],
+    "DestructibleModelData": [
+      {
+        "field": "State1WMO",
+        "target": "GameObjectDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "State2WMO",
+        "target": "GameObjectDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "State3WMO",
+        "target": "GameObjectDisplayInfo",
+        "target_field": "ID"
+      }
+    ],
+    "DungeonEncounter": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      }
+    ],
+    "DungeonMap": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParentWorldMapID",
+        "target": "WorldMapArea",
+        "target_field": "ID"
+      }
+    ],
+    "DungeonMapChunk": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "WMOGroupID",
+        "target": "WMOAreaTable",
+        "target_field": "WMOGroupID"
+      },
+      {
+        "field": "DungeonMapID",
+        "target": "DungeonMap",
+        "target_field": "ID"
+      }
+    ],
+    "Emotes": [
+      {
+        "field": "AnimID",
+        "target": "AnimationData",
+        "target_field": "ID"
+      },
+      {
+        "field": "EventSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "EmotesText": [
+      {
+        "field": "EmoteID",
+        "target": "Emotes",
+        "target_field": "ID"
+      },
+      {
+        "field": "EmoteText",
+        "target": "EmotesTextData",
+        "target_field": "ID"
+      }
+    ],
+    "EmotesTextSound": [
+      {
+        "field": "EmotesTextID",
+        "target": "EmotesText",
+        "target_field": "ID"
+      },
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "EnvironmentalDamage": [
+      {
+        "field": "VisualkitID",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      }
+    ],
+    "Faction": [
+      {
+        "field": "ParentFactionID",
+        "target": "Faction",
+        "target_field": "ID"
+      }
+    ],
+    "FactionTemplate": [
+      {
+        "field": "Faction",
+        "target": "Faction",
+        "target_field": "ID"
+      },
+      {
+        "field": "FactionGroup",
+        "target": "FactionGroup",
+        "target_field": "ID"
+      },
+      {
+        "field": "Enemies",
+        "target": "Faction",
+        "target_field": "ID"
+      },
+      {
+        "field": "Friend",
+        "target": "Faction",
+        "target_field": "ID"
+      }
+    ],
+    "FootstepTerrainLookup": [
+      {
+        "field": "CreatureFootstepID",
+        "target": "SpellVisualEffectName",
+        "target_field": "ID"
+      },
+      {
+        "field": "TerrainSoundID",
+        "target": "TerrainTypeSounds",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundIDSplash",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "GMSurveyAnswers": [
+      {
+        "field": "GMSurveyQuestionID",
+        "target": "GMSurveyQuestions",
+        "target_field": "ID"
+      }
+    ],
+    "GMSurveyCurrentSurvey": [
+      {
+        "field": "GMSURVEY_ID",
+        "target": "GMSurveySurveys",
+        "target_field": "ID"
+      }
+    ],
+    "GMSurveySurveys": [
+      {
+        "field": "Q",
+        "target": "GMSurveyQuestions",
+        "target_field": "ID"
+      }
+    ],
+    "GameObjectDisplayInfo": [
+      {
+        "field": "ObjectEffectPackageID",
+        "target": "ObjectEffectPackage",
+        "target_field": "ID"
+      }
+    ],
+    "GemProperties": [
+      {
+        "field": "Enchant_ID",
+        "target": "SpellItemEnchantment",
+        "target_field": "ID"
+      }
+    ],
+    "GlyphProperties": [
+      {
+        "field": "SpellID",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      }
+    ],
+    "Holidays": [
+      {
+        "field": "HolidayNameID",
+        "target": "HolidayNames",
+        "target_field": "ID"
+      },
+      {
+        "field": "HolidayDescriptionID",
+        "target": "HolidayDescriptions",
+        "target_field": "ID"
+      }
+    ],
+    "Item": [
+      {
+        "field": "ClassID",
+        "target": "ItemClass",
+        "target_field": "ClassID"
+      },
+      {
+        "field": "Material",
+        "target": "Material",
+        "target_field": "ID"
+      }
+    ],
+    "ItemCondExtCosts": [
+      {
+        "field": "ItemExtendedCostEntry",
+        "target": "ItemExtendedCost",
+        "target_field": "ID"
+      }
+    ],
+    "ItemDisplayInfo": [
+      {
+        "field": "SpellVisualID",
+        "target": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParticleColorID",
+        "target": "ParticleColor",
+        "target_field": "ID"
+      }
+    ],
+    "ItemExtendedCost": [
+      {
+        "field": "ItemID",
+        "target": "Item",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemPurchaseGroup",
+        "target": "ItemPurchaseGroup",
+        "target_field": "ID"
+      }
+    ],
+    "ItemPurchaseGroup": [
+      {
+        "field": "ItemID",
+        "target": "Item",
+        "target_field": "ID"
+      }
+    ],
+    "ItemRandomProperties": [
+      {
+        "field": "Enchantment",
+        "target": "SpellItemEnchantment",
+        "target_field": "ID"
+      }
+    ],
+    "ItemRandomSuffix": [
+      {
+        "field": "Enchantment",
+        "target": "SpellItemEnchantment",
+        "target_field": "ID"
+      }
+    ],
+    "ItemSet": [
+      {
+        "field": "ItemID",
+        "target": "Item",
+        "target_field": "ID"
+      },
+      {
+        "field": "SetSpellID",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredSkill",
+        "target": "SkillLine",
+        "target_field": "ID"
+      }
+    ],
+    "ItemSubClass": [
+      {
+        "field": "ClassID",
+        "target": "ItemClass",
+        "target_field": "ClassID"
+      }
+    ],
+    "ItemSubClassMask": [
+      {
+        "field": "ClassID",
+        "target": "ItemClass",
+        "target_field": "ClassID"
+      }
+    ],
+    "LFGDungeons": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "Faction",
+        "target": "Faction",
+        "target_field": "ID"
+      }
+    ],
+    "LanguageWords": [
+      {
+        "field": "LanguageID",
+        "target": "Languages",
+        "target_field": "ID"
+      }
+    ],
+    "Light": [
+      {
+        "field": "ContinentID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "LightParamsID",
+        "target": "LightParams",
+        "target_field": "ID"
+      }
+    ],
+    "LightParams": [
+      {
+        "field": "LightSkyboxID",
+        "target": "LightSkybox",
+        "target_field": "ID"
+      }
+    ],
+    "LiquidType": [
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellID",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "LightID",
+        "target": "Light",
+        "target_field": "ID"
+      },
+      {
+        "field": "MaterialID",
+        "target": "LiquidMaterial",
+        "target_field": "ID"
+      }
+    ],
+    "LoadingScreenTaxiSplines": [
+      {
+        "field": "PathID",
+        "target": "TaxiPath",
+        "target_field": "ID"
+      }
+    ],
+    "Map": [
+      {
+        "field": "AreaTableID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "LoadingScreenID",
+        "target": "LoadingScreens",
+        "target_field": "ID"
+      },
+      {
+        "field": "CorpseMapID",
+        "target": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "MapDifficulty": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "Material": [
+      {
+        "field": "FoleySoundID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "SheatheSoundID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "UnsheatheSoundID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      }
+    ],
+    "MovieFileData": [
+      {
+        "field": "FileDataID",
+        "target": "FileData",
+        "target_field": "ID"
+      }
+    ],
+    "MovieVariation": [
+      {
+        "field": "MovieID",
+        "target": "Movie",
+        "target_field": "ID"
+      },
+      {
+        "field": "FileDataID",
+        "target": "FileData",
+        "target_field": "ID"
+      }
+    ],
+    "NPCSounds": [
+      {
+        "field": "SoundID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      }
+    ],
+    "NameGen": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      }
+    ],
+    "ObjectEffect": [
+      {
+        "field": "ObjectEffectGroupID",
+        "target": "ObjectEffectGroup",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectRecID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "ObjectEffectModifierID",
+        "target": "ObjectEffectModifier",
+        "target_field": "ID"
+      }
+    ],
+    "ObjectEffectPackageElem": [
+      {
+        "field": "ObjectEffectPackageID",
+        "target": "ObjectEffectPackage",
+        "target_field": "ID"
+      },
+      {
+        "field": "ObjectEffectGroupID",
+        "target": "ObjectEffectGroup",
+        "target_field": "ID"
+      }
+    ],
+    "OverrideSpellData": [
+      {
+        "field": "Spells",
+        "target": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "PVPDifficulty": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "Resistances": [
+      {
+        "field": "FizzleSoundID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      }
+    ],
+    "ScreenEffect": [
+      {
+        "field": "LightParamsID",
+        "target": "LightParams",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAmbienceID",
+        "target": "SoundAmbience",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusicID",
+        "target": "ZoneMusic",
+        "target_field": "ID"
+      }
+    ],
+    "SheatheSoundLookups": [
+      {
+        "field": "ClassID",
+        "target": "ItemSubClass",
+        "target_field": "ClassID"
+      },
+      {
+        "field": "SubclassID",
+        "target": "ItemSubClass",
+        "target_field": "SubClassID"
+      },
+      {
+        "field": "Material",
+        "target": "Material",
+        "target_field": "ID"
+      }
+    ],
+    "SkillLine": [
+      {
+        "field": "CategoryID",
+        "target": "SkillLineCategory",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      }
+    ],
+    "SkillLineAbility": [
+      {
+        "field": "SkillLine",
+        "target": "SkillLine",
+        "target_field": "ID"
+      },
+      {
+        "field": "Spell",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "SupercededBySpell",
+        "target": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SkillRaceClassInfo": [
+      {
+        "field": "SkillID",
+        "target": "SkillLine",
+        "target_field": "ID"
+      },
+      {
+        "field": "SkillTierID",
+        "target": "SkillTiers",
+        "target_field": "ID"
+      }
+    ],
+    "SoundAmbience": [
+      {
+        "field": "AmbienceID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      }
+    ],
+    "SoundEmitters": [
+      {
+        "field": "SoundEntryAdvancedID",
+        "target": "SoundEntriesAdvanced",
+        "target_field": "ID"
+      },
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "SoundEntries": [
+      {
+        "field": "SoundEntriesAdvancedID",
+        "target": "SoundEntriesAdvanced",
+        "target_field": "ID"
+      }
+    ],
+    "SoundEntriesAdvanced": [
+      {
+        "field": "SoundEntryID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "SoundFilterElem": [
+      {
+        "field": "SoundFilterID",
+        "target": "SoundFilter",
+        "target_field": "ID"
+      }
+    ],
+    "SoundWaterType": [
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "Spell": [
+      {
+        "field": "Category",
+        "target": "SpellCategory",
+        "target_field": "ID"
+      },
+      {
+        "field": "DispelType",
+        "target": "SpellDispelType",
+        "target_field": "ID"
+      },
+      {
+        "field": "Mechanic",
+        "target": "SpellMechanic",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiresSpellFocus",
+        "target": "SpellFocusObject",
+        "target_field": "ID"
+      },
+      {
+        "field": "CastingTimeIndex",
+        "target": "SpellCastTimes",
+        "target_field": "ID"
+      },
+      {
+        "field": "DurationIndex",
+        "target": "SpellDuration",
+        "target_field": "ID"
+      },
+      {
+        "field": "Reagent",
+        "target": "Item",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectMechanic",
+        "target": "SpellMechanic",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectRadiusIndex",
+        "target": "SpellRadius",
+        "target_field": "ID"
+      },
+      {
+        "field": "EffectTriggerSpell",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellVisualID",
+        "target": "SpellVisual",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellIconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      },
+      {
+        "field": "ActiveIconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      },
+      {
+        "field": "MinFactionID",
+        "target": "Faction",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredTotemCategoryID",
+        "target": "TotemCategory",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredAreasID",
+        "target": "AreaGroup",
+        "target_field": "ID"
+      },
+      {
+        "field": "RuneCostID",
+        "target": "SpellRuneCost",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellMissileID",
+        "target": "SpellMissile",
+        "target_field": "ID"
+      },
+      {
+        "field": "PowerDisplayID",
+        "target": "PowerDisplay",
+        "target_field": "ID"
+      },
+      {
+        "field": "DescriptionVariablesID",
+        "target": "SpellDescriptionVariables",
+        "target_field": "ID"
+      }
+    ],
+    "SpellDifficulty": [
+      {
+        "field": "DifficultySpellID",
+        "target": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellItemEnchantment": [
+      {
+        "field": "EffectArg",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "ItemVisual",
+        "target": "ItemVisuals",
+        "target_field": "ID"
+      },
+      {
+        "field": "Condition_ID",
+        "target": "SpellItemEnchantmentCondition",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredSkillID",
+        "target": "SkillLine",
+        "target_field": "ID"
+      }
+    ],
+    "SpellShapeshiftForm": [
+      {
+        "field": "CreatureType",
+        "target": "CreatureType",
+        "target_field": "ID"
+      },
+      {
+        "field": "AttackIconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      },
+      {
+        "field": "CreatureDisplayID",
+        "target": "CreatureDisplayInfo",
+        "target_field": "ID"
+      },
+      {
+        "field": "PresetSpellID",
+        "target": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "SpellVisual": [
+      {
+        "field": "PrecastKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "CastKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "ImpactKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "StateKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "StateDoneKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "ChannelKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "AnimEventSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "CasterImpactKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "TargetImpactKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "MissileTargetingKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "InstantAreaKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "ImpactAreaKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "PersistentAreaKit",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      }
+    ],
+    "SpellVisualKit": [
+      {
+        "field": "StartAnimID",
+        "target": "AnimationData",
+        "target_field": "ID"
+      },
+      {
+        "field": "AnimID",
+        "target": "AnimationData",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "ShakeID",
+        "target": "SpellEffectCameraShakes",
+        "target_field": "ID"
+      }
+    ],
+    "SpellVisualKitModelAttach": [
+      {
+        "field": "ParentSpellVisualKitID",
+        "target": "SpellVisualKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellVisualEffectNameID",
+        "target": "SpellVisualEffectName",
+        "target_field": "ID"
+      }
+    ],
+    "Stationery": [
+      {
+        "field": "ItemID",
+        "target": "Item",
+        "target_field": "ID"
+      }
+    ],
+    "SummonProperties": [
+      {
+        "field": "Faction",
+        "target": "FactionTemplate",
+        "target_field": "ID"
+      }
+    ],
+    "Talent": [
+      {
+        "field": "TabID",
+        "target": "TalentTab",
+        "target_field": "ID"
+      },
+      {
+        "field": "SpellRank",
+        "target": "Spell",
+        "target_field": "ID"
+      },
+      {
+        "field": "PrereqTalent",
+        "target": "Talent",
+        "target_field": "ID"
+      },
+      {
+        "field": "RequiredSpellID",
+        "target": "Spell",
+        "target_field": "ID"
+      }
+    ],
+    "TalentTab": [
+      {
+        "field": "SpellIconID",
+        "target": "SpellIcon",
+        "target_field": "ID"
+      }
+    ],
+    "TaxiNodes": [
+      {
+        "field": "ContinentID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "MountCreatureID",
+        "target": "Creature",
+        "target_field": "ID"
+      }
+    ],
+    "TaxiPath": [
+      {
+        "field": "FromTaxiNode",
+        "target": "TaxiNodes",
+        "target_field": "ID"
+      },
+      {
+        "field": "ToTaxiNode",
+        "target": "TaxiNodes",
+        "target_field": "ID"
+      }
+    ],
+    "TaxiPathNode": [
+      {
+        "field": "PathID",
+        "target": "TaxiPath",
+        "target_field": "ID"
+      },
+      {
+        "field": "ContinentID",
+        "target": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "TerrainType": [
+      {
+        "field": "SoundID",
+        "target": "TerrainTypeSounds",
+        "target_field": "ID"
+      }
+    ],
+    "TransportRotation": [
+      {
+        "field": "GameObjectsID",
+        "target": "GameObjects",
+        "target_field": "ID"
+      }
+    ],
+    "UISoundLookups": [
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "Vehicle": [
+      {
+        "field": "SeatID",
+        "target": "VehicleSeat",
+        "target_field": "ID"
+      },
+      {
+        "field": "VehicleUIIndicatorID",
+        "target": "VehicleUIIndicator",
+        "target_field": "ID"
+      },
+      {
+        "field": "PowerDisplayID",
+        "target": "PowerDisplay",
+        "target_field": "ID"
+      }
+    ],
+    "VehicleSeat": [
+      {
+        "field": "EnterUISoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "VehicleUIIndSeat": [
+      {
+        "field": "VehicleUIIndicatorID",
+        "target": "VehicleUIIndicator",
+        "target_field": "ID"
+      }
+    ],
+    "VocalUISounds": [
+      {
+        "field": "RaceID",
+        "target": "ChrRaces",
+        "target_field": "ID"
+      },
+      {
+        "field": "NormalSoundID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      },
+      {
+        "field": "PissedSoundID",
+        "target": "SoundKit",
+        "target_field": "ID"
+      }
+    ],
+    "WMOAreaTable": [
+      {
+        "field": "SoundProviderPref",
+        "target": "SoundProviderPreferences",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPrefUnderwater",
+        "target": "SoundProviderPreferences",
+        "target_field": "ID"
+      },
+      {
+        "field": "AmbienceID",
+        "target": "SoundAmbience",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusic",
+        "target": "ZoneMusic",
+        "target_field": "ID"
+      },
+      {
+        "field": "IntroSound",
+        "target": "ZoneIntroMusicTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaTableID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      }
+    ],
+    "WeaponImpactSounds": [
+      {
+        "field": "ImpactSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      },
+      {
+        "field": "CritImpactSoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "WeaponSwingSounds2": [
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "Weather": [
+      {
+        "field": "AmbienceID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "WorldChunkSounds": [
+      {
+        "field": "ZoneMusicID",
+        "target": "ZoneMusic",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAmbienceID",
+        "target": "SoundAmbience",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPreferencesID",
+        "target": "SoundProviderPreferences",
+        "target_field": "ID"
+      }
+    ],
+    "WorldMapArea": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "DisplayMapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "ParentWorldMapID",
+        "target": "WorldMapArea",
+        "target_field": "ID"
+      }
+    ],
+    "WorldMapContinent": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "WorldMapID",
+        "target": "WorldMapArea",
+        "target_field": "ID"
+      }
+    ],
+    "WorldMapOverlay": [
+      {
+        "field": "MapAreaID",
+        "target": "WorldMapArea",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      }
+    ],
+    "WorldMapTransforms": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "NewMapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "NewDungeonMapID",
+        "target": "DungeonMap",
+        "target_field": "ID"
+      }
+    ],
+    "WorldSafeLocs": [
+      {
+        "field": "Continent",
+        "target": "Map",
+        "target_field": "ID"
+      }
+    ],
+    "WorldStateUI": [
+      {
+        "field": "MapID",
+        "target": "Map",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      }
+    ],
+    "WorldStateZoneSounds": [
+      {
+        "field": "WorldStateID",
+        "target": "WorldState",
+        "target_field": "ID"
+      },
+      {
+        "field": "AreaID",
+        "target": "AreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "WMOAreaID",
+        "target": "WMOAreaTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneIntroMusicID",
+        "target": "ZoneIntroMusicTable",
+        "target_field": "ID"
+      },
+      {
+        "field": "ZoneMusicID",
+        "target": "ZoneMusic",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundAmbienceID",
+        "target": "SoundAmbience",
+        "target_field": "ID"
+      },
+      {
+        "field": "SoundProviderPreferencesID",
+        "target": "SoundProviderPreferences",
+        "target_field": "ID"
+      }
+    ],
+    "ZoneIntroMusicTable": [
+      {
+        "field": "SoundID",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ],
+    "ZoneMusic": [
+      {
+        "field": "Sounds",
+        "target": "SoundEntries",
+        "target_field": "ID"
+      }
+    ]
+  }
+}

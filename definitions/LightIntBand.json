@@ -1,0 +1,130 @@
+{
+  "columnDefinitions": {
+    "Data": {
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "Num": {
+      "type": "int",
+      "verified": true
+    },
+    "Time": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 15595,
+            "expansion": 4,
+            "major": 3,
+            "minor": 4
+          },
+          "minBuild": {
+            "build": 11792,
+            "expansion": 4,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 12340,
+            "expansion": 3,
+            "major": 3,
+            "minor": 5
+          },
+          "minBuild": {
+            "build": 8303,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 8606,
+            "expansion": 2,
+            "major": 4,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 5610,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 6141,
+            "expansion": 1,
+            "major": 12,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 4937,
+            "expansion": 1,
+            "major": 9,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 11792,
+          "expansion": 4,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "comment": "unknown_flag=1",
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Num",
+          "size": 32
+        },
+        {
+          "arrLength": 16,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Time",
+          "size": 32
+        },
+        {
+          "arrLength": 16,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Data",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

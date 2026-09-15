@@ -1,0 +1,3 @@
+[submodule "vendor/WoWDBDefs"]
+	path = vendor/WoWDBDefs
+	url = https://github.com/wowdev/WoWDBDefs.git

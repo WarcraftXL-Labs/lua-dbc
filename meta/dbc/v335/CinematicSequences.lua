@@ -1,0 +1,92 @@
+---@meta
+-- Generated LuaLS annotations for CinematicSequences (Build 3.3.5.12340 [v335]). Do not edit.
+
+---Row representation of CinematicSequences in build 3.3.5.12340.
+---@class dbc.row.v335.CinematicSequences : RowProxy
+---@field ID integer
+---@field SoundID integer
+---@field Camera integer[]
+
+local row = {}
+
+---Gets the value of field 'ID'.
+---@return integer value
+function row:GetID() end
+
+---Sets the value of field 'ID'.
+---@param value integer
+---@return dbc.row.v335.CinematicSequences self
+function row:SetID(value) end
+
+---Gets the value of field 'SoundID'.
+---@return integer value
+function row:GetSoundID() end
+
+---Sets the value of field 'SoundID'.
+---@param value integer
+---@return dbc.row.v335.CinematicSequences self
+function row:SetSoundID(value) end
+
+---Navigates foreign relationship to 'SoundEntries' via 'SoundID'.
+---@return dbc.row.v335.SoundEntries|nil
+function row:GetSound() end
+
+---Creates a related 'SoundEntries' row and automatically links 'SoundID'.
+---@param data? table
+---@return dbc.row.v335.SoundEntries
+function row:CreateRelated(data) end
+
+---Gets the value of field 'Camera'.
+---@return integer[] value
+function row:GetCamera() end
+
+---Sets the value of field 'Camera'.
+---@param value integer[]
+---@return dbc.row.v335.CinematicSequences self
+function row:SetCamera(value) end
+
+---Gets element at 1-based index in 'Camera'.
+---@param index integer
+---@return integer value
+function row:GetCameraItem(index) end
+
+---Navigates foreign relationship to 'CinematicCamera' via 'Camera'.
+---@return dbc.row.v335.CinematicCamera|nil
+function row:GetCamera() end
+
+---Creates a related 'CinematicCamera' row and automatically links 'Camera'.
+---@param data? table
+---@return dbc.row.v335.CinematicCamera
+function row:CreateRelated(data) end
+
+---Table container for CinematicSequences (Build 3.3.5.12340).
+---@class dbc.Table.v335.CinematicSequences : DbcTable
+---@field [integer] dbc.row.v335.CinematicSequences
+local tbl = {}
+
+---Creates and appends a new row to the table.
+---@param id? integer Primary key
+---@param data? table Optional initial values
+---@return dbc.row.v335.CinematicSequences
+function tbl:Create(id, data) end
+
+---Finds a row by primary key (nil if not found).
+---@param id integer
+---@return dbc.row.v335.CinematicSequences|nil
+function tbl:FindById(id) end
+
+---Gets a row by primary key (throws if not found).
+---@param id integer
+---@return dbc.row.v335.CinematicSequences
+function tbl:GetRowById(id) end
+
+---Creates a LINQ query over rows in this table.
+---@return dbc.Query<dbc.row.v335.CinematicSequences>
+function tbl:Query() end
+
+---Returns all rows related to a foreign ID via the relationship block.
+---@param foreign_id integer
+---@return dbc.row.v335.CinematicSequences[]
+function tbl:GetByRelation(foreign_id) end
+
+return {}

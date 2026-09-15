@@ -1,0 +1,491 @@
+{
+  "columnDefinitions": {
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "ReplacementElement": {
+      "foreignColumn": "ID",
+      "foreignTable": "UiTextureAtlasElement",
+      "type": "int",
+      "verified": false
+    },
+    "UiTextureAtlasElement": {
+      "foreignColumn": "ID",
+      "foreignTable": "UiTextureAtlasElement",
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 38312,
+          "expansion": 9,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 38394,
+          "expansion": 9,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 38511,
+          "expansion": 9,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 38524,
+          "expansion": 9,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 38549,
+          "expansion": 9,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 38600,
+          "expansion": 9,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 37503,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37623,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37705,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37774,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37844,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37862,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37864,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37893,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37899,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 37988,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 38134,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 38556,
+          "expansion": 9,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 35854,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 35938,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 35978,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36037,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36086,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36165,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36206,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36267,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36294,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36401,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36512,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36532,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36599,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36639,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36665,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36671,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36710,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36734,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36751,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36753,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36839,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 36949,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 37106,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 37130,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 37142,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 37176,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 37415,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 37474,
+          "expansion": 9,
+          "major": 0,
+          "minor": 2
+        },
+        {
+          "build": 35679,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35707,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35755,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35789,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35828,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35853,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35897,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35917,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35944,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35989,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36021,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36036,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36074,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36131,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36163,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36200,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36216,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36228,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36230,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36247,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36272,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36286,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36322,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36372,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36492,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 36577,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "UiTextureAtlasElement",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "ReplacementElement",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "6B5B752D"
+      ]
+    }
+  ]
+}

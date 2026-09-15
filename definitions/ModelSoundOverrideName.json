@@ -1,0 +1,706 @@
+{
+  "columnDefinitions": {
+    "Field_10_2_5_52206_000": {
+      "type": "string",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 55112,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 55244,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 55348,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 55391,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 55515,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 55563,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 55646,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 55917,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 56488,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        },
+        {
+          "build": 56626,
+          "expansion": 1,
+          "major": 15,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_10_2_5_52206_000",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "C3F46237"
+      ]
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 54171,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54253,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54295,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54366,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54449,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54543,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54577,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54601,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54604,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54630,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54673,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54717,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54736,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54762,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54847,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54904,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54988,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55142,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55165,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55202,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55261,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55461,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55664,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 53810,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53840,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53877,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53913,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53989,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54070,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54205,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54358,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54499,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 52206,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52330,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52432,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52554,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52646,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52902,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52968,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52983,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53007,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53040,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53104,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53162,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53212,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53262,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53441,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53584,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53627,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 53750,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 53863,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 53973,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54027,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54137,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54217,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54339,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54377,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54427,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54481,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54500,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54501,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54525,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54558,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54647,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54670,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54737,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54851,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54901,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 54986,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 55006,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 55056,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 55141,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 55262,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 55460,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 55613,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 55639,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 56014,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 56420,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 56489,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 56713,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 57244,
+          "expansion": 4,
+          "major": 4,
+          "minor": 0
+        },
+        {
+          "build": 53941,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 54029,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 54067,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 54092,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 54262,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 54332,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 54649,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 54902,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 55002,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 55140,
+          "expansion": 1,
+          "major": 15,
+          "minor": 2
+        },
+        {
+          "build": 53009,
+          "expansion": 1,
+          "major": 15,
+          "minor": 1
+        },
+        {
+          "build": 53181,
+          "expansion": 1,
+          "major": 15,
+          "minor": 1
+        },
+        {
+          "build": 53247,
+          "expansion": 1,
+          "major": 15,
+          "minor": 1
+        },
+        {
+          "build": 53495,
+          "expansion": 1,
+          "major": 15,
+          "minor": 1
+        },
+        {
+          "build": 53623,
+          "expansion": 1,
+          "major": 15,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_10_2_5_52206_000",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "0F422F8A"
+      ]
+    }
+  ]
+}

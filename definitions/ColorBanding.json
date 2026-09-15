@@ -1,0 +1,100 @@
+{
+  "columnDefinitions": {
+    "Field_9_0_1_34490_000": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_9_0_1_34490_001": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_9_0_1_34490_002": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_9_0_1_34490_003": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_9_0_1_34490_004": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 34490,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_34490_000",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_34490_001",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_34490_002",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_34490_003",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_34490_004",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "6F6A52D9"
+      ]
+    }
+  ]
+}

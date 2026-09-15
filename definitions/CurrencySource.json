@@ -1,0 +1,50 @@
+{
+  "columnDefinitions": {
+    "Description": {
+      "type": "string",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 43254,
+          "expansion": 9,
+          "major": 2,
+          "minor": 5
+        }
+      ],
+      "comment": "manual definition",
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Description",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "61CBE63B",
+        "AE56CEEB"
+      ]
+    }
+  ]
+}

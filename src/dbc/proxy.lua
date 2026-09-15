@@ -1,231 +1,218 @@
 --[[
     proxy.lua
-    Provides the RowProxy class for high-level, fluent, and cached dynamic reflection.
-    Implements PascalCase method calls (Get..., Set..., Has..., Add..., Remove...),
-    localized strings (loc), arrays, foreign key relation resolution, and cascading row creation.
+    Fluent RowProxy wrapper around a single DBC record.
+
+    Compiled accessors (Get<Field>, Set<Field>, Get<Relation>, Has<Flag>, ...)
+    are memoized on the owning schema object. Since schemas are unique per
+    (table name, build), this is safe for multi-build usage and eliminates a
+    class of bugs where the same schema name across two builds would share
+    stale offsets.
+
+    Relation resolution prefers explicit `foreign_table` metadata from the
+    schema, then the legacy name-based heuristics, then the relationship_map
+    embedded in the binary (WDB5+, WDC*) when available.
 ]]
 
 local ffi = require("ffi")
 local bit = require("bit")
 
--- Localized imports for performance
-local cast = ffi.cast
-local copy = ffi.copy
-local string_sub = string.sub
-local string_find = string.find
+local load = require("dbc._loader")
+local util = load("_util")
+
+local file_mod      = load("file")
+local relations_mod = load("relations")
+
+local cast       = ffi.cast
 local string_match = string.match
-local string_lower = string.lower
-local math_min = math.min
+local math_min   = math.min
 
--- Resolve file module dependencies
-local function load_module(name)
-    local ok, mod = pcall(require, "dbc." .. name)
-    if ok then return mod end
-    ok, mod = pcall(require, "src.dbc." .. name)
-    if ok then return mod end
-    return require(name)
-end
-
-local file_mod = load_module("file")
-local relations_mod = load_module("relations")
-
-local READ = file_mod.READ
-local WRITE = file_mod.WRITE
-local KIND_WIDTH = file_mod.KIND_WIDTH
-local LOCALE = file_mod.LOCALE
+local READ        = file_mod.READ
+local WRITE       = file_mod.WRITE
+local KIND_WIDTH  = file_mod.KIND_WIDTH
+local LOCALE      = file_mod.LOCALE
 local LOCALE_SLOTS = file_mod.LOCALE_SLOTS or 16
-local Relations = relations_mod
+local Relations   = relations_mod
 
---- Split a 64-bit value into two 32-bit words (low and high) for bitwise logic.
---- @param val number|cdata 64-bit integer
---- @return number low, number high
+-- ---------------------------------------------------------------------------
+-- 64-bit split helper (preallocated buffer)
+-- ---------------------------------------------------------------------------
+
+local u64_buf = ffi.new("uint32_t[2]")
 local function split_u64(val)
-    local c = cast("uint64_t", val)
-    local low = cast("uint32_t", c)
-    local high = cast("uint32_t", c / 0x100000000ULL)
-    return tonumber(low), tonumber(high)
+    cast("uint64_t*", u64_buf)[0] = cast("uint64_t", val)
+    return tonumber(u64_buf[0]), tonumber(u64_buf[1])
 end
 
---- Cache of dynamically compiled methods per schema name.
---- Schema-specific method caching ensures zero reflection overhead after the first call.
-local method_cache = {}
+-- ---------------------------------------------------------------------------
+-- Legacy fallback relations
+-- ---------------------------------------------------------------------------
 
---- Known WoW WotLK relation overrides where field names differ from target tables.
-local SPECIAL_RELATIONS = {
-    CastingTimeIndex = "SpellCastTimes",
-    DurationIndex = "SpellDuration",
-    RangeIndex = "SpellRange",
-    SpellVisual = "SpellVisual",
-    SpellVisualID = "SpellVisual",
+-- Used only when a schema field has no `foreign_table` metadata AND the name
+-- heuristic cannot recover a plausible target. This mostly matters for
+-- hand-written schemas or older DBDs that predate columnDefinitions.foreignTable.
+local LEGACY_RELATIONS = {
+    CastingTimeIndex         = "SpellCastTimes",
+    DurationIndex            = "SpellDuration",
+    RangeIndex               = "SpellRange",
+    SpellVisual              = "SpellVisual",
+    SpellVisualID            = "SpellVisual",
     SpellDescriptionVariableID = "SpellDescriptionVariables",
-    AreaID = "AreaTable",
-    AreaTableID = "AreaTable",
-    ModelID = "CreatureModelData",
-    DisplayID = "CreatureDisplayInfo",
-    CreatureDisplayInfoID = "CreatureDisplayInfo",
-    TotemCategory = "TotemCategory",
-    ItemClass = "ItemClass",
-    ItemSubClass = "ItemSubClass",
+    AreaID                   = "AreaTable",
+    AreaTableID              = "AreaTable",
+    ModelID                  = "CreatureModelData",
+    DisplayID                = "CreatureDisplayInfo",
+    CreatureDisplayInfoID    = "CreatureDisplayInfo",
+    TotemCategory            = "TotemCategory",
+    ItemClass                = "ItemClass",
+    ItemSubClass             = "ItemSubClass",
 }
 
---- @class RowProxy
---- Represents a fluent, high-level wrapper around a single DBC record.
---- @field _file DbcFile The parent DbcFile instance.
---- @field _table table|nil The optional parent DbcTable instance.
---- @field _row integer 1-based index of the row inside the DBC memory block.
---- @field _schema table The schema definition attached to the DBC file.
+-- ---------------------------------------------------------------------------
+-- Helpers
+-- ---------------------------------------------------------------------------
+
+---Resolves the target table and target column for a FK field name.
+---Prefers schema metadata, then legacy map, then name heuristic.
+---@param self table RowProxy
+---@param field_name string
+---@return string|nil target_table
+---@return string target_column
+local function resolve_target(self, field_name)
+    local schema = self:GetSchema()
+    local f = schema and schema.by_name and schema.by_name[field_name]
+    if f and f.foreign_table then
+        return f.foreign_table, f.foreign_column or "ID"
+    end
+
+    local legacy = LEGACY_RELATIONS[field_name]
+    if legacy then return legacy, "ID" end
+
+    local target = string_match(field_name, "^(.-)ID$")
+        or string_match(field_name, "^(.-)_ID$")
+        or field_name
+    return target, "ID"
+end
+
+---Returns the build this row is bound to, if any.
+---@param self table
+---@return string|nil
+local function row_build(self)
+    if not self._file then return nil end
+    if self._file._build then return self._file._build end
+    local ws = self._file._workspace
+    if ws and ws.GetBuild then return ws:GetBuild() end
+    return nil
+end
+
+---Returns the workspace this row belongs to, if any.
+---@param self table
+---@return table|nil
+local function row_workspace(self)
+    if self._table and self._table._workspace then
+        return self._table._workspace
+    end
+    if self._file and self._file._workspace then
+        return self._file._workspace
+    end
+    return nil
+end
+
+-- ---------------------------------------------------------------------------
+-- RowProxy
+-- ---------------------------------------------------------------------------
+
+---@class RowProxy
 local RowProxy = {}
 RowProxy.__index = RowProxy
 
---- Creates a new RowProxy instance for a specific row in a DBC file.
---- @param file DbcFile The parent DBC file.
---- @param row integer 1-based row index.
---- @param table_ref table|nil Optional reference to the parent DbcTable.
---- @return RowProxy proxy The initialized row proxy.
+---@param file table Parent DbcFile driver.
+---@param row integer 1-based row index.
+---@param table_ref table|nil Parent DbcTable.
+---@return RowProxy
 function RowProxy.new(file, row, table_ref)
     local self = setmetatable({}, RowProxy)
     self._file = file
     self._table = table_ref
     self._row = row
-    self._schema = file.schema
+    self._schema = file and file.schema
     return self
 end
 
---- Returns the raw FFI memory address for an offset within this row.
---- @param offset number Byte offset within the row.
---- @return cdata pointer Pointer to the requested memory location.
-function RowProxy:GetAddress(offset)
-    return self._file:GetAddress(self._row, offset)
-end
-
---- Returns the 1-based index of this row within the DBC file.
---- @return integer row The 1-based row index.
-function RowProxy:GetIndex()
-    return self._row
-end
-
---- Returns the parent DbcFile instance.
---- @return DbcFile file
-function RowProxy:GetFile()
-    return self._file
-end
-
---- Returns the parent DbcTable instance, if attached.
---- @return table|nil table
-function RowProxy:GetTable()
-    return self._table
-end
-
---- Returns the attached schema definition.
---- @return table schema
-function RowProxy:GetSchema()
-    return self._schema or (self._file and self._file.schema)
-end
-
---- Checks if this row proxy still points to a valid row in the DBC file.
---- @return boolean is_valid
+function RowProxy:GetAddress(offset) return self._file:GetAddress(self._row, offset) end
+function RowProxy:GetIndex()         return self._row end
+function RowProxy:GetFile()          return self._file end
+function RowProxy:GetTable()         return self._table end
+function RowProxy:GetSchema()        return self._schema or (self._file and self._file.schema) end
 function RowProxy:IsValid()
     return self._file ~= nil and self._row >= 1 and self._row <= self._file.record_count
 end
 
---------------------------------------------------------------------------------
--- Primary Key Operations
---------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+-- Primary key
+-- ---------------------------------------------------------------------------
 
---- Reads the primary key (ID) of this row.
---- @return integer id The primary key ID value.
 function RowProxy:GetID()
+    if self._id_override then return self._id_override end
+    if self._file and self._file.GetRowId then
+        return self._file:GetRowId(self._row)
+    end
     local offset = self._file:GetIdOffset()
     return READ.u32(self:GetAddress(offset))
 end
 
---- Writes a new primary key (ID) to this row and updates any parent table index.
---- @param id integer The new primary key value.
---- @return RowProxy self For fluent chaining.
 function RowProxy:SetID(id)
     local offset = self._file:GetIdOffset()
-    local old_id = READ.u32(self:GetAddress(offset))
+    local old_id = self:GetID()
     WRITE.u32(self:GetAddress(offset), id)
-    
+
     if self._table and self._table._id_map then
         self._table._id_map[old_id] = nil
         self._table._id_map[id] = self._row
     end
-    
+
     self._file.dirty = true
     return self
 end
 
---------------------------------------------------------------------------------
--- Localized String Handling (loc)
---------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+-- Localized strings
+-- ---------------------------------------------------------------------------
 
---- Reads a localized string from a field.
---- @param f table Field definition.
---- @param locale string|integer|nil Optional locale string (e.g. "frFR") or slot index (0..15).
---- @return string text
 function RowProxy:_ReadLoc(f, locale)
     local base_addr = self:GetAddress(f.offset)
-    
+
     if locale ~= nil then
-        local slot
-        if type(locale) == "number" then
-            slot = locale
-        else
-            slot = LOCALE[locale]
-        end
+        local slot = type(locale) == "number" and locale or LOCALE[locale]
         if not slot or slot < 0 or slot >= LOCALE_SLOTS then
             error(string.format("Invalid locale identifier: %s", tostring(locale)))
         end
+        return self._file:GetString(READ.u32(base_addr + slot * 4))
+    end
+
+    for slot = 0, LOCALE_SLOTS - 1 do
         local str_offset = READ.u32(base_addr + slot * 4)
-        return self._file:GetString(str_offset)
-    end
-
-    -- Default lookup: check slot 0 (enGB) first
-    local default_offset = READ.u32(base_addr)
-    if default_offset ~= 0 then
-        local text = self._file:GetString(default_offset)
-        if text ~= "" then return text end
-    end
-
-    -- Fallback: check other locale slots
-    for slot = 1, LOCALE_SLOTS - 1 do
-        local offset = READ.u32(base_addr + slot * 4)
-        if offset ~= 0 then
-            local text = self._file:GetString(offset)
-            if text ~= "" then return text end
+        if str_offset ~= 0 then
+            local text = self._file:GetString(str_offset)
+            if text and text ~= "" then return text end
         end
     end
-
     return ""
 end
 
---- Writes a localized string into a field.
---- @param f table Field definition.
---- @param value string The text to store.
---- @param locale string|integer|nil Optional locale string or slot index. If nil, sets for all locales.
-function RowProxy:_WriteLoc(f, value, locale)
-    local str_val = tostring(value or "")
-    local str_offset = self._file:InternString(str_val)
+function RowProxy:_WriteLoc(f, text, locale)
     local base_addr = self:GetAddress(f.offset)
     local flags_addr = base_addr + LOCALE_SLOTS * 4
+    local str_offset = self._file:InternString(text or "")
 
     if locale ~= nil then
-        local slot
-        if type(locale) == "number" then
-            slot = locale
-        else
-            slot = LOCALE[locale]
-        end
+        local slot = type(locale) == "number" and locale or LOCALE[locale]
         if not slot or slot < 0 or slot >= LOCALE_SLOTS then
             error(string.format("Invalid locale identifier: %s", tostring(locale)))
         end
         WRITE.u32(base_addr + slot * 4, str_offset)
         local cur_flags = READ.u32(flags_addr)
-        local slot_mask = bit.lshift(1, slot)
-        WRITE.u32(flags_addr, bit.bor(cur_flags, slot_mask))
+        WRITE.u32(flags_addr, bit.bor(cur_flags, bit.lshift(1, slot)))
     else
-        -- Populate all 16 slots with the string
         for slot = 0, LOCALE_SLOTS - 1 do
             WRITE.u32(base_addr + slot * 4, str_offset)
         end
@@ -235,164 +222,134 @@ function RowProxy:_WriteLoc(f, value, locale)
     self._file.dirty = true
 end
 
---------------------------------------------------------------------------------
--- Array Field Handling (count > 1)
---------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+-- Arrays
+-- ---------------------------------------------------------------------------
 
---- Reads an array element or the full table of elements.
---- @param f table Field definition.
---- @param index integer|nil 1-based element index. If nil, returns full array table.
---- @return any value_or_table
 function RowProxy:_ReadArray(f, index)
-    local width = KIND_WIDTH[f.kind] or 4
-    local read_fn = READ[f.kind] or READ.u32
-    local is_str = (f.kind == "str")
-    local is_bool = (f.kind == "bool")
+    local width    = KIND_WIDTH[f.kind] or 4
+    local read_fn  = READ[f.kind] or READ.u32
+    local is_str   = (f.kind == "str")
+    local is_bool  = (f.kind == "bool")
 
     if index ~= nil then
         if index < 1 or index > f.count then
-            error(string.format("Index %d out of range for array %q (1..%d)", index, f.name, f.count))
+            error(string.format("Index %d out of range for array %q (1..%d)",
+                index, f.name, f.count))
         end
         local addr = self:GetAddress(f.offset + (index - 1) * width)
-        if is_str then
-            return self._file:GetString(READ.u32(addr))
-        elseif is_bool then
-            return READ.u32(addr) ~= 0
-        else
-            return read_fn(addr)
-        end
+        if is_str then return self._file:GetString(READ.u32(addr))
+        elseif is_bool then return READ.u32(addr) ~= 0
+        else return read_fn(addr) end
     end
 
-    -- Return all elements as a 1-based table
     local result = {}
     for i = 1, f.count do
         local addr = self:GetAddress(f.offset + (i - 1) * width)
-        if is_str then
-            result[i] = self._file:GetString(READ.u32(addr))
-        elseif is_bool then
-            result[i] = (READ.u32(addr) ~= 0)
-        else
-            result[i] = read_fn(addr)
-        end
+        if is_str then result[i] = self._file:GetString(READ.u32(addr))
+        elseif is_bool then result[i] = (READ.u32(addr) ~= 0)
+        else result[i] = read_fn(addr) end
     end
     return result
 end
 
---- Writes to an array element or populates multiple elements from a table.
---- @param f table Field definition.
---- @param value any Value to set or table of values.
---- @param index integer|nil 1-based element index.
 function RowProxy:_WriteArray(f, value, index)
-    local width = KIND_WIDTH[f.kind] or 4
+    local width    = KIND_WIDTH[f.kind] or 4
     local write_fn = WRITE[f.kind] or WRITE.u32
-    local is_str = (f.kind == "str")
-    local is_bool = (f.kind == "bool")
+    local is_str   = (f.kind == "str")
+    local is_bool  = (f.kind == "bool")
 
     if index ~= nil then
         if index < 1 or index > f.count then
-            error(string.format("Index %d out of range for array %q (1..%d)", index, f.name, f.count))
+            error(string.format("Index %d out of range for array %q (1..%d)",
+                index, f.name, f.count))
         end
         local addr = self:GetAddress(f.offset + (index - 1) * width)
-        if is_str then
-            local off = self._file:InternString(tostring(value or ""))
-            WRITE.u32(addr, off)
-        elseif is_bool then
-            local num = (value and value ~= 0) and 1 or 0
-            WRITE.u32(addr, num)
-        else
-            write_fn(addr, value)
-        end
+        if is_str then WRITE.u32(addr, self._file:InternString(tostring(value or "")))
+        elseif is_bool then WRITE.u32(addr, (value and value ~= 0) and 1 or 0)
+        else write_fn(addr, value) end
     elseif type(value) == "table" then
         local max_items = math_min(#value, f.count)
         for i = 1, max_items do
             local addr = self:GetAddress(f.offset + (i - 1) * width)
-            if is_str then
-                local off = self._file:InternString(tostring(value[i] or ""))
-                WRITE.u32(addr, off)
-            elseif is_bool then
-                local num = (value[i] and value[i] ~= 0) and 1 or 0
-                WRITE.u32(addr, num)
-            else
-                write_fn(addr, value[i])
-            end
+            if is_str then WRITE.u32(addr, self._file:InternString(tostring(value[i] or "")))
+            elseif is_bool then WRITE.u32(addr, (value[i] and value[i] ~= 0) and 1 or 0)
+            else write_fn(addr, value[i]) end
         end
     else
         error(string.format("Expected table or specify index for array field %q", f.name))
     end
-
     self._file.dirty = true
 end
 
---------------------------------------------------------------------------------
--- Bitwise Flags Operations
---------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+-- Flags
+-- ---------------------------------------------------------------------------
 
---- Checks if a flag bitmask is set on this row.
---- @param f table Field definition.
---- @param flag number|cdata Bitmask flag to check.
---- @return boolean has_flag
 function RowProxy:_HasFlag(f, flag)
     local addr = self:GetAddress(f.offset)
+    local num_flag = tonumber(flag) or 0
+    if num_flag == 0 then return false end
+
     if f.kind == "u64" then
-        local val_low = READ.u32(addr)
+        local val_low  = READ.u32(addr)
         local val_high = READ.u32(addr + 4)
         local flag_low, flag_high = split_u64(flag)
-        return (bit.band(val_low, flag_low) == flag_low) and (bit.band(val_high, flag_high) == flag_high)
+        return (bit.band(val_low, flag_low) == flag_low)
+           and (bit.band(val_high, flag_high) == flag_high)
     else
         local val = READ.u32(addr)
-        local num_flag = tonumber(flag) or 0
         return bit.band(val, num_flag) == num_flag
     end
 end
 
---- Adds a bitmask flag to a field on this row.
---- @param f table Field definition.
---- @param flag number|cdata Bitmask flag to add.
 function RowProxy:_AddFlag(f, flag)
+    local num_flag = tonumber(flag) or 0
+    if num_flag == 0 then return end
+
     local addr = self:GetAddress(f.offset)
     if f.kind == "u64" then
-        local val_low = READ.u32(addr)
+        local val_low  = READ.u32(addr)
         local val_high = READ.u32(addr + 4)
         local flag_low, flag_high = split_u64(flag)
-        WRITE.u32(addr, bit.bor(val_low, flag_low))
+        WRITE.u32(addr,     bit.bor(val_low,  flag_low))
         WRITE.u32(addr + 4, bit.bor(val_high, flag_high))
     else
         local val = READ.u32(addr)
-        local num_flag = tonumber(flag) or 0
         WRITE.u32(addr, bit.bor(val, num_flag))
     end
     self._file.dirty = true
 end
 
---- Removes a bitmask flag from a field on this row.
---- @param f table Field definition.
---- @param flag number|cdata Bitmask flag to remove.
 function RowProxy:_RemoveFlag(f, flag)
+    local num_flag = tonumber(flag) or 0
+    if num_flag == 0 then return end
+
     local addr = self:GetAddress(f.offset)
     if f.kind == "u64" then
-        local val_low = READ.u32(addr)
+        local val_low  = READ.u32(addr)
         local val_high = READ.u32(addr + 4)
         local flag_low, flag_high = split_u64(flag)
-        WRITE.u32(addr, bit.band(val_low, bit.bnot(flag_low)))
+        WRITE.u32(addr,     bit.band(val_low,  bit.bnot(flag_low)))
         WRITE.u32(addr + 4, bit.band(val_high, bit.bnot(flag_high)))
     else
         local val = READ.u32(addr)
-        local num_flag = tonumber(flag) or 0
         WRITE.u32(addr, bit.band(val, bit.bnot(num_flag)))
     end
     self._file.dirty = true
 end
 
---------------------------------------------------------------------------------
--- Generic Field Access
---------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+-- Generic field access (slow path)
+-- ---------------------------------------------------------------------------
 
---- Reads a field value by its schema name.
---- @param name string The name of the field.
---- @param extra any Optional array index or locale identifier.
---- @return any value
 function RowProxy:GetField(name, extra)
     local f = self._file:GetField(name)
+
+    if self._file.ReadField then
+        return self._file:ReadField(self._row, f)
+    end
+
     if f.kind == "loc" then
         return self:_ReadLoc(f, extra)
     elseif f.count > 1 then
@@ -402,168 +359,122 @@ function RowProxy:GetField(name, extra)
     elseif f.kind == "bool" then
         return READ.u32(self:GetAddress(f.offset)) ~= 0
     else
-        local read_fn = READ[f.kind] or READ.u32
-        return read_fn(self:GetAddress(f.offset))
+        return (READ[f.kind] or READ.u32)(self:GetAddress(f.offset))
     end
 end
 
---- Writes a field value by its schema name.
---- @param name string The name of the field.
---- @param value any The value to set.
---- @param extra any Optional array index or locale identifier.
---- @return RowProxy self For fluent chaining.
 function RowProxy:SetField(name, value, extra)
     local f = self._file:GetField(name)
+
     if f.kind == "loc" then
         self:_WriteLoc(f, value, extra)
     elseif f.count > 1 then
         self:_WriteArray(f, value, extra)
     elseif f.kind == "str" then
-        local off = self._file:InternString(tostring(value or ""))
-        WRITE.u32(self:GetAddress(f.offset), off)
+        WRITE.u32(self:GetAddress(f.offset), self._file:InternString(tostring(value or "")))
         self._file.dirty = true
     elseif f.kind == "bool" then
-        local num = (value and value ~= 0) and 1 or 0
-        WRITE.u32(self:GetAddress(f.offset), num)
+        WRITE.u32(self:GetAddress(f.offset), (value and value ~= 0) and 1 or 0)
         self._file.dirty = true
     else
-        local write_fn = WRITE[f.kind] or WRITE.u32
-        write_fn(self:GetAddress(f.offset), value)
+        (WRITE[f.kind] or WRITE.u32)(self:GetAddress(f.offset), value)
         self._file.dirty = true
     end
     return self
 end
 
---------------------------------------------------------------------------------
--- Cloning, Conversion, and Deletion
---------------------------------------------------------------------------------
-
---- Duplicates this row into a new row in the same DBC file.
---- @param new_id integer|nil Optional new ID for the cloned row.
---- @return RowProxy cloned_proxy The newly cloned row proxy.
-function RowProxy:Clone(new_id)
-    if self._table and self._table.CloneRow then
-        return self._table:CloneRow(self._row, new_id)
-    end
-
-    local new_row = self._file:AppendRow()
-    copy(self._file:GetAddress(new_row, 0), self:GetAddress(0), self._file.record_size)
-    local clone = RowProxy.new(self._file, new_row, self._table)
-    
-    if new_id ~= nil then
-        clone:SetID(new_id)
-    end
-    return clone
-end
-
---- Converts this row into a plain Lua table of key-value pairs.
---- @return table data
-function RowProxy:ToTable()
-    local result = {}
-    local schema = self:GetSchema()
-    if not schema then return result end
-
-    for _, f in ipairs(schema.fields) do
-        result[f.name] = self:GetField(f.name)
-    end
-    return result
-end
-
---- Populates multiple fields on this row from a key-value Lua table.
---- @param data table Table of field values.
---- @return RowProxy self For fluent chaining.
-function RowProxy:FromTable(data)
-    for k, v in pairs(data) do
-        local ok, _ = pcall(self.SetField, self, k, v)
-        if not ok then
-            -- Fallback: try PascalCase setter if method exists
+function RowProxy:Populate(values)
+    for k, v in pairs(values) do
+        if self._file.by_name and self._file.by_name[k] then
+            self:SetField(k, v)
+        else
             local setter = self["Set" .. k]
-            if type(setter) == "function" then
-                setter(self, v)
+            if type(setter) == "function" then setter(self, v) end
+        end
+    end
+    return self
+end
+
+-- ---------------------------------------------------------------------------
+-- Relation resolution
+-- ---------------------------------------------------------------------------
+
+---Resolves a foreign key to a row in another table.
+---@param target_table string
+---@param foreign_id integer
+---@param target_column string|nil Defaults to "ID".
+---@return RowProxy|nil
+function RowProxy:ResolveRelation(target_table, foreign_id, target_column)
+    if not foreign_id or foreign_id == 0 then return nil end
+
+    local ws = row_workspace(self)
+    if not ws or not ws.GetTable then return nil end
+
+    local tbl = ws:GetTable(target_table)
+    if not tbl then return nil end
+
+    if target_column and target_column ~= "ID" then
+        return tbl:Query()
+            :Where(function(r) return r:GetField(target_column) == foreign_id end)
+            :FirstOrDefault(nil, nil)
+    end
+    return tbl:FindById(foreign_id)
+end
+
+---Resolves a relation by field name only (e.g. "SpellIconID").
+---@param field_name string
+---@return RowProxy|nil
+function RowProxy:Resolve(field_name)
+    local target_table, target_column = resolve_target(self, field_name)
+    local foreign_id = self:GetField(field_name)
+    if type(foreign_id) == "number" and target_table then
+        return self:ResolveRelation(target_table, foreign_id, target_column)
+    end
+    return nil
+end
+
+---Resolves a relation by target table name or field name.
+---@param target_table_or_field string
+---@return RowProxy|nil
+function RowProxy:GetRelated(target_table_or_field)
+    local schema = self:GetSchema()
+    local schema_name = schema and schema.name
+    local build = row_build(self)
+
+    if schema_name then
+        local rel = Relations.Find(schema_name, target_table_or_field, build)
+        if rel then
+            local foreign_id = self:GetField(rel.field)
+            if type(foreign_id) == "number" then
+                return self:ResolveRelation(rel.target, foreign_id, rel.target_field)
             end
         end
     end
-    return self
-end
 
---------------------------------------------------------------------------------
--- Relation Resolution & Cascading Creation
---------------------------------------------------------------------------------
-
---- Resolves a foreign key relationship to an external DBC row.
---- @param target_table string Name of the target DBC table (e.g. "SpellIcon").
---- @param foreign_id integer The foreign key ID value.
---- @return RowProxy|nil row The referenced row proxy if found.
-function RowProxy:ResolveRelation(target_table, foreign_id)
-    if not foreign_id or foreign_id == 0 then
-        return nil
-    end
-
-    local ws = (self._table and (self._table._workspace or self._table._session))
-        or (self._file and (self._file._workspace or self._file._session))
-
-    if ws and ws.GetTable then
-        local tbl = ws:GetTable(target_table)
-        if tbl then
-            return tbl:FindById(foreign_id)
-        end
-    end
-
-    return nil
-end
-
---- Resolves a relationship directly by field name (e.g. "SpellIconID").
---- @param field_name string The name of the foreign key field.
---- @return RowProxy|nil row The referenced row proxy if found.
-function RowProxy:Resolve(field_name)
-    local target_table = SPECIAL_RELATIONS[field_name]
-    if not target_table then
-        target_table = string_match(field_name, "^(.-)ID$")
-            or string_match(field_name, "^(.-)_ID$")
-            or field_name
-    end
-
-    local foreign_id = self:GetField(field_name)
-    if type(foreign_id) == "number" then
-        return self:ResolveRelation(target_table, foreign_id)
-    end
-    return nil
-end
-
---- Resolves a related row using the relations catalog or field name.
---- @param target_table_or_field string Name of target table (e.g. "SpellIcon") or field ("SpellIconID").
---- @return RowProxy|nil row The related row proxy if found.
-function RowProxy:GetRelated(target_table_or_field)
-    local schema_name = self._schema and self._schema.name
-    local rel = Relations and Relations.Find(schema_name, target_table_or_field)
-    if rel then
-        local foreign_id = self:GetField(rel.field)
-        if type(foreign_id) == "number" then
-            return self:ResolveRelation(rel.target, foreign_id)
-        end
-    end
     return self:Resolve(target_table_or_field)
 end
 
---- Creates a new related row in the target table and automatically links its ID to this row.
---- Enables effortlessly creating related records across multiple DBC tables at once.
---- @param target_table_or_field string Target table name (e.g. "SpellIcon") or field ("SpellIconID").
---- @param row_data_or_id table|integer|nil Data table to populate or custom ID to assign.
---- @return RowProxy related_row The newly created and linked row proxy.
+---Creates a related row in the target table and links this row's FK to it.
+---@param target_table_or_field string
+---@param row_data_or_id table|integer|nil
+---@return RowProxy
 function RowProxy:CreateRelated(target_table_or_field, row_data_or_id)
-    local schema_name = self._schema and self._schema.name
+    local schema = self:GetSchema()
+    local schema_name = schema and schema.name
     if not schema_name then
         error("CreateRelated: row has no schema attached")
     end
 
-    local rel = Relations and Relations.Find(schema_name, target_table_or_field)
+    local build = row_build(self)
+    local rel = Relations.Find(schema_name, target_table_or_field, build)
     if not rel then
-        error(string.format("CreateRelated: no relation found from %q to %q", schema_name, target_table_or_field))
+        local target, target_col = resolve_target(self, target_table_or_field)
+        local field = self._file.by_name
+            and (self._file.by_name[target .. "ID"] and (target .. "ID") or target_table_or_field)
+        rel = { target = target, field = field, target_field = target_col or "ID" }
     end
 
-    local ws = (self._table and (self._table._workspace or self._table._session))
-        or (self._file and (self._file._workspace or self._file._session))
-
+    local ws = row_workspace(self)
     if not ws then
         error("CreateRelated: table is not associated with a DbcWorkspace")
     end
@@ -580,291 +491,298 @@ function RowProxy:CreateRelated(target_table_or_field, row_data_or_id)
         new_row = target_tbl:CreateNext(row_data_or_id)
     end
 
-    -- Automatically link the foreign key on this row
     self:SetField(rel.field, new_row:GetID())
-
     return new_row
 end
 
---- Finds all child rows in another table that reference this row's primary key (has_many).
---- @param child_table_name string Name of the child DBC table (e.g. "SpellChainEffects").
---- @param child_field_name string|nil Optional foreign key field name in child table.
---- @return RowProxy[] children
+---Returns child rows referencing this row's primary key.
+---Uses the binary relationship_map when available (WDB5+, WDC*),
+---otherwise falls back to a full scan filtered by the FK field.
+---@param child_table_name string|nil
+---@param child_field_name string|nil
+---@return RowProxy[]
 function RowProxy:GetChildren(child_table_name, child_field_name)
-    local schema_name = self._schema and self._schema.name
+    local schema = self:GetSchema()
+    local schema_name = schema and schema.name
     local my_id = self:GetID()
-    if not schema_name or not my_id then
-        return {}
-    end
+    if not schema_name or not my_id then return {} end
 
-    local ws = (self._table and (self._table._workspace or self._table._session))
-        or (self._file and (self._file._workspace or self._file._session))
-
+    local ws = row_workspace(self)
     if not ws then
         error("GetChildren: table is not associated with a DbcWorkspace")
     end
 
-    local child_tbl = ws:Open(child_table_name)
-    if not child_tbl then
-        return {}
+    local build = row_build(self)
+
+    -- Single-child-table path
+    if child_table_name then
+        local child_tbl = ws:Open(child_table_name)
+        if not child_tbl then return {} end
+
+        -- Fast path: the binary file exposes a relationship_map (WDB5+ / WDC*).
+        local child_file = child_tbl:GetFile()
+        if child_file and child_file.GetRelationRows then
+            local row_indices = child_file:GetRelationRows(my_id)
+            if row_indices and #row_indices > 0 then
+                local out = {}
+                for i, r_idx in ipairs(row_indices) do
+                    out[i] = child_tbl:GetRowByIndex(r_idx)
+                end
+                return out
+            end
+        end
+
+        -- Determine FK field on the child table
+        local fk_field = child_field_name
+        if not fk_field then
+            for _, inb in ipairs(Relations.GetInbound(schema_name, build)) do
+                if inb.source_table == child_table_name then
+                    fk_field = inb.field
+                    break
+                end
+            end
+        end
+
+        if not fk_field then
+            local child_schema = child_tbl:GetSchema()
+            if child_schema then
+                for _, f in ipairs(child_schema.fields) do
+                    if f.foreign_table == schema_name then
+                        fk_field = f.name
+                        break
+                    end
+                end
+            end
+        end
+
+        if not fk_field then
+            fk_field = schema_name .. "ID"
+        end
+
+        return child_tbl:Query()
+            :Where(function(r) return r:GetField(fk_field) == my_id end)
+            :ToList()
     end
 
-    local fk_field = child_field_name
-    if not fk_field and Relations then
-        local inbounds = Relations.GetInbound(schema_name)
-        for _, inb in ipairs(inbounds) do
-            if inb.source_table == child_table_name then
-                fk_field = inb.field
-                break
+    -- No argument: use the full inbound index and query every child table
+    local results = {}
+    for _, inb in ipairs(Relations.GetInbound(schema_name, build)) do
+        local child_tbl = ws:Open(inb.source_table)
+        if child_tbl then
+            local rows = child_tbl:Query()
+                :Where(function(r) return r:GetField(inb.field) == my_id end)
+                :ToList()
+            for _, row in ipairs(rows) do
+                results[#results + 1] = row
             end
         end
     end
-
-    if not fk_field then
-        fk_field = schema_name .. "ID"
-    end
-
-    return child_tbl:Query()
-        :Where(function(r) return r:GetField(fk_field) == my_id end)
-        :ToList()
+    return results
 end
 
---- Inspects this row and returns a list of all foreign key relationships with current values.
---- @return table relations List of relation descriptor tables.
+---Returns all relations currently declared for this row.
+---@return table[]
 function RowProxy:GetRelations()
     local relations = {}
     local schema = self:GetSchema()
     if not schema then return relations end
 
-    local schema_name = schema.name
-    local rels = Relations and Relations.Get(schema_name)
+    local build = row_build(self)
+    local rels = Relations.Get(schema.name, build)
     if rels and #rels > 0 then
         for _, rel in ipairs(rels) do
-            table.insert(relations, {
-                field = rel.field,
+            relations[#relations + 1] = {
+                field        = rel.field,
                 target_table = rel.target,
                 target_field = rel.target_field or "ID",
-                foreign_id = self:GetField(rel.field),
-            })
+                foreign_id   = self:GetField(rel.field),
+            }
         end
         return relations
     end
 
-    -- Fallback dynamic scan
+    -- Fallback: derive from schema fields
     for _, f in ipairs(schema.fields) do
         if f.name ~= "ID" then
-            local target_table = SPECIAL_RELATIONS[f.name]
-            if not target_table then
-                target_table = string_match(f.name, "^(.-)ID$")
-                    or string_match(f.name, "^(.-)_ID$")
-            end
-
+            local target_table = f.foreign_table
+                or string_match(f.name, "^(.-)ID$")
+                or string_match(f.name, "^(.-)_ID$")
             if target_table then
-                table.insert(relations, {
-                    field = f.name,
+                relations[#relations + 1] = {
+                    field        = f.name,
                     target_table = target_table,
-                    target_field = "ID",
-                    foreign_id = self:GetField(f.name),
-                })
+                    target_field = f.foreign_column or "ID",
+                    foreign_id   = self:GetField(f.name),
+                }
             end
         end
     end
-
     return relations
 end
 
---------------------------------------------------------------------------------
--- Dynamic Reflection & Metatable Setup
---------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+-- Dynamic method compilation
+-- ---------------------------------------------------------------------------
 
---- Resolves or compiles a method closure for a given method name and schema.
---- @param schema table Schema definition.
---- @param key string Method name (e.g. "GetName", "SetSpellIconID", "HasAttributes").
---- @return function|nil method
+---Compiles a method closure for a given method name and schema.
+---@param schema table
+---@param key string
+---@return function|nil
 local function resolve_method(schema, key)
     local by_name = schema.by_name or {}
 
-    -- 1. Getters: Get<Field>() or Get<Relation>()
+    -- ---------- Getters: Get<Field>() or Get<Relation>() ----------
     local get_name = string_match(key, "^Get(.+)$")
     if get_name then
         local f = by_name[get_name]
         if f then
-            local off = f.offset
-            local kind = f.kind
+            if f.name == "ID" then
+                return function(self) return self:GetID() end
+            end
+
+            local off   = f.offset
+            local kind  = f.kind
             local count = f.count
-            if kind == "loc" then
-                return function(self, locale)
-                    return self:_ReadLoc(f, locale)
+
+            return function(self, extra)
+                if self._file.ReadField then
+                    return self._file:ReadField(self._row, f)
                 end
-            elseif count > 1 then
-                return function(self, index)
-                    return self:_ReadArray(f, index)
-                end
-            elseif kind == "str" then
-                return function(self)
-                    local str_off = READ.u32(self:GetAddress(off))
-                    return self._file:GetString(str_off)
-                end
-            elseif kind == "bool" then
-                return function(self)
+                if kind == "loc" then
+                    return self:_ReadLoc(f, extra)
+                elseif count > 1 then
+                    return self:_ReadArray(f, extra)
+                elseif kind == "str" then
+                    return self._file:GetString(READ.u32(self:GetAddress(off)))
+                elseif kind == "bool" then
                     return READ.u32(self:GetAddress(off)) ~= 0
-                end
-            else
-                local read_fn = READ[kind] or READ.u32
-                return function(self)
-                    return read_fn(self:GetAddress(off))
+                else
+                    return (READ[kind] or READ.u32)(self:GetAddress(off))
                 end
             end
         end
 
-        -- Check if it is a relation getter (e.g. GetSpellIcon() -> SpellIconID)
+        -- Relation getter: GetSpellIcon() -> SpellIconID
         local fk_name = get_name .. "ID"
         local fk_f = by_name[fk_name] or by_name[get_name .. "_ID"]
-        local target_table = SPECIAL_RELATIONS[get_name] or get_name
         if fk_f then
             local off = fk_f.offset
+            local target_table  = fk_f.foreign_table or LEGACY_RELATIONS[get_name] or get_name
+            local target_column = fk_f.foreign_column or "ID"
             return function(self)
                 local fid = READ.u32(self:GetAddress(off))
-                return self:ResolveRelation(target_table, fid)
+                return self:ResolveRelation(target_table, fid, target_column)
             end
         end
     end
 
-    -- 2. Setters: Set<Field>(value) or Set<Relation>(row_or_id)
+    -- ---------- Setters: Set<Field>() or Set<Relation>() ----------
     local set_name = string_match(key, "^Set(.+)$")
     if set_name then
         local f = by_name[set_name]
         if f then
-            local off = f.offset
-            local kind = f.kind
+            local off   = f.offset
+            local kind  = f.kind
             local count = f.count
+
             if kind == "loc" then
                 return function(self, value, locale)
-                    self:_WriteLoc(f, value, locale)
-                    return self
+                    self:_WriteLoc(f, value, locale); return self
                 end
             elseif count > 1 then
                 return function(self, value, index)
-                    self:_WriteArray(f, value, index)
-                    return self
+                    self:_WriteArray(f, value, index); return self
                 end
             elseif kind == "str" then
                 return function(self, value)
-                    local str_off = self._file:InternString(tostring(value or ""))
-                    WRITE.u32(self:GetAddress(off), str_off)
-                    self._file.dirty = true
-                    return self
+                    WRITE.u32(self:GetAddress(off), self._file:InternString(tostring(value or "")))
+                    self._file.dirty = true; return self
                 end
             elseif kind == "bool" then
                 return function(self, value)
-                    local num = (value and value ~= 0) and 1 or 0
-                    WRITE.u32(self:GetAddress(off), num)
-                    self._file.dirty = true
-                    return self
+                    WRITE.u32(self:GetAddress(off), (value and value ~= 0) and 1 or 0)
+                    self._file.dirty = true; return self
                 end
             else
                 local write_fn = WRITE[kind] or WRITE.u32
                 return function(self, value)
                     write_fn(self:GetAddress(off), value)
-                    self._file.dirty = true
-                    return self
+                    self._file.dirty = true; return self
                 end
             end
         end
 
-        -- Check if it is a relation setter (e.g. SetSpellIcon(row_or_id))
         local fk_name = set_name .. "ID"
         local fk_f = by_name[fk_name] or by_name[set_name .. "_ID"]
         if fk_f then
             local off = fk_f.offset
-            return function(self, target)
-                local id
-                if type(target) == "table" and target.GetID then
-                    id = target:GetID()
-                else
-                    id = tonumber(target) or 0
-                end
-                WRITE.u32(self:GetAddress(off), id)
-                self._file.dirty = true
-                return self
+            return function(self, row_or_id)
+                local id_val = type(row_or_id) == "table" and row_or_id:GetID() or row_or_id
+                WRITE.u32(self:GetAddress(off), id_val)
+                self._file.dirty = true; return self
             end
         end
     end
 
-    -- 3. Flag check: Has<Field>(flag)
+    -- ---------- Flags ----------
     local has_name = string_match(key, "^Has(.+)$")
     if has_name then
         local f = by_name[has_name]
-        if f then
-            return function(self, flag)
-                return self:_HasFlag(f, flag)
-            end
+        if f and (f.kind == "mask" or f.kind == "flag"
+              or f.kind == "u32" or f.kind == "u64") then
+            return function(self, flag) return self:_HasFlag(f, flag) end
         end
     end
 
-    -- 4. Flag addition: Add<Field>(flag)
     local add_name = string_match(key, "^Add(.+)$")
     if add_name then
         local f = by_name[add_name]
-        if f then
-            return function(self, flag)
-                self:_AddFlag(f, flag)
-                return self
-            end
+        if f and (f.kind == "mask" or f.kind == "flag"
+              or f.kind == "u32" or f.kind == "u64") then
+            return function(self, flag) self:_AddFlag(f, flag); return self end
         end
     end
 
-    -- 5. Flag removal: Remove<Field>(flag)
     local rem_name = string_match(key, "^Remove(.+)$")
     if rem_name then
         local f = by_name[rem_name]
-        if f then
-            return function(self, flag)
-                self:_RemoveFlag(f, flag)
-                return self
-            end
+        if f and (f.kind == "mask" or f.kind == "flag"
+              or f.kind == "u32" or f.kind == "u64") then
+            return function(self, flag) self:_RemoveFlag(f, flag); return self end
         end
     end
 
     return nil
 end
 
---- Metatable __index interceptor.
---- First checks the RowProxy prototype, then cached reflection methods, then compiles new methods,
---- and finally falls back to direct field property access.
-local function row_index_handler(self, key)
-    -- Check prototype methods first
-    local proto = RowProxy[key]
-    if proto ~= nil then
-        return proto
-    end
-
-    local schema = self._schema or (self._file and self._file.schema)
-    if not schema then
-        return nil
-    end
-
-    local schema_name = schema.name or "__global"
-    local cache = method_cache[schema_name]
+-- Per-schema method cache. Stored on the schema object so it is safely
+-- scoped to a single (table, build) pair.
+local function get_method_cache(schema)
+    local cache = schema._method_cache
     if not cache then
         cache = {}
-        method_cache[schema_name] = cache
+        schema._method_cache = cache
+    end
+    return cache
+end
+
+function RowProxy:__index(key)
+    if RowProxy[key] ~= nil then return RowProxy[key] end
+
+    local schema = self:GetSchema()
+    if not schema then return nil end
+
+    local cache = get_method_cache(schema)
+
+    local cached_fn = cache[key]
+    if cached_fn ~= nil then return cached_fn end
+
+    local compiled_fn = resolve_method(schema, key)
+    if compiled_fn then
+        cache[key] = compiled_fn
+        return compiled_fn
     end
 
-    -- Check cache
-    local cached = cache[key]
-    if cached ~= nil then
-        return cached
-    end
-
-    -- Resolve and compile method
-    local resolved = resolve_method(schema, key)
-    if resolved ~= nil then
-        cache[key] = resolved
-        return resolved
-    end
-
-    -- Fallback: Direct property reading (e.g. row.Name or row.Category)
     if schema.by_name and schema.by_name[key] then
         return self:GetField(key)
     end
@@ -872,51 +790,15 @@ local function row_index_handler(self, key)
     return nil
 end
 
---- Metatable __newindex interceptor.
---- Allows direct property writing (e.g. row.Name = "Text" or row.Category = 12).
-local function row_newindex_handler(self, key, value)
-    local schema = self._schema or (self._file and self._file.schema)
+function RowProxy:__newindex(key, value)
+    local schema = self:GetSchema()
     if schema and schema.by_name and schema.by_name[key] then
         self:SetField(key, value)
-    else
-        rawset(self, key, value)
+        return
     end
-end
-
--- Attach metatable handlers
-local mt = {
-    __index = row_index_handler,
-    __newindex = row_newindex_handler,
-    __tostring = function(self)
-        local schema_name = (self._schema and self._schema.name) or "Unknown"
-        local id = "?"
-        local ok, val = pcall(self.GetID, self)
-        if ok then id = tostring(val) end
-        return string.format("<RowProxy %s ID=%s row=%d>", schema_name, id, self._row)
-    end
-}
-
-setmetatable(RowProxy, {
-    __call = function(_, file, row, table_ref)
-        return RowProxy.new(file, row, table_ref)
-    end
-})
-
--- Override instance metatable
-RowProxy.__metatable = mt
-local original_new = RowProxy.new
-function RowProxy.new(file, row, table_ref)
-    local self = {
-        _file = file,
-        _table = table_ref,
-        _row = row,
-        _schema = file.schema
-    }
-    return setmetatable(self, mt)
+    rawset(self, key, value)
 end
 
 return {
     RowProxy = RowProxy,
-    SPECIAL_RELATIONS = SPECIAL_RELATIONS,
-    method_cache = method_cache,
 }

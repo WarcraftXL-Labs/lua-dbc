@@ -1,0 +1,139 @@
+{
+  "columnDefinitions": {
+    "Category": {
+      "comment": "0 = help, 1 = inc, 2 = charge, 3 = flee, 4 = attack, 5 = oom, 6 = fol, 7 = wait, 8 = heal, 9 = cheer, 10 = fire, 11 = hello; 1+: 12 = bye, 13 = rasp, 14 = yes, 15 = no, 16 = thanks, 17 = welcome, 18 = congrats, 19 = flirt, 20 = silly",
+      "type": "int",
+      "verified": true
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "Race": {
+      "foreignColumn": "ID",
+      "foreignTable": "ChrRaces",
+      "type": "int",
+      "verified": true
+    },
+    "Sex": {
+      "type": "int",
+      "verified": true
+    },
+    "SoundID": {
+      "foreignColumn": "ID",
+      "foreignTable": "SoundEntries",
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 5991,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 5610,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 6141,
+            "expansion": 1,
+            "major": 12,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 3980,
+            "expansion": 1,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 3988,
+            "expansion": 0,
+            "major": 12,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3368,
+            "expansion": 0,
+            "major": 5,
+            "minor": 3
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 5875,
+          "expansion": 1,
+          "major": 12,
+          "minor": 1
+        },
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Category",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Sex",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Race",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "SoundID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

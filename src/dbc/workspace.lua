@@ -1,218 +1,219 @@
 --[[
     workspace.lua
-    Provides the DbcWorkspace class for managing multiple DBC tables within a project,
-    handling separate input (source) and output directories, cross-table relation lookups,
-    and automatic batch saving.
+    DbcWorkspace manages a project's DBC/DB2 tables bound to a specific
+    game build. It provides:
+      - Source and output directory configuration
+      - Per-workspace table cache (name -> DbcTable)
+      - Automatic schema binding using the workspace's build
+      - Relation lookups scoped to the workspace build
 ]]
 
-local function load_module(name)
-    local ok, mod = pcall(require, "dbc." .. name)
-    if ok then return mod end
-    ok, mod = pcall(require, "src.dbc." .. name)
-    if ok then return mod end
-    return require(name)
-end
+local load = require("dbc._loader")
 
-local file_mod = load_module("file")
-local table_mod = load_module("table")
-local schema_mod = load_module("schema")
+local file_mod      = load("file")
+local table_mod     = load("table")
+local schema_mod    = load("schema")
+local relations_mod = load("relations")
 
-local DbcFile = file_mod.DbcFile
-local DbcTable = table_mod.DbcTable
-local Schemas = schema_mod
+local DbcFile   = file_mod.DbcFile
+local DbcTable  = table_mod.DbcTable
+local Schemas   = schema_mod
+local Relations = relations_mod
 
---- Ensures the directory for a file path exists before writing.
---- @param file_path string Target path to create directories for.
 local is_windows = package.config:sub(1, 1) == "\\"
 
+---Ensures the parent directory of a file path exists.
+---@param file_path string
 local function ensure_dir(file_path)
     local dir = string.match(file_path, "^(.*)[/\\][^/\\]+$")
-    if dir and dir ~= "" then
-        if is_windows then
-            local win_dir = dir:gsub("/", "\\")
-            os.execute('if not exist "' .. win_dir .. '" mkdir "' .. win_dir .. '" >nul 2>nul')
-        else
-            os.execute('mkdir -p "' .. dir .. '" 2>/dev/null')
-        end
+    if not dir or dir == "" then return end
+
+    if is_windows then
+        local win_dir = dir:gsub("/", "\\")
+        os.execute('if not exist "' .. win_dir .. '" mkdir "' .. win_dir .. '" >nul 2>nul')
+    else
+        os.execute('mkdir -p "' .. dir .. '" 2>/dev/null')
     end
 end
 
---- @class DbcWorkspace
---- Project workspace coordinator managing source and output directories,
---- cached DBC tables, and relational navigation.
---- @field source_dir string Directory holding input/stock DBC files.
---- @field output_dir string Directory where edited/patched DBC files are saved.
---- @field tables table<string, DbcTable> Map of table name to loaded DbcTable instance.
+---@class DbcWorkspace
+---@field source_dir string
+---@field output_dir string
+---@field build string Target client build (e.g. "3.3.5.12340").
+---@field tables table<string, DbcTable>
 local DbcWorkspace = {}
 DbcWorkspace.__index = DbcWorkspace
 
---- Creates a new DbcWorkspace instance.
---- Can be initialized with a table options { source = "...", out = "..." }
---- or with string arguments (source_dir, output_dir).
---- @param options_or_source table|string|nil Workspace configuration or source directory.
---- @param output_dir string|nil Optional output directory when first argument is a string.
---- @return DbcWorkspace workspace
+---Creates a new workspace.
+---@param options_or_source table|string|nil
+---@param output_dir string|nil
+---@return DbcWorkspace
 function DbcWorkspace.new(options_or_source, output_dir)
     local self = setmetatable({}, DbcWorkspace)
     self.tables = {}
 
     if type(options_or_source) == "table" then
-        self.source_dir = options_or_source.source or options_or_source.source_dir or "."
-        self.output_dir = options_or_source.out or options_or_source.output_dir or self.source_dir
+        self.source_dir = options_or_source.source
+            or options_or_source.source_dir
+            or "."
+        self.output_dir = options_or_source.out
+            or options_or_source.output_dir
+            or self.source_dir
+        self.build = options_or_source.build or Schemas.GetDefaultBuild()
     elseif type(options_or_source) == "string" then
         self.source_dir = options_or_source
         self.output_dir = output_dir or options_or_source
+        self.build = Schemas.GetDefaultBuild()
     else
         self.source_dir = "."
         self.output_dir = "."
+        self.build = Schemas.GetDefaultBuild()
     end
 
     return self
 end
 
---- Returns the configured source directory.
---- @return string source_dir
-function DbcWorkspace:GetSourceDir()
-    return self.source_dir
-end
+function DbcWorkspace:GetSourceDir() return self.source_dir end
+function DbcWorkspace:GetOutputDir() return self.output_dir end
+function DbcWorkspace:GetBuild()     return self.build end
 
---- Sets a new source directory for loading DBC files.
---- @param path string Directory path.
---- @return DbcWorkspace self For chaining.
-function DbcWorkspace:SetSourceDir(path)
-    self.source_dir = path
+function DbcWorkspace:SetSourceDir(path) self.source_dir = path; return self end
+function DbcWorkspace:SetOutputDir(path) self.output_dir = path; return self end
+
+---Changes the target build. Drops loaded tables so the next access
+---re-binds to the new build's schema.
+---@param build string
+---@return DbcWorkspace self
+function DbcWorkspace:SetBuild(build)
+    self.build = build
+    self.tables = {}
     return self
 end
 
---- Returns the configured output directory.
---- @return string output_dir
-function DbcWorkspace:GetOutputDir()
-    return self.output_dir
-end
-
---- Sets a new output directory for saving DBC files.
---- @param path string Directory path.
---- @return DbcWorkspace self For chaining.
-function DbcWorkspace:SetOutputDir(path)
-    self.output_dir = path
-    return self
-end
-
---- Retrieves an already loaded table or automatically opens it from the source directory.
---- @param name dbc.TableName|string DBC table name (e.g. "Spell", "SpellIcon").
---- @return DbcTable|nil table The table instance if found.
+---Returns an already-loaded table or opens it from the source directory.
+---@param name string
+---@return DbcTable|nil
 function DbcWorkspace:GetTable(name)
-    if self.tables[name] then
-        return self.tables[name]
-    end
+    local cached = self.tables[name]
+    if cached then return cached end
 
-    -- Attempt to auto-open the DBC file from source_dir
-    local path = self.source_dir .. "/" .. name .. ".dbc"
-    local f = io.open(path, "rb")
-    if f then
-        f:close()
-        return self:Open(path, name)
+    for _, ext in ipairs({ ".db2", ".dbc" }) do
+        local path = self.source_dir .. "/" .. name .. ext
+        local f = io.open(path, "rb")
+        if f then
+            f:close()
+            return self:Open(path, name)
+        end
     end
 
     return nil
 end
 
---- Opens a DBC file, binds its schema, wraps it in DbcTable, and tracks it in the workspace.
---- If only a table name is provided, loads from source_dir/<name>.dbc.
---- @param path_or_name string|dbc.TableName File path or table name.
---- @param schema_name dbc.TableName|string|nil Optional explicit schema name.
---- @return DbcTable table The loaded DBC table.
+---Opens a DBC/DB2 file, binding it to this workspace's build.
+---Accepts either a full path or a bare table name (resolved against source_dir).
+---@param path_or_name string
+---@param schema_name string|nil
+---@return DbcTable
 function DbcWorkspace:Open(path_or_name, schema_name)
     local path = path_or_name
     local name = schema_name
 
-    -- If path does not end in .dbc, treat it as a table name in source_dir
-    if not string.match(path_or_name, "%.dbc$") then
+    if not string.match(path_or_name, "%.db[c2]$") then
         name = name or path_or_name
-        path = self.source_dir .. "/" .. path_or_name .. ".dbc"
+        local p_db2 = self.source_dir .. "/" .. path_or_name .. ".db2"
+        local f = io.open(p_db2, "rb")
+        if f then
+            f:close()
+            path = p_db2
+        else
+            path = self.source_dir .. "/" .. path_or_name .. ".dbc"
+        end
     else
-        name = name or string.match(path_or_name, "([^/\\]+)%.dbc$")
+        name = name or string.match(path_or_name, "([^/\\]+)%.db[c2]$")
     end
 
-    if self.tables[name] then
-        return self.tables[name]
-    end
+    local cached = self.tables[name]
+    if cached then return cached end
 
-    local schema = Schemas.Get(name)
+    -- Resolve schema once. If the schema is missing, proceed with a nil
+    -- schema so the caller can still inspect the binary.
+    local schema
+    local ok, resolved = pcall(Schemas.Get, name, self.build)
+    if ok then schema = resolved end
+
     local raw_file = file_mod.open(path, schema)
-    local tbl = DbcTable.new(raw_file, self)
+    raw_file._workspace = self
+    raw_file._build = self.build
 
+    local tbl = DbcTable.new(raw_file, self)
     self.tables[name] = tbl
     return tbl
 end
 
---- Creates a blank DBC table from its schema definition within this workspace.
---- @param schema_name dbc.TableName|string The name of the schema to create.
---- @return DbcTable table The newly created empty table.
-function DbcWorkspace:Create(schema_name)
-    local schema = Schemas.Get(schema_name)
-    local raw_file = DbcFile.create_empty(schema, "<workspace:" .. schema_name .. ">")
-    local tbl = DbcTable.new(raw_file, self)
+---Creates a blank table using this workspace's build schema.
+---@param schema_name string
+---@param format_name string|nil Defaults to "WDBC".
+---@return DbcTable
+function DbcWorkspace:Create(schema_name, format_name)
+    local schema = Schemas.Get(schema_name, self.build)
+    format_name = format_name or "WDBC"
 
+    local raw_file = DbcFile.create_empty_format(
+        format_name, schema, "<workspace:" .. schema_name .. ">")
+    raw_file._workspace = self
+    raw_file._build = self.build
+
+    local tbl = DbcTable.new(raw_file, self)
     self.tables[schema_name] = tbl
     return tbl
 end
 
---- Saves a specific table to the workspace output directory.
---- @param name_or_table string|DbcTable Name of the table or DbcTable instance.
---- @param custom_path string|nil Optional custom file destination.
---- @return integer bytes_written
-function DbcWorkspace:Save(name_or_table, custom_path)
-    local tbl
-    local name
-    if type(name_or_table) == "string" then
-        name = name_or_table
-        tbl = self.tables[name]
-        if not tbl then
-            error(string.format("Workspace: cannot save table %q: not loaded", name))
-        end
-    else
-        tbl = name_or_table
-        local schema = tbl:GetSchema()
-        name = schema and schema.name or "output"
-    end
+---Writes all loaded tables to the output directory.
+---@param options table|nil { only_dirty = boolean }
+---@return integer count Number of files written.
+function DbcWorkspace:SaveAll(options)
+    local only_dirty = (options and options.only_dirty == true)
+    local count = 0
 
-    local dest = custom_path or (self.output_dir .. "/" .. name .. ".dbc")
-    ensure_dir(dest)
-    return tbl:Save(dest)
-end
-
---- Saves all modified DBC tables tracked by this workspace into the output directory.
---- @param destination_dir string|nil Optional directory to override workspace output_dir.
---- @return string[] saved List of saved table names.
-function DbcWorkspace:SaveAll(destination_dir)
-    local out_dir = destination_dir or self.output_dir
-    local saved = {}
+    ensure_dir(self.output_dir .. "/dummy")
 
     for name, tbl in pairs(self.tables) do
-        local file = tbl:GetFile()
-        if file.dirty then
-            local dest = out_dir .. "/" .. name .. ".dbc"
-            ensure_dir(dest)
-            tbl:Save(dest)
-            table.insert(saved, name)
+        if not only_dirty or tbl._file.dirty then
+            local ext = (tbl._file.format == "WDBC" and "dbc") or "db2"
+            tbl:Save(self.output_dir .. "/" .. name .. "." .. ext)
+            count = count + 1
         end
     end
 
-    return saved
+    return count
 end
 
---- Returns all currently active DbcTable instances in this workspace.
---- @return table<string, DbcTable> tables
-function DbcWorkspace:GetAllTables()
-    return self.tables
+function DbcWorkspace:Close()
+    self.tables = {}
 end
 
-setmetatable(DbcWorkspace, {
-    __call = function(_, options_or_source, output_dir)
-        return DbcWorkspace.new(options_or_source, output_dir)
+---@param table_name string
+---@return table[]
+function DbcWorkspace:GetRelations(table_name)
+    return Relations.Get(table_name, self.build)
+end
+
+---@param table_name string
+---@return table[]
+function DbcWorkspace:GetInboundRelations(table_name)
+    return Relations.GetInbound(table_name, self.build)
+end
+
+---Enables `ws.Spell` -> ws:GetTable("Spell").
+function DbcWorkspace:__index(key)
+    if DbcWorkspace[key] ~= nil then
+        return DbcWorkspace[key]
     end
-})
+    if type(key) == "string" then
+        return self:GetTable(key)
+    end
+    return nil
+end
 
 return {
     DbcWorkspace = DbcWorkspace,

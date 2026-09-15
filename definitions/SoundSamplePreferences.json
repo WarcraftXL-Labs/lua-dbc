@@ -1,0 +1,569 @@
+{
+  "columnDefinitions": {
+    "EAX1EffectLevel": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX2SampleAirAbsorption": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX2SampleDirect": {
+      "type": "int",
+      "verified": true
+    },
+    "EAX2SampleDirectHF": {
+      "type": "int",
+      "verified": true
+    },
+    "EAX2SampleObstruction": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX2SampleObstructionLFRatio": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX2SampleOcclusion": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX2SampleOcclusionLFRatio": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX2SampleOcclusionRoomRatio": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX2SampleOutsideVolumeHF": {
+      "type": "int",
+      "verified": true
+    },
+    "EAX2SampleRoom": {
+      "type": "int",
+      "verified": true
+    },
+    "EAX2SampleRoomHF": {
+      "type": "int",
+      "verified": true
+    },
+    "EAX2SampleRoomRolloff": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX3SampleDopplerFactor": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX3SampleExclusion": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX3SampleExclusionLFRatio": {
+      "type": "float",
+      "verified": true
+    },
+    "EAX3SampleOcclusionDirectRatio": {
+      "type": "float",
+      "verified": true
+    },
+    "Fast2DDamping": {
+      "type": "float",
+      "verified": true
+    },
+    "Fast2DPredelayTime": {
+      "type": "float",
+      "verified": true
+    },
+    "Fast2DReverbTime": {
+      "type": "float",
+      "verified": true
+    },
+    "Field_0_6_0_3592_001": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_0_6_0_3592_002": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_0_6_0_3592_004": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_0_6_0_3592_005": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_0_6_0_3592_006": {
+      "type": "float",
+      "verified": false
+    },
+    "Field_0_6_0_3592_007": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_0_6_0_3592_010": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_0_6_0_3592_012": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_0_6_0_3592_013": {
+      "type": "float",
+      "verified": false
+    },
+    "Field_0_6_0_3592_015": {
+      "type": "float",
+      "verified": false
+    },
+    "Field_0_6_0_3592_016": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 3494,
+            "expansion": 0,
+            "major": 5,
+            "minor": 5
+          },
+          "minBuild": {
+            "build": 3368,
+            "expansion": 0,
+            "major": 5,
+            "minor": 3
+          }
+        }
+      ],
+      "builds": [
+        {
+          "build": 3368,
+          "expansion": 0,
+          "major": 5,
+          "minor": 3
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX1EffectLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleDirect",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleDirectHF",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleRoom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleRoomHF",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleObstruction",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleObstructionLFRatio",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleOcclusion",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleOcclusionLFRatio",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleOcclusionRoomRatio",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleRoomRolloff",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleAirAbsorption",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleOutsideVolumeHF",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX3SampleOcclusionDirectRatio",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX3SampleExclusion",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX3SampleExclusionLFRatio",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX3SampleDopplerFactor",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Fast2DPredelayTime",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Fast2DDamping",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Fast2DReverbTime",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    },
+    {
+      "buildRanges": [
+        {
+          "maxBuild": {
+            "build": 12340,
+            "expansion": 3,
+            "major": 3,
+            "minor": 5
+          },
+          "minBuild": {
+            "build": 8303,
+            "expansion": 3,
+            "major": 0,
+            "minor": 1
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 8606,
+            "expansion": 2,
+            "major": 4,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 5610,
+            "expansion": 2,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 6141,
+            "expansion": 1,
+            "major": 12,
+            "minor": 3
+          },
+          "minBuild": {
+            "build": 3980,
+            "expansion": 1,
+            "major": 0,
+            "minor": 0
+          }
+        },
+        {
+          "maxBuild": {
+            "build": 3988,
+            "expansion": 0,
+            "major": 12,
+            "minor": 0
+          },
+          "minBuild": {
+            "build": 3592,
+            "expansion": 0,
+            "major": 6,
+            "minor": 0
+          }
+        }
+      ],
+      "builds": [],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": true,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_001",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_002",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleRoom",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_004",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_005",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_006",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_007",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleOcclusionLFRatio",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX2SampleOcclusionRoomRatio",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_010",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX1EffectLevel",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_012",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_013",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "EAX3SampleExclusion",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_015",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_0_6_0_3592_016",
+          "size": 32
+        }
+      ],
+      "layoutHashes": []
+    }
+  ]
+}

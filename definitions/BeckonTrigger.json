@@ -1,0 +1,1405 @@
+{
+  "columnDefinitions": {
+    "BroadcastTextID": {
+      "foreignColumn": "ID",
+      "foreignTable": "BroadcastText",
+      "type": "int",
+      "verified": false
+    },
+    "CreatureID": {
+      "foreignColumn": "ID",
+      "foreignTable": "Creature",
+      "type": "int",
+      "verified": false
+    },
+    "Field_10_0_7_48295_004": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_9_0_1_33978_001": {
+      "type": "int",
+      "verified": false
+    },
+    "Field_9_0_1_33978_005": {
+      "type": "float",
+      "verified": false
+    },
+    "Field_9_0_1_33978_006": {
+      "type": "int",
+      "verified": false
+    },
+    "ID": {
+      "type": "int",
+      "verified": true
+    },
+    "PlayerConditionID": {
+      "foreignColumn": "ID",
+      "foreignTable": "PlayerCondition",
+      "type": "int",
+      "verified": true
+    },
+    "QuestID": {
+      "foreignColumn": "ID",
+      "foreignTable": "QuestV2",
+      "type": "int",
+      "verified": true
+    },
+    "WorldEffectID": {
+      "foreignColumn": "ID",
+      "foreignTable": "WorldEffect",
+      "type": "int",
+      "verified": false
+    }
+  },
+  "versionDefinitions": [
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 48317,
+          "expansion": 10,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 48397,
+          "expansion": 10,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 48526,
+          "expansion": 10,
+          "major": 0,
+          "minor": 5
+        },
+        {
+          "build": 33978,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34003,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34081,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34098,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34137,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34199,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34278,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34324,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34365,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34392,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34490,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34615,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34714,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34821,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34902,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 34972,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35078,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35167,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35213,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35256,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35282,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35360,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35432,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35482,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35522,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35598,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35679,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35707,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35755,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        },
+        {
+          "build": 35789,
+          "expansion": 9,
+          "major": 0,
+          "minor": 1
+        }
+      ],
+      "comment": "table is unused by client, fields are very much speculation",
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_001",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "QuestID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "BroadcastTextID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "WorldEffectID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_005",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_006",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PlayerConditionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "CreatureID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "6A9C8CF1",
+        "245224E0"
+      ]
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 53687,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 53949,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54013,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54210,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54289,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54311,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54361,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54171,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54253,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54295,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54366,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54449,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54543,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54577,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54601,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54604,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54630,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54673,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54717,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54736,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54762,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54847,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54904,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 54988,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55142,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55165,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55202,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55261,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55461,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 55664,
+          "expansion": 10,
+          "major": 2,
+          "minor": 7
+        },
+        {
+          "build": 53810,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53840,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53877,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53913,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 53989,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54070,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54205,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54358,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 54499,
+          "expansion": 10,
+          "major": 2,
+          "minor": 6
+        },
+        {
+          "build": 52206,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52330,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52432,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52554,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52646,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52902,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52968,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 52983,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53007,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53040,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53104,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53162,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53212,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53262,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53441,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 53584,
+          "expansion": 10,
+          "major": 2,
+          "minor": 5
+        },
+        {
+          "build": 51239,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51297,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51425,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51521,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51601,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51685,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51790,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51825,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51851,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 51973,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52038,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52068,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52095,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52106,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52129,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52148,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52188,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52301,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52393,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52485,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52545,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52607,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52649,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 52808,
+          "expansion": 10,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "build": 50442,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 50505,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 50587,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 50730,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 50793,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 50893,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51059,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51187,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51237,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51261,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51313,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51421,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51485,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51536,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51754,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51886,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 51972,
+          "expansion": 10,
+          "major": 1,
+          "minor": 7
+        },
+        {
+          "build": 49516,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 49595,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 49719,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 49824,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 49908,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50006,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50130,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50199,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50232,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50355,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50379,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50401,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50438,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50467,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50469,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50504,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50585,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50622,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50747,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 50791,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 51130,
+          "expansion": 10,
+          "major": 1,
+          "minor": 5
+        },
+        {
+          "build": 48480,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 48661,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 48776,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 48898,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49092,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49190,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49222,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49255,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49318,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49365,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49407,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49426,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49444,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49474,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49570,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49679,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49741,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49801,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 49890,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 50000,
+          "expansion": 10,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "build": 48295,
+          "expansion": 10,
+          "major": 0,
+          "minor": 7
+        },
+        {
+          "build": 48439,
+          "expansion": 10,
+          "major": 0,
+          "minor": 7
+        },
+        {
+          "build": 48520,
+          "expansion": 10,
+          "major": 0,
+          "minor": 7
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_001",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "QuestID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "BroadcastTextID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Field_10_0_7_48295_004",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "WorldEffectID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_005",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_006",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PlayerConditionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "CreatureID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "7DF24A7B"
+      ]
+    },
+    {
+      "buildRanges": [],
+      "builds": [
+        {
+          "build": 54464,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54521,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        },
+        {
+          "build": 54605,
+          "expansion": 11,
+          "major": 0,
+          "minor": 0
+        }
+      ],
+      "definitions": [
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "ID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_001",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "QuestID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "BroadcastTextID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": false,
+          "name": "Field_10_0_7_48295_004",
+          "size": 8
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "WorldEffectID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_005",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "Field_9_0_1_33978_006",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": false,
+          "isRelation": false,
+          "isSigned": true,
+          "name": "PlayerConditionID",
+          "size": 32
+        },
+        {
+          "arrLength": 0,
+          "isID": false,
+          "isNonInline": true,
+          "isRelation": true,
+          "isSigned": true,
+          "name": "CreatureID",
+          "size": 32
+        }
+      ],
+      "layoutHashes": [
+        "27736A2A"
+      ]
+    }
+  ]
+}
