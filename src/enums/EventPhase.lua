@@ -1,0 +1,26 @@
+return {
+  name = "EventPhase",
+  kind = "enum",
+  values = {
+    PHASE1 = 1,
+    PHASE2 = 2,
+    PHASE3 = 4,
+    PHASE4 = 8,
+    PHASE5 = 16,
+    PHASE6 = 32,
+    PHASE7 = 64,
+    PHASE8 = 128,
+    PHASE9 = 256,
+  },
+  names = {
+    [1] = "PHASE1",
+    [2] = "PHASE2",
+    [4] = "PHASE3",
+    [8] = "PHASE4",
+    [16] = "PHASE5",
+    [32] = "PHASE6",
+    [64] = "PHASE7",
+    [128] = "PHASE8",
+    [256] = "PHASE9",
+  },
+}

@@ -1,0 +1,28 @@
+return {
+  name = "QuestDifficultyIndex",
+  kind = "enum",
+  values = {
+    DIFFICULTY_1 = 1,
+    DIFFICULTY_2 = 2,
+    DIFFICULTY_3 = 3,
+    DIFFICULTY_4 = 4,
+    DIFFICULTY_5 = 5,
+    DIFFICULTY_6 = 6,
+    DIFFICULTY_7 = 7,
+    DIFFICULTY_8 = 8,
+    DIFFICULTY_9 = 9,
+    DIFFICULTY_10 = 10,
+  },
+  names = {
+    [1] = "DIFFICULTY_1",
+    [2] = "DIFFICULTY_2",
+    [3] = "DIFFICULTY_3",
+    [4] = "DIFFICULTY_4",
+    [5] = "DIFFICULTY_5",
+    [6] = "DIFFICULTY_6",
+    [7] = "DIFFICULTY_7",
+    [8] = "DIFFICULTY_8",
+    [9] = "DIFFICULTY_9",
+    [10] = "DIFFICULTY_10",
+  },
+}

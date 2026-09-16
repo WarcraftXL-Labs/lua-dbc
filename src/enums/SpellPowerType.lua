@@ -1,0 +1,26 @@
+return {
+  name = "SpellPowerType",
+  kind = "enum",
+  values = {
+    HEALTH = -2,
+    MANA = 0,
+    RAGE = 1,
+    FOCUS = 2,
+    ENERGY = 3,
+    HAPPINESS = 4,
+    RUNE = 5,
+    RUNIC_POWER = 6,
+    ALL = 127,
+  },
+  names = {
+    [-2] = "HEALTH",
+    [0] = "MANA",
+    [1] = "RAGE",
+    [2] = "FOCUS",
+    [3] = "ENERGY",
+    [4] = "HAPPINESS",
+    [5] = "RUNE",
+    [6] = "RUNIC_POWER",
+    [127] = "ALL",
+  },
+}

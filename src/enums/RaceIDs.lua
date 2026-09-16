@@ -1,0 +1,28 @@
+return {
+  name = "RaceIDs",
+  kind = "enum",
+  values = {
+    HUMAN = 1,
+    ORC = 2,
+    DWARF = 3,
+    NIGHTELF = 4,
+    UNDEAD = 5,
+    TAUREN = 6,
+    GNOME = 7,
+    TROLL = 8,
+    BLOODELF = 10,
+    DRAENEI = 11,
+  },
+  names = {
+    [1] = "HUMAN",
+    [2] = "ORC",
+    [3] = "DWARF",
+    [4] = "NIGHTELF",
+    [5] = "UNDEAD",
+    [6] = "TAUREN",
+    [7] = "GNOME",
+    [8] = "TROLL",
+    [10] = "BLOODELF",
+    [11] = "DRAENEI",
+  },
+}

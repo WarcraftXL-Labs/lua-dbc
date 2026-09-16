@@ -1,0 +1,28 @@
+return {
+  name = "ClassMask",
+  kind = "enum",
+  values = {
+    WARRIOR = 1,
+    PALADIN = 2,
+    HUNTER = 4,
+    ROGUE = 8,
+    PRIEST = 16,
+    DEATH_KNIGHT = 32,
+    SHAMAN = 64,
+    MAGE = 128,
+    WARLOCK = 256,
+    DRUID = 1024,
+  },
+  names = {
+    [1] = "WARRIOR",
+    [2] = "PALADIN",
+    [4] = "HUNTER",
+    [8] = "ROGUE",
+    [16] = "PRIEST",
+    [32] = "DEATH_KNIGHT",
+    [64] = "SHAMAN",
+    [128] = "MAGE",
+    [256] = "WARLOCK",
+    [1024] = "DRUID",
+  },
+}

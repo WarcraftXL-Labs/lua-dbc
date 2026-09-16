@@ -1,0 +1,26 @@
+return {
+  name = "DynFlags",
+  kind = "enum",
+  values = {
+    NONE = 0,
+    LOOTABLE = 1,
+    TRACK_UNIT = 2,
+    TAPPED = 4,
+    TAPPED_BY_PLAYER = 8,
+    SPECIAL_INFO = 16,
+    DEAD = 32,
+    REFER_A_FRIEND = 64,
+    TAPPED_BY_ALL_THREAT_LIST = 128,
+  },
+  names = {
+    [0] = "NONE",
+    [1] = "LOOTABLE",
+    [2] = "TRACK_UNIT",
+    [4] = "TAPPED",
+    [8] = "TAPPED_BY_PLAYER",
+    [16] = "SPECIAL_INFO",
+    [32] = "DEAD",
+    [64] = "REFER_A_FRIEND",
+    [128] = "TAPPED_BY_ALL_THREAT_LIST",
+  },
+}

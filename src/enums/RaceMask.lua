@@ -1,0 +1,28 @@
+return {
+  name = "RaceMask",
+  kind = "enum",
+  values = {
+    HUMAN = 1,
+    ORC = 2,
+    DWARF = 4,
+    NIGHTELF = 8,
+    UNDEAD = 16,
+    TAUREN = 32,
+    GNOME = 64,
+    TROLL = 128,
+    BLOODELF = 512,
+    DRAENEI = 1024,
+  },
+  names = {
+    [1] = "HUMAN",
+    [2] = "ORC",
+    [4] = "DWARF",
+    [8] = "NIGHTELF",
+    [16] = "UNDEAD",
+    [32] = "TAUREN",
+    [64] = "GNOME",
+    [128] = "TROLL",
+    [512] = "BLOODELF",
+    [1024] = "DRAENEI",
+  },
+}

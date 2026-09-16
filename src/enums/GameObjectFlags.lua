@@ -1,0 +1,26 @@
+return {
+  name = "GameObjectFlags",
+  kind = "enum",
+  values = {
+    IN_USE = 1,
+    LOCKED = 2,
+    CONDITIONAL_SELECT = 4,
+    TRANSPORT = 8,
+    NOT_SELECTABLE = 16,
+    NO_DESPAWN = 32,
+    TRIGGERED = 64,
+    DAMAGED = 512,
+    DESTROYED = 1024,
+  },
+  names = {
+    [1] = "IN_USE",
+    [2] = "LOCKED",
+    [4] = "CONDITIONAL_SELECT",
+    [8] = "TRANSPORT",
+    [16] = "NOT_SELECTABLE",
+    [32] = "NO_DESPAWN",
+    [64] = "TRIGGERED",
+    [512] = "DAMAGED",
+    [1024] = "DESTROYED",
+  },
+}

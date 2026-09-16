@@ -1,0 +1,28 @@
+return {
+  name = "ItemMaterial",
+  kind = "enum",
+  values = {
+    CONSUMABLES = -1,
+    UNDEFINED = 0,
+    METAL = 1,
+    WOOD = 2,
+    LIQUID = 3,
+    JEWELRY = 4,
+    CHAIN = 5,
+    PLATE = 6,
+    CLOTH = 7,
+    LEATHER = 8,
+  },
+  names = {
+    [-1] = "CONSUMABLES",
+    [0] = "UNDEFINED",
+    [1] = "METAL",
+    [2] = "WOOD",
+    [3] = "LIQUID",
+    [4] = "JEWELRY",
+    [5] = "CHAIN",
+    [6] = "PLATE",
+    [7] = "CLOTH",
+    [8] = "LEATHER",
+  },
+}

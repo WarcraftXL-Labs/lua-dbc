@@ -1,0 +1,26 @@
+return {
+  name = "VehicleFlags",
+  kind = "enum",
+  values = {
+    NO_STRAFE = 1,
+    NO_JUMPING = 2,
+    FULL_SPEED_TURNING = 4,
+    ALLOW_PITCH = 16,
+    FULL_SPEED_PITCHING = 32,
+    CUSTOM_PITCH = 64,
+    ADJUST_AIM_ANGLE = 1024,
+    ADJUST_AIM_POWER = 2048,
+    FIXED_POSITION = 2097152,
+  },
+  names = {
+    [1] = "NO_STRAFE",
+    [2] = "NO_JUMPING",
+    [4] = "FULL_SPEED_TURNING",
+    [16] = "ALLOW_PITCH",
+    [32] = "FULL_SPEED_PITCHING",
+    [64] = "CUSTOM_PITCH",
+    [1024] = "ADJUST_AIM_ANGLE",
+    [2048] = "ADJUST_AIM_POWER",
+    [2097152] = "FIXED_POSITION",
+  },
+}

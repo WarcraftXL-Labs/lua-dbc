@@ -1,0 +1,28 @@
+return {
+  name = "VehicleSeatFlagsB",
+  kind = "enum",
+  values = {
+    USABLE_FORCED = 2,
+    TARGETS_IN_RADIUS = 8,
+    EJECTABLE = 32,
+    USABLE_FORCED2 = 64,
+    USABLE_FORCED3 = 256,
+    UNK7 = 65536,
+    KEEP_PET = 131072,
+    USABLE_FORCED4 = 33554432,
+    CAN_SWITCH = 67108864,
+    VEHICLE_PLAYER_FRAME_UI = 2147483648,
+  },
+  names = {
+    [2] = "USABLE_FORCED",
+    [8] = "TARGETS_IN_RADIUS",
+    [32] = "EJECTABLE",
+    [64] = "USABLE_FORCED2",
+    [256] = "USABLE_FORCED3",
+    [65536] = "UNK7",
+    [131072] = "KEEP_PET",
+    [33554432] = "USABLE_FORCED4",
+    [67108864] = "CAN_SWITCH",
+    [2147483648] = "VEHICLE_PLAYER_FRAME_UI",
+  },
+}

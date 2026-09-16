@@ -1,0 +1,28 @@
+return {
+  name = "CharacterProcedureType",
+  kind = "enum",
+  values = {
+    CHAIN = 0,
+    COLOR = 1,
+    SCALE = 2,
+    EMISSIVE = 4,
+    ECLIPSE = 6,
+    ANIMATION = 7,
+    WEAPON_TRAIL = 8,
+    BLIZZARD = 9,
+    FISHING_LINE = 10,
+    UNK_13 = 13,
+  },
+  names = {
+    [0] = "CHAIN",
+    [1] = "COLOR",
+    [2] = "SCALE",
+    [4] = "EMISSIVE",
+    [6] = "ECLIPSE",
+    [7] = "ANIMATION",
+    [8] = "WEAPON_TRAIL",
+    [9] = "BLIZZARD",
+    [10] = "FISHING_LINE",
+    [13] = "UNK_13",
+  },
+}

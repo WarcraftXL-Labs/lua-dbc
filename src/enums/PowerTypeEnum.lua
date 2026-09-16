@@ -1,0 +1,26 @@
+return {
+  name = "PowerTypeEnum",
+  kind = "enum",
+  values = {
+    HEALTH = -2,
+    INVALID = -1,
+    MANA = 0,
+    RAGE = 1,
+    PET_ENERGY = 2,
+    ENERGY = 3,
+    ELIXIR = 4,
+    RUNES = 5,
+    RUNIC_POWER = 6,
+  },
+  names = {
+    [-2] = "HEALTH",
+    [-1] = "INVALID",
+    [0] = "MANA",
+    [1] = "RAGE",
+    [2] = "PET_ENERGY",
+    [3] = "ENERGY",
+    [4] = "ELIXIR",
+    [5] = "RUNES",
+    [6] = "RUNIC_POWER",
+  },
+}
