@@ -81,14 +81,25 @@ end
 local TMP_ROOT = "test/tmp"
 local TMP_WS = TMP_ROOT .. "/test_ws"
 
+local is_windows = package.config:sub(1, 1) == "\\"
+
 local function make_dirs()
-    os.execute('mkdir -p "' .. TMP_WS .. '/source" 2>/dev/null')
-    os.execute('mkdir -p "' .. TMP_WS .. '/output" 2>/dev/null')
+    if is_windows then
+        local base = TMP_WS:gsub("/", "\\")
+        os.execute('if not exist "' .. base .. '\\source" mkdir "' .. base .. '\\source" >nul 2>nul')
+        os.execute('if not exist "' .. base .. '\\output" mkdir "' .. base .. '\\output" >nul 2>nul')
+    else
+        os.execute('mkdir -p "' .. TMP_WS .. '/source" 2>/dev/null')
+        os.execute('mkdir -p "' .. TMP_WS .. '/output" 2>/dev/null')
+    end
 end
 
 local function cleanup_dirs()
-    -- Best-effort cleanup; ignored if already removed.
-    os.execute('rm -rf "' .. TMP_ROOT .. '" 2>/dev/null')
+    if is_windows then
+        os.execute('rmdir /s /q "' .. TMP_ROOT:gsub("/", "\\") .. '" 2>nul')
+    else
+        os.execute('rm -rf "' .. TMP_ROOT .. '" 2>/dev/null')
+    end
 end
 
 make_dirs()
@@ -338,7 +349,11 @@ end)
 
 run_test("Dynamic DBDefs JSON schema loading", function()
     -- Write a minimal but realistic DBDefs JSON to definitions/ and load it.
-    os.execute('mkdir -p "definitions" 2>/dev/null')
+    if is_windows then
+        os.execute('if not exist "definitions" mkdir "definitions" >nul 2>nul')
+    else
+        os.execute('mkdir -p "definitions" 2>/dev/null')
+    end
 
     local sample_json = [[{
   "columnDefinitions": {

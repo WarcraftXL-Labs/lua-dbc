@@ -26,8 +26,8 @@ local FORMAT_NAMES = {
 --- @return string|nil format_name Canonical format name or nil if unknown.
 function sniffer.Detect(path_or_data)
     local magic = nil
-    if #path_or_data <= 512 and not string.find(path_or_data, "[\0-\8\11\12\14-\31]") then
-        -- Likely a file path
+
+    if type(path_or_data) == "string" and #path_or_data > 0 then
         local f = io.open(path_or_data, "rb")
         if f then
             magic = f:read(4)
@@ -35,8 +35,7 @@ function sniffer.Detect(path_or_data)
         end
     end
 
-    if not magic and #path_or_data >= 4 then
-        -- Raw binary data passed directly
+    if (not magic or #magic < 4) and #path_or_data >= 4 then
         magic = string.sub(path_or_data, 1, 4)
     end
 

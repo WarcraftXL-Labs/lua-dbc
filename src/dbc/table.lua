@@ -20,6 +20,7 @@ local proxy_mod     = load("proxy")
 local query_mod     = load("query")
 
 local READ       = file_mod.READ
+local WRITE      = file_mod.WRITE
 local RowProxy   = proxy_mod.RowProxy
 local Query      = query_mod.Query
 
@@ -221,9 +222,11 @@ function DbcTable:Create(id, data)
     end
 
     local row_idx = self._file:AppendRow()
-    local proxy = RowProxy.new(self._file, row_idx, self)
-    proxy:SetID(id)
 
+    local id_offset = self._file:GetIdOffset()
+    WRITE.u32(self._file:GetAddress(row_idx, id_offset), id)
+
+    local proxy = RowProxy.new(self._file, row_idx, self)
     self._id_map[id] = row_idx
     self._proxies[row_idx] = proxy
 
@@ -259,21 +262,24 @@ function DbcTable:CloneRow(source_id_or_row, new_id, data_override)
     end
 
     local new_row_idx = self._file:AppendRow()
+
     copy(
         self._file:GetAddress(new_row_idx, 0),
         self._file:GetAddress(src_proxy:GetIndex(), 0),
         self._file.record_size
     )
 
-    local clone = RowProxy.new(self._file, new_row_idx, self)
-    clone:SetID(new_id)
+    local id_offset = self._file:GetIdOffset()
+    WRITE.u32(self._file:GetAddress(new_row_idx, id_offset), new_id)
 
+    local clone = RowProxy.new(self._file, new_row_idx, self)
     self._id_map[new_id] = new_row_idx
     self._proxies[new_row_idx] = clone
 
     if data_override and type(data_override) == "table" then
         clone:Populate(data_override)
     end
+
     return clone
 end
 

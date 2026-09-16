@@ -18,15 +18,23 @@ function Enums.Get(name)
         return _cache[name]
     end
 
-    local ok, enum_def = pcall(require, "dbc.enums." .. name)
-    if not ok then
-        ok, enum_def = pcall(require, "enums." .. name)
+    local enum_def
+    local last_err
+    for _, modname in ipairs({
+        "dbc.enums." .. name,
+        "enums." .. name,
+    }) do
+        local ok, mod = pcall(require, modname)
+        if ok then
+            enum_def = mod
+            break
+        end
+        last_err = mod
     end
-    if not ok then
-        ok, enum_def = pcall(require, "src.enums." .. name)
-    end
-    if not ok then
-        error(string.format("Enum %q could not be loaded: %s", name, tostring(enum_def)))
+
+    if not enum_def then
+        error(string.format("Enum %q could not be loaded: %s",
+            name, tostring(last_err)))
     end
 
     -- Create an accessor table allowing direct enum.CONSTANT access
@@ -48,8 +56,7 @@ function Enums.Get(name)
         for bit_name, bit_index in pairs(enum_def.bits) do
             proxy[bit_name] = bit_index
             if bit_index < 32 then
-                local flag_val = bit.lshift(1, bit_index)
-                proxy.flags[bit_name] = flag_val
+                proxy.flags[bit_name] = bit.lshift(1, bit_index)
             end
         end
     end

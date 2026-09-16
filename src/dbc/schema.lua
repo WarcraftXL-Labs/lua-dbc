@@ -285,6 +285,7 @@ local function load_from_json(table_name, build_or_hash)
     return {
         name            = table_name,
         record_size     = cur_offset,
+        field_count     = #fields,
         fields          = fields,
         by_name         = by_name,
         id_offset       = id_offset,

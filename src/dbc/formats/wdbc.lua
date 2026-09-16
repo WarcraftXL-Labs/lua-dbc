@@ -90,7 +90,7 @@ function WdbcDriver.create_empty(schema, origin)
     self:Init("WDBC", origin or "<memory>")
 
     self.record_count = 0
-    self.field_count = schema.field_count
+    self.field_count = schema.field_count or #schema.fields
     self.record_size = schema.record_size
 
     self.capacity = 8

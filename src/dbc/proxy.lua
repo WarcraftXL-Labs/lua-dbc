@@ -679,7 +679,7 @@ local function resolve_method(schema, key)
     -- ---------- Setters: Set<Field>() or Set<Relation>() ----------
     local set_name = string_match(key, "^Set(.+)$")
     if set_name then
-        local f = by_name[set_name]
+        local f = by_name[set_name] or by_name[set_name .. "_lang"]
         if f then
             local off   = f.offset
             local kind  = f.kind
@@ -767,9 +767,11 @@ local function get_method_cache(schema)
 end
 
 function RowProxy:__index(key)
-    if RowProxy[key] ~= nil then return RowProxy[key] end
+    local explicit = rawget(RowProxy, key)
+    if explicit ~= nil then return explicit end
 
-    local schema = self:GetSchema()
+    local file   = rawget(self, "_file")
+    local schema = rawget(self, "_schema") or (file and file.schema)
     if not schema then return nil end
 
     local cache = get_method_cache(schema)
@@ -784,16 +786,17 @@ function RowProxy:__index(key)
     end
 
     if schema.by_name and schema.by_name[key] then
-        return self:GetField(key)
+        return RowProxy.GetField(self, key)
     end
 
     return nil
 end
 
 function RowProxy:__newindex(key, value)
-    local schema = self:GetSchema()
+    local file   = rawget(self, "_file")
+    local schema = rawget(self, "_schema") or (file and file.schema)
     if schema and schema.by_name and schema.by_name[key] then
-        self:SetField(key, value)
+        RowProxy.SetField(self, key, value)
         return
     end
     rawset(self, key, value)
