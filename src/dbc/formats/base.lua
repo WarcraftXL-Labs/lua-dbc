@@ -99,14 +99,17 @@ function BaseFormatDriver:Init(format_name, origin)
     self.str_orig = "\0"
     self.str_extra = {}
     self.str_extra_len = 0
+    self._str_cache = {}
 end
 
 --- Validates and binds a schema definition to the driver.
 --- @param schema table Schema definition.
 function BaseFormatDriver:AttachSchema(schema)
-    if self.record_size > 0 and schema.record_size and schema.record_size ~= self.record_size then
-        error(string.format("%s: schema %s describes %d-byte records, file has %d bytes",
-            self.origin, schema.name or "?", schema.record_size, self.record_size))
+    if not self.field_storage_info and not self.is_compressed then
+        if self.record_size > 0 and schema.record_size and schema.record_size ~= self.record_size then
+            error(string.format("%s: schema %s describes %d-byte records, file has %d bytes",
+                self.origin, schema.name or "?", schema.record_size, self.record_size))
+        end
     end
 
     self.schema = schema
@@ -189,9 +192,18 @@ end
 function BaseFormatDriver:InternString(text)
     if not text or text == "" then return 0 end
 
+    if not self._str_cache then
+        self._str_cache = {}
+    end
+    local cached = self._str_cache[text]
+    if cached then
+        return cached
+    end
+
     local needle = "\0" .. text .. "\0"
     local at = string_find(self.str_orig, needle, 1, true)
     if at then
+        self._str_cache[text] = at
         return at
     end
 
@@ -199,7 +211,9 @@ function BaseFormatDriver:InternString(text)
     for _, chunk in ipairs(self.str_extra) do
         local hit = string_find(chunk, needle, 1, true)
         if hit then
-            return base + hit
+            local offset = base + hit
+            self._str_cache[text] = offset
+            return offset
         end
         base = base + #chunk
     end
@@ -208,6 +222,7 @@ function BaseFormatDriver:InternString(text)
     local chunk = text .. "\0"
     table.insert(self.str_extra, chunk)
     self.str_extra_len = self.str_extra_len + #chunk
+    self._str_cache[text] = offset
     return offset
 end
 

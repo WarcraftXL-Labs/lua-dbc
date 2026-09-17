@@ -32,14 +32,8 @@ function Query.new(source)
 
     if type(source) == "table" and source.GetAllRows then
         self._source = source:GetAllRows()
-    elseif type(source) == "table" then
+    elseif source ~= nil then
         self._source = source
-    elseif type(source) == "function" then
-        local items = {}
-        for item in source do
-            items[#items + 1] = item
-        end
-        self._source = items
     else
         self._source = {}
     end
@@ -134,96 +128,204 @@ end
 -- Pipeline execution
 -- ---------------------------------------------------------------------------
 
+local function make_source_reader(source)
+    if type(source) == "table" and source.GetRowByIndex and source.Count then
+        local count = source:Count()
+        return function(idx)
+            if idx <= count then
+                return source:GetRowByIndex(idx)
+            end
+            return nil
+        end, count
+    elseif type(source) == "table" and not source.GetRowByIndex then
+        local count = #source
+        return function(idx)
+            if idx <= count then
+                return source[idx]
+            end
+            return nil
+        end, count
+    elseif type(source) == "function" then
+        local cache = {}
+        local exhausted = false
+        return function(idx)
+            if idx <= #cache then
+                return cache[idx]
+            end
+            if exhausted then
+                return nil
+            end
+            while #cache < idx do
+                local item = source()
+                if item == nil then
+                    exhausted = true
+                    return nil
+                end
+                cache[#cache + 1] = item
+            end
+            return cache[idx]
+        end, nil
+    else
+        return function(idx) return nil end, 0
+    end
+end
+
+local function execute_stage(reader, steps)
+    local n_steps = #steps
+    local step_states = {}
+    for s = 1, n_steps do
+        local stype = steps[s].type
+        if stype == "skip" then
+            step_states[s] = { skipped = 0 }
+        elseif stype == "take" then
+            step_states[s] = { taken = 0 }
+        elseif stype == "distinct" then
+            step_states[s] = { seen = {} }
+        elseif stype == "where" or stype == "select" then
+            step_states[s] = { idx = 1 }
+        end
+    end
+
+    local result = {}
+    local src_idx = 1
+
+    -- Short-circuit check: if any take has count <= 0, return immediately
+    for s = 1, n_steps do
+        if steps[s].type == "take" and steps[s].count <= 0 then
+            return result
+        end
+    end
+
+    while true do
+        local item = reader(src_idx)
+        if item == nil then
+            break
+        end
+        src_idx = src_idx + 1
+
+        local passed = true
+        local should_terminate = false
+
+        for s = 1, n_steps do
+            local step = steps[s]
+            local stype = step.type
+            local state = step_states[s]
+
+            if stype == "where" then
+                if not step.fn(item, state.idx) then
+                    passed = false
+                    break
+                end
+                state.idx = state.idx + 1
+
+            elseif stype == "select" then
+                item = step.fn(item, state.idx)
+                state.idx = state.idx + 1
+
+            elseif stype == "skip" then
+                if state.skipped < step.count then
+                    state.skipped = state.skipped + 1
+                    passed = false
+                    break
+                end
+
+            elseif stype == "take" then
+                if state.taken >= step.count then
+                    return result
+                end
+                state.taken = state.taken + 1
+                if state.taken >= step.count then
+                    should_terminate = true
+                end
+
+            elseif stype == "distinct" then
+                local key = step.fn and step.fn(item) or item
+                if state.seen[key] then
+                    passed = false
+                    break
+                else
+                    state.seen[key] = true
+                end
+            end
+        end
+
+        if passed then
+            result[#result + 1] = item
+        end
+
+        if should_terminate then
+            return result
+        end
+    end
+
+    return result
+end
+
+local function execute_pipeline(reader, steps)
+    local order_indices = {}
+    for i = 1, #steps do
+        if steps[i].type == "order" then
+            order_indices[#order_indices + 1] = i
+        end
+    end
+
+    if #order_indices == 0 then
+        return execute_stage(reader, steps)
+    end
+
+    local current_reader = reader
+    local prev_idx = 1
+
+    for o = 1, #order_indices do
+        local order_idx = order_indices[o]
+        local stage_steps = {}
+        for s = prev_idx, order_idx - 1 do
+            stage_steps[#stage_steps + 1] = steps[s]
+        end
+
+        local stage_result = execute_stage(current_reader, stage_steps)
+        local order_step = steps[order_idx]
+        local fn = order_step.fn
+        local desc = order_step.desc
+        table_sort(stage_result, function(a, b)
+            local ka, kb = fn(a), fn(b)
+            if ka == nil and kb ~= nil then return not desc end
+            if ka ~= nil and kb == nil then return desc end
+            if ka == kb then return false end
+            if desc then return ka > kb else return ka < kb end
+        end)
+
+        local arr_count = #stage_result
+        current_reader = function(idx)
+            if idx <= arr_count then
+                return stage_result[idx]
+            end
+            return nil
+        end
+        prev_idx = order_idx + 1
+    end
+
+    local remaining_steps = {}
+    for s = prev_idx, #steps do
+        remaining_steps[#remaining_steps + 1] = steps[s]
+    end
+
+    return execute_stage(current_reader, remaining_steps)
+end
+
 ---Materializes the pipeline into an array.
 ---@generic T
 ---@return `T`[]
 function Query:ToList()
-    local source = self._source
-    local steps  = self._steps
-    local current = {}
-
-    -- Preallocate: when there are no filtering steps, output length == source length.
-    local has_filter = false
-    for i = 1, #steps do
-        local t = steps[i].type
-        if t == "where" or t == "skip" or t == "take" or t == "distinct" then
-            has_filter = true
-            break
-        end
+    if #self._steps == 0 and type(self._source) == "table" and not self._source.GetRowByIndex then
+        local src = self._source
+        local copy = {}
+        for i = 1, #src do copy[i] = src[i] end
+        return copy
     end
 
-    if not has_filter then
-        for i = 1, #source do current[i] = source[i] end
-    else
-        for i = 1, #source do current[#current + 1] = source[i] end
-    end
-
-    for s = 1, #steps do
-        local step  = steps[s]
-        local stype = step.type
-
-        if stype == "where" then
-            local fn = step.fn
-            local next_list = {}
-            local idx = 1
-            for i = 1, #current do
-                local item = current[i]
-                if fn(item, idx) then
-                    next_list[#next_list + 1] = item
-                    idx = idx + 1
-                end
-            end
-            current = next_list
-
-        elseif stype == "select" then
-            local fn = step.fn
-            local next_list = {}
-            for i = 1, #current do
-                next_list[i] = fn(current[i], i)
-            end
-            current = next_list
-
-        elseif stype == "order" then
-            local fn   = step.fn
-            local desc = step.desc
-            table_sort(current, function(a, b)
-                local ka, kb = fn(a), fn(b)
-                if ka == nil and kb ~= nil then return not desc end
-                if ka ~= nil and kb == nil then return desc end
-                if ka == kb then return false end
-                if desc then return ka > kb else return ka < kb end
-            end)
-
-        elseif stype == "skip" then
-            local next_list = {}
-            for i = step.count + 1, #current do
-                next_list[#next_list + 1] = current[i]
-            end
-            current = next_list
-
-        elseif stype == "take" then
-            local n = math_min(step.count, #current)
-            local next_list = {}
-            for i = 1, n do next_list[i] = current[i] end
-            current = next_list
-
-        elseif stype == "distinct" then
-            local fn = step.fn
-            local next_list = {}
-            local seen = {}
-            for i = 1, #current do
-                local item = current[i]
-                local key = fn and fn(item) or item
-                if not seen[key] then
-                    seen[key] = true
-                    next_list[#next_list + 1] = item
-                end
-            end
-            current = next_list
-        end
-    end
-
-    return current
+    local reader = make_source_reader(self._source)
+    return execute_pipeline(reader, self._steps)
 end
 
 -- ---------------------------------------------------------------------------
@@ -304,19 +406,24 @@ function Query:All(predicate)
     if type(predicate) ~= "function" then
         error("Query:All expects a predicate function")
     end
-    local list = self:ToList()
-    for i = 1, #list do
-        if not predicate(list[i]) then return false end
-    end
-    return true
+    return not self:Any(function(item) return not predicate(item) end)
 end
 
 ---@generic T
 ---@param predicate fun(item: `T`): boolean|nil
 ---@return integer
 function Query:Count(predicate)
-    local q = predicate and self:Where(predicate) or self
-    return #q:ToList()
+    if predicate then
+        return #self:Where(predicate):ToList()
+    end
+    if #self._steps == 0 then
+        if type(self._source) == "table" and self._source.Count then
+            return self._source:Count()
+        elseif type(self._source) == "table" and not self._source.GetRowByIndex then
+            return #self._source
+        end
+    end
+    return #self:ToList()
 end
 
 ---@generic T
@@ -376,11 +483,7 @@ end
 ---@param target any
 ---@return boolean
 function Query:Contains(target)
-    local list = self:ToList()
-    for i = 1, #list do
-        if list[i] == target then return true end
-    end
-    return false
+    return self:Any(function(item) return item == target end)
 end
 
 ---@generic T

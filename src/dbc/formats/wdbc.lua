@@ -7,15 +7,8 @@
 
 local ffi = require("ffi")
 
-local function load_base()
-    local ok, mod = pcall(require, "dbc.formats.base")
-    if ok then return mod end
-    ok, mod = pcall(require, "src.dbc.formats.base")
-    if ok then return mod end
-    return require("formats.base")
-end
-
-local base_mod = load_base()
+local load = require("dbc._loader")
+local base_mod = load("formats.base")
 local BaseFormatDriver = base_mod.BaseFormatDriver
 local READ = base_mod.READ
 local WRITE = base_mod.WRITE

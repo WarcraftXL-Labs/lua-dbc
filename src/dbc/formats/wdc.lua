@@ -15,15 +15,8 @@
 local ffi = require("ffi")
 local bit = require("bit")
 
-local function load_base()
-    local ok, mod = pcall(require, "dbc.formats.base")
-    if ok then return mod end
-    ok, mod = pcall(require, "src.dbc.formats.base")
-    if ok then return mod end
-    return require("formats.base")
-end
-
-local base_mod = load_base()
+local load = require("dbc._loader")
+local base_mod = load("formats.base")
 local BaseFormatDriver = base_mod.BaseFormatDriver
 local READ = base_mod.READ
 local WRITE = base_mod.WRITE
@@ -37,6 +30,14 @@ local band = bit.band
 local bor = bit.bor
 local rshift = bit.rshift
 local lshift = bit.lshift
+
+-- Fast uint32 to float converter using preallocated buffer
+local float_cast_buf = ffi.new("uint32_t[1]")
+local float_cast_ptr = cast("float*", float_cast_buf)
+local function u32_to_f32(u)
+    float_cast_buf[0] = u
+    return tonumber(float_cast_ptr[0])
+end
 
 --- Bit unpacking from a raw byte buffer.
 --- Extracts `width` bits starting at `bit_offset`.
@@ -57,7 +58,6 @@ local function unpack_bits(buf, bit_offset, bit_width, is_signed)
     local b3 = buf[byte_start + 3]
     local b4 = buf[byte_start + 4]
 
-    -- Form a 64-bit uint from bytes
     local low32 = bor(b0, lshift(b1, 8), lshift(b2, 16), lshift(b3, 24))
     local val = rshift(low32, bit_shift)
     if bit_shift > 0 and bit_width > (32 - bit_shift) then
@@ -65,13 +65,17 @@ local function unpack_bits(buf, bit_offset, bit_width, is_signed)
         val = bor(val, high_bits)
     end
 
-    -- Mask to bit_width
+    -- Mask to bit_width and sign-extend if requested
     if bit_width < 32 then
         local mask = lshift(1, bit_width) - 1
         val = band(val, mask)
         if is_signed and band(val, lshift(1, bit_width - 1)) ~= 0 then
             val = val - lshift(1, bit_width)
         end
+    elseif is_signed then
+        val = tonumber(cast("int32_t", val))
+    else
+        val = tonumber(cast("uint32_t", val))
     end
 
     return val
@@ -144,22 +148,12 @@ function WdcDriver.new(data, schema, origin)
     self.record_count = tonumber(head_u32[0])
     self.field_count = tonumber(head_u32[1])
     self.record_size = tonumber(head_u32[2])
-    local string_size = tonumber(head_u32[3])
+    self.string_table_size = tonumber(head_u32[3])
     self.table_hash = tonumber(head_u32[4])
     self.layout_hash = tonumber(head_u32[5])
     self.min_id = tonumber(head_u32[6])
     self.max_id = tonumber(head_u32[7])
     self.locale = tonumber(head_u32[8])
-    self.copy_table_size = tonumber(head_u32[9])
-
-    local head_u16 = cast("const uint16_t*", cast("const char*", data) + cursor + 40)
-    self.flags = tonumber(head_u16[0])
-    self.id_index = tonumber(head_u16[1])
-
-    local head2_u32 = cast("const uint32_t*", cast("const char*", data) + cursor + 44)
-    self.total_field_count = tonumber(head2_u32[0])
-    local bitpacked_data_offset = tonumber(head2_u32[1])
-    local lookup_column_count = tonumber(head2_u32[2])
 
     local field_storage_info_size = 0
     local common_data_size = 0
@@ -167,6 +161,15 @@ function WdcDriver.new(data, schema, origin)
     local section_count = 1
 
     if magic == "WDC1" then
+        self.copy_table_size = tonumber(head_u32[9])
+        local head_u16 = cast("const uint16_t*", cast("const char*", data) + cursor + 40)
+        self.flags = tonumber(head_u16[0])
+        self.id_index = tonumber(head_u16[1])
+
+        local head2_u32 = cast("const uint32_t*", cast("const char*", data) + cursor + 44)
+        self.total_field_count = tonumber(head2_u32[0])
+        local bitpacked_data_offset = tonumber(head2_u32[1])
+        local lookup_column_count = tonumber(head2_u32[2])
         local offset_map_offset = tonumber(head2_u32[3])
         local id_list_size = tonumber(head2_u32[4])
         field_storage_info_size = tonumber(head2_u32[5])
@@ -175,22 +178,47 @@ function WdcDriver.new(data, schema, origin)
         self.relationship_data_size = tonumber(head2_u32[8])
         cursor = cursor + 80
     else
-        -- WDC2, WDC3, WDC4, WDC5
+        -- WDC2, WDC3, WDC4, WDC5 (no copy_table_size in main header)
+        local head_u16 = cast("const uint16_t*", cast("const char*", data) + cursor + 36)
+        self.flags = tonumber(head_u16[0])
+        self.id_index = tonumber(head_u16[1])
+
+        local head2_u32 = cast("const uint32_t*", cast("const char*", data) + cursor + 40)
+        self.total_field_count = tonumber(head2_u32[0])
+        local bitpacked_data_offset = tonumber(head2_u32[1])
+        local lookup_column_count = tonumber(head2_u32[2])
         field_storage_info_size = tonumber(head2_u32[3])
         common_data_size = tonumber(head2_u32[4])
         pallet_data_size = tonumber(head2_u32[5])
         section_count = tonumber(head2_u32[6])
-        cursor = cursor + 72 - 4 -- 4-byte magic was consumed
+        cursor = cursor + 68
     end
 
     self.section_count = math_max(section_count, 1)
 
     -- Parse section headers (WDC2+)
     self.section_headers = {}
-    if magic ~= "WDC1" then
+    if magic == "WDC1" then
+        -- Single section in WDC1
+    elseif magic == "WDC2" then
         for i = 0, self.section_count - 1 do
             local sec_ptr = cast("const uint32_t*", cast("const char*", data) + cursor + i * 40)
-            -- 8 bytes tact_key_hash, followed by 8 uint32
+            table.insert(self.section_headers, {
+                tact_key_hash = cast("const uint64_t*", sec_ptr)[0],
+                file_offset = tonumber(sec_ptr[2]),
+                record_count = tonumber(sec_ptr[3]),
+                string_table_size = tonumber(sec_ptr[4]),
+                copy_table_size = tonumber(sec_ptr[5]),
+                offset_map_offset = tonumber(sec_ptr[6]),
+                id_list_size = tonumber(sec_ptr[7]),
+                relationship_data_size = tonumber(sec_ptr[8]),
+            })
+        end
+        cursor = cursor + self.section_count * 40
+    else
+        -- WDC3, WDC4, WDC5
+        for i = 0, self.section_count - 1 do
+            local sec_ptr = cast("const uint32_t*", cast("const char*", data) + cursor + i * 40)
             table.insert(self.section_headers, {
                 tact_key_hash = cast("const uint64_t*", sec_ptr)[0],
                 file_offset = tonumber(sec_ptr[2]),
@@ -199,8 +227,8 @@ function WdcDriver.new(data, schema, origin)
                 offset_records_end = tonumber(sec_ptr[5]),
                 id_list_size = tonumber(sec_ptr[6]),
                 relationship_data_size = tonumber(sec_ptr[7]),
-                offset_map_id_list_size = tonumber(sec_ptr[8]),
-                offset_map_data_size = tonumber(sec_ptr[9]),
+                offset_map_id_count = tonumber(sec_ptr[8]),
+                copy_table_count = tonumber(sec_ptr[9]),
             })
         end
         cursor = cursor + self.section_count * 40
@@ -208,8 +236,9 @@ function WdcDriver.new(data, schema, origin)
 
     -- Parse field structures: array of { int16 size, uint16 position }
     self.field_structures = {}
+    local num_struct_fields = self.total_field_count or self.field_count
     local struct_ptr = cast("const int16_t*", cast("const char*", data) + cursor)
-    for i = 0, self.field_count - 1 do
+    for i = 0, num_struct_fields - 1 do
         local raw_size = tonumber(struct_ptr[i * 2])
         local pos = tonumber(cast("const uint16_t*", struct_ptr + i * 2)[1])
         local bit_width = raw_size < 0 and (32 - raw_size) or raw_size
@@ -218,12 +247,15 @@ function WdcDriver.new(data, schema, origin)
             position = pos,
         })
     end
-    cursor = cursor + self.field_count * 4
+    cursor = cursor + num_struct_fields * 4
 
     -- Parse field storage info: entries of 24 bytes
     self.field_storage_info = {}
     local num_storage_entries = math_floor(field_storage_info_size / 24)
     local storage_ptr = cast("const char*", data) + cursor
+    local running_common_offset = 0
+    local running_pallet_offset = 0
+
     for i = 0, num_storage_entries - 1 do
         local entry_ptr = storage_ptr + i * 24
         local u16_ptr = cast("const uint16_t*", entry_ptr)
@@ -236,6 +268,16 @@ function WdcDriver.new(data, schema, origin)
         local val2 = tonumber(u32_ptr[4])
         local val3 = tonumber(u32_ptr[5])
 
+        local col_common_offset = 0
+        local col_pallet_offset = 0
+        if comp_type == 2 then
+            col_common_offset = running_common_offset
+            running_common_offset = running_common_offset + add_sz
+        elseif comp_type == 3 or comp_type == 4 then
+            col_pallet_offset = running_pallet_offset
+            running_pallet_offset = running_pallet_offset + add_sz
+        end
+
         table.insert(self.field_storage_info, {
             offset = off,
             size = sz,
@@ -244,6 +286,8 @@ function WdcDriver.new(data, schema, origin)
             val1 = val1,
             val2 = val2,
             val3 = val3,
+            common_offset = col_common_offset,
+            pallet_offset = col_pallet_offset,
         })
     end
     cursor = cursor + field_storage_info_size
@@ -259,35 +303,44 @@ function WdcDriver.new(data, schema, origin)
     -- Common data block
     self.common_data = {}
     if common_data_size > 0 then
-        local common_end = cursor + common_data_size
-        -- Parse common data column maps
+        local common_start = cursor
         for f_idx, sinfo in ipairs(self.field_storage_info) do
             if sinfo.compression_type == 2 and sinfo.additional_data_size > 0 then
                 self.common_data[f_idx] = {}
                 local num_common = math_floor(sinfo.additional_data_size / 8)
-                if cursor + num_common * 8 <= common_end then
-                    local c_ptr = cast("const uint32_t*", cast("const char*", data) + cursor)
-                    for k = 0, num_common - 1 do
-                        local record_id = tonumber(c_ptr[k * 2])
-                        local val = tonumber(c_ptr[k * 2 + 1])
-                        self.common_data[f_idx][record_id] = val
-                    end
-                    cursor = cursor + num_common * 8
+                local c_ptr = cast("const uint32_t*", cast("const char*", data) + common_start + sinfo.common_offset)
+                for k = 0, num_common - 1 do
+                    local record_id = tonumber(c_ptr[k * 2])
+                    local val = tonumber(c_ptr[k * 2 + 1])
+                    self.common_data[f_idx][record_id] = val
                 end
             end
         end
-        cursor = common_end
+        cursor = cursor + common_data_size
+    end
+
+    -- Encrypted status block (WDC4 / WDC5):
+    -- Follows common_data for sections where tact_key_hash ~= 0
+    if magic == "WDC4" or magic == "WDC5" then
+        for _, sec in ipairs(self.section_headers) do
+            if sec.tact_key_hash ~= 0ULL and sec.tact_key_hash ~= 0 then
+                if cursor + 4 <= #data then
+                    local enc_cnt = tonumber(cast("const uint32_t*", cast("const char*", data) + cursor)[0])
+                    cursor = cursor + 4 + enc_cnt * 4
+                end
+            end
+        end
     end
 
     -- Sections reading
     self.id_list = {}
     self.relationship_map = {}
     self.copy_table = {}
-    self.str_orig = "\0"
+    self.str_orig = ""
 
     if magic == "WDC1" then
-        -- Single section in WDC1
         self.capacity = math_max(self.record_count, 1)
+        self.total_recs_size = self.record_count * self.record_size
         self.records = ffi.new("uint8_t[?]", self.capacity * self.record_size)
         if self.record_size > 0 and self.record_count > 0 and cursor + self.record_count * self.record_size <= #data then
             local rec_start = cast("const char*", data) + cursor
@@ -295,12 +348,12 @@ function WdcDriver.new(data, schema, origin)
             cursor = cursor + self.record_count * self.record_size
         end
 
-        if string_size > 0 and cursor + string_size <= #data then
-            self.str_orig = string_sub(data, cursor + 1, cursor + string_size)
-            cursor = cursor + string_size
+        if self.string_table_size > 0 and cursor + self.string_table_size <= #data then
+            self.str_orig = string_sub(data, cursor + 1, cursor + self.string_table_size)
+            cursor = cursor + self.string_table_size
         end
 
-        local has_noninline = band(self.flags, 0x01) ~= 0
+        local has_noninline = band(self.flags or 0, 0x01) ~= 0
         if has_noninline and cursor + self.record_count * 4 <= #data then
             local id_ptr = cast("const uint32_t*", cast("const char*", data) + cursor)
             for i = 0, self.record_count - 1 do
@@ -309,7 +362,7 @@ function WdcDriver.new(data, schema, origin)
             cursor = cursor + self.record_count * 4
         end
 
-        if self.copy_table_size > 0 and cursor + self.copy_table_size <= #data then
+        if self.copy_table_size and self.copy_table_size > 0 and cursor + self.copy_table_size <= #data then
             local copy_ptr = cast("const uint32_t*", cast("const char*", data) + cursor)
             local num_entries = math_floor(self.copy_table_size / 8)
             for i = 0, num_entries - 1 do
@@ -341,8 +394,10 @@ function WdcDriver.new(data, schema, origin)
             total_records = total_records + sec.record_count
         end
         if total_records == 0 then total_records = self.record_count end
-
+        self.record_count = total_records
         self.capacity = math_max(total_records, 1)
+
+        self.total_recs_size = total_records * self.record_size
         self.records = ffi.new("uint8_t[?]", self.capacity * self.record_size)
 
         local record_write_cursor = 0
@@ -376,6 +431,18 @@ function WdcDriver.new(data, schema, origin)
                 s_cursor = s_cursor + sec.id_list_size
             end
 
+            -- Section copy table
+            local copy_count = sec.copy_table_count or (sec.copy_table_size and math_floor(sec.copy_table_size / 8)) or 0
+            if copy_count > 0 and s_cursor + copy_count * 8 <= #data then
+                local copy_ptr = cast("const uint32_t*", cast("const char*", data) + s_cursor)
+                for i = 0, copy_count - 1 do
+                    local new_id = tonumber(copy_ptr[i * 2])
+                    local source_id = tonumber(copy_ptr[i * 2 + 1])
+                    self.copy_table[new_id] = source_id
+                end
+                s_cursor = s_cursor + copy_count * 8
+            end
+
             -- Section relationship data
             if sec.relationship_data_size > 0 and s_cursor + 12 <= #data then
                 local rel_head = cast("const uint32_t*", cast("const char*", data) + s_cursor)
@@ -394,21 +461,73 @@ function WdcDriver.new(data, schema, origin)
 
             section_row_offset = section_row_offset + sec.record_count
         end
+    end
 
-        if #self.id_list == 0 and band(self.flags, 0x01) == 0 then
-            self.id_list = nil
-        end
+    if #self.id_list == 0 and band(self.flags or 0, 0x04) == 0 then
+        self.id_list = nil
     end
 
     self.str_extra = {}
     self.str_extra_len = 0
     self.dirty = false
 
+    -- Auto-resolve schema by layout hash if needed
+    if self.layout_hash and self.layout_hash ~= 0 and origin then
+        local hash_str = string.format("%08X", self.layout_hash)
+        if not schema or (not schema.layout_hash) or (string.upper(schema.layout_hash) ~= hash_str) then
+            local table_name = string.match(origin, "([^/\\]+)%.db[c2]$")
+            if table_name then
+                local ok, auto_schema = pcall(function()
+                    local s_mod = load("schema")
+                    return s_mod.Get(table_name, hash_str)
+                end)
+                if ok and auto_schema then
+                    schema = auto_schema
+                end
+            end
+        end
+    end
+
     if schema then
         self:AttachSchema(schema)
     end
 
     return self
+end
+
+--- Validates and binds a schema definition to the driver without enforcing strict record byte sizes.
+--- @param schema table Schema definition.
+function WdcDriver:AttachSchema(schema)
+    self.schema = schema
+    self.by_name = {}
+
+    local has_noninline = band(self.flags or 0, 0x04) ~= 0
+    local storage_idx = 1
+
+    for _, f in ipairs(schema.fields) do
+        self.by_name[f.name] = f
+        if (f.name == "ID" or f.is_id) and has_noninline then
+            f._wdc_storage_index = 0 -- non-inline ID
+        else
+            f._wdc_storage_index = storage_idx
+            storage_idx = storage_idx + 1
+        end
+    end
+end
+
+--- Returns the primary key ID for a given 1-based row index.
+--- @param row integer 1-based row index.
+--- @return integer id
+function WdcDriver:GetRowId(row)
+    if self.id_list and self.id_list[row] then
+        return self.id_list[row]
+    end
+    if self.id_index and self.field_storage_info and self.field_storage_info[self.id_index + 1] then
+        return self:ReadField(row, self.id_index + 1)
+    end
+    local id_offset = self:GetIdOffset()
+    local addr = self:GetAddress(row, id_offset)
+    return READ.u32(addr)
 end
 
 --- Retrieves the memory pointer address for a given row and byte offset.
@@ -422,67 +541,110 @@ function WdcDriver:GetAddress(row, offset)
     return self.records + (row - 1) * self.record_size + offset
 end
 
---- Reads a field from a given row, decoding any bitpacking, pallet, or common data compression.
+--- Retrieves a null-terminated string from string storage.
+--- In WDC2..WDC5, raw offsets stored in records are relative to the field position
+--- inside the concatenated record buffer.
+--- @param raw_offset integer Offset value read from the record field.
+--- @param row integer|nil 1-based row index.
+--- @param field_byte_offset integer|nil Byte offset of the field within the record.
+--- @return string
+function WdcDriver:GetString(raw_offset, row, field_byte_offset)
+    if not raw_offset or raw_offset == 0 then return "" end
+
+    if self.format == "WDC1" then
+        if raw_offset < 0 or raw_offset >= #self.str_orig then return "" end
+        local sub = string_sub(self.str_orig, raw_offset + 1, raw_offset + 512)
+        return string.match(sub, "^([^%z]*)") or ""
+    end
+
+    -- WDC2..WDC5: string offsets are relative to field inside concatenated records blob
+    row = row or 1
+    field_byte_offset = field_byte_offset or 0
+    local field_buf_pos = (row - 1) * self.record_size + field_byte_offset
+    local str_buf_pos = field_buf_pos + raw_offset
+    local str_offset = str_buf_pos - (self.total_recs_size or 0)
+
+    if str_offset < 0 or str_offset >= #self.str_orig then
+        return ""
+    end
+
+    local sub = string_sub(self.str_orig, str_offset + 1, str_offset + 512)
+    return string.match(sub, "^([^%z]*)") or ""
+end
+
+--- Reads a field from a given row, decoding bitpacking, pallet, common data, or pallet arrays.
 --- @param row integer 1-based row index.
 --- @param field_def_or_idx table|integer Field definition or 1-based field index.
+--- @param extra any Optional array index (1-based) or locale slot.
 --- @return any value
-function WdcDriver:ReadField(row, field_def_or_idx)
-    local f_idx = type(field_def_or_idx) == "number" and field_def_or_idx or nil
+function WdcDriver:ReadField(row, field_def_or_idx, extra)
     local field_def = type(field_def_or_idx) == "table" and field_def_or_idx or nil
+    local f_idx = type(field_def_or_idx) == "number" and field_def_or_idx or nil
 
-    if not f_idx and field_def and self.schema then
-        -- Find index in schema fields
-        for idx, f in ipairs(self.schema.fields) do
-            if f.name == field_def.name then
-                f_idx = idx
-                break
+    if field_def then
+        if field_def._wdc_storage_index == 0 or (field_def.name == "ID" and self.id_list and #self.id_list > 0) then
+            return self:GetRowId(row)
+        end
+        f_idx = field_def._wdc_storage_index
+        if not f_idx and self.schema then
+            for idx, f in ipairs(self.schema.fields) do
+                if f.name == field_def.name then
+                    f_idx = f._wdc_storage_index or idx
+                    break
+                end
             end
         end
     end
     f_idx = f_idx or 1
 
-    -- If primary key ID and non-inline IDs exist:
-    if field_def and field_def.kind == "key" and self.id_list then
-        return self.id_list[row]
-    end
-
-    local sinfo = self.field_storage_info[f_idx]
+    local sinfo = self.field_storage_info and self.field_storage_info[f_idx]
     if not sinfo then
-        -- Fallback to standard memory reading if no storage info
         local offset = field_def and field_def.offset or 0
         local kind = field_def and field_def.kind or "u32"
         local addr = self:GetAddress(row, offset)
-        if kind == "str" then
-            return self:GetString(READ.u32(addr))
+        if kind == "str" or kind == "loc" then
+            return self:GetString(READ.u32(addr), row, offset)
         end
         return READ[kind] and READ[kind](addr) or READ.u32(addr)
     end
 
     local ctype = sinfo.compression_type
+    local kind = field_def and field_def.kind or "u32"
+    local field_byte_offset = math_floor(sinfo.offset / 8)
 
     -- Compression Type 0: None (standard uncompressed inline field)
     if ctype == 0 then
-        local byte_offset = math_floor(sinfo.offset / 8)
-        local addr = self:GetAddress(row, byte_offset)
-        local kind = field_def and field_def.kind or "u32"
-        if kind == "str" then
-            local str_off = READ.u32(addr)
-            return self:GetString(str_off)
+        local addr = self:GetAddress(row, field_byte_offset)
+        if kind == "str" or kind == "loc" then
+            local raw_str_off = READ.u32(addr)
+            return self:GetString(raw_str_off, row, field_byte_offset)
         end
-        if sinfo.size == 8 then return READ.byte(addr)
-        elseif sinfo.size == 16 then return cast("const uint16_t*", addr)[0]
-        elseif sinfo.size == 64 then return READ.u64(addr)
-        else return READ.u32(addr)
+        if kind == "f32" then
+            return READ.f32(addr)
+        end
+        if sinfo.size == 8 then
+            return READ.byte(addr)
+        elseif sinfo.size == 16 then
+            local is_signed = field_def and (field_def.kind == "i16")
+            return is_signed and cast("const int16_t*", addr)[0] or cast("const uint16_t*", addr)[0]
+        elseif sinfo.size == 64 then
+            return READ.u64(addr)
+        else
+            local is_signed = field_def and (field_def.kind == "i32")
+            return is_signed and READ.i32(addr) or READ.u32(addr)
         end
     end
 
-    -- Compression Type 1: Bitpacked (inline bitpacked within the record)
-    if ctype == 1 then
+    -- Compression Type 1 & 5: Bitpacked (1=unsigned, 5=signed)
+    if ctype == 1 or ctype == 5 then
         local rec_ptr = cast("const uint8_t*", self:GetAddress(row, 0))
-        local is_signed = sinfo.val3 == 1
+        local is_signed = (ctype == 5) or (sinfo.val3 == 1) or (field_def and (field_def.kind == "i8" or field_def.kind == "i16" or field_def.kind == "i32"))
         local val = unpack_bits(rec_ptr, sinfo.offset, sinfo.size, is_signed)
-        if field_def and field_def.kind == "str" then
-            return self:GetString(val)
+        if kind == "str" or kind == "loc" then
+            return self:GetString(val, row, field_byte_offset)
+        end
+        if kind == "f32" then
+            return u32_to_f32(val)
         end
         return val
     end
@@ -491,35 +653,48 @@ function WdcDriver:ReadField(row, field_def_or_idx)
     if ctype == 2 then
         local record_id = self:GetRowId(row)
         if self.common_data[f_idx] and self.common_data[f_idx][record_id] ~= nil then
-            return self.common_data[f_idx][record_id]
+            local raw = self.common_data[f_idx][record_id]
+            if kind == "f32" then return u32_to_f32(raw) end
+            return raw
         end
-        return sinfo.val1 -- default_value
+        local def_val = sinfo.val1
+        if kind == "f32" then return u32_to_f32(def_val) end
+        return def_val
     end
 
     -- Compression Type 3: Pallet (index into pallet array)
     if ctype == 3 then
         local rec_ptr = cast("const uint8_t*", self:GetAddress(row, 0))
         local pallet_idx = unpack_bits(rec_ptr, sinfo.offset, sinfo.size, false)
-        local pallet_offset = sinfo.val1
-        local item_size = 4 -- standard 32-bit pallet items
-        local p_addr = cast("const uint32_t*", cast("const char*", self.pallet_data) + pallet_offset)
-        local val = tonumber(p_addr[pallet_idx])
-        if field_def and field_def.kind == "str" then
-            return self:GetString(val)
+        local p_ptr = cast("const char*", self.pallet_data) + sinfo.pallet_offset + pallet_idx * 4
+        local u_val = cast("const uint32_t*", p_ptr)[0]
+        if kind == "str" or kind == "loc" then
+            return self:GetString(u_val, row, field_byte_offset)
         end
-        return val
+        if kind == "f32" then
+            return cast("const float*", p_ptr)[0]
+        end
+        return tonumber(u_val)
     end
 
     -- Compression Type 4: Pallet Array (index into array pallet)
     if ctype == 4 then
         local rec_ptr = cast("const uint8_t*", self:GetAddress(row, 0))
         local pallet_idx = unpack_bits(rec_ptr, sinfo.offset, sinfo.size, false)
-        local pallet_offset = sinfo.val1
         local array_count = sinfo.val3 or 1
-        local p_addr = cast("const uint32_t*", cast("const char*", self.pallet_data) + pallet_offset)
+        local p_ptr = cast("const uint32_t*", cast("const char*", self.pallet_data) + sinfo.pallet_offset + pallet_idx * array_count * 4)
+        if extra ~= nil and type(extra) == "number" then
+            if extra >= 1 and extra <= array_count then
+                local raw = p_ptr[extra - 1]
+                if kind == "f32" then return u32_to_f32(raw) end
+                return tonumber(raw)
+            end
+            return 0
+        end
         local res = {}
         for k = 0, array_count - 1 do
-            table.insert(res, tonumber(p_addr[pallet_idx * array_count + k]))
+            local raw = p_ptr[k]
+            res[k + 1] = (kind == "f32") and u32_to_f32(raw) or tonumber(raw)
         end
         return res
     end

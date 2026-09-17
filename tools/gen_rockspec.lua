@@ -67,10 +67,8 @@ local CONFIG = {
     -- Directories to scan. Each entry produces module names by prefixing the
     -- module suffix (path without .lua, with dots) with the given prefix.
     scan = {
-        { dir = "src/dbc",         prefix = "dbc" },
-        { dir = "src/dbc/formats", prefix = "dbc.formats" },
-        { dir = "src/enums",       prefix = "dbc.enums" },
-        { dir = "tools",           prefix = "tools" },
+        { dir = "src/dbc", prefix = "dbc" },
+        { dir = "tools",   prefix = "tools" },
     },
 
     -- Data directories copied verbatim into the installed tree.

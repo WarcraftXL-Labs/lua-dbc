@@ -347,7 +347,7 @@ function RowProxy:GetField(name, extra)
     local f = self._file:GetField(name)
 
     if self._file.ReadField then
-        return self._file:ReadField(self._row, f)
+        return self._file:ReadField(self._row, f, extra)
     end
 
     if f.kind == "loc" then
@@ -646,7 +646,7 @@ local function resolve_method(schema, key)
 
             return function(self, extra)
                 if self._file.ReadField then
-                    return self._file:ReadField(self._row, f)
+                    return self._file:ReadField(self._row, f, extra)
                 end
                 if kind == "loc" then
                     return self:_ReadLoc(f, extra)

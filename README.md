@@ -1,375 +1,325 @@
-<h1 align="center">lua-dbc</h1>
+# lua-dbc
 
-<p align="center">
-  <strong>Fluent LuaJIT bindings for World of Warcraft client databases.</strong><br>
-  Read, edit, and query WDBC-WDC5 / WDB2-WDB6 files across every expansion - from Classic 1.12 to The War Within 11.x and Midnight 12.x.
-</p>
+LuaJIT bindings and authoring library for World of Warcraft client database files.
+Supports reading, editing, and querying database files from Classic 1.12 up to Midnight 12.x (WDBC, WDB2, WDB3, WDB4, WDB5, WDB6, WDC1, WDC2, WDC3, WDC4, and WDC5).
 
-<p align="center">
-  <img alt="Lua" src="https://img.shields.io/badge/Lua-5.1-blue.svg">
-  <img alt="LuaJIT" src="https://img.shields.io/badge/LuaJIT-2.1+-orange.svg">
-  <img alt="License" src="https://img.shields.io/badge/License-GPL--3.0-green.svg">
-  <img alt="LuaRocks" src="https://img.shields.io/badge/LuaRocks-lua--dbc-blueviolet.svg">
-</p>
+[![Lua](https://img.shields.io/badge/Lua-5.1-blue.svg)](https://www.lua.org)
+[![LuaJIT](https://img.shields.io/badge/LuaJIT-2.1+-orange.svg)](https://luajit.org)
+[![License](https://img.shields.io/badge/License-GPL--3.0-green.svg)](LICENSE)
+[![LuaRocks](https://img.shields.io/badge/LuaRocks-lua--dbc-blueviolet.svg)](https://luarocks.org/modules/WarcraftXL-Labs/lua-dbc)
 
-<p align="center">
-  <a href="#-features">Features</a> ·
-  <a href="#-installation">Installation</a> ·
-  <a href="#-quick-start">Quick Start</a> ·
-  <a href="#-api-at-a-glance">API</a> ·
-  <a href="#%EF%B8%8F-architecture">Architecture</a> ·
-  <a href="#-development">Development</a>
-</p>
+---
 
-<hr>
+## Contents
 
-<h2 id="-features">✨ Features</h2>
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Supported Formats](#supported-formats)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Core API Reference](#core-api-reference)
+- [Performance](#performance)
+- [Development and Tooling](#development-and-tooling)
+- [License](#license)
 
-<h3>Core</h3>
+---
 
-<table>
-  <tr>
-    <th align="left" width="220">Feature</th>
-    <th align="left">Description</th>
-  </tr>
-  <tr>
-    <td><strong>Zero-copy FFI core</strong></td>
-    <td>Records live in C memory and are accessed via <code>uint8_t*</code> pointers. Reads, writes, and indexing do not allocate Lua strings or tables except when you ask for them.</td>
-  </tr>
-  <tr>
-    <td><strong>Every WoW format</strong></td>
-    <td>Automatic detection through a 4-byte magic sniffer. Handles WDBC, WDB2, WDB3, WDB4, WDB5, WDB6, and WDC1 through WDC5 with a single, uniform API.</td>
-  </tr>
-  <tr>
-    <td><strong>Multi-build support</strong></td>
-    <td>Bind a workspace to a specific client build (for example <code>3.3.5.12340</code> or <code>12.1.5.69594</code>). Schemas, relations, and generated autocomplete stay coherent across builds.</td>
-  </tr>
-</table>
+## Overview
 
-<h3>Authoring</h3>
+`lua-dbc` provides programmatic access to client databases used across the history of World of Warcraft. Built on the LuaJIT Foreign Function Interface (FFI), it accesses binary records through direct memory pointers without intermediate string or table allocations for numeric fields.
 
-<table>
-  <tr>
-    <th align="left" width="220">Feature</th>
-    <th align="left">Description</th>
-  </tr>
-  <tr>
-    <td><strong>Fluent PascalCase API</strong></td>
-    <td>Method chaining for readability: <code>spell:SetName_lang("Pyroblast"):SetSpellIconID(42)</code></td>
-  </tr>
-  <tr>
-    <td><strong>Dynamic reflection</strong></td>
-    <td>Getters, setters, relation navigators, and flag checkers are compiled once per table and reused. No runtime reflection cost after the first access.</td>
-  </tr>
-  <tr>
-    <td><strong>Cascading row creation</strong></td>
-    <td>Create a foreign row and link it in one call: <code>spell:CreateRelated("SpellIcon", { ... })</code></td>
-  </tr>
-  <tr>
-    <td><strong>LINQ-style queries</strong></td>
-    <td><code>Where</code>, <code>Select</code>, <code>OrderBy</code>, <code>GroupBy</code>, <code>FirstOrDefault</code>, <code>Distinct</code>, <code>Sum</code>, <code>Average</code> - with short-circuit evaluation for terminal operators.</td>
-  </tr>
-</table>
+### Key Capabilities
 
-<h3>Tooling</h3>
+- **Unified Format Engine**: Automatic format detection by 4-byte magic signature.
+- **Dynamic Schema Resolution**: Automatic schema binding using build strings or binary layout hashes from database headers.
+- **Multi-Section and Compressed DB2 Handling**: Full support for bitpacked columns, signed bitpacking, pallet compression, pallet arrays, common data defaults, and non-inline primary keys.
+- **Streaming LINQ Engine**: Pull-based query pipeline with early termination on short-circuit operators.
+- **Cross-Table Relations**: Typed foreign-key navigation, reverse relation queries, and cascade row creation.
+- **Type Annotations**: Automated generation of LuaLS definitions for static analysis and IDE autocomplete.
 
-<table>
-  <tr>
-    <th align="left" width="220">Feature</th>
-    <th align="left">Description</th>
-  </tr>
-  <tr>
-    <td><strong>Workspaces</strong></td>
-    <td>A <code>DbcWorkspace</code> binds a source directory (stock files) and an output directory (patched files). <code>SaveAll()</code> writes every modified table in one pass.</td>
-  </tr>
-  <tr>
-    <td><strong>Relations catalog</strong></td>
-    <td>A precomputed, per-build index of every foreign-key relationship in the game. Used for FK resolution, cascade creation, and reverse lookups (<code>GetChildren</code>).</td>
-  </tr>
-  <tr>
-    <td><strong>Full LuaLS support</strong></td>
-    <td>Generated <code>---@class</code> / <code>---@field</code> stubs for every table and every build, so your editor autocompletes field names, method signatures, and relation targets.</td>
-  </tr>
-  <tr>
-    <td><strong>Pure Lua tooling</strong></td>
-    <td>The definition converter, relations-index builder, and LuaLS meta generator are Lua scripts. No language runtime beyond LuaJIT and <code>lua-cjson</code> is required.</td>
-  </tr>
-</table>
+---
 
-<hr>
+## Architecture
 
-<h2 id="-installation">📦 Installation</h2>
+The codebase separates low-level binary drivers, dynamic schema definitions, row-level proxies, and query evaluation into distinct layers.
 
-<h3>Via LuaRocks</h3>
+```
+lua-dbc/
+├── src/
+│   ├── dbc/
+│   │   ├── _loader.lua          # Module loader and resolution helper
+│   │   ├── _build.lua           # Build comparison and matching
+│   │   ├── _util.lua            # Filesystem and memory utilities
+│   │   ├── json.lua             # CJSON parser wrapper
+│   │   ├── schema.lua           # Dynamic schema registry and DBD loader
+│   │   ├── enum.lua             # Enum access layer
+│   │   ├── enums/               # Modular database enums and bitmasks
+│   │   ├── relations.lua        # Foreign-key relations catalog
+│   │   ├── proxy.lua            # RowProxy with compiled memoized accessors
+│   │   ├── query.lua            # Streaming LINQ query pipeline
+│   │   ├── table.lua            # DbcTable indexing and row management
+│   │   ├── workspace.lua        # Multi-table build-scoped workspace
+│   │   ├── file.lua             # Low-level driver facade
+│   │   ├── formats/
+│   │   │   ├── init.lua         # Driver registry and factory
+│   │   │   ├── sniffer.lua      # Binary magic sniffer
+│   │   │   ├── base.lua         # Base driver interface and string interning
+│   │   │   ├── wdbc.lua         # WDBC driver (Classic to WotLK)
+│   │   │   ├── wdb2.lua         # WDB2 driver (Cataclysm to MoP)
+│   │   │   ├── wdb3.lua         # WDB3 and WDB4 driver (WoD)
+│   │   │   ├── wdb5.lua         # WDB5 and WDB6 driver (Legion)
+│   │   │   └── wdc.lua          # Universal WDC driver (BfA to Midnight)
+│   │   └── init.lua             # Public entry point
+│   └── init.lua                 # Package root
+├── definitions/                 # Converted JSON schemas and relation indices
+├── meta/                        # LuaLS IDE autocomplete definitions
+├── test/                        # Automated unit and real-world test suites
+└── tools/                       # Schema conversion and metadata generation tools
+```
 
-<pre><code class="language-bash">luarocks install lua-dbc</code></pre>
+---
 
-<blockquote>
-  <p><code>lua-dbc</code> targets <strong>LuaJIT 2.1</strong> and requires <code>lua-cjson</code> for the tooling scripts. Both are available on LuaRocks.</p>
-</blockquote>
+## Supported Formats
 
-<h3>From source (development)</h3>
+| Format | Expansion Range | Header Size | Compression Features | Write Support |
+| :--- | :--- | :---: | :--- | :---: |
+| **WDBC** | Classic 1.12 to WotLK 3.3.5a | 16 bytes | Uncompressed, inline strings | Yes |
+| **WDB2** | Cataclysm 4.0.3 to MoP 5.4.8 | 48 bytes | Copy tables, inline strings | Yes |
+| **WDB3 / WDB4** | WoD 6.0 to 6.2 | 48 bytes | Copy tables, non-inline IDs | Read |
+| **WDB5 / WDB6** | Legion 7.0 to 7.3.5 | 48 bytes | Field structures, common data | Read |
+| **WDC1** | BfA 8.0 alpha | 84 bytes | Bitpacking, pallets, relationship maps | Read |
+| **WDC2 / WDC3** | BfA 8.0 to Shadowlands 9.2 | 72 bytes | Multi-sections, relative string offsets | Read |
+| **WDC4** | Dragonflight 10.0 to 10.2 | 72 bytes | Multi-sections, encrypted section tracking | Read |
+| **WDC5** | The War Within 11.x to Midnight 12.x | 204 bytes | Build tag, multi-sections, pallet arrays | Read |
 
-<pre><code class="language-bash">git clone https://github.com/WarcraftXL-Labs/lua-dbc.git
+---
+
+## Installation
+
+### Via LuaRocks
+
+```bash
+luarocks install lua-dbc
+```
+
+### From Source
+
+Requirements:
+- LuaJIT 2.1 or newer
+- `lua-cjson` (installed automatically via LuaRocks)
+
+```bash
+git clone https://github.com/WarcraftXL-Labs/lua-dbc.git
 cd lua-dbc
-git submodule update --init --recursive   # fetches WoWDBDefs
+git submodule update --init --recursive
 
-# Generate definitions/, relations index, and LuaLS meta
+# Generate schemas and LuaLS definitions
 luajit tools/setup.lua
 
-# Optional: install into your local LuaRocks tree
-luarocks make --local</code></pre>
+# Build local rock
+luarocks make --local
+```
 
-<blockquote>
-  <p>The <code>vendor/WoWDBDefs</code> submodule is only needed to regenerate definitions. If you clone from a release tarball, the <code>definitions/</code> directory is already populated.</p>
-</blockquote>
+---
 
-<hr>
+## Quick Start
 
-<h2 id="-quick-start">🚀 Quick Start</h2>
+### 1. Opening a Database File
 
-<h3>1. Open a file</h3>
+Format detection and schema resolution happen automatically:
 
-<pre><code class="language-lua">local dbc = require("dbc")
+```lua
+local dbc = require("dbc")
 
--- Auto-detects the format from the file's magic bytes
-local spells = dbc.Open("data/Spell.dbc")
+-- Auto-detects format (WDBC, WDB2, WDC5, etc.) and binds schema
+local areas = dbc.Open("data/AreaTable.db2")
 
-print("Spell count:", spells:Count())</code></pre>
+print("Record count:", areas:Count())
+```
 
-<h3>2. Bind a workspace</h3>
+### 2. Reading Record Data
 
-<pre><code class="language-lua">local ws = dbc.Workspace({
-    source = "data/stock/dbc",
-    out    = "build/patched/dbc",
+```lua
+-- O(1) lookup by primary key
+local dun_morogh = areas[1]
+
+print("Zone Name:", dun_morogh:GetZoneName())
+print("Localized Name:", dun_morogh:GetAreaName_lang())
+print("Continent ID:", dun_morogh:GetContinentID())
+
+-- Array column access (index 1 to N)
+local flag_primary = dun_morogh:GetFlags(1)
+local flags_all = dun_morogh:GetFlags() -- returns table array
+```
+
+### 3. LINQ Streaming Queries
+
+Queries evaluate on demand through pull-based iteration:
+
+```lua
+-- Filter Kalimdor zones and collect matching records
+local kalimdor_zones = areas:Query()
+    :Where(function(r) return r:GetContinentID() == 1 end)
+    :ToList()
+
+-- Short-circuit evaluation stops on first match without scanning remaining rows
+local first_orgrimmar = areas:Query()
+    :Where(function(r)
+        local name = r:GetZoneName()
+        return name and name:find("Orgrimmar") ~= nil
+    end)
+    :FirstOrDefault()
+
+if first_orgrimmar then
+    print("Found area:", first_orgrimmar:GetAreaName_lang())
+end
+```
+
+### 4. Working with Workspaces
+
+A workspace groups multiple tables under a specific client build with input and output directory bindings:
+
+```lua
+local ws = dbc.Workspace({
+    source = "data/stock",
+    out    = "data/patched",
     build  = "3.3.5.12340",
 })
 
 local spells = ws:Open("Spell")
-local icons  = ws:Open("SpellIcon")</code></pre>
+local fireball = spells[133]
 
-<h3>3. Read and edit rows</h3>
-
-<pre><code class="language-lua">-- Read
-local fireball = spells:FindById(133)
-print(fireball:GetName_lang())        -- "Fireball"
-
--- Edit
+-- Update values
 fireball:SetManaCost(200)
-fireball:AddAttributes(dbc.Enums.SpellAttributes.flags.IS_ABILITY)</code></pre>
 
-<h3>4. Follow relations</h3>
+-- Save only modified tables
+ws:SaveAll()
+```
 
-<pre><code class="language-lua">local icon = fireball:GetSpellIcon()
-print("Icon texture:", icon:GetTextureFilename())</code></pre>
+### 5. Foreign-Key Navigation and Cascade Creation
 
-<h3>5. Create a linked row</h3>
+```lua
+-- Navigate to foreign row
+local icon = fireball:GetSpellIcon()
+print("Icon texture:", icon:GetTextureFilename())
 
-<pre><code class="language-lua">local new_icon = fireball:CreateRelated("SpellIcon", {
-    TextureFilename = "Interface\\Icons\\Spell_Fire_Apocalypse",
+-- Create related row and automatically assign foreign key
+local new_icon = fireball:CreateRelated("SpellIcon", {
+    TextureFilename = "Interface\\Icons\\Spell_Fire_Custom",
 })
-print("Linked icon ID:", fireball:GetSpellIconID())</code></pre>
+```
 
-<h3>6. Query</h3>
+---
 
-<pre><code class="language-lua">local passive_fire_spells = spells:Query()
-    :Where(function(r) return r:GetName_lang():find("Fire") ~= nil end)
-    :Where(function(r) return r:HasAttributes(0x40) end)  -- IS_PASSIVE
-    :OrderBy(function(r) return r:GetID() end)
-    :ToList()
+## Core API Reference
 
-print(("Found %d passive fire spells"):format(#passive_fire_spells))</code></pre>
+### Top-Level (`dbc`)
 
-<h3>7. Save</h3>
+| Function | Signature | Description |
+| :--- | :--- | :--- |
+| `dbc.Open` | `(path, schema_name?, build?) -> DbcTable` | Opens a file from disk with automatic format detection. |
+| `dbc.Create` | `(schema_name, format?, build?) -> DbcTable` | Creates an empty database in memory (WDBC or WDB2). |
+| `dbc.Workspace` | `(options) -> DbcWorkspace` | Initializes a workspace bound to source, output, and build version. |
+| `dbc.Query` | `(source) -> Query` | Wraps a table or iterator in a streaming LINQ query pipeline. |
+| `dbc.Schemas` | `Registry` | Accesses schema loading and definition directory management. |
+| `dbc.Formats` | `Registry` | Accesses the format sniffer and driver registry. |
+| `dbc.Enums` | `Registry` | Accesses precomputed enum constants and bitmask helpers. |
 
-<pre><code class="language-lua">-- Single table
-spells:Save()
+### Table Operations (`DbcTable`)
 
--- Or every modified table in the workspace
-ws:SaveAll()</code></pre>
+| Method | Signature | Description |
+| :--- | :--- | :--- |
+| `tbl[id]` | `tbl[id] -> RowProxy?` | Direct primary key lookup. |
+| `tbl:Count` | `() -> integer` | Returns the total number of records. |
+| `tbl:FindById` | `(id) -> RowProxy?` | Looks up a row by primary key; returns `nil` if missing. |
+| `tbl:GetRowById` | `(id) -> RowProxy` | Looks up a row by primary key; raises error if missing. |
+| `tbl:GetRowByIndex`| `(index) -> RowProxy` | Looks up a row by 1-based sequential index. |
+| `tbl:Create` | `(id, data?) -> RowProxy` | Inserts a new row with the specified primary key. |
+| `tbl:CreateNext` | `(data?) -> RowProxy` | Inserts a new row with `max_id + 1`. |
+| `tbl:CloneRow` | `(source_row, new_id, overrides?) -> RowProxy` | Duplicates an existing row. |
+| `tbl:Query` | `() -> Query` | Creates a streaming LINQ query over all rows. |
+| `tbl:Save` | `(path?) -> boolean` | Serializes the table to disk (WDBC and WDB2). |
 
-<hr>
+### Record Access (`RowProxy`)
 
-<h2 id="-api-at-a-glance">🧭 API at a glance</h2>
+| Method | Signature | Description |
+| :--- | :--- | :--- |
+| `row:GetID` | `() -> integer` | Returns the primary key. |
+| `row:GetField` | `(name, extra?) -> any` | Dynamic field reader. |
+| `row:SetField` | `(name, value, extra?) -> RowProxy` | Dynamic field writer. |
+| `row:Get<Field>` | `(extra?) -> any` | Compiled memoized field getter. |
+| `row:Set<Field>` | `(value, extra?) -> RowProxy` | Compiled memoized field setter. |
+| `row:Get<Relation>`| `() -> RowProxy?` | Resolves foreign-key relationship target. |
+| `row:CreateRelated`| `(target_table, data?) -> RowProxy` | Creates foreign row and updates local key. |
+| `row:GetChildren` | `(child_table, fk_name?) -> RowProxy[]` | Performs reverse relation lookup. |
 
-<h3>Top-level (<code>dbc</code>)</h3>
+---
 
-<table>
-  <tr><th align="left">Function</th><th align="left">Purpose</th></tr>
-  <tr><td><code>dbc.Open(path[, schema[, build]])</code></td><td>Open a single file with auto-detected format</td></tr>
-  <tr><td><code>dbc.Create(schema, format[, build])</code></td><td>Create a blank in-memory table</td></tr>
-  <tr><td><code>dbc.Workspace(options)</code></td><td>Create a build-scoped workspace</td></tr>
-  <tr><td><code>dbc.Query(source)</code></td><td>Wrap any collection in a LINQ pipeline</td></tr>
-  <tr><td><code>dbc.SetDefinitionsDir(path)</code></td><td>Override the definitions directory</td></tr>
-  <tr><td><code>dbc.AddDefinitionsDir(path)</code></td><td>Add a fallback definitions directory</td></tr>
-  <tr><td><code>dbc.Relations</code></td><td>Access the global relations catalog</td></tr>
-  <tr><td><code>dbc.Schemas</code></td><td>Access the global schema registry</td></tr>
-  <tr><td><code>dbc.Enums</code></td><td>Access the enum registry</td></tr>
-</table>
+## Performance
 
-<h3>Workspace</h3>
+Benchmarks executed on an AMD Ryzen 9 9950X (64 GB DDR5, NVMe storage) running Windows 11 with LuaJIT 2.1. Timings measured using the Windows hardware timer (`QueryPerformanceCounter`, 10 MHz resolution).
 
-<table>
-  <tr><th align="left">Method</th><th align="left">Purpose</th></tr>
-  <tr><td><code>ws:Open(path_or_name[, schema])</code></td><td>Open and bind a table to the workspace build</td></tr>
-  <tr><td><code>ws:Create(schema[, format])</code></td><td>Create a blank table</td></tr>
-  <tr><td><code>ws:GetTable(name)</code></td><td>Fetch a cached table or auto-open from source</td></tr>
-  <tr><td><code>ws:SaveAll([options])</code></td><td>Save every modified table</td></tr>
-  <tr><td><code>ws:GetBuild()</code> / <code>ws:SetBuild(build)</code></td><td>Read or change the target build</td></tr>
-</table>
+Detailed benchmark methodology and graphs are available in [BENCHMARK.md](BENCHMARK.md).
 
-<h3>DbcTable</h3>
+### Summary Results
 
-<table>
-  <tr><th align="left">Method</th><th align="left">Purpose</th></tr>
-  <tr><td><code>tbl:Count()</code></td><td>Row count</td></tr>
-  <tr><td><code>tbl:GetRowByIndex(row)</code></td><td>Row by 1-based index (cached proxy)</td></tr>
-  <tr><td><code>tbl:GetRowById(id)</code></td><td>Row by primary key (throws if missing)</td></tr>
-  <tr><td><code>tbl:FindById(id)</code></td><td>Row by primary key or <code>nil</code></td></tr>
-  <tr><td><code>tbl:Has(id)</code></td><td>ID existence check</td></tr>
-  <tr><td><code>tbl:Create(id[, data])</code></td><td>Create a row with a specific ID</td></tr>
-  <tr><td><code>tbl:CreateNext([data])</code></td><td>Create a row with <code>max_id + 1</code></td></tr>
-  <tr><td><code>tbl:CloneRow(source, new_id[, override])</code></td><td>Clone an existing row</td></tr>
-  <tr><td><code>tbl:Query()</code></td><td>LINQ pipeline over all rows</td></tr>
-  <tr><td><code>tbl:GetByRelation(foreign_id)</code></td><td>Rows linked via the binary relationship block</td></tr>
-</table>
+| Task | Target | Records / Size | Execution Time | Throughput |
+| :--- | :--- | :---: | :---: | :---: |
+| **Parsing WDBC** | `Spell.dbc` (3.3.5) | 49,971 records / 47.41 MB | 39.76 ms | 1,192.5 MB/s |
+| **Parsing WDC5** | `areatable.db2` (12.1.5) | 10,030 records / 0.64 MB | 0.36 ms | 1,771.5 MB/s |
+| **Parsing WDC5** | `map.db2` (12.1.5) | 1,187 records / 0.13 MB | 0.10 ms | 1,207.1 MB/s |
+| **Primary Key Lookup** | `Spell.dbc` | 1,000,000 lookups | 0.79 ns / op | 1.26 billion ops/s |
+| **Primary Key Lookup** | `areatable.db2` | 1,000,000 lookups | 8.89 ns / op | 112.4 million ops/s |
+| **Streaming Query** | `Spell.dbc:FirstOrDefault` | 49,971 records scanned | 66.8 µs | Instant exit on match |
+| **Binary Serialization**| `Spell.dbc` save | 49,971 records / 47.41 MB | 56.81 ms | 834.6 MB/s |
 
-<h3>RowProxy</h3>
+---
 
-<table>
-  <tr><th align="left">Category</th><th align="left">Examples</th></tr>
-  <tr><td><strong>Field access</strong></td><td><code>row:GetField(name)</code>, <code>row:SetField(name, v)</code>, <code>row.Field</code></td></tr>
-  <tr><td><strong>Compiled getters</strong></td><td><code>row:GetManaCost()</code>, <code>row:GetName_lang()</code></td></tr>
-  <tr><td><strong>Compiled setters</strong></td><td><code>row:SetManaCost(200)</code>, <code>row:SetName_lang("X")</code></td></tr>
-  <tr><td><strong>Array access</strong></td><td><code>row:GetEffect(1)</code>, <code>row:SetEffect(2, 1)</code></td></tr>
-  <tr><td><strong>Flag helpers</strong></td><td><code>row:HasAttributes(flag)</code>, <code>row:AddAttributes(flag)</code></td></tr>
-  <tr><td><strong>Relation navigation</strong></td><td><code>row:GetSpellIcon()</code>, <code>row:GetCastingTime()</code></td></tr>
-  <tr><td><strong>Relation authoring</strong></td><td><code>row:CreateRelated("SpellIcon", data)</code></td></tr>
-  <tr><td><strong>Reverse relations</strong></td><td><code>row:GetChildren("SpellChainEffects")</code></td></tr>
-</table>
+## Development and Tooling
 
-<hr>
+### Test Suites
 
-<h2 id="%EF%B8%8F-architecture">🏗️ Architecture</h2>
+```bash
+# Run unit tests and regression checks (13/13 tests)
+luajit test/test_all.lua
 
-<details>
-<summary><strong>Click to expand the file tree</strong></summary>
+# Run 3.3.5 DBC real data tests (requires C:/DBC or configured path)
+luajit test/test_real_dbc.lua
 
-<pre><code>lua-dbc/
-├── src/
-│   ├── dbc/
-│   │   ├── _loader.lua         # Internal module resolver
-│   │   ├── _util.lua           # Small shared helpers
-│   │   ├── file.lua            # DbcFile facade over the format dispatcher
-│   │   ├── formats/
-│   │   │   ├── base.lua        # BaseFormatDriver: strings, schema, save
-│   │   │   ├── sniffer.lua     # 4-byte magic detection
-│   │   │   ├── wdbc.lua        # Classic → WotLK
-│   │   │   ├── wdb2.lua        # Cataclysm → MoP
-│   │   │   ├── wdb3.lua        # Warlords of Draenor (WDB3/WDB4)
-│   │   │   ├── wdb5.lua        # Legion (WDB5/WDB6)
-│   │   │   └── wdc.lua         # BfA → Midnight (WDC1–WDC5)
-│   │   ├── proxy.lua           # RowProxy and compiled reflection
-│   │   ├── table.lua           # DbcTable: indexing, creation, cloning
-│   │   ├── query.lua           # LINQ pipeline
-│   │   ├── relations.lua       # Relations catalog loader
-│   │   ├── workspace.lua       # Multi-table, build-scoped workspace
-│   │   ├── schema.lua          # WoWDBDefs JSON schema loader
-│   │   ├── enum.lua            # Enum registry with bitmask precompute
-│   │   ├── json.lua            # Pure-Lua JSON decoder (runtime)
-│   │   └── init.lua            # Public entry point
-│   └── init.lua                # `lua-dbc` package alias
-├── definitions/                # Generated: WoWDBDefs JSON + relations index
-│   ├── *.json
-│   └── _relations/
-│       ├── index.json
-│       └── v335.json           # One file per build
-├── meta/                       # Generated: LuaLS autocomplete
-│   ├── _workspace.lua
-│   ├── _tables.lua
-│   └── dbc/v335/*.lua
-├── tools/
-│   ├── fs.lua                  # Cross-platform filesystem helpers
-│   ├── cli.lua                 # Logging and command helpers
-│   ├── json_pretty.lua         # cjson wrapper with pretty output
-│   ├── dbd_common.lua          # Shared build/CLI utilities
-│   ├── dbd_to_json.lua         # Convert WoWDBDefs .dbd → .json
-│   ├── build_relations.lua     # Build the per-build relations index
-│   ├── generate_meta.lua       # Generate LuaLS stubs
-│   └── setup.lua               # One-shot pipeline orchestrator
-├── test/
-│   └── test_all.lua            # End-to-end integration test suite
-├── vendor/
-│   └── WoWDBDefs/              # Git submodule (schemas source)
-├── lua-dbc-scm-1.rockspec
-├── .luarc.json
-└── README.md</code></pre>
+# Run 12.1.5 DB2 real data tests (WDC5 verification and benchmarks)
+luajit test/test_real_db2.lua
 
-</details>
+# Run full performance benchmark suite
+luajit test/benchmark.lua
+```
 
-<details>
-<summary><strong>Click to expand the data flow diagram</strong></summary>
+### Regeneating Definitions and Metadata
 
-<pre><code>vendor/WoWDBDefs/definitions/*.dbd
-       │
-       │  tools/dbd_to_json.lua
-       ▼
-definitions/*.json                    ← schema, columns, FK metadata
-       │
-       ├── tools/build_relations.lua
-       │      ▼
-       │   definitions/_relations/*.json   ← per-build FK index
-       │
-       └── tools/generate_meta.lua
-              ▼
-           meta/dbc/v335/*.lua         ← LuaLS autocomplete
+```bash
+# Update definitions from WoWDBDefs submodule
+luajit tools/setup.lua
 
-runtime:
-       definitions/*.json  ────►  dbc.Schemas
-       definitions/_relations/*.json ────►  dbc.Relations</code></pre>
+# Target specific client builds
+luajit tools/generate_meta.lua --builds 3.3.5.12340,12.1.5.69594
+```
 
-</details>
+### Editor Configuration (LuaLS)
 
-<hr>
+Configure `.luarc.json` in your workspace root:
 
-<h2 id="-development">🧑‍💻 Development</h2>
-
-<h3>Building</h3>
-
-<pre><code class="language-bash">git submodule update --init --recursive
-luajit tools/setup.lua</code></pre>
-
-<p>The setup pipeline runs <code>dbd_to_json</code> → <code>build_relations</code> → <code>generate_meta</code>. It is idempotent: once artifacts exist, subsequent runs are no-ops unless <code>--force</code> is passed.</p>
-
-<h3>Running tests</h3>
-
-<pre><code class="language-bash">luajit test/test_all.lua</code></pre>
-
-<p>The suite exercises schema resolution, table creation and mutation, primary-key indexing, LINQ pipelines, WDBC and WDB2 serialization roundtrips, cascading relations, format detection, and dynamic DBDefs JSON loading.</p>
-
-<h3>Editor setup (LuaLS)</h3>
-
-<p><code>lua-dbc</code> ships with <code>.luarc.json</code>. Ensure your editor's LuaLS configuration includes the <code>meta/</code> directory:</p>
-
-<pre><code class="language-json">{
+```json
+{
   "workspace": {
-    "library": ["meta", "src"]
+    "library": [
+      "meta",
+      "src"
+    ]
   }
-}</code></pre>
+}
+```
 
-<hr>
+---
 
-<h2>🤝 Contributing</h2>
+## License
 
-<ul>
-  <li>Lua code follows the standard Lua 5.1 style (<code>snake_case</code> for locals, <code>PascalCase</code> for public API).</li>
-  <li>Comments are in English, use the <code>---</code> doc-comment style, and include <code>@param</code> / <code>@return</code> annotations where useful.</li>
-  <li>Every PR that adds a new tool should regenerate the rockspec.</li>
-  <li>Bug reports should include the output of <code>luajit test/test_all.lua</code> and the client build the issue occurs on.</li>
-</ul>
-
-<hr>
-
-<h2>📄 License</h2>
-
-<p>GPL-3.0 - see <a href="LICENSE">LICENSE</a> for details.</p>
+This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE) for details.

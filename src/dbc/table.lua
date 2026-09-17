@@ -24,22 +24,6 @@ local WRITE      = file_mod.WRITE
 local RowProxy   = proxy_mod.RowProxy
 local Query      = query_mod.Query
 
-local is_windows = package.config:sub(1, 1) == "\\"
-
----Ensures the parent directory of a file path exists.
----@param file_path string
-local function ensure_dir(file_path)
-    local dir = string.match(file_path, "^(.*)[/\\][^/\\]+$")
-    if not dir or dir == "" then return end
-
-    if is_windows then
-        local win_dir = dir:gsub("/", "\\")
-        os.execute('if not exist "' .. win_dir .. '" mkdir "' .. win_dir .. '" >nul 2>nul')
-    else
-        os.execute('mkdir -p "' .. dir .. '" 2>/dev/null')
-    end
-end
-
 ---@class DbcTable
 ---@field _file table Low-level DbcFile driver.
 ---@field _workspace table|nil Owning DbcWorkspace, if any.
@@ -57,6 +41,7 @@ function DbcTable.new(file, workspace)
     self._file = file
     self._workspace = workspace
     self._proxies = {}
+    self._copy_proxies = {}
     self._id_map = {}
 
     -- Back-reference used by proxy.lua for relation lookups.
@@ -113,6 +98,9 @@ end
 
 ---@return table Underlying DbcFile.
 function DbcTable:GetFile() return self._file end
+
+---@return string Format name (e.g. WDBC, WDB2).
+function DbcTable:GetFormatName() return self._file and self._file.format or "WDBC" end
 
 ---@return table|nil Attached schema.
 function DbcTable:GetSchema() return self._file.schema end
@@ -171,8 +159,11 @@ end
 function DbcTable:_wrapCopy(id, row)
     local copy_table = self._file.copy_table
     if copy_table and copy_table[id] then
+        local cached = self._copy_proxies[id]
+        if cached then return cached end
         local proxy = RowProxy.new(self._file, row, self)
         proxy._id_override = id
+        self._copy_proxies[id] = proxy
         return proxy
     end
     return self:GetRowByIndex(row)
@@ -285,16 +276,7 @@ end
 
 ---@return dbc.Query<RowProxy>
 function DbcTable:Query()
-    local row = 0
-    local count = self._file.record_count
-    local function iterator()
-        row = row + 1
-        if row <= count then
-            return self:GetRowByIndex(row)
-        end
-        return nil
-    end
-    return Query.new(iterator)
+    return Query.new(self)
 end
 
 ---@return fun(): integer, RowProxy
@@ -338,14 +320,15 @@ function DbcTable:Save(path)
         error("DbcTable:Save called on memory DBC with no target path specified")
     end
 
-    ensure_dir(target)
+    util.ensure_dir(target)
     return self._file:Save(target)
 end
 
----Enables `tbl[id]` -> FindById(id).
-function DbcTable:__index(key)
-    if DbcTable[key] ~= nil then
-        return DbcTable[key]
+---Enables `tbl[id]` -> FindById(id) and method lookup.
+function DbcTable.__index(self, key)
+    local method = DbcTable[key]
+    if method ~= nil then
+        return method
     end
     if type(key) == "number" then
         return self:FindById(key)

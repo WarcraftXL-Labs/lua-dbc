@@ -52,9 +52,19 @@ local dbc = {
 -- Configuration forwarders
 -- ---------------------------------------------------------------------------
 
-function dbc.SetDefinitionsDir(path)    Schemas.SetDefinitionsDir(path)    end
-function dbc.AddDefinitionsDir(path)    Schemas.AddDefinitionsDir(path)    end
-function dbc.AddRelationsIndexDir(path) Relations.AddIndexDir(path)        end
+function dbc.SetDefinitionsDir(path)
+    Schemas.SetDefinitionsDir(path)
+    Relations.AddIndexDir(path)
+end
+
+function dbc.AddDefinitionsDir(path)
+    Schemas.AddDefinitionsDir(path)
+    Relations.AddIndexDir(path)
+end
+
+function dbc.AddRelationsIndexDir(path)
+    Relations.AddIndexDir(path)
+end
 
 -- ---------------------------------------------------------------------------
 -- One-shot helpers

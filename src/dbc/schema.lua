@@ -13,6 +13,11 @@
 
 local load = require("dbc._loader")
 local json_mod = load("json")
+local build_mod = load("_build")
+
+local parse_build = build_mod.parse
+local cmp_build = build_mod.cmp
+local build_matches = build_mod.matches
 
 -- Directories searched (in order) when resolving definitions/<name>.json.
 local _definitions_dirs = {
@@ -57,72 +62,6 @@ end
 ---@return string
 function Schemas.GetDefaultBuild()
     return _default_build
-end
-
--- ---------------------------------------------------------------------------
--- Build parsing
--- ---------------------------------------------------------------------------
-
----Normalizes a build entry into a 4-tuple {expansion, major, minor, build}.
----Accepts:
----  "3.3.5.12340"                    -> {3, 3, 5, 12340}
----  "3.3.5"                          -> {0, 3, 3, 5}
----  {expansion, major, minor, build} -> {exp, maj, min, build}
----@param b string|table|nil
----@return integer[]|nil
-local function parse_build(b)
-    if not b then return nil end
-
-    if type(b) == "table" then
-        if b.expansion and b.major and b.minor and b.build then
-            return {
-                tonumber(b.expansion),
-                tonumber(b.major),
-                tonumber(b.minor),
-                tonumber(b.build),
-            }
-        end
-        return nil
-    end
-
-    if type(b) == "string" then
-        local e, maj, min, bld = string.match(b, "^(%d+)%.(%d+)%.(%d+)%.(%d+)$")
-        if e then return { tonumber(e), tonumber(maj), tonumber(min), tonumber(bld) } end
-        local maj2, min2, bld2 = string.match(b, "^(%d+)%.(%d+)%.(%d+)$")
-        if maj2 then return { 0, tonumber(maj2), tonumber(min2), tonumber(bld2) } end
-    end
-
-    return nil
-end
-
----Compares two build tuples. Returns -1, 0, or 1.
-local function cmp_build(a, b)
-    for i = 1, 4 do
-        if a[i] < b[i] then return -1
-        elseif a[i] > b[i] then return 1 end
-    end
-    return 0
-end
-
----Tests whether a build entry (string, range string, or table) matches a target tuple.
-local function build_matches(entry, target)
-    if not target then return false end
-
-    if type(entry) == "string" and string.find(entry, "-") then
-        local min_s, max_s = string.match(entry, "^(.-)%-(.-)$")
-        if min_s and max_s then
-            local min_b = parse_build(min_s)
-            local max_b = parse_build(max_s)
-            if min_b and max_b then
-                return cmp_build(target, min_b) >= 0 and cmp_build(target, max_b) <= 0
-            end
-        end
-        return false
-    end
-
-    local eb = parse_build(entry)
-    if eb then return cmp_build(target, eb) == 0 end
-    return false
 end
 
 -- ---------------------------------------------------------------------------
@@ -239,6 +178,14 @@ local function load_from_json(table_name, build_or_hash)
     local has_id_inline = false
     local id_field_name = "ID"
 
+    local is_pre_cata = false
+    local b_check = (build_or_hash and parse_build(build_or_hash))
+                 or (selected_vdef.builds and selected_vdef.builds[1] and parse_build(selected_vdef.builds[1]))
+                 or (selected_vdef.buildRanges and selected_vdef.buildRanges[1] and parse_build(selected_vdef.buildRanges[1].minBuild))
+    if b_check and b_check[1] < 4 then
+        is_pre_cata = true
+    end
+
     for _, def in ipairs(selected_vdef.definitions) do
         local col_name = def.name
         local col_meta = col_defs[col_name] or {}
@@ -246,8 +193,13 @@ local function load_from_json(table_name, build_or_hash)
         local size_bits = def.size or 32
         local arr_len = (def.arrLength and def.arrLength > 0) and def.arrLength or 1
         local kind = map_dbd_type(col_type, size_bits, def.isSigned)
-        local width = math.floor(size_bits / 8)
-        if width == 0 then width = 4 end
+        local width
+        if is_pre_cata and kind == "loc" then
+            width = 68 -- 16 localized strings + 1 flag field (4 bytes each)
+        else
+            width = math.floor(size_bits / 8)
+            if width == 0 then width = 4 end
+        end
 
         local foreign_table = col_meta.foreignTable
         local foreign_column = col_meta.foreignColumn

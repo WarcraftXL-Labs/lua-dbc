@@ -20,31 +20,55 @@ local FORMAT_NAMES = {
     ["WDC5"] = "WDC5", -- The War Within 11.0+ & Midnight 12.x
 }
 
+--- Reads the 4-byte magic from a raw binary string.
+--- @param data string Binary data string.
+--- @return string|nil magic 4-character magic code or nil.
+--- @return string|nil format_name Canonical format name or nil if unknown.
+function sniffer.DetectData(data)
+    if type(data) ~= "string" or #data < 4 then
+        return nil, nil
+    end
+    local magic = string.sub(data, 1, 4)
+    return magic, FORMAT_NAMES[magic]
+end
+
+--- Reads the 4-byte magic from a file path.
+--- @param path string File path on disk.
+--- @return string|nil magic 4-character magic code or nil.
+--- @return string|nil format_name Canonical format name or nil if unknown.
+function sniffer.DetectFile(path)
+    if type(path) ~= "string" or #path == 0 then
+        return nil, nil
+    end
+    local f = io.open(path, "rb")
+    if not f then return nil, nil end
+    local magic = f:read(4)
+    f:close()
+    if not magic or #magic < 4 then
+        return nil, nil
+    end
+    return magic, FORMAT_NAMES[magic]
+end
+
 --- Reads the 4-byte magic from a binary string or file path.
 --- @param path_or_data string File path or binary data string.
 --- @return string|nil magic 4-character magic code or nil.
 --- @return string|nil format_name Canonical format name or nil if unknown.
 function sniffer.Detect(path_or_data)
-    local magic = nil
-
-    if type(path_or_data) == "string" and #path_or_data > 0 then
-        local f = io.open(path_or_data, "rb")
-        if f then
-            magic = f:read(4)
-            f:close()
-        end
-    end
-
-    if (not magic or #magic < 4) and #path_or_data >= 4 then
-        magic = string.sub(path_or_data, 1, 4)
-    end
-
-    if not magic or #magic < 4 then
+    if type(path_or_data) ~= "string" or #path_or_data == 0 then
         return nil, nil
     end
 
-    local format_name = FORMAT_NAMES[magic]
-    return magic, format_name
+    -- Only probe disk if input looks like a valid filesystem path:
+    -- Reasonable path length (< 260 chars) and no null bytes.
+    if #path_or_data < 260 and not string.find(path_or_data, "\0", 1, true) then
+        local magic, format_name = sniffer.DetectFile(path_or_data)
+        if magic then
+            return magic, format_name
+        end
+    end
+
+    return sniffer.DetectData(path_or_data)
 end
 
 --- Checks if the given magic string corresponds to any known DBC or DB2 format.

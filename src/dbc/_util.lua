@@ -35,12 +35,31 @@ function util.trim(s)
     return (s:gsub("^%s+", ""):gsub("%s+$", ""))
 end
 
---- Preallocates a Lua array by filling it with nil up to `n`.
---- This forces Lua to allocate the underlying array part once, which avoids
---- repeated rehashes when the table is filled with `table.insert` or `[i]=v`.
+local is_windows = package.config:sub(1, 1) == "\\"
+local ok_tnew, tablenew = pcall(require, "table.new")
+
+--- Ensures the parent directory of a file path exists.
+--- @param file_path string
+function util.ensure_dir(file_path)
+    local dir = string.match(file_path, "^(.*)[/\\][^/\\]+$")
+    if not dir or dir == "" then return end
+
+    if is_windows then
+        local win_dir = dir:gsub("/", "\\")
+        os.execute('if not exist "' .. win_dir .. '" mkdir "' .. win_dir .. '" >nul 2>nul')
+    else
+        os.execute('mkdir -p "' .. dir .. '" 2>/dev/null')
+    end
+end
+
+--- Preallocates a Lua array by sizing it to `n` elements.
+--- Uses LuaJIT's native table.new when available, otherwise pre-sizes via false/nil.
 --- @param n integer
 --- @return table
 function util.prealloc(n)
+    if ok_tnew and tablenew then
+        return tablenew(n, 0)
+    end
     local t = {}
     for i = 1, n do t[i] = false end
     for i = 1, n do t[i] = nil end

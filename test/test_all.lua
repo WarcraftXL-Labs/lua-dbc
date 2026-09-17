@@ -398,6 +398,96 @@ run_test("Dynamic DBDefs JSON schema loading", function()
     os.remove(path)
 end)
 
+run_test("LINQ streaming and generator short-circuiting", function()
+    -- 1. Infinite generator stops at FirstOrDefault
+    local counter = 0
+    local function infinite_gen()
+        counter = counter + 1
+        return counter
+    end
+
+    local q = dbc.Query(infinite_gen)
+    local first = q:Where(function(x) return x == 42 end):FirstOrDefault()
+    assert_eq(first, 42, "Should find 42 from infinite generator")
+    assert_eq(counter, 42, "Should only have pulled 42 elements, not hung")
+
+    -- 2. Take(5) stops pulling at 5 items
+    local pull_count = 0
+    local function large_gen()
+        pull_count = pull_count + 1
+        return pull_count
+    end
+    local items = dbc.Query(large_gen):Take(5):ToList()
+    assert_eq(#items, 5, "Should have taken 5 items")
+    assert_eq(pull_count, 5, "Should only have pulled 5 items from source")
+
+    -- 3. All() short-circuits on first failure
+    local all_count = 0
+    local function gen_for_all()
+        all_count = all_count + 1
+        return all_count
+    end
+    local all_positive = dbc.Query(gen_for_all):All(function(x) return x < 3 end)
+    assert_eq(all_positive, false, "All should be false when element 3 is seen")
+    assert_eq(all_count, 3, "All should stop immediately at element 3")
+
+    -- 4. Any() short-circuits on first match
+    local any_count = 0
+    local function gen_for_any()
+        any_count = any_count + 1
+        return any_count
+    end
+    local has_four = dbc.Query(gen_for_any):Any(function(x) return x == 4 end)
+    assert_eq(has_four, true, "Any should be true for 4")
+    assert_eq(any_count, 4, "Any should stop immediately at element 4")
+end)
+
+run_test("Build version parsing with letter revisions", function()
+    local build_util = require("dbc._build")
+    local b1 = build_util.parse("3.3.5a.12340")
+    assert_eq(b1.major, 3, "Major mismatch")
+    assert_eq(b1.minor, 3, "Minor mismatch")
+    assert_eq(b1.patch, 5, "Patch mismatch")
+    assert_eq(b1.letter, "a", "Letter mismatch")
+    assert_eq(b1.build, 12340, "Build number mismatch")
+
+    local b2 = build_util.parse("3.3.5.12340")
+    assert_eq(b2.letter, "", "Letter should be empty for 3.3.5.12340")
+
+    -- Compare
+    local cmp = build_util.cmp(b1, b2)
+    assert_true(cmp > 0, "3.3.5a should sort after 3.3.5")
+
+    local matched = build_util.matches("3.3.5a.12340", "3.3.5a")
+    assert_true(matched, "Pattern match 3.3.5a against 3.3.5a.12340")
+end)
+
+run_test("Format sniffer on in-memory buffers", function()
+    local wdbc_buf = "WDBC\x05\x00\x00\x00\x02\x00\x00\x00\x08\x00\x00\x00\x01\x00\x00\x00\x00"
+    local fmt, magic = dbc.Formats.DetectData(wdbc_buf)
+    assert_eq(fmt, "WDBC", "Should detect WDBC format from in-memory string")
+    assert_eq(magic, "WDBC", "Magic should be WDBC")
+
+    local wdb2_buf = "WDB2\x05\x00\x00\x00\x02\x00\x00\x00\x08\x00\x00\x00\x01\x00\x00\x00\x00"
+    local fmt2, magic2 = dbc.Formats.DetectData(wdb2_buf)
+    assert_eq(fmt2, "WDB2", "Should detect WDB2 format from in-memory string")
+    assert_eq(magic2, "WDB2", "Magic should be WDB2")
+end)
+
+run_test("Modular dbc.enums namespace", function()
+    local quality1 = require("dbc.enums.ItemQuality")
+    assert_not_nil(quality1, "Should require dbc.enums.ItemQuality")
+    assert_eq(quality1.values.PURPLE, 4, "ItemQuality.values.PURPLE should be 4")
+
+    local quality2 = dbc.Enums.ItemQuality
+    assert_not_nil(quality2, "Should access via dbc.Enums.ItemQuality")
+    assert_eq(quality2.PURPLE, 4, "dbc.Enums.ItemQuality.PURPLE should be 4")
+
+    local quality3 = dbc.Enums.Get("ItemQuality")
+    assert_not_nil(quality3, "Should fetch via dbc.Enums.Get")
+    assert_eq(quality3.ORANGE, 5, "ItemQuality.ORANGE should be 5")
+end)
+
 -- ---------------------------------------------------------------------------
 -- Cleanup
 -- ---------------------------------------------------------------------------

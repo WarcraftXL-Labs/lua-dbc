@@ -22,6 +22,7 @@ function Enums.Get(name)
     local last_err
     for _, modname in ipairs({
         "dbc.enums." .. name,
+        "src.dbc.enums." .. name,
         "enums." .. name,
     }) do
         local ok, mod = pcall(require, modname)
