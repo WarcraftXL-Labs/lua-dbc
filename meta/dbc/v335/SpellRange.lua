@@ -8,7 +8,9 @@
 ---@field RangeMax number[] RangeMax[0] = Enemy, RangeMax[1] Friendly
 ---@field Flags integer &1: Melee (ignore RangeMin, set to 0); &2: Ranged (add 5 to RangeMin)
 ---@field DisplayName_lang string
+---@field DisplayName string Localized string alias without _lang.
 ---@field DisplayNameShort_lang string
+---@field DisplayNameShort string Localized string alias without _lang.
 
 local row = {}
 
@@ -58,23 +60,49 @@ function row:GetFlags() end
 ---@return dbc.row.v335.SpellRange self
 function row:SetFlags(value) end
 
----Gets the value of field 'DisplayName_lang'.
+---Gets the localized value of field 'DisplayName'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetDisplayName_lang() end
+function row:GetDisplayName(locale) end
+
+---Sets the localized value of field 'DisplayName'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.SpellRange self
+function row:SetDisplayName(value, locale) end
+
+---Gets the value of field 'DisplayName_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetDisplayName_lang(locale) end
 
 ---Sets the value of field 'DisplayName_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.SpellRange self
-function row:SetDisplayName_lang(value) end
+function row:SetDisplayName_lang(value, locale) end
+
+---Gets the localized value of field 'DisplayNameShort'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetDisplayNameShort(locale) end
+
+---Sets the localized value of field 'DisplayNameShort'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.SpellRange self
+function row:SetDisplayNameShort(value, locale) end
 
 ---Gets the value of field 'DisplayNameShort_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetDisplayNameShort_lang() end
+function row:GetDisplayNameShort_lang(locale) end
 
 ---Sets the value of field 'DisplayNameShort_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.SpellRange self
-function row:SetDisplayNameShort_lang(value) end
+function row:SetDisplayNameShort_lang(value, locale) end
 
 ---Table container for SpellRange (Build 3.3.5.12340).
 ---@class dbc.Table.v335.SpellRange : DbcTable

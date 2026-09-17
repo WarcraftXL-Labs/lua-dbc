@@ -82,9 +82,13 @@
 ---@field ActiveIconID integer
 ---@field SpellPriority integer
 ---@field Name_lang string
+---@field Name string Localized string alias without _lang.
 ---@field NameSubtext_lang string
+---@field NameSubtext string Localized string alias without _lang.
 ---@field Description_lang string
+---@field Description string Localized string alias without _lang.
 ---@field AuraDescription_lang string
+---@field AuraDescription string Localized string alias without _lang.
 ---@field ManaCostPct integer
 ---@field StartRecoveryCategory integer
 ---@field StartRecoveryTime integer
@@ -1060,41 +1064,93 @@ function row:GetSpellPriority() end
 ---@return dbc.row.v335.Spell self
 function row:SetSpellPriority(value) end
 
----Gets the value of field 'Name_lang'.
+---Gets the localized value of field 'Name'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetName_lang() end
+function row:GetName(locale) end
+
+---Sets the localized value of field 'Name'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Spell self
+function row:SetName(value, locale) end
+
+---Gets the value of field 'Name_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetName_lang(locale) end
 
 ---Sets the value of field 'Name_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Spell self
-function row:SetName_lang(value) end
+function row:SetName_lang(value, locale) end
+
+---Gets the localized value of field 'NameSubtext'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetNameSubtext(locale) end
+
+---Sets the localized value of field 'NameSubtext'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Spell self
+function row:SetNameSubtext(value, locale) end
 
 ---Gets the value of field 'NameSubtext_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetNameSubtext_lang() end
+function row:GetNameSubtext_lang(locale) end
 
 ---Sets the value of field 'NameSubtext_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Spell self
-function row:SetNameSubtext_lang(value) end
+function row:SetNameSubtext_lang(value, locale) end
+
+---Gets the localized value of field 'Description'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetDescription(locale) end
+
+---Sets the localized value of field 'Description'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Spell self
+function row:SetDescription(value, locale) end
 
 ---Gets the value of field 'Description_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetDescription_lang() end
+function row:GetDescription_lang(locale) end
 
 ---Sets the value of field 'Description_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Spell self
-function row:SetDescription_lang(value) end
+function row:SetDescription_lang(value, locale) end
+
+---Gets the localized value of field 'AuraDescription'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetAuraDescription(locale) end
+
+---Sets the localized value of field 'AuraDescription'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Spell self
+function row:SetAuraDescription(value, locale) end
 
 ---Gets the value of field 'AuraDescription_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetAuraDescription_lang() end
+function row:GetAuraDescription_lang(locale) end
 
 ---Sets the value of field 'AuraDescription_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Spell self
-function row:SetAuraDescription_lang(value) end
+function row:SetAuraDescription_lang(value, locale) end
 
 ---Gets the value of field 'ManaCostPct'.
 ---@return integer value

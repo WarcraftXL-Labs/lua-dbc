@@ -6,7 +6,9 @@
 ---@field ID integer
 ---@field Condition_ID integer
 ---@field Name_lang string
+---@field Name string Localized string alias without _lang.
 ---@field Name1_lang string
+---@field Name1 string Localized string alias without _lang.
 ---@field Mask_ID integer
 
 local row = {}
@@ -38,23 +40,49 @@ function row:GetCondition_() end
 ---@return dbc.row.v335.Condition_
 function row:CreateRelated(data) end
 
----Gets the value of field 'Name_lang'.
+---Gets the localized value of field 'Name'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetName_lang() end
+function row:GetName(locale) end
+
+---Sets the localized value of field 'Name'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.CharTitles self
+function row:SetName(value, locale) end
+
+---Gets the value of field 'Name_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetName_lang(locale) end
 
 ---Sets the value of field 'Name_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.CharTitles self
-function row:SetName_lang(value) end
+function row:SetName_lang(value, locale) end
+
+---Gets the localized value of field 'Name1'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetName1(locale) end
+
+---Sets the localized value of field 'Name1'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.CharTitles self
+function row:SetName1(value, locale) end
 
 ---Gets the value of field 'Name1_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetName1_lang() end
+function row:GetName1_lang(locale) end
 
 ---Sets the value of field 'Name1_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.CharTitles self
-function row:SetName1_lang(value) end
+function row:SetName1_lang(value, locale) end
 
 ---Gets the value of field 'Mask_ID'.
 ---@return integer value

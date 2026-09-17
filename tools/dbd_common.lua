@@ -136,9 +136,15 @@ function dbd_common.parse_cli(argv, spec)
         if a == "--builds" then
             opts.builds = argv[i + 1] or "auto"
             i = i + 2
+        elseif a:sub(1, 9) == "--builds=" then
+            opts.builds = a:sub(10)
+            i = i + 1
         elseif a == "--jobs" then
             opts.jobs = tonumber(argv[i + 1]) or 0
             i = i + 2
+        elseif a:sub(1, 7) == "--jobs=" then
+            opts.jobs = tonumber(a:sub(8)) or 0
+            i = i + 1
         elseif a == "--force" then
             opts.force = true
             i = i + 1

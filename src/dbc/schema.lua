@@ -228,6 +228,10 @@ local function load_from_json(table_name, build_or_hash)
 
         fields[#fields + 1] = f
         by_name[col_name] = f
+        local base_name = string.match(col_name, "^(.-)_lang$")
+        if base_name and not by_name[base_name] then
+            by_name[base_name] = f
+        end
 
         if not def.isNonInline then
             cur_offset = cur_offset + width * arr_len

@@ -9,11 +9,14 @@
 ---@field PhaseShift integer
 ---@field Icon string
 ---@field String_lang string
+---@field String string Localized string alias without _lang.
 ---@field Tooltip_lang string
+---@field Tooltip string Localized string alias without _lang.
 ---@field StateVariable integer
 ---@field Type integer
 ---@field DynamicIcon string
 ---@field DynamicTooltip_lang string
+---@field DynamicTooltip string Localized string alias without _lang.
 ---@field ExtendedUI string
 ---@field ExtendedUIStateVariable integer[]
 
@@ -82,23 +85,49 @@ function row:GetIcon() end
 ---@return dbc.row.v335.WorldStateUI self
 function row:SetIcon(value) end
 
----Gets the value of field 'String_lang'.
+---Gets the localized value of field 'String'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetString_lang() end
+function row:GetString(locale) end
+
+---Sets the localized value of field 'String'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.WorldStateUI self
+function row:SetString(value, locale) end
+
+---Gets the value of field 'String_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetString_lang(locale) end
 
 ---Sets the value of field 'String_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.WorldStateUI self
-function row:SetString_lang(value) end
+function row:SetString_lang(value, locale) end
+
+---Gets the localized value of field 'Tooltip'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetTooltip(locale) end
+
+---Sets the localized value of field 'Tooltip'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.WorldStateUI self
+function row:SetTooltip(value, locale) end
 
 ---Gets the value of field 'Tooltip_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetTooltip_lang() end
+function row:GetTooltip_lang(locale) end
 
 ---Sets the value of field 'Tooltip_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.WorldStateUI self
-function row:SetTooltip_lang(value) end
+function row:SetTooltip_lang(value, locale) end
 
 ---Gets the value of field 'StateVariable'.
 ---@return integer value
@@ -127,14 +156,27 @@ function row:GetDynamicIcon() end
 ---@return dbc.row.v335.WorldStateUI self
 function row:SetDynamicIcon(value) end
 
----Gets the value of field 'DynamicTooltip_lang'.
+---Gets the localized value of field 'DynamicTooltip'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetDynamicTooltip_lang() end
+function row:GetDynamicTooltip(locale) end
+
+---Sets the localized value of field 'DynamicTooltip'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.WorldStateUI self
+function row:SetDynamicTooltip(value, locale) end
+
+---Gets the value of field 'DynamicTooltip_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetDynamicTooltip_lang(locale) end
 
 ---Sets the value of field 'DynamicTooltip_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.WorldStateUI self
-function row:SetDynamicTooltip_lang(value) end
+function row:SetDynamicTooltip_lang(value, locale) end
 
 ---Gets the value of field 'ExtendedUI'.
 ---@return string value

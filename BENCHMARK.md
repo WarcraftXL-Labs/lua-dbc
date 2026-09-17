@@ -1,4 +1,4 @@
-# Performance & Benchmark Report — lua-dbc
+# Performance & Benchmark Report: lua-dbc
 
 Comprehensive latency, throughput, and memory efficiency benchmarks for **lua-dbc**, measured against authentic World of Warcraft: Wrath of the Lich King (build `3.3.5.12340`) client database files.
 

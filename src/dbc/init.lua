@@ -31,6 +31,7 @@ local Enums       = enum_mod
 local DbcWorkspace = workspace_mod.DbcWorkspace
 local Relations   = relations_mod
 local Formats     = formats_mod
+local Locale      = enum_mod.Get("Locale")
 
 ---@class dbc
 local dbc = {
@@ -40,6 +41,8 @@ local dbc = {
     Query       = Query,
     Schemas     = Schemas,
     Enums       = Enums,
+    Locale      = Locale,
+    LOCALE      = Locale,
     Workspace   = DbcWorkspace,
     Database    = DbcWorkspace,     -- alias
     Session     = DbcWorkspace,     -- legacy alias

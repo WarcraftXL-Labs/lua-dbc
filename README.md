@@ -17,6 +17,7 @@ Supports reading, editing, and querying database files from Classic 1.12 up to M
 - [Supported Formats](#supported-formats)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
+- [Tutorials](#tutorials)
 - [Core API Reference](#core-api-reference)
 - [Performance](#performance)
 - [Development and Tooling](#development-and-tooling)
@@ -171,7 +172,7 @@ local first_orgrimmar = areas:Query()
     :FirstOrDefault()
 
 if first_orgrimmar then
-    print("Found area:", first_orgrimmar:GetAreaName_lang())
+    print("Found area:", first_orgrimmar:GetAreaName())
 end
 ```
 
@@ -209,6 +210,46 @@ local new_icon = fireball:CreateRelated("SpellIcon", {
 })
 ```
 
+### 6. Localized Strings and Locales
+
+Columns with localization support (names, descriptions, titles) do not require the `_lang` suffix. The `dbc.Locale` enumeration provides standard slot IDs and aliases:
+
+```lua
+local area = areas[1]
+
+-- 1. Read first populated non-empty text
+local name = area:GetAreaName()
+
+-- 2. Read specific locale text (returns exact slot value, even if empty)
+local french_name = area:GetAreaName(dbc.Locale.FRFR)
+
+-- 3. Write default locale (enUS, slot 0)
+area:SetAreaName("Dun Morogh")
+
+-- 4. Write specific locale
+area:SetAreaName("Dun Morogh", dbc.Locale.FRFR)
+
+-- 5. Batch update multiple locales with a table
+area:SetAreaName({
+    [dbc.Locale.ENUS] = "Dun Morogh",
+    [dbc.Locale.FRFR] = "Dun Morogh",
+    [dbc.Locale.DEDE] = "Dun Morogh",
+})
+
+-- Direct table indexing also works
+area.AreaName = "Dun Morogh"
+```
+
+---
+
+## Tutorials
+
+Step-by-step practical guides are organized by difficulty in the [`tutorials/`](tutorials/) directory, with French translations available in their respective `frFR/` subdirectories:
+
+- **[Beginner](tutorials/beginner/01-clone-and-modify-spell.md)** ([français](tutorials/beginner/frFR/01-cloner-et-modifier-un-sort.md)): Cloning and customizing an existing spell in 3.3.5a (names, mana cost, damage, range).
+- **[Intermediate](tutorials/intermediate/01-create-spell-from-scratch.md)** ([français](tutorials/intermediate/frFR/01-creer-un-sort-de-zero.md)): Creating a complete spell from scratch with precast animations, visual kits, and multi-table relations.
+- **[Expert](tutorials/expert/01-cross-expansion-migration.md)** ([français](tutorials/expert/frFR/01-migration-cross-expansion.md)): Building a cross-expansion migration pipeline between modern 12.1.5 WDC5 and 3.3.5a WDBC using dual workspaces and foreign key relations.
+
 ---
 
 ## Core API Reference
@@ -221,6 +262,7 @@ local new_icon = fireball:CreateRelated("SpellIcon", {
 | `dbc.Create` | `(schema_name, format?, build?) -> DbcTable` | Creates an empty database in memory (WDBC or WDB2). |
 | `dbc.Workspace` | `(options) -> DbcWorkspace` | Initializes a workspace bound to source, output, and build version. |
 | `dbc.Query` | `(source) -> Query` | Wraps a table or iterator in a streaming LINQ query pipeline. |
+| `dbc.Locale` | `Table` | Enumeration of client locale slots (enUS, frFR, etc.) and aliases. |
 | `dbc.Schemas` | `Registry` | Accesses schema loading and definition directory management. |
 | `dbc.Formats` | `Registry` | Accesses the format sniffer and driver registry. |
 | `dbc.Enums` | `Registry` | Accesses precomputed enum constants and bitmask helpers. |

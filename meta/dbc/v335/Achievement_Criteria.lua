@@ -13,6 +13,7 @@
 ---@field Fail_event integer
 ---@field Fail_asset integer
 ---@field Description_lang string
+---@field Description string Localized string alias without _lang.
 ---@field Flags integer
 ---@field Timer_start_event integer
 ---@field Timer_asset_ID integer
@@ -120,14 +121,27 @@ function row:GetFail_asset() end
 ---@return dbc.row.v335.Achievement_Criteria self
 function row:SetFail_asset(value) end
 
----Gets the value of field 'Description_lang'.
+---Gets the localized value of field 'Description'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetDescription_lang() end
+function row:GetDescription(locale) end
+
+---Sets the localized value of field 'Description'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Achievement_Criteria self
+function row:SetDescription(value, locale) end
+
+---Gets the value of field 'Description_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetDescription_lang(locale) end
 
 ---Sets the value of field 'Description_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Achievement_Criteria self
-function row:SetDescription_lang(value) end
+function row:SetDescription_lang(value, locale) end
 
 ---Gets the value of field 'Flags'.
 ---@return integer value

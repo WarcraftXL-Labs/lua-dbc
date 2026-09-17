@@ -6,7 +6,9 @@
 ---@field ID integer
 ---@field Type integer 1: hair style, 2: hair color, 3: facial hair, 4: skin, 5: face, 6: custom display 1, 7: custom display 2, 8: custom display 3, 9: custom display 4
 ---@field DisplayName_lang string
+---@field DisplayName string Localized string alias without _lang.
 ---@field Description_lang string
+---@field Description string Localized string alias without _lang.
 ---@field Cost_Modifier number
 ---@field Race integer
 ---@field Sex integer
@@ -32,23 +34,49 @@ function row:GetType() end
 ---@return dbc.row.v335.BarberShopStyle self
 function row:SetType(value) end
 
----Gets the value of field 'DisplayName_lang'.
+---Gets the localized value of field 'DisplayName'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetDisplayName_lang() end
+function row:GetDisplayName(locale) end
+
+---Sets the localized value of field 'DisplayName'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.BarberShopStyle self
+function row:SetDisplayName(value, locale) end
+
+---Gets the value of field 'DisplayName_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetDisplayName_lang(locale) end
 
 ---Sets the value of field 'DisplayName_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.BarberShopStyle self
-function row:SetDisplayName_lang(value) end
+function row:SetDisplayName_lang(value, locale) end
+
+---Gets the localized value of field 'Description'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetDescription(locale) end
+
+---Sets the localized value of field 'Description'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.BarberShopStyle self
+function row:SetDescription(value, locale) end
 
 ---Gets the value of field 'Description_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetDescription_lang() end
+function row:GetDescription_lang(locale) end
 
 ---Sets the value of field 'Description_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.BarberShopStyle self
-function row:SetDescription_lang(value) end
+function row:SetDescription_lang(value, locale) end
 
 ---Gets the value of field 'Cost_Modifier'.
 ---@return number value

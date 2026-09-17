@@ -20,6 +20,7 @@ local base_mod = load("formats.base")
 local BaseFormatDriver = base_mod.BaseFormatDriver
 local READ = base_mod.READ
 local WRITE = base_mod.WRITE
+local LOCALE = base_mod.LOCALE
 
 local cast = ffi.cast
 local copy = ffi.copy
@@ -30,6 +31,15 @@ local band = bit.band
 local bor = bit.bor
 local rshift = bit.rshift
 local lshift = bit.lshift
+
+local function match_wdc_locale(self_locale, requested_locale)
+    if requested_locale == nil then return true end
+    if not self_locale or self_locale == 0 or self_locale == 0xFFFFFFFF then return true end
+    local slot = type(requested_locale) == "number" and requested_locale or (LOCALE and LOCALE[requested_locale])
+    if not slot or slot < 0 then return true end
+    local mask = lshift(1, slot)
+    return band(self_locale, mask) ~= 0
+end
 
 -- Fast uint32 to float converter using preallocated buffer
 local float_cast_buf = ffi.new("uint32_t[1]")
@@ -603,6 +613,7 @@ function WdcDriver:ReadField(row, field_def_or_idx, extra)
         local kind = field_def and field_def.kind or "u32"
         local addr = self:GetAddress(row, offset)
         if kind == "str" or kind == "loc" then
+            if not match_wdc_locale(self.locale, extra) then return "" end
             return self:GetString(READ.u32(addr), row, offset)
         end
         return READ[kind] and READ[kind](addr) or READ.u32(addr)
@@ -616,6 +627,7 @@ function WdcDriver:ReadField(row, field_def_or_idx, extra)
     if ctype == 0 then
         local addr = self:GetAddress(row, field_byte_offset)
         if kind == "str" or kind == "loc" then
+            if not match_wdc_locale(self.locale, extra) then return "" end
             local raw_str_off = READ.u32(addr)
             return self:GetString(raw_str_off, row, field_byte_offset)
         end
@@ -641,6 +653,7 @@ function WdcDriver:ReadField(row, field_def_or_idx, extra)
         local is_signed = (ctype == 5) or (sinfo.val3 == 1) or (field_def and (field_def.kind == "i8" or field_def.kind == "i16" or field_def.kind == "i32"))
         local val = unpack_bits(rec_ptr, sinfo.offset, sinfo.size, is_signed)
         if kind == "str" or kind == "loc" then
+            if not match_wdc_locale(self.locale, extra) then return "" end
             return self:GetString(val, row, field_byte_offset)
         end
         if kind == "f32" then
@@ -669,6 +682,7 @@ function WdcDriver:ReadField(row, field_def_or_idx, extra)
         local p_ptr = cast("const char*", self.pallet_data) + sinfo.pallet_offset + pallet_idx * 4
         local u_val = cast("const uint32_t*", p_ptr)[0]
         if kind == "str" or kind == "loc" then
+            if not match_wdc_locale(self.locale, extra) then return "" end
             return self:GetString(u_val, row, field_byte_offset)
         end
         if kind == "f32" then

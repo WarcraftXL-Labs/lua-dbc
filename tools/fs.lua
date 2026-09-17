@@ -119,8 +119,11 @@ end
 --- @param content string
 --- @return boolean
 function fs.write(path, content)
-    local f = io.open(path, "wb")
-    if not f then return false end
+    local f, err = io.open(path, "wb")
+    if not f then
+        io.stderr:write(string.format("fs.write error [%s]: %s\n", tostring(path), tostring(err)))
+        return false
+    end
     f:write(content)
     f:close()
     return true

@@ -9,9 +9,12 @@
 ---@field Flags integer &0x100: CanChangeDifficulty
 ---@field PVP integer
 ---@field MapName_lang string
+---@field MapName string Localized string alias without _lang.
 ---@field AreaTableID integer
 ---@field MapDescription0_lang string Horde
+---@field MapDescription0 string Localized string alias without _lang.
 ---@field MapDescription1_lang string Alliance
+---@field MapDescription1 string Localized string alias without _lang.
 ---@field LoadingScreenID integer
 ---@field MinimapIconScale number
 ---@field CorpseMapID integer
@@ -68,14 +71,27 @@ function row:GetPVP() end
 ---@return dbc.row.v335.Map self
 function row:SetPVP(value) end
 
----Gets the value of field 'MapName_lang'.
+---Gets the localized value of field 'MapName'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetMapName_lang() end
+function row:GetMapName(locale) end
+
+---Sets the localized value of field 'MapName'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Map self
+function row:SetMapName(value, locale) end
+
+---Gets the value of field 'MapName_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetMapName_lang(locale) end
 
 ---Sets the value of field 'MapName_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Map self
-function row:SetMapName_lang(value) end
+function row:SetMapName_lang(value, locale) end
 
 ---Gets the value of field 'AreaTableID'.
 ---@return integer value
@@ -95,23 +111,49 @@ function row:GetAreaTable() end
 ---@return dbc.row.v335.AreaTable
 function row:CreateRelated(data) end
 
----Gets the value of field 'MapDescription0_lang'.
+---Gets the localized value of field 'MapDescription0'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetMapDescription0_lang() end
+function row:GetMapDescription0(locale) end
+
+---Sets the localized value of field 'MapDescription0'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Map self
+function row:SetMapDescription0(value, locale) end
+
+---Gets the value of field 'MapDescription0_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetMapDescription0_lang(locale) end
 
 ---Sets the value of field 'MapDescription0_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Map self
-function row:SetMapDescription0_lang(value) end
+function row:SetMapDescription0_lang(value, locale) end
+
+---Gets the localized value of field 'MapDescription1'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetMapDescription1(locale) end
+
+---Sets the localized value of field 'MapDescription1'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Map self
+function row:SetMapDescription1(value, locale) end
 
 ---Gets the value of field 'MapDescription1_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetMapDescription1_lang() end
+function row:GetMapDescription1_lang(locale) end
 
 ---Sets the value of field 'MapDescription1_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Map self
-function row:SetMapDescription1_lang(value) end
+function row:SetMapDescription1_lang(value, locale) end
 
 ---Gets the value of field 'LoadingScreenID'.
 ---@return integer value

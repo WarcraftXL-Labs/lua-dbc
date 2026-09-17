@@ -189,6 +189,7 @@ function RowProxy:_ReadLoc(f, locale)
         return self._file:GetString(READ.u32(base_addr + slot * 4))
     end
 
+    -- No locale specified: return the first populated (non-empty) text
     for slot = 0, LOCALE_SLOTS - 1 do
         local str_offset = READ.u32(base_addr + slot * 4)
         if str_offset ~= 0 then
@@ -199,24 +200,51 @@ function RowProxy:_ReadLoc(f, locale)
     return ""
 end
 
-function RowProxy:_WriteLoc(f, text, locale)
+function RowProxy:_WriteLoc(f, value, locale)
     local base_addr = self:GetAddress(f.offset)
     local flags_addr = base_addr + LOCALE_SLOTS * 4
-    local str_offset = self._file:InternString(text or "")
+
+    -- Form 3: Table of locales, e.g. { [Locale.FRFR] = "Bob", [Locale.ENUS] = "Robert" }
+    -- or { frFR = "Bob", enUS = "Robert" }
+    if type(value) == "table" then
+        local cur_flags = READ.u32(flags_addr)
+        for loc_key, text in pairs(value) do
+            local slot = type(loc_key) == "number" and loc_key or LOCALE[loc_key]
+            if slot and slot >= 0 and slot < LOCALE_SLOTS then
+                local str_offset = self._file:InternString(tostring(text or ""))
+                WRITE.u32(base_addr + slot * 4, str_offset)
+                cur_flags = bit.bor(cur_flags, bit.lshift(1, slot))
+            end
+        end
+        WRITE.u32(flags_addr, cur_flags)
+        self._file.dirty = true
+        return
+    end
+
+    local text = tostring(value or "")
+    local str_offset = self._file:InternString(text)
 
     if locale ~= nil then
-        local slot = type(locale) == "number" and locale or LOCALE[locale]
-        if not slot or slot < 0 or slot >= LOCALE_SLOTS then
-            error(string.format("Invalid locale identifier: %s", tostring(locale)))
+        if locale == "all" or locale == "ALL" or locale == -1 then
+            for slot = 0, LOCALE_SLOTS - 1 do
+                WRITE.u32(base_addr + slot * 4, str_offset)
+            end
+            WRITE.u32(flags_addr, 0xFFFFFFFF)
+        else
+            local slot = type(locale) == "number" and locale or LOCALE[locale]
+            if not slot or slot < 0 or slot >= LOCALE_SLOTS then
+                error(string.format("Invalid locale identifier: %s", tostring(locale)))
+            end
+            WRITE.u32(base_addr + slot * 4, str_offset)
+            local cur_flags = READ.u32(flags_addr)
+            WRITE.u32(flags_addr, bit.bor(cur_flags, bit.lshift(1, slot)))
         end
+    else
+        -- Form 1: Default to enUS (slot 0)
+        local slot = 0
         WRITE.u32(base_addr + slot * 4, str_offset)
         local cur_flags = READ.u32(flags_addr)
         WRITE.u32(flags_addr, bit.bor(cur_flags, bit.lshift(1, slot)))
-    else
-        for slot = 0, LOCALE_SLOTS - 1 do
-            WRITE.u32(base_addr + slot * 4, str_offset)
-        end
-        WRITE.u32(flags_addr, 0xFFFFFFFF)
     end
 
     self._file.dirty = true
@@ -634,7 +662,10 @@ local function resolve_method(schema, key)
     -- ---------- Getters: Get<Field>() or Get<Relation>() ----------
     local get_name = string_match(key, "^Get(.+)$")
     if get_name then
-        local f = by_name[get_name]
+        local f = by_name[get_name] or by_name[get_name .. "_lang"]
+        if not f and string_match(get_name, "^(.-)_lang$") then
+            f = by_name[string_match(get_name, "^(.-)_lang$")]
+        end
         if f then
             if f.name == "ID" then
                 return function(self) return self:GetID() end
@@ -680,6 +711,9 @@ local function resolve_method(schema, key)
     local set_name = string_match(key, "^Set(.+)$")
     if set_name then
         local f = by_name[set_name] or by_name[set_name .. "_lang"]
+        if not f and string_match(set_name, "^(.-)_lang$") then
+            f = by_name[string_match(set_name, "^(.-)_lang$")]
+        end
         if f then
             local off   = f.offset
             local kind  = f.kind
@@ -785,7 +819,7 @@ function RowProxy:__index(key)
         return compiled_fn
     end
 
-    if schema.by_name and schema.by_name[key] then
+    if schema.by_name and (schema.by_name[key] or schema.by_name[key .. "_lang"]) then
         return RowProxy.GetField(self, key)
     end
 
@@ -795,7 +829,7 @@ end
 function RowProxy:__newindex(key, value)
     local file   = rawget(self, "_file")
     local schema = rawget(self, "_schema") or (file and file.schema)
-    if schema and schema.by_name and schema.by_name[key] then
+    if schema and schema.by_name and (schema.by_name[key] or schema.by_name[key .. "_lang"]) then
         RowProxy.SetField(self, key, value)
         return
     end

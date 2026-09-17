@@ -8,13 +8,16 @@
 ---@field Instance_ID integer
 ---@field Supercedes integer
 ---@field Title_lang string
+---@field Title string Localized string alias without _lang.
 ---@field Description_lang string
+---@field Description string Localized string alias without _lang.
 ---@field Category integer
 ---@field Points integer
 ---@field Ui_order integer
 ---@field Flags integer
 ---@field IconID integer
 ---@field Reward_lang string
+---@field Reward string Localized string alias without _lang.
 ---@field Minimum_criteria integer
 ---@field Shares_criteria integer
 
@@ -74,23 +77,49 @@ function row:GetSupercedes() end
 ---@return dbc.row.v335.Achievement
 function row:CreateRelated(data) end
 
----Gets the value of field 'Title_lang'.
+---Gets the localized value of field 'Title'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetTitle_lang() end
+function row:GetTitle(locale) end
+
+---Sets the localized value of field 'Title'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Achievement self
+function row:SetTitle(value, locale) end
+
+---Gets the value of field 'Title_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetTitle_lang(locale) end
 
 ---Sets the value of field 'Title_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Achievement self
-function row:SetTitle_lang(value) end
+function row:SetTitle_lang(value, locale) end
+
+---Gets the localized value of field 'Description'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
+---@return string value
+function row:GetDescription(locale) end
+
+---Sets the localized value of field 'Description'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Achievement self
+function row:SetDescription(value, locale) end
 
 ---Gets the value of field 'Description_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
 ---@return string value
-function row:GetDescription_lang() end
+function row:GetDescription_lang(locale) end
 
 ---Sets the value of field 'Description_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Achievement self
-function row:SetDescription_lang(value) end
+function row:SetDescription_lang(value, locale) end
 
 ---Gets the value of field 'Category'.
 ---@return integer value
@@ -155,14 +184,27 @@ function row:GetIcon() end
 ---@return dbc.row.v335.SpellIcon
 function row:CreateRelated(data) end
 
----Gets the value of field 'Reward_lang'.
+---Gets the localized value of field 'Reward'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetReward_lang() end
+function row:GetReward(locale) end
+
+---Sets the localized value of field 'Reward'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.Achievement self
+function row:SetReward(value, locale) end
+
+---Gets the value of field 'Reward_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetReward_lang(locale) end
 
 ---Sets the value of field 'Reward_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.Achievement self
-function row:SetReward_lang(value) end
+function row:SetReward_lang(value, locale) end
 
 ---Gets the value of field 'Minimum_criteria'.
 ---@return integer value

@@ -6,6 +6,7 @@
 ---@field ID integer
 ---@field BonusActionBar integer
 ---@field Name_lang string
+---@field Name string Localized string alias without _lang.
 ---@field Flags integer
 ---@field CreatureType integer
 ---@field AttackIconID integer
@@ -33,14 +34,27 @@ function row:GetBonusActionBar() end
 ---@return dbc.row.v335.SpellShapeshiftForm self
 function row:SetBonusActionBar(value) end
 
----Gets the value of field 'Name_lang'.
+---Gets the localized value of field 'Name'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetName_lang() end
+function row:GetName(locale) end
+
+---Sets the localized value of field 'Name'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.SpellShapeshiftForm self
+function row:SetName(value, locale) end
+
+---Gets the value of field 'Name_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetName_lang(locale) end
 
 ---Sets the value of field 'Name_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.SpellShapeshiftForm self
-function row:SetName_lang(value) end
+function row:SetName_lang(value, locale) end
 
 ---Gets the value of field 'Flags'.
 ---@return integer value

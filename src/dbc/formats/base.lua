@@ -11,11 +11,13 @@ local cast = ffi.cast
 local copy = ffi.copy
 local string_sub = string.sub
 local string_find = string.find
+local string_match = string.match
 local math_max = math.max
 
 local LOCALE_SLOTS = 16
 
 local LOCALE = {
+    enUS = 0,
     enGB = 0,
     koKR = 1,
     frFR = 2,
@@ -30,6 +32,25 @@ local LOCALE = {
     ptPT = 11,
     ptBR = 12,
     itIT = 13,
+
+    -- Uppercase aliases
+    ENUS = 0,
+    ENGB = 0,
+    KOKR = 1,
+    FRFR = 2,
+    DEDE = 3,
+    ENCN = 4,
+    ZHCN = 5,
+    ZHTW = 6,
+    ENTW = 7,
+    RURU = 8,
+    ESES = 9,
+    ESMX = 10,
+    PTPT = 11,
+    PTBR = 12,
+    ITIT = 13,
+
+    ALL = -1,
 }
 
 local KIND_WIDTH = {
@@ -116,6 +137,10 @@ function BaseFormatDriver:AttachSchema(schema)
     self.by_name = {}
     for _, f in ipairs(schema.fields) do
         self.by_name[f.name] = f
+        local base_name = string_match(f.name, "^(.-)_lang$")
+        if base_name and not self.by_name[base_name] then
+            self.by_name[base_name] = f
+        end
     end
 end
 
@@ -127,6 +152,8 @@ function BaseFormatDriver:GetField(name)
         error(self.origin .. ": no schema attached")
     end
     local f = self.by_name[name]
+        or self.by_name[name .. "_lang"]
+        or (string_match(name, "^(.-)_lang$") and self.by_name[string_match(name, "^(.-)_lang$")])
     if not f then
         error(string.format("%s: no field named %q", self.origin, name))
     end

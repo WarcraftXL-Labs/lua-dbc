@@ -15,6 +15,7 @@
 ---@field IntroSound integer
 ---@field ExplorationLevel integer
 ---@field AreaName_lang string
+---@field AreaName string Localized string alias without _lang.
 ---@field FactionGroupMask integer
 ---@field LiquidTypeID integer[]
 ---@field MinElevation number
@@ -185,14 +186,27 @@ function row:GetExplorationLevel() end
 ---@return dbc.row.v335.AreaTable self
 function row:SetExplorationLevel(value) end
 
----Gets the value of field 'AreaName_lang'.
+---Gets the localized value of field 'AreaName'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetAreaName_lang() end
+function row:GetAreaName(locale) end
+
+---Sets the localized value of field 'AreaName'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.AreaTable self
+function row:SetAreaName(value, locale) end
+
+---Gets the value of field 'AreaName_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetAreaName_lang(locale) end
 
 ---Sets the value of field 'AreaName_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.AreaTable self
-function row:SetAreaName_lang(value) end
+function row:SetAreaName_lang(value, locale) end
 
 ---Gets the value of field 'FactionGroupMask'.
 ---@return integer value

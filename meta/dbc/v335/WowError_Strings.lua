@@ -6,6 +6,7 @@
 ---@field ID integer
 ---@field Name string
 ---@field Description_lang string
+---@field Description string Localized string alias without _lang.
 
 local row = {}
 
@@ -27,14 +28,27 @@ function row:GetName() end
 ---@return dbc.row.v335.WowError_Strings self
 function row:SetName(value) end
 
----Gets the value of field 'Description_lang'.
+---Gets the localized value of field 'Description'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetDescription_lang() end
+function row:GetDescription(locale) end
+
+---Sets the localized value of field 'Description'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.WowError_Strings self
+function row:SetDescription(value, locale) end
+
+---Gets the value of field 'Description_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetDescription_lang(locale) end
 
 ---Sets the value of field 'Description_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.WowError_Strings self
-function row:SetDescription_lang(value) end
+function row:SetDescription_lang(value, locale) end
 
 ---Table container for WowError_Strings (Build 3.3.5.12340).
 ---@class dbc.Table.v335.WowError_Strings : DbcTable

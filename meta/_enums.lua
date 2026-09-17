@@ -1902,6 +1902,40 @@
 ---@field IS_DUNGEON integer
 ---@field IS_HOLIDAY integer
 
+---The Locale enumeration.
+---@class dbc.enums.Locale
+---@field ALL integer
+---@field DEDE integer
+---@field ENCN integer
+---@field ENGB integer
+---@field ENTW integer
+---@field ENUS integer
+---@field ESES integer
+---@field ESMX integer
+---@field FRFR integer
+---@field ITIT integer
+---@field KOKR integer
+---@field PTBR integer
+---@field PTPT integer
+---@field RURU integer
+---@field ZHCN integer
+---@field ZHTW integer
+---@field deDE integer
+---@field enCN integer
+---@field enGB integer
+---@field enTW integer
+---@field enUS integer
+---@field esES integer
+---@field esMX integer
+---@field frFR integer
+---@field itIT integer
+---@field koKR integer
+---@field ptBR integer
+---@field ptPT integer
+---@field ruRU integer
+---@field zhCN integer
+---@field zhTW integer
+
 ---The LockIndexType enumeration.
 ---@class dbc.enums.LockIndexType
 ---@field ITEM integer
@@ -4079,6 +4113,7 @@
 ---@field ItemSpellTrigger dbc.enums.ItemSpellTrigger
 ---@field ItemTotemCategory dbc.enums.ItemTotemCategory
 ---@field LFGFlags dbc.enums.LFGFlags
+---@field Locale dbc.enums.Locale
 ---@field LockIndexType dbc.enums.LockIndexType
 ---@field MapBossBoundaryType dbc.enums.MapBossBoundaryType
 ---@field MapFlags dbc.enums.MapFlags

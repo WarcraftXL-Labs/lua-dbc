@@ -5,6 +5,7 @@
 ---@class dbc.row.v335.GMSurveyQuestions : RowProxy
 ---@field ID integer
 ---@field Question_lang string
+---@field Question string Localized string alias without _lang.
 
 local row = {}
 
@@ -17,14 +18,27 @@ function row:GetID() end
 ---@return dbc.row.v335.GMSurveyQuestions self
 function row:SetID(value) end
 
----Gets the value of field 'Question_lang'.
+---Gets the localized value of field 'Question'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.
 ---@return string value
-function row:GetQuestion_lang() end
+function row:GetQuestion(locale) end
+
+---Sets the localized value of field 'Question'.
+---@param value string|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.
+---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).
+---@return dbc.row.v335.GMSurveyQuestions self
+function row:SetQuestion(value, locale) end
+
+---Gets the value of field 'Question_lang'.
+---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).
+---@return string value
+function row:GetQuestion_lang(locale) end
 
 ---Sets the value of field 'Question_lang'.
----@param value string
+---@param value string|table<string|integer, string>
+---@param locale? string|integer
 ---@return dbc.row.v335.GMSurveyQuestions self
-function row:SetQuestion_lang(value) end
+function row:SetQuestion_lang(value, locale) end
 
 ---Table container for GMSurveyQuestions (Build 3.3.5.12340).
 ---@class dbc.Table.v335.GMSurveyQuestions : DbcTable

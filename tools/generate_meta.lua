@@ -137,6 +137,12 @@ local function emit_fields(parts, fields)
         else
             parts[#parts + 1] = "---@field " .. f.name .. " " .. f.lua_type .. "\n"
         end
+
+        if f.name:sub(-5) == "_lang" then
+            local base_name = f.name:sub(1, -6)
+            parts[#parts + 1] = "---@field " .. base_name .. " " .. f.lua_type
+                .. " Localized string alias without _lang.\n"
+        end
     end
 end
 
@@ -146,17 +152,46 @@ local function emit_accessors(parts, fields, row_class, build_tag)
         local fname = f.name
         local pname = pascal_case(fname)
         local ltype = f.lua_type
+        local is_loc = (fname:sub(-5) == "_lang")
+        local base_pname = is_loc and pascal_case(fname:sub(1, -6)) or nil
+
+        -- Normalized Getter/Setter for localized strings (e.g. GetAreaName, SetAreaName)
+        if is_loc and base_pname then
+            parts[#parts + 1] = "---Gets the localized value of field '" .. fname:sub(1, -6) .. "'.\n"
+            parts[#parts + 1] = "---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR or 'frFR'). If omitted, returns first populated locale.\n"
+            parts[#parts + 1] = "---@return " .. ltype .. " value\n"
+            parts[#parts + 1] = "function row:Get" .. base_pname .. "(locale) end\n\n"
+
+            parts[#parts + 1] = "---Sets the localized value of field '" .. fname:sub(1, -6) .. "'.\n"
+            parts[#parts + 1] = "---@param value " .. ltype .. "|table<string|integer, string> Text to set, or table of { [locale] = 'text' }.\n"
+            parts[#parts + 1] = "---@param locale? string|integer Specific locale (e.g. dbc.Locale.FRFR). If omitted, defaults to enUS (slot 0).\n"
+            parts[#parts + 1] = "---@return " .. row_class .. " self\n"
+            parts[#parts + 1] = "function row:Set" .. base_pname .. "(value, locale) end\n\n"
+        end
 
         -- Getter
         parts[#parts + 1] = "---Gets the value of field '" .. fname .. "'.\n"
-        parts[#parts + 1] = "---@return " .. ltype .. " value\n"
-        parts[#parts + 1] = "function row:Get" .. pname .. "() end\n\n"
+        if is_loc then
+            parts[#parts + 1] = "---@param locale? string|integer Specific locale slot or identifier (e.g. dbc.Locale.FRFR).\n"
+            parts[#parts + 1] = "---@return " .. ltype .. " value\n"
+            parts[#parts + 1] = "function row:Get" .. pname .. "(locale) end\n\n"
+        else
+            parts[#parts + 1] = "---@return " .. ltype .. " value\n"
+            parts[#parts + 1] = "function row:Get" .. pname .. "() end\n\n"
+        end
 
         -- Setter
         parts[#parts + 1] = "---Sets the value of field '" .. fname .. "'.\n"
-        parts[#parts + 1] = "---@param value " .. ltype .. "\n"
-        parts[#parts + 1] = "---@return " .. row_class .. " self\n"
-        parts[#parts + 1] = "function row:Set" .. pname .. "(value) end\n\n"
+        if is_loc then
+            parts[#parts + 1] = "---@param value " .. ltype .. "|table<string|integer, string>\n"
+            parts[#parts + 1] = "---@param locale? string|integer\n"
+            parts[#parts + 1] = "---@return " .. row_class .. " self\n"
+            parts[#parts + 1] = "function row:Set" .. pname .. "(value, locale) end\n\n"
+        else
+            parts[#parts + 1] = "---@param value " .. ltype .. "\n"
+            parts[#parts + 1] = "---@return " .. row_class .. " self\n"
+            parts[#parts + 1] = "function row:Set" .. pname .. "(value) end\n\n"
+        end
 
         -- Array item accessor
         if f.is_array then
