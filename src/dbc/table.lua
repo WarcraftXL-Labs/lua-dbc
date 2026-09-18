@@ -13,7 +13,6 @@ local ffi = require("ffi")
 local copy = ffi.copy
 
 local load = require("dbc._loader")
-local util = load("_util")
 
 local file_mod      = load("file")
 local proxy_mod     = load("proxy")
@@ -72,10 +71,14 @@ function DbcTable:RebuildIndex()
             end
         end
     else
+        -- A nil offset means the table has no ID column; the record ordinal
+        -- is then its own key (see BaseFormatDriver:GetRowId).
         local id_offset = self._file:GetIdOffset()
         for row = 1, count do
-            local addr = self._file:GetAddress(row, id_offset)
-            local id = READ.u32(addr)
+            local id = row
+            if id_offset then
+                id = READ.u32(self._file:GetAddress(row, id_offset))
+            end
             if id ~= 0 or not id_map[0] then
                 id_map[id] = row
             end
@@ -169,6 +172,20 @@ function DbcTable:_wrapCopy(id, row)
     return self:GetRowByIndex(row)
 end
 
+---Returns the record offset an explicit primary key must be written to.
+---Raises for tables with no inline ID column: offset 0 is their first real
+---column, so writing there would silently corrupt the record.
+---@return integer offset
+function DbcTable:_RequireIdOffset()
+    local id_offset = self._file:GetIdOffset()
+    if not id_offset then
+        error(string.format(
+            "%s: table has no ID column in its records; rows cannot be created with an explicit ID",
+            (self._file.schema and self._file.schema.name) or self._file.origin or "table"))
+    end
+    return id_offset
+end
+
 ---Returns rows linked to a foreign parent ID through the binary relation map.
 ---@param foreign_id integer
 ---@return RowProxy[]
@@ -212,9 +229,9 @@ function DbcTable:Create(id, data)
             self._file.origin or "table", id))
     end
 
-    local row_idx = self._file:AppendRow()
+    local id_offset = self:_RequireIdOffset()
 
-    local id_offset = self._file:GetIdOffset()
+    local row_idx = self._file:AppendRow()
     WRITE.u32(self._file:GetAddress(row_idx, id_offset), id)
 
     local proxy = RowProxy.new(self._file, row_idx, self)
@@ -252,6 +269,8 @@ function DbcTable:CloneRow(source_id_or_row, new_id, data_override)
             self._file.origin or "table", new_id))
     end
 
+    local id_offset = self:_RequireIdOffset()
+
     local new_row_idx = self._file:AppendRow()
 
     copy(
@@ -260,7 +279,6 @@ function DbcTable:CloneRow(source_id_or_row, new_id, data_override)
         self._file.record_size
     )
 
-    local id_offset = self._file:GetIdOffset()
     WRITE.u32(self._file:GetAddress(new_row_idx, id_offset), new_id)
 
     local clone = RowProxy.new(self._file, new_row_idx, self)
@@ -320,7 +338,8 @@ function DbcTable:Save(path)
         error("DbcTable:Save called on memory DBC with no target path specified")
     end
 
-    util.ensure_dir(target)
+    -- The driver's Save creates the directory if the write fails, so there is
+    -- nothing to check here.
     return self._file:Save(target)
 end
 

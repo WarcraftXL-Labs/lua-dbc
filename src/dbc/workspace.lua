@@ -159,8 +159,8 @@ function DbcWorkspace:SaveAll(options)
     local only_dirty = (options and options.only_dirty == true)
     local count = 0
 
-    ensure_dir(self.output_dir .. "/dummy")
-
+    -- No directory check here: DbcTable:Save creates the output directory
+    -- for the first file that fails to open, which covers the rest.
     for name, tbl in pairs(self.tables) do
         if not only_dirty or tbl._file.dirty then
             local ext = (tbl._file.format == "WDBC" and "dbc") or "db2"

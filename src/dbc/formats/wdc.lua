@@ -536,6 +536,7 @@ function WdcDriver:GetRowId(row)
         return self:ReadField(row, self.id_index + 1)
     end
     local id_offset = self:GetIdOffset()
+    if not id_offset then return row end
     local addr = self:GetAddress(row, id_offset)
     return READ.u32(addr)
 end

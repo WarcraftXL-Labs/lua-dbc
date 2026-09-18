@@ -489,6 +489,222 @@ run_test("Modular dbc.enums namespace", function()
 end)
 
 -- ---------------------------------------------------------------------------
+-- Binary fixtures
+--
+-- The record bytes below were lifted verbatim from a 3.3.5.12340 client file,
+-- so the values the tests expect are the client's own, not something this
+-- library produced.
+-- ---------------------------------------------------------------------------
+
+local function from_hex(hex)
+    return (hex:gsub("%s", ""):gsub("%x%x", function(cc)
+        return string.char(tonumber(cc, 16))
+    end))
+end
+
+local function u32le(n)
+    return string.char(
+        n % 256,
+        math.floor(n / 256) % 256,
+        math.floor(n / 65536) % 256,
+        math.floor(n / 16777216) % 256)
+end
+
+---Wraps raw record bytes in a WDBC container the drivers can open.
+local function make_wdbc(record_bytes, field_count, record_size, strings)
+    strings = strings or "\0"
+    return "WDBC"
+        .. u32le(#record_bytes / record_size)
+        .. u32le(field_count)
+        .. u32le(record_size)
+        .. u32le(#strings)
+        .. record_bytes
+        .. strings
+end
+
+-- CharBaseInfo: two i8 columns (RaceID, ClassID) in a 2-byte record.
+local CHAR_BASE_INFO = from_hex("0101 0102 0104")
+
+-- SpellItemEnchantmentCondition: four i8 arrays of 5 inside a 64-byte record.
+-- Logic sits at offset 59, so a 4-byte stride would read past the record end.
+local ENCHANT_COND = from_hex([[
+    03000000 0400000000 0000000000000000000000000000000000000000
+    0500000000 0000000000 0400000000000000000000000000000000000000
+    0000000000
+    1C000000 0102000000 0000000000000000000000000000000000000000
+    0202000000 0203000000 0000000000000000000000000000000000000000
+    0100000000
+]])
+
+local function open_fixture(name, bytes, record_size)
+    local schema = dbc.Schemas.Get(name, "3.3.5.12340")
+    local buf = make_wdbc(bytes, schema.field_count, record_size)
+    return dbc.Table.new(dbc.File.new(buf, schema, "<fixture:" .. name .. ">"))
+end
+
+-- ---------------------------------------------------------------------------
+-- Test 14 — Sub-32-bit integer columns
+-- ---------------------------------------------------------------------------
+
+run_test("Sub-32-bit integer columns read and write at their own width", function()
+    local tbl = open_fixture("CharBaseInfo", CHAR_BASE_INFO, 2)
+    assert_eq(tbl:Count(), 3, "Fixture should hold 3 records")
+
+    local row1 = tbl:GetRowByIndex(1)
+    assert_eq(row1:GetField("RaceID"), 1, "CharBaseInfo row 1 RaceID")
+    assert_eq(row1:GetField("ClassID"), 1, "CharBaseInfo row 1 ClassID")
+    assert_eq(tbl:GetRowByIndex(2):GetField("ClassID"), 2, "Row 2 ClassID")
+    assert_eq(tbl:GetRowByIndex(3):GetField("ClassID"), 4, "Row 3 ClassID")
+
+    -- A 1-byte column must write 1 byte: ClassID sits directly after RaceID.
+    row1:SetField("RaceID", 7)
+    assert_eq(row1:GetField("RaceID"), 7, "RaceID after write")
+    assert_eq(row1:GetField("ClassID"), 1, "ClassID must survive a RaceID write")
+    assert_eq(tbl:GetRowByIndex(2):GetField("RaceID"), 1,
+        "Row 2 must survive a write to row 1")
+
+    -- Arrays of a sub-32-bit kind must advance by that kind's width.
+    local cond = open_fixture("SpellItemEnchantmentCondition", ENCHANT_COND, 64)
+    local c1 = cond:GetRowByIndex(1)
+    assert_eq(table.concat(c1:GetField("Lt_operandType"), ","), "4,0,0,0,0",
+        "Lt_operandType of record ID 3")
+    assert_eq(table.concat(c1:GetField("Operator"), ","), "5,0,0,0,0",
+        "Operator of record ID 3")
+    assert_eq(table.concat(c1:GetField("Logic"), ","), "0,0,0,0,0",
+        "Logic of record ID 3 (offset 59, must stay inside the record)")
+
+    local c2 = cond:GetRowByIndex(2)
+    assert_eq(table.concat(c2:GetField("Lt_operandType"), ","), "1,2,0,0,0",
+        "Lt_operandType of record ID 28")
+    assert_eq(table.concat(c2:GetField("Rt_operandType"), ","), "2,3,0,0,0",
+        "Rt_operandType of record ID 28")
+    assert_eq(table.concat(c2:GetField("Logic"), ","), "1,0,0,0,0",
+        "Logic of record ID 28")
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 15 — Tables without an inline ID column
+-- ---------------------------------------------------------------------------
+
+run_test("Tables without an inline ID column", function()
+    local inline = dbc.Schemas.Get("SpellIcon", "3.3.5.12340")
+    assert_true(inline.has_id_inline, "SpellIcon stores its ID in the record")
+
+    local schema = dbc.Schemas.Get("CharBaseInfo", "3.3.5.12340")
+    assert_eq(schema.has_id_inline, false, "CharBaseInfo has no ID in the record")
+
+    local tbl = open_fixture("CharBaseInfo", CHAR_BASE_INFO, 2)
+    assert_eq(tbl:GetFile():GetIdOffset(), nil,
+        "GetIdOffset must not hand back a fake offset")
+    assert_eq(icon_table:GetFile():GetIdOffset(), inline.id_offset,
+        "GetIdOffset should report the schema's offset when there is one")
+
+    -- Offset 0 is RaceID here, so the key can only come from the ordinal.
+    assert_eq(tbl:GetRowByIndex(2):GetID(), 2, "Row 2 keys on its ordinal")
+    assert_eq(tbl:GetRowByIndex(3):GetID(), 3, "Row 3 keys on its ordinal")
+
+    -- Create has nowhere to put the key and must refuse rather than write it
+    -- over the first column.
+    local ok, err = pcall(function() return tbl:Create(99) end)
+    assert_true(not ok, "Create on a table with no ID column should raise")
+    assert_true(tostring(err):find("no ID column", 1, true) ~= nil,
+        "Error should name the cause, got: " .. tostring(err))
+    assert_eq(tbl:Count(), 3, "A refused Create must not append a row")
+    assert_eq(tbl:GetRowByIndex(1):GetField("RaceID"), 1, "RaceID must be intact")
+
+    local ok_next = pcall(function() return tbl:CreateNext() end)
+    assert_true(not ok_next, "CreateNext should raise for the same reason")
+
+    local ok_clone = pcall(function() return tbl:CloneRow(1, 99) end)
+    assert_true(not ok_clone, "CloneRow should raise for the same reason")
+    assert_eq(tbl:Count(), 3, "A refused CloneRow must not append a row")
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 16 — Workspace SaveAll
+-- ---------------------------------------------------------------------------
+
+run_test("Workspace SaveAll writes every loaded table", function()
+    local ws = dbc.Workspace({
+        source = TMP_WS .. "/source",
+        out    = TMP_WS .. "/output/saveall",
+        build  = "3.3.5.12340",
+    })
+
+    ws:Create("SpellIcon"):Create(1, { TextureFilename = "Interface/Icons/Q" })
+    ws:Create("SpellDuration"):Create(1, { Duration = 1000 })
+
+    local count = ws:SaveAll()
+    assert_eq(count, 2, "SaveAll should report both tables")
+
+    for _, name in ipairs({ "SpellIcon", "SpellDuration" }) do
+        local fh = io.open(TMP_WS .. "/output/saveall/" .. name .. ".dbc", "rb")
+        assert_not_nil(fh, name .. ".dbc should exist on disk")
+        if fh then fh:close() end
+    end
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 17 — Saving only touches the filesystem layout when it has to
+-- ---------------------------------------------------------------------------
+
+run_test("Saving creates the output directory only when it is missing", function()
+    local util = require("dbc._util")
+    local real_ensure_dir = util.ensure_dir
+    local calls = 0
+    util.ensure_dir = function(path)
+        calls = calls + 1
+        return real_ensure_dir(path)
+    end
+
+    local ok, err = pcall(function()
+        local tbl = dbc.Create("SpellDuration", "WDBC", "3.3.5.12340")
+        tbl:Create(1, { Duration = 500 })
+
+        -- TMP_WS/output already exists: two saves, no directory work at all.
+        tbl:Save(TMP_WS .. "/output/probe.dbc")
+        tbl:Save(TMP_WS .. "/output/probe.dbc")
+        assert_eq(calls, 0, "Saving into an existing directory must not mkdir")
+
+        -- A missing directory costs exactly one mkdir, and the write lands.
+        tbl:Save(TMP_WS .. "/output/made/up/probe.dbc")
+        assert_eq(calls, 1, "A missing directory should cost one mkdir")
+
+        local fh = io.open(TMP_WS .. "/output/made/up/probe.dbc", "rb")
+        assert_not_nil(fh, "The file should exist in the created directory")
+        if fh then fh:close() end
+    end)
+
+    util.ensure_dir = real_ensure_dir
+    if not ok then error(err, 0) end
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 18 — Save clears the dirty flag
+-- ---------------------------------------------------------------------------
+
+run_test("Save clears the dirty flag", function()
+    local ws = dbc.Workspace({
+        source = TMP_WS .. "/source",
+        out    = TMP_WS .. "/output/dirty",
+        build  = "3.3.5.12340",
+    })
+
+    local tbl = ws:Create("SpellDuration")
+    tbl:Create(1, { Duration = 1000 })
+    assert_true(tbl:GetFile().dirty, "A created row marks the file dirty")
+
+    assert_eq(ws:SaveAll({ only_dirty = true }), 1, "The dirty table is written")
+    assert_eq(tbl:GetFile().dirty, false, "Save should clear the dirty flag")
+    assert_eq(ws:SaveAll({ only_dirty = true }), 0,
+        "A clean table should be skipped on the next only_dirty pass")
+
+    tbl:GetRowById(1):SetField("Duration", 2000)
+    assert_true(tbl:GetFile().dirty, "Editing a row marks the file dirty again")
+    assert_eq(ws:SaveAll({ only_dirty = true }), 1, "The edit should be written")
+end)
+
+-- ---------------------------------------------------------------------------
 -- Cleanup
 -- ---------------------------------------------------------------------------
 

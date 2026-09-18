@@ -38,18 +38,36 @@ end
 local is_windows = package.config:sub(1, 1) == "\\"
 local ok_tnew, tablenew = pcall(require, "table.new")
 
---- Ensures the parent directory of a file path exists.
+--- Creates the parent directory of a file path.
+--- Spawns a process, so callers must reach for it only once they know the
+--- directory is missing. Prefer util.open_write, which calls it at most once.
 --- @param file_path string
 function util.ensure_dir(file_path)
     local dir = string.match(file_path, "^(.*)[/\\][^/\\]+$")
     if not dir or dir == "" then return end
 
     if is_windows then
-        local win_dir = dir:gsub("/", "\\")
-        os.execute('if not exist "' .. win_dir .. '" mkdir "' .. win_dir .. '" >nul 2>nul')
+        os.execute('mkdir "' .. dir:gsub("/", "\\") .. '" >nul 2>nul')
     else
         os.execute('mkdir -p "' .. dir .. '" 2>/dev/null')
     end
+end
+
+--- Opens a file for binary writing, creating the parent directory only if the
+--- first attempt fails.
+--- Probing for the directory up front costs a process spawn on every single
+--- save, and this library runs inside a CEF host. The open call is its own
+--- existence check: succeeding proves the directory is there, which is the
+--- case on every save but the first.
+--- @param path string
+--- @return file*|nil handle
+--- @return string|nil err
+function util.open_write(path)
+    local f = io.open(path, "wb")
+    if f then return f end
+
+    util.ensure_dir(path)
+    return io.open(path, "wb")
 end
 
 --- Preallocates a Lua array by sizing it to `n` elements.

@@ -7,6 +7,9 @@
 
 local ffi = require("ffi")
 
+local load = require("dbc._loader")
+local util = load("_util")
+
 local cast = ffi.cast
 local copy = ffi.copy
 local string_sub = string.sub
@@ -65,12 +68,20 @@ local KIND_WIDTH = {
     enum = 4,
     bool = 4,
     byte = 1,
+    i8 = 1,
+    u8 = 1,
+    i16 = 2,
+    u16 = 2,
     u64 = 8,
     loc = 4 * (LOCALE_SLOTS + 1),
 }
 
 local READ = {
     byte = function(addr) return cast("uint8_t*", addr)[0] end,
+    i8   = function(addr) return cast("int8_t*", addr)[0] end,
+    u8   = function(addr) return cast("uint8_t*", addr)[0] end,
+    i16  = function(addr) return cast("int16_t*", addr)[0] end,
+    u16  = function(addr) return cast("uint16_t*", addr)[0] end,
     i32  = function(addr) return cast("int32_t*", addr)[0] end,
     f32  = function(addr) return cast("float*", addr)[0] end,
     u64  = function(addr) return cast("uint64_t*", addr)[0] end,
@@ -79,6 +90,10 @@ local READ = {
 
 local WRITE = {
     byte = function(addr, v) cast("uint8_t*", addr)[0] = v end,
+    i8   = function(addr, v) cast("int8_t*", addr)[0] = v end,
+    u8   = function(addr, v) cast("uint8_t*", addr)[0] = v end,
+    i16  = function(addr, v) cast("int16_t*", addr)[0] = v end,
+    u16  = function(addr, v) cast("uint16_t*", addr)[0] = v end,
     i32  = function(addr, v) cast("int32_t*", addr)[0] = v end,
     f32  = function(addr, v) cast("float*", addr)[0] = v end,
     u64  = function(addr, v) cast("uint64_t*", addr)[0] = v end,
@@ -168,21 +183,27 @@ function BaseFormatDriver:GetRowId(row)
         return self.id_list[row]
     end
     local id_offset = self:GetIdOffset()
+    if not id_offset then
+        -- No ID column in the record and no id_list to read it from: the
+        -- record ordinal is the only identity such a table has.
+        return row
+    end
     local addr = self:GetAddress(row, id_offset)
     return READ.u32(addr)
 end
 
---- Returns the byte offset of the ID field in a record.
---- @return integer offset
+--- Returns the byte offset of the ID field in a record, or nil when the table
+--- has no inline ID column. Callers that write an ID must treat nil as "there
+--- is nowhere to put it"; offset 0 is the first real column of those tables.
+--- @return integer|nil offset
 function BaseFormatDriver:GetIdOffset()
-    if self.schema then
-        for _, f in ipairs(self.schema.fields) do
-            if f.kind == "key" then
-                return f.offset
-            end
-        end
-    end
-    return 0
+    local schema = self.schema
+    if not schema then return 0 end
+
+    -- Only the DBD loader knows about non-inline IDs. Hand-built schemas
+    -- leave has_id_inline unset and keep the historical offset-0 default.
+    if schema.has_id_inline == false then return nil end
+    return schema.id_offset or 0
 end
 
 --- Retrieves a null-terminated string from the driver's string storage.
@@ -271,12 +292,15 @@ function BaseFormatDriver:Save(path)
         error(string.format("%s: saving format %s is not supported", self.origin, self.format))
     end
     local data = self:Serialize()
-    local f, err = io.open(path, "wb")
+    local f, err = util.open_write(path)
     if not f then
         error(string.format("cannot write to %s: %s", path, tostring(err)))
     end
     f:write(data)
     f:close()
+
+    -- The on-disk copy now matches memory, so `only_dirty` saves may skip it.
+    self.dirty = false
     return #data
 end
 

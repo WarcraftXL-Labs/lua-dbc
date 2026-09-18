@@ -157,11 +157,18 @@ function RowProxy:GetID()
         return self._file:GetRowId(self._row)
     end
     local offset = self._file:GetIdOffset()
+    if not offset then return self._row end
     return READ.u32(self:GetAddress(offset))
 end
 
 function RowProxy:SetID(id)
     local offset = self._file:GetIdOffset()
+    if not offset then
+        error(string.format(
+            "%s: row %d has no ID column to write; its key is the record ordinal",
+            (self._file.schema and self._file.schema.name) or self._file.origin or "table",
+            self._row))
+    end
     local old_id = self:GetID()
     WRITE.u32(self:GetAddress(offset), id)
 

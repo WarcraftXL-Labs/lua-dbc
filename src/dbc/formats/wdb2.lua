@@ -10,7 +10,6 @@ local ffi = require("ffi")
 local load = require("dbc._loader")
 local base_mod = load("formats.base")
 local BaseFormatDriver = base_mod.BaseFormatDriver
-local READ = base_mod.READ
 local WRITE = base_mod.WRITE
 
 local cast = ffi.cast
@@ -201,12 +200,12 @@ function Wdb2Driver:Serialize()
         copy_buf = ffi.string(c_ptr, #copy_entries * 8)
     end
 
-    -- Update min/max ID
-    local id_offset = self:GetIdOffset()
+    -- Update min/max ID. GetRowId, not a raw read at the ID offset: tables
+    -- without an inline ID column have no offset to read from.
     local min_id = 0xFFFFFFFF
     local max_id = 0
     for r = 1, self.record_count do
-        local id = READ.u32(self:GetAddress(r, id_offset))
+        local id = self:GetRowId(r)
         if id < min_id then min_id = id end
         if id > max_id then max_id = id end
     end
