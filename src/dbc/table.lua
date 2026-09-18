@@ -292,24 +292,153 @@ function DbcTable:CloneRow(source_id_or_row, new_id, data_override)
     return clone
 end
 
+-- ---------------------------------------------------------------------------
+-- Structural row editing
+--
+-- The driver moves the bytes and stamps the change (see formats/base.lua);
+-- the table owns the two caches that hold row indices, _id_map and _proxies,
+-- and has to bring them back in line afterwards.
+-- ---------------------------------------------------------------------------
+
+---Brings the table's index caches back in line after the driver has inserted
+---or deleted a record at `floor`.
+---@param floor integer Lowest 1-based row index the edit disturbed.
+function DbcTable:_AfterStructuralChange(floor)
+    -- Only proxies at or after the edit point moved. The ones before it still
+    -- name the same record, so they keep their cache slot - and with it their
+    -- identity, which callers comparing two lookups of the same row rely on.
+    -- This walk costs one step per proxy handed out so far, not one per
+    -- record. Dropping the moved ones matters beyond tidiness: a later append
+    -- can land on an index a dead proxy is still cached at, and GetRowByIndex
+    -- would hand back the dead one for a perfectly good row.
+    for row in pairs(self._proxies) do
+        if row >= floor then self._proxies[row] = nil end
+    end
+
+    -- Copy proxies are keyed by ID but hold a row index, and telling which of
+    -- them moved costs as much as rebuilding them, so they all go.
+    self._copy_proxies = {}
+
+    -- RebuildIndex is O(record_count). That is the right price for one edit
+    -- and the wrong one for a loop of them - N deletions cost O(N * count) -
+    -- so a caller removing many rows should gather the indices first and
+    -- delete them in one pass, highest index first, rather than calling this
+    -- per row. No bulk entry point is offered here because none is tested.
+    self:RebuildIndex()
+end
+
+---Returns a record's raw bytes, for an undo stack.
+---The bytes survive any later edit, so this is what to capture before a
+---DeleteRow you may want to undo: InsertRow puts them back exactly.
+---@param index integer 1-based row index.
+---@return string bytes
+function DbcTable:CopyRecord(index)
+    return self._file:CopyRecord(index)
+end
+
+---Deletes the record at a 1-based index, shifting the rows after it down.
+---Invalidates every RowProxy at or after `index`; see proxy.lua.
+---@param index integer 1-based row index.
+---@return DbcTable self
+function DbcTable:DeleteRow(index)
+    self._file:DeleteRow(index)
+    self:_AfterStructuralChange(index)
+    return self
+end
+
+---Inserts a record at a 1-based index, shifting the rows after it up.
+---`index == Count() + 1` appends. Invalidates every RowProxy at or after
+---`index`; see proxy.lua.
+---@param index integer 1-based row index; Count() + 1 appends.
+---@param bytes string|nil Exactly record_size bytes, or nil for a blank row.
+---@return RowProxy row The inserted row.
+function DbcTable:InsertRow(index, bytes)
+    self._file:InsertRow(index, bytes)
+    self:_AfterStructuralChange(index)
+    return self:GetRowByIndex(index)
+end
+
+---Duplicates the record at a 1-based index, appending the copy.
+---
+---Distinct from CloneRow, which takes a source *ID* and writes a new one, and
+---so refuses on the tables that keep no ID in their records. This takes an
+---index and copies bytes, which every table has, including those 22.
+---
+---On a table that does store an ID, the copy must not share its source's key,
+---so `new_id` is written over it; it defaults to GetMaxID() + 1. Tables
+---keyed on the record ordinal have nowhere to put one and must be passed nil.
+---
+---The copy lands at the end, as Create's and CloneRow's rows do. Duplicating
+---into the middle is CopyRecord plus InsertRow, which renumbers every row
+---after the insertion point - on an ordinal-keyed table that rewrites those
+---rows' keys, so it has to be the caller's explicit choice, not a default.
+---@param index integer 1-based index of the record to duplicate.
+---@param new_id integer|nil Key for the copy; defaults to GetMaxID() + 1.
+---@return RowProxy row The duplicate.
+function DbcTable:DuplicateRowByIndex(index, new_id)
+    -- CopyRecord validates the index, so nothing below has to.
+    local bytes = self._file:CopyRecord(index)
+    local id_offset = self._file:GetIdOffset()
+
+    if id_offset then
+        -- GetMaxID scans the whole id_map, so it is called here at most once
+        -- per duplicate and never inside the append below.
+        if new_id == nil then new_id = self:GetMaxID() + 1 end
+        if self._id_map[new_id] then
+            error(string.format("%s: row with ID %s already exists",
+                self._file.origin or "table", tostring(new_id)))
+        end
+    elseif new_id ~= nil then
+        error(string.format(
+            "%s: table has no ID column in its records; the duplicate keys on "
+            .. "its own ordinal and cannot be given ID %s",
+            (self._file.schema and self._file.schema.name)
+                or self._file.origin or "table",
+            tostring(new_id)))
+    end
+
+    local at = self._file.record_count + 1
+    self._file:InsertRow(at, bytes)
+    if id_offset then
+        WRITE.u32(self._file:GetAddress(at, id_offset), new_id)
+    end
+
+    self:_AfterStructuralChange(at)
+    return self:GetRowByIndex(at)
+end
+
 ---@return dbc.Query<RowProxy>
 function DbcTable:Query()
     return Query.new(self)
 end
 
+---Iterates the table as (index, row) pairs.
+---
+---record_count is read on every step rather than snapshotted at creation: a
+---table that shrinks mid-iteration would otherwise be walked one index past
+---its end, and GetRowByIndex would raise on a loop that had done nothing
+---wrong.
+---
+---That stops the walk from running off the end; it does not make deleting
+---during iteration *mean* anything. The rows after a deletion shift down one,
+---so the next step skips whichever row took the deleted one's place. Gather
+---the indices in one pass and delete afterwards, highest first.
 ---@return fun(): integer, RowProxy
 function DbcTable:Rows()
     local row = 0
-    local count = self._file.record_count
     return function()
         row = row + 1
-        if row <= count then
+        if row <= self._file.record_count then
             return row, self:GetRowByIndex(row)
         end
         return nil
     end
 end
 
+---Calls `fn` for every row, in index order.
+---The bound is evaluated once, so deleting rows from inside `fn` will raise
+---once the walk passes the shortened end. Use Rows(), or collect and delete
+---afterwards - see the note on Rows.
 ---@param fn fun(row: RowProxy, index: integer)
 ---@return DbcTable self
 function DbcTable:ForEach(fn)

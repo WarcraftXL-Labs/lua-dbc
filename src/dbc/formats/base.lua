@@ -10,8 +10,16 @@ local ffi = require("ffi")
 local load = require("dbc._loader")
 local util = load("_util")
 
+-- LuaJIT has no ffi.move, and ffi.copy is memcpy: undefined when source and
+-- destination overlap, which is exactly what shifting a record buffer up or
+-- down by one record does. memmove is the call that defines that case.
+ffi.cdef[[void *memmove(void *dest, const void *src, size_t n);]]
+local memmove = ffi.C.memmove
+
 local cast = ffi.cast
 local copy = ffi.copy
+local fill = ffi.fill
+local ffi_string = ffi.string
 local string_sub = string.sub
 local string_find = string.find
 local string_match = string.match
@@ -136,6 +144,10 @@ function BaseFormatDriver:Init(format_name, origin)
     self.str_extra = {}
     self.str_extra_len = 0
     self._str_cache = {}
+
+    -- Structural-edit stamp; see "Structural row editing" near the bottom.
+    self._generation = 0
+    self._change_floors = nil
 end
 
 --- Validates and binds a schema definition to the driver.
@@ -282,6 +294,203 @@ function BaseFormatDriver:GetRelationRows(foreign_id)
         return self.relationship_map[foreign_id]
     end
     return {}
+end
+
+-- ---------------------------------------------------------------------------
+-- Structural row editing
+--
+-- Inserting or deleting a record moves every record after it, so every row
+-- index a caller is holding - RowProxy._row, DbcTable._id_map,
+-- DbcTable._proxies - may now name a different record than it did a moment
+-- ago. A driver cannot find those holders, so rather than repair them it
+-- leaves a stamp they can check: `_generation` counts structural edits and
+-- `_change_floors[g]` is the lowest row index edit `g` disturbed. A holder
+-- that remembers the generation it was minted at can then ask whether
+-- anything since then moved its row - which RowProxy does on every access,
+-- for one integer comparison on the common path.
+--
+-- Appending is not a structural edit by this definition and does not bump the
+-- generation: it moves no existing record, so nothing holding an index can be
+-- wrong afterwards. That is why AppendRow stays as it was.
+--
+-- The string heap needs no work here, and that is a property worth stating
+-- rather than a gap. It is append-only and never reclaimed, so deleting a
+-- record leaves its strings in the heap at unchanged offsets, and re-inserting
+-- that record's bytes restores str fields whose u32 offsets still resolve to
+-- the same text. Delete and its undo are therefore exact for strings. The
+-- price is heap bytes no record references any more, which costs file size and
+-- nothing else: readers only ever reach the heap by following an offset out
+-- of a record.
+-- ---------------------------------------------------------------------------
+
+--- Raises unless this driver stores records as a dense array of record_size
+--- bytes addressed by ordinal, which is what shifting rows around assumes.
+--- WDB3/WDB5/WDC keep IDs in a parallel id_list, row indices in a
+--- relationship_map, and in WDC's case bit-packed fields and section offset
+--- maps besides: a buffer shift would silently desynchronise all of it, so
+--- those formats get a clear refusal instead of a half-working edit.
+--- @param op string Operation name, for the message.
+function BaseFormatDriver:AssertRowEditable(op)
+    local why
+    if not self.records or not self.Reserve then
+        why = "records are not held in a resizable flat buffer"
+    elseif not self.record_size or self.record_size <= 0 then
+        why = "the record size is unknown"
+    elseif self.id_list then
+        why = "IDs live in a separate id_list that would have to be shifted too"
+    elseif self.relationship_map then
+        why = "the embedded relationship map stores row indices"
+    elseif self.field_storage_info or self.is_compressed then
+        why = "fields are bit-packed, so records are not addressable by ordinal"
+    end
+
+    if why then
+        error(string.format("%s: %s is not supported on %s (%s)",
+            self.origin, op, self.format, why))
+    end
+end
+
+--- Raises unless `index` is a 1-based row index in 1..`limit`.
+--- @param index any
+--- @param limit integer Highest accepted index.
+--- @param op string Operation name, for the message.
+function BaseFormatDriver:AssertRowIndex(index, limit, op)
+    if type(index) ~= "number" or index % 1 ~= 0 or index < 1 or index > limit then
+        error(string.format("%s: %s index %s out of range (1..%d)",
+            self.origin, op, tostring(index), limit))
+    end
+end
+
+--- Records that a structural edit disturbed every row from `floor` upwards.
+--- The floors table keeps one integer per edit for the life of the driver, so
+--- that a holder minted at any past generation can still be judged exactly;
+--- an editing session would have to make millions of edits for that to matter.
+--- @param floor integer Lowest 1-based row index the edit moved or removed.
+function BaseFormatDriver:MarkStructuralChange(floor)
+    local generation = (self._generation or 0) + 1
+    self._generation = generation
+
+    local floors = self._change_floors
+    if not floors then
+        floors = {}
+        self._change_floors = floors
+    end
+    floors[generation] = floor
+
+    self.dirty = true
+end
+
+--- Returns the lowest row index disturbed by any structural edit made after
+--- generation `since`, or nil when none were made.
+--- Holders re-stamp themselves with the current generation once this clears
+--- them, so each one walks each generation at most once.
+--- @param since integer Generation the caller was last known good at.
+--- @return integer|nil floor
+function BaseFormatDriver:StructuralFloorSince(since)
+    local generation = self._generation or 0
+    if since >= generation then return nil end
+
+    local floors = self._change_floors
+    if not floors then return nil end
+
+    local lowest
+    for g = since + 1, generation do
+        local floor = floors[g]
+        if floor and (not lowest or floor < lowest) then
+            lowest = floor
+        end
+    end
+    return lowest
+end
+
+--- Returns a record's raw bytes, for an undo stack or a duplicate.
+--- The bytes are a plain Lua string and owe nothing to the buffer, so a caller
+--- can hold one across the delete it is meant to undo.
+--- @param index integer 1-based row index.
+--- @return string bytes Exactly record_size bytes.
+function BaseFormatDriver:CopyRecord(index)
+    self:AssertRowEditable("CopyRecord")
+    self:AssertRowIndex(index, self.record_count, "CopyRecord")
+    return ffi_string(self:GetAddress(index, 0), self.record_size)
+end
+
+--- Deletes a record, compacting the records after it down by one slot.
+--- The string heap is deliberately left alone; see the note above.
+--- @param index integer 1-based row index.
+function BaseFormatDriver:DeleteRow(index)
+    self:AssertRowEditable("DeleteRow")
+    self:AssertRowIndex(index, self.record_count, "DeleteRow")
+
+    -- A copy table aliases IDs, not rows, so shifting records underneath it is
+    -- harmless - but deleting a record other IDs are declared copies of would
+    -- quietly take those rows with it. Refuse rather than drop them.
+    local copy_table = self.copy_table
+    if copy_table and next(copy_table) then
+        local id = self:GetRowId(index)
+        for new_id, source_id in pairs(copy_table) do
+            if source_id == id then
+                error(string.format(
+                    "%s: row %d (ID %d) is the source of copy-table ID %d; "
+                    .. "drop the copy before deleting the record it copies",
+                    self.origin, index, id, new_id))
+            end
+        end
+    end
+
+    local tail = self.record_count - index
+    if tail > 0 then
+        memmove(self:GetAddress(index, 0),
+                self:GetAddress(index + 1, 0),
+                tail * self.record_size)
+    end
+
+    self.record_count = self.record_count - 1
+    self:MarkStructuralChange(index)
+end
+
+--- Inserts a record at a 1-based index, shifting the rest up one slot.
+--- `index == record_count + 1` appends. Handing it the bytes CopyRecord
+--- returned for the row DeleteRow removed puts the file back exactly as it
+--- was, strings included.
+--- @param index integer 1-based row index; record_count + 1 appends.
+--- @param bytes string|nil Exactly record_size bytes, or nil for a blank row.
+--- @return integer index The index the record was written at.
+function BaseFormatDriver:InsertRow(index, bytes)
+    self:AssertRowEditable("InsertRow")
+    self:AssertRowIndex(index, self.record_count + 1, "InsertRow")
+
+    if bytes ~= nil then
+        if type(bytes) ~= "string" then
+            error(string.format("%s: InsertRow expects record bytes or nil, got %s",
+                self.origin, type(bytes)))
+        end
+        if #bytes ~= self.record_size then
+            error(string.format("%s: InsertRow got %d bytes, records are %d bytes",
+                self.origin, #bytes, self.record_size))
+        end
+    end
+
+    self:Reserve(self.record_count + 1)
+
+    -- Grow the count before addressing: GetAddress bounds-checks against it,
+    -- and the shift's destination is the slot that does not exist yet.
+    local tail = self.record_count - index + 1
+    self.record_count = self.record_count + 1
+    if tail > 0 then
+        memmove(self:GetAddress(index + 1, 0),
+                self:GetAddress(index, 0),
+                tail * self.record_size)
+    end
+
+    local slot = self:GetAddress(index, 0)
+    if bytes then
+        copy(slot, bytes, self.record_size)
+    else
+        fill(slot, self.record_size, 0)
+    end
+
+    self:MarkStructuralChange(index)
+    return index
 end
 
 --- Saves the database file to disk.

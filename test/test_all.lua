@@ -705,6 +705,427 @@ run_test("Save clears the dirty flag", function()
 end)
 
 -- ---------------------------------------------------------------------------
+-- Structural row editing
+--
+-- Helpers shared by tests 19-25. SpellIcon is the workhorse: an ID column and
+-- a string column in 8 bytes, so every check below also exercises the string
+-- heap rather than taking the "deletion never touches it" claim on trust.
+-- ---------------------------------------------------------------------------
+
+local function icon_text(id) return "Interface\\Icons\\Icon_" .. id end
+
+local function make_icons(ids)
+    local tbl = dbc.Create("SpellIcon", "WDBC", "3.3.5.12340")
+    for _, id in ipairs(ids) do
+        tbl:Create(id, { TextureFilename = icon_text(id) })
+    end
+    return tbl
+end
+
+---Row IDs in buffer order, which is what a structural edit rearranges.
+local function id_order(tbl)
+    local ids = {}
+    for i = 1, tbl:Count() do
+        ids[i] = tbl:GetFile():GetRowId(i)
+    end
+    return table.concat(ids, ",")
+end
+
+-- ---------------------------------------------------------------------------
+-- Test 19 — Delete then reinsert is byte-identical
+-- ---------------------------------------------------------------------------
+
+run_test("Delete then reinsert restores the file byte for byte", function()
+    -- The undo path, and the check that matters most: CopyRecord before the
+    -- delete, InsertRow at the same index after it. It works because the
+    -- string heap is append-only - the deleted record's text is still sitting
+    -- at the offsets its bytes point at - so restoring the bytes restores the
+    -- strings too.
+    for _, index in ipairs({ 1, 3, 5 }) do
+        local tbl  = make_icons({ 10, 20, 30, 40, 50 })
+        local file = tbl:GetFile()
+        local before = file:Serialize()
+
+        local bytes = tbl:CopyRecord(index)
+        assert_eq(#bytes, file.record_size, "CopyRecord returns exactly one record")
+
+        tbl:DeleteRow(index)
+        assert_eq(tbl:Count(), 4, "Delete drops exactly one row")
+        assert_true(file:Serialize() ~= before,
+            "The file must actually differ while the row is missing")
+
+        tbl:InsertRow(index, bytes)
+        assert_eq(tbl:Count(), 5, "Reinsert restores the row count")
+        assert_eq(file:Serialize(), before, string.format(
+            "Delete then reinsert at index %d must be byte-identical", index))
+
+        -- Equal bytes is not the whole claim: the restored record's string
+        -- offset has to still resolve through the heap.
+        assert_eq(tbl:GetRowByIndex(index):GetTextureFilename(),
+            icon_text(index * 10),
+            "The reinserted row's string must still resolve")
+    end
+
+    -- Again with localized strings, which spend 17 offsets per field instead
+    -- of one, on a table wide enough that a misaligned shift would show.
+    local races = dbc.Create("ChrRaces", "WDBC", "3.3.5.12340")
+    for id = 1, 4 do
+        races:Create(id, {
+            ClientPrefix = "Pre" .. id,
+            Name_lang    = "Race " .. id,
+        })
+    end
+    local races_file = races:GetFile()
+    local races_before = races_file:Serialize()
+
+    local race_bytes = races:CopyRecord(2)
+    races:DeleteRow(2)
+    races:InsertRow(2, race_bytes)
+    assert_eq(races_file:Serialize(), races_before,
+        "Delete then reinsert must be byte-identical with localized strings too")
+    assert_eq(races:GetRowByIndex(2):GetName_lang(), "Race 2",
+        "The localized string must still resolve after the reinsert")
+    assert_eq(races:GetRowByIndex(2):GetClientPrefix(), "Pre2",
+        "The plain string must still resolve after the reinsert")
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 20 — Delete edge cases
+-- ---------------------------------------------------------------------------
+
+run_test("Deleting the first, last, middle and only row", function()
+    -- A dense buffer has three cases, not one: deleting the last row moves no
+    -- bytes at all, deleting the first moves every other record, and a middle
+    -- row moves only its tail.
+    local first = make_icons({ 10, 20, 30, 40 })
+    first:DeleteRow(1)
+    assert_eq(first:Count(), 3, "Deleting the first row leaves three")
+    assert_eq(id_order(first), "20,30,40", "The tail must slide down one slot")
+    assert_eq(first:GetRowByIndex(1):GetTextureFilename(), icon_text(20),
+        "Row 1 must now be the old row 2, strings included")
+
+    local last = make_icons({ 10, 20, 30, 40 })
+    last:DeleteRow(4)
+    assert_eq(id_order(last), "10,20,30", "Deleting the last row moves nothing")
+
+    local mid = make_icons({ 10, 20, 30, 40 })
+    mid:DeleteRow(2)
+    assert_eq(id_order(mid), "10,30,40", "Only the rows after the hole move")
+    assert_eq(mid:GetRowByIndex(2):GetTextureFilename(), icon_text(30),
+        "The row that filled the hole must carry its own string")
+
+    -- The only row: the compaction has no tail to move and the table empties.
+    local single = make_icons({ 7 })
+    single:DeleteRow(1)
+    assert_eq(single:Count(), 0, "Deleting the only row empties the table")
+    assert_eq(single:FindById(7), nil, "The last ID must stop resolving")
+    local emptied = dbc.Table.new(dbc.File.new(
+        single:GetFile():Serialize(), dbc.Schemas.SpellIcon, "<test_emptied>"))
+    assert_eq(emptied:Count(), 0, "An emptied table must serialize and reload")
+
+    -- Rows() reads the count on every step, so a table that shrinks under it
+    -- ends the walk instead of running off the end. It still skips whichever
+    -- row took the deleted one's place, which is why the note on Rows says to
+    -- collect the indices first.
+    local walked = make_icons({ 10, 20, 30, 40 })
+    local seen, steps = {}, 0
+    for index in walked:Rows() do
+        steps = steps + 1
+        assert_true(steps <= 4, "Rows() must terminate on a shrinking table")
+        seen[#seen + 1] = walked:GetFile():GetRowId(index)
+        if index == 1 then walked:DeleteRow(1) end
+    end
+    assert_eq(table.concat(seen, ","), "10,30,40",
+        "Rows() must stop at the real end, having skipped the row that moved in")
+
+    -- An out-of-range index must raise rather than shift bytes it should not.
+    local guard = make_icons({ 10, 20, 30 })
+    local intact = guard:GetFile():Serialize()
+    for _, bad in ipairs({ 0, -1, 4, 99, 1.5 }) do
+        local ok, err = pcall(function() return guard:DeleteRow(bad) end)
+        assert_true(not ok, "DeleteRow(" .. tostring(bad) .. ") should raise")
+        assert_true(tostring(err):find("out of range", 1, true) ~= nil,
+            "Error should name the cause, got: " .. tostring(err))
+    end
+    assert_eq(guard:Count(), 3, "A refused delete must not change the count")
+    assert_eq(guard:GetFile():Serialize(), intact,
+        "A refused delete must not touch a single byte")
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 21 — Lookups after a delete
+-- ---------------------------------------------------------------------------
+
+run_test("ID lookups follow the rows a delete moved", function()
+    local tbl = make_icons({ 10, 20, 30, 40, 50 })
+    tbl:DeleteRow(2) -- drops ID 20
+
+    assert_eq(tbl:FindById(20), nil, "FindById must stop resolving the deleted ID")
+    assert_eq(tbl[20], nil, "tbl[id] must stop resolving the deleted ID")
+    assert_true(tbl:Has(20) == false, "Has must report the deleted ID gone")
+    local ok = pcall(function() return tbl:GetRowById(20) end)
+    assert_true(not ok, "GetRowById must raise for the deleted ID")
+
+    -- The survivors after the hole moved down one slot; their IDs must follow
+    -- them there rather than keep pointing at their old index.
+    assert_eq(tbl:GetRowById(30):GetIndex(), 2, "ID 30 must now be row 2")
+    assert_eq(tbl:GetRowById(50):GetIndex(), 4, "ID 50 must now be row 4")
+    assert_eq(tbl:FindById(10):GetIndex(), 1, "ID 10 sat before the hole")
+
+    -- And each of them must read its own record, not its neighbour's.
+    for _, id in ipairs({ 10, 30, 40, 50 }) do
+        assert_eq(tbl[id]:GetTextureFilename(), icon_text(id),
+            "ID " .. id .. " must still read its own string")
+    end
+
+    -- Inserting the row back puts the key back with it.
+    local tbl2 = make_icons({ 10, 20, 30 })
+    local bytes = tbl2:CopyRecord(2)
+    tbl2:DeleteRow(2)
+    tbl2:InsertRow(2, bytes)
+    assert_not_nil(tbl2:FindById(20), "The reinserted ID must resolve again")
+    assert_eq(tbl2:GetRowById(20):GetIndex(), 2, "and at the index it went back to")
+    assert_eq(tbl2:GetRowById(30):GetIndex(), 3, "and push the tail back up")
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 22 — Proxy invalidation
+-- ---------------------------------------------------------------------------
+
+run_test("A structural edit invalidates the proxies it moved", function()
+    local tbl = make_icons({ 10, 20, 30, 40, 50 })
+    local before_point = tbl:GetRowByIndex(1)
+    local at_point     = tbl:GetRowByIndex(3)
+    local after_point  = tbl:GetRowByIndex(5)
+
+    tbl:DeleteRow(3)
+
+    -- Row 1 did not move, so its proxy still means what it meant.
+    assert_eq(before_point:GetTextureFilename(), icon_text(10),
+        "A proxy before the edit point must keep working")
+    assert_eq(before_point:GetID(), 10, "and keep its ID")
+    assert_true(before_point:IsValid(), "and report itself valid")
+
+    -- Rows 3 and 5 did move. Reading them must raise, not hand back row 4's
+    -- and row 6's data, which is the whole point of the generation stamp.
+    for label, proxy in pairs({ ["at the edit point"] = at_point,
+                                ["after the edit point"] = after_point }) do
+        local ok, err = pcall(function() return proxy:GetTextureFilename() end)
+        assert_true(not ok, "A proxy " .. label .. " must raise on read")
+        assert_true(tostring(err):find("stale reference", 1, true) ~= nil,
+            "Error should say what happened, got: " .. tostring(err))
+        assert_true(tostring(err):find("inserted or deleted at index 3", 1, true) ~= nil,
+            "Error should name the edit point, got: " .. tostring(err))
+        assert_true(proxy:IsValid() == false,
+            "IsValid must report a proxy " .. label .. " as dead")
+        assert_true(not pcall(function() return proxy:GetIndex() end),
+            "GetIndex must raise too - it hands out the index itself")
+        assert_true(not pcall(function() return proxy:SetTextureFilename("x") end),
+            "Writes through a stale proxy must raise as well")
+    end
+
+    -- The table hands out a fresh proxy for the index, so a caller that
+    -- re-fetches is back in business immediately.
+    assert_eq(tbl:GetRowByIndex(3):GetTextureFilename(), icon_text(40),
+        "Re-fetching the index must give the record that lives there now")
+
+    -- A second edit lower down must invalidate the proxy the first one spared.
+    tbl:DeleteRow(1)
+    local ok_again = pcall(function() return before_point:GetTextureFilename() end)
+    assert_true(not ok_again,
+        "An edit below a surviving proxy must invalidate it in turn")
+
+    -- And a proxy minted between two edits is judged on the edits after it,
+    -- not on every edit the file has ever seen.
+    local fresh = make_icons({ 10, 20, 30, 40, 50 })
+    fresh:DeleteRow(1)                     -- generation 1, floor 1
+    local minted = fresh:GetRowByIndex(2)  -- now holds ID 30
+    fresh:DeleteRow(4)                     -- generation 2, floor 4
+    assert_eq(minted:GetTextureFilename(), icon_text(30),
+        "A proxy below a later edit must stay valid despite an earlier one")
+
+    -- Two edits at rising floors: a proxy must be judged against the lowest
+    -- floor since it was minted, not the most recent one. Row 3 here sits
+    -- above the first edit's floor and below the second's, so weighing it
+    -- against the latest alone would call it valid and quietly serve the
+    -- record that slid into its slot.
+    local ladder = make_icons({ 10, 20, 30, 40, 50, 60 })
+    local stranded = ladder:GetRowByIndex(3) -- ID 30, minted before both edits
+    ladder:DeleteRow(2)                      -- floor 2: row 3 now holds ID 40
+    ladder:DeleteRow(4)                      -- floor 4, which row 3 sits below
+    local ok_ladder, err_ladder = pcall(function()
+        return stranded:GetTextureFilename()
+    end)
+    assert_true(not ok_ladder,
+        "The lowest floor since minting must decide, not the latest edit")
+    assert_true(tostring(err_ladder):find("deleted at index 2", 1, true) ~= nil,
+        "Error should name the edit that moved it, got: " .. tostring(err_ladder))
+
+    -- An append moves no record, so it must invalidate nothing at all.
+    local appended = make_icons({ 10, 20, 30 })
+    local held = appended:GetRowByIndex(3)
+    appended:Create(40, { TextureFilename = icon_text(40) })
+    assert_eq(held:GetTextureFilename(), icon_text(30),
+        "Appending must not invalidate the rows already there")
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 23 — InsertRow
+-- ---------------------------------------------------------------------------
+
+run_test("InsertRow places a record and refuses a bad one", function()
+    local tbl = make_icons({ 10, 20, 30 })
+    local bytes = tbl:CopyRecord(3)
+
+    -- Into the middle: everything from the index up moves one slot.
+    local inserted = tbl:InsertRow(2, bytes)
+    assert_eq(tbl:Count(), 4, "InsertRow adds a row")
+    assert_eq(id_order(tbl), "10,30,20,30", "The tail must slide up one slot")
+    assert_eq(inserted:GetIndex(), 2, "InsertRow returns the row it wrote")
+    assert_eq(inserted:GetTextureFilename(), icon_text(30),
+        "The inserted record's string must resolve")
+
+    -- record_count + 1 appends; one past that does not.
+    local tail = make_icons({ 10, 20 })
+    tail:InsertRow(3, tail:CopyRecord(1))
+    assert_eq(id_order(tail), "10,20,10", "Inserting at Count() + 1 appends")
+    assert_true(not pcall(function() return tail:InsertRow(5, tail:CopyRecord(1)) end),
+        "Inserting past Count() + 1 must raise")
+    assert_true(not pcall(function() return tail:InsertRow(0, tail:CopyRecord(1)) end),
+        "Inserting at index 0 must raise")
+
+    -- nil bytes means a blank row, and the wrong number of bytes is refused
+    -- rather than copied into a record it does not fit.
+    local blank = make_icons({ 10, 20 })
+    blank:InsertRow(1, nil)
+    assert_eq(blank:Count(), 3, "A blank insert still adds a row")
+    assert_eq(blank:GetFile():GetRowId(1), 0, "A blank row is zero bytes")
+    assert_eq(id_order(blank), "0,10,20", "and the real rows move up")
+
+    local intact = blank:GetFile():Serialize()
+    local ok, err = pcall(function() return blank:InsertRow(1, "short") end)
+    assert_true(not ok, "InsertRow must refuse bytes of the wrong length")
+    assert_true(tostring(err):find("records are 8 bytes", 1, true) ~= nil,
+        "Error should give both lengths, got: " .. tostring(err))
+    assert_eq(blank:GetFile():Serialize(), intact,
+        "A refused insert must not touch a single byte")
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 24 — Duplicate by index
+-- ---------------------------------------------------------------------------
+
+run_test("DuplicateRowByIndex copies bytes on any table", function()
+    local tbl = make_icons({ 10, 20, 30 })
+
+    -- GetMaxID is an O(n) scan, so a duplicate may call it once and no more.
+    local real_get_max_id = dbc.Table.GetMaxID
+    local calls = 0
+    dbc.Table.GetMaxID = function(self)
+        calls = calls + 1
+        return real_get_max_id(self)
+    end
+
+    local ok, err = pcall(function()
+        local dup = tbl:DuplicateRowByIndex(2)
+        assert_eq(calls, 1, "DuplicateRowByIndex must scan for the max ID once")
+        assert_eq(tbl:Count(), 4, "The duplicate is appended")
+        assert_eq(dup:GetIndex(), 4, "and lands at the end")
+        assert_eq(dup:GetID(), 31, "and takes GetMaxID() + 1 by default")
+        assert_eq(dup:GetTextureFilename(), icon_text(20),
+            "and carries the source's string")
+        assert_eq(tbl:GetRowByIndex(2):GetID(), 20, "The source must be untouched")
+        assert_eq(tbl:GetRowById(31):GetIndex(), 4, "The new ID must be indexed")
+
+        -- An explicit ID is honoured, and a colliding one refused.
+        local pinned = tbl:DuplicateRowByIndex(1, 99)
+        assert_eq(pinned:GetID(), 99, "An explicit ID must be written")
+        assert_eq(pinned:GetTextureFilename(), icon_text(10),
+            "An explicit ID must not disturb the rest of the record")
+        assert_true(not pcall(function() return tbl:DuplicateRowByIndex(1, 10) end),
+            "Duplicating onto an existing ID must raise")
+        assert_true(not pcall(function() return tbl:DuplicateRowByIndex(99) end),
+            "An out-of-range source index must raise")
+    end)
+
+    dbc.Table.GetMaxID = real_get_max_id
+    if not ok then error(err, 0) end
+
+    -- The point of the separate name: this works on the 22 tables CloneRow
+    -- refuses, because it never has to invent a key.
+    local plain = open_fixture("CharBaseInfo", CHAR_BASE_INFO, 2)
+    assert_true(not pcall(function() return plain:CloneRow(1, 9) end),
+        "CloneRow still refuses a table with no ID column")
+
+    local dup = plain:DuplicateRowByIndex(3)
+    assert_eq(plain:Count(), 4, "Duplicating by index works there anyway")
+    assert_eq(dup:GetID(), 4, "and the copy keys on its own ordinal")
+    assert_eq(dup:GetField("RaceID"), 1, "RaceID must be copied")
+    assert_eq(dup:GetField("ClassID"), 4, "ClassID must be copied")
+    assert_eq(plain:GetRowByIndex(3):GetField("ClassID"), 4,
+        "The source must be untouched")
+
+    local ok_id, err_id = pcall(function() return plain:DuplicateRowByIndex(1, 9) end)
+    assert_true(not ok_id, "An explicit ID must be refused where there is nowhere to put it")
+    assert_true(tostring(err_id):find("no ID column", 1, true) ~= nil,
+        "Error should name the cause, got: " .. tostring(err_id))
+end)
+
+-- ---------------------------------------------------------------------------
+-- Test 25 — Structural edits across formats
+-- ---------------------------------------------------------------------------
+
+run_test("Structural edits on WDB2, and refusal where they cannot be correct", function()
+    local tbl = dbc.Create("SpellIcon", "WDB2", "3.3.5.12340")
+    for _, id in ipairs({ 10, 20, 30 }) do
+        tbl:Create(id, { TextureFilename = icon_text(id) })
+    end
+
+    -- WDB2 stamps its header with os.time() on every serialize, so the four
+    -- bytes at offset 28 are compared out rather than compared.
+    local function stable(bytes)
+        return bytes:sub(1, 28) .. "\0\0\0\0" .. bytes:sub(33)
+    end
+
+    local file = tbl:GetFile()
+    local before = stable(file:Serialize())
+    local bytes = tbl:CopyRecord(2)
+    tbl:DeleteRow(2)
+    assert_eq(id_order(tbl), "10,30", "WDB2 compaction must move the tail down")
+    tbl:InsertRow(2, bytes)
+    assert_eq(stable(file:Serialize()), before,
+        "WDB2 delete then reinsert must be byte-identical")
+
+    -- A record other IDs are declared copies of cannot just be removed: the
+    -- copies would vanish with it, so the driver refuses instead.
+    file:AddCopy(40, 10)
+    tbl:RebuildIndex()
+    local ok, err = pcall(function() return tbl:DeleteRow(1) end)
+    assert_true(not ok, "Deleting a copy-table source must raise")
+    assert_true(tostring(err):find("copy-table ID 40", 1, true) ~= nil,
+        "Error should name the copy, got: " .. tostring(err))
+    assert_eq(tbl:Count(), 3, "The refused delete must leave the table alone")
+    assert_true(tbl:Has(40), "and leave the copy resolvable")
+
+    -- Formats that keep IDs or row indices outside the record buffer cannot
+    -- be edited this way, and say so rather than desynchronising quietly.
+    local wdbc = make_icons({ 10, 20, 30 })
+    local wdbc_file = wdbc:GetFile()
+    wdbc_file.id_list = { 10, 20, 30 }
+    local ok_list, err_list = pcall(function() return wdbc:DeleteRow(2) end)
+    wdbc_file.id_list = nil
+    assert_true(not ok_list, "A driver with an id_list must refuse DeleteRow")
+    assert_true(tostring(err_list):find("id_list", 1, true) ~= nil,
+        "Error should name the obstacle, got: " .. tostring(err_list))
+    assert_eq(wdbc:Count(), 3, "and leave the table alone")
+
+    wdbc_file.is_compressed = true
+    local ok_packed = pcall(function() return wdbc:InsertRow(1, wdbc:CopyRecord(1)) end)
+    wdbc_file.is_compressed = nil
+    assert_true(not ok_packed, "A bit-packed driver must refuse InsertRow")
+end)
+
+-- ---------------------------------------------------------------------------
 -- Cleanup
 -- ---------------------------------------------------------------------------
 

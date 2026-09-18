@@ -121,6 +121,62 @@ end
 -- RowProxy
 -- ---------------------------------------------------------------------------
 
+-- ---------------------------------------------------------------------------
+-- Structural-change guard
+--
+-- A RowProxy holds a row *index*, not a record. Once InsertRow or DeleteRow
+-- shifts the buffer, index 50 names a different record than it did when the
+-- proxy was handed out, and every accessor below would happily read it. That
+-- is the one failure mode worth spending a branch to prevent, so the rule is:
+--
+--     a structural edit invalidates every proxy at or after the edit point.
+--     Proxies before it stay valid, because their index did not move.
+--
+-- Using an invalidated proxy raises and says what happened. It never returns
+-- another row's data.
+--
+-- Why invalidate rather than repoint. DbcTable._proxies never evicts, so it
+-- could in principle be walked and renumbered - but it is not the only place
+-- proxies live. _copy_proxies holds more, and a caller may keep one in a local
+-- for as long as it likes; repointing would fix the subset we can reach and
+-- leave the rest silently wrong, which is the exact failure being designed
+-- out. A proxy on a deleted row has nothing to repoint to in any case, so the
+-- invalidation path has to exist regardless, and repointing would only add a
+-- second mechanism for the same problem. Last, "row 50" after an insert is
+-- genuinely ambiguous - the fiftieth record, or the record that used to be
+-- fiftieth? Raising makes the caller say which rather than guessing for them.
+--
+-- Cost is one integer comparison per access whenever nothing has been edited,
+-- which is nothing beside the FFI load it guards. After an edit a proxy walks
+-- the generations it missed exactly once and re-stamps itself, so the slow
+-- path does not repeat.
+-- ---------------------------------------------------------------------------
+
+---Raises if a structural edit has moved this proxy's row out from under it.
+---@param self RowProxy
+local function assert_live(self)
+    local file = self._file
+    local generation = file._generation
+    if not generation or self._generation == generation then return end
+
+    local floor = file:StructuralFloorSince(self._generation or 0)
+    if floor == nil or self._row < floor then
+        -- Every edit since this proxy was minted happened below it in the
+        -- buffer, so its index still names the same record. Re-stamp it as of
+        -- now: the walk above is then paid once per proxy per edit, not once
+        -- per field read.
+        self._generation = generation
+        return
+    end
+
+    error(string.format(
+        "%s: row %d is a stale reference - a row was inserted or deleted at "
+        .. "index %d, so this index no longer names the record it was taken "
+        .. "from. Fetch the row from the table again.",
+        (file.schema and file.schema.name) or file.origin or "table",
+        self._row, floor))
+end
+
 ---@class RowProxy
 local RowProxy = {}
 RowProxy.__index = RowProxy
@@ -135,16 +191,36 @@ function RowProxy.new(file, row, table_ref)
     self._table = table_ref
     self._row = row
     self._schema = file and file.schema
+    -- The structural generation this index was correct at; see assert_live.
+    self._generation = (file and file._generation) or 0
     return self
 end
 
-function RowProxy:GetAddress(offset) return self._file:GetAddress(self._row, offset) end
-function RowProxy:GetIndex()         return self._row end
+--- Every read and write below reaches memory through GetAddress, so guarding
+--- it guards the lot. The two accessors that bypass it - GetIndex and the
+--- ReadField path used by the bit-packed formats - are guarded by hand.
+function RowProxy:GetAddress(offset)
+    assert_live(self)
+    return self._file:GetAddress(self._row, offset)
+end
+
+function RowProxy:GetIndex()
+    assert_live(self)
+    return self._row
+end
+
 function RowProxy:GetFile()          return self._file end
 function RowProxy:GetTable()         return self._table end
 function RowProxy:GetSchema()        return self._schema or (self._file and self._file.schema) end
+
+---Reports whether this proxy still names a readable record. False once a
+---structural edit has moved its row, which is what IsValid is for: asking
+---costs nothing, reading a stale proxy raises.
+---@return boolean
 function RowProxy:IsValid()
-    return self._file ~= nil and self._row >= 1 and self._row <= self._file.record_count
+    if self._file == nil then return false end
+    if self._row < 1 or self._row > self._file.record_count then return false end
+    return pcall(assert_live, self)
 end
 
 -- ---------------------------------------------------------------------------
@@ -154,6 +230,7 @@ end
 function RowProxy:GetID()
     if self._id_override then return self._id_override end
     if self._file and self._file.GetRowId then
+        assert_live(self)
         return self._file:GetRowId(self._row)
     end
     local offset = self._file:GetIdOffset()
@@ -382,6 +459,7 @@ function RowProxy:GetField(name, extra)
     local f = self._file:GetField(name)
 
     if self._file.ReadField then
+        assert_live(self)
         return self._file:ReadField(self._row, f, extra)
     end
 
@@ -684,6 +762,7 @@ local function resolve_method(schema, key)
 
             return function(self, extra)
                 if self._file.ReadField then
+                    assert_live(self)
                     return self._file:ReadField(self._row, f, extra)
                 end
                 if kind == "loc" then
