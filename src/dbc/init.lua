@@ -19,6 +19,7 @@ local schema_mod    = load("schema")
 local enum_mod      = load("enum")
 local workspace_mod = load("workspace")
 local relations_mod = load("relations")
+local editor_mod    = load("editor")
 local formats_mod   = file_mod.Formats or load("formats")
 local json_mod      = load("json")
 
@@ -47,6 +48,7 @@ local dbc = {
     Database    = DbcWorkspace,     -- alias
     Session     = DbcWorkspace,     -- legacy alias
     Relations   = Relations,
+    Editor      = editor_mod,
     Formats     = Formats,
     JSON        = json_mod,
 }
