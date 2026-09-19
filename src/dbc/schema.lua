@@ -209,6 +209,15 @@ local function load_from_json(table_name, build_or_hash)
             kind            = kind,
             offset          = cur_offset,
             count           = arr_len,
+
+            -- One element, in bytes: the span of the whole field is
+            -- width * count. Published rather than left as a local because a
+            -- caller that wants a field's raw bytes - an undo stack taking a
+            -- snapshot, a differ - has no other way to know how far a field
+            -- reaches. Deriving it from the next field's offset is wrong for
+            -- the last field and for any isNonInline column, both of which
+            -- leave the offset where it was.
+            width           = width,
             is_id           = def.isID or false,
             is_relation     = def.isRelation or (foreign_table ~= nil),
             is_non_inline   = def.isNonInline or false,

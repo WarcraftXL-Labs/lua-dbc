@@ -125,6 +125,39 @@ run_test("Schemas and enums", function()
 end)
 
 -- ---------------------------------------------------------------------------
+-- Test 1b — Field widths
+--
+-- A field's width is what tells a caller how many bytes the field occupies,
+-- which is what anything taking a raw snapshot of one needs. Checked against
+-- the record layout rather than against a table of constants: the widths are
+-- right exactly when the offsets they produce are the offsets the schema
+-- assigned.
+-- ---------------------------------------------------------------------------
+
+run_test("A field publishes the width of one element", function()
+    local schema = dbc.Schemas.Get("Spell", "3.3.5.12340")
+
+    local expected = 0
+    for _, f in ipairs(schema.fields) do
+        assert_not_nil(f.width, "field " .. f.name .. " has no width")
+        assert_true(f.width > 0, "field " .. f.name .. " has width " .. tostring(f.width))
+        assert_eq(f.offset, expected, "field " .. f.name .. " starts elsewhere")
+
+        if not f.is_non_inline then
+            expected = expected + f.width * f.count
+        end
+    end
+
+    assert_eq(schema.record_size, expected,
+        "the widths do not add up to the record size")
+
+    -- A pre-Cataclysm localized string is 16 string offsets and a flag word,
+    -- not the 4 bytes its declared size suggests.
+    assert_eq(schema.by_name["Name_lang"].width, 68, "loc field width")
+    assert_eq(schema.by_name["ID"].width, 4, "u32 field width")
+end)
+
+-- ---------------------------------------------------------------------------
 -- Test 2 — Table creation, custom IDs, auto-increment, cloning
 -- ---------------------------------------------------------------------------
 
